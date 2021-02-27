@@ -1,0 +1,32 @@
+.toolbar {
+    position: relative;
+    display: inline-flex;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    background-color: #7bff9c;
+    color:#a03636;
+    font-weight: 600;
+    font-size: larger;
+    border-radius: 10cm;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .loginIcon {
+    position: absolute;
+    left: 90%;
+
+
+  }
+
+  .signUpIcon {
+    position: absolute;
+    left: 95%;
+
+}
