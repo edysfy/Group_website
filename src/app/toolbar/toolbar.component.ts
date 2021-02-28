@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Icon } from '@fortawesome/fontawesome-svg-core';
-import { faUserPlus, faSignInAlt, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus, faSignInAlt, faSignOutAlt, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -9,8 +9,11 @@ import { faUserPlus, faSignInAlt, IconDefinition } from '@fortawesome/free-solid
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit {
+  isLoggedIn: Boolean;
 
-  constructor() { }
+  constructor() {
+    this.isLoggedIn = false;
+  }
 
   ngOnInit(): void {
   }
@@ -18,5 +21,13 @@ export class ToolbarComponent implements OnInit {
   /*login register icons icons*/
   faUserPlus: IconDefinition = faUserPlus;
   faSignInAlt: IconDefinition = faSignInAlt;
+  faSignOutAlt: IconDefinition = faSignOutAlt;
 
+
+  login():void {
+    this.isLoggedIn = true;
+  }
+  logout():void {
+    this.isLoggedIn = false;
+  }
 }

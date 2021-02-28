@@ -1,7 +1,7 @@
 .input-group{
     position: absolute;
     left:200px;
-    top: 20px;
+    top: 25px;
 }
 /* Style the submit button */
 .searchBtn {
@@ -17,6 +17,7 @@
     font-family: 'Akaya Telivigala', cursive;
     font-style: bold;
     font-size: 25px;
+    
   }
   
 .form-control-day {

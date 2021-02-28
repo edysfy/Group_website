@@ -1,61 +1,55 @@
 .toolbar {
     position: absolute;
     display: inline-flex;
-    top: 4px;
+    top: 0px;
     left: 0;
     right: 0;
-    height: 80px;
+    height: 90px;
     display: flex;
     align-items: center;
     background-color: #adf78b;
     color:#4135eb;
     font-weight: 600;
     font-size: 30px;
-    border-radius: 2ex;
     font-family: 'Akaya Telivigala', cursive;
   }
-
+  .about{
+    position: relative ;
+    top: 5px;
+    left: 10px;
+    cursor: pointer;
+  }
   .toolbar img {
     margin: 0 16px;
   }
-
   .login {
-    position: absolute;
-    left: 82%;
-    display: block;
-    top: 15px;
+    position: relative;
+    cursor: pointer;
   }
-  .loginIcon {
-    position: absolute;
-    top: 4px;
-    left: 15px;
-    font-size: 40px;
-
-  }
-  .loginIconTitle{
-    position: absolute;
-    top: 25px;
-    left: 0px;
-    font-size: 30px;
-  }
-
   .signUp {
-    position: absolute;
-    left: 90%;
-    display: block;
-    top: 15px;
+    position: relative;
+    cursor: pointer;
   }
-  .signUpIcon {
-    position: absolute;
-    top: 5px;
-    left: 10px;
-    font-size: 35px;
-
-  }
-  .signUpIconTitle{
-    position: absolute;
-    top: 29px;
-    left: -4px;
-    font-size: 30px;
+  .logout {
+    position: relative;
+    cursor: pointer;
   }
 
+.loginSect{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    height: 40px;
+    position: absolute;
+    left: 70%;
+    top: 30px;
+}
+.logoutSect{
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+  position: absolute;
+  left: 75%;
+  top: 30px;
+}
