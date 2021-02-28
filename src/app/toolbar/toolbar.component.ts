@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { faUserPlus, faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { Icon } from '@fortawesome/fontawesome-svg-core';
+import { faUserPlus, faSignInAlt, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -13,8 +14,9 @@ export class ToolbarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  faUserPlus = faUserPlus;
-  faSignInAlt = faSignInAlt;
+  
+  /*login register icons icons*/
+  faUserPlus: IconDefinition = faUserPlus;
+  faSignInAlt: IconDefinition = faSignInAlt;
 
 }

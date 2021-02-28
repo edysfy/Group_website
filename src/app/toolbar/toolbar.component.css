@@ -1,32 +1,61 @@
 .toolbar {
-    position: relative;
+    position: absolute;
     display: inline-flex;
-    top: 0;
+    top: 4px;
     left: 0;
     right: 0;
-    height: 90px;
+    height: 80px;
     display: flex;
     align-items: center;
-    background-color: #7bff9c;
-    color:#a03636;
+    background-color: #adf78b;
+    color:#4135eb;
     font-weight: 600;
-    font-size: larger;
-    border-radius: 10cm;
+    font-size: 30px;
+    border-radius: 2ex;
+    font-family: 'Akaya Telivigala', cursive;
   }
 
   .toolbar img {
     margin: 0 16px;
   }
 
+  .login {
+    position: absolute;
+    left: 82%;
+    display: block;
+    top: 15px;
+  }
   .loginIcon {
     position: absolute;
-    left: 90%;
-
+    top: 4px;
+    left: 15px;
+    font-size: 40px;
 
   }
+  .loginIconTitle{
+    position: absolute;
+    top: 25px;
+    left: 0px;
+    font-size: 30px;
+  }
 
+  .signUp {
+    position: absolute;
+    left: 90%;
+    display: block;
+    top: 15px;
+  }
   .signUpIcon {
     position: absolute;
-    left: 95%;
+    top: 5px;
+    left: 10px;
+    font-size: 35px;
 
-}
+  }
+  .signUpIconTitle{
+    position: absolute;
+    top: 29px;
+    left: -4px;
+    font-size: 30px;
+  }
+

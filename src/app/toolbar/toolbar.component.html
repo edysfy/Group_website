@@ -3,10 +3,16 @@
       width="80"
       height="80"
       alt="Earth Logo"
-      src="./assets/logos/treelogo.png"
+      src="./assets/logos/treelogoblue.png"
     />
     <span class="About">About</span> 
-    <fa-icon class="loginIcon" [icon]="faUserPlus"></fa-icon>
-    <fa-icon class="signUpIcon" [icon]="faSignInAlt"></fa-icon>
-    <div class="spacer"></div>
+    <div class="login">
+        <fa-icon class="loginIcon" [icon]="faSignInAlt"></fa-icon>
+        <!-- <p class="loginIconTitle">Login</p> -->
+    </div>
+    <div class="signUp">
+        <fa-icon class="signUpIcon" [icon]="faUserPlus"></fa-icon>
+        <!-- <p class="signUpIconTitle">Reg</p> -->
+    </div>
+    <app-searchfield></app-searchfield>
   </div>
