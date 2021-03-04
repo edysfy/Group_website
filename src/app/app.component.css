@@ -26,3 +26,14 @@
   }
 
 
+  mat-card {
+    width: 80%;
+    margin: auto;
+}
+
+mat-form-field{
+    width: 100%;
+}
+textarea {
+    width: 100%;
+}

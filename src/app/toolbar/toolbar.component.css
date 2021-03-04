@@ -7,8 +7,6 @@
     height: 90px;
     display: flex;
     align-items: center;
-    background-color: #adf78b;
-    color:#4135eb;
     font-weight: 600;
     font-size: 30px;
     font-family: 'Akaya Telivigala', cursive;
@@ -52,4 +50,10 @@
   position: absolute;
   left: 75%;
   top: 30px;
+}
+
+.about{
+  position: relative;
+  left: 15px;
+  top: -1px;
 }

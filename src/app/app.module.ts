@@ -7,17 +7,30 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SearchfieldComponent } from './searchfield/searchfield.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import {  MatInputModule } from '@angular/material/input';
+
+import { MatInputModule } from '@angular/material/input';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatToolbarModule } from '@angular/material/Toolbar';
+import { MapboxComponent } from './mapbox/mapbox.component';
 
 
-const material = [BrowserAnimationsModule,MatFormFieldModule,MatInputModule]
+const material = [
+  BrowserAnimationsModule, 
+  MatInputModule, 
+  MatButtonModule,
+  FormsModule,
+  MatCardModule,
+  MatToolbarModule
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     SearchfieldComponent,
+    MapboxComponent,
   ],
   imports: [
     BrowserModule,

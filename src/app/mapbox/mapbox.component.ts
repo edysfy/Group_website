@@ -1,0 +1,76 @@
+import { Component, OnInit } from '@angular/core';
+import { environment } from '../../environments/environment.prod';
+
+import * as mapboxgl from 'mapbox-gl';
+
+@Component({
+  selector: 'app-mapbox',
+  templateUrl: './mapbox.component.html',
+  styleUrls: ['./mapbox.component.css']
+})
+export class MapboxComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit(): void {
+    (mapboxgl as any).accessToken = 'pk.eyJ1IjoiaGFyaXBhdGVsODgiLCJhIjoiY2tsdHk3bmJlMGhobTJ2bXd5bDFsa2dpbyJ9.Mic9DjTPNfqPpOvWJZkMIg';
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/light-v10',
+    zoom: 12,
+    center: [-122.447303, 37.753574]
+    });
+    map.on('load', function () {
+      /* Sample feature from the `examples.8fgz4egr` tileset:
+      {
+      "type": "Feature",
+      "properties": {
+      "ethnicity": "White"
+      },
+      "geometry": {
+      "type": "Point",
+      "coordinates": [ -122.447303, 37.753574 ]
+      }
+      }
+      */
+      map.addSource('ethnicity', {
+      type: 'vector',
+      url: 'mapbox://examples.8fgz4egr'
+      });
+      map.addLayer({
+      'id': 'population',
+      'type': 'circle',
+      'source': 'ethnicity',
+      'source-layer': 'sf2010',
+      'paint': {
+      // make circles larger as the user zooms from z12 to z22
+      'circle-radius': {
+      'base': 1.75,
+      'stops': [
+      [12, 2],
+      [22, 180]
+      ]
+      },
+      // color circles by ethnicity, using a match expression
+      // https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
+      'circle-color': [
+      'match',
+      ['get', 'ethnicity'],
+      'White',
+      '#fbb03b',
+      'Black',
+      '#223b53',
+      'Hispanic',
+      '#e55e5e',
+      'Asian',
+      '#3bb2d0',
+      /* other */ '#ccc'
+      ]
+      }
+      });
+      });
+  }
+
+
+
+}
