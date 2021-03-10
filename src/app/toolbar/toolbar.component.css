@@ -1,0 +1,59 @@
+.toolbar {
+    position: absolute;
+    display: inline-flex;
+    top: 0px;
+    left: 0;
+    right: 0;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 30px;
+    font-family: 'Helvetica', cursive;
+  }
+  .about{
+    position: relative ;
+    top: 5px;
+    left: 10px;
+    cursor: pointer;
+  }
+  .toolbar img {
+    margin: 0 16px;
+  }
+  .login {
+    position: relative;
+    cursor: pointer;
+  }
+  .signUp {
+    position: relative;
+    cursor: pointer;
+  }
+  .logout {
+    position: relative;
+    cursor: pointer;
+  }
+
+.loginSect{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    height: 40px;
+    position: absolute;
+    left: 70%;
+    top: 30px;
+}
+.logoutSect{
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+  height: 40px;
+  position: absolute;
+  left: 75%;
+  top: 30px;
+}
+
+.about{
+  position: relative;
+  left: 15px;
+  top: -1px;
+}

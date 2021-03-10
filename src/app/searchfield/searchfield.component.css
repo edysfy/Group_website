@@ -1,0 +1,51 @@
+.input-group{
+    position: absolute;
+    left:200px;
+    top: 25px;
+}
+/* Style the submit button */
+.searchBtn {
+    float: right;
+    background: #4135eb;
+    color: #adf78b;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
+    height: 40px;
+    outline: none;
+    font-family: 'Akaya Telivigala', cursive;
+    font-style: bold;
+    font-size: 25px;
+    
+  }
+  
+.form-control-day {
+    height: 40px;
+    background-color: #4135eb;
+    width: 110px;
+    outline: none;    
+    font-family: 'Akaya Telivigala', cursive;
+    font-style: bold;
+    font-size: 20px;
+    color: white;
+
+}
+.form-control-keyword {
+
+    height: 40px;
+    background-color: #4135eb;
+    color: #adf78b;
+    width: 110px;
+    outline: none; 
+    font-family: 'Akaya Telivigala', cursive;
+    font-style: bold;
+    font-size: 20px;
+
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #adf78b;
+    opacity: 10; /* Firefox */
+    position: relative;
+    left: 10px;
+  }
