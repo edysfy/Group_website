@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Icon } from '@fortawesome/fontawesome-svg-core';
+import {Router} from '@angular/router';
 import { faUserPlus, faSignInAlt, faSignOutAlt, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 
 
@@ -10,14 +11,17 @@ import { faUserPlus, faSignInAlt, faSignOutAlt, IconDefinition } from '@fortawes
 })
 export class ToolbarComponent implements OnInit {
   isLoggedIn: Boolean;
+  showDisplay: Boolean;
 
-  constructor() {
+  constructor(private route:Router) {
     this.isLoggedIn = false;
+    this.showDisplay = false;
   }
 
   ngOnInit(): void {
+    this.route.navigate(['/mapbox']);
   }
-  
+
   /*login register icons icons*/
   faUserPlus: IconDefinition = faUserPlus;
   faSignInAlt: IconDefinition = faSignInAlt;
@@ -30,4 +34,16 @@ export class ToolbarComponent implements OnInit {
   logout():void {
     this.isLoggedIn = false;
   }
+  toggle() {
+    this.showDisplay=!this.showDisplay
+    if(this.showDisplay == true){
+      this.route.navigate(['/form']);
+    }
+    else{
+      this.route.navigate(['/mapbox']);
+
+    }
+
+  }
+
 }

@@ -1,16 +1,16 @@
 
-  <mat-toolbar class="toolbar" color="accent">    
+  <mat-toolbar class="toolbar" color="primary">
   <img
     width="80"
     height="80"
     alt="Earth Logo"
     src="./assets/logos/earth.png"
   />
-  <span>EmotMap</span>
+  <span>EmoteMap</span>
   <div *ngIf="!isLoggedIn" class="loginSect">
     <span class="about">About</span>
     <span (click)="login()" class="login"><fa-icon [icon]="faSignInAlt"></fa-icon></span>
-    <span class="signUp"><fa-icon [icon]="faUserPlus"></fa-icon></span>
+    <span (click)="toggle()" class="signUp"><fa-icon [icon]="faUserPlus"></fa-icon></span>
   </div>
   <div *ngIf="isLoggedIn" class="logoutSect">
     <span class="about">About</span>

@@ -14,15 +14,22 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/Toolbar';
 import { MapboxComponent } from './mapbox/mapbox.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { FormComponent } from './form/form.component';
+import { MatIconModule } from '@angular/material/icon';
+
 
 
 const material = [
-  BrowserAnimationsModule, 
-  MatInputModule, 
+  BrowserAnimationsModule,
+  MatInputModule,
   MatButtonModule,
   FormsModule,
   MatCardModule,
-  MatToolbarModule
+  MatToolbarModule,
+  MatSidenavModule,
+  MatIconModule,
+
 ]
 
 @NgModule({
@@ -31,6 +38,7 @@ const material = [
     ToolbarComponent,
     SearchfieldComponent,
     MapboxComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,
