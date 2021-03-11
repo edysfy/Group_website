@@ -20,8 +20,6 @@ export class MapboxComponent implements OnInit {
     zoom: 12,
     center: [-122.447303, 37.753574]
     });
-<<<<<<< HEAD
-=======
     map.on("click", function(e:any){
       console.log("background click", e.lngLat);
       var geojson = {
@@ -32,6 +30,5 @@ export class MapboxComponent implements OnInit {
           }]
       };
   });
->>>>>>> hari-frontend
   }
 }
