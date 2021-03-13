@@ -46,11 +46,14 @@
     top: -5px;
     position: relative;
     cursor: pointer;
+    outline: none;
   }
   .signUp {
     top: -5px;
     position: relative;
     cursor: pointer;
+    outline: none;
+
   }
   .about{
     position: relative;

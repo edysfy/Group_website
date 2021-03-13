@@ -9,16 +9,16 @@
 }
 
 .login-png{
-    position: relative;
-    top: 30px;
-    left: 150px;
+    position: absolute;
+    top: 50px;
+    left: 10%;
 }
 
 .loginForm {
     border-radius: 40px;
-    position: relative;
+    position: absolute;
     top: 70px;
-    left: 250px;
+    right: 5%;
     width: 400px;
     height: 70%;
 }

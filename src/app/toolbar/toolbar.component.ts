@@ -12,20 +12,28 @@ import { UrlStateService } from '../service/url-state.service';
 export class ToolbarComponent implements OnInit{
   toolbarAccentColour: Boolean;
   private pathParam!: Observable<String>
+  public title: string;
 
   constructor(private urlStateService: UrlStateService) {
     this.toolbarAccentColour = true;
+    this.title = "EmoteMap"
   }
 
   ngOnInit(): void {
     /*listen to obesrvable path paramter in url service*/
     this.pathParam = this.urlStateService.getUrlObservable();
     this.pathParam.subscribe(param => {
-      console.log(param);
-      if(param === 'login') {
+      /*change toolbar color and title due to different param*/
+      if(param === 'login' ) {
         this.toolbarAccentColour = false;
-      } else {
+        this.title = 'Login';
+      }else if(param ==='signup') {
+        this.toolbarAccentColour = false;
+        this.title = 'Sign Up'
+      }
+      else {
         this.toolbarAccentColour = true;
+        this.title = "EmoteMap";
       }
     });
   }
