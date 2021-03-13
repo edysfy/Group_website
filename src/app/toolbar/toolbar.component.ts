@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Icon } from '@fortawesome/fontawesome-svg-core';
-import {Router} from '@angular/router';
 import { faUserPlus, faSignInAlt, faSignOutAlt, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { Observable } from 'rxjs';
+import { UrlStateService } from '../service/url-state.service';
 
 
 @Component({
@@ -9,17 +9,25 @@ import { faUserPlus, faSignInAlt, faSignOutAlt, IconDefinition } from '@fortawes
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.css']
 })
-export class ToolbarComponent implements OnInit {
-  isLoggedIn: Boolean;
-  showDisplay: Boolean;
+export class ToolbarComponent implements OnInit{
+  toolbarAccentColour: Boolean;
+  private pathParam!: Observable<String>
 
-  constructor(private route:Router) {
-    this.isLoggedIn = false;
-    this.showDisplay = false;
+  constructor(private urlStateService: UrlStateService) {
+    this.toolbarAccentColour = true;
   }
 
   ngOnInit(): void {
-    this.route.navigate(['/mapbox']);
+    /*listen to obesrvable path paramter in url service*/
+    this.pathParam = this.urlStateService.getUrlObservable();
+    this.pathParam.subscribe(param => {
+      console.log(param);
+      if(param === 'login') {
+        this.toolbarAccentColour = false;
+      } else {
+        this.toolbarAccentColour = true;
+      }
+    });
   }
 
   /*login register icons icons*/
@@ -28,22 +36,6 @@ export class ToolbarComponent implements OnInit {
   faSignOutAlt: IconDefinition = faSignOutAlt;
 
 
-  login():void {
-    this.isLoggedIn = true;
-  }
-  logout():void {
-    this.isLoggedIn = false;
-  }
-  toggle() {
-    this.showDisplay=!this.showDisplay
-    if(this.showDisplay == true){
-      this.route.navigate(['/form']);
-    }
-    else{
-      this.route.navigate(['/mapbox']);
 
-    }
-
-  }
 
 }

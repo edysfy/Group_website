@@ -15,8 +15,11 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/Toolbar';
 import { MapboxComponent } from './mapbox/mapbox.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import { FormComponent } from './form/form.component';
 import { MatIconModule } from '@angular/material/icon';
+import { LoginComponent } from './authentication/login/login.component';
+import { SignupComponent } from './authentication/signup/signup.component';
+import { AuthenticationService } from './service/authentication.service';
+import { UrlStateService } from './service/url-state.service';
 
 
 
@@ -38,7 +41,8 @@ const material = [
     ToolbarComponent,
     SearchfieldComponent,
     MapboxComponent,
-    FormComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +51,7 @@ const material = [
     ...material,
     BrowserAnimationsModule,
   ],
-  providers: [],
+  providers: [AuthenticationService, UrlStateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
