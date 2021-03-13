@@ -9,7 +9,8 @@ import { UrlStateService } from 'src/app/service/url-state.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit,OnDestroy {
-
+  
+  /*suscriber to the url service*/
   private subscriber!: Subscription;
 
   /*use url state service to hold login parameter data*/
