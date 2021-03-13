@@ -1,20 +1,26 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UrlStateService {
   /*create subject to convert to observable and state*/
-  private pathParameterState = new BehaviorSubject<string>(" ");
-  public pathParameter: Observable<string>
+  private pathParameterState: Subject<string>;
+  private pathParameter: Observable<string>
 
   constructor() { 
-    /*observable used in other components*/
+    /*create the subject => can be observable and change state in service*/
+    this.pathParameterState = new Subject<string>();
+        /*observable used in other components*/
     this.pathParameter = this.pathParameterState.asObservable();
   }
 
-  updatePathParamter(newPath: string) {
+  getUrlObservable(): Observable<string> {
+    return this.pathParameter;
+  }
+
+  updatePathParamter(newPath: string):void {
     /*update state*/
     this.pathParameterState.next(newPath);
   }

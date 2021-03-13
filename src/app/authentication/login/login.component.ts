@@ -17,7 +17,9 @@ export class LoginComponent implements OnInit,OnDestroy {
 
   ngOnInit(): void {
     /*get the url path param and put in url service state*/
-    this.subscriber = this.router.url.subscribe(url=>this.urlStateService.updatePathParamter(url[0].path));
+    this.subscriber = this.router.url.subscribe(urlParam =>
+      this.urlStateService.updatePathParamter(urlParam[0].path
+    ));
   }
 
   ngOnDestroy(): void {
@@ -25,7 +27,5 @@ export class LoginComponent implements OnInit,OnDestroy {
     this.subscriber.unsubscribe();
     this.urlStateService.updatePathParamter("");
   }
-
-
-
+  
 }

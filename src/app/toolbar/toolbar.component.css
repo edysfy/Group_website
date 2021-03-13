@@ -11,10 +11,11 @@
     font-size: 35px;
     font-family: 'Arvo', serif;
     font-family: 'Fredoka One', cursive;
+    z-index: 5;
   }
   .about{
     position: relative ;
-    top: 10px;
+    top: 30px;
     left: 10px;
     cursor: pointer;
   }
