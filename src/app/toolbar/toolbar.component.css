@@ -9,11 +9,12 @@
     align-items: center;
     font-weight: 600;
     font-size: 35px;
-    font-family: 'Akaya Kanadaka', cursive;
+    font-family: 'Arvo', serif;
+    font-family: 'Fredoka One', cursive;
   }
   .about{
     position: relative ;
-    top: 5px;
+    top: 10px;
     left: 10px;
     cursor: pointer;
   }
@@ -40,7 +41,7 @@
     height: 40px;
     position: absolute;
     left: 70%;
-    top: 30px;
+    top: 25px;
 }
 .logoutSect{
   width: 25%;

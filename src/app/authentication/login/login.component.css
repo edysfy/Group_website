@@ -1,0 +1,23 @@
+.login {
+    position: absolute;
+    height: 100%;
+    top: 90px;
+    background-color: rgb(138, 146, 187);
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.login-png{
+    position: relative;
+    top: 90px;
+    left: 70px;
+}
+
+.loginForm {
+    position: relative;
+    top: 150px;
+    left: 200px;
+    width: 400px;
+    height: 50%;
+}
