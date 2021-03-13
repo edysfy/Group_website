@@ -11,7 +11,6 @@ import { UrlStateService } from '../service/url-state.service';
 })
 export class ToolbarComponent implements OnInit{
   toolbarAccentColour: Boolean;
-  private pathParam!: Observable<String>
   public title: string;
 
   constructor(private urlStateService: UrlStateService) {
@@ -21,8 +20,7 @@ export class ToolbarComponent implements OnInit{
 
   ngOnInit(): void {
     /*listen to obesrvable path paramter in url service*/
-    this.pathParam = this.urlStateService.getUrlObservable();
-    this.pathParam.subscribe(param => {
+    this.urlStateService.getUrlObservable().subscribe(param => {
       /*change toolbar color and title due to different param*/
       if(param === 'login' ) {
         this.toolbarAccentColour = false;
@@ -37,6 +35,7 @@ export class ToolbarComponent implements OnInit{
       }
     });
   }
+
 
   /*login register icons icons*/
   faUserPlus: IconDefinition = faUserPlus;
