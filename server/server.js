@@ -6,9 +6,7 @@ const port = process.env.PORT || '3000';
 app.set("port",port);
 
 
-
+/*create server using express app and listen on port*/
 const server = http.createServer(app);
-
-
 server.listen(port);
 

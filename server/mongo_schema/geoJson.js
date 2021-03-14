@@ -41,7 +41,7 @@ const geoJsonSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  coordinates: {
+  location: {
     type: geoPositionSchema,
     required: true,
   },
