@@ -12,7 +12,11 @@ import { UrlStateService } from '../service/url-state.service';
 export class ToolbarComponent implements OnInit{
   toolbarAccentColour: Boolean;
   public title: string;
-
+  /*login register icons icons*/
+  faUserPlus: IconDefinition = faUserPlus;
+  faSignInAlt: IconDefinition = faSignInAlt;
+  faSignOutAlt: IconDefinition = faSignOutAlt;
+  
   constructor(private urlStateService: UrlStateService) {
     this.toolbarAccentColour = true;
     this.title = "EmoteMap"
@@ -37,10 +41,7 @@ export class ToolbarComponent implements OnInit{
   }
 
 
-  /*login register icons icons*/
-  faUserPlus: IconDefinition = faUserPlus;
-  faSignInAlt: IconDefinition = faSignInAlt;
-  faSignOutAlt: IconDefinition = faSignOutAlt;
+
 
 
 
