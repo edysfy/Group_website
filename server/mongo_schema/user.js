@@ -23,5 +23,7 @@ const userSchema = new mongoose.Schema({
 }
 });
 
+/*unique validator is a plugin that sends detailed responses if 
+values aren't unique*/
 userSchema.plugin(uniqueValidatorPlugin);
 module.exports = mongoose.model('User',userSchema);
