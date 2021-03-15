@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const uniqueValidatorPlugin = require('mongoose-unique-validator');
-const GeoJson = require("./geoJson");
+const GeoJson = require("./geoJson").schema;
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -24,6 +24,4 @@ const userSchema = new mongoose.Schema({
 });
 
 userSchema.plugin(uniqueValidatorPlugin);
-const User = mongoose.model('User',userSchema);
-
-module.exports = User;
+module.exports = mongoose.model('User',userSchema);

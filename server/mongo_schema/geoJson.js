@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { notEqual } = require("node:assert");
 
 const geoPositionSchema = new mongoose.Schema({
   type: {
@@ -51,6 +50,4 @@ const geoJsonSchema = new mongoose.Schema({
   },
 });
 
-const GeoJson = mongoose.model("GeoJson", geoJsonSchema);
-
-module.exports = GeoJson;
+module.exports = mongoose.model("GeoJson", geoJsonSchema);
