@@ -6,6 +6,4 @@ const keywordSchema = new mongoose.Schema({
 
 });
 
-const Keyword = mongoose.model('Keyword',keywordSchema);
-
-module.exports =  Keyword;
+module.exports =  mongoose.model('Keyword',keywordSchema);

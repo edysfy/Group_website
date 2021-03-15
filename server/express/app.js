@@ -26,6 +26,7 @@ mongoose.connect(mongoDBConnect,{ useNewUrlParser: true, useUnifiedTopology: tru
     console.log("Failed to connect ot mongoDb");
 })
 
+
 app.use("/user",userRoutes);
 
 
