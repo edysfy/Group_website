@@ -9,18 +9,21 @@ import * as mapboxgl from 'mapbox-gl';
   styleUrls: ['./mapbox.component.css']
 })
 export class MapboxComponent implements OnInit {
+  public map!: mapboxgl.Map;
 
-  constructor() { }
+  constructor() {
+
+   }
 
   ngOnInit(): void {
-    (mapboxgl as any).accessToken = 'pk.eyJ1IjoiaGFyaXBhdGVsODgiLCJhIjoiY2tsdHk3bmJlMGhobTJ2bXd5bDFsa2dpbyJ9.Mic9DjTPNfqPpOvWJZkMIg';
-    var map = new mapboxgl.Map({
+    (mapboxgl as any).accessToken = environment.mapboxToken;
+    this.map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
     zoom: 12,
     center: [-122.447303, 37.753574]
     });
-    map.on("click", function(e:any){
+    this.map.on("click", function(e:any){
       console.log("background click", e.lngLat);
       var geojson = {
           type: "FeatureCollection",
@@ -31,4 +34,5 @@ export class MapboxComponent implements OnInit {
       };
   });
   }
+
 }
