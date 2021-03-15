@@ -2,12 +2,13 @@ const express = require("express");
 const router = express.Router();
 const User = require("../../mongo_schema/user");
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const secretKey = require("../jwtsecretkey");
 
 router.post("/signup", (req, res, next) => {
   const saltRounds = 10;
   /*looked online and bcrypt is good lib to hash/secure passwords*/
-  bcrypt.hash(req.body.password, saltRounds)
-  .then((hashedPassword) => {
+  bcrypt.hash(req.body.password, saltRounds).then((hashedPassword) => {
     /*create user model with request body parameters*/
     const user = new User({
       username: req.body.username,
@@ -37,8 +38,7 @@ router.post("/signup", (req, res, next) => {
 });
 
 router.post("/login", (req, res, next) => {
-  User.findOne({ username: req.body.username })
-  .then((query) => {
+  User.findOne({ username: req.body.username }).then((query) => {
     /*if username not in the database query is null*/
     if (query === null) {
       return res.status(404).json({
@@ -48,24 +48,38 @@ router.post("/login", (req, res, next) => {
     }
     /*get the password in db and compare to the request body password*/
     const userHashPassword = query.password;
-    passwordMatch(req.body.password, userHashPassword,res);
-  })
+    passwordMatch(req.body.username, req.body.password, userHashPassword, res);
+  });
 });
 
-async function passwordMatch(frontEndPassword, userHashPassword,res) {
+async function passwordMatch(
+  frontEndUsername,
+  frontEndPassword,
+  userHashPassword,
+  res
+) {
   /*compare passwords and send correct response*/
   const comparePromise = bcrypt.compare(frontEndPassword, userHashPassword);
   const doPasswordsMatch = await comparePromise;
-  
+
   if (!doPasswordsMatch) {
     return res.status(406).json({
       message: "Incorrect password",
       login: false,
     });
   }
+  /*create jwt token to authenticate user in front end*/
+  const token = jwt.sign(
+    {
+      username: frontEndUsername,
+      password: frontEndPassword,
+    },
+    secretKey,
+    { expiresIn: "1h" },
+  );
   return res.status(200).json({
-    message: "Login Successful",
-    login: true,
+    token: token,
+    expireIn: 3600,
   });
 }
 
