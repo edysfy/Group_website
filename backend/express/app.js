@@ -8,7 +8,6 @@ const path = require('path');
 const mongoDBConnect = "mongodb+srv://Hari:G8F1P3MeLb77pV48@cluster0.9hjpe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 /*init an express middleware*/
-const api = require('./routes/api');
 const app = express();
 
 /*use cors to allow cross origin resource*/
@@ -21,7 +20,6 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 app.use(express.static(path.join(__dirname, '../../dist/demosite')));
 // Catch all other routes and return the index file
-app.use('/api', api);
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '../../dist/index.html'));
 });
@@ -37,7 +35,7 @@ mongoose.connect(mongoDBConnect,{ useNewUrlParser: true, useUnifiedTopology: tru
 
 
 
-app.use("/user",userRoutes);
+app.use("/api/user",userRoutes);
 
 
 

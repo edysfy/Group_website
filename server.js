@@ -1,5 +1,5 @@
 const http = require('http');
-const app = require('./server/express/app');
+const app = require('./backend/express/app');
 
 /* set up the port variable*/
 const port = process.env.PORT || '3000';

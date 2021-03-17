@@ -4,8 +4,7 @@ const path = require('path');
 const http = require('http');
 const bodyParser = require('body-parser');
 
-// Get our API routes
-const api = require('./server/express/routes/api');
+
 
 const app = express();
 
@@ -15,9 +14,6 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 // Point static path to dist (folder where build files are located) might have to change this name for your computer
 app.use(express.static(path.join(__dirname, 'dist/demosite')));
-
-// Set our api routes
-app.use('/api', api);
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
