@@ -2,6 +2,8 @@
     position: absolute;
     left:200px;
     top: 25px;
+    display: flex;
+    width: 500px;
 }
 /* Style the submit button */
 .searchBtn {
