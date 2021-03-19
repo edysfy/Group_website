@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const userRoutes = require('./routes/user');
+const geopostRoutes = require('./routes/geopost');
+
 const path = require('path');
 
 const mongoDBConnect = "mongodb+srv://Hari:G8F1P3MeLb77pV48@cluster0.9hjpe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
@@ -20,7 +22,7 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 app.use(express.static(path.join(__dirname, '../../dist/demosite')));
 // Catch all other routes and return the index file
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../../dist/index.html'));
 });
 
@@ -36,6 +38,8 @@ mongoose.connect(mongoDBConnect,{ useNewUrlParser: true, useUnifiedTopology: tru
 
 
 app.use("/api/user",userRoutes);
+app.use("/api/geopost",geopostRoutes);
+
 
 
 

@@ -17,7 +17,7 @@ const postSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  dataTime: {
+  dateTime: {
     type: Date,
     required: true,
   },
