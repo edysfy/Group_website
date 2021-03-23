@@ -14,7 +14,6 @@ USER node
 
 # Run the command inside your image filesystem.
 RUN npm install
-RUN apk --no-cache add --virtual builds-deps build-base python
 
 COPY --chown=node:node . .
 
