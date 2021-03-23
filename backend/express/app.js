@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const userRoutes = require('./routes/user');
 const geopostRoutes = require('./routes/geopost');
+const apiRoutes = require('./routes/api');
 
 const path = require('path');
 
@@ -39,6 +40,7 @@ mongoose.connect(mongoDBConnect,{ useNewUrlParser: true, useUnifiedTopology: tru
 
 app.use("/api/user",userRoutes);
 app.use("/api/geopost",geopostRoutes);
+app.use("/api",apiRoutes);
 
 
 

@@ -16,13 +16,13 @@ services:
       - MONGO_PORT=$MONGO_PORT
       - MONGO_DB=$MONGO_DB
     ports:
-      - "3001:3001"
+      - "3000:3000"
     volumes:
       - .:/home/node/app
       - node_modules:/home/node/app/node_modules
     networks:
       - app-network
-    command: ./wait-for.sh db:27017 -- /home/node/app/node_modules/.bin/nodemon serverOld.js
+    command: ./wait-for.sh db:27017 -- /home/node/app/node_modules/.bin/nodemon server.js
 
   db:
     image: mongo:4.1.8-xenial
