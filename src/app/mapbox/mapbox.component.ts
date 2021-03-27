@@ -50,13 +50,13 @@ export class MapboxComponent implements OnInit {
             'match',
             ['get', 'ethnicity'],
             'White',
-            '#fbb03b',
+            '#ff0000',
             'Black',
-            '#223b53',
+            '#aa0055',
             'Hispanic',
-            '#e55e5e',
+            '#6a0095',
             'Asian',
-            '#3bb2d0',
+            '#2b00d4',
             /* other */ '#ccc'
           ]
         }
