@@ -3,6 +3,8 @@ import { environment } from '../../environments/environment.prod';
 
 import * as mapboxgl from 'mapbox-gl';
 
+import { DatafetchService } from '../datafetch.service';
+
 @Component({
   selector: 'app-mapbox',
   templateUrl: './mapbox.component.html',
@@ -11,7 +13,7 @@ import * as mapboxgl from 'mapbox-gl';
 export class MapboxComponent implements OnInit {
   public map!: mapboxgl.Map;
 
-  constructor() {
+  constructor(private dataService: DatafetchService) {
 
    }
 
@@ -26,7 +28,7 @@ export class MapboxComponent implements OnInit {
     this.map.on('load', () => {
       this.map.addSource('ethnicity', {
         type: 'vector',
-        url: 'mapbox://examples.8fgz4egr'
+        url: this.dataService.getDataSource() /*could change this to load each bit of data on its own - array of urls?*/
       });
       this.map.addLayer({
         'id': 'population',
