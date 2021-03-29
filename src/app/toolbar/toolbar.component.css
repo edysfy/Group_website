@@ -1,0 +1,77 @@
+.toolbar {
+    position: absolute;
+    display: inline-flex;
+    top: 0px;
+    left: 0;
+    right: 0;
+    height: 82px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 35px;
+    font-family: 'Arvo', serif;
+    font-family: 'Fredoka One', cursive;
+    z-index: 5;
+    box-shadow: 0 5px 5px 5px rgb(250, 68, 153), 
+    0 1px 1px 0 rgba(250, 68, 153,1), 
+    0 1px 3px 0 rgba(250, 68, 153,1);
+  }
+
+  .toolbar_white {
+    position: absolute;
+    display: inline-flex;
+    top: 0px;
+    left: 0;
+    right: 0;
+    height: 82px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 35px;
+    font-family: 'Arvo', serif;
+    font-family: 'Fredoka One', cursive;
+    z-index: 5;
+    box-shadow: 0 5px 5px 5px rgb(255,255,255), 
+    0 1px 1px 0 rgba(255,255,255,1), 
+    0 1px 3px 0 rgba(255,255,255,1);
+  }
+
+  .logo {
+    position: relative;
+    top: 5px;
+    left: -5px;
+    margin: 20px 20px;
+  }
+  .login {
+    top: -5px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+  }
+  .signUp {
+    top: -5px;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  .about{
+    position: relative;
+    left: 15px;
+    top: 0px;
+  }
+
+.loginSect{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    height: 40px;
+    position: absolute;
+    left: 70%;
+    top: 30px;
+}
+
+.Title {
+  position: relative;
+  top: 5px;
+}
