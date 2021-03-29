@@ -16,11 +16,13 @@ import { MatToolbarModule } from '@angular/material/Toolbar';
 import { MapboxComponent } from './mapbox/mapbox.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './authentication/login/login.component';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { AuthenticationService } from './service/authentication.service';
 import { UrlStateService } from './service/url-state.service';
 import { PostbuttonComponent } from './postbutton/postbutton.component';
+import { UserpostComponent } from './userpost/userpost.component';
 
 
 
@@ -33,6 +35,7 @@ const material = [
   MatToolbarModule,
   MatSidenavModule,
   MatIconModule,
+  MatDialogModule,
 
 ]
 
@@ -44,7 +47,8 @@ const material = [
     MapboxComponent,
     LoginComponent,
     SignupComponent,
-    PostbuttonComponent
+    PostbuttonComponent,
+    UserpostComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +58,7 @@ const material = [
     BrowserAnimationsModule,
   ],
   providers: [AuthenticationService, UrlStateService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [UserpostComponent]
 })
 export class AppModule { }
