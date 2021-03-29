@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { PostdetailsService } from '../postdetails.service'
+import { PostdetailsService } from '../service/postdetails.service';
 
 @Component({
   selector: 'app-userpost',

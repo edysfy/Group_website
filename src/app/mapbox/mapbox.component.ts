@@ -3,7 +3,7 @@ import { environment } from '../../environments/environment.prod';
 
 import * as mapboxgl from 'mapbox-gl';
 
-import { DatafetchService } from '../datafetch.service';
+import { DatafetchService } from '../service/datafetch.service';
 import { PostbuttonComponent } from '../postbutton/postbutton.component';
 
 @Component({

@@ -21,7 +21,7 @@ import { LoginComponent } from './authentication/login/login.component';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { AuthenticationService } from './service/authentication.service';
 import { UrlStateService } from './service/url-state.service';
-import { PostdetailsService } from './postdetails.service'
+import { PostdetailsService } from './service/postdetails.service';
 import { PostbuttonComponent } from './postbutton/postbutton.component';
 import { UserpostComponent } from './userpost/userpost.component';
 
