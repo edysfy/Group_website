@@ -8,14 +8,14 @@ div {
 }
 
 app-searchfield {
-    position: absolute;
-    left:37%;
+    position: fixed;
+    left:35%;
     bottom: 20px;
     width: 500px;
 }
 
 app-postbutton {
-    position: absolute;
+    position: fixed;
     left:20px;
     bottom: 15px;
     display: flex;
