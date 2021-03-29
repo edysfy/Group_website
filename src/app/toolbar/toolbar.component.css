@@ -1,5 +1,5 @@
 .toolbar {
-    position: absolute;
+    position: fixed;
     display: inline-flex;
     top: 0px;
     left: 0;

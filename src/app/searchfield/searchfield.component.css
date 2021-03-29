@@ -1,9 +1,4 @@
-.input-group{
-    position: relative;
-    left:146%;
-    top: 660px;
-    width: 500px;
-}
+
 
 .Keyword {
   background-color:rgb(250, 68, 153);
@@ -26,15 +21,3 @@ button {
   padding: 0 10px 0 0;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #adf78b;
-    opacity: 10; /* Firefox */
-    position: relative;
-    left: 10px;
-  }
-
-  .example-form-field {
-  width: 200px;
-  height: 40px;
-  background-color: white;
-}
