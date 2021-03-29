@@ -20,6 +20,7 @@ import { LoginComponent } from './authentication/login/login.component';
 import { SignupComponent } from './authentication/signup/signup.component';
 import { AuthenticationService } from './service/authentication.service';
 import { UrlStateService } from './service/url-state.service';
+import { PostbuttonComponent } from './postbutton/postbutton.component';
 
 
 
@@ -42,7 +43,8 @@ const material = [
     SearchfieldComponent,
     MapboxComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    PostbuttonComponent
   ],
   imports: [
     BrowserModule,

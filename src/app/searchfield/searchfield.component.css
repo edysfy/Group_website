@@ -19,14 +19,14 @@
     font-family: 'Akaya Telivigala', cursive;
     font-style: bold;
     font-size: 25px;
-    
+
   }
-  
+
 .form-control-day {
     height: 40px;
     background-color: #4135eb;
     width: 110px;
-    outline: none;    
+    outline: none;
     font-family: 'Akaya Telivigala', cursive;
     font-style: bold;
     font-size: 20px;
@@ -39,7 +39,7 @@
     background-color: #4135eb;
     color: #adf78b;
     width: 110px;
-    outline: none; 
+    outline: none;
     font-family: 'Akaya Telivigala', cursive;
     font-style: bold;
     font-size: 20px;
@@ -51,3 +51,9 @@
     position: relative;
     left: 10px;
   }
+
+  .example-form-field {
+  width: 200px;
+  height: 40px;
+  background-color: white;
+}

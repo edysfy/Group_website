@@ -1,0 +1,11 @@
+.button{
+    position: absolute;
+    left:20px;
+    bottom: 15px;
+    display: flex;
+
+}
+
+.icon-display {
+   transform: scale(2);
+}

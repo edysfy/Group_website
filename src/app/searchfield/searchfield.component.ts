@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./searchfield.component.css']
 })
 export class SearchfieldComponent implements OnInit {
+  value1 = 'Keyword';
+  value2 = 'Date';
 
   constructor() { }
 

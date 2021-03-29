@@ -4,6 +4,7 @@ import { environment } from '../../environments/environment.prod';
 import * as mapboxgl from 'mapbox-gl';
 
 import { DatafetchService } from '../datafetch.service';
+import { PostbuttonComponent } from '../postbutton/postbutton.component';
 
 @Component({
   selector: 'app-mapbox',
