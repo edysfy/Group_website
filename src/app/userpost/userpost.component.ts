@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
-import { PostdetailsService } from '../service/postdetails.service';
+import {PostService} from '../service/post.service';
 
 @Component({
   selector: 'app-userpost',
@@ -9,10 +10,19 @@ import { PostdetailsService } from '../service/postdetails.service';
 })
 export class UserpostComponent implements OnInit {
 
+  form!: FormGroup;
+
   constructor(public dialogRef: MatDialogRef<UserpostComponent>,
-    public service: PostdetailsService ) { }
+    public postService: PostService ) { }
 
   ngOnInit(): void {
+    form: this.form = new FormGroup({
+      $key: new FormControl(null),
+      location: new FormControl(''),
+      rating: new FormControl(''),
+      keyword: new FormControl(''),
+      post: new FormControl(''),
+    })
   }
 
   onClose() {

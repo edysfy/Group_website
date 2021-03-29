@@ -3,7 +3,7 @@ import { environment } from '../../environments/environment.prod';
 
 import * as mapboxgl from 'mapbox-gl';
 
-import { DatafetchService } from '../service/datafetch.service';
+import { PostService } from '../service/post.service';
 import { PostbuttonComponent } from '../postbutton/postbutton.component';
 
 @Component({
@@ -12,9 +12,9 @@ import { PostbuttonComponent } from '../postbutton/postbutton.component';
   styleUrls: ['./mapbox.component.css']
 })
 export class MapboxComponent implements OnInit {
-  public map!: mapboxgl.Map;
+  public map!: mapboxgl.Map
 
-  constructor(private dataService: DatafetchService) {
+  constructor(private postService: PostService) {
 
    }
 
@@ -30,7 +30,7 @@ export class MapboxComponent implements OnInit {
       this.map.addSource('earthquakes', {
 
         type: 'geojson',
-        data: this.dataService.getDataSource()
+        data: this.postService.getDataSource()
       });
 
       this.map.addLayer(

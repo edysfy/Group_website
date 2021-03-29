@@ -3,7 +3,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 @Injectable({
   providedIn: 'root'
 })
-export class PostdetailsService {
+export class PostService {
 
   constructor() { }
 
@@ -14,4 +14,8 @@ export class PostdetailsService {
     keyword: new FormControl(''),
     post: new FormControl(''),
   })
+
+  getDataSource(): string {
+    return 'http://localhost:3001/api/dummyCoords';
+  }
 }
