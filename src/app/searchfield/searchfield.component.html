@@ -1,11 +1,20 @@
 <div class="input-group">
-    <form>
-        <input type="search" class="form-control-keyword" placeholder="Keyword" aria-label="Search"
-        aria-describedby="search-addon" />
-        <input type="search" class="form-control-day" placeholder="Days" aria-label="Search"
-        aria-describedby="search-addon" />
-         <button mat-raised-button color="primary">
-           <mat-icon>search</mat-icon>
-         </button>
-    </form>
+    <mat-card class="search">
+      <form>
+        <mat-form-field class="keyword">
+          <mat-label>Keyword</mat-label>
+          <input matInput type="search">
+        </mat-form-field>
+
+        <mat-form-field class="date">
+          <mat-label>Within Days</mat-label>
+          <input matInput type="number">
+        </mat-form-field>
+        <button mat-raised-button color="primary">
+          <mat-icon>search</mat-icon>
+        </button>
+      </form>
+  </mat-card>
   </div>
+
+
