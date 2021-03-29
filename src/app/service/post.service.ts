@@ -1,21 +1,32 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { IGeoJson, GeoJson } from '../models/geoJson';
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class PostService {
+  private geoPosts: IGeoJson[];
 
-  constructor() { }
+  constructor(private http: HttpClient) {
+    this.geoPosts = [];
+  }
 
-  form: FormGroup = new FormGroup({
-    $key: new FormControl(null),
-    location: new FormControl(''),
-    rating: new FormControl(''),
-    keyword: new FormControl(''),
-    post: new FormControl(''),
-  })
-
-  getDataSource(): string {
+  public getDataSource(): string {
     return 'http://localhost:3001/api/dummyCoords';
+  }
+
+  public getGeoPostData(): IGeoJson[] {
+    this.http
+      .get<{ message: String; geoPost: IGeoJson[] }>(
+        'http://localhost:3001/api/geoPost'
+      )
+      /*for geopost data defined above push to list*/
+      .subscribe((geoPostData) => {
+        if (this.geoPosts.length !== geoPostData.geoPost.length) {
+          this.geoPosts.push(...geoPostData.geoPost);
+        }
+      });
+    return this.geoPosts;
   }
 }

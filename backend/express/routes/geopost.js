@@ -26,7 +26,7 @@ router.get("", (req, res, next) => {
 router.post("", (req, res, next) => {
   const newPost = new GeoJson({
     type: req.body.type,
-    location: {
+    geometry: {
       type: req.body.location.type,
       coordinates: [
         req.body.location.coordinates[0],
