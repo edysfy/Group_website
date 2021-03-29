@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { PostdetailsService } from '../postdetails.service'
 
 @Component({
   selector: 'app-userpost',
@@ -8,7 +9,8 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class UserpostComponent implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<UserpostComponent>) { }
+  constructor(public dialogRef: MatDialogRef<UserpostComponent>,
+    public service: PostdetailsService ) { }
 
   ngOnInit(): void {
   }
