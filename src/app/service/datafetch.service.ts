@@ -9,6 +9,6 @@ export class DatafetchService {
   constructor() { }
 
   getDataSource(): string {
-    return 'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson';
+    return 'http://localhost:3001/api/dummyCoords';
   }
 }
