@@ -9,6 +9,15 @@ div {
 
 app-searchfield {
     position: absolute;
-    top: 100px;
-    left: -11%;
+    left:37%;
+    bottom: 20px;
+    width: 500px;
+}
+
+app-postbutton {
+    position: absolute;
+    left:20px;
+    bottom: 15px;
+    display: flex;
+
 }
