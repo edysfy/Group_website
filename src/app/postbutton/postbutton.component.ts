@@ -18,6 +18,8 @@ export class PostbuttonComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = true;
     dialogConfig.width = "30%";
+    dialogConfig.height = "55%";
+
     this.dialog.open(UserpostComponent,dialogConfig);
   }
 

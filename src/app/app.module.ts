@@ -25,6 +25,8 @@ import { UrlStateService } from './service/url-state.service';
 import { PostService } from './service/post.service';
 import { PostbuttonComponent } from './postbutton/postbutton.component';
 import { UserpostComponent } from './userpost/userpost.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatSelectModule} from '@angular/material/select';
 
 
 
@@ -39,6 +41,8 @@ const material = [
   MatIconModule,
   MatDialogModule,
   ReactiveFormsModule,
+  MatCheckboxModule,
+  MatSelectModule,
   HttpClientModule
 ]
 

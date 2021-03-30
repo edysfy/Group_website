@@ -1,8 +1,17 @@
 <mat-card class="userpost">
   <form [formGroup]="form" class="normal-form">
     <div class="container">
-      <mat-form-field>
-        <input formControlName="rating" matInput placeholder="enter rating">
+      <mat-form-field appearance="fill">
+        <mat-label>Rating</mat-label>
+        <mat-select formControlName="rating" multiple>
+          <mat-select-trigger>
+            {{ratings.value ? ratings.value[0] : ''}}
+            <span *ngIf="ratings.value?.length > 1" class="example-additional-selection">
+              (+{{ratings.value.length - 1}} {{ratings.value?.length === 2 ? 'other' : 'others'}})
+            </span>
+          </mat-select-trigger>
+          <mat-option *ngFor="let rating of ratingChoices" [value]="rating">{{rating}}</mat-option>
+        </mat-select>
       </mat-form-field>
       <mat-form-field>
         <input formControlName="keyword" matInput placeholder="keyword for rating">

@@ -10,7 +10,12 @@ import {PostService} from '../service/post.service';
 })
 export class UserpostComponent implements OnInit {
 
+  ratingChoices: string[]= ['1','2','3','4','5'];
+
   form!: FormGroup;
+
+  ratings = new FormControl('');
+
 
   constructor(public dialogRef: MatDialogRef<UserpostComponent>,
     public postService: PostService ) { }
@@ -19,7 +24,7 @@ export class UserpostComponent implements OnInit {
     form: this.form = new FormGroup({
       $key: new FormControl(null),
       location: new FormControl(''),
-      rating: new FormControl(''),
+      rating: this.ratings,
       keyword: new FormControl(''),
       post: new FormControl(''),
     })
