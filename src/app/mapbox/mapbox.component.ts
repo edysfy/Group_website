@@ -65,6 +65,16 @@ export class MapboxComponent implements OnInit {
         .addTo(this.map);
         console.log([marker.location.coordinates[0],marker.location.coordinates[1]]);
     });
+
+    /*Geolocation*/
+    this.map.addControl(
+      new mapboxgl.GeolocateControl({
+      positionOptions: {
+      enableHighAccuracy: true
+      },
+      trackUserLocation: true
+      })
+      );
     
 
 
