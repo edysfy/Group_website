@@ -19,7 +19,7 @@ export class PostService {
   public getGeoPostData(): IGeoJson[] {
     this.http
       .get<{ message: String; geoPost: IGeoJson[] }>(
-        'http://localhost:3001/api/geoPost'
+        'http://localhost:3000/api/geoPost'
       )
       /*for geopost data defined above push to list*/
       .subscribe((geoPostData) => {

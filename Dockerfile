@@ -18,7 +18,7 @@ RUN npm install
 COPY --chown=node:node . .
 
 # Add metadata to the image to describe which port the container is listening on at runtime.
-EXPOSE 3001
+EXPOSE 3000
 
 # Run the specified command within the container.
 CMD [ "node", "server.js" ]
