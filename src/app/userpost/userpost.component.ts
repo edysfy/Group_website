@@ -33,5 +33,8 @@ export class UserpostComponent implements OnInit {
   onClose() {
     this.dialogRef.close();
   }
+  onSubmit() {
+    this.dialogRef.close();
+  }
 
 }
