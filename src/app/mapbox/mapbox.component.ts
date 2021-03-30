@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment.prod';
-import { GeoJson } from '../models/geoJson';
+import { IGeoJson } from '../models/geoJson';
 
 import * as mapboxgl from 'mapbox-gl';
 
@@ -15,7 +15,7 @@ export class MapboxComponent implements OnInit {
   private map!: mapboxgl.Map;
   private latitude!: number;
   private longitude!: number;
-  private geoPost!: GeoJson[];
+  private geoPost!: IGeoJson[];
 
 
 
@@ -23,10 +23,13 @@ export class MapboxComponent implements OnInit {
 
   ngOnInit(): void {
     this.geoPost = this.postService.getGeoPostData();
+    console.log(this.geoPost);
     this.getUserCoords();
+
     
   }
 
+  /*gets user coordinates*/
   getUserCoords() {
     if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(position => {
@@ -37,6 +40,7 @@ export class MapboxComponent implements OnInit {
     }
   }
 
+  /*init map and flys to user coords*/
   initMap(): void {
     (mapboxgl as any).accessToken = environment.mapboxToken;
     this.map = new mapboxgl.Map({
@@ -47,7 +51,21 @@ export class MapboxComponent implements OnInit {
     this.map.flyTo({
       center: [this.longitude,this.latitude]
     })
-
+    console.log(" ");
+    /*init geoJson taken from database*/
+    var geojson = {
+      type: 'FeatureCollection',
+      features: this.geoPost,
+    };
+    geojson.features.forEach(marker => {
+  
+      // make a marker for each feature and add to the map
+      new mapboxgl.Marker()
+        .setLngLat([marker.location.coordinates[0],marker.location.coordinates[1]])
+        .addTo(this.map);
+        console.log([marker.location.coordinates[0],marker.location.coordinates[1]]);
+    });
+    
 
 
     // this.map.on('load', () => {

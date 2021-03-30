@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IGeoJson, GeoJson } from '../models/geoJson';
+import { IGeoJson } from '../models/geoJson';
 
 @Injectable({
   providedIn: 'root',

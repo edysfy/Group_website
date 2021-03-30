@@ -40,7 +40,7 @@ const geoJsonSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  geometry: {
+  location: {
     type: geoPositionSchema,
     required: true,
   },

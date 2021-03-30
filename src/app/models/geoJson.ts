@@ -8,25 +8,25 @@ export interface IPost {
 
 export interface IGeoPosition {
     type: string,
-    coordinates: Number[],
+    coordinates: number[],
 }
 
 export interface IGeoJson {
     type: string,
-    geometry: IGeoPosition,
+    location: IGeoPosition,
     properties: IPost,
     _id: string;
 }
 
 export class GeoJson implements IGeoJson {
     type = 'Feature';
-    geometry!: IGeoPosition;
+    location!: IGeoPosition;
     properties!: IPost; 
     _id: string;
 
-    constructor(properties: IPost, cord: Number[], _id: string) {
+    constructor(properties: IPost, cord: number[], _id: string) {
         this.properties = properties;
-        this.geometry = {
+        this.location = {
             type: 'Point',
             coordinates: cord,
         };
@@ -34,9 +34,3 @@ export class GeoJson implements IGeoJson {
     }
 }
 
-export class FeatureCollection {
-    type = 'FeatureCollection'
-    constructor(public features: Array<GeoJson>) {
-        
-    }
-}
