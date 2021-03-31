@@ -28,6 +28,7 @@ import { PostbuttonComponent } from './postbutton/postbutton.component';
 import { UserpostComponent } from './userpost/userpost.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -56,7 +57,8 @@ const material = [
     LoginComponent,
     SignupComponent,
     PostbuttonComponent,
-    UserpostComponent
+    UserpostComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
