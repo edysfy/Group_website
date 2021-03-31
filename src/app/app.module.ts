@@ -25,6 +25,7 @@ import { UrlStateService } from './service/url-state.service';
 import { PostService } from './service/post.service';
 import { PostbuttonComponent } from './postbutton/postbutton.component';
 import { UserpostComponent } from './userpost/userpost.component';
+import { AboutComponent } from './about/about.component';
 
 
 
@@ -51,7 +52,8 @@ const material = [
     LoginComponent,
     SignupComponent,
     PostbuttonComponent,
-    UserpostComponent
+    UserpostComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
