@@ -1,12 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IGeoJson } from '../models/geoJson';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostService {
   private geoPosts: IGeoJson[];
+  private latitude!: number;
+  private longitude!: number;
 
   constructor(private http: HttpClient) {
     this.geoPosts = [];
@@ -28,5 +31,19 @@ export class PostService {
         }
       });
     return this.geoPosts;
+  }
+
+  public getLocation(lat: number,long: number): void {
+    this.latitude = lat;
+    this.longitude= long;
+    console.log("look at the cords!");
+    console.log(this.latitude);
+    console.log(this.longitude);
+  }
+  public getLatitude(): number {
+    return this.latitude;
+  }
+  public getLongitude(): number {
+    return this.longitude;
   }
 }

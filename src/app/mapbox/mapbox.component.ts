@@ -26,7 +26,8 @@ export class MapboxComponent implements OnInit {
     console.log(this.geoPost);
     this.getUserCoords();
 
-    
+
+
   }
 
   /*gets user coordinates*/
@@ -36,6 +37,7 @@ export class MapboxComponent implements OnInit {
         this.latitude = position.coords.latitude;
         this.longitude = position.coords.longitude;
         this.initMap();
+        this.postService.getLocation(this.latitude,this.longitude);
       });
     }
   }
@@ -58,7 +60,7 @@ export class MapboxComponent implements OnInit {
       features: this.geoPost,
     };
     geojson.features.forEach(marker => {
-  
+
       // make a marker for each feature and add to the map
       new mapboxgl.Marker()
         .setLngLat([marker.location.coordinates[0],marker.location.coordinates[1]])
@@ -75,7 +77,7 @@ export class MapboxComponent implements OnInit {
       trackUserLocation: true
       })
       );
-    
+
 
 
     // this.map.on('load', () => {
@@ -201,8 +203,8 @@ export class MapboxComponent implements OnInit {
     //     'waterway-label'
     //   );
     // });
-    
+
   }
-  
+
 
 }
