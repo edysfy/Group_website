@@ -21,4 +21,8 @@ export class AboutComponent implements OnInit {
     });
   }
 
+  ngOnDestroy(): void {
+    this.subscriber.unsubscribe();
+    this.urlStateService.updatePathParamter('');
+  }
 }
