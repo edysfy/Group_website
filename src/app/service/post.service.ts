@@ -16,7 +16,7 @@ export class PostService {
   }
 
   public getDataSource(): string {
-    return 'http://localhost:3001/api/dummyCoords';
+    return 'http://localhost:3000/api/dummyCoords';
   }
 
   public getGeoPostData(): IGeoJson[] {
