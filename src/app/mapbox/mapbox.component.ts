@@ -102,11 +102,11 @@ export class MapboxComponent implements OnInit {
            source: 'earthquakes',
            maxzoom: 9,
           paint: {
-             // Increase the heatmap weight based on frequency and property magnitude
+             // Increase the heatmap weight based on frequency and property moodRatingnitude
             'heatmap-weight': [
               'interpolate',
               ['linear'],
-              ['get', 'mag'],
+              ['get', 'moodRating'],
               0,
               0,
               6,
@@ -175,21 +175,21 @@ export class MapboxComponent implements OnInit {
           source: 'earthquakes',
           minzoom: 7,
           paint: {
-            // Size circle radius by earthquake magnitude and zoom level
+            // Size circle radius by earthquake moodRatingnitude and zoom level
             'circle-radius': [
               'interpolate',
               ['linear'],
               ['zoom'],
               7,
-              ['interpolate', ['linear'], ['get', 'mag'], 1, 1, 6, 4],
+              ['interpolate', ['linear'], ['get', 'moodRating'], 1, 1, 6, 4],
               16,
-              ['interpolate', ['linear'], ['get', 'mag'], 1, 5, 6, 50],
+              ['interpolate', ['linear'], ['get', 'moodRating'], 1, 5, 6, 50],
             ],
-            // Color circle by earthquake magnitude
+            // Color circle by earthquake moodRatingnitude
             'circle-color': [
               'interpolate',
               ['linear'],
-              ['get', 'mag'],
+              ['get', 'moodRating'],
               1,
               'rgba(33,102,172,0)',
               2,
@@ -211,7 +211,7 @@ export class MapboxComponent implements OnInit {
         },
         'waterway-label'
       );
-      
+
      });
 
   }
