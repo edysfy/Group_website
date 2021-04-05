@@ -7,12 +7,14 @@
   align-items: flex-start;
   font-family: 'Arvo', serif;
   font-family: 'Fredoka One', cursive;
-  height: 80%;
+  height: 85%;
 }
 
 mat-dialog-content{
   height: 1000px;
   overflow-y: hidden !important;
+  overflow-x: hidden !important;
+
 }
 
 .container {
@@ -23,32 +25,63 @@ mat-dialog-content{
   width: 80%;
 
 }
-
 .icon-display {
  margin-left:10px;
  position: relative;
  top: -45px;
 
 }
-.mat-icon {
-  align-items: center;
-}
 
 h2{
   position: relative;
   color: White;
-  font-family: 'Arvo', serif;
-  font-family: 'Fredoka One', cursive;
   font-size: xx-large;
   text-align: center;
+  font-family: 'Arvo', serif;
+  font-family: 'Fredoka One', cursive;
 }
 
 mat-form-field {
   width: 80%;
   position: relative;
   left: 70px;
+  font-family: 'Arvo', serif;
+  font-family: 'Fredoka One', cursive;
 }
 
-.example-margin {
-  margin: 0 12px;
+.keywordAlert {
+  position: relative;
+  top: -10px;
+  left: 70%;
+  color: red;
+}
+
+.postAlert {
+  position: relative;
+  top: -10px;
+  left: 65%;
+  color: red;
+}
+
+.slider {
+  margin-top: 10px;
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+}
+
+.sliderForm {
+  width: 30%;
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.sliderSl {
+  position: relative;
+  left: 15px;
+  top: 15px;
+  width: 100%;
+  border-radius: 10px;
+  transform: scale(1.5);
+
 }

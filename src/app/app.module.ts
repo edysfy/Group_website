@@ -29,6 +29,7 @@ import { UserpostComponent } from './userpost/userpost.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import { AboutComponent } from './about/about.component';
+import {MatSliderModule} from '@angular/material/slider';
 
 
 
@@ -45,7 +46,7 @@ const material = [
   ReactiveFormsModule,
   MatCheckboxModule,
   MatSelectModule,
-  HttpClientModule
+  MatSliderModule
 ]
 
 @NgModule({
@@ -66,6 +67,8 @@ const material = [
     FontAwesomeModule,
     ...material,
     BrowserAnimationsModule,
+    HttpClientModule,
+
   ],
   providers: [AuthenticationService, UrlStateService, PostService, DataFetchService],
   bootstrap: [AppComponent],
