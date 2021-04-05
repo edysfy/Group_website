@@ -177,6 +177,7 @@ export class MapboxComponent implements OnInit {
         minzoom: 7,
         layout: {
             "icon-image": "marker-15",
+            'icon-allow-overlap': true,
             "icon-size": 2
         },
         paint: {
@@ -184,7 +185,33 @@ export class MapboxComponent implements OnInit {
         }
     });
 
-    
+    this.map.on('click', (e) => {
+var features = this.map.queryRenderedFeatures(e.point, {
+layers: ['markers']
+});
+
+if (!features.length) {
+return;
+}
+
+var feature = features[0];
+if(feature.geometry.type === 'Point'){
+  var cords = new mapboxgl.LngLat(feature.geometry.coordinates[0],feature.geometry.coordinates[1])
+
+var popup = new mapboxgl.Popup({ offset: [0, -15] })
+.setLngLat(cords)
+.setHTML(
+'<h3>' +
+feature?.properties?.moodRating +
+'</h3>'
+)
+.setLngLat(cords)
+.addTo(this.map);
+
+}
+});
+
+
   });
 }
 
