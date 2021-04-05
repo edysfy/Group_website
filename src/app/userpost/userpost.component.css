@@ -68,12 +68,15 @@ mat-form-field {
   display: flex;
   width: fit-content;
   height: fit-content;
+  position: relative;
+  left: 25%;
 }
 
 .sliderForm {
   width: 30%;
   -webkit-appearance: none;
   margin: 0;
+  position: relative;
 }
 
 .sliderSl {
