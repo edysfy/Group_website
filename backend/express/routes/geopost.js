@@ -34,7 +34,6 @@ router.post("", (req, res, next) => {
       ],
     },
     properties: {
-      username: req.body.properties.username,
       dateTime: req.body.properties.dateTime,
       keyword: req.body.properties.keyword,
       mood: req.body.properties.mood,

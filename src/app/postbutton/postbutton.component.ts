@@ -18,7 +18,7 @@ export class PostbuttonComponent implements OnInit {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = false;
     dialogConfig.width = "60%";
-    dialogConfig.height = "85%";
+    dialogConfig.height = "78%";
     dialogConfig.hasBackdrop = true;
     dialogConfig.panelClass = 'custom-dialog';
     

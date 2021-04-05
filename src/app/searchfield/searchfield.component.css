@@ -12,6 +12,7 @@
   display: inline-flex;
   height: min-content;
   border-radius: 50px;
+  height: 40px;
 }
 
 button {
