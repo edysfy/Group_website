@@ -1,11 +1,13 @@
-.button{
-    position: absolute;
-    left:20px;
-    bottom: 15px;
-    display: flex;
 
-}
 
 .icon-display {
    transform: scale(2);
 }
+::ng-deep .custom-dialog  mat-dialog-container {
+   background-color: rgb(250, 68, 153,0.3);
+   justify-content: center;
+   text-align: left;
+   border-radius: 30px;
+   overflow-y: hidden !important;
+
+ }

@@ -1,9 +1,10 @@
 const express = require('express');
+const path = require('path');
 const router = express.Router();
 
-/* GET api listing. */
+/* Serve dummy data */
 router.get('/', (req, res) => {
-  res.send('api works');
+   res.sendFile(path.join(__dirname, '../../dummyData.geojson'));
 });
 
 module.exports = router;

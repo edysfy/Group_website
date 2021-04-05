@@ -1,5 +1,5 @@
 .toolbar {
-    position: absolute;
+    position: fixed;
     display: inline-flex;
     top: 0px;
     left: 0;
@@ -13,7 +13,7 @@
     font-family: 'Fredoka One', cursive;
     z-index: 5;
     box-shadow: 0 5px 5px 5px rgb(250, 68, 153), 
-    0 1px 1px 0 rgba(250, 68, 153,1), 
+    0 1px 1px 0 rgb(31, 27, 29), 
     0 1px 3px 0 rgba(250, 68, 153,1);
   }
 
@@ -59,6 +59,8 @@
     position: relative;
     left: 15px;
     top: 0px;
+    cursor: pointer;
+
   }
 
 .loginSect{
