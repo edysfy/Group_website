@@ -5,7 +5,7 @@ import { IGeoJson } from '../models/geoJson';
 import * as mapboxgl from 'mapbox-gl';
 
 import { PostService } from '../service/post.service';
-import { DataFetchService} from '../data-fetch.service';
+import { DataFetchService } from '../data-fetch.service';
 
 @Component({
   selector: 'app-mapbox',
@@ -19,36 +19,33 @@ export class MapboxComponent implements OnInit {
   private geoPost!: IGeoJson[];
   dataHolder: any = [];
 
-
-
-  constructor(private postService: PostService, private dataService : DataFetchService) {}
+  constructor(
+    private postService: PostService,
+    private dataService: DataFetchService
+  ) {}
 
   ngOnInit(): void {
     this.geoPost = this.postService.getGeoPostData();
     console.log(this.geoPost);
     this.retrieveData();
     this.getUserCoords();
-
-
-
-
   }
 
   /*gets user coordinates*/
   getUserCoords() {
-    if(navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(position => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
         this.latitude = position.coords.latitude;
         this.longitude = position.coords.longitude;
         this.initMap();
-        this.postService.getLocation(this.latitude,this.longitude);
+        this.postService.getLocation(this.latitude, this.longitude);
       });
     }
   }
   retrieveData() {
-    this.dataService.getData().subscribe(
-      dummyData => this.dataHolder = dummyData
-    )
+    this.dataService
+      .getData()
+      .subscribe((dummyData) => (this.dataHolder = dummyData));
   }
 
   /*init map and flys to user coords*/
@@ -60,50 +57,52 @@ export class MapboxComponent implements OnInit {
       zoom: 6,
     });
     this.map.flyTo({
-      center: [this.longitude,this.latitude]
-    })
-    console.log(" ");
+      center: [this.longitude, this.latitude],
+    });
+    console.log(' ');
     /*init geoJson taken from database*/
     var geojson = {
       type: 'FeatureCollection',
       features: this.geoPost,
     };
-    geojson.features.forEach(marker => {
-
+    geojson.features.forEach((marker) => {
       // make a marker for each feature and add to the map
       new mapboxgl.Marker()
-        .setLngLat([marker.location.coordinates[0],marker.location.coordinates[1]])
+        .setLngLat([
+          marker.location.coordinates[0],
+          marker.location.coordinates[1],
+        ])
         .addTo(this.map);
-        console.log([marker.location.coordinates[0],marker.location.coordinates[1]]);
+      console.log([
+        marker.location.coordinates[0],
+        marker.location.coordinates[1],
+      ]);
     });
 
     /*Geolocation*/
     this.map.addControl(
       new mapboxgl.GeolocateControl({
-      positionOptions: {
-      enableHighAccuracy: true
-      },
-      trackUserLocation: true
+        positionOptions: {
+          enableHighAccuracy: true,
+        },
+        trackUserLocation: true,
       })
-      );
+    );
 
+    this.map.on('load', () => {
+      this.map.addSource('earthquakes', {
+        type: 'geojson',
+        data: this.dataHolder,
+      });
 
-
-     this.map.on('load', () => {
-
-       this.map.addSource('earthquakes', {
-         type: 'geojson',
-         data: this.dataHolder,
-       });
-
-       this.map.addLayer(
-         {
-           id: 'earthquakes-heat',
-           type: 'heatmap',
-           source: 'earthquakes',
-           maxzoom: 9,
+      this.map.addLayer(
+        {
+          id: 'earthquakes-heat',
+          type: 'heatmap',
+          source: 'earthquakes',
+          maxzoom: 9,
           paint: {
-             // Increase the heatmap weight based on frequency and property moodRatingnitude
+            // Increase the heatmap weight based on frequency and property moodRatingnitude
             'heatmap-weight': [
               'interpolate',
               ['linear'],
@@ -170,49 +169,42 @@ export class MapboxComponent implements OnInit {
       );
 
       this.map.addLayer({
-        id: "markers",
+        id: 'markers',
         interactive: true,
-        type: "symbol",
-        source: "earthquakes",
+        type: 'symbol',
+        source: 'earthquakes',
         minzoom: 7,
         layout: {
-            "icon-image": "marker-15",
-            'icon-allow-overlap': true,
-            "icon-size": 2
+          'icon-image': 'marker-15',
+          'icon-allow-overlap': true,
+          'icon-size': 2,
         },
-        paint: {
+        paint: {},
+      });
 
+      this.map.on('click', (e) => {
+        var features = this.map.queryRenderedFeatures(e.point, {
+          layers: ['markers'],
+        });
+
+        if (!features.length) {
+          return;
         }
+
+        var feature = features[0];
+        if (feature.geometry.type === 'Point') {
+          var cords = new mapboxgl.LngLat(
+            feature.geometry.coordinates[0],
+            feature.geometry.coordinates[1]
+          );
+
+          var popup = new mapboxgl.Popup({ offset: [0, -15] })
+            .setLngLat(cords)
+            .setHTML('<h3>' + feature?.properties?.moodRating + '</h3>')
+            .setLngLat(cords)
+            .addTo(this.map);
+        }
+      });
     });
-
-    this.map.on('click', (e) => {
-var features = this.map.queryRenderedFeatures(e.point, {
-layers: ['markers']
-});
-
-if (!features.length) {
-return;
-}
-
-var feature = features[0];
-if(feature.geometry.type === 'Point'){
-  var cords = new mapboxgl.LngLat(feature.geometry.coordinates[0],feature.geometry.coordinates[1])
-
-var popup = new mapboxgl.Popup({ offset: [0, -15] })
-.setLngLat(cords)
-.setHTML(
-'<h3>' +
-feature?.properties?.moodRating +
-'</h3>'
-)
-.setLngLat(cords)
-.addTo(this.map);
-
-}
-});
-
-
-  });
-}
-
+  }
 }

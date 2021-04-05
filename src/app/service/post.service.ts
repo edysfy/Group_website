@@ -32,13 +32,14 @@ export class PostService {
       });
     return this.geoPosts;
   }
-
+  
+  public postGeoPost(): void {
+    
+  }
+  
   public getLocation(lat: number,long: number): void {
     this.latitude = lat;
     this.longitude= long;
-    console.log("look at the cords!");
-    console.log(this.latitude);
-    console.log(this.longitude);
   }
   public getLatitude(): number {
     return this.latitude;
