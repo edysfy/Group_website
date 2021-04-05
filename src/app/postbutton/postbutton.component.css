@@ -8,4 +8,6 @@
    justify-content: center;
    text-align: left;
    border-radius: 30px;
+   overflow-y: hidden !important;
+
  }
