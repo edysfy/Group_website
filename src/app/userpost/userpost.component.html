@@ -1,4 +1,4 @@
-<mat-card class="userpost">
+<!-- <mat-card class="userpost">
   <form [formGroup]="form" class="normal-form">
     <div class="container">
       <mat-form-field appearance="fill">
@@ -22,4 +22,39 @@
   <button mat-fab color="primary" (click)="onSubmit()" class="icon-display">
     <mat-icon class="mat-icon" inline=true>send</mat-icon>
   </button>
-</mat-card>
+</mat-card> -->
+<h2 mat-dialog-title>Emote Post</h2>
+
+<mat-dialog-content [formGroup]="form" class="normal-form">
+  
+  <mat-card class="userpost">
+    <mat-form-field appearance="fill">
+      <mat-label>Emote Value</mat-label>
+      <mat-select formControlName="rating">
+        <mat-option *ngFor="let rating of ratingChoices" [value]="rating">{{rating}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <input formControlName="keyword" matInput placeholder="Emote Keyword">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Emote Here</mat-label>
+      <textarea formControlName="post" matInput placeholder="Describe how you are feeling today" rows="20"></textarea>
+    </mat-form-field>
+  </mat-card>
+
+      ....
+ 
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-fab color="primary" (click)="onClose()" class="icon-display">
+    <mat-icon class="mat-icon" inline=true>close</mat-icon>
+  </button>
+  <div>
+
+  </div>
+  <button mat-fab color="primary" (click)="onSubmit()" class="icon-display">
+    <mat-icon class="mat-icon" inline=true>send</mat-icon>
+  </button>
+</mat-dialog-actions>

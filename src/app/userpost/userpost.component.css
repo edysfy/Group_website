@@ -1,6 +1,19 @@
 .userpost{
-  border-radius: 10px;
+  position: relative;
+  top: 24px;
+  border-radius: 30px;
   background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'Arvo', serif;
+  font-family: 'Fredoka One', cursive;
+  height: 500px;
+}
+
+mat-dialog-content{
+  height: 1000px;
+  overflow-y: hidden !important;
 }
 
 .container {
@@ -14,10 +27,28 @@
 
 .icon-display {
  margin-left:10px;
+ margin-top: 30px;
+ position: relative;
+
 }
 .mat-icon {
   align-items: center;
+}
 
+h2{
+  position: relative;
+  top: 20px;
+  color: White;
+  font-family: 'Arvo', serif;
+  font-family: 'Fredoka One', cursive;
+  font-size: xx-large;
+  text-align: center;
+}
+
+mat-form-field {
+  width: 80%;
+  position: relative;
+  left: 70px;
 }
 
 .example-margin {

@@ -25,10 +25,7 @@ export class UserpostComponent implements OnInit {
 
   ngOnInit(): void {
 
-    form: this.form = new FormGroup({
-      $key: new FormControl(null),
-      locationLat: new FormControl(this.postService.getLatitude()),
-      locationLong: new FormControl(this.postService.getLongitude()),
+      this.form = new FormGroup({
       rating: this.ratings,
       keyword: new FormControl(''),
       post: new FormControl(''),
@@ -39,13 +36,10 @@ export class UserpostComponent implements OnInit {
     this.dialogRef.close();
   }
   onSubmit() {
-    console.log(this.form.controls['locationLat'].value);
-    console.log(this.form.controls['locationLong'].value);
-    console.log(this.form.controls['rating'].value);
-    console.log(this.form.controls['keyword'].value);
-    console.log(this.form.controls['post'].value);
+    console.log(this.form.value.rating);
+    console.log(this.form.value.keyword);
+    console.log(this.form.value.post);
     this.dialogRef.close();
   }
-
 
 }

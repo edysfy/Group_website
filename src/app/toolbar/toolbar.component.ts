@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { faUserPlus, faSignInAlt, faSignOutAlt, IconDefinition, faCogs } from '@fortawesome/free-solid-svg-icons';
-import { Observable } from 'rxjs';
 import { UrlStateService } from '../service/url-state.service';
 
 
@@ -16,7 +15,6 @@ export class ToolbarComponent implements OnInit{
   faUserPlus: IconDefinition = faUserPlus;
   faSignInAlt: IconDefinition = faSignInAlt;
   faSignOutAlt: IconDefinition = faSignOutAlt;
-  faCogs: IconDefinition = faCogs;
   
   constructor(private urlStateService: UrlStateService) {
     this.toolbarAccentColour = true;
@@ -35,7 +33,7 @@ export class ToolbarComponent implements OnInit{
         this.title = 'Sign Up'
       }else if(param ==='about') {
         this.toolbarAccentColour = false;
-        this.title = 'About'
+        this.title = 'EmoteMap'
       }else {
         this.toolbarAccentColour = true;
         this.title = "EmoteMap";
