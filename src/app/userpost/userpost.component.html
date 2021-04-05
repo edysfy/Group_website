@@ -26,35 +26,41 @@
 <h2 mat-dialog-title>Emote Post</h2>
 
 <mat-dialog-content [formGroup]="form" class="normal-form">
-
   <mat-card class="userpost">
-    <mat-form-field appearance="fill">
-      <mat-label>Emote Value</mat-label>
-      <mat-select formControlName="rating">
-        <mat-option *ngFor="let rating of ratingChoices" [value]="rating">{{rating}}</mat-option>
-      </mat-select>
+    <div class="slider">
+      <mat-form-field class="sliderForm">
+        <mat-label>Emote Value</mat-label>
+        <input formControlName="rating" matInput [(ngModel)]="val" type="number" min="0" max="10"
+          onkeydown="return false" />
+      </mat-form-field>
+      <mat-slider class="sliderSl" thumbLabel tickInterval="auto" [displayWith]="formatLabel" min="0" max="10" step="1"
+        [value]="val" (input)="onSliderChange($event)"></mat-slider>
+    </div>
+
+    <mat-form-field appearance="outline" class="keyword">
+      <input formControlName="keyword" matInput placeholder="Emote Keyword" pattern="[a-zA-Z0-9]+" />
+      <div class="keywordAlert" *ngIf="
+          form.controls['keyword'].invalid && form.controls['keyword'].dirty">
+        :) Enter one valid word :)
+      </div>
     </mat-form-field>
-    <mat-form-field>
-      <input formControlName="keyword" matInput placeholder="Emote Keyword">
-    </mat-form-field>
-    <mat-form-field>
+    <mat-form-field appearance="outline" class="post">
       <mat-label>Emote Here</mat-label>
-      <textarea style="resize: none;" formControlName="post" matInput placeholder="Describe how you are feeling today"
-        rows="20"></textarea>
+      <textarea style="resize: none" formControlName="post" matInput placeholder="Describe how you are feeling today"
+        rows="18"></textarea>
+      <div class="postAlert" *ngIf="form.controls['post'].invalid && form.controls['post'].dirty">
+        :) You have to enter a post :)
+      </div>
     </mat-form-field>
   </mat-card>
-
-
 </mat-dialog-content>
 
 <mat-dialog-actions>
   <button mat-fab color="primary" (click)="onClose()" class="icon-display">
-    <mat-icon class="mat-icon" inline=true>close</mat-icon>
+    <mat-icon class="mat-icon" inline="true">close</mat-icon>
   </button>
-  <div>
-
-  </div>
+  <div></div>
   <button mat-fab color="primary" (click)="onSubmit()" class="icon-display">
-    <mat-icon class="mat-icon" inline=true>send</mat-icon>
+    <mat-icon class="mat-icon" inline="true">send</mat-icon>
   </button>
 </mat-dialog-actions>
