@@ -6,6 +6,9 @@ import * as mapboxgl from 'mapbox-gl';
 
 import { PostService } from '../service/post.service';
 import { DataFetchService } from '../data-fetch.service';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { UserpostComponent } from '../userpost/userpost.component';
+import { Subscriber, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-mapbox',
@@ -14,34 +17,22 @@ import { DataFetchService } from '../data-fetch.service';
 })
 export class MapboxComponent implements OnInit {
   private map!: mapboxgl.Map;
-  private latitude!: number;
-  private longitude!: number;
   private geoPost!: IGeoJson[];
   dataHolder: any = [];
 
   constructor(
     private postService: PostService,
-    private dataService: DataFetchService
+    private dataService: DataFetchService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
     this.geoPost = this.postService.getGeoPostData();
     console.log(this.geoPost);
     this.retrieveData();
-    this.getUserCoords();
+    this.initMap();
   }
 
-  /*gets user coordinates*/
-  getUserCoords() {
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        this.latitude = position.coords.latitude;
-        this.longitude = position.coords.longitude;
-        this.initMap();
-        this.postService.getLocation(this.latitude, this.longitude);
-      });
-    }
-  }
   retrieveData() {
     this.dataService
       .getData()
@@ -55,28 +46,7 @@ export class MapboxComponent implements OnInit {
       container: 'map',
       style: 'mapbox://styles/mapbox/dark-v10',
       zoom: 6,
-    });
-    this.map.flyTo({
-      center: [this.longitude, this.latitude],
-    });
-    console.log(' ');
-    /*init geoJson taken from database*/
-    var geojson = {
-      type: 'FeatureCollection',
-      features: this.geoPost,
-    };
-    geojson.features.forEach((marker) => {
-      // make a marker for each feature and add to the map
-      new mapboxgl.Marker()
-        .setLngLat([
-          marker.location.coordinates[0],
-          marker.location.coordinates[1],
-        ])
-        .addTo(this.map);
-      console.log([
-        marker.location.coordinates[0],
-        marker.location.coordinates[1],
-      ]);
+      center: [ -0.2101765,  51.5942466],
     });
 
     /*Geolocation*/
@@ -88,6 +58,25 @@ export class MapboxComponent implements OnInit {
         trackUserLocation: true,
       })
     );
+    this.map.addControl(new mapboxgl.NavigationControl());
+
+    this.map.on('click', (e) => {
+      const zoom = this.map.getZoom()
+      console.log(zoom);
+      if(zoom > 10) {
+        const dialogConfig = new MatDialogConfig();
+        dialogConfig.autoFocus = false;
+        dialogConfig.width = '60%';
+        dialogConfig.height = '78%';
+        dialogConfig.hasBackdrop = true;
+        dialogConfig.panelClass = 'custom-dialog';
+        this.dialog.open(UserpostComponent, dialogConfig);
+        this.postService.updateLongLat({
+          long: e.lngLat.lng,
+          lat: e.lngLat.lat
+        })
+      }
+    });
 
     this.map.on('load', () => {
       this.map.addSource('earthquakes', {
@@ -182,10 +171,11 @@ export class MapboxComponent implements OnInit {
         paint: {},
       });
 
-      this.map.on('click', (e) => {
+      this.map.on('mouseenter','markers', (e) => {
         var features = this.map.queryRenderedFeatures(e.point, {
           layers: ['markers'],
         });
+        this.map.getCanvas().style.cursor = 'pointer';
 
         if (!features.length) {
           return;
@@ -198,13 +188,23 @@ export class MapboxComponent implements OnInit {
             feature.geometry.coordinates[1]
           );
 
-          var popup = new mapboxgl.Popup({ offset: [0, -15] })
+          var popup = new mapboxgl.Popup({
+            offset: [0, -15],
+            closeButton: false,
+            closeOnClick: false,
+          })
             .setLngLat(cords)
             .setHTML('<h3>' + feature?.properties?.moodRating + '</h3>')
             .setLngLat(cords)
             .addTo(this.map);
         }
+        this.map.on('mouseleave', 'markers', (e)=> {
+          this.map.getCanvas().style.cursor = '';
+          popup.remove();
+          });
       });
     });
+
+
   }
 }

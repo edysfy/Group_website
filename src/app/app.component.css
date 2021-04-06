@@ -6,7 +6,11 @@
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
   }
+
+  
 
   h1,
   h2,
