@@ -17,6 +17,10 @@ mat-dialog-content{
 
 }
 
+mat-label {
+  color: whitesmoke;
+}
+
 .container {
   width: 100%;
   padding: 5%;

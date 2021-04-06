@@ -28,10 +28,6 @@ export class MapboxComponent implements OnInit {
     console.log(this.geoPost);
     this.retrieveData();
     this.getUserCoords();
-
-
-
-
   }
 
   /*gets user coordinates*/
@@ -86,6 +82,9 @@ export class MapboxComponent implements OnInit {
       trackUserLocation: true
       })
       );
+
+      this.map.addControl(new mapboxgl.NavigationControl());
+  
 
 
 
