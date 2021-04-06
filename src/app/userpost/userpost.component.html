@@ -38,7 +38,8 @@
     </div>
 
     <mat-form-field appearance="outline" class="keyword">
-      <input formControlName="keyword" matInput placeholder="Emote Keyword" pattern="[a-zA-Z0-9]+" />
+      <mat-label>Emote Keyword</mat-label>
+      <input formControlName="keyword" matInput placeholder="Describe your Emote with a keyword" pattern="[a-zA-Z0-9]+" />
       <div class="keywordAlert" *ngIf="
           form.controls['keyword'].invalid && form.controls['keyword'].dirty">
         :) Enter one valid word :)

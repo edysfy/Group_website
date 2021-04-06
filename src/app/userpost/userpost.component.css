@@ -1,7 +1,7 @@
 .userpost{
   position: relative;
   border-radius: 30px;
-  background-color: rgba(0, 255, 255, 0.7);
+  background-color: rgb(85, 95, 148);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -15,6 +15,10 @@ mat-dialog-content{
   overflow-y: hidden !important;
   overflow-x: hidden !important;
 
+}
+
+mat-label {
+  color: whitesmoke;
 }
 
 .container {
@@ -47,6 +51,7 @@ mat-form-field {
   left: 80px;
   font-family: 'Arvo', serif;
   font-family: 'Fredoka One', cursive;
+  color: white;
 }
 
 .keywordAlert {
