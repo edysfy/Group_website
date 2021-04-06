@@ -8,7 +8,6 @@ import { PostService } from '../service/post.service';
 import { DataFetchService } from '../data-fetch.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { UserpostComponent } from '../userpost/userpost.component';
-import { Subscriber, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-mapbox',
@@ -63,7 +62,7 @@ export class MapboxComponent implements OnInit {
     this.map.on('click', (e) => {
       const zoom = this.map.getZoom()
       console.log(zoom);
-      if(zoom > 10) {
+      if(zoom > 12) {
         const dialogConfig = new MatDialogConfig();
         dialogConfig.autoFocus = false;
         dialogConfig.width = '60%';
@@ -77,6 +76,12 @@ export class MapboxComponent implements OnInit {
         })
       }
     });
+
+
+
+
+
+
 
     this.map.on('load', () => {
       this.map.addSource('earthquakes', {
