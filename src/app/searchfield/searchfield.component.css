@@ -1,14 +1,14 @@
 
 
 .Keyword {
-  background-color:rgb(250, 68, 153);
+  background-color: whitesmoke;
 }
 
 .search {
-  background-color:  rgb(250, 68, 153);
-  box-shadow: 0 5px 5px 5px rgb(250, 68, 153), 
-  0 1px 1px 0 rgba(250, 68, 153,1), 
-  0 1px 3px 0 rgba(250, 68, 153,1);
+  background-color: whitesmoke;
+  box-shadow: 0 5px 5px 5px whitesmoke, 
+  0 1px 1px 0 whitesmoke, 
+  0 1px 3px 0 whitesmoke;
   display: inline-flex;
   height: min-content;
   border-radius: 50px;
