@@ -1,0 +1,90 @@
+.userpost{
+  position: relative;
+  border-radius: 30px;
+  background-color: rgba(0, 255, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'Arvo', serif;
+  font-family: 'Fredoka One', cursive;
+  height: 85%;
+}
+
+mat-dialog-content{
+  height: 1000px;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+
+}
+
+.container {
+  width: 100%;
+  padding: 5%;
+}
+.container > * {
+  width: 80%;
+
+}
+.icon-display {
+ margin-left:10px;
+ position: relative;
+ top: -45px;
+
+}
+
+h2{
+  position: relative;
+  color: White;
+  font-size: xx-large;
+  text-align: center;
+  font-family: 'Arvo', serif;
+  font-family: 'Fredoka One', cursive;
+}
+
+mat-form-field {
+  width: 80%;
+  position: relative;
+  left: 80px;
+  font-family: 'Arvo', serif;
+  font-family: 'Fredoka One', cursive;
+}
+
+.keywordAlert {
+  position: relative;
+  top: -10px;
+  left: 70%;
+  color: red;
+}
+
+.postAlert {
+  position: relative;
+  top: -10px;
+  left: 65%;
+  color: red;
+}
+
+.slider {
+  margin-top: 10px;
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  left: 25%;
+}
+
+.sliderForm {
+  width: 30%;
+  -webkit-appearance: none;
+  margin: 0;
+  position: relative;
+}
+
+.sliderSl {
+  position: relative;
+  left: 15px;
+  top: 15px;
+  width: 100%;
+  border-radius: 10px;
+  transform: scale(1.5);
+
+}

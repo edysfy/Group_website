@@ -1,15 +1,15 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Subscriber, Subscription } from 'rxjs';
 import { UrlStateService } from 'src/app/service/url-state.service';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: 'app-about',
+  templateUrl: './about.component.html',
+  styleUrls: ['./about.component.css']
 })
-  export class SignupComponent implements OnInit,OnDestroy {
-  
+export class AboutComponent implements OnInit {
+
   private subscriber!: Subscription; 
 
   constructor(private urlStateService: UrlStateService, private router: ActivatedRoute) { 
@@ -25,5 +25,4 @@ import { UrlStateService } from 'src/app/service/url-state.service';
     this.subscriber.unsubscribe();
     this.urlStateService.updatePathParamter('');
   }
-
 }

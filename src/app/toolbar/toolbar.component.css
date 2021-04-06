@@ -1,10 +1,10 @@
 .toolbar {
-    position: absolute;
+    position: fixed;
     display: inline-flex;
     top: 0px;
     left: 0;
     right: 0;
-    height: 90px;
+    height: 82px;
     display: flex;
     align-items: center;
     font-weight: 600;
@@ -12,27 +12,55 @@
     font-family: 'Arvo', serif;
     font-family: 'Fredoka One', cursive;
     z-index: 5;
+    box-shadow: 0 5px 5px 5px rgb(250, 68, 153), 
+    0 1px 1px 0 rgb(31, 27, 29), 
+    0 1px 3px 0 rgba(250, 68, 153,1);
   }
-  .about{
-    position: relative ;
-    top: 30px;
-    left: 10px;
-    cursor: pointer;
+
+  .toolbar_white {
+    position: absolute;
+    display: inline-flex;
+    top: 0px;
+    left: 0;
+    right: 0;
+    height: 82px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 35px;
+    font-family: 'Arvo', serif;
+    font-family: 'Fredoka One', cursive;
+    z-index: 5;
+    box-shadow: 0 5px 5px 5px rgb(255,255,255), 
+    0 1px 1px 0 rgba(255,255,255,1), 
+    0 1px 3px 0 rgba(255,255,255,1);
   }
-  .toolbar img {
-    margin: 0 16px;
+
+  .logo {
+    position: relative;
+    top: 5px;
+    left: -5px;
+    margin: 20px 20px;
   }
   .login {
+    top: -5px;
     position: relative;
     cursor: pointer;
+    outline: none;
   }
   .signUp {
+    top: -5px;
     position: relative;
     cursor: pointer;
+    outline: none;
   }
-  .logout {
+  
+  .about{
     position: relative;
+    left: 15px;
+    top: 0px;
     cursor: pointer;
+
   }
 
 .loginSect{
@@ -42,29 +70,10 @@
     height: 40px;
     position: absolute;
     left: 70%;
-    top: 25px;
-}
-.logoutSect{
-  width: 25%;
-  display: flex;
-  justify-content: space-around;
-  height: 40px;
-  position: absolute;
-  left: 75%;
-  top: 30px;
+    top: 30px;
 }
 
-.about{
+.Title {
   position: relative;
-  left: 15px;
-  top: -1px;
-}
-
-.example-container {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: #eee;
+  top: 5px;
 }
