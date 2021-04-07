@@ -9,7 +9,7 @@ const dummyCoords = require('./routes/dummyCoords');
 
 const path = require('path');
 
-const mongoDBConnect = "mongodb+srv://Hari:G8F1P3MeLb77pV48@cluster0.9hjpe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const mongoDBConnect = "mongodb+srv://alfie:unigroup15@emotemap.esifj.mongodb.net/postDB?retryWrites=true&w=majority";
 
 /*init an express middleware*/
 const app = express();
