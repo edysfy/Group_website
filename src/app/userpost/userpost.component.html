@@ -1,28 +1,3 @@
-<!-- <mat-card class="userpost">
-  <form [formGroup]="form" class="normal-form">
-    <div class="container">
-      <mat-form-field appearance="fill">
-        <mat-label>Rating</mat-label>
-        <mat-select formControlName="rating">
-          <mat-option *ngFor="let rating of ratingChoices" [value]="rating">{{rating}}</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field>
-        <input formControlName="keyword" matInput placeholder="keyword for rating">
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Post</mat-label>
-        <textarea formControlName="post" matInput placeholder="describe how you're feeling"></textarea>
-      </mat-form-field>
-    </div>
-  </form>
-  <button mat-fab color="primary" (click)="onClose()" class="icon-display">
-    <mat-icon class="mat-icon" inline=true>close</mat-icon>
-  </button>
-  <button mat-fab color="primary" (click)="onSubmit()" class="icon-display">
-    <mat-icon class="mat-icon" inline=true>send</mat-icon>
-  </button>
-</mat-card> -->
 <h2 mat-dialog-title>EmotePost</h2>
 
 <mat-dialog-content [formGroup]="form" class="normal-form">
@@ -30,11 +5,11 @@
     <div class="slider">
       <mat-form-field class="sliderForm">
         <mat-label>Emote Value</mat-label>
-        <input formControlName="rating" matInput [(ngModel)]="val" type="number" min="0" max="10"
+        <input formControlName="rating" matInput [(ngModel)]="rating" type="number" min="0" max="10"
           onkeydown="return false" />
       </mat-form-field>
       <mat-slider class="sliderSl" thumbLabel tickInterval="auto" [displayWith]="formatLabel" min="0" max="10" step="1"
-        [value]="val" (input)="onSliderChange($event)"></mat-slider>
+        [value]="rating" (input)="onSliderChange($event)"></mat-slider>
     </div>
 
     <mat-form-field appearance="outline" class="keyword">

@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment.prod';
 import { IGeoJson } from '../models/geoJson';
 
 import * as mapboxgl from 'mapbox-gl';
 
 import { PostService } from '../service/post.service';
-import { DataFetchService } from '../data-fetch.service';
+import { DataFetchService } from '../service/data-fetch.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { UserpostComponent } from '../userpost/userpost.component';
 
@@ -14,7 +14,7 @@ import { UserpostComponent } from '../userpost/userpost.component';
   templateUrl: './mapbox.component.html',
   styleUrls: ['./mapbox.component.css'],
 })
-export class MapboxComponent implements OnInit {
+export class MapboxComponent implements OnInit, OnChanges {
   private map!: mapboxgl.Map;
   private geoPost!: IGeoJson[];
   dataHolder: any = [];
@@ -38,7 +38,9 @@ export class MapboxComponent implements OnInit {
       .subscribe((dummyData) => (this.dataHolder = dummyData));
   }
 
-
+  ngOnChanges() {
+    console.log("change");
+  }
 
   /*init map and flys to user coords*/
   initMap(): void {
@@ -211,12 +213,10 @@ export class MapboxComponent implements OnInit {
           });
       });
       var timer = window.setInterval( () => {
-      this.retrieveData();
       var sourceObject = this.map.getSource('data') as mapboxgl.GeoJSONSource;
       sourceObject.setData(this.dataHolder);
       console.log("updated data");
-
-    }, 10000);
+    }, 8000);
     });
 
 

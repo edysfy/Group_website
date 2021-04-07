@@ -11,20 +11,19 @@ import { MatSliderChange } from '@angular/material/slider';
   styleUrls: ['./userpost.component.css'],
 })
 export class UserpostComponent implements OnInit {
-  public val:number|null;
+  public rating:number|null;
   form!: FormGroup;
-  ratings = new FormControl('');
 
   constructor(
     public dialogRef: MatDialogRef<UserpostComponent>,
     public postService: PostService
   ) {
-    this.val=10;
+    this.rating=10;
   }
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      rating: new FormControl(''),
+      rating: new FormControl(null),
       keyword: new FormControl(null, {
         validators: [Validators.required, Validators.minLength(3)],
       }),
@@ -55,7 +54,7 @@ export class UserpostComponent implements OnInit {
   }
 
   onSliderChange(event: MatSliderChange) {
-    this.val=event.value;
+    this.rating=event.value;
   }
 
 }
