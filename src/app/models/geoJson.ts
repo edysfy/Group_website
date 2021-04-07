@@ -18,19 +18,24 @@ export interface IGeoJson {
     _id: string;
 }
 
-export class GeoJson implements IGeoJson {
+export class GeoJson {
     type = 'Feature';
-    location!: IGeoPosition;
+    geometry!: IGeoPosition;
     properties!: IPost; 
     _id: string;
 
     constructor(properties: IPost, cord: number[], _id: string) {
         this.properties = properties;
-        this.location = {
+        this.geometry = {
             type: 'Point',
             coordinates: cord,
         };
         this._id = _id;
     }
+}
+
+export class FeatureCollection {
+    type = 'FeatureCollection';
+    constructor(public features: Array<GeoJson>) {}
 }
 

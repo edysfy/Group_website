@@ -1,11 +1,8 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment.prod';
-import { IGeoJson } from '../models/geoJson';
-
+import { FeatureCollection, GeoJson, IGeoJson } from '../models/geoJson';
 import * as mapboxgl from 'mapbox-gl';
-
 import { PostService } from '../service/post.service';
-import { DataFetchService } from '../service/data-fetch.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { UserpostComponent } from '../userpost/userpost.component';
 
@@ -14,32 +11,19 @@ import { UserpostComponent } from '../userpost/userpost.component';
   templateUrl: './mapbox.component.html',
   styleUrls: ['./mapbox.component.css'],
 })
-export class MapboxComponent implements OnInit, OnChanges {
+export class MapboxComponent implements OnInit {
   private map!: mapboxgl.Map;
-  private geoPost!: IGeoJson[];
-  dataHolder: any = [];
+  private geoPost!: Array<GeoJson>;
+  private source: any;
 
   constructor(
     private postService: PostService,
-    private dataService: DataFetchService,
     private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
     this.geoPost = this.postService.getGeoPostData();
-    console.log(this.geoPost);
-    this.retrieveData();
-  }
-
-  retrieveData() {
-    this.dataService.getData().subscribe((dummyData) => {
-      this.dataHolder = dummyData;
-      this.initMap();
-    });
-  }
-
-  ngOnChanges() {
-    console.log('change');
+    this.initMap();
   }
 
   /*init map and flys to user coords*/
@@ -81,10 +65,30 @@ export class MapboxComponent implements OnInit, OnChanges {
       }
     });
 
-    this.map.on('load', () => {
+    this.map.on('load', (e) => {
       this.map.addSource('data', {
         type: 'geojson',
-        data: this.dataHolder,
+        data: {
+          type: 'FeatureCollection',
+          features: []
+        },
+      });
+
+      this.source = this.map.getSource('data');
+      this.source.setData(new FeatureCollection(this.geoPost))
+
+      this.map.addLayer({
+        id: 'markers',
+        interactive: true,
+        type: 'symbol',
+        source: 'data',
+        minzoom: 7,
+        layout: {
+          'icon-image': 'marker-15',
+          'icon-allow-overlap': true,
+          'icon-size': 3,
+        },
+        paint: {},
       });
 
       this.map.addLayer(
@@ -98,7 +102,7 @@ export class MapboxComponent implements OnInit, OnChanges {
             'heatmap-weight': [
               'interpolate',
               ['linear'],
-              ['get', 'moodRating'],
+              ['get', 'mood'],
               0,
               0,
               6,
@@ -160,20 +164,6 @@ export class MapboxComponent implements OnInit, OnChanges {
         'waterway-label'
       );
 
-      this.map.addLayer({
-        id: 'markers',
-        interactive: true,
-        type: 'symbol',
-        source: 'data',
-        minzoom: 7,
-        layout: {
-          'icon-image': 'marker-15',
-          'icon-allow-overlap': true,
-          'icon-size': 2,
-        },
-        paint: {},
-      });
-
       this.map.on('mouseenter', 'markers', (e) => {
         var features = this.map.queryRenderedFeatures(e.point, {
           layers: ['markers'],
@@ -197,7 +187,7 @@ export class MapboxComponent implements OnInit, OnChanges {
             closeOnClick: false,
           })
             .setLngLat(cords)
-            .setHTML('<h3>' + feature?.properties?.moodRating + '</h3>')
+            .setHTML('<h3>' + feature?.properties?.textBody + '</h3>')
             .setLngLat(cords)
             .addTo(this.map);
         }
@@ -207,8 +197,8 @@ export class MapboxComponent implements OnInit, OnChanges {
         });
       });
       var timer = window.setInterval(() => {
-        var sourceObject = this.map.getSource('data') as mapboxgl.GeoJSONSource;
-        sourceObject.setData(this.dataHolder);
+        this.source  = this.map.getSource('data');
+        this.source.setData(new FeatureCollection(this.geoPost));
         console.log('updated data');
       }, 1000);
     });
