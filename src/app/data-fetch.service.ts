@@ -8,7 +8,7 @@ import { map, filter, switchMap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class DataFetchService {
-  private DATA_SERVER = "http://localhost:3000/api/dummyCoords";
+  private DATA_SERVER = "http://localhost:3001/api/dummyCoords";
 
   constructor(private httpClient: HttpClient) {
 

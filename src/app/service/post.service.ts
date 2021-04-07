@@ -13,7 +13,7 @@ export class PostService {
 
   constructor(private http: HttpClient) {
     this.geoPosts = [];
-    this.clickCordsState = new BehaviorSubject<LongLat>({long:0,lat:0});
+    this.clickCordsState = new BehaviorSubject<LongLat>({ long: 0, lat: 0 });
   }
 
   getLongLat(): LongLat {
@@ -26,14 +26,18 @@ export class PostService {
     console.log(this.clickCordsState.getValue());
   }
 
-  public getDataSource(): string {
-    return 'http://localhost:3000/api/dummyCoords';
+  public getDummyPostData(): void {
+    this.http
+      .get('http://localhost:3001/api/dummyCoords')
+      .subscribe((dummyData) => {
+        console.log(dummyData);
+      });
   }
 
   public getGeoPostData(): IGeoJson[] {
     this.http
       .get<{ message: String; geoPost: IGeoJson[] }>(
-        'http://localhost:3000/api/geoPost'
+        'http://localhost:3001/api/geoPost'
       )
       /*for geopost data defined above push to list*/
       .subscribe((geoPostData) => {

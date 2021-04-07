@@ -35,7 +35,10 @@ export class MapboxComponent implements OnInit {
   retrieveData() {
     this.dataService
       .getData()
-      .subscribe((dummyData) => (this.dataHolder = dummyData));
+      .subscribe(dummyData => {
+        this.dataHolder = dummyData;
+        console.log(dummyData);
+      });
   }
 
   /*init map and flys to user coords*/
