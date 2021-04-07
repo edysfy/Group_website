@@ -41,6 +41,9 @@ export class UserpostComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
+    console.log(this.form.value.rating);
+    console.log(this.form.value.keyword);
+    console.log(this.form.value.post);
     this.dialogRef.close();
   }
 

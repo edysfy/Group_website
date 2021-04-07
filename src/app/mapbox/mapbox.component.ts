@@ -38,6 +38,8 @@ export class MapboxComponent implements OnInit {
       .subscribe((dummyData) => (this.dataHolder = dummyData));
   }
 
+
+
   /*init map and flys to user coords*/
   initMap(): void {
     (mapboxgl as any).accessToken = environment.mapboxToken;
@@ -84,16 +86,16 @@ export class MapboxComponent implements OnInit {
 
 
     this.map.on('load', () => {
-      this.map.addSource('earthquakes', {
+      this.map.addSource('data', {
         type: 'geojson',
         data: this.dataHolder,
       });
 
       this.map.addLayer(
         {
-          id: 'earthquakes-heat',
+          id: 'mood-heat',
           type: 'heatmap',
-          source: 'earthquakes',
+          source: 'data',
           maxzoom: 9,
           paint: {
             // Increase the heatmap weight based on frequency and property moodRatingnitude
@@ -166,7 +168,7 @@ export class MapboxComponent implements OnInit {
         id: 'markers',
         interactive: true,
         type: 'symbol',
-        source: 'earthquakes',
+        source: 'data',
         minzoom: 7,
         layout: {
           'icon-image': 'marker-15',
@@ -208,6 +210,12 @@ export class MapboxComponent implements OnInit {
           popup.remove();
           });
       });
+      var timer = window.setInterval( () => {
+      this.retrieveData();
+      var sourceObject = this.map.getSource('data') as mapboxgl.GeoJSONSource;
+      sourceObject.setData(this.dataHolder);
+
+      }, 1000);
     });
 
 
