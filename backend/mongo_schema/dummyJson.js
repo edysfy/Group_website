@@ -31,7 +31,7 @@ const DummySchema = new mongoose.Schema({
    type: String,
    features: [dummyGJSchema]
 
-}) 
+},{ versionKey: false }) 
 
 
 module.exports = mongoose.model("Dummy",DummySchema);
