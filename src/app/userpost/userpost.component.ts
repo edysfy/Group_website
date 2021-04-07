@@ -46,7 +46,7 @@ export class UserpostComponent implements OnInit {
 
   formatLabel(value: number) {
     if (value >= 10) {
-      return Math.round(value / 10) 
+      return Math.round(value / 10)
     }
     return value;
   }
