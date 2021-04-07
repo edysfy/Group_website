@@ -29,17 +29,17 @@ export class MapboxComponent implements OnInit, OnChanges {
     this.geoPost = this.postService.getGeoPostData();
     console.log(this.geoPost);
     this.retrieveData();
-    this.initMap();
   }
 
   retrieveData() {
-    this.dataService
-      .getData()
-      .subscribe((dummyData) => (this.dataHolder = dummyData));
+    this.dataService.getData().subscribe((dummyData) => {
+      this.dataHolder = dummyData;
+      this.initMap();
+    });
   }
 
   ngOnChanges() {
-    console.log("change");
+    console.log('change');
   }
 
   /*init map and flys to user coords*/
@@ -49,7 +49,7 @@ export class MapboxComponent implements OnInit, OnChanges {
       container: 'map',
       style: 'mapbox://styles/mapbox/dark-v10',
       zoom: 6,
-      center: [ -0.2101765,  51.5942466],
+      center: [-0.2101765, 51.5942466],
     });
 
     /*Geolocation*/
@@ -64,9 +64,9 @@ export class MapboxComponent implements OnInit, OnChanges {
     this.map.addControl(new mapboxgl.NavigationControl());
 
     this.map.on('click', (e) => {
-      const zoom = this.map.getZoom()
+      const zoom = this.map.getZoom();
       console.log(zoom);
-      if(zoom > 12) {
+      if (zoom > 12) {
         const dialogConfig = new MatDialogConfig();
         dialogConfig.autoFocus = false;
         dialogConfig.width = '60%';
@@ -76,16 +76,10 @@ export class MapboxComponent implements OnInit, OnChanges {
         this.dialog.open(UserpostComponent, dialogConfig);
         this.postService.updateLongLat({
           long: e.lngLat.lng,
-          lat: e.lngLat.lat
-        })
+          lat: e.lngLat.lat,
+        });
       }
     });
-
-
-
-
-
-
 
     this.map.on('load', () => {
       this.map.addSource('data', {
@@ -180,7 +174,7 @@ export class MapboxComponent implements OnInit, OnChanges {
         paint: {},
       });
 
-      this.map.on('mouseenter','markers', (e) => {
+      this.map.on('mouseenter', 'markers', (e) => {
         var features = this.map.queryRenderedFeatures(e.point, {
           layers: ['markers'],
         });
@@ -207,18 +201,16 @@ export class MapboxComponent implements OnInit, OnChanges {
             .setLngLat(cords)
             .addTo(this.map);
         }
-        this.map.on('mouseleave', 'markers', (e)=> {
+        this.map.on('mouseleave', 'markers', (e) => {
           this.map.getCanvas().style.cursor = '';
           popup.remove();
-          });
+        });
       });
-      var timer = window.setInterval( () => {
-      var sourceObject = this.map.getSource('data') as mapboxgl.GeoJSONSource;
-      sourceObject.setData(this.dataHolder);
-      console.log("updated data");
-    }, 8000);
+      var timer = window.setInterval(() => {
+        var sourceObject = this.map.getSource('data') as mapboxgl.GeoJSONSource;
+        sourceObject.setData(this.dataHolder);
+        console.log('updated data');
+      }, 1000);
     });
-
-
   }
 }

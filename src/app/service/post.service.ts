@@ -26,10 +26,6 @@ export class PostService {
     console.log(this.clickCordsState.getValue());
   }
 
-  public getDataSource(): string {
-    return 'http://localhost:3000/api/dummyCoords';
-  }
-
   public getGeoPostData(): IGeoJson[] {
     this.http
       .get<{ message: String; geoPost: IGeoJson[] }>(
