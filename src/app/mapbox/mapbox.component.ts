@@ -214,8 +214,9 @@ export class MapboxComponent implements OnInit {
       this.retrieveData();
       var sourceObject = this.map.getSource('data') as mapboxgl.GeoJSONSource;
       sourceObject.setData(this.dataHolder);
+      console.log("updated data");
 
-      }, 1000);
+    }, 10000);
     });
 
 
