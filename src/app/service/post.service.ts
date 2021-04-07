@@ -48,5 +48,9 @@ export class PostService {
     return this.geoPosts;
   }
 
-  public postGeoPost(): void {}
+  public postGeoPost(): void {}  private DATA_SERVER = "http://localhost:3000/api/dummyCoords";
+
+  public getData(){
+    return this.http.get(this.DATA_SERVER)
+  }
 }
