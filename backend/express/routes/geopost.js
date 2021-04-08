@@ -45,7 +45,7 @@ router.post("", (req, res, next) => {
     .then((dbResponse) => {
       return res.status(200).json({
         message: "geoPost saved in database",
-        id: dbResponse,
+        id: dbResponse._id,
       });
     })
     .catch((error) => {

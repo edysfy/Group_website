@@ -11,14 +11,14 @@ import { MatSliderChange } from '@angular/material/slider';
   styleUrls: ['./userpost.component.css'],
 })
 export class UserpostComponent implements OnInit {
-  public rating:number|null;
+  public rating: number | null;
   form!: FormGroup;
 
   constructor(
     public dialogRef: MatDialogRef<UserpostComponent>,
     public postService: PostService
   ) {
-    this.rating=10;
+    this.rating = 10;
   }
 
   ngOnInit(): void {
@@ -40,21 +40,22 @@ export class UserpostComponent implements OnInit {
     if (this.form.invalid) {
       return;
     }
-    console.log(this.form.value.rating);
-    console.log(this.form.value.keyword);
-    console.log(this.form.value.post);
     this.dialogRef.close();
+    this.postService.createPost(
+      this.form.value.rating,
+      this.form.value.keyword,
+      this.form.value.post,
+    );
   }
 
   formatLabel(value: number) {
     if (value >= 10) {
-      return Math.round(value / 10)
+      return Math.round(value / 10);
     }
     return value;
   }
 
   onSliderChange(event: MatSliderChange) {
-    this.rating=event.value;
+    this.rating = event.value;
   }
-
 }
