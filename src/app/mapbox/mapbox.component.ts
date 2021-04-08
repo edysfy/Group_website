@@ -15,7 +15,6 @@ export class MapboxComponent implements OnInit {
   private map!: mapboxgl.Map;
   private geoPost!: Array<GeoJson>;
   private source: any;
-  dataholder: any;
 
   constructor(
     private postService: PostService,
@@ -23,9 +22,6 @@ export class MapboxComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.postService.getData().subscribe(a => {
-      this.dataholder = a;
-    })
     this.geoPost = this.postService.getGeoPostData();
     this.initMap();
   }
@@ -72,7 +68,10 @@ export class MapboxComponent implements OnInit {
     this.map.on('load', (e) => {
       this.map.addSource('data', {
         type: 'geojson',
-        data: this.dataholder,
+        data: {
+          type: 'FeatureCollection',
+          features: []
+        }
       });
 
       this.source = this.map.getSource('data');
@@ -197,10 +196,10 @@ export class MapboxComponent implements OnInit {
           popup.remove();
         });
       });
-      var timer = window.setInterval(() => {
+      window.setInterval(() => {
         this.source  = this.map.getSource('data');
-        console.log(this.dataholder);
-        this.source.setData(this.dataholder);
+        console.log(this.geoPost);
+        this.source.setData(new FeatureCollection(this.geoPost));
         console.log('updated data');
       }, 1000);
     });

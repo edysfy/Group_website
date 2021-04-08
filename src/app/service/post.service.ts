@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { GeoJson, IGeoJson } from '../models/geoJson';
-import { BehaviorSubject, Observable, of, Subject } from 'rxjs';
+import { BehaviorSubject} from 'rxjs';
 import { LongLat } from '../models/LongLat';
 
 @Injectable({
@@ -34,6 +34,7 @@ export class PostService {
       /*for geopost data defined above push to list*/
       .subscribe((geoPostData) => {
         for (let i = 0; i < geoPostData.geoPost.length; i++) {
+          /*create a new geojson object and add it to the array*/
           let incomingGJ = new GeoJson(
             geoPostData.geoPost[i].properties,
             geoPostData.geoPost[i].location.coordinates,
@@ -48,9 +49,4 @@ export class PostService {
     return this.geoPosts;
   }
 
-  public postGeoPost(): void {}  private DATA_SERVER = "http://localhost:3000/api/dummyCoords";
-
-  public getData(){
-    return this.http.get(this.DATA_SERVER)
-  }
 }
