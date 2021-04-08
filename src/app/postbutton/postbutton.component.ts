@@ -23,13 +23,13 @@ export class PostbuttonComponent implements OnInit {
         });
       });
     }
+    /*open a new diaglog object and set the parameters*/
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = false;
     dialogConfig.width = '60%';
     dialogConfig.height = '78%';
     dialogConfig.hasBackdrop = true;
     dialogConfig.panelClass = 'custom-dialog';
-
     this.dialog.open(UserpostComponent, dialogConfig);
   }
 }
