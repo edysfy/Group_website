@@ -1,29 +1,36 @@
-import { Component, OnChanges, OnInit } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment.prod';
 import { FeatureCollection, GeoJson, IGeoJson } from '../models/geoJson';
 import * as mapboxgl from 'mapbox-gl';
 import { PostService } from '../service/post.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { UserpostComponent } from '../userpost/userpost.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-mapbox',
   templateUrl: './mapbox.component.html',
   styleUrls: ['./mapbox.component.css'],
 })
-export class MapboxComponent implements OnInit {
+export class MapboxComponent implements OnInit, OnDestroy {
   private map!: mapboxgl.Map;
   private geoPost!: Array<GeoJson>;
+  private geoPostSubscriber!: Subscription;
   private source: any;
 
-  constructor(
-    private postService: PostService,
-    private dialog: MatDialog
-  ) {}
+  constructor(private postService: PostService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.geoPost = this.postService.getGeoPostData();
+    this.geoPostSubscriber = this.postService
+      .getGeoPostData()
+      .subscribe((geoPostArr) => {
+        this.geoPost= geoPostArr;
+      });
     this.initMap();
+  }
+
+  ngOnDestroy(): void {
+    this.geoPostSubscriber.unsubscribe();
   }
 
   /*init map and flys to user coords*/
@@ -70,12 +77,12 @@ export class MapboxComponent implements OnInit {
         type: 'geojson',
         data: {
           type: 'FeatureCollection',
-          features: []
-        }
+          features: [],
+        },
       });
 
       this.source = this.map.getSource('data');
-      this.source.setData(new FeatureCollection(this.geoPost))
+      this.source.setData(new FeatureCollection(this.geoPost));
 
       this.map.addLayer({
         id: 'markers',
@@ -197,7 +204,7 @@ export class MapboxComponent implements OnInit {
         });
       });
       window.setInterval(() => {
-        this.source  = this.map.getSource('data');
+        this.source = this.map.getSource('data');
         console.log(this.geoPost);
         this.source.setData(new FeatureCollection(this.geoPost));
         console.log('updated data');
