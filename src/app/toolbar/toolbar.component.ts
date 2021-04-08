@@ -9,7 +9,6 @@ import { UrlStateService } from '../service/url-state.service';
   styleUrls: ['./toolbar.component.css']
 })
 export class ToolbarComponent implements OnInit{
-  toolbarAccentColour: Boolean;
   public title: string;
   /*login register icons icons*/
   faUserPlus: IconDefinition = faUserPlus;
@@ -17,7 +16,6 @@ export class ToolbarComponent implements OnInit{
   faSignOutAlt: IconDefinition = faSignOutAlt;
   
   constructor(private urlStateService: UrlStateService) {
-    this.toolbarAccentColour = true;
     this.title = "EmoteMap"
   }
 
@@ -26,16 +24,12 @@ export class ToolbarComponent implements OnInit{
     this.urlStateService.getUrlObservable().subscribe(param => {
       /*change toolbar color and title due to different param*/
       if(param === 'login' ) {
-        this.toolbarAccentColour = false;
         this.title = 'Login';
       }else if(param ==='signup') {
-        this.toolbarAccentColour = false;
         this.title = 'Sign Up'
       }else if(param ==='about') {
-        this.toolbarAccentColour = false;
         this.title = 'EmoteMap'
       }else {
-        this.toolbarAccentColour = true;
         this.title = "EmoteMap";
       }
     });

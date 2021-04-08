@@ -1,6 +1,6 @@
-<mat-toolbar class="toolbar_white" color="header" *ngIf="toolbarAccentColour">
+<mat-toolbar class="toolbar_white" color="header">
   <a routerLink = ''> <img class="logo" width="80" height="80" alt="Earth Logo" src="./assets/logos/earth.png" /></a>
-  <span class="Title">EmoteMap</span>
+  <span class="Title">{{title}}</span>
   <div class="loginSect">
     <span class="about">
       <a style="text-decoration: none;" routerLink='/about'>About</a>
@@ -15,18 +15,3 @@
 </mat-toolbar>
 
 
-<mat-toolbar class="toolbar_white" color="header" *ngIf="!toolbarAccentColour">
-  <a routerLink = ''> <img class="logo" width="80" height="80" alt="Earth Logo" src="./assets/logos/earth.png" /></a>
-  <span class="Title">{{title}}</span>
-  <div class="loginSect">
-    <span class="about">
-      <a style="text-decoration:none;" routerLink="/about">About</a>
-    </span>
-    <span class="signUp">
-      <fa-icon routerLink = '/signup' [icon]="faUserPlus"></fa-icon>
-    </span>
-    <span routerLink = '/login' class="login">
-      <fa-icon [icon]="faSignInAlt"></fa-icon>
-    </span>
-  </div>
-</mat-toolbar>
