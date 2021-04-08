@@ -1,5 +1,4 @@
 export interface IPost {
-    username: string,
     dateTime: string,
     keyword: string,
     mood: string,
