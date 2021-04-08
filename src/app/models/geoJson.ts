@@ -1,7 +1,7 @@
 export interface IPost {
-    dateTime: string,
+    dateTime: Date,
     keyword: string,
-    mood: string,
+    mood: number,
     textBody: string,
 }
 

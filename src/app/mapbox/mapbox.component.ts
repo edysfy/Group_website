@@ -21,10 +21,11 @@ export class MapboxComponent implements OnInit, OnDestroy {
   constructor(private postService: PostService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
+    /*suscribe to the getGeoPost data to listen to changes in data*/
     this.geoPostSubscriber = this.postService
       .getGeoPostData()
       .subscribe((geoPostArr) => {
-        this.geoPost= geoPostArr;
+        this.geoPost = geoPostArr;
       });
     this.initMap();
   }
@@ -54,6 +55,7 @@ export class MapboxComponent implements OnInit, OnDestroy {
     );
     this.map.addControl(new mapboxgl.NavigationControl());
 
+    /*this opens dialog when click and saves coords as new state*/
     this.map.on('click', (e) => {
       const zoom = this.map.getZoom();
       console.log(zoom);
@@ -72,6 +74,7 @@ export class MapboxComponent implements OnInit, OnDestroy {
       }
     });
 
+    /*load the data into a source*/
     this.map.on('load', (e) => {
       this.map.addSource('data', {
         type: 'geojson',
@@ -80,9 +83,16 @@ export class MapboxComponent implements OnInit, OnDestroy {
           features: [],
         },
       });
-
+      /*create feature collection and set to data*/
       this.source = this.map.getSource('data');
       this.source.setData(new FeatureCollection(this.geoPost));
+      /*set the new data every second*/
+      window.setInterval(() => {
+        this.source = this.map.getSource('data');
+        console.log(this.geoPost);
+        this.source.setData(new FeatureCollection(this.geoPost));
+        console.log('updated data');
+      }, 1000);
 
       this.map.addLayer({
         id: 'markers',
@@ -171,6 +181,7 @@ export class MapboxComponent implements OnInit, OnDestroy {
         'waterway-label'
       );
 
+      /*hovers on marker to bring up the post*/
       this.map.on('mouseenter', 'markers', (e) => {
         var features = this.map.queryRenderedFeatures(e.point, {
           layers: ['markers'],
@@ -203,12 +214,6 @@ export class MapboxComponent implements OnInit, OnDestroy {
           popup.remove();
         });
       });
-      window.setInterval(() => {
-        this.source = this.map.getSource('data');
-        console.log(this.geoPost);
-        this.source.setData(new FeatureCollection(this.geoPost));
-        console.log('updated data');
-      }, 1000);
     });
   }
 }
