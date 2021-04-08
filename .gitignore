@@ -43,6 +43,7 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+tarn_log.txt
 
 # System Files
 .DS_Store
