@@ -105,8 +105,22 @@ export class MapboxComponent implements OnInit, OnDestroy {
           'icon-allow-overlap': true,
           'icon-size': 3,
         },
-        paint: {},
-      });
+        paint: {
+          'icon-color': [
+          'match',
+          ['get', 'mood'],
+          '0',
+          '#FFFFB2',
+          '1',
+          '#FECC5C',
+          '2',
+          '#41B65C',
+          '3',
+          '#E31A1C',
+          '#FF0000' // any other store type
+        ]
+      },
+    });
 
       this.map.addLayer(
         {
@@ -144,17 +158,13 @@ export class MapboxComponent implements OnInit, OnDestroy {
               ['linear'],
               ['heatmap-density'],
               0,
-              'rgba(33,102,172,0)',
-              0.2,
-              'rgb(103,169,207)',
-              0.4,
-              'rgb(209,229,240)',
-              0.6,
-              'rgb(253,219,199)',
-              0.8,
-              'rgb(239,138,98)',
+              'rgba(255,255,178,0)',
+              0.33,
+              'rgb(254,204,92)',
+              0.66,
+              'rgb(65,182,196)',
               1,
-              'rgb(178,24,43)',
+              'rgb(227,26,28)',
             ],
             // Adjust the heatmap radius by zoom level
             'heatmap-radius': [
@@ -205,7 +215,9 @@ export class MapboxComponent implements OnInit, OnDestroy {
             closeOnClick: false,
           })
             .setLngLat(cords)
-            .setHTML('<h3>' + feature?.properties?.textBody + '</h3>')
+            .setHTML('<h3>' + feature?.properties?.textBody
+             + '</h3><p>' + 'MoodRating:' + feature?.properties?.mood + '</p><p>'
+           + 'Keyword:' + feature?.properties?.keyword +'</p>')
             .setLngLat(cords)
             .addTo(this.map);
         }

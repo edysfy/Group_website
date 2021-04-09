@@ -5,10 +5,10 @@
     <div class="slider">
       <mat-form-field class="sliderForm">
         <mat-label>Emote Value</mat-label>
-        <input formControlName="rating" matInput [(ngModel)]="rating" type="number" min="0" max="10"
+        <input formControlName="rating" matInput [(ngModel)]="rating" type="number" min="0" max="3"
           onkeydown="return false" />
       </mat-form-field>
-      <mat-slider class="sliderSl" thumbLabel tickInterval="auto" [displayWith]="formatLabel" min="0" max="10" step="1"
+      <mat-slider class="sliderSl" thumbLabel tickInterval="auto" [displayWith]="formatLabel" min="0" max="3" step="1"
         [value]="rating" (input)="onSliderChange($event)"></mat-slider>
     </div>
 

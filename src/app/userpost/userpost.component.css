@@ -75,7 +75,7 @@ mat-form-field {
   width: fit-content;
   height: fit-content;
   position: relative;
-  left: 5%;
+  left: 2%;
 }
 
 .sliderForm {
@@ -83,6 +83,7 @@ mat-form-field {
   -webkit-appearance: none;
   margin: 0;
   position: relative;
+
 }
 
 .sliderSl {

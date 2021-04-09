@@ -18,7 +18,7 @@ export class UserpostComponent implements OnInit {
     public dialogRef: MatDialogRef<UserpostComponent>,
     public postService: PostService
   ) {
-    this.rating = 10;
+    this.rating = 3;
   }
 
   ngOnInit(): void {
@@ -49,8 +49,8 @@ export class UserpostComponent implements OnInit {
   }
 
   formatLabel(value: number) {
-    if (value >= 10) {
-      return Math.round(value / 10);
+    if (value > 3) {
+      return Math.round(value / 3);
     }
     return value;
   }
