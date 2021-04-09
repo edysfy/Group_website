@@ -40,7 +40,7 @@ export class MapboxComponent implements OnInit, OnDestroy {
     this.map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/dark-v10',
-      zoom: 6,
+      zoom: 2,
       center: [-0.2101765, 51.5942466],
     });
 
@@ -94,34 +94,33 @@ export class MapboxComponent implements OnInit, OnDestroy {
         console.log('updated data');
       }, 1000);
 
+      
       this.map.addLayer({
         id: 'markers',
         interactive: true,
-        type: 'symbol',
+        type: 'circle',
         source: 'data',
-        minzoom: 7,
-        layout: {
-          'icon-image': 'marker-15',
-          'icon-allow-overlap': true,
-          'icon-size': 3,
-        },
-        paint: {
-          'icon-color': [
-          'match',
-          ['get', 'mood'],
-          '0',
-          '#FFFFB2',
-          '1',
-          '#FECC5C',
-          '2',
-          '#41B65C',
-          '3',
-          '#E31A1C',
-          '#FF0000' // any other store type
-        ]
-      },
-    });
-
+        minzoom: 9.2,
+        'paint': {
+          'circle-stroke-color': '#fff',
+          'circle-stroke-width': 1,
+          'circle-radius': 5,
+          'circle-color': [
+            'step',
+            ['get', 'mood'],
+            '#EC986F',
+            0,
+            'rgba(255,255,178,0)',
+            1,
+            'rgb(254,204,92)',
+            2,
+            'rgb(65,182,196)',
+            3,
+            'rgb(227,26,28)',           
+            ], 
+          },
+        });
+     
       this.map.addLayer(
         {
           id: 'mood-heat',
