@@ -1,16 +1,18 @@
+/*interface for actual post data*/
 export interface IPost {
-    username: string,
-    dateTime: string,
+    dateTime: Date,
     keyword: string,
-    mood: string,
+    mood: number,
     textBody: string,
 }
+
 
 export interface IGeoPosition {
     type: string,
     coordinates: number[],
 }
 
+/*interface for IGeoJson data*/
 export interface IGeoJson {
     type: string,
     location: IGeoPosition,
@@ -18,19 +20,27 @@ export interface IGeoJson {
     _id: string;
 }
 
-export class GeoJson implements IGeoJson {
+/*geojson class, creates geoJson object out of interface*/
+export class GeoJson {
     type = 'Feature';
-    location!: IGeoPosition;
+    geometry!: IGeoPosition;
     properties!: IPost; 
     _id: string;
 
     constructor(properties: IPost, cord: number[], _id: string) {
         this.properties = properties;
-        this.location = {
+        this.geometry = {
             type: 'Point',
             coordinates: cord,
         };
         this._id = _id;
     }
+}
+
+/*feature collection object made form geoJson array and used
+to set data in the mapbox component*/
+export class FeatureCollection {
+    type = 'FeatureCollection';
+    constructor(public features: Array<GeoJson>) {}
 }
 

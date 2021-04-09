@@ -1,49 +1,98 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { IGeoJson } from '../models/geoJson';
-import { Observable, of } from 'rxjs';
+import { GeoJson, IGeoJson } from '../models/geoJson';
+import { BehaviorSubject, Observable, of } from 'rxjs';
+import { LongLat } from '../models/LongLat';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostService {
-  private geoPosts: IGeoJson[];
-  private latitude!: number;
-  private longitude!: number;
+  /*array used to store geoJsonObjects*/
+  private geoPosts: Array<GeoJson>;
+  /*geoJson array state manager*/
+  private geoPostSubject: BehaviorSubject<Array<GeoJson>>;
+  /*coordinate state manager*/
+  private clickCordsState: BehaviorSubject<LongLat>;
 
   constructor(private http: HttpClient) {
-    this.geoPosts = [];
+    /*initlise attributes*/
+    this.geoPosts = new Array<GeoJson>();
+    this.clickCordsState = new BehaviorSubject<LongLat>({ long: 0, lat: 0 });
+    this.geoPostSubject = new BehaviorSubject<Array<GeoJson>>([]);
   }
 
-  public getDataSource(): string {
-    return 'http://localhost:3000/api/dummyCoords';
+  getLongLat(): LongLat {
+    return this.clickCordsState.getValue();
   }
 
-  public getGeoPostData(): IGeoJson[] {
+  updateLongLat(newCords: LongLat): void {
+    /*update longitude and latitude coordinates*/
+    this.clickCordsState.next(newCords);
+    console.log(this.clickCordsState.getValue());
+  }
+
+
+  public getGeoPostData(): Observable<Array<GeoJson>> {
     this.http
-      .get<{ message: String; geoPost: IGeoJson[] }>(
+      .get<{ message: string; geoPost: IGeoJson[] }>(
         'http://localhost:3000/api/geoPost'
       )
-      /*for geopost data defined above push to list*/
+      /*incoming data fom api matches IGeoJson data type
+      so create geoJson object out of data*/
       .subscribe((geoPostData) => {
-        if (this.geoPosts.length !== geoPostData.geoPost.length) {
-          this.geoPosts.push(...geoPostData.geoPost);
+        for (let i = 0; i < geoPostData.geoPost.length; i++) {
+          /*create a new geojson object and add it to the array*/
+          let incomingGJ = new GeoJson(
+            geoPostData.geoPost[i].properties,
+            geoPostData.geoPost[i].location.coordinates,
+            geoPostData.geoPost[i]._id
+          );
+          /*push object to the array*/
+          this.geoPosts.push(incomingGJ);
         }
+        /*set the new state fom the geoJson array*/
+        this.geoPostSubject.next(this.geoPosts);
       });
-    return this.geoPosts;
+    console.log(this.geoPosts);
+    /*return observable, used in mapbox component to listen to 
+    changes in state*/
+    return this.geoPostSubject.asObservable();
   }
 
-  public getLocation(lat: number,long: number): void {
-    this.latitude = lat;
-    this.longitude= long;
-    console.log("look at the cords!");
-    console.log(this.latitude);
-    console.log(this.longitude);
-  }
-  public getLatitude(): number {
-    return this.latitude;
-  }
-  public getLongitude(): number {
-    return this.longitude;
+  public createPost(rating: number, keyword: string, post: string) {
+    /*need to get the coords set in the state*/
+    const coords = this.clickCordsState.getValue();
+    /*create a new IGeoJson data type to sent to back end*/
+    let newGeoPost: IGeoJson = {
+      _id: 'not_set',
+      type: 'Feature',
+      location: {
+        type: 'Point',
+        coordinates: [coords.long, coords.lat],
+      },
+      properties: {
+        dateTime: new Date(),
+        keyword: keyword,
+        mood: rating,
+        textBody: post,
+      },
+    };
+    /*send this to our api, when get response store newGeoPost In Memory*/
+    this.http
+      .post<{ message: string; id: string }>(
+        'http://localhost:3000/api/geoPost',
+        newGeoPost
+      )
+      .subscribe((response) => {
+        /*create a new geoJson object to put in memory and render to app*/
+        const newGeoJson = new GeoJson(
+          newGeoPost.properties,
+          newGeoPost.location.coordinates,
+          response.id
+        );
+        this.geoPosts.push(newGeoJson);
+        this.geoPostSubject.next(this.geoPosts);
+      });
   }
 }

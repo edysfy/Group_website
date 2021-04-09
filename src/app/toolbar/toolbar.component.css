@@ -1,10 +1,10 @@
-.toolbar {
+  .toolbar_white {
     position: fixed;
     display: inline-flex;
     top: 0px;
     left: 0;
     right: 0;
-    height: 82px;
+    height: 75px;
     display: flex;
     align-items: center;
     font-weight: 600;
@@ -12,26 +12,7 @@
     font-family: 'Arvo', serif;
     font-family: 'Fredoka One', cursive;
     z-index: 5;
-    box-shadow: 0 5px 5px 5px rgb(250, 68, 153), 
-    0 1px 1px 0 rgb(31, 27, 29), 
-    0 1px 3px 0 rgba(250, 68, 153,1);
-  }
-
-  .toolbar_white {
-    position: absolute;
-    display: inline-flex;
-    top: 0px;
-    left: 0;
-    right: 0;
-    height: 82px;
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-    font-size: 35px;
-    font-family: 'Arvo', serif;
-    font-family: 'Fredoka One', cursive;
-    z-index: 5;
-    box-shadow: 0 5px 5px 5px rgb(255,255,255), 
+    box-shadow: 0 9px 9px 9px rgb(255,255,255), 
     0 1px 1px 0 rgba(255,255,255,1), 
     0 1px 3px 0 rgba(255,255,255,1);
   }
@@ -60,7 +41,6 @@
     left: 15px;
     top: 0px;
     cursor: pointer;
-
   }
 
 .loginSect{
