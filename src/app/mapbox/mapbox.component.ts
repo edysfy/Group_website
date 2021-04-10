@@ -1,37 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment.prod';
-import { IGeoJson } from '../models/geoJson';
-
+import { FeatureCollection, GeoJson, IGeoJson } from '../models/geoJson';
 import * as mapboxgl from 'mapbox-gl';
-
 import { PostService } from '../service/post.service';
-import { DataFetchService } from '../data-fetch.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { UserpostComponent } from '../userpost/userpost.component';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-mapbox',
   templateUrl: './mapbox.component.html',
   styleUrls: ['./mapbox.component.css'],
 })
-export class MapboxComponent implements OnInit {
+export class MapboxComponent implements OnInit, OnDestroy {
   private map!: mapboxgl.Map;
-  private geoPost!: IGeoJson[];
-  dataHolder: any = [];
+  private geoPost!: Array<GeoJson>;
+  private geoPostSubscriber!: Subscription;
+  private source: any;
 
-  constructor(
-    private postService: PostService,
-    private dataService: DataFetchService,
-    private dialog: MatDialog
-  ) {}
+  constructor(private postService: PostService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
-    this.geoPost = this.postService.getGeoPostData();
-    console.log(this.geoPost);
-    this.retrieveData();
+    /*suscribe to the getGeoPost data to listen to changes in data*/
+    this.geoPostSubscriber = this.postService
+      .getGeoPostData()
+      .subscribe((geoPostArr) => {
+        this.geoPost = geoPostArr;
+      });
     this.initMap();
   }
 
+<<<<<<< HEAD
   retrieveData() {
     this.dataService
       .getData()
@@ -39,6 +38,10 @@ export class MapboxComponent implements OnInit {
         this.dataHolder = dummyData;
         console.log(dummyData);
       });
+=======
+  ngOnDestroy(): void {
+    this.geoPostSubscriber.unsubscribe();
+>>>>>>> dev
   }
 
   /*init map and flys to user coords*/
@@ -47,8 +50,8 @@ export class MapboxComponent implements OnInit {
     this.map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/mapbox/dark-v10',
-      zoom: 6,
-      center: [ -0.2101765,  51.5942466],
+      zoom: 2,
+      center: [-0.2101765, 51.5942466],
     });
 
     /*Geolocation*/
@@ -62,10 +65,11 @@ export class MapboxComponent implements OnInit {
     );
     this.map.addControl(new mapboxgl.NavigationControl());
 
+    /*this opens dialog when click and saves coords as new state*/
     this.map.on('click', (e) => {
-      const zoom = this.map.getZoom()
+      const zoom = this.map.getZoom();
       console.log(zoom);
-      if(zoom > 12) {
+      if (zoom > 12) {
         const dialogConfig = new MatDialogConfig();
         dialogConfig.autoFocus = false;
         dialogConfig.width = '60%';
@@ -75,35 +79,70 @@ export class MapboxComponent implements OnInit {
         this.dialog.open(UserpostComponent, dialogConfig);
         this.postService.updateLongLat({
           long: e.lngLat.lng,
-          lat: e.lngLat.lat
-        })
+          lat: e.lngLat.lat,
+        });
       }
     });
 
-
-
-
-
-
-
-    this.map.on('load', () => {
-      this.map.addSource('earthquakes', {
+    /*load the data into a source*/
+    this.map.on('load', (e) => {
+      this.map.addSource('data', {
         type: 'geojson',
-        data: this.dataHolder,
+        data: {
+          type: 'FeatureCollection',
+          features: [],
+        },
       });
+      /*create feature collection and set to data*/
+      this.source = this.map.getSource('data');
+      this.source.setData(new FeatureCollection(this.geoPost));
+      /*set the new data every second*/
+      window.setInterval(() => {
+        this.source = this.map.getSource('data');
+        console.log(this.geoPost);
+        this.source.setData(new FeatureCollection(this.geoPost));
+        console.log('updated data');
+      }, 1000);
 
+      
+      this.map.addLayer({
+        id: 'markers',
+        interactive: true,
+        type: 'circle',
+        source: 'data',
+        minzoom: 9.2,
+        'paint': {
+          'circle-stroke-color': '#fff',
+          'circle-stroke-width': 1,
+          'circle-radius': 5,
+          'circle-color': [
+            'step',
+            ['get', 'mood'],
+            '#EC986F',
+            0,
+            'rgba(255,255,178,0)',
+            1,
+            'rgb(254,204,92)',
+            2,
+            'rgb(65,182,196)',
+            3,
+            'rgb(227,26,28)',           
+            ], 
+          },
+        });
+     
       this.map.addLayer(
         {
-          id: 'earthquakes-heat',
+          id: 'mood-heat',
           type: 'heatmap',
-          source: 'earthquakes',
+          source: 'data',
           maxzoom: 9,
           paint: {
             // Increase the heatmap weight based on frequency and property moodRatingnitude
             'heatmap-weight': [
               'interpolate',
               ['linear'],
-              ['get', 'moodRating'],
+              ['get', 'mood'],
               0,
               0,
               6,
@@ -128,17 +167,13 @@ export class MapboxComponent implements OnInit {
               ['linear'],
               ['heatmap-density'],
               0,
-              'rgba(33,102,172,0)',
-              0.2,
-              'rgb(103,169,207)',
-              0.4,
-              'rgb(209,229,240)',
-              0.6,
-              'rgb(253,219,199)',
-              0.8,
-              'rgb(239,138,98)',
+              'rgba(255,255,178,0)',
+              0.33,
+              'rgb(254,204,92)',
+              0.66,
+              'rgb(65,182,196)',
               1,
-              'rgb(178,24,43)',
+              'rgb(227,26,28)',
             ],
             // Adjust the heatmap radius by zoom level
             'heatmap-radius': [
@@ -165,21 +200,8 @@ export class MapboxComponent implements OnInit {
         'waterway-label'
       );
 
-      this.map.addLayer({
-        id: 'markers',
-        interactive: true,
-        type: 'symbol',
-        source: 'earthquakes',
-        minzoom: 7,
-        layout: {
-          'icon-image': 'marker-15',
-          'icon-allow-overlap': true,
-          'icon-size': 2,
-        },
-        paint: {},
-      });
-
-      this.map.on('mouseenter','markers', (e) => {
+      /*hovers on marker to bring up the post*/
+      this.map.on('mouseenter', 'markers', (e) => {
         var features = this.map.queryRenderedFeatures(e.point, {
           layers: ['markers'],
         });
@@ -202,17 +224,17 @@ export class MapboxComponent implements OnInit {
             closeOnClick: false,
           })
             .setLngLat(cords)
-            .setHTML('<h3>' + feature?.properties?.moodRating + '</h3>')
+            .setHTML('<h3>' + feature?.properties?.textBody
+             + '</h3><p>' + 'MoodRating:' + feature?.properties?.mood + '</p><p>'
+           + 'Keyword:' + feature?.properties?.keyword +'</p>')
             .setLngLat(cords)
             .addTo(this.map);
         }
-        this.map.on('mouseleave', 'markers', (e)=> {
+        this.map.on('mouseleave', 'markers', (e) => {
           this.map.getCanvas().style.cursor = '';
           popup.remove();
-          });
+        });
       });
     });
-
-
   }
 }
