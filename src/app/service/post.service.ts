@@ -32,6 +32,9 @@ export class PostService {
     console.log(this.clickCordsState.getValue());
   }
 
+  public getGeoPosts(): Array<GeoJson> {
+     return this.geoPosts;
+  }
 
   public getGeoPostData(): Observable<Array<GeoJson>> {
     this.http
@@ -55,7 +58,7 @@ export class PostService {
         this.geoPostSubject.next(this.geoPosts);
       });
     console.log(this.geoPosts);
-    /*return observable, used in mapbox component to listen to 
+    /*return observable, used in mapbox component to listen to
     changes in state*/
     return this.geoPostSubject.asObservable();
   }

@@ -1,20 +1,20 @@
-<div class="input-group">
-    <mat-card class="search" >
-      <form>
-        <mat-form-field class="keyword">
-          <mat-label>Keyword</mat-label>
-          <input matInput type="search">
-        </mat-form-field>
 
-        <mat-form-field class="date">
-          <mat-label>Within Days</mat-label>
-          <input matInput type="number">
-        </mat-form-field>
-        <button mat-raised-button color="primary">
-          <mat-icon>search</mat-icon>
-        </button>
-      </form>
-  </mat-card>
-  </div>
-
-
+   <div class="input-group">
+       <mat-card class="search" >
+         <form [formGroup]="form">
+           <mat-form-field class="keywofsdfrd">
+             <mat-label>Keyword</mat-label>
+             <input formControlName="keyword" matInput placeholder="" pattern="[a-zA-Z0-9]+" />
+           </mat-form-field>
+           <mat-form-field class="date">
+             <mat-label>Within Days</mat-label>
+             <input matInput type="number">
+           </mat-form-field>
+           <mat-dialog-actions>
+            <button mat-raised-button color="primary" (click)="onSearch()">
+              <mat-icon>search</mat-icon>
+            </button>
+           </mat-dialog-actions>
+         </form>
+     </mat-card>
+   </div>
