@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { PostService } from '../service/post.service';
+import { GeoJson, IGeoJson } from '../models/geoJson';
 
 
 @Component({
@@ -9,8 +11,12 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class SearchfieldComponent implements OnInit {
   form!: FormGroup
+  userPosts: Array<GeoJson>
 
-  constructor() { }
+  constructor(public postService: PostService) {
+     // Get userpost array
+     this.userPosts = this.postService.getGeoPosts();
+  }
 
   ngOnInit(): void {
      this.form = new FormGroup ({
@@ -20,7 +26,13 @@ export class SearchfieldComponent implements OnInit {
   }
 
   onSearch() {
-     console.log(this.form.value.keyword)
-  };
+     for (var index = 0; index < this.userPosts.length; ++index) {
+        // If keyword entered equals keyword in user posts
+        if (this.form.value.keyword == this.userPosts[index].properties.keyword) {
+           console.log(this.form.value.keyword);
+           console.log(this.userPosts[index].properties.keyword);
+        }
+     }
+  }
 
 }
