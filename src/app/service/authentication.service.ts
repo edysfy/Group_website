@@ -7,10 +7,14 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 })
 export class AuthenticationService {
   authToken!: string|null;
-  public authState = new BehaviorSubject<boolean>(false);
+  public authState!: BehaviorSubject<boolean>;
 
   constructor(private http: HttpClient) { 
     this.authToken = localStorage.getItem('token');
+    this.authState = new BehaviorSubject<boolean>(false);
+    if(this.authToken!=null) {
+      this.authState.next(true);
+    }
   }
 
   createUser(username:  string, password: string) {
@@ -37,17 +41,19 @@ export class AuthenticationService {
       )
   }
 
-  setAuth() {
+
+  setLogin(token: string) {
+    this.authToken = token;
+    window.localStorage.setItem('token',this.authToken);
     this.authState.next(true);
   }
 
-  setToken(token: string) {
-    this.authToken = token;
-    window.localStorage.setItem('token',this.authToken);
+  getToken(): string|null {
+    return this.authToken;
   }
 
-  getToken() {
-    return this.authToken;
+  getAuthState(): BehaviorSubject<boolean> {
+    return this.authState;
   }
 
   logout() {

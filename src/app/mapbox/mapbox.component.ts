@@ -17,18 +17,22 @@ export class MapboxComponent implements OnInit, OnDestroy {
   private map!: mapboxgl.Map;
   private geoPost!: Array<GeoJson>;
   private geoPostSubscriber!: Subscription;
+  private authSubscriber!: Subscription;
+  isLoggedIn!: boolean;
   private source: any;
 
-  constructor(private postService: PostService, private dialog: MatDialog, private as: AuthenticationService) {}
+  constructor(
+    private postService: PostService,
+    private dialog: MatDialog,
+    private authService: AuthenticationService
+  ) {
+    this.authSubscriber = this.authService.getAuthState().subscribe((logIn) => {
+      this.isLoggedIn = logIn;
+    });
+  }
 
   ngOnInit(): void {
     /*suscribe to the getGeoPost data to listen to changes in data*/
-    this.geoPostSubscriber = this.postService
-      .getGeoPostData()
-      .subscribe((geoPostArr) => {
-        this.geoPost = geoPostArr;
-      });
-    console.log(this.as.getToken());
     this.initMap();
   }
 
@@ -88,22 +92,20 @@ export class MapboxComponent implements OnInit, OnDestroy {
       /*create feature collection and set to data*/
       this.source = this.map.getSource('data');
       this.source.setData(new FeatureCollection(this.geoPost));
-      /*set the new data every second*/
-      window.setInterval(() => {
-        this.source = this.map.getSource('data');
-        console.log(this.geoPost);
-        this.source.setData(new FeatureCollection(this.geoPost));
-        console.log('updated data');
-      }, 1000);
+      /*suscribe to the data source in the service*/
+      this.geoPostSubscriber = this.postService
+        .getGeoPostData()
+        .subscribe((geoPostArr) => {
+          this.source.setData(new FeatureCollection(geoPostArr));
+        });
 
-      
       this.map.addLayer({
         id: 'markers',
         interactive: true,
         type: 'circle',
         source: 'data',
         minzoom: 9.2,
-        'paint': {
+        paint: {
           'circle-stroke-color': '#fff',
           'circle-stroke-width': 1,
           'circle-radius': 5,
@@ -118,11 +120,11 @@ export class MapboxComponent implements OnInit, OnDestroy {
             2,
             'rgb(65,182,196)',
             3,
-            'rgb(227,26,28)',           
-            ], 
-          },
-        });
-     
+            'rgb(227,26,28)',
+          ],
+        },
+      });
+
       this.map.addLayer(
         {
           id: 'mood-heat',
@@ -216,9 +218,17 @@ export class MapboxComponent implements OnInit, OnDestroy {
             closeOnClick: false,
           })
             .setLngLat(cords)
-            .setHTML('<h3>' + feature?.properties?.textBody
-             + '</h3><p>' + 'MoodRating:' + feature?.properties?.mood + '</p><p>'
-           + 'Keyword:' + feature?.properties?.keyword +'</p>')
+            .setHTML(
+              '<h3>' +
+                feature?.properties?.textBody +
+                '</h3><p>' +
+                'MoodRating:' +
+                feature?.properties?.mood +
+                '</p><p>' +
+                'Keyword:' +
+                feature?.properties?.keyword +
+                '</p>'
+            )
             .setLngLat(cords)
             .addTo(this.map);
         }

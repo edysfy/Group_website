@@ -18,7 +18,7 @@ app-searchfield {
 
 app-postbutton {
     position: fixed;
-    left:20px;
+    right:30px;
     bottom: 15px;
     display: flex;
 

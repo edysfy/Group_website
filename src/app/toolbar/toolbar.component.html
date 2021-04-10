@@ -5,11 +5,14 @@
     <span class="about">
       <a style="text-decoration: none;" routerLink='/about'>About</a>
     </span>
-    <span class="signUp">
+    <span class="signUp" *ngIf="!isLoggedIn">
       <fa-icon routerLink = '/signup' [icon]="faUserPlus"></fa-icon>
     </span>
-    <span routerLink = '/login' class="login">
+    <span routerLink = '/login' class="login"  *ngIf="!isLoggedIn">
       <fa-icon [icon]="faSignInAlt"></fa-icon>
+    </span>
+    <span class="login"  *ngIf="isLoggedIn">
+      <fa-icon (click)="logOut()" [icon]="faSignOutAlt"></fa-icon>
     </span>
   </div>
 </mat-toolbar>
