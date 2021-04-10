@@ -12,9 +12,8 @@ router.post("/signup", (req, res, next) => {
     /*create user model with request body parameters*/
     const user = new User({
       username: req.body.username,
-      email: req.body.email,
       /*store hashed password in database*/
-      password: hashedPassword,
+      password: req.body.password,
       geoPost: [],
     });
     /*save the data in mongoDb*/
@@ -25,17 +24,20 @@ router.post("/signup", (req, res, next) => {
         res.status(201).json({
           message: "The user has been successfully registered",
           result: confirmDoc,
+          regSuc: true,
         });
       })
       /*this error will be if the email/username isn't unique*/
       .catch((error) => {
-        res.status(500).json({
+        res.json({
           message: "Unable to login with these credentials",
-          error: error,
+          regSuc: false,
         });
       });
   });
 // });
+
+
 
 router.post("/login", (req, res, next) => {
   User.findOne({ username: req.body.username }).then((query) => {
@@ -75,11 +77,9 @@ async function passwordMatch(
       password: frontEndPassword,
     },
     secretKey,
-    { expiresIn: "1h" },
   );
   return res.status(200).json({
     token: token,
-    expireIn: 3600,
   });
 }
 

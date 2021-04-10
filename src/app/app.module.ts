@@ -29,6 +29,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatSelectModule} from '@angular/material/select';
 import { AboutComponent } from './about/about.component';
 import {MatSliderModule} from '@angular/material/slider';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -45,7 +46,8 @@ const material = [
   ReactiveFormsModule,
   MatCheckboxModule,
   MatSelectModule,
-  MatSliderModule
+  MatSliderModule,
+  MatProgressSpinnerModule
 ]
 
 @NgModule({

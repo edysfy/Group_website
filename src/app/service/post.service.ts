@@ -16,15 +16,10 @@ export class PostService {
   private clickCordsState: BehaviorSubject<LongLat>;
 
   constructor(private http: HttpClient) {
-<<<<<<< HEAD
-    this.geoPosts = [];
-    this.clickCordsState = new BehaviorSubject<LongLat>({ long: 0, lat: 0 });
-=======
     /*initlise attributes*/
     this.geoPosts = new Array<GeoJson>();
     this.clickCordsState = new BehaviorSubject<LongLat>({ long: 0, lat: 0 });
     this.geoPostSubject = new BehaviorSubject<Array<GeoJson>>([]);
->>>>>>> dev
   }
 
   getLongLat(): LongLat {
@@ -37,26 +32,11 @@ export class PostService {
     console.log(this.clickCordsState.getValue());
   }
 
-<<<<<<< HEAD
-  public getDummyPostData(): void {
-    this.http
-      .get('http://localhost:3001/api/dummyCoords')
-      .subscribe((dummyData) => {
-        console.log(dummyData);
-      });
-  }
-=======
->>>>>>> dev
 
   public getGeoPostData(): Observable<Array<GeoJson>> {
     this.http
-<<<<<<< HEAD
-      .get<{ message: String; geoPost: IGeoJson[] }>(
-        'http://localhost:3001/api/geoPost'
-=======
       .get<{ message: string; geoPost: IGeoJson[] }>(
         'http://localhost:3000/api/geoPost'
->>>>>>> dev
       )
       /*incoming data fom api matches IGeoJson data type
       so create geoJson object out of data*/

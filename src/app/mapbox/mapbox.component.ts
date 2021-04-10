@@ -30,18 +30,8 @@ export class MapboxComponent implements OnInit, OnDestroy {
     this.initMap();
   }
 
-<<<<<<< HEAD
-  retrieveData() {
-    this.dataService
-      .getData()
-      .subscribe(dummyData => {
-        this.dataHolder = dummyData;
-        console.log(dummyData);
-      });
-=======
   ngOnDestroy(): void {
     this.geoPostSubscriber.unsubscribe();
->>>>>>> dev
   }
 
   /*init map and flys to user coords*/
