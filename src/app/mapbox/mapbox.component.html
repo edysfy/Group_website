@@ -1,5 +1,5 @@
 <div id="map">
 </div>
 
-<app-searchfield></app-searchfield>
+<app-searchfield *ngIf="!isLoggedIn"></app-searchfield>
 <app-postbutton *ngIf="isLoggedIn"></app-postbutton>

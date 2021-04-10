@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   faUserPlus,
   faSignInAlt,
@@ -25,7 +26,8 @@ export class ToolbarComponent implements OnInit {
 
   constructor(
     private urlStateService: UrlStateService,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private route: Router,
   ) {
     this.title = 'EmoteMap';
     this.subscriber = this.authService.getAuthState().subscribe((logIn) => {
@@ -52,5 +54,10 @@ export class ToolbarComponent implements OnInit {
 
   logOut() {
     this.authService.logout();
+    this.ngOnInit();
+    let currentUrl = this.route.url;
+    this.route.navigateByUrl('/', {skipLocationChange: true}).then(() => {
+        this.route.navigate([currentUrl]);
+    });
   }
 }

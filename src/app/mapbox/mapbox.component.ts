@@ -63,20 +63,22 @@ export class MapboxComponent implements OnInit, OnDestroy {
 
     /*this opens dialog when click and saves coords as new state*/
     this.map.on('click', (e) => {
-      const zoom = this.map.getZoom();
-      console.log(zoom);
-      if (zoom > 12) {
-        const dialogConfig = new MatDialogConfig();
-        dialogConfig.autoFocus = false;
-        dialogConfig.width = '60%';
-        dialogConfig.height = '78%';
-        dialogConfig.hasBackdrop = true;
-        dialogConfig.panelClass = 'custom-dialog';
-        this.dialog.open(UserpostComponent, dialogConfig);
-        this.postService.updateLongLat({
-          long: e.lngLat.lng,
-          lat: e.lngLat.lat,
-        });
+      if(this.isLoggedIn) {
+        const zoom = this.map.getZoom();
+        console.log(zoom);
+        if (zoom > 12) {
+          const dialogConfig = new MatDialogConfig();
+          dialogConfig.autoFocus = false;
+          dialogConfig.width = '60%';
+          dialogConfig.height = '78%';
+          dialogConfig.hasBackdrop = true;
+          dialogConfig.panelClass = 'custom-dialog';
+          this.dialog.open(UserpostComponent, dialogConfig);
+          this.postService.updateLongLat({
+            long: e.lngLat.lng,
+            lat: e.lngLat.lat,
+          });
+        }
       }
     });
 
