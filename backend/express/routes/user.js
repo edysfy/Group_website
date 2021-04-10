@@ -37,15 +37,16 @@ router.post("/signup", (req, res, next) => {
   });
 // });
 
-
+router.get("/login", (req, res, next) => {
+  console.log("path exists");
+})
 
 router.post("/login", (req, res, next) => {
   User.findOne({ username: req.body.username }).then((query) => {
     /*if username not in the database query is null*/
     if (query === null) {
-      return res.status(404).json({
+      return res.json({
         message: "Incorrect username",
-        login: false,
       });
     }
     /*get the password in db and compare to the request body password*/
@@ -64,10 +65,9 @@ async function passwordMatch(
   // const comparePromise = bcrypt.compare(frontEndPassword, userHashPassword);
   // const doPasswordsMatch = await comparePromise;
 
-  if (!frontEndPassword!=userHashPassword) {
-    return res.status(406).json({
+  if (frontEndPassword!=userHashPassword) {
+    return res.json({
       message: "Incorrect password",
-      login: false,
     });
   }
   /*create jwt token to authenticate user in front end*/

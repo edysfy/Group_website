@@ -6,6 +6,7 @@ import { PostService } from '../service/post.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { UserpostComponent } from '../userpost/userpost.component';
 import { Subscription } from 'rxjs';
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-mapbox',
@@ -18,7 +19,7 @@ export class MapboxComponent implements OnInit, OnDestroy {
   private geoPostSubscriber!: Subscription;
   private source: any;
 
-  constructor(private postService: PostService, private dialog: MatDialog) {}
+  constructor(private postService: PostService, private dialog: MatDialog, private as: AuthenticationService) {}
 
   ngOnInit(): void {
     /*suscribe to the getGeoPost data to listen to changes in data*/
@@ -27,6 +28,7 @@ export class MapboxComponent implements OnInit, OnDestroy {
       .subscribe((geoPostArr) => {
         this.geoPost = geoPostArr;
       });
+    console.log(this.as.getToken());
     this.initMap();
   }
 

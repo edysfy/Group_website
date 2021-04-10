@@ -15,6 +15,7 @@ export class SignupComponent implements OnInit, OnDestroy {
   private subscriber!: Subscription;
   isLoading: boolean = false;
 
+
   constructor(
     private urlStateService: UrlStateService,
     private router: ActivatedRoute,
@@ -43,6 +44,7 @@ export class SignupComponent implements OnInit, OnDestroy {
       .subscribe((response) => {
         if(response.regSuc) {
           alert("Login Successful");
+          this.route.navigate(['/login']);
         }else{
           alert("Username is taken");
         }
