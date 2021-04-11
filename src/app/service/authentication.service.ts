@@ -14,12 +14,11 @@ export class AuthenticationService {
     /*get jwt token from storage, if empty user not logged in*/
     this.authToken = localStorage.getItem('token');
     this.authState = new BehaviorSubject<boolean>(false);
-    console.log(this.username);
     if(this.authToken!=null) {
       this.authState.next(true);
       this.username = localStorage.getItem('username');
     }else {
-      this.username="nullj";
+      this.username="null";
     }
   }
 
@@ -66,7 +65,7 @@ export class AuthenticationService {
 
   logout() {
     this.authToken=null,
-    this.username=null,
+    this.username="null";
     window.localStorage.clear();
     this.authState.next(false);
   }

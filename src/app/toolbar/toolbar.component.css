@@ -20,8 +20,8 @@
   .logo {
     position: relative;
     top: 15px;
-    left: -5px;
-    margin: 20px 20px;
+    left: -20%;
+    margin: 10px 10px;
   }
   .login {
     top: -5px;
@@ -43,6 +43,13 @@
     cursor: pointer;
   }
 
+  .aboutLI{
+    position: absolute;
+    right: 2%;
+    top: 40%;
+    cursor: pointer;
+  }
+
 .loginSect{
     width: 30%;
     display: flex;
@@ -55,5 +62,6 @@
 
 .Title {
   position: relative;
-  top: 15px;
+  left: -1%;
+  top: 13px;
 }
