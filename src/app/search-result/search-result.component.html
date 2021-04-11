@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>Search Result</h2>
+  <mat-dialog-actions>
+  <button mat-fab color="primary" (click)="onClose()" class="icon-display">
+    <mat-icon class="mat-icon" inline="true">close</mat-icon>
+  </button>
+
+</mat-dialog-actions>
+<mat-dialog-content>
+  <mat-list dense>
+ <mat-list-item *ngFor="let results of foundData">
+  <mat-card class="list-element">
+    <p matLine>
+    <span>Keyword: {{results.properties.keyword}} </span>
+    <span>MoodRating: {{results.properties.mood}} </span>
+    <span>Explanation: {{results.properties.textBody}} </span>
+    <span>Username: {{results.properties.username}} </span>
+  </p>
+  </mat-card>
+  </mat-list-item>
+</mat-list>
+</mat-dialog-content>

@@ -1,4 +1,12 @@
+::ng-deep .custom-dialog  mat-dialog-container {
+   background-color: rgb(85, 95, 148,0.3);
+   justify-content: center;
+   text-align: left;
+   border-radius: 30px;
+   overflow-y: hidden !important;
+   overflow-x: hidden !important;
 
+ }
 
 .Keyword {
   background-color: whitesmoke;
@@ -6,8 +14,8 @@
 
 .search {
   background-color: whitesmoke;
-  box-shadow: 0 5px 5px 5px whitesmoke, 
-  0 1px 1px 0 whitesmoke, 
+  box-shadow: 0 5px 5px 5px whitesmoke,
+  0 1px 1px 0 whitesmoke,
   0 1px 3px 0 whitesmoke;
   display: inline-flex;
   height: min-content;
@@ -15,12 +23,12 @@
   height: 40px;
 }
 
-button {
+.button {
   margin-left: 10px;
   border-radius: 30px;
+  position: relative;
 }
 
 .keyword {
   padding: 0 20px 0 0;
 }
-
