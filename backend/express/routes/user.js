@@ -79,6 +79,7 @@ async function passwordMatch(
   );
   return res.status(200).json({
     token: token,
+    username: frontEndUsername,
   });
 }
 

@@ -32,6 +32,7 @@ export class MapboxComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    console.log(this.authService.getUsername());
     /*suscribe to the getGeoPost data to listen to changes in data*/
     this.initMap();
   }
@@ -100,8 +101,30 @@ export class MapboxComponent implements OnInit, OnDestroy {
         .getGeoPostData()
         .subscribe((geoPostArr) => {
           this.source.setData(new FeatureCollection(geoPostArr));
-        });
+      });
 
+      
+
+    /*----------------layer for user's posts------------------*/  
+
+      this.map.addLayer({
+        id: 'user-markers',
+        interactive: true,
+        type: 'symbol',
+        source: 'data',
+        minzoom: 9.2,
+        layout: {
+          'icon-image': 'volcano-11',
+          'icon-allow-overlap': true,
+          'icon-size': 2,
+        },
+    });
+    this.map.setFilter('user-markers',['==','username',this.authService.getUsername()]);
+
+    /*----------------layer for user's posts------------------*/  
+
+  
+    /*---------------------everyone's markers apart from user==============*/  
       this.map.addLayer({
         id: 'markers',
         interactive: true,
@@ -127,6 +150,8 @@ export class MapboxComponent implements OnInit, OnDestroy {
           ],
         },
       });
+
+      this.map.setFilter('markers',['!=','username',this.authService.getUsername()]);
 
       this.map.addLayer(
         {
@@ -242,5 +267,7 @@ export class MapboxComponent implements OnInit, OnDestroy {
         });
       });
     });
+  /*--------------------everyone's markers apart from user==============*/  
+
   }
 }

@@ -39,6 +39,7 @@ export class SignupComponent implements OnInit, OnDestroy {
       return;
     }
     else if(form.value.password!=form.value.samepassword) {
+      console.log('not same');
       return;
     }
     console.log(form.value.username);
