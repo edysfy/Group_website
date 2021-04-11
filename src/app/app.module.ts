@@ -48,7 +48,7 @@ const material = [
   MatCheckboxModule,
   MatSelectModule,
   MatSliderModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
 ]
 
 @NgModule({
@@ -62,7 +62,7 @@ const material = [
     PostbuttonComponent,
     UserpostComponent,
     AboutComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     BrowserModule,
