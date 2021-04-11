@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const GeoJson = require("../../mongo_schema/geoJson");
-
-
+const jwt = require("jsonwebtoken");
+const secretKey = require("../jwtsecretkey");
+ 
 /*gets all post from the db*/
 router.get("", (req, res, next) => {
   GeoJson.find()
@@ -24,6 +25,9 @@ router.get("", (req, res, next) => {
 
 /*saves a post to the database*/
 router.post("", (req, res, next) => {
+  const token = req.body.properties.username;
+  const dcryptTkn = jwt.verify(token,secretKey);
+  const username = dcryptTkn.username;
   const newPost = new GeoJson({
     type: req.body.type,
     location: {
@@ -34,6 +38,7 @@ router.post("", (req, res, next) => {
       ],
     },
     properties: {
+      username: username,
       dateTime: req.body.properties.dateTime,
       keyword: req.body.properties.keyword,
       mood: req.body.properties.mood,
@@ -43,9 +48,10 @@ router.post("", (req, res, next) => {
   newPost
     .save()
     .then((dbResponse) => {
-      return res.status(200).json({
+      return res.status(200).json({ 
         message: "geoPost saved in database",
         id: dbResponse._id,
+        username: dbResponse.properties.username,
       });
     })
     .catch((error) => {

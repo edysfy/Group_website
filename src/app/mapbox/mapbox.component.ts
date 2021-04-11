@@ -230,7 +230,8 @@ export class MapboxComponent implements OnInit, OnDestroy {
                 '</p><p>' +
                 'Keyword:' +
                 feature?.properties?.keyword +
-                '</p>'
+                '</p><p>' +
+                feature?.properties?.username 
             )
             .setLngLat(cords)
             .addTo(this.map);

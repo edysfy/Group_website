@@ -12,10 +12,6 @@ const userSchema = new mongoose.Schema({
       type: String,
       required: true,
   },
-  geoPost: {
-    type: [GeoJson],
-    required: false,
-}
 });
 
 /*unique validator is a plugin that sends detailed responses if 

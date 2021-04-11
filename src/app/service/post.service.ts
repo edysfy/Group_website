@@ -75,20 +75,23 @@ export class PostService {
         coordinates: [coords.long, coords.lat],
       },
       properties: {
+        username: localStorage.getItem('token'),
         dateTime: new Date(),
         keyword: keyword,
         mood: rating,
         textBody: post,
       },
     };
+    console.log(localStorage.getItem('token'));
     /*send this to our api, when get response store newGeoPost In Memory*/
     this.http
-      .post<{ message: string; id: string }>(
+      .post<{ message: string; id: string, username: string}>(
         'http://localhost:3000/api/geoPost',
         newGeoPost
       )
       .subscribe((response) => {
         /*create a new geoJson object to put in memory and render to app*/
+        newGeoPost.properties.username = response.username;
         const newGeoJson = new GeoJson(
           newGeoPost.properties,
           newGeoPost.location.coordinates,

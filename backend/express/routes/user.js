@@ -14,7 +14,6 @@ router.post("/signup", (req, res, next) => {
       username: req.body.username,
       /*store hashed password in database*/
       password: req.body.password,
-      geoPost: [],
     });
     /*save the data in mongoDb*/
     user
