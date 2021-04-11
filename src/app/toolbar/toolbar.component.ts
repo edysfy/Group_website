@@ -54,10 +54,6 @@ export class ToolbarComponent implements OnInit {
 
   logOut() {
     this.authService.logout();
-    this.ngOnInit();
-    let currentUrl = this.route.url;
-    this.route.navigateByUrl('/', {skipLocationChange: true}).then(() => {
-        this.route.navigate([currentUrl]);
-    });
+    window.location.reload()
   }
 }

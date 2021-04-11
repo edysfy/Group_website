@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     .subscribe((response) => {
       if (response.token) {
         console.log(response);
-        this.authService.setLogin(response.token);
+        this.authService.setLogin(response.token, response.username);
         this.route.navigate([''])
       }
       else if(response.message == "Incorrect password") {

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,12 +8,18 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 export class AuthenticationService {
   authToken!: string|null;
   public authState!: BehaviorSubject<boolean>;
+  username!: String|null;
 
   constructor(private http: HttpClient) { 
+    /*get jwt token from storage, if empty user not logged in*/
     this.authToken = localStorage.getItem('token');
     this.authState = new BehaviorSubject<boolean>(false);
+    console.log(this.username);
     if(this.authToken!=null) {
       this.authState.next(true);
+      this.username = localStorage.getItem('username');
+    }else {
+      this.username="nullj";
     }
   }
 
@@ -35,16 +41,18 @@ export class AuthenticationService {
       password: password,
     };
     return this.http
-      .post<{ token: string; message: string }>(
+      .post<{ token: string; message: string, username: string }>(
         'http://localhost:3000/api/user/login',
         loginData
       )
   }
 
 
-  setLogin(token: string) {
+  setLogin(token: string, username: string) {
     this.authToken = token;
+    this.username = username;
     window.localStorage.setItem('token',this.authToken);
+    window.localStorage.setItem('username',username);
     this.authState.next(true);
   }
 
@@ -58,8 +66,13 @@ export class AuthenticationService {
 
   logout() {
     this.authToken=null,
+    this.username=null,
     window.localStorage.clear();
     this.authState.next(false);
+  }
+
+  getUsername() {
+    return this.username;
   }
 
 }
