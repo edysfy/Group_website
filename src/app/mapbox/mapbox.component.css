@@ -1,12 +1,27 @@
+.full{
+    display: flex;
+    background-color: aqua;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    top: 80px;
+}
 
-div {
-    position: fixed;
-    width: 100%;
+.side-icon {
+    background-color: aqua;
     height: 100%;
+    width: 40%;
+}
+
+#map {
+    position: relative;
     background-color: black;
-    top: 85px;
+    /* top: 85px;
+    left: 500px; */
     overflow-y: hidden !important;
     overflow-x: hidden !important;
+    height: inherit;
+    width: inherit;
 }
 
 app-searchfield {
@@ -23,3 +38,4 @@ app-postbutton {
     display: flex;
 
 }
+
