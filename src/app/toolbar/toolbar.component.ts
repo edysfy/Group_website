@@ -33,13 +33,15 @@ export class ToolbarComponent implements OnInit {
     this.subscriber = this.authService.getAuthState().subscribe((logIn) => {
       this.isLoggedIn = logIn;
     });
+    if(this.isLoggedIn) {
+      this.title = localStorage.getItem('username');
+    }
     console.log(this.isLoggedIn);
   }
 
   ngOnInit(): void {
     /*listen to obesrvable path paramter in url service*/
     this.urlStateService.getUrlObservable().subscribe((param) => {
-      console.log(param);
       /*change toolbar color and title due to different param*/
       if (param === 'login') {
         this.title = 'Login';
