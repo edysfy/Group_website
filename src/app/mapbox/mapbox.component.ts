@@ -74,8 +74,8 @@ export class MapboxComponent implements OnInit, OnDestroy {
           dialogConfig.height = '78%';
           dialogConfig.hasBackdrop = true;
           dialogConfig.panelClass = 'custom-dialog';
-          this.dialog.open(UserpostComponent, dialogConfig);
           dialogConfig.position = {bottom: '3%', right: '7%'};
+          this.dialog.open(UserpostComponent, dialogConfig);
           this.postService.updateLongLat({
             long: e.lngLat.lng,
             lat: e.lngLat.lat,
@@ -151,8 +151,6 @@ export class MapboxComponent implements OnInit, OnDestroy {
         },
       });
 
-      this.map.setFilter('markers',['!=','username',this.authService.getUsername()]);
-
       this.map.addLayer(
         {
           id: 'mood-heat',
@@ -226,50 +224,6 @@ export class MapboxComponent implements OnInit, OnDestroy {
       this.map.on('mouseenter', 'markers', (e) => {
         var features = this.map.queryRenderedFeatures(e.point, {
           layers: ['markers'],
-        });
-        this.map.getCanvas().style.cursor = 'pointer';
-
-        if (!features.length) {
-          return;
-        }
-
-        var feature = features[0];
-        if (feature.geometry.type === 'Point') {
-          var cords = new mapboxgl.LngLat(
-            feature.geometry.coordinates[0],
-            feature.geometry.coordinates[1]
-          );
-
-          var popup = new mapboxgl.Popup({
-            offset: [0, -15],
-            closeButton: false,
-            closeOnClick: false,
-          })
-            .setLngLat(cords)
-            .setHTML(
-              '<h3>' +
-                feature?.properties?.textBody +
-                '</h3><p>' +
-                'MoodRating:' +
-                feature?.properties?.mood +
-                '</p><p>' +
-                'Keyword:' +
-                feature?.properties?.keyword +
-                '</p><p>' +
-                feature?.properties?.username
-            )
-            .setLngLat(cords)
-            .addTo(this.map);
-        }
-        this.map.on('mouseleave', 'markers', (e) => {
-          this.map.getCanvas().style.cursor = '';
-          popup.remove();
-        });
-      });
-
-      this.map.on('mouseenter', 'user-markers', (e) => {
-        var features = this.map.queryRenderedFeatures(e.point, {
-          layers: ['user-markers'],
         });
         this.map.getCanvas().style.cursor = 'pointer';
 

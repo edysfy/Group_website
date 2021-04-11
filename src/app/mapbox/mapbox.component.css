@@ -3,7 +3,7 @@
     background-color: aqua;
     height: 100vh;
     width: 100vw;
-    position: relative;
+    position: fixed;
     top: 80px;
 }
 
@@ -38,4 +38,7 @@ app-postbutton {
     display: flex;
 
 }
+
+
+ 
 
