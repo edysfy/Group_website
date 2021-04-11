@@ -12,14 +12,10 @@ import { AuthenticationService } from '../service/authentication.service';
 export class SidebarComponent implements OnInit {
   isLoggedIn!: boolean;
   faSignOutAlt: IconDefinition = faSignOutAlt;
-  subscriber!: Subscription;
 
   constructor(private authService: AuthenticationService) { }
 
   ngOnInit(): void {
-    this.subscriber = this.authService.getAuthState().subscribe((logIn) => {
-      this.isLoggedIn = logIn;
-    });
   }
 
   logOut() {

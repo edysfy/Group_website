@@ -9,7 +9,8 @@
 
 .side-icon {
     height: 100%;
-    width: 90px;
+    width: 55%;
+    background-color: aqua;
 }
 
 #map {

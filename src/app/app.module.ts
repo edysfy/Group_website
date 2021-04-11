@@ -34,6 +34,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SearchResultComponent } from './search-result/search-result.component';
 import {MatListModule} from '@angular/material/list';
+import { UserComponent } from './user/user.component';
 
 
 
@@ -68,6 +69,7 @@ const material = [
     AboutComponent,
     SidebarComponent,
     SearchResultComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
