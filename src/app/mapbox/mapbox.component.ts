@@ -74,6 +74,7 @@ export class MapboxComponent implements OnInit, OnDestroy {
           dialogConfig.hasBackdrop = true;
           dialogConfig.panelClass = 'custom-dialog';
           this.dialog.open(UserpostComponent, dialogConfig);
+          dialogConfig.position = {bottom: '3%', right: '7%'};
           this.postService.updateLongLat({
             long: e.lngLat.lng,
             lat: e.lngLat.lat,
