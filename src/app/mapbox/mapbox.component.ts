@@ -103,9 +103,9 @@ export class MapboxComponent implements OnInit, OnDestroy {
           this.source.setData(new FeatureCollection(geoPostArr));
       });
 
-      
 
-    /*----------------layer for user's posts------------------*/  
+
+    /*----------------layer for user's posts------------------*/
 
       this.map.addLayer({
         id: 'user-markers',
@@ -121,10 +121,10 @@ export class MapboxComponent implements OnInit, OnDestroy {
     });
     this.map.setFilter('user-markers',['==','username',this.authService.getUsername()]);
 
-    /*----------------layer for user's posts------------------*/  
+    /*----------------layer for user's posts------------------*/
 
-  
-    /*---------------------everyone's markers apart from user==============*/  
+
+    /*---------------------everyone's markers apart from user==============*/
       this.map.addLayer({
         id: 'markers',
         interactive: true,
@@ -256,7 +256,51 @@ export class MapboxComponent implements OnInit, OnDestroy {
                 'Keyword:' +
                 feature?.properties?.keyword +
                 '</p><p>' +
-                feature?.properties?.username 
+                feature?.properties?.username
+            )
+            .setLngLat(cords)
+            .addTo(this.map);
+        }
+        this.map.on('mouseleave', 'markers', (e) => {
+          this.map.getCanvas().style.cursor = '';
+          popup.remove();
+        });
+      });
+
+      this.map.on('mouseenter', 'user-markers', (e) => {
+        var features = this.map.queryRenderedFeatures(e.point, {
+          layers: ['user-markers'],
+        });
+        this.map.getCanvas().style.cursor = 'pointer';
+
+        if (!features.length) {
+          return;
+        }
+
+        var feature = features[0];
+        if (feature.geometry.type === 'Point') {
+          var cords = new mapboxgl.LngLat(
+            feature.geometry.coordinates[0],
+            feature.geometry.coordinates[1]
+          );
+
+          var popup = new mapboxgl.Popup({
+            offset: [0, -15],
+            closeButton: false,
+            closeOnClick: false,
+          })
+            .setLngLat(cords)
+            .setHTML(
+              '<h3>' +
+                feature?.properties?.textBody +
+                '</h3><p>' +
+                'MoodRating:' +
+                feature?.properties?.mood +
+                '</p><p>' +
+                'Keyword:' +
+                feature?.properties?.keyword +
+                '</p><p>' +
+                feature?.properties?.username
             )
             .setLngLat(cords)
             .addTo(this.map);
@@ -267,7 +311,7 @@ export class MapboxComponent implements OnInit, OnDestroy {
         });
       });
     });
-  /*--------------------everyone's markers apart from user==============*/  
+  /*--------------------everyone's markers apart from user==============*/
 
   }
 }
