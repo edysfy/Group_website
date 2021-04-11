@@ -16,7 +16,7 @@ import { UrlStateService } from '../service/url-state.service';
   styleUrls: ['./toolbar.component.css'],
 })
 export class ToolbarComponent implements OnInit {
-  public title: string;
+  public title: String|null;
   isLoggedIn!: boolean;
   subscriber!: Subscription;
   /*login register icons icons*/
@@ -39,6 +39,7 @@ export class ToolbarComponent implements OnInit {
   ngOnInit(): void {
     /*listen to obesrvable path paramter in url service*/
     this.urlStateService.getUrlObservable().subscribe((param) => {
+      console.log(param);
       /*change toolbar color and title due to different param*/
       if (param === 'login') {
         this.title = 'Login';
@@ -47,7 +48,12 @@ export class ToolbarComponent implements OnInit {
       } else if (param === 'about') {
         this.title = 'EmoteMap';
       } else {
-        this.title = 'EmoteMap';
+        if(this.isLoggedIn) {
+          this.title = this.authService.getUsername();
+        }else {
+          this.title = 'EmoteMap';
+
+        }
       }
     });
   }

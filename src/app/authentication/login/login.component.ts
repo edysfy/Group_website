@@ -40,7 +40,6 @@ export class LoginComponent implements OnInit, OnDestroy {
     this.authService.login(form.value.username, form.value.password)
     .subscribe((response) => {
       if (response.token) {
-        console.log(response);
         this.authService.setLogin(response.token, response.username);
         this.route.navigate([''])
       }

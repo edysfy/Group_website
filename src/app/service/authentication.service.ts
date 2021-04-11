@@ -8,7 +8,7 @@ import { BehaviorSubject} from 'rxjs';
 export class AuthenticationService {
   authToken!: string|null;
   public authState!: BehaviorSubject<boolean>;
-  username!: String|null;
+  username!: string|null;
 
   constructor(private http: HttpClient) { 
     /*get jwt token from storage, if empty user not logged in*/

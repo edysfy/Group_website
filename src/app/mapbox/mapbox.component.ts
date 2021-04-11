@@ -13,7 +13,7 @@ import { AuthenticationService } from '../service/authentication.service';
   templateUrl: './mapbox.component.html',
   styleUrls: ['./mapbox.component.css'],
 })
-export class MapboxComponent implements OnInit, OnDestroy {
+export class MapboxComponent implements OnInit {
   private map!: mapboxgl.Map;
   private geoPost!: Array<GeoJson>;
   private geoPostSubscriber!: Subscription;
@@ -32,13 +32,8 @@ export class MapboxComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log(this.authService.getUsername());
     /*suscribe to the getGeoPost data to listen to changes in data*/
     this.initMap();
-  }
-
-  ngOnDestroy(): void {
-    this.geoPostSubscriber.unsubscribe();
   }
 
   /*init map and flys to user coords*/
