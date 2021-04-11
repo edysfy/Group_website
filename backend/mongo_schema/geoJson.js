@@ -13,10 +13,10 @@ const geoPositionSchema = new mongoose.Schema({
 });
 
 const postSchema = new mongoose.Schema({
-  // username: {
-  //   type: String,
-  //   required: true,
-  // },
+  username: {
+    type: String,
+    required: true,
+  },
   dateTime: {
     type: Date,
     required: true,

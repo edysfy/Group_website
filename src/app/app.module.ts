@@ -30,6 +30,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { AboutComponent } from './about/about.component';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 
@@ -60,7 +61,8 @@ const material = [
     SignupComponent,
     PostbuttonComponent,
     UserpostComponent,
-    AboutComponent
+    AboutComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
