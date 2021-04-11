@@ -1,15 +1,17 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../../mongo_schema/user");
-//const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const secretKey = require("../jwtsecretkey");
 
 router.post("/signup", (req, res, next) => {
-  // const saltRounds = 10;
-  // /*looked online and bcrypt is good lib to hash/secure passwords*/
-  // bcrypt.hash(req.body.password, saltRounds).then((hashedPassword) => {
-    /*create user model with request body parameters*/
+    /*cant use null as a username*/
+    if (req.body.username === "null") {
+      return res.json({
+        message: "Username Taken",
+        regSuc: false,
+      });
+    }
     const user = new User({
       username: req.body.username,
       /*store hashed password in database*/
@@ -36,9 +38,6 @@ router.post("/signup", (req, res, next) => {
   });
 // });
 
-router.get("/login", (req, res, next) => {
-  console.log("path exists");
-})
 
 router.post("/login", (req, res, next) => {
   User.findOne({ username: req.body.username }).then((query) => {
@@ -60,9 +59,6 @@ async function passwordMatch(
   userHashPassword,
   res
 ) {
-  // /*compare passwords and send correct response*/
-  // const comparePromise = bcrypt.compare(frontEndPassword, userHashPassword);
-  // const doPasswordsMatch = await comparePromise;
 
   if (frontEndPassword!=userHashPassword) {
     return res.json({
