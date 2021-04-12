@@ -9,8 +9,9 @@
 
 .side-icon {
     height: 100%;
-    width: 55%;
-    background-color: aqua;
+    width: 900px;
+    background-color: white;
+    display: inline-block;
 }
 
 #map {
@@ -37,11 +38,6 @@ app-postbutton {
     bottom: 15px;
     display: flex;
 
-}
-
-app-sidebar {
-    height: 100%;
-    width: 100%;
 }
 
 
