@@ -37,6 +37,8 @@ import { MatListModule } from '@angular/material/list';
 import { UserComponent } from './user/user.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import {MatRadioModule} from '@angular/material/radio';
+
 
 const material = [
   BrowserAnimationsModule,
@@ -56,6 +58,7 @@ const material = [
   MatListModule,
   MatDatepickerModule,
   MatNativeDateModule,
+  MatRadioModule
 ];
 
 @NgModule({

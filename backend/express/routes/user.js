@@ -78,27 +78,59 @@ async function passwordMatch(
 }
 
 router.get("/:username", (req, res, next) => {
-  if(req.params.username == null) {
-    return res.json
-  }
   User.findOne({ username: req.params.username })
-  .then((user) => {
-    res
-      .status(200)
-      .json({
+    .then((user) => {
+      const date = convertDateToString(user.dob);
+      const gender = checkIfGenderNull(user.gender);
+      res.status(200).json({
         user: {
           username: user.username,
-          dob: user.dob,
-          about: user.about,
-          gender: user.gender,
+          dob: date,
+          gender: gender,
         },
-      })
-  })
-  .catch((error) => {
-    res.json({
-      exist: false,
+      });
+    })
+    .catch((error) => {
+      res.json({
+        exist: false,
+      });
     });
-  });;
+});
+
+function convertDateToString(date) {
+  if (date === null) {
+    return "n/a";
+  }
+  return date.toDateString();
+}
+
+function checkIfGenderNull(gender) {
+  if (gender === null) {
+    return "n/a";
+  }
+  return gender;
+}
+
+router.put("/:username", (req, res, next) => {
+  console.log(req.params.username);
+  console.log(req.body.gender);
+  if (req.body.gender != null) {
+    User.updateOne({ username: req.params.username }, { gender: req.body.gender })
+      .then((result) => {
+        console.log(result.nModified);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  } else {
+    User.updateOne({ username: req.params.username }, { dob: req.body.dob })
+      .then((result) => {
+        console.log(result.nModified);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
 });
 
 module.exports = router;
