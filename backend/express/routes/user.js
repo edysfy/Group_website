@@ -86,7 +86,12 @@ router.get("/:username", (req, res, next) => {
     res
       .status(200)
       .json({
-        user: user,
+        user: {
+          username: user.username,
+          dob: user.dob,
+          about: user.about,
+          gender: user.gender,
+        },
       })
   })
   .catch((error) => {

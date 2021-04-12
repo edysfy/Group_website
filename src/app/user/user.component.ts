@@ -9,7 +9,9 @@ import { UserService } from '../service/user.service';
   styleUrls: ['./user.component.css'],
 })
 export class UserComponent implements OnInit {
-  private userDetails!: User;
+  userDetails!: User;
+  isDobNull!: boolean;
+  isGenderNull!: boolean;
 
   constructor(
     private authService: AuthenticationService,
@@ -18,9 +20,15 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.authService.getAuthState()) {
-      this.userService.getUserFromDB().subscribe((user) => {
-        this.userDetails = user;
-        console.log(this.userDetails);
+      this.userService.getUserFromDB().subscribe((dbres) => {
+        this.userDetails = dbres;
+        console.log(dbres)
+        if(this.userDetails.dob === null) {
+          this.isDobNull = true;
+        }
+        if(this.userDetails.gender === null) {
+          this.isGenderNull = true;
+        }
       });
     }
   }

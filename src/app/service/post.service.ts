@@ -57,7 +57,6 @@ export class PostService {
         /*set the new state fom the geoJson array*/
         this.geoPostSubject.next(this.geoPosts);
       });
-    console.log(this.geoPosts);
     /*return observable, used in mapbox component to listen to
     changes in state*/
     return this.geoPostSubject.asObservable();
@@ -82,7 +81,6 @@ export class PostService {
         textBody: post,
       },
     };
-    console.log(localStorage.getItem('token'));
     /*send this to our api, when get response store newGeoPost In Memory*/
     this.http
       .post<{ message: string; id: string, username: string}>(

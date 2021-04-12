@@ -10,8 +10,8 @@
 .side-icon {
     height: 100%;
     width: 900px;
-    background-color: rgb(138, 146, 187);
-    display: inline-block;
+    background-color: white;
+    display: flex;
     
 }
 

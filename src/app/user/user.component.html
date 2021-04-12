@@ -1,3 +1,43 @@
 <div class="user-profile">
+    <h1 style="width: 70%; margin-left: 20%; margin-top: 30px;">
+        Welcome to EmoteMap
+    </h1>
+    <h2 style="width: 70%; margin-left: 12%; text-align: center;">
+        Please enter you age and gender so we can accuratly represent mental health issues across different age groups and genders across the world
+    </h2>
 
+
+    <div class="dob" style="display: flex; margin-left: 5%; margin-top: 40px;">
+       <p style="position:relative; top: 18px">
+            Date Of Birth: 
+       </p>
+       <form *ngIf="isDobNull">
+        <mat-form-field appearance="fill" style="width: 200px; position: relative; bottom: 18px; margin-left: 10px;">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+       </form>
+       <button class="dob-button" mat-raised-button color="primary" >
+        <mat-icon>save</mat-icon>
+      </button>
+    </div>
+
+
+    <div class="age" *ngIf="!isDobNull">
+
+    </div>
+    <div class="gender" style="display: flex; margin-left: 5%; margin-top: 40px;">
+        <p>
+             Gender: 
+        </p>
+        <section *ngIf="isDobNull" class="gender-tick"  style="display: flex; margin-left: 10px; position: relative; bottom: 3px;">
+            <mat-checkbox class="example-margin">Male</mat-checkbox>
+            <div style="width: 10px;">
+
+            </div>
+            <mat-checkbox class="example-margin">Female</mat-checkbox>
+          </section>
+     </div>
 </div>

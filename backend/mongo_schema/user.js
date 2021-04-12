@@ -22,11 +22,6 @@ const userSchema = new mongoose.Schema({
     default: null,
     required: false,
   },
-  about: {
-    type: String,
-    default: null,
-    required: false,
-  }
 });
 
 /*unique validator is a plugin that sends detailed responses if 

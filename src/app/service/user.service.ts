@@ -15,10 +15,10 @@ export class UserService {
 
   getUserFromDB(): Observable<User> {
     const username = localStorage.getItem('username');
-    this.http.get<User>('http://localhost:3000/api/user/' + username)
-    .subscribe(user => {
-      if(user!=null) {
-        this.userDetails.next(user);
+    this.http.get<{user: User}>('http://localhost:3000/api/user/' + username)
+    .subscribe(res => {
+      if(res!=null) {
+        this.userDetails.next(res.user);
       }
     });
     return this.userDetails.asObservable()

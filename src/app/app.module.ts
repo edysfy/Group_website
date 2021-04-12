@@ -15,7 +15,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/Toolbar';
 import { MapboxComponent } from './mapbox/mapbox.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './authentication/login/login.component';
@@ -26,17 +26,17 @@ import { PostService } from './service/post.service';
 import { DataSearchService } from './data-search.service';
 import { PostbuttonComponent } from './postbutton/postbutton.component';
 import { UserpostComponent } from './userpost/userpost.component';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatSelectModule} from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatSelectModule } from '@angular/material/select';
 import { AboutComponent } from './about/about.component';
-import {MatSliderModule} from '@angular/material/slider';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SearchResultComponent } from './search-result/search-result.component';
-import {MatListModule} from '@angular/material/list';
+import { MatListModule } from '@angular/material/list';
 import { UserComponent } from './user/user.component';
-
-
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 const material = [
   BrowserAnimationsModule,
@@ -54,7 +54,9 @@ const material = [
   MatSliderModule,
   MatProgressSpinnerModule,
   MatListModule,
-]
+  MatDatepickerModule,
+  MatNativeDateModule,
+];
 
 @NgModule({
   declarations: [
@@ -78,10 +80,14 @@ const material = [
     ...material,
     BrowserAnimationsModule,
     HttpClientModule,
-
   ],
-  providers: [AuthenticationService, UrlStateService, PostService, DataSearchService],
+  providers: [
+    AuthenticationService,
+    UrlStateService,
+    PostService,
+    DataSearchService,
+  ],
   bootstrap: [AppComponent],
-  entryComponents: [UserpostComponent]
+  entryComponents: [UserpostComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,8 +1,15 @@
 .user-profile {
     position: relative;
+    bottom: 10px;
     width: inherit;
-    bottom: 102%;
     height: 100%;
-    left: 90px;
-    background-color: rgb(138, 146, 187);
+    background-color: white;
+}
+
+.dob-button {
+    margin-left: 10px;
+    border-radius: 30px;
+    bottom: -1px;
+    position: relative;
+    height: 35px;
 }
