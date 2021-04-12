@@ -44,7 +44,7 @@ export class UserpostComponent implements OnInit {
     this.postService.createPost(
       this.form.value.rating,
       this.form.value.keyword,
-      this.form.value.post,
+      this.form.value.post
     );
   }
 
