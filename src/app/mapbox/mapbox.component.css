@@ -38,6 +38,19 @@ app-postbutton {
     right:30px;
     bottom: 15px;
     display: flex;
+}
+
+.overlay {
+    position: fixed;
+    overflow: auto;
+    bottom: 0px;
+    right: 10px;
+}
+
+.emotionKeyImage {
+    width: 75px;
+    bottom: 10px;
+    right: 10px;
 
 }
 
