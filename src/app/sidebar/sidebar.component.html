@@ -1,5 +1,11 @@
 <div class="vert-usertb">
     <div class="material-icons">
+        preview
+    </div>
+    <div class="material-icons" (click) = "clickUserIcon()" *ngIf="!clickedUserProfileState">
+        person
+    </div>
+    <div class="material-icons" (click) = "clickUserIcon()" *ngIf="clickedUserProfileState" id="clicked">
         person
     </div>
     <div class="material-icons">
@@ -8,10 +14,6 @@
     <div class="material-icons">
         search
     </div>
-    <div class="material-icons">
-        preview
-    </div>
-
     <div class="material-icons">
         settings
     </div>

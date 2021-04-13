@@ -25,3 +25,21 @@
     border-color: black;
     margin: 10px;
 }
+
+#clicked{
+    background-color: rgb(154, 214, 253);
+    position: relative;
+    width: 70%;
+    height: 60px;
+    align-items: center;
+    font-size: 60px;
+    left: 2px;
+    top: 10px;
+    cursor: pointer;
+    border-style: solid;
+    border-radius: 5px;
+    border-radius: 10px;
+    border-color: black;
+    margin: 10px;
+}
+

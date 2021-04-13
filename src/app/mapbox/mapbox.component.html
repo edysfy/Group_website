@@ -2,7 +2,7 @@
     <div class="side-icon" *ngIf="isLoggedIn">
         <app-sidebar></app-sidebar>
     </div>
-    <app-user *ngIf="isLoggedIn" [@inOutAnimation]></app-user>
+    <app-user *ngIf="isLoggedIn && clickUserProfile" [@inOutAnimation]></app-user>
     <div id="map">
     </div>
 </div>

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { IconDefinition,faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
-import { Subscription } from 'rxjs';
 import { AuthenticationService } from '../service/authentication.service';
+import { SidebarService } from '../service/sidebar.service';
 
 
 @Component({
@@ -11,14 +10,21 @@ import { AuthenticationService } from '../service/authentication.service';
 })
 export class SidebarComponent implements OnInit {
   isLoggedIn!: boolean;
-  faSignOutAlt: IconDefinition = faSignOutAlt;
+  clickedUserProfileState!: boolean;
 
-  constructor(private authService: AuthenticationService) { }
+  constructor(private authService: AuthenticationService, private sidebarService: SidebarService) { }
 
   ngOnInit(): void {
+    this.sidebarService.getLoginClickedObs().subscribe((state) => {
+      this.clickedUserProfileState = state;
+    })
   }
 
-  logOut() {
+  clickUserIcon():void {
+    this.sidebarService.setLoginClickedState(!this.clickedUserProfileState);
+  }
+
+  logOut():void {
     this.authService.logout();
     window.location.reload()
   }

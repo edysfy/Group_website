@@ -8,6 +8,7 @@ import { UserpostComponent } from '../userpost/userpost.component';
 import { Subscription } from 'rxjs';
 import { AuthenticationService } from '../service/authentication.service';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { SidebarService } from '../service/sidebar.service';
 
 @Component({
   selector: 'app-mapbox',
@@ -21,7 +22,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
           ':enter', 
           [
             style({ width: 0, opacity: 0 }),
-            animate('3s ease-out', 
+            animate('1s ease-out', 
                     style({ width: 500, opacity: 1 }))
           ]
         ),
@@ -29,7 +30,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
           ':leave', 
           [
             style({ width: 500, opacity: 1 }),
-            animate('0.5s ease-in', 
+            animate('1s ease-in', 
                     style({ width: 0, opacity: 0 }))
           ]
         )
@@ -44,18 +45,24 @@ export class MapboxComponent implements OnInit {
   private authSubscriber!: Subscription;
   isLoggedIn!: boolean;
   private source: any;
+  clickUserProfile!: boolean;
 
   constructor(
     private postService: PostService,
     private dialog: MatDialog,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private sidebarService: SidebarService,
   ) {
   }
 
   ngOnInit(): void {
     this.authSubscriber = this.authService.getAuthState().subscribe((logIn) => {
       this.isLoggedIn = logIn;
-    });    
+    });   
+    this.sidebarService.getLoginClickedObs().subscribe((hasClicked) => {
+      console.log(hasClicked);
+      this.clickUserProfile = hasClicked;
+    })
     this.initMap();
   }
 
