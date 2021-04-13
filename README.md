@@ -1,3 +1,35 @@
+# Introduction 
+•	Abstract. Motivation for the project, framing of the problem and a high-level overview of the system.  
+•	Project Objectives. The high level goals of the project and the contribution towards solving the problem. A checklist against which the team can evaluate their success.  
+•	Video. Short (1-2min) - demo video to explain your system (think Kickstarter). 
+
+
+
+## Abstract
+
+(re-do this at the very end) During lockdown there has been an increase in mental health issues and isolation amongst people. We sought to address this problem by developing a communal/global map that allows users to pin and write logs about how they feel at certain times and locations. If a user is not logged in or authenticated they can only see that map and read posts but not create or edit posts. Once the user logs in they can select a location during the day and vent their thoughts at a particular location. There will be a timeline function where the user can choose to see what they wrote about across time and space. The users pins will be different from other users so they can distinguish them. This effectively acts as an interactive diary. Users can also comment on other posts to give a sense of community {enter how community aids happiness}. There will also be a search bar that allows users/non-users to search for key terms and display pins/posts across the global relating to that term. This application is a fun way to allow users to vent and communicate with others while allowing people to view trends of emotional state across the globe, which helps with loneliness and brings awareness to mental health topics.
+
+
+## Objectives 
+1 - Create a writing tool that allows self-reflection in a similar way to blogging.  
+2 - Create a peer-led support network where users can interact with each other as a community.    
+3 - Create a tool that raises awareness and information through a visual heat-map based on an accumulation of users' mental health in different geolocations. 
+
+
+
+
+
+  
+    
+      
+        
+           
+             
+               
+                 
+                   
+                    
+                    
 Title : EmoteMap  
  
 What is the serious element?
