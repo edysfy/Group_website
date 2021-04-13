@@ -94,11 +94,11 @@ export class MapboxComponent implements OnInit {
         if (zoom > 12) {
           const dialogConfig = new MatDialogConfig();
           dialogConfig.autoFocus = false;
-          dialogConfig.width = '60%';
-          dialogConfig.height = '78%';
+          dialogConfig.width = '55%';
+          dialogConfig.height = '70%';
           dialogConfig.hasBackdrop = true;
           dialogConfig.panelClass = 'custom-dialog';
-          dialogConfig.position = {bottom: '3%', right: '7%'};
+          dialogConfig.position = {bottom: '8%', right: '20%'};
           this.dialog.open(UserpostComponent, dialogConfig);
           this.postService.updateLongLat({
             long: e.lngLat.lng,
