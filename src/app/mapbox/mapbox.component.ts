@@ -7,11 +7,35 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { UserpostComponent } from '../userpost/userpost.component';
 import { Subscription } from 'rxjs';
 import { AuthenticationService } from '../service/authentication.service';
+import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-mapbox',
   templateUrl: './mapbox.component.html',
   styleUrls: ['./mapbox.component.css'],
+ animations: [
+    trigger(
+      'inOutAnimation', 
+      [
+        transition(
+          ':enter', 
+          [
+            style({ width: 0, opacity: 0 }),
+            animate('3s ease-out', 
+                    style({ width: 500, opacity: 1 }))
+          ]
+        ),
+        transition(
+          ':leave', 
+          [
+            style({ width: 500, opacity: 1 }),
+            animate('0.5s ease-in', 
+                    style({ width: 0, opacity: 0 }))
+          ]
+        )
+      ]
+    )
+  ]
 })
 export class MapboxComponent implements OnInit {
   private map!: mapboxgl.Map;
@@ -26,13 +50,12 @@ export class MapboxComponent implements OnInit {
     private dialog: MatDialog,
     private authService: AuthenticationService
   ) {
-    this.authSubscriber = this.authService.getAuthState().subscribe((logIn) => {
-      this.isLoggedIn = logIn;
-    });
   }
 
   ngOnInit(): void {
-    /*suscribe to the getGeoPost data to listen to changes in data*/
+    this.authSubscriber = this.authService.getAuthState().subscribe((logIn) => {
+      this.isLoggedIn = logIn;
+    });    
     this.initMap();
   }
 

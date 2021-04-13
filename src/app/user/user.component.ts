@@ -25,7 +25,7 @@ export class UserComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    if (this.authService.getAuthState()) {
+    if (this.authService.getAuthState().getValue()) {
       this.userService.getUserFromDB().subscribe((dbres) => {
         this.userDetails = dbres;
         if (this.userDetails.dob === 'n/a') {

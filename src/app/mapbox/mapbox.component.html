@@ -1,8 +1,8 @@
 <div class="full">
     <div class="side-icon" *ngIf="isLoggedIn">
         <app-sidebar></app-sidebar>
-        <app-user></app-user>
     </div>
+    <app-user *ngIf="isLoggedIn" [@inOutAnimation]></app-user>
     <div id="map">
     </div>
 </div>
