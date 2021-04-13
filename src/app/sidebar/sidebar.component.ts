@@ -15,6 +15,9 @@ export class SidebarComponent implements OnInit {
   constructor(private authService: AuthenticationService, private sidebarService: SidebarService) { }
 
   ngOnInit(): void {
+    this.authService.getAuthState().subscribe((logIn) => {
+      this.isLoggedIn = logIn;
+    });  
     this.sidebarService.getLoginClickedObs().subscribe((state) => {
       this.clickedUserProfileState = state;
     })

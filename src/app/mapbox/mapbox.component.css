@@ -9,14 +9,7 @@
 
 }
 
-.side-icon {
-    height: 100%;
-    width: 90px;
-    background-color: rgba(255, 255, 255,0.8);
-    display: flex;
 
-    
-}
 
 #map {
     position: relative;
@@ -32,16 +25,15 @@
 app-searchfield {
     position: fixed;
     left:35%;
-    bottom: 20px;
-    width: 500px;
+    bottom: 30px;
 }
 
-app-postbutton {
-    position: fixed;
-    right:30px;
-    bottom: 15px;
-    display: flex;
 
+
+app-sidebar {
+    bottom: 0px;
+    left: 34%;
+    position: fixed;
 }
 
 

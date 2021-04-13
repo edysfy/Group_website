@@ -76,16 +76,15 @@ export class MapboxComponent implements OnInit {
       center: [-0.2101765, 51.5942466],
     });
 
-    /*Geolocation*/
-    this.map.addControl(
-      new mapboxgl.GeolocateControl({
-        positionOptions: {
-          enableHighAccuracy: true,
-        },
-        trackUserLocation: true,
-      })
-    );
-    this.map.addControl(new mapboxgl.NavigationControl());
+    // /*Geolocation*/
+    // this.map.addControl(
+    //   new mapboxgl.GeolocateControl({
+    //     positionOptions: {
+    //       enableHighAccuracy: true,
+    //     },
+    //     trackUserLocation: true,
+    //   })
+    // );
 
     /*this opens dialog when click and saves coords as new state*/
     this.map.on('click', (e) => {

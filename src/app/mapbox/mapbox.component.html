@@ -1,11 +1,9 @@
+
 <div class="full">
-    <div class="side-icon" *ngIf="isLoggedIn">
-        <app-sidebar></app-sidebar>
-    </div>
     <app-user *ngIf="isLoggedIn && clickUserProfile" [@inOutAnimation]></app-user>
     <div id="map">
     </div>
 </div>
 
 <app-searchfield *ngIf="!isLoggedIn"></app-searchfield>
-<app-postbutton *ngIf="isLoggedIn"></app-postbutton>
+<app-sidebar *ngIf="isLoggedIn"></app-sidebar>

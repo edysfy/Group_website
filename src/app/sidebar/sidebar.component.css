@@ -1,9 +1,10 @@
 .vert-usertb{
     background-color: whitesmoke;
-    width: 90px;
-    height: 100%;
-    display: block;
+    width: 560px;
+    height: 90px;
+    display: flex;
     border-color: black;
+    border-radius: 40px;
 }
 
 .space {
@@ -12,12 +13,12 @@
 
 .material-icons{
     position: relative;
-    width: 70%;
-    height: 60px;
+    width: 50px;
+    height: 59%;
     align-items: center;
-    font-size: 60px;
-    left: 2px;
-    top: 10px;
+    font-size: 50px;
+    left: 15px;
+    top: 5px;
     cursor: pointer;
     border-style: solid;
     border-radius: 5px;
@@ -29,12 +30,12 @@
 #clicked{
     background-color: rgb(154, 214, 253);
     position: relative;
-    width: 70%;
-    height: 60px;
+    width: 50px;
+    height: 59%;
     align-items: center;
-    font-size: 60px;
-    left: 2px;
-    top: 10px;
+    font-size: 50px;
+    left: 15px;
+    top: 5px;
     cursor: pointer;
     border-style: solid;
     border-radius: 5px;
@@ -43,3 +44,10 @@
     margin: 10px;
 }
 
+app-postbutton {
+    position: absolute;
+    right:25px;
+    bottom: 37px;
+    display: flex;
+
+}
