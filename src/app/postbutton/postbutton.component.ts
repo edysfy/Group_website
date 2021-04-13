@@ -30,7 +30,7 @@ export class PostbuttonComponent implements OnInit {
     dialogConfig.height = '70%';
     dialogConfig.hasBackdrop = true;
     dialogConfig.panelClass = 'custom-dialog';
-    dialogConfig.position = {bottom: '8%', right: '20%'};
+    dialogConfig.position = {bottom: '8%', right: '23%'};
     this.dialog.open(UserpostComponent, dialogConfig);
   }
 }
