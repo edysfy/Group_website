@@ -8,7 +8,7 @@
 * [Evaluation](#eval)
 * [Conclusion](#conc)
 
-
+<a name="team"></a>
 ## Team
 Title : EmoteMap  
 
@@ -21,11 +21,14 @@ Addressing the global epidemic of mental health issues. We will highlight the sc
 2- allows users to communicate with each other on shared experiences (social media)
 3 – allows for a general sense of cause and effect of mental health to be understood by (heat map)
 Age group:  
-14+  
+14+
+
+<a name="intro"></a>
 ## Introduction
 How does project integrate play?
 Interactive way of posting. Users can drop an emotion (e.g. happiness scale 1-10) on the globe, and write a short phrase as to why they feel this. Keywords from the phrase will be detected and used to report locations with similar emotions for similar reasons (e.g.happiness 2/10 due to ‘lockdown’). Users can also search by keyword. The site will also offer a log for each user. The visual element of the ‘mood’ heatmap element also creates an ‘at-a-glance' level of interaction to convey the scale. On top of this, there is the potential for users to interact and communicate with each other, perhaps based on shared experiences/feelings.
 
+<a name="backgrnd"></a>
 ## Background and Motivation
 What are you going to make?
 (what features will your project have/technical challenges)
@@ -38,17 +41,22 @@ We can use an api to display the globe. Will need a database to store user profi
 (is it mobile/desktop?)
 Desktop
 
+<a name="system"></a>
 ## System Implementation
 stuff
 
+<a name="uxdesign"></a>
 ## UX Design
 stuff
 
+<a name="sprints"></a>
 ## Sprints & Project Management
 stuff
 
+<a name="eval"></a>
 ## Evaluation
 stuff
 
+<a name="conc"></a>
 ## Conclusion
 stuff
