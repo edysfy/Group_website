@@ -63,7 +63,7 @@ router.post("", (req, res, next) => {
 router.get("/:username", (req, res, next) => {
   GeoJson.find({
     "properties.username": req.params.username,
-  }).then((posts) => {
+  }).sort({"properties.dateTime": -1}).then((posts) => {
     res
       .status(200)
       .json({

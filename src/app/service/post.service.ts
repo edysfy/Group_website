@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { GeoJson, IGeoJson } from '../models/geoJson';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 import { LongLat } from '../models/LongLat';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,7 @@ export class PostService {
   /*coordinate state manager*/
   private clickCordsState: BehaviorSubject<LongLat>;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private userService: UserService) {
     /*initlise attributes*/
     this.geoPosts = new Array<GeoJson>();
     this.clickCordsState = new BehaviorSubject<LongLat>({ long: 0, lat: 0 });
@@ -97,6 +98,7 @@ export class PostService {
         );
         this.geoPosts.push(newGeoJson);
         this.geoPostSubject.next(this.geoPosts);
+        this.userService.setUserPostState(this.geoPosts.reverse())
       });
   }
 }
