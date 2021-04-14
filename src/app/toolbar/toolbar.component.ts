@@ -36,6 +36,7 @@ export class ToolbarComponent implements OnInit {
     if(this.isLoggedIn) {
       this.title = localStorage.getItem('username');
     }
+    console.log(this.isLoggedIn);
   }
 
   ngOnInit(): void {

@@ -46,7 +46,6 @@ export class AuthenticationService {
       )
   }
 
-  
 
   setLogin(token: string, username: string) {
     this.authToken = token;
