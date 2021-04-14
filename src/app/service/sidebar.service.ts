@@ -1,23 +1,36 @@
 import { Injectable } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
+import { Subject, Observable, BehaviorSubject } from 'rxjs';
+import { Sidebar } from '../models/Sidebar';
 
 @Injectable({
   providedIn: 'root'
 })
 export class SidebarService {
-  loginClicked!: Subject<boolean>;
+  loginClicked!: BehaviorSubject<Sidebar>;
 
   constructor() {
-    this.loginClicked = new Subject<boolean>();
-    this.loginClicked.next(false);
+    this.loginClicked = new BehaviorSubject<Sidebar>({
+      key: false,
+      profile: false,
+      userPosts: false,
+      search: false,
+      settings: false,
+    });
   }
 
-  getLoginClickedObs(): Observable<boolean> {
+  getSidebarObvs(): Observable<Sidebar> {
     return this.loginClicked.asObservable();
   }
 
-  setLoginClickedState(isClicked: boolean): void{
-    this.loginClicked.next(isClicked);
+  setProfileState(isClicked: boolean): void{
+    const newSBState = {
+      key: false,
+      profile: isClicked,
+      userPosts: false,
+      search: false,
+      settings: false,
+    }
+    this.loginClicked.next(newSBState);
   }
 
 }

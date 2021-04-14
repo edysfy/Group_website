@@ -9,6 +9,7 @@ import { Subscription } from 'rxjs';
 import { AuthenticationService } from '../service/authentication.service';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { SidebarService } from '../service/sidebar.service';
+import { Sidebar } from '../models/Sidebar';
 
 @Component({
   selector: 'app-mapbox',
@@ -45,7 +46,7 @@ export class MapboxComponent implements OnInit {
   private authSubscriber!: Subscription;
   isLoggedIn!: boolean;
   private source: any;
-  clickUserProfile!: boolean;
+  sidebarState!: Sidebar;
 
   constructor(
     private postService: PostService,
@@ -59,9 +60,9 @@ export class MapboxComponent implements OnInit {
     this.authSubscriber = this.authService.getAuthState().subscribe((logIn) => {
       this.isLoggedIn = logIn;
     });   
-    this.sidebarService.getLoginClickedObs().subscribe((hasClicked) => {
-      console.log(hasClicked);
-      this.clickUserProfile = hasClicked;
+    this.sidebarService.getSidebarObvs().subscribe((sidebar) => {
+      console.log(sidebar);
+      this.sidebarState = sidebar;
     })
     this.initMap();
   }

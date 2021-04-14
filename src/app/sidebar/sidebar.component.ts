@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Sidebar } from '../models/Sidebar';
 import { AuthenticationService } from '../service/authentication.service';
 import { SidebarService } from '../service/sidebar.service';
 
@@ -10,7 +11,7 @@ import { SidebarService } from '../service/sidebar.service';
 })
 export class SidebarComponent implements OnInit {
   isLoggedIn!: boolean;
-  clickedUserProfileState!: boolean;
+  sidebarState!: Sidebar;
 
   constructor(private authService: AuthenticationService, private sidebarService: SidebarService) { }
 
@@ -18,13 +19,13 @@ export class SidebarComponent implements OnInit {
     this.authService.getAuthState().subscribe((logIn) => {
       this.isLoggedIn = logIn;
     });  
-    this.sidebarService.getLoginClickedObs().subscribe((state) => {
-      this.clickedUserProfileState = state;
+    this.sidebarService.getSidebarObvs().subscribe((sidebar) => {
+      this.sidebarState = sidebar;
     })
   }
 
-  clickUserIcon():void {
-    this.sidebarService.setLoginClickedState(!this.clickedUserProfileState);
+  clickProfileIcon():void {
+    this.sidebarService.setProfileState(!this.sidebarState.profile);
   }
 
   logOut():void {

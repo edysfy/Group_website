@@ -2,10 +2,10 @@
     <div class="material-icons">
         preview
     </div>
-    <div class="material-icons" (click) = "clickUserIcon()" *ngIf="!clickedUserProfileState">
+    <div class="material-icons" (click) = "clickProfileIcon()" *ngIf="!sidebarState.profile">
         person
     </div>
-    <div class="material-icons" (click) = "clickUserIcon()" *ngIf="clickedUserProfileState" id="clicked">
+    <div class="material-icons" (click) = "clickProfileIcon()" *ngIf="sidebarState.profile" id="clicked">
         person
     </div>
     <div class="material-icons">

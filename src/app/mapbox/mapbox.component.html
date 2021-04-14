@@ -1,6 +1,6 @@
 
 <div class="full">
-    <app-user *ngIf="isLoggedIn && clickUserProfile" [@inOutAnimation]></app-user>
+    <app-user *ngIf="isLoggedIn && sidebarState.profile" [@inOutAnimation]></app-user>
     <div id="map">
     </div>
 </div>
