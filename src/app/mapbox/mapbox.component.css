@@ -5,42 +5,41 @@
     width: 100vw;
     position: fixed;
     top: 80px;
+    transition: width 2s;
+
 }
 
-.side-icon {
-    height: 100%;
-    width: 900px;
-    background-color: rgba(255, 255, 255,0.8);
-    display: flex;
-    
-}
+
 
 #map {
-    position: relative;
+    position: fixed;
     background-color: black;
-    /* top: 85px;
-    left: 500px; */
     overflow-y: hidden !important;
     overflow-x: hidden !important;
     height: inherit;
     width: inherit;
+    z-index: 0;
 }
 
 app-searchfield {
     position: fixed;
     left:35%;
-    bottom: 20px;
-    width: 500px;
+    bottom: 30px;
 }
 
-app-postbutton {
+
+
+app-sidebar {
+    bottom: 0px;
+    left: 34%;
     position: fixed;
-    right:30px;
-    bottom: 15px;
-    display: flex;
-
 }
 
 
- 
+ app-user {
+     z-index: 1;
+ }
 
+ app-key {
+    z-index: 1;
+}

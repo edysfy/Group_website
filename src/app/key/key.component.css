@@ -1,0 +1,11 @@
+.key {
+    position: relative;
+    width: 500px;
+    height: 100%;
+    background-color:  blanchedalmond;
+}
+
+p {
+    position: relative;
+    top: 50%;
+}

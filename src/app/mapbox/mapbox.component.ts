@@ -7,11 +7,37 @@ import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { UserpostComponent } from '../userpost/userpost.component';
 import { Subscription } from 'rxjs';
 import { AuthenticationService } from '../service/authentication.service';
+import { animate, style, transition, trigger } from '@angular/animations';
+import { SidebarService } from '../service/sidebar.service';
+import { Sidebar } from '../models/Sidebar';
 
 @Component({
   selector: 'app-mapbox',
   templateUrl: './mapbox.component.html',
   styleUrls: ['./mapbox.component.css'],
+ animations: [
+    trigger(
+      'inOutAnimation', 
+      [
+        transition(
+          ':enter', 
+          [
+            style({ width: 0, opacity: 0 }),
+            animate('1s ease-out', 
+                    style({ width: 500, opacity: 1 }))
+          ]
+        ),
+        transition(
+          ':leave', 
+          [
+            style({ width: 500, opacity: 1 }),
+            animate('1s ease-in', 
+                    style({ width: 0, opacity: 0 }))
+          ]
+        )
+      ]
+    )
+  ]
 })
 export class MapboxComponent implements OnInit {
   private map!: mapboxgl.Map;
@@ -20,19 +46,24 @@ export class MapboxComponent implements OnInit {
   private authSubscriber!: Subscription;
   isLoggedIn!: boolean;
   private source: any;
+  sidebarState!: Sidebar;
 
   constructor(
     private postService: PostService,
     private dialog: MatDialog,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private sidebarService: SidebarService,
   ) {
-    this.authSubscriber = this.authService.getAuthState().subscribe((logIn) => {
-      this.isLoggedIn = logIn;
-    });
   }
 
   ngOnInit(): void {
-    /*suscribe to the getGeoPost data to listen to changes in data*/
+    this.authSubscriber = this.authService.getAuthState().subscribe((logIn) => {
+      this.isLoggedIn = logIn;
+    });   
+    this.sidebarService.getSidebarObvs().subscribe((sidebar) => {
+      console.log(sidebar);
+      this.sidebarState = sidebar;
+    })
     this.initMap();
   }
 
@@ -46,16 +77,15 @@ export class MapboxComponent implements OnInit {
       center: [-0.2101765, 51.5942466],
     });
 
-    /*Geolocation*/
-    this.map.addControl(
-      new mapboxgl.GeolocateControl({
-        positionOptions: {
-          enableHighAccuracy: true,
-        },
-        trackUserLocation: true,
-      })
-    );
-    this.map.addControl(new mapboxgl.NavigationControl());
+    // /*Geolocation*/
+    // this.map.addControl(
+    //   new mapboxgl.GeolocateControl({
+    //     positionOptions: {
+    //       enableHighAccuracy: true,
+    //     },
+    //     trackUserLocation: true,
+    //   })
+    // );
 
     /*this opens dialog when click and saves coords as new state*/
     this.map.on('click', (e) => {
@@ -65,11 +95,11 @@ export class MapboxComponent implements OnInit {
         if (zoom > 12) {
           const dialogConfig = new MatDialogConfig();
           dialogConfig.autoFocus = false;
-          dialogConfig.width = '60%';
-          dialogConfig.height = '78%';
+          dialogConfig.width = '55%';
+          dialogConfig.height = '70%';
           dialogConfig.hasBackdrop = true;
           dialogConfig.panelClass = 'custom-dialog';
-          dialogConfig.position = {bottom: '3%', right: '7%'};
+          dialogConfig.position = {bottom: '8%', right: '20%'};
           this.dialog.open(UserpostComponent, dialogConfig);
           this.postService.updateLongLat({
             long: e.lngLat.lng,

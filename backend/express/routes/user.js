@@ -112,23 +112,21 @@ function checkIfGenderNull(gender) {
 }
 
 router.put("/:username", (req, res, next) => {
-  console.log(req.params.username);
-  console.log(req.body.gender);
   if (req.body.gender != null) {
     User.updateOne({ username: req.params.username }, { gender: req.body.gender })
       .then((result) => {
-        console.log(result.nModified);
+        res.json({message: "update gender sucessfull"})
       })
       .catch((error) => {
-        console.log(error);
+        res.json({message: "no user"})
       });
   } else {
     User.updateOne({ username: req.params.username }, { dob: req.body.dob })
       .then((result) => {
-        console.log(result.nModified);
+        res.json({message: "update dob sucessfull"})
       })
       .catch((error) => {
-        console.log(error);
+        res.json({message: "no user"})
       });
   }
 });
