@@ -43,3 +43,7 @@ app-sidebar {
  app-key {
     z-index: 1;
 }
+
+app-userpost-display {
+    z-index: 1;
+}

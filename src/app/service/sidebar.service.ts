@@ -44,4 +44,15 @@ export class SidebarService {
     this.loginClicked.next(newSBState);
   }
 
+  setPostListState(isClicked: boolean): void{
+    const newSBState = {
+      key: false,
+      profile: false,
+      userPosts: isClicked,
+      search: false,
+      settings: false,
+    }
+    this.loginClicked.next(newSBState);
+  }
+
 }

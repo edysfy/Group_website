@@ -39,6 +39,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
 import { KeyComponent } from './key/key.component';
+import { UserpostDisplayComponent } from './userpost-display/userpost-display.component';
 
 
 const material = [
@@ -77,6 +78,7 @@ const material = [
     SearchResultComponent,
     UserComponent,
     KeyComponent,
+    UserpostDisplayComponent,
   ],
   imports: [
     BrowserModule,
