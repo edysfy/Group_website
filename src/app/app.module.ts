@@ -15,7 +15,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/Toolbar';
 import { MapboxComponent } from './mapbox/mapbox.component';
-import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoginComponent } from './authentication/login/login.component';
@@ -40,6 +39,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
 import { KeyComponent } from './key/key.component';
 import { UserpostDisplayComponent } from './userpost-display/userpost-display.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 
 const material = [
@@ -49,7 +50,6 @@ const material = [
   FormsModule,
   MatCardModule,
   MatToolbarModule,
-  MatSidenavModule,
   MatIconModule,
   MatDialogModule,
   ReactiveFormsModule,
@@ -60,7 +60,8 @@ const material = [
   MatListModule,
   MatDatepickerModule,
   MatNativeDateModule,
-  MatRadioModule
+  MatRadioModule,
+  MatExpansionModule
 ];
 
 @NgModule({

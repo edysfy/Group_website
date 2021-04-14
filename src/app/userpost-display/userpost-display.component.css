@@ -1,11 +1,34 @@
 .post {
     position: relative;
     width: 500px;
-    height: 100%;
-    background-color:  blanchedalmond;
+    height: 93%;
+    background-color: rgb(138, 146, 187);
+
 }
 
-p {
+.userPosts {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: inherit;
+}
+
+mat-expansion-panel {
     position: relative;
-    top: 50%;
+    top: 50px;
+    margin-bottom: 50px;
+    width: 90%;
+    left: 20px;
+}
+
+::-webkit-scrollbar {
+    scrollbar-color: rgb(138, 146, 187);;
+  }
+
+h1 {
+    font-family: 'Arvo', serif;
+    font-family: 'Fredoka One', cursive;
+    position: relative; 
+    top: 50px; 
+    left: 123px; 
+    font-size: xx-large; 
 }
