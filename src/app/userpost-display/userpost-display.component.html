@@ -1,23 +1,37 @@
-
-<div class=" post">
-    <div style="height: 90px; justify-content: center;">
-        <h1>Emote Timeline</h1>
-    </div>
-    <div class="userPosts">
-        <mat-accordion multi="true" *ngFor="let userPost of userPosts">
-            <mat-expansion-panel>
-              <mat-expansion-panel-header>
-                <mat-panel-title>
-                  Self aware panel
-                </mat-panel-title>
-                <mat-panel-description>
-                  Currently I am 
-                </mat-panel-description>
-              </mat-expansion-panel-header>
-              <p>I'm visible because I am open</p>
-            </mat-expansion-panel>
-          </mat-accordion>
-        
-    </div>
-
+<div class="post">
+  <div style="height: 90px; justify-content: center">
+    <h1>Emote Timeline</h1>
+  </div>
+  <div class="userPosts">
+    <mat-accordion multi="true" *ngFor="let userPost of userPosts">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{ userPost.properties.keyword }}            
+          </mat-panel-title>
+          <mat-panel-description>
+            {{ userPost.properties.dateTime | date: "medium" }}
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <h3>Mood: {{ userPost.properties.mood }}</h3>
+        <p>{{ userPost.properties.textBody }}</p>
+        <mat-action-row>
+          <button
+            mat-fab
+            color="primary"
+            aria-label="Example icon button with a delete icon"
+          >
+            <mat-icon>flight_takeof</mat-icon>
+          </button>
+          <button
+            mat-fab
+            color="primary"
+            aria-label="Example icon button with a delete icon"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-action-row>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
 </div>

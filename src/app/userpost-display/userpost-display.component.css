@@ -15,14 +15,14 @@
 mat-expansion-panel {
     position: relative;
     top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 2rem;
     width: 90%;
     left: 20px;
+    margin-top: 3rem;
+    height: fit-content;
+
 }
 
-::-webkit-scrollbar {
-    scrollbar-color: rgb(138, 146, 187);;
-  }
 
 h1 {
     font-family: 'Arvo', serif;
@@ -32,3 +32,12 @@ h1 {
     left: 123px; 
     font-size: xx-large; 
 }
+
+.mat-accordion .mat-expansion-panel:not(.mat-expanded),
+.mat-accordion .mat-expansion-panel:not(.mat-expansion-panel-spacing) {
+   margin-bottom: 20px;
+}
+
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }

@@ -59,4 +59,12 @@ export class UserService {
       })
       .subscribe((message) => console.log(message));
   }
+
+  getUserPostState() {
+    return this.userGJState;
+  }
+
+  setUserPostState(newGJArr: Array<GeoJson>) {
+    this.userGJState.next(newGJArr);
+  }
 }
