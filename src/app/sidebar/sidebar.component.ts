@@ -28,6 +28,10 @@ export class SidebarComponent implements OnInit {
     this.sidebarService.setProfileState(!this.sidebarState.profile);
   }
 
+  clickKeyIcon():void {
+    this.sidebarService.setKeyState(!this.sidebarState.key);
+  }
+
   logOut():void {
     this.authService.logout();
     window.location.reload()

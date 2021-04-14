@@ -40,3 +40,6 @@ app-sidebar {
      z-index: 1;
  }
 
+ app-key {
+    z-index: 1;
+}
