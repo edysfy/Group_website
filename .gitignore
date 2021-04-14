@@ -8,7 +8,7 @@
 /bazel-out
 
 # temp_passwords
-.env
+
 
 # dependencies
 /node_modules
