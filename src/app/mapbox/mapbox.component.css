@@ -12,14 +12,13 @@
 
 
 #map {
-    position: relative;
+    position: fixed;
     background-color: black;
-    /* top: 85px;
-    left: 500px; */
     overflow-y: hidden !important;
     overflow-x: hidden !important;
     height: inherit;
     width: inherit;
+    z-index: 0;
 }
 
 app-searchfield {
@@ -37,5 +36,7 @@ app-sidebar {
 }
 
 
- 
+ app-user {
+     z-index: 1;
+ }
 
