@@ -11,6 +11,7 @@ import { UserService } from '../service/user.service';
 export class UserpostDisplayComponent implements OnInit {
   userPosts!: Array<IGeoJson>;
   panelOpenState: boolean = false;
+  hasUserPosted!: boolean;
 
   @Output() flyToCords = new EventEmitter<number[]>();
 
@@ -20,6 +21,11 @@ export class UserpostDisplayComponent implements OnInit {
   ngOnInit(): void {
     this.userService.getUserPosts().subscribe(userposts => {
       this.userPosts = userposts;
+      if(this.userPosts.length != 0) {
+        this.hasUserPosted = true;
+      }else {
+        this.hasUserPosted = false;
+      }
     });
   }
 
