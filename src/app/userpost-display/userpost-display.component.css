@@ -1,0 +1,43 @@
+.post {
+    position: relative;
+    width: 500px;
+    height: 93%;
+    background-color: rgb(138, 146, 187);
+
+}
+
+.userPosts {
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: inherit;
+}
+
+mat-expansion-panel {
+    position: relative;
+    top: 50px;
+    margin-bottom: 2rem;
+    width: 90%;
+    left: 20px;
+    margin-top: 3rem;
+    height: fit-content;
+
+}
+
+
+h1 {
+    font-family: 'Arvo', serif;
+    font-family: 'Fredoka One', cursive;
+    position: relative; 
+    top: 50px; 
+    left: 123px; 
+    font-size: xx-large; 
+}
+
+.mat-accordion .mat-expansion-panel:not(.mat-expanded),
+.mat-accordion .mat-expansion-panel:not(.mat-expansion-panel-spacing) {
+   margin-bottom: 20px;
+}
+
+.mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }

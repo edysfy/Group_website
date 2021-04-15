@@ -33,8 +33,10 @@
       <input
         formControlName="keyword"
         matInput
+        type="text"
         placeholder="Describe your Emote with a keyword... (e.g. 'excited', 'shocked')"
         pattern="[a-zA-Z0-9]+"
+        autocomplete="disabled"
       />
       <div
         class="keywordAlert"
@@ -51,8 +53,9 @@
         style="resize: none"
         formControlName="post"
         matInput
+        type="text"
         placeholder="Share why you are feeling so today... (e.g. new national lockdown)"
-        rows="16"
+        rows="14"
       ></textarea>
       <div
         class="postAlert"

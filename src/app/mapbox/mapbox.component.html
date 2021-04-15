@@ -2,6 +2,7 @@
 <div class="full">
     <app-key *ngIf="isLoggedIn && sidebarState.key" [@inOutAnimation]></app-key>
     <app-user *ngIf="isLoggedIn && sidebarState.profile" [@inOutAnimation]></app-user>
+    <app-userpost-display *ngIf="isLoggedIn && sidebarState.userPosts" [@inOutAnimation]  (flyToCords)="flyTo($event)"></app-userpost-display>
     <div id="map">
     </div>
 </div>

@@ -43,7 +43,6 @@ export class MapboxComponent implements OnInit {
   private map!: mapboxgl.Map;
   private geoPost!: Array<GeoJson>;
   private geoPostSubscriber!: Subscription;
-  private authSubscriber!: Subscription;
   isLoggedIn!: boolean;
   private source: any;
   sidebarState!: Sidebar;
@@ -57,7 +56,7 @@ export class MapboxComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.authSubscriber = this.authService.getAuthState().subscribe((logIn) => {
+    this.authService.getAuthState().subscribe((logIn) => {
       this.isLoggedIn = logIn;
     });   
     this.sidebarService.getSidebarObvs().subscribe((sidebar) => {
@@ -65,6 +64,14 @@ export class MapboxComponent implements OnInit {
       this.sidebarState = sidebar;
     })
     this.initMap();
+  }
+
+  flyTo(lngLat: number[]) {
+    this.map.flyTo({
+      center: [lngLat[0],lngLat[1]],
+      zoom: 15
+    })
+    console.log(lngLat);
   }
 
   /*init map and flys to user coords*/
@@ -86,6 +93,7 @@ export class MapboxComponent implements OnInit {
     //     trackUserLocation: true,
     //   })
     // );
+
 
     /*this opens dialog when click and saves coords as new state*/
     this.map.on('click', (e) => {
@@ -128,7 +136,7 @@ export class MapboxComponent implements OnInit {
           this.source.setData(new FeatureCollection(geoPostArr));
       });
 
-
+      
 
     /*----------------layer for user's posts------------------*/
 

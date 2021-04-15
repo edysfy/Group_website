@@ -32,6 +32,10 @@ export class SidebarComponent implements OnInit {
     this.sidebarService.setKeyState(!this.sidebarState.key);
   }
 
+  clickPostListIcon():void {
+    this.sidebarService.setPostListState(!this.sidebarState.userPosts);
+  }
+
   logOut():void {
     this.authService.logout();
     window.location.reload()

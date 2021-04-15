@@ -6,10 +6,11 @@ import { Sidebar } from '../models/Sidebar';
   providedIn: 'root'
 })
 export class SidebarService {
-  loginClicked!: BehaviorSubject<Sidebar>;
+  sideBarState!: BehaviorSubject<Sidebar>;
 
   constructor() {
-    this.loginClicked = new BehaviorSubject<Sidebar>({
+    /*when set the side bar to all off*/
+    this.sideBarState = new BehaviorSubject<Sidebar>({
       key: false,
       profile: false,
       userPosts: false,
@@ -18,10 +19,12 @@ export class SidebarService {
     });
   }
 
+  /*return the observable*/
   getSidebarObvs(): Observable<Sidebar> {
-    return this.loginClicked.asObservable();
+    return this.sideBarState.asObservable();
   }
 
+  /*set the profile state*/
   setProfileState(isClicked: boolean): void{
     const newSBState = {
       key: false,
@@ -30,9 +33,10 @@ export class SidebarService {
       search: false,
       settings: false,
     }
-    this.loginClicked.next(newSBState);
+    this.sideBarState.next(newSBState);
   }
 
+  /*set the key page state*/
   setKeyState(isClicked: boolean): void{
     const newSBState = {
       key: isClicked,
@@ -41,7 +45,19 @@ export class SidebarService {
       search: false,
       settings: false,
     }
-    this.loginClicked.next(newSBState);
+    this.sideBarState.next(newSBState);
+  }
+
+  /*set the users post list to be on*/
+  setPostListState(isClicked: boolean): void{
+    const newSBState = {
+      key: false,
+      profile: false,
+      userPosts: isClicked,
+      search: false,
+      settings: false,
+    }
+    this.sideBarState.next(newSBState);
   }
 
 }

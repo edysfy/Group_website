@@ -11,7 +11,10 @@
     <div class="material-icons" (click) = "clickProfileIcon()" *ngIf="sidebarState.profile" id="clicked">
         person
     </div>
-    <div class="material-icons">
+    <div class="material-icons"  (click) = "clickPostListIcon()" *ngIf="!sidebarState.userPosts">
+        list_alt
+    </div>
+    <div class="material-icons" (click) = "clickPostListIcon()" *ngIf="sidebarState.userPosts" id="clicked">
         list_alt
     </div>
     <div class="material-icons">

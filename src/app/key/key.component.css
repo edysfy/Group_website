@@ -43,6 +43,7 @@
 .image {
     width: 80px;
     margin-left: 25px;
+    background-color:  rgb(138, 146, 187);
 }
 
 p {
