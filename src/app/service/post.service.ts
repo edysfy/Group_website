@@ -98,7 +98,18 @@ export class PostService {
         );
         this.geoPosts.push(newGeoJson);
         this.geoPostSubject.next(this.geoPosts);
-        this.userService.setUserPostState(this.geoPosts.reverse())
       });
   }
+
+  /*takes is and then filters array if not in and sets new state
+  and deletes the post in the db*/
+  public deletePost(_id: string): void {
+    this.geoPosts = this.geoPosts.filter(post => post._id != _id);
+    this.geoPostSubject.next(this.geoPosts);
+    this.http.delete<{message: string}>('http://localhost:3000/api/geoPost/' + _id)
+    .subscribe(response => {
+      console.log(response.message);
+    })
+  }
+
 }

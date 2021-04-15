@@ -43,7 +43,6 @@ export class MapboxComponent implements OnInit {
   private map!: mapboxgl.Map;
   private geoPost!: Array<GeoJson>;
   private geoPostSubscriber!: Subscription;
-  private authSubscriber!: Subscription;
   isLoggedIn!: boolean;
   private source: any;
   sidebarState!: Sidebar;
@@ -57,7 +56,7 @@ export class MapboxComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.authSubscriber = this.authService.getAuthState().subscribe((logIn) => {
+    this.authService.getAuthState().subscribe((logIn) => {
       this.isLoggedIn = logIn;
     });   
     this.sidebarService.getSidebarObvs().subscribe((sidebar) => {
