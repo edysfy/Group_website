@@ -14,6 +14,9 @@ export class PostbuttonComponent implements OnInit {
   ngOnInit(): void {}
 
   createPost() {
+
+    /*tTHIS IS NOT GETTING THE USER COORDINATES*/
+
     /*gets user coordinates*/
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
@@ -23,6 +26,7 @@ export class PostbuttonComponent implements OnInit {
         });
       });
     }
+
     /*open a new diaglog object and set the parameters*/
     const dialogConfig = new MatDialogConfig();
     dialogConfig.autoFocus = false;

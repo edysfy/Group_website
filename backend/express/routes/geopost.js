@@ -28,11 +28,11 @@ router.post("", (req, res, next) => {
   const username = dcryptTkn.username;
   const newPost = new GeoJson({
     type: req.body.type,
-    location: {
-      type: req.body.location.type,
+    geometry: {
+      type: req.body.geometry.type,
       coordinates: [
-        req.body.location.coordinates[0],
-        req.body.location.coordinates[1],
+        req.body.geometry.coordinates[0],
+        req.body.geometry.coordinates[1],
       ],
     },
     properties: {
@@ -43,6 +43,7 @@ router.post("", (req, res, next) => {
       textBody: req.body.properties.textBody,
     },
   });
+  console.log(newPost);
   newPost
     .save()
     .then((dbResponse) => {

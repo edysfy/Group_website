@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { IGeoJson } from '../models/geoJson';
 import { AuthenticationService } from '../service/authentication.service';
 import { PostService } from '../service/post.service';
@@ -13,6 +13,7 @@ export class UserpostDisplayComponent implements OnInit {
   userPosts!: Array<IGeoJson>;
   panelOpenState: boolean = false;
 
+
   constructor(private userService: UserService, private postService: PostService) {
   }
 
@@ -22,10 +23,14 @@ export class UserpostDisplayComponent implements OnInit {
     });
   }
 
-  onDelete(_id: string){
+  onDelete(_id: string): void{
     this.userPosts = this.userPosts.filter(up => up._id != _id);
     this.postService.deletePost(_id);
     console.log(_id);
+  }
+  
+  onFlyTo(lngLat: number[]):void {
+    console.log(lngLat);
   }
 
 }

@@ -16,7 +16,7 @@ export interface IGeoPosition {
 /*interface for IGeoJson data*/
 export interface IGeoJson {
     type: string,
-    location: IGeoPosition,
+    geometry: IGeoPosition,
     properties: IPost,
     _id: string;
 }

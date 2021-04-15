@@ -19,14 +19,14 @@
           <button
             mat-fab
             color="primary"
-            aria-label="Example icon button with a delete icon"
+            (click) = "onFlyTo(userPost.geometry.coordinates)"
+
           >
             <mat-icon>flight_takeof</mat-icon>
           </button>
           <button
             mat-fab
             color="primary"
-            aria-label="Example icon button with a delete icon"
             (click) = "onDelete(userPost._id)"
           >
             <mat-icon>delete</mat-icon>

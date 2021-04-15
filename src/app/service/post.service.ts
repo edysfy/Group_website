@@ -49,7 +49,7 @@ export class PostService {
           /*create a new geojson object and add it to the array*/
           let incomingGJ = new GeoJson(
             geoPostData.geoPost[i].properties,
-            geoPostData.geoPost[i].location.coordinates,
+            geoPostData.geoPost[i].geometry.coordinates,
             geoPostData.geoPost[i]._id
           );
           /*push object to the array*/
@@ -66,11 +66,16 @@ export class PostService {
   public createPost(rating: number, keyword: string, post: string) {
     /*need to get the coords set in the state*/
     const coords = this.clickCordsState.getValue();
+    /*need to check if the coordiantes are not null*/
+    if(coords.lat === 0 && coords.long === 0) {
+      alert("You location hasn't been obtained, please try again");
+      return;
+    }
     /*create a new IGeoJson data type to sent to back end*/
     let newGeoPost: IGeoJson = {
       _id: 'not_set',
       type: 'Feature',
-      location: {
+      geometry: {
         type: 'Point',
         coordinates: [coords.long, coords.lat],
       },
@@ -82,6 +87,8 @@ export class PostService {
         textBody: post,
       },
     };
+    console.log(newGeoPost);
+
     /*send this to our api, when get response store newGeoPost In Memory*/
     this.http
       .post<{ message: string; id: string, username: string}>(
@@ -89,11 +96,12 @@ export class PostService {
         newGeoPost
       )
       .subscribe((response) => {
+        console.log(response);
         /*create a new geoJson object to put in memory and render to app*/
         newGeoPost.properties.username = response.username;
         const newGeoJson = new GeoJson(
           newGeoPost.properties,
-          newGeoPost.location.coordinates,
+          newGeoPost.geometry.coordinates,
           response.id
         );
         this.geoPosts.push(newGeoJson);
