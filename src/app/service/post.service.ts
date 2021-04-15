@@ -106,6 +106,7 @@ export class PostService {
         );
         this.geoPosts.push(newGeoJson);
         this.geoPostSubject.next(this.geoPosts);
+        /*send the geojson to the user service to add to user component*/
         this.userService.addPostToUserList(newGeoJson);
       });
   }
