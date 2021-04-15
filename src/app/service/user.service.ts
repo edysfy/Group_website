@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
-import { IGeoJson } from '../models/geoJson';
+import { GeoJson, IGeoJson } from '../models/geoJson';
 import { User } from '../models/User';
 
 @Injectable({
@@ -58,7 +58,7 @@ export class UserService {
   }
 
   /*update the users gender in the database*/
-  updateGender(gender: string) {
+  updateGender(gender: string): void {
     const username = localStorage.getItem('username');
     this.http
       .put<{ message: string }>('http://localhost:3000/api/user/' + username, {
@@ -66,5 +66,19 @@ export class UserService {
       })
       .subscribe((message) => console.log(message));
   }
+
+  addPostToUserList(newPost: GeoJson): void {
+    const userPostList = this.userGJState.getValue();
+    userPostList.unshift(newPost);
+    this.userGJState.next(userPostList);
+  }
+
+  deletePostFromUserList(_id: string): void {
+    let userPostList = this.userGJState.getValue();
+    userPostList = userPostList.filter(userpost => userpost._id != _id);
+    this.userGJState.next(userPostList);
+  }
+
+
   
 }

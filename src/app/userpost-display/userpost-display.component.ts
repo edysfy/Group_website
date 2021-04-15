@@ -1,6 +1,5 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { IGeoJson } from '../models/geoJson';
-import { AuthenticationService } from '../service/authentication.service';
 import { PostService } from '../service/post.service';
 import { UserService } from '../service/user.service';
 
@@ -13,6 +12,7 @@ export class UserpostDisplayComponent implements OnInit {
   userPosts!: Array<IGeoJson>;
   panelOpenState: boolean = false;
 
+  @Output() flyToCords = new EventEmitter<number[]>();
 
   constructor(private userService: UserService, private postService: PostService) {
   }
@@ -24,12 +24,15 @@ export class UserpostDisplayComponent implements OnInit {
   }
 
   onDelete(_id: string): void{
-    this.userPosts = this.userPosts.filter(up => up._id != _id);
+    /*delete the geoPost in the postService/database and map*/
     this.postService.deletePost(_id);
+    /*delete the post in memory*/
+    this.userService.deletePostFromUserList(_id);
     console.log(_id);
   }
   
   onFlyTo(lngLat: number[]):void {
+    this.flyToCords.emit(lngLat);
     console.log(lngLat);
   }
 

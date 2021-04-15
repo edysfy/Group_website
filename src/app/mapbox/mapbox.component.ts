@@ -66,6 +66,14 @@ export class MapboxComponent implements OnInit {
     this.initMap();
   }
 
+  flyTo(lngLat: number[]) {
+    this.map.flyTo({
+      center: [lngLat[0],lngLat[1]],
+      zoom: 15
+    })
+    console.log(lngLat);
+  }
+
   /*init map and flys to user coords*/
   initMap(): void {
     (mapboxgl as any).accessToken = environment.mapboxToken;
@@ -85,6 +93,7 @@ export class MapboxComponent implements OnInit {
     //     trackUserLocation: true,
     //   })
     // );
+
 
     /*this opens dialog when click and saves coords as new state*/
     this.map.on('click', (e) => {
@@ -127,7 +136,7 @@ export class MapboxComponent implements OnInit {
           this.source.setData(new FeatureCollection(geoPostArr));
       });
 
-
+      
 
     /*----------------layer for user's posts------------------*/
 
