@@ -81,6 +81,7 @@ export class SidebarService {
 
     /*set the search state*/
     setSearchState(isClicked: boolean): void{
+      this.sideBarState.next(this.offState);
       const newSBState = {
         key: false,
         profile: false,
@@ -88,7 +89,9 @@ export class SidebarService {
         search: isClicked,
         settings: false,
       }
-      this.sideBarState.next(newSBState);
+      setTimeout(() => {
+        this.sideBarState.next(newSBState);
+      },200)
     }
 
 }

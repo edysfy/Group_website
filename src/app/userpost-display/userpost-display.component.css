@@ -51,8 +51,8 @@ h1 {
     font-family: 'Fredoka One', cursive;
     position: relative; 
     top: 50px; 
-    left: 123px; 
-    font-size: xx-large; 
+    left: 100px; 
+    font-size: 40px; 
 }
 
 .mat-accordion .mat-expansion-panel:not(.mat-expanded),
