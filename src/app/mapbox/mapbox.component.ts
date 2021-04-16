@@ -23,7 +23,7 @@ import { Sidebar } from '../models/Sidebar';
           ':enter', 
           [
             style({ width: 0, opacity: 0 }),
-            animate('1s ease-out', 
+            animate('0.2s', 
                     style({ width: 500, opacity: 1 }))
           ]
         ),
@@ -31,7 +31,7 @@ import { Sidebar } from '../models/Sidebar';
           ':leave', 
           [
             style({ width: 500, opacity: 1 }),
-            animate('1s ease-in', 
+            animate('0.2s', 
                     style({ width: 0, opacity: 0 }))
           ]
         )
