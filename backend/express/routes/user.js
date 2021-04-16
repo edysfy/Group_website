@@ -47,8 +47,8 @@ router.post("/login", (req, res, next) => {
       });
     }
     /*get the password in db and compare to the request body password*/
-    const userHashPassword = query.password;
-    passwordMatch(req.body.username, req.body.password, userHashPassword, res);
+    const userPassword = query.password;
+    passwordMatch(req.body.username, req.body.password, userPassword, res);
   });
 });
 
@@ -87,6 +87,7 @@ router.get("/:username", (req, res, next) => {
           username: user.username,
           dob: date,
           gender: gender,
+          age: user.age,
         },
       });
     })
@@ -120,7 +121,7 @@ router.put("/:username", (req, res, next) => {
       .catch((error) => {
         res.json({message: "no user"})
       });
-  } else {
+  } else if(req.body.dob != null) {
     User.updateOne({ username: req.params.username }, { dob: req.body.dob })
       .then((result) => {
         res.json({message: "update dob sucessfull"})
@@ -128,6 +129,14 @@ router.put("/:username", (req, res, next) => {
       .catch((error) => {
         res.json({message: "no user"})
       });
+  } else {
+    User.updateOne({username: req.params.username}, {age: req.body.age})
+    .then((result) => {
+      res.json({message: "update age sucessfull"})
+    })
+    .catch((error) => {
+      res.json({message: "no user"})
+    });
   }
 });
 

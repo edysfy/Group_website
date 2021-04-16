@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Subscription } from 'rxjs';
 import { User } from '../models/User';
 import { AuthenticationService } from '../service/authentication.service';
 import { UserService } from '../service/user.service';
@@ -9,7 +10,7 @@ import { UserService } from '../service/user.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css'],
 })
-export class UserComponent implements OnInit {
+export class UserComponent implements OnInit, OnDestroy {
   userDetails!: User;
   age!: number;
   isDobNull!: boolean;
@@ -18,6 +19,7 @@ export class UserComponent implements OnInit {
   genderEdit!: boolean;
   todayDate: Date = new Date();
   dobString: string = 'n/a';
+  private subscription!: Subscription;
 
   constructor(
     private authService: AuthenticationService,
@@ -26,19 +28,27 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.authService.getAuthState().getValue()) {
-      this.userService.getUserFromDB().subscribe((dbres) => {
-        this.userDetails = dbres;
-        if (this.userDetails.dob === 'n/a') {
-          this.isDobNull = true;
-        }
-        if (this.userDetails.gender === 'n/a') {
-          this.isGenderNull = true;
-        }
-        if (!this.isDobNull) {
-          this.calculateAge(this.userDetails.dob);
-        }
-      });
+      this.subscription = this.userService
+        .getUserFromDB()
+        .subscribe((dbres) => {
+          this.userDetails = dbres;
+          if (this.userDetails.dob === 'n/a') {
+            this.isDobNull = true;
+          }
+          if (this.userDetails.gender === 'n/a') {
+            this.isGenderNull = true;
+          }
+          if (!this.isDobNull) {
+            console.log('init');
+            this.calculateAge(this.userDetails.dob);
+            this.userService.updateAge(this.age);
+          }
+        });
     }
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 
   calculateAge(dob: string) {
@@ -77,7 +87,6 @@ export class UserComponent implements OnInit {
   onAgeEdit() {
     this.dobEdit = true;
   }
-
 
   onGenderEdit() {
     this.genderEdit = true;

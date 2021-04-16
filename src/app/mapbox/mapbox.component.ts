@@ -60,7 +60,6 @@ export class MapboxComponent implements OnInit {
       this.isLoggedIn = logIn;
     });   
     this.sidebarService.getSidebarObvs().subscribe((sidebar) => {
-      console.log(sidebar);
       this.sidebarState = sidebar;
     })
     this.initMap();
@@ -71,7 +70,6 @@ export class MapboxComponent implements OnInit {
       center: [lngLat[0],lngLat[1]],
       zoom: 15
     })
-    console.log(lngLat);
   }
 
   /*init map and flys to user coords*/
