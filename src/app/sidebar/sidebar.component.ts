@@ -36,6 +36,10 @@ export class SidebarComponent implements OnInit {
     this.sidebarService.setPostListState(!this.sidebarState.userPosts);
   }
 
+  clickSearchIcon():void {
+    this.sidebarService.setSearchState(!this.sidebarState.search);
+  }
+
   logOut():void {
     this.authService.logout();
     window.location.reload()

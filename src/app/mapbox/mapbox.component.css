@@ -47,3 +47,7 @@ app-sidebar {
 app-userpost-display {
     z-index: 1;
 }
+
+app-user-search {
+    z-index: 1;
+}

@@ -60,4 +60,16 @@ export class SidebarService {
     this.sideBarState.next(newSBState);
   }
 
+    /*set the search state*/
+    setSearchState(isClicked: boolean): void{
+      const newSBState = {
+        key: false,
+        profile: false,
+        userPosts: false,
+        search: isClicked,
+        settings: false,
+      }
+      this.sideBarState.next(newSBState);
+    }
+
 }
