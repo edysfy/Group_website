@@ -1,7 +1,7 @@
 .post {
     position: relative;
     width: 500px;
-    height: 93%;
+    height: 91%;
     background-color: rgba(85, 95, 148,0.2);
     color: white;
 
@@ -11,6 +11,7 @@
     overflow-y: scroll;
     overflow-x: hidden;
     height: inherit;
+    scrollbar-color: red yellow;
 }
 
 mat-expansion-panel {
@@ -21,8 +22,28 @@ mat-expansion-panel {
     left: 20px;
     margin-top: 3rem;
     height: fit-content;
-
 }
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: rgba(85, 95, 148,0);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
+
 
 
 h1 {
