@@ -67,6 +67,14 @@ export class UserService {
       .subscribe((message) => console.log(message));
   }
 
+  updateAge(age: number): void {
+    const username = localStorage.getItem('username');
+    this.http.put<{message: string}>('http://localhost:3000/api/user/' + username, {
+      age: age
+    })
+    .subscribe(message => console.log(message));
+  }
+
   addPostToUserList(newPost: GeoJson): void {
     const userPostList = this.userGJState.getValue();
     userPostList.unshift(newPost);
