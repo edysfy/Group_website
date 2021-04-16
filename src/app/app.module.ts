@@ -8,7 +8,6 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { SearchfieldComponent } from './searchfield/searchfield.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
@@ -41,6 +40,8 @@ import { KeyComponent } from './key/key.component';
 import { UserpostDisplayComponent } from './userpost-display/userpost-display.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { UserSearchComponent } from './user-search/user-search.component';
+import { NgxSliderModule} from '@angular-slider/ngx-slider';
+
 
 
 
@@ -62,7 +63,8 @@ const material = [
   MatDatepickerModule,
   MatNativeDateModule,
   MatRadioModule,
-  MatExpansionModule
+  MatExpansionModule,
+  NgxSliderModule
 ];
 
 @NgModule({
