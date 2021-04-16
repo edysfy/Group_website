@@ -3,7 +3,10 @@
     bottom: 30px;
     width: 500px;
     height: 100%;
-    background-color:   rgb(138, 146, 187);
+    background-color:   rgba(138, 146, 187,0.6);
+    color: white;
+    font-family: 'Arvo', serif;
+    font-family: 'Fredoka One', cursive;
 }
 
 .dob-button {
@@ -12,4 +15,14 @@
     bottom: 15px;
     position: relative;
     height: 35px;
+}
+
+h1 {
+    font-family: 'Arvo', serif;
+    font-family: 'Fredoka One', cursive;
+}
+
+h2 {
+    font-family: 'Arvo', serif;
+    font-family: 'Fredoka One', cursive;
 }

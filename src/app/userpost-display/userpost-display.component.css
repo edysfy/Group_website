@@ -2,7 +2,8 @@
     position: relative;
     width: 500px;
     height: 93%;
-    background-color: rgb(138, 146, 187);
+    background-color: rgba(85, 95, 148,0.2);
+    color: white;
 
 }
 

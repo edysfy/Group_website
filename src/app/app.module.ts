@@ -40,6 +40,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { KeyComponent } from './key/key.component';
 import { UserpostDisplayComponent } from './userpost-display/userpost-display.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { UserSearchComponent } from './user-search/user-search.component';
 
 
 
@@ -80,6 +81,7 @@ const material = [
     UserComponent,
     KeyComponent,
     UserpostDisplayComponent,
+    UserSearchComponent,
   ],
   imports: [
     BrowserModule,
