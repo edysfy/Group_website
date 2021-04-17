@@ -20,7 +20,7 @@ export class SidebarService {
     this.sideBarState = new BehaviorSubject<Sidebar>({
       key: false,
       profile: false,
-      userPosts: true,
+      userPosts: false,
       search: false,
       settings: false,
     });

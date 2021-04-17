@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const {userSchema, User} = require("../../mongo_schema/user");
+const User = require("../../mongo_schema/user");
 const jwt = require("jsonwebtoken");
 const secretKey = require("../jwtsecretkey");
 

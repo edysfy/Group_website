@@ -98,11 +98,11 @@ export class MapboxComponent implements OnInit {
               this.removeAllLayerAndSource('data');
             }
             this.userSearchIconClickAmount++;
-            this.pullAllGJPointsFromDBAndDisplay();
+            this.pullAndDisplayGJPointsFromDB();
             this.initMapLayersForData('data');
           } else {
             this.removeAllLayerAndSource('data');
-            this.pullAllGJPointsFromSearchQuery();
+            this.pullAndDisplayGJPointsFromSearchQuery();
             this.initMapLayersForData('data');
           }
         });
@@ -139,7 +139,7 @@ export class MapboxComponent implements OnInit {
     this.map.removeSource(source);
   }
 
-  pullAllGJPointsFromDBAndDisplay(): void {
+  pullAndDisplayGJPointsFromDB(): void {
     this.createDataSource('data');
     this.source = this.map.getSource('data');
     this.postService.getGeoPostData().subscribe((geoPostArr) => {
@@ -147,7 +147,7 @@ export class MapboxComponent implements OnInit {
     });
   }
 
-  pullAllGJPointsFromSearchQuery(): void {
+  pullAndDisplayGJPointsFromSearchQuery(): void {
     this.createDataSource('data');
     this.source = this.map.getSource('data');
   }
