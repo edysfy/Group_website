@@ -17,12 +17,15 @@ export class UserComponent implements OnInit {
   isGenderNull!: boolean;
   genderEdit!: boolean;
   todayDate: Date = new Date();
+  minDate: Date = new Date();
   dobString: string = 'n/a';
 
   constructor(
     private authService: AuthenticationService,
     private userService: UserService
-  ) {}
+  ) {
+    this.minDate.setFullYear(this.todayDate.getFullYear() - 100);
+  }
 
   ngOnInit(): void {
     if (this.authService.getAuthState().getValue()) {

@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-slider/ngx-slider": "^2.0.3",
     "@angular/animations": "^11.2.5",
     "@angular/cdk": "^11.2.4",
     "@angular/common": "~11.2.5",
@@ -26,6 +27,7 @@
     "@fortawesome/fontawesome": "^1.1.8",
     "@fortawesome/fontawesome-svg-core": "^1.2.34",
     "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "angular-double-slider": "^2.0.2",
     "angular-material": "^1.2.2",
     "cors": "^2.8.5",
     "express": "^4.17.1",

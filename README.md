@@ -1,6 +1,4 @@
 
-
-
 ## Table of contents
 * [Team](#team)
 * [Introduction](#intro)
@@ -137,6 +135,7 @@ stuff
 
 <a name="conc"></a>
 ## Conclusion
+<<<<<<< HEAD
 scope and future work must go here...
 Perhaps hometown / lived location could be something you grab from the user too
 (1 liked)
@@ -146,3 +145,6 @@ this feedback
 "I mean a user history mode that is mapped could be quite interesting, however, there is one thing I want you to think about (not necessarily to develop anything, but just to think about for your future work section of the report). Simply, how will this data be used and who will use it?
 
 If I clicked on your Edgware Earthquake post, how could I support you? This is where you make the jump from raising awareness, to going further."
+=======
+stuff
+>>>>>>> 08312a2cfa43ef98c1ca48ded2b4ee36af9d74c8
