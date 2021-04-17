@@ -56,6 +56,71 @@ export class MapboxComponent implements OnInit {
     this.initMap();
   }
 
+    /*init map and flys to user coords*/
+    initMap(): void {
+      (mapboxgl as any).accessToken = environment.mapboxToken;
+      this.map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/dark-v10',
+        zoom: 2,
+        center: [-0.2101765, 51.5942466],
+      });
+  
+      /*this opens dialog when click and saves coords as new state*/
+      this.map.on('click', (e) => {
+        if (this.isLoggedIn) {
+          const zoom = this.map.getZoom();
+          console.log(zoom);
+          if (zoom > 12) {
+            const dialogConfig = new MatDialogConfig();
+            dialogConfig.autoFocus = false;
+            dialogConfig.width = '55%';
+            dialogConfig.height = '70%';
+            dialogConfig.hasBackdrop = true;
+            dialogConfig.panelClass = 'custom-dialog';
+            dialogConfig.position = { bottom: '8%', right: '20%' };
+            this.dialog.open(UserpostComponent, dialogConfig);
+            this.postService.updateLongLat({
+              long: e.lngLat.lng,
+              lat: e.lngLat.lat,
+            });
+          }
+        }
+      });
+  
+      /*load the data into a source*/
+      this.map.on('load', (e) => {
+        this.userSearchService
+          .getHasSearchInitState()
+          /*susbscrice to user search state*/
+          .subscribe((activatedUserSearch) => {
+            /*if user search is activates, display all posts from database*/
+            // if(this.userSearchClickAmount > 0) {
+            //   this.removeAllMapLayers(this.map);
+            //   this.map.removeSource('data');
+            // }
+            console.log(activatedUserSearch);
+            if (activatedUserSearch === false) {
+              this.userSearchClickAmount++;
+              this.createDataSource(this.map,'data');
+              /*create feature collection and set to data*/
+              this.source = this.map.getSource('data');
+              /*suscribe to the data source in the service*/
+              this.geoPostSubscriber = this.postService
+                .getGeoPostData()
+                .subscribe((geoPostArr) => {
+                  this.source.setData(new FeatureCollection(geoPostArr));
+                });
+              this.initMapLayersForData(this.map,'data');  
+            } else {
+              this.geoPostSubscriber.unsubscribe();
+              this.removeAllMapLayers(this.map);
+              this.map.removeSource('data');
+            }
+          });
+      });
+    }
+
   flyTo(lngLat: number[]) {
     this.map.flyTo({
       center: [lngLat[0], lngLat[1]],
@@ -63,6 +128,15 @@ export class MapboxComponent implements OnInit {
     });
   }
 
+  createDataSource(map: mapboxgl.Map, name: string):void {
+    map.addSource(name, {
+      type: 'geojson',
+      data: {
+        type: 'FeatureCollection',
+        features: [],
+      },
+    });
+  }
 
   initMapLayersForData(map: mapboxgl.Map, layer: string): void {
     /*----------------layer for user's posts------------------*/
@@ -214,84 +288,4 @@ export class MapboxComponent implements OnInit {
     map.removeLayer('mood-heat');
   }
 
-  /*init map and flys to user coords*/
-  initMap(): void {
-    (mapboxgl as any).accessToken = environment.mapboxToken;
-    this.map = new mapboxgl.Map({
-      container: 'map',
-      style: 'mapbox://styles/mapbox/dark-v10',
-      zoom: 2,
-      center: [-0.2101765, 51.5942466],
-    });
-
-    // /*Geolocation*/
-    // this.map.addControl(
-    //   new mapboxgl.GeolocateControl({
-    //     positionOptions: {
-    //       enableHighAccuracy: true,
-    //     },
-    //     trackUserLocation: true,
-    //   })
-    // );
-
-    /*this opens dialog when click and saves coords as new state*/
-    this.map.on('click', (e) => {
-      if (this.isLoggedIn) {
-        const zoom = this.map.getZoom();
-        console.log(zoom);
-        if (zoom > 12) {
-          const dialogConfig = new MatDialogConfig();
-          dialogConfig.autoFocus = false;
-          dialogConfig.width = '55%';
-          dialogConfig.height = '70%';
-          dialogConfig.hasBackdrop = true;
-          dialogConfig.panelClass = 'custom-dialog';
-          dialogConfig.position = { bottom: '8%', right: '20%' };
-          this.dialog.open(UserpostComponent, dialogConfig);
-          this.postService.updateLongLat({
-            long: e.lngLat.lng,
-            lat: e.lngLat.lat,
-          });
-        }
-      }
-    });
-
-    /*load the data into a source*/
-    this.map.on('load', (e) => {
-      this.userSearchService
-        .getHasSearchInitState()
-        /*susbscrice to user search state*/
-        .subscribe((activatedUserSearch) => {
-          /*if user search is activates, display all posts from database*/
-          // if(this.userSearchClickAmount > 0) {
-          //   this.removeAllMapLayers(this.map);
-          //   this.map.removeSource('data');
-          // }
-          console.log(activatedUserSearch);
-          if (activatedUserSearch === false) {
-            this.userSearchClickAmount++;
-            this.map.addSource('data', {
-              type: 'geojson',
-              data: {
-                type: 'FeatureCollection',
-                features: [],
-              },
-            });
-            /*create feature collection and set to data*/
-            this.source = this.map.getSource('data');
-            this.source.setData(new FeatureCollection(this.geoPost));
-            /*suscribe to the data source in the service*/
-            this.geoPostSubscriber = this.postService
-              .getGeoPostData()
-              .subscribe((geoPostArr) => {
-                this.source.setData(new FeatureCollection(geoPostArr));
-              });
-            this.initMapLayersForData(this.map,'data');  
-          } else {
-            this.removeAllMapLayers(this.map);
-            this.map.removeSource('data');
-          }
-        });
-    });
-  }
 }
