@@ -32,7 +32,6 @@ import { UserSearchService } from '../service/user-search.service';
 export class MapboxComponent implements OnInit {
   private map!: mapboxgl.Map;
   private geoPost!: Array<GeoJson>;
-  private geoPostSubscriber!: Subscription;
   private source: any;
   private userSearchClickAmount: number = 0;
   isLoggedIn!: boolean;
@@ -106,14 +105,13 @@ export class MapboxComponent implements OnInit {
               /*create feature collection and set to data*/
               this.source = this.map.getSource('data');
               /*suscribe to the data source in the service*/
-              this.geoPostSubscriber = this.postService
+              this.postService
                 .getGeoPostData()
                 .subscribe((geoPostArr) => {
                   this.source.setData(new FeatureCollection(geoPostArr));
                 });
               this.initMapLayersForData(this.map,'data');  
             } else {
-              this.geoPostSubscriber.unsubscribe();
               this.removeAllMapLayers(this.map);
               this.map.removeSource('data');
             }
