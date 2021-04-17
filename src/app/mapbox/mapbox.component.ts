@@ -150,12 +150,6 @@ export class MapboxComponent implements OnInit {
   pullAllGJPointsFromSearchQuery(): void {
     this.createDataSource('data');
     this.source = this.map.getSource('data');
-    /*suscribe to the data source in the service*/
-    this.postService.getGeoPostData().subscribe((geoPostArr) => {
-      this.source.setData(
-        new FeatureCollection(geoPostArr.slice(0, 4))
-      );
-    });
   }
 
   initMapLayersForData(layer: string): void {

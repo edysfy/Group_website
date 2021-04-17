@@ -16,11 +16,9 @@
 
 mat-expansion-panel {
     position: relative;
-    top: 50px;
-    margin-bottom: 2rem;
+    top: 30px;
     width: 90%;
-    left: 20px;
-    margin-top: 3rem;
+    left: 28px;
     height: fit-content;
 }
 /* width */
@@ -57,7 +55,7 @@ h1 {
 
 .mat-accordion .mat-expansion-panel:not(.mat-expanded),
 .mat-accordion .mat-expansion-panel:not(.mat-expansion-panel-spacing) {
-   margin-bottom: 20px;
+   margin-bottom: 40px;
 }
 
 .mat-form-field + .mat-form-field {

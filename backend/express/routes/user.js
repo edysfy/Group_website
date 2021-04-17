@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const User = require("../../mongo_schema/user");
+const {userSchema, User} = require("../../mongo_schema/user");
 const jwt = require("jsonwebtoken");
 const secretKey = require("../jwtsecretkey");
 
@@ -112,6 +112,7 @@ function checkIfGenderNull(gender) {
   return gender;
 }
 
+/*path which updated the user details*/
 router.put("/:username", (req, res, next) => {
   if (req.body.gender != null) {
     User.updateOne({ username: req.params.username }, { gender: req.body.gender })
