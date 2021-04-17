@@ -1,6 +1,4 @@
 
-
-
 ## Table of contents
 * [Team](#team)
 * [Introduction](#intro)
@@ -126,4 +124,3 @@ stuff
 <a name="conc"></a>
 ## Conclusion
 stuff
-
