@@ -1,12 +1,47 @@
 <div class="search">
-    <div class="flexContainer">
-        <div class="box">
-            <h1 class="title">Emote Search</h1>
-            <br><br>
-            <div class="age">
-                <p>Age: </p>
-                <ngx-slider></ngx-slider>
-            </div>
+  <div class="flexContainer">
+    <div class="box">
+      <h1 class="title">Emote Search</h1>
+      <br /><br />
+      <div class="input" style="position: relative; top: 3%;">
+        <div class="age">
+            <p>Age:</p>
+            <ngx-slider
+              class="slider"
+              [(value)]="ageMin"
+              [(highValue)]="ageMax"
+              [options]="optionAge"
+            ></ngx-slider>
+          </div>
+          <div class="days">
+            <p>Days:</p>
+            <ngx-slider
+              class="sliderDay"
+              [(value)]="daysMin"
+              [(highValue)]="daysMax"
+              [options]="optionDays"
+            ></ngx-slider>
+          </div>
+          <div class="mood">
+            <p>Mood:</p>
+            <section class="moodCheck">
+            <mat-checkbox [(checked)]="mood.anxiety" (change)="moodChange()" color="primary">Coping Well</mat-checkbox>
+            <mat-checkbox [(checked)]="mood.anxiety" (change)="moodChange()" color="accent">Depression</mat-checkbox>
+            <mat-checkbox [(checked)]="mood.anxiety" (change)="moodChange()" color="warn">Anxiety</mat-checkbox>
+          </section>
         </div>
+        <div class="gender">
+            <p>Gender:</p>
+            <section  class="genderCheck">
+            <mat-checkbox [(checked)]="mood.anxiety" (change)="moodChange()" color="primary">Male</mat-checkbox>
+            <mat-checkbox [(checked)]="mood.anxiety" (change)="moodChange()" color="accent">Female</mat-checkbox>
+          </section>
+        </div>
+      </div>
+    <div class="buttons">
+        <section>
+          <button mat-raised-button color="accent">Display Search</button>
+        </section>
     </div>
+  </div>
 </div>

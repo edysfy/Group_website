@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const uniqueValidatorPlugin = require('mongoose-unique-validator');
-const GeoJson = require("./geoJson").schema;
 
 const userSchema = new mongoose.Schema({
   username: {

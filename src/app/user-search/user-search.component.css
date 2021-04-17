@@ -44,3 +44,59 @@ p {
     padding: 30px;
 }
 
+.age {
+    display: flex;
+}
+
+.days{
+    display: flex;
+}
+
+.mood{
+    position: relative;
+    top: 15px;
+    display: flex;
+}
+
+.slider {
+    position: relative;
+    top: 3px;
+    width: 70%;
+}
+
+.sliderDay {
+    position: relative;
+    top: 3px;
+    width: 70%;
+    right: 10px;
+}
+
+.gender {
+    display: flex;
+}
+
+mat-checkbox {
+    font-family: 'Arvo', serif;
+    font-family: 'Fredoka One', cursive;
+    padding: 10px;
+}
+
+.moodCheck {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 25px
+}
+
+.genderCheck {
+    display: flex;
+    position: relative;
+    top: 20px;
+    right: 18px
+}
+
+.buttons {
+    position: relative;
+    top: 10%;
+    left: 20px;
+}
