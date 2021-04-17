@@ -135,7 +135,7 @@ stuff
 
 <a name="conc"></a>
 ## Conclusion
-<<<<<<< HEAD
+
 scope and future work must go here...
 Perhaps hometown / lived location could be something you grab from the user too
 (1 liked)
@@ -147,4 +147,3 @@ this feedback
 If I clicked on your Edgware Earthquake post, how could I support you? This is where you make the jump from raising awareness, to going further."
 =======
 stuff
->>>>>>> 08312a2cfa43ef98c1ca48ded2b4ee36af9d74c8
