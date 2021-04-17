@@ -18,7 +18,7 @@ export class UserpostComponent implements OnInit {
     public dialogRef: MatDialogRef<UserpostComponent>,
     public postService: PostService
   ) {
-    this.rating = 3;
+    this.rating = 2;
   }
 
   ngOnInit(): void {
