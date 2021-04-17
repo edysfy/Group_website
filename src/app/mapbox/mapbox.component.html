@@ -8,5 +8,5 @@
     </div>
 </div>
 
-<app-searchfield *ngIf="!isLoggedIn"></app-searchfield>
+<app-searchfield *ngIf="!isLoggedIn" (flyToCords)="flyTo($event)"></app-searchfield>
 <app-sidebar *ngIf="isLoggedIn"></app-sidebar>

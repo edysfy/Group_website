@@ -120,10 +120,12 @@ export class MapboxComponent implements OnInit {
     }
 
   flyTo(lngLat: number[]) {
-    this.map.flyTo({
+    if(!isNaN(lngLat[0])&&!isNaN(lngLat[1])){
+      this.map.flyTo({
       center: [lngLat[0], lngLat[1]],
       zoom: 15,
     });
+  }
   }
 
   createDataSource(map: mapboxgl.Map, name: string):void {

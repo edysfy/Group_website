@@ -14,6 +14,14 @@
     <span>MoodRating: {{results.properties.mood}} </span>
     <span>Explanation: {{results.properties.textBody}} </span>
     <span>Username: {{results.properties.username}} </span>
+    <button
+            mat-fab
+            color="accent"
+            (click) = "onFlyTo(results.geometry.coordinates)"
+
+          >
+            <mat-icon>flight_takeof</mat-icon>
+          </button>
   </p>
   </mat-card>
   </mat-list-item>
