@@ -28,7 +28,7 @@ export class UserpostComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.suber = this.userSearchService
-      .getHasSearchInitState()
+      .getIsInSearchState()
       .subscribe((bool) => {
         this.searchActivated = bool;
       });

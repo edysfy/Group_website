@@ -53,7 +53,9 @@ export class PostService {
             geoPostData.geoPost[i]._id
           );
           /*push object to the array*/
-          this.geoPosts.push(incomingGJ);
+          if(this.geoPosts.length != geoPostData.geoPost.length) {
+            this.geoPosts.push(incomingGJ);
+          }
         }
         /*set the new state fom the geoJson array*/
         this.geoPostSubject.next(this.geoPosts);

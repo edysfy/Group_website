@@ -33,7 +33,7 @@ export class MapboxComponent implements OnInit {
   private map!: mapboxgl.Map;
   private geoPost!: Array<GeoJson>;
   private source: any;
-  private userSearchClickAmount: number = 0;
+  private userSearchIconClickAmount: number = 0;
   isLoggedIn!: boolean;
   sidebarState!: Sidebar;
 
@@ -55,69 +55,59 @@ export class MapboxComponent implements OnInit {
     this.initMap();
   }
 
-    /*init map and flys to user coords*/
-    initMap(): void {
-      (mapboxgl as any).accessToken = environment.mapboxToken;
-      this.map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/dark-v10',
-        zoom: 2,
-        center: [-0.2101765, 51.5942466],
-      });
-  
-      /*this opens dialog when click and saves coords as new state*/
-      this.map.on('click', (e) => {
-        if (this.isLoggedIn) {
-          const zoom = this.map.getZoom();
-          console.log(zoom);
-          if (zoom > 12) {
-            const dialogConfig = new MatDialogConfig();
-            dialogConfig.autoFocus = false;
-            dialogConfig.width = '55%';
-            dialogConfig.height = '70%';
-            dialogConfig.hasBackdrop = true;
-            dialogConfig.panelClass = 'custom-dialog';
-            dialogConfig.position = { bottom: '8%', right: '20%' };
-            this.dialog.open(UserpostComponent, dialogConfig);
-            this.postService.updateLongLat({
-              long: e.lngLat.lng,
-              lat: e.lngLat.lat,
-            });
-          }
-        }
-      });
-  
-      /*load the data into a source*/
-      this.map.on('load', (e) => {
-        this.userSearchService
-          .getHasSearchInitState()
-          /*susbscrice to user search state*/
-          .subscribe((activatedUserSearch) => {
-            /*if user search is activates, display all posts from database*/
-            // if(this.userSearchClickAmount > 0) {
-            //   this.removeAllMapLayers(this.map);
-            //   this.map.removeSource('data');
-            // }
-            console.log(activatedUserSearch);
-            if (activatedUserSearch === false) {
-              this.userSearchClickAmount++;
-              this.createDataSource(this.map,'data');
-              /*create feature collection and set to data*/
-              this.source = this.map.getSource('data');
-              /*suscribe to the data source in the service*/
-              this.postService
-                .getGeoPostData()
-                .subscribe((geoPostArr) => {
-                  this.source.setData(new FeatureCollection(geoPostArr));
-                });
-              this.initMapLayersForData(this.map,'data');  
-            } else {
-              this.removeAllMapLayers(this.map);
-              this.map.removeSource('data');
-            }
+  /*init map and flys to user coords*/
+  initMap(): void {
+    (mapboxgl as any).accessToken = environment.mapboxToken;
+    this.map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/dark-v10',
+      zoom: 2,
+      center: [-0.2101765, 51.5942466],
+    });
+
+    /*this opens dialog when click and saves coords as new state*/
+    this.map.on('click', (e) => {
+      if (this.isLoggedIn) {
+        const zoom = this.map.getZoom();
+        console.log(zoom);
+        if (zoom > 12) {
+          const dialogConfig = new MatDialogConfig();
+          dialogConfig.autoFocus = false;
+          dialogConfig.width = '55%';
+          dialogConfig.height = '70%';
+          dialogConfig.hasBackdrop = true;
+          dialogConfig.panelClass = 'custom-dialog';
+          dialogConfig.position = { bottom: '8%', right: '20%' };
+          this.dialog.open(UserpostComponent, dialogConfig);
+          this.postService.updateLongLat({
+            long: e.lngLat.lng,
+            lat: e.lngLat.lat,
           });
-      });
-    }
+        }
+      }
+    });
+
+    /*load the data into a source*/
+    this.map.on('load', (e) => {
+      this.userSearchService
+        .getIsInSearchState()
+        /*susbscrice to user search state*/
+        .subscribe((activatedUserSearch) => {
+          if (!activatedUserSearch) {
+            if (this.userSearchIconClickAmount > 0) {
+              this.removeAllLayerAndSource('data');
+            }
+            this.userSearchIconClickAmount++;
+            this.pullAllGJPointsFromDBAndDisplay();
+            this.initMapLayersForData('data');
+          } else {
+            this.removeAllLayerAndSource('data');
+            this.pullAllGJPointsFromSearchQuery();
+            this.initMapLayersForData('data');
+          }
+        });
+    });
+  }
 
   flyTo(lngLat: number[]) {
     this.map.flyTo({
@@ -126,8 +116,8 @@ export class MapboxComponent implements OnInit {
     });
   }
 
-  createDataSource(map: mapboxgl.Map, name: string):void {
-    map.addSource(name, {
+  createDataSource(name: string): void {
+    this.map.addSource(name, {
       type: 'geojson',
       data: {
         type: 'FeatureCollection',
@@ -136,9 +126,40 @@ export class MapboxComponent implements OnInit {
     });
   }
 
-  initMapLayersForData(map: mapboxgl.Map, layer: string): void {
+  removeAllMapLayers(): void {
+    this.map.removeLayer('user-markers');
+    this.map.removeLayer('markers');
+    this.map.removeLayer('mood-heat');
+  }
+
+  removeAllLayerAndSource(source: string): void {
+    this.removeAllMapLayers();
+    this.map.removeSource(source);
+  }
+
+  pullAllGJPointsFromDBAndDisplay(): void {
+    this.createDataSource('data');
+    this.source = this.map.getSource('data');
+    this.postService.getGeoPostData().subscribe((geoPostArr) => {
+      this.source.setData(new FeatureCollection(geoPostArr));
+    });
+  }
+
+  pullAllGJPointsFromSearchQuery(): void {
+    this.createDataSource('data');
+    this.source = this.map.getSource('data');
+    /*suscribe to the data source in the service*/
+    this.postService.getGeoPostData().subscribe((geoPostArr) => {
+      this.source.setData(
+        new FeatureCollection(geoPostArr.slice(0, 4))
+      );
+    });
+  }
+
+  initMapLayersForData(layer: string): void {
+    console.log('sds');
     /*----------------layer for user's posts------------------*/
-    map.addLayer({
+    this.map.addLayer({
       id: 'user-markers',
       interactive: true,
       type: 'symbol',
@@ -150,15 +171,14 @@ export class MapboxComponent implements OnInit {
         'icon-size': 2,
       },
     });
-    map.setFilter('user-markers', [
+    this.map.setFilter('user-markers', [
       '==',
       'username',
       this.authService.getUsername(),
     ]);
-
     /*----------------layer for user's posts------------------*/
     /*---------------------everyone's markers apart from user==============*/
-    map.addLayer({
+    this.map.addLayer({
       id: 'markers',
       interactive: true,
       type: 'circle',
@@ -173,7 +193,7 @@ export class MapboxComponent implements OnInit {
           ['get', 'mood'],
           '#EC986F',
           1,
-          'rgb(65,182,196)',              
+          'rgb(65,182,196)',
           2,
           'rgb(254,204,92)',
           3,
@@ -181,7 +201,7 @@ export class MapboxComponent implements OnInit {
         ],
       },
     });
-    map.addLayer(
+    this.map.addLayer(
       {
         id: 'mood-heat',
         type: 'heatmap',
@@ -189,15 +209,14 @@ export class MapboxComponent implements OnInit {
         maxzoom: 9,
         paint: {
           // Increase the heatmap weight based on frequency and property moodRatingnitude
-          'heatmap-weight': [
-            'interpolate',
-            ['linear'],
-            ['get', 'mood'],
-            0,
-            0,
-            6,
-            1,
-          ],
+          'heatmap-weight': {
+            property: 'dbh',
+            type: 'exponential',
+            stops: [
+              [1, 0],
+              [62, 1],
+            ],
+          },
           // Increase the heatmap color weight weight by zoom level
           // heatmap-intensity is a multiplier on top of heatmap-weight
           'heatmap-intensity': [
@@ -205,9 +224,9 @@ export class MapboxComponent implements OnInit {
             ['linear'],
             ['zoom'],
             0,
+            0,
+            6,
             1,
-            9,
-            3,
           ],
           // Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
           // Begin color ramp at 0-stop with a 0-transparancy color
@@ -234,11 +253,11 @@ export class MapboxComponent implements OnInit {
       'waterway-label'
     );
     /*hovers on marker to bring up the post*/
-    map.on('mouseenter', 'markers', (e) => {
-      var features = map.queryRenderedFeatures(e.point, {
+    this.map.on('mouseenter', 'markers', (e) => {
+      var features = this.map.queryRenderedFeatures(e.point, {
         layers: ['markers'],
       });
-      map.getCanvas().style.cursor = 'pointer';
+      this.map.getCanvas().style.cursor = 'pointer';
 
       if (!features.length) {
         return;
@@ -270,20 +289,15 @@ export class MapboxComponent implements OnInit {
               feature?.properties?.username
           )
           .setLngLat(cords)
-          .addTo(map);
+          .addTo(this.map);
       }
-      map.on('mouseleave', 'markers', (e) => {
-        map.getCanvas().style.cursor = '';
+      this.map.on('mouseleave', 'markers', (e) => {
+        this.map.getCanvas().style.cursor = '';
         popup.remove();
       });
     });
-      /*--------------------everyone's markers apart from user==============*/    
+    /*--------------------everyone's markers apart from user==============*/
   }
 
-  removeAllMapLayers(map: mapboxgl.Map):void {
-    map.removeLayer('user-markers');
-    map.removeLayer('markers');
-    map.removeLayer('mood-heat');
-  }
 
 }

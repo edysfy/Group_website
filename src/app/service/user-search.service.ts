@@ -15,7 +15,7 @@ export class UserSearchService {
     this.hasSearchInit.next(set);
   }
 
-  getHasSearchInitState(): BehaviorSubject<boolean>  {
+  getIsInSearchState(): BehaviorSubject<boolean>  {
     return this.hasSearchInit;
   }
 }
