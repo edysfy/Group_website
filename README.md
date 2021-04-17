@@ -73,18 +73,21 @@ Barak and Grohol have brought to light that online peer-led support groups have 
 
 In agreement with this, Bakar and Moore did a study on MySpace and discovered that those users who blogged frequently increased their social integration and friendship satisfaction scores compared to those who did not (Bakar & Moore, 2008).
 
+## How will EmoteMap solve the problem?
+
+
 
 ### Industry Review: What differentiates EmoteMap?
 #### Website 1 - The Mental Elf https://www.nationalelfservice.net/mental-health/  
-##### Summary:   
+##### Summary:
 The Mental Elf is a 'no misinformation' mental health blogging website started by information scientist, Andre Tomlin. The blog is now a team of contributors aiming to bring fresh perspectives and considerable knowledge and clinical experience when talking about mental health.  
 
-##### How EmoteMap solves the problem differently:  
+##### How EmoteMap solves the problem differently:
 Although their low-level information can provide information to those trying to understand their mental health better, Emote Map aims to build more of an experiential feel. On top of this Emote Map gives a communal feel, and is more so trying to combat the negative effects of current social communities
 
 
 #### Website 2 - Young Minds https://youngminds.org.uk
-##### Summary:  
+##### Summary:
 YoungMinds has partnered with 02 to gather tips and advise on how to enjoy a more positive time online. They work to tackle issues such as 'What kind of social media feed do I have?', 'How can I deal with online bullying?', or 'How can I block, mute, or report other accounts?'  
 
 ##### How EmoteMap solves the problem differently:  
@@ -93,10 +96,10 @@ EmoteMap makes the user the heart of the website. They themselves are the soluti
 
 
 #### Website 3 - The Mighty https://themighty.com
-##### Summary:  
+##### Summary:
 The Mighty publish real stories by real people living with disability, disease and mental illness. They aim to build a safe platform for their community to share stories, connect with others and raise support for the causes they believe in.
 
-##### How EmoteMap solves the problem differently:  
+##### How EmoteMap solves the problem differently:
 Although the Mighty are building a positive online community in the same way that we seek to, we believe that we provide a visual/geographical representation that efficiently and effectively allows users to interact/ learn from others in a way that seeing date/time-based posts on The Mighty doesnt. In this sense, The feel of the community that we are trying to bring about through EmoteMap is interactive and insightful in a very unique way (give stat from questionnaire on uniqueness). It enables the user to gain a localised understanding of a very much  global problem in a way that not many other websites do… this is very much due to the map interface that is used.  
 
 
@@ -125,5 +128,12 @@ stuff
 
 <a name="conc"></a>
 ## Conclusion
-stuff
+scope and future work must go here...
+Perhaps hometown / lived location could be something you grab from the user too
+(1 liked)
+some more things we can add to the documenation
+this is rreally important guys
+this feedback
+"I mean a user history mode that is mapped could be quite interesting, however, there is one thing I want you to think about (not necessarily to develop anything, but just to think about for your future work section of the report). Simply, how will this data be used and who will use it?
 
+If I clicked on your Edgware Earthquake post, how could I support you? This is where you make the jump from raising awareness, to going further."
