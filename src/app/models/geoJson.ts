@@ -1,5 +1,6 @@
 /*interface for actual post data*/
 export interface IPost {
+    username: string|null,
     dateTime: Date,
     keyword: string,
     mood: number,
@@ -15,7 +16,7 @@ export interface IGeoPosition {
 /*interface for IGeoJson data*/
 export interface IGeoJson {
     type: string,
-    location: IGeoPosition,
+    geometry: IGeoPosition,
     properties: IPost,
     _id: string;
 }

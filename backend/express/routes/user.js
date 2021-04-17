@@ -1,54 +1,54 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../../mongo_schema/user");
-//const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const secretKey = require("../jwtsecretkey");
 
 router.post("/signup", (req, res, next) => {
-  // const saltRounds = 10;
-  // /*looked online and bcrypt is good lib to hash/secure passwords*/
-  // bcrypt.hash(req.body.password, saltRounds).then((hashedPassword) => {
-    /*create user model with request body parameters*/
-    const user = new User({
-      username: req.body.username,
-      email: req.body.email,
-      /*store hashed password in database*/
-      password: hashedPassword,
-      geoPost: [],
+  /*cant use null as a username*/
+  if (req.body.username === "null") {
+    return res.json({
+      message: "Username Taken",
+      regSuc: false,
     });
-    /*save the data in mongoDb*/
-    user
-      .save()
-      /*when promise arrives send the response back to the frontend*/
-      .then((confirmDoc) => {
-        res.status(201).json({
-          message: "The user has been successfully registered",
-          result: confirmDoc,
-        });
-      })
-      /*this error will be if the email/username isn't unique*/
-      .catch((error) => {
-        res.status(500).json({
-          message: "Unable to login with these credentials",
-          error: error,
-        });
-      });
+  }
+  const user = new User({
+    username: req.body.username,
+    /*store hashed password in database*/
+    password: req.body.password,
   });
+  /*save the data in mongoDb*/
+  user
+    .save()
+    /*when promise arrives send the response back to the frontend*/
+    .then((confirmDoc) => {
+      res.status(201).json({
+        message: "The user has been successfully registered",
+        result: confirmDoc,
+        regSuc: true,
+      });
+    })
+    /*this error will be if the email/username isn't unique*/
+    .catch((error) => {
+      res.json({
+        message: "Unable to login with these credentials",
+        regSuc: false,
+      });
+    });
+});
 // });
 
 router.post("/login", (req, res, next) => {
   User.findOne({ username: req.body.username }).then((query) => {
     /*if username not in the database query is null*/
     if (query === null) {
-      return res.status(404).json({
+      return res.json({
         message: "Incorrect username",
-        login: false,
       });
     }
     /*get the password in db and compare to the request body password*/
-    const userHashPassword = query.password;
-    passwordMatch(req.body.username, req.body.password, userHashPassword, res);
+    const userPassword = query.password;
+    passwordMatch(req.body.username, req.body.password, userPassword, res);
   });
 });
 
@@ -58,14 +58,9 @@ async function passwordMatch(
   userHashPassword,
   res
 ) {
-  // /*compare passwords and send correct response*/
-  // const comparePromise = bcrypt.compare(frontEndPassword, userHashPassword);
-  // const doPasswordsMatch = await comparePromise;
-
-  if (!frontEndPassword!=userHashPassword) {
-    return res.status(406).json({
+  if (frontEndPassword != userHashPassword) {
+    return res.json({
       message: "Incorrect password",
-      login: false,
     });
   }
   /*create jwt token to authenticate user in front end*/
@@ -74,13 +69,75 @@ async function passwordMatch(
       username: frontEndUsername,
       password: frontEndPassword,
     },
-    secretKey,
-    { expiresIn: "1h" },
+    secretKey
   );
   return res.status(200).json({
     token: token,
-    expireIn: 3600,
+    username: frontEndUsername,
   });
 }
+
+router.get("/:username", (req, res, next) => {
+  User.findOne({ username: req.params.username })
+    .then((user) => {
+      const date = convertDateToString(user.dob);
+      const gender = checkIfGenderNull(user.gender);
+      res.status(200).json({
+        user: {
+          username: user.username,
+          dob: date,
+          gender: gender,
+          age: user.age,
+        },
+      });
+    })
+    .catch((error) => {
+      res.json({
+        exist: false,
+      });
+    });
+});
+
+function convertDateToString(date) {
+  if (date === null) {
+    return "n/a";
+  }
+  return date.toDateString();
+}
+
+function checkIfGenderNull(gender) {
+  if (gender === null) {
+    return "n/a";
+  }
+  return gender;
+}
+
+router.put("/:username", (req, res, next) => {
+  if (req.body.gender != null) {
+    User.updateOne({ username: req.params.username }, { gender: req.body.gender })
+      .then((result) => {
+        res.json({message: "update gender sucessfull"})
+      })
+      .catch((error) => {
+        res.json({message: "no user"})
+      });
+  } else if(req.body.dob != null) {
+    User.updateOne({ username: req.params.username }, { dob: req.body.dob })
+      .then((result) => {
+        res.json({message: "update dob sucessfull"})
+      })
+      .catch((error) => {
+        res.json({message: "no user"})
+      });
+  } else {
+    User.updateOne({username: req.params.username}, {age: req.body.age})
+    .then((result) => {
+      res.json({message: "update age sucessfull"})
+    })
+    .catch((error) => {
+      res.json({message: "no user"})
+    });
+  }
+});
 
 module.exports = router;

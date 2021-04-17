@@ -1,5 +1,12 @@
-<div id="map">
+
+<div class="full">
+    <app-user *ngIf="isLoggedIn && sidebarState.profile" [@inOutAnimation]></app-user>
+    <app-userpost-display *ngIf="isLoggedIn && sidebarState.userPosts" [@inOutAnimation]  (flyToCords)="flyTo($event)"></app-userpost-display>
+    <app-user-search  *ngIf="isLoggedIn && sidebarState.search" [@inOutAnimation]></app-user-search>
+    <app-key *ngIf="isLoggedIn && sidebarState.key" [@inOutAnimation]></app-key>
+    <div id="map">
+    </div>
 </div>
 
-<app-searchfield></app-searchfield>
-<app-postbutton></app-postbutton>
+<app-searchfield *ngIf="!isLoggedIn"></app-searchfield>
+<app-sidebar *ngIf="isLoggedIn"></app-sidebar>

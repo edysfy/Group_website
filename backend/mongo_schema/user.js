@@ -8,19 +8,25 @@ const userSchema = new mongoose.Schema({
     unique: true,
     required: true,
   },
-  email: {
-    type: String,
-    unique: true,
-    required: true,
-  },
   password: {
       type: String,
       required: true,
   },
-  geoPost: {
-    type: [GeoJson],
+  dob: {
+    type: Date,
+    default: null,
     required: false,
-}
+  },
+  gender: {
+    type: String,
+    default: null,
+    required: false,
+  },
+  age: {
+    type: Number,
+    default: null,
+    required: false
+  }
 });
 
 /*unique validator is a plugin that sends detailed responses if 

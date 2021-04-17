@@ -1,0 +1,53 @@
+.vert-usertb{
+    background-color: whitesmoke;
+    width: 560px;
+    height: 90px;
+    display: flex;
+    border-color: black;
+    border-radius: 40px;
+}
+
+.space {
+    height:30%;
+}
+
+.material-icons{
+    position: relative;
+    width: 50px;
+    height: 59%;
+    align-items: center;
+    font-size: 50px;
+    left: 15px;
+    top: 5px;
+    cursor: pointer;
+    border-style: solid;
+    border-radius: 5px;
+    border-radius: 10px;
+    border-color: black;
+    margin: 10px;
+}
+
+#clicked{
+    background-color:  rgb(138, 146, 187);
+    position: relative;
+    width: 50px;
+    height: 59%;
+    align-items: center;
+    font-size: 50px;
+    left: 15px;
+    top: 5px;
+    cursor: pointer;
+    border-style: solid;
+    border-radius: 5px;
+    border-radius: 10px;
+    border-color: black;
+    margin: 10px;
+}
+
+app-postbutton {
+    position: absolute;
+    right:25px;
+    bottom: 37px;
+    display: flex;
+
+}

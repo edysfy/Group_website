@@ -1,6 +1,4 @@
 
-
-
 ## Table of contents
 * [Team](#team)
 * [Introduction](#intro)

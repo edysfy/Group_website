@@ -1,0 +1,71 @@
+mat-list {
+  max-height: 500px;
+  overflow: auto;
+}
+.list-element{
+  position: relative;
+  border-radius: 10px;
+  background-color: rgb(85, 95, 148);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'Arvo', serif;
+  font-family: 'Fredoka One', cursive;
+  height: min-content;
+}
+
+.search-result{
+  position: relative;
+  border-radius: 30px;
+  background-color: rgb(85, 95, 148);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-family: 'Arvo', serif;
+  font-family: 'Fredoka One', cursive;
+  max-height: 80%;
+}
+
+mat-dialog-content{
+  height: 500px;
+  overflow-y: hidden !important;
+  overflow-x: hidden !important;
+
+}
+
+mat-label {
+  color: whitesmoke;
+}
+
+.icon-display {
+ margin-left:10px;
+ position: relative;
+ top: -45px;
+}
+.container {
+  width: 100%;
+  padding: 5%;
+}
+
+h2{
+  position: relative;
+  color: White;
+  font-size: xx-large;
+  text-align: center;
+  font-family: 'Arvo', serif;
+  font-family: 'Fredoka One', cursive;
+}
+p{
+  color: White;
+  text-align: center;
+
+}
+
+mat-form-field {
+  width: 80%;
+  position: relative;
+  left: 80px;
+  font-family: 'Arvo', serif;
+  font-family: 'Fredoka One', cursive;
+  color: white;
+}

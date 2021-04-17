@@ -8,7 +8,7 @@
   align-items: flex-start;
   font-family: 'Arvo', serif;
   font-family: 'Fredoka One', cursive;
-  height: 85%;
+  height: 76%;
 }
 
 mat-dialog-content{
@@ -26,14 +26,11 @@ mat-label {
   width: 100%;
   padding: 5%;
 }
-.container > * {
-  width: 80%;
 
-}
 .icon-display {
  margin-left:10px;
  position: relative;
- top: -45px;
+ top: -100px;
 
 }
 
@@ -70,7 +67,7 @@ mat-form-field {
 }
 
 .slider {
-  margin-top: 10px;
+  margin-top: 20px;
   display: flex;
   width: fit-content;
   height: fit-content;
@@ -88,10 +85,10 @@ mat-form-field {
 
 .sliderSl {
   position: relative;
-  left: 15px;
-  top: 15px;
+  left: 10px;
+  top: 16px;
   width: 100%;
   border-radius: 10px;
-  transform: scale(1.5);
+  transform: scale(1.3);
 
 }
