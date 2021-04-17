@@ -1,5 +1,6 @@
 /*interface for actual post data*/
 export interface IPost {
+    userDetails: string
     username: string|null,
     dateTime: Date,
     keyword: string,
