@@ -74,6 +74,15 @@ Barak and Grohol have brought to light that online peer-led support groups have 
 In agreement with this, Bakar and Moore did a study on MySpace and discovered that those users who blogged frequently increased their social integration and friendship satisfaction scores compared to those who did not (Bakar & Moore, 2008).
 
 ## How will EmoteMap solve the problem?
+### By introducing a more positive way for users to interact online
+We are not trying to reduce the interaction that humans have with online social platforms, it is clear that this will inevitably increase in forthcoming years. Instead, we want to address create an aspect to online sociality that is similarly interactive to current mainstream social media platforms but addresses mental health explicitly. For example, a topic of discussion within a post on EmoteMap could be on the anxiety induced by the use of Instagram.
+
+### By Creating an environment whereby users can be both self-reflective and feel supported by a community of users
+Blogs offer mental health intervention in a similar way to journaling. Although journalling has traditional been done in private to complement psychology, blogging has taken many would-be private journals and turned them public (Bakar & Moore, 2008). Feedback from others can help an individual learn to view feelings and thoughts in ways differently to how they would if they were left to their own devices
+
+### By solving a global problem locally
+The complexity of the issue of global mental illness means that there is no universal solution. We also acknowledge that those suffering mentally may be doing so due to culturally dependant reason. Therefore, a teacher facing stress, anxiety and depressing at the beginning of the academic year during the COVID-19 pandemic (Santamaría & Mondragon, 2021) may search keywords such as 'stress, anxiety, teachers, COVID'. The posts they read will most likely be completely different to those of someone experiencing intimate partner violence and unhealthy alcohol use in the Zambia.
+
 
 
 
