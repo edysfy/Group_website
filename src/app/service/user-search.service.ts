@@ -21,11 +21,11 @@ export class UserSearchService {
       maxAge: 100,
       minDay: -3650,
       maxDay: 0,
-      copingWell: true,
-      depression: true,
-      anxiety: true,
-      male: true,
-      female: true,
+      copingWell: false,
+      depression: false,
+      anxiety: false,
+      male: false,
+      female: false,
     });
   }
 
