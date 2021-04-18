@@ -4,32 +4,15 @@ const router = express.Router();
 const GeoJson = require("../../mongo_schema/geoJson");
 const User = require("../../mongo_schema/user");
 
-// {
-//   minAge: 0,
-//   maxAge: 100,
-//   minDay: -3650,
-//   maxDay: 0,
-//   copingWell: true,
-//   depression: true,
-//   anxiety: true,
-//   male: true,
-//   female: true
-// }
-
 router.post("", (req, res, next) => {
   GeoJson.find()
     .populate("properties.userDetails", ["age", "gender", "dob"])
     .then((data) => {
-      for(let i = 0; i<data.length; i++) {
-        console.log(data[i].properties.username);
-        console.log(data[i].properties.userDetails.age);
-        console.log(data[i].properties.userDetails.gender);
-
-      }
         data = data.filter(
           (geoPost) =>
+            geoPost.properties.userDetails.age != null &&
             geoPost.properties.userDetails.age >= req.body.minAge &&
-            geoPost.properties.userDetails.age <= req.body.maxAge
+            geoPost.properties.userDetails.age <= req.body.maxAge 
         );
       let minDate = generateDate(req.body.minDay);
       let maxDate = generateDate(req.body.maxDay);
@@ -61,13 +44,19 @@ function generateDate(daysFromPresent) {
 
 function filterGender(male, female, data) {
   if (male && female) {
+    data = data.filter(
+      (geoPost) => 
+      geoPost.properties.userDetails.gender != null
+    );
   } else if (male) {
     data = data.filter(
-      (geoPost) => geoPost.properties.userDetails.gender === "male"
+      (geoPost) => 
+      geoPost.properties.userDetails.gender === "male"
     );
   } else if (female) {
     data = data.filter(
-      (geoPost) => geoPost.properties.userDetails.gender === "female"
+      (geoPost) => 
+      geoPost.properties.userDetails.gender === "female"
     );
   } else {
     data = [];
