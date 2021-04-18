@@ -20,17 +20,23 @@ router.post("", (req, res, next) => {
   GeoJson.find()
     .populate("properties.userDetails", ["age", "gender", "dob"])
     .then((data) => {
-      data = data.filter(
-        (geoPost) =>
-          geoPost.properties.userDetails.age > req.body.minAge &&
-          geoPost.properties.userDetails.age < req.body.maxAge
-      );
+      for(let i = 0; i<data.length; i++) {
+        console.log(data[i].properties.username);
+        console.log(data[i].properties.userDetails.age);
+        console.log(data[i].properties.userDetails.gender);
+
+      }
+        data = data.filter(
+          (geoPost) =>
+            geoPost.properties.userDetails.age >= req.body.minAge &&
+            geoPost.properties.userDetails.age <= req.body.maxAge
+        );
       let minDate = generateDate(req.body.minDay);
       let maxDate = generateDate(req.body.maxDay);
       data = data.filter(
         (geoPost) =>
-          minDate.getTime() < geoPost.properties.dateTime.getTime() &&
-          maxDate.getTime() > geoPost.properties.dateTime.getTime()
+          minDate.getTime() <= geoPost.properties.dateTime.getTime() &&
+          maxDate.getTime() >= geoPost.properties.dateTime.getTime()
       );
       data = filterGender(req.body.male, req.body.female, data);
       data = filterMood(
@@ -39,7 +45,6 @@ router.post("", (req, res, next) => {
         req.body.anxiety,
         data
       );
-      console.log(data);
       res.status(200).json({ message: "search", geoSearchArray: data });
     })
     .catch((err) => {
@@ -56,14 +61,11 @@ function generateDate(daysFromPresent) {
 
 function filterGender(male, female, data) {
   if (male && female) {
-    console.log("both");
   } else if (male) {
-    console.log("male");
     data = data.filter(
       (geoPost) => geoPost.properties.userDetails.gender === "male"
     );
   } else if (female) {
-    console.log("female");
     data = data.filter(
       (geoPost) => geoPost.properties.userDetails.gender === "female"
     );
@@ -75,7 +77,6 @@ function filterGender(male, female, data) {
 
 function filterMood(copingWell, depression, anxiety, data) {
   if (copingWell && depression && anxiety) {
-    console.log("all");
   } else if (copingWell && depression && !anxiety) {
     data = data.filter(
       (geoPost) =>

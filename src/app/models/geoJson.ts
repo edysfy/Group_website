@@ -1,9 +1,9 @@
 /*interface for actual post data*/
 export interface IPost {
     userDetails: string|{
-        dob: Date,
-        age: number,
-        gender: string
+        dob: Date|null,
+        age: number|null,
+        gender: string|null
     }
     username: string|null,
     dateTime: Date,
