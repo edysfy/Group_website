@@ -74,5 +74,6 @@ export class UserSearchService {
     let searchArray = this.geoSearchState.getValue();
     searchArray = searchArray.filter(geoRes => geoRes.properties.keyword === keyword);
     this.geoSearchState.next(searchArray);
+
   }
 }

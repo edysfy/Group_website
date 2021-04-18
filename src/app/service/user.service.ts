@@ -87,6 +87,6 @@ export class UserService {
     this.userGJState.next(userPostList);
   }
 
-
+  
   
 }
