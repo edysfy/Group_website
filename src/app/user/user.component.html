@@ -53,8 +53,8 @@
       <form (submit)="saveGender(genderForm)" #genderForm="ngForm" class="gender-tick" autocomplete="off">
         <mat-form-field *ngIf="isGenderNull || genderEdit" style="position: relative; bottom: 30px; left: 30px;">
           <mat-label>male/female</mat-label>
-          <input matInput name="gender" ngModel type="text" #gender="ngModel" required />
-          <mat-error *ngIf="gender.invalid">Please enter male or female.</mat-error>
+          <input matInput name="gender" ngModel type="text" #gender="ngModel" required pattern="male|female"/>
+          <mat-error *ngIf="gender.invalid">Please enter male or female (lowercase).</mat-error>
         </mat-form-field>
         <button *ngIf="isGenderNull || genderEdit" class="dob-button" mat-raised-button color="primary"
           style="position: relative; left: 78px; bottom: 32px;" type="submit">

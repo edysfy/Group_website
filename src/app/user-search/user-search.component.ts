@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Options } from '@angular-slider/ngx-slider';
 import { UserSearchService } from '../service/user-search.service';
+import { NgForm } from '@angular/forms';
 
 
 @Component({
@@ -32,6 +33,7 @@ export class UserSearchComponent implements OnInit, OnDestroy {
     male: true,
     female: true,
   };
+  keywordWarning = false;
 
   constructor(private userSearchService: UserSearchService) {}
 
@@ -57,6 +59,7 @@ export class UserSearchComponent implements OnInit, OnDestroy {
   }
 
   onChange() {
+    this.keywordWarning = false;
     let search = {
       minAge: this.ageMin,
       maxAge: this.ageMax,
@@ -69,5 +72,11 @@ export class UserSearchComponent implements OnInit, OnDestroy {
       female: this.gender.female,
     };
     this.userSearchService.setSearchQueryState(search);
+  }
+
+  sendKeyword(form: NgForm) {
+    this.keywordWarning = true;
+    this.userSearchService.searchKeyword(form.value.keyword);
+    form.resetForm();
   }
 }

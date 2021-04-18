@@ -54,7 +54,6 @@ export class UserSearchService {
           geoSearchArr.push(incomingGJ);
         }
         this.geoSearchState.next(geoSearchArr);
-        console.log(this.geoSearchState.getValue());
       });
     });
   }
@@ -69,5 +68,11 @@ export class UserSearchService {
 
   setSearchQueryState(searchQuery: Search): void {
     this.searchQueryState.next(searchQuery);
+  }
+
+  searchKeyword(keyword: string){
+    let searchArray = this.geoSearchState.getValue();
+    searchArray = searchArray.filter(geoRes => geoRes.properties.keyword === keyword);
+    this.geoSearchState.next(searchArray);
   }
 }

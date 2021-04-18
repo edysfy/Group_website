@@ -45,11 +45,11 @@ export class UserComponent implements OnInit {
   }
 
   calculateAge(dob: string) {
-      const birthday = Date.parse(dob);
-      const ageDifTime = Date.now() - birthday;
-      const age = new Date(ageDifTime);
-      this.age = Math.abs(age.getUTCFullYear() - 1970);
-      this.userService.updateAge(this.age);
+    const birthday = Date.parse(dob);
+    const ageDifTime = Date.now() - birthday;
+    const age = new Date(ageDifTime);
+    this.age = Math.abs(age.getUTCFullYear() - 1970);
+    this.userService.updateAge(this.age);
   }
 
   saveDate(form: NgForm) {
@@ -67,21 +67,15 @@ export class UserComponent implements OnInit {
     if (form.invalid) {
       return;
     }
-    if (
-      form.value.gender.toLowerCase() === 'male' ||
-      form.value.gender.toLowerCase() === 'female'
-    ) {
-      this.isGenderNull = false;
-      this.genderEdit = false;
-      this.userDetails.gender = form.value.gender;
-      this.userService.updateGender(form.value.gender.toLowerCase());
-    }
+    this.isGenderNull = false;
+    this.genderEdit = false;
+    this.userDetails.gender = form.value.gender;
+    this.userService.updateGender(form.value.gender.toLowerCase());
   }
 
   onAgeEdit() {
     this.dobEdit = true;
   }
-
 
   onGenderEdit() {
     this.genderEdit = true;
