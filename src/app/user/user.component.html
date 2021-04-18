@@ -5,11 +5,14 @@
   <h1>
     EmoteProfile
   </h1>
-  <h2 style="width: 70%; margin-left: 12%; text-align: center">
+  <h2 *ngIf="isDobNull || isGenderNull" style="width: 70%; margin-left: 12%; text-align: center">
     Please enter you age and gender so we can accuratly represent mental health
     issues across different age groups and genders across the world
   </h2>
-
+  <h2 *ngIf="!isDobNull && !isGenderNull" style="width: 70%; margin-left: 12%; text-align: center">
+    Thank you, now you posts will now be searchable by other users. Contributing to
+    the awareness of mental health issues around the world
+  </h2>
   <div class="dob" style="display: flex; margin-left: 5%; margin-top: 40px; position: relative; top: 70px">
     <p style="position: relative; top: 18px">Date Of Birth:</p>
     <p *ngIf="!isDobNull && !dobEdit" style="width: 200px; position: relative; bottom: -18px; margin-left: 10px">
