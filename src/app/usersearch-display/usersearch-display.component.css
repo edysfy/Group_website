@@ -33,23 +33,15 @@ mat-expansion-panel {
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: white;
   }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  
-
-
 
 h1 {
     font-family: 'Arvo', serif;
     font-family: 'Fredoka One', cursive;
     position: relative; 
     top: 50px; 
-    left: 130px; 
+    left: 110px; 
     font-size: 40px; 
 }
 
@@ -61,3 +53,15 @@ h1 {
 .mat-form-field + .mat-form-field {
     margin-left: 8px;
   }
+
+  .border {
+    position: relative;
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: white;
+    height: 85%;
+    top: 20px;
+    width: 90%;
+    left: 13px;
+}

@@ -8,6 +8,20 @@
     font-family: 'Arvo', serif;
     font-family: 'Fredoka One', cursive;
     font-size: 20px;
+
+
+}
+
+.border {
+    position: relative;
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: white;
+    height: 85%;
+    top: 50px;
+    width: 90%;
+    left: 15px;
 }
 
 .dob-button {
@@ -21,8 +35,8 @@ h1 {
     font-family: 'Arvo', serif;
     font-family: 'Fredoka One', cursive;
     position: relative; 
-    top: 45px; 
-    left: 110px; 
+    top: 0px; 
+    left: 100px; 
     font-size: 40px; 
 }
 
@@ -30,7 +44,8 @@ h2 {
     font-family: 'Arvo', serif;
     font-family: 'Fredoka One', cursive;
     position: relative;
-    top: 60px;
+    top: 10px;
+    left: 10px;
 }
 
 button{
