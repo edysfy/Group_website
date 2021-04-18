@@ -12,6 +12,7 @@ export class UserpostDisplayComponent implements OnInit {
   userPosts!: Array<IGeoJson>;
   panelOpenState: boolean = false;
   hasUserPosted!: boolean;
+  moodArr: string[] = ["Coping Well", "Depressed", "Anxious"]
 
   @Output() flyToCords = new EventEmitter<number[]>();
 

@@ -17,8 +17,8 @@
                             {{ result.properties.dateTime | date: "medium" }}
                         </mat-panel-description>
                     </mat-expansion-panel-header>
-                    <h3>Hashtag: {{ result.properties.keyword }}</h3>
-                    <h3>Mood: {{ result.properties.mood }}</h3>
+                    <h3>HashTag: {{ result.properties.keyword }}</h3>
+                    <h3>{{ moodArr[result.properties.mood] }}</h3>
                     <p>{{ result.properties.textBody }}</p>
                     <mat-action-row>
                         <button mat-fab color="accent" (click)="onFlyTo(result.geometry.coordinates)">
