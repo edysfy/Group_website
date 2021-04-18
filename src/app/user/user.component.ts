@@ -39,7 +39,6 @@ export class UserComponent implements OnInit {
         }
         if (!this.isDobNull) {
           this.calculateAge(this.userDetails.dob);
-          this.userService.updateAge(this.age);
         }
       });
     }
@@ -50,7 +49,7 @@ export class UserComponent implements OnInit {
       const ageDifTime = Date.now() - birthday;
       const age = new Date(ageDifTime);
       this.age = Math.abs(age.getUTCFullYear() - 1970);
-    
+      this.userService.updateAge(this.age);
   }
 
   saveDate(form: NgForm) {

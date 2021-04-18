@@ -1,13 +1,16 @@
 /*interface for actual post data*/
 export interface IPost {
-    userDetails: string
+    userDetails: string|{
+        dob: Date,
+        age: number,
+        gender: string
+    }
     username: string|null,
     dateTime: Date,
     keyword: string,
     mood: number,
     textBody: string,
 }
-
 
 export interface IGeoPosition {
     type: string,

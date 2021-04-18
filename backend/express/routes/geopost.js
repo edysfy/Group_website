@@ -2,8 +2,7 @@ const express = require("express");
 const router = express.Router();
 const GeoJson = require("../../mongo_schema/geoJson");
 const User = require("../../mongo_schema/user");
-const jwt = require("jsonwebtoken");
-const secretKey = require("../jwtsecretkey");
+
 
 /*gets all post from the db*/
 router.get("", (req, res, next) => {
@@ -25,7 +24,6 @@ router.get("", (req, res, next) => {
 /*saves a post to the database*/
 router.post("", (req, res, next) => {
   const username = req.body.properties.username;
-  console.log(username);
   User.find({ username: username })
     .then((user) => {
       const newPost = new GeoJson({
@@ -46,11 +44,9 @@ router.post("", (req, res, next) => {
           textBody: req.body.properties.textBody,
         },
       });
-      console.log(newPost);
       newPost
         .save()
         .then((dbResponse) => {
-          console.log(dbResponse);
           return res.status(200).json({
             message: "geoPost saved in database",
             id: dbResponse._id,

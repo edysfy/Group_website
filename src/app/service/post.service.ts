@@ -110,7 +110,6 @@ export class PostService {
         this.userService.addPostToUserList(newGeoJson);
       });
   }
-
   /*takes is and then filters array if not in and sets new state
   and deletes the post in the db*/
   public deletePost(_id: string): void {
