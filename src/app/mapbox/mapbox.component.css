@@ -31,8 +31,11 @@ app-searchfield {
 
 app-sidebar {
     bottom: 0px;
-    left: 34%;
     position: fixed;
+    margin: auto;
+    left: 50%;
+    margin-top: -80px; /* Negative half of height. */
+    margin-left: -280px; /* Negative half of width. */
 }
 
 
@@ -50,4 +53,10 @@ app-userpost-display {
 
 app-user-search {
     z-index: 1;
+}
+
+app-usersearch-display {
+    z-index: 1;
+    position: fixed;
+    right: 0px;
 }

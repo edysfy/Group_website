@@ -6,6 +6,7 @@
     <app-key *ngIf="isLoggedIn && sidebarState.key" [@inOutAnimation]></app-key>
     <div id="map">
     </div>
+    <app-usersearch-display *ngIf="isLoggedIn && sidebarState.search" [@inOutAnimation] (flyToCords)="flyTo($event)"></app-usersearch-display>
 </div>
 
 <app-searchfield *ngIf="!isLoggedIn" (flyToCords)="flyTo($event)"></app-searchfield>
