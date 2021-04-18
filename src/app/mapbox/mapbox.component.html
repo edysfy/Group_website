@@ -9,4 +9,4 @@
 </div>
 
 <app-searchfield *ngIf="!isLoggedIn" (flyToCords)="flyTo($event)"></app-searchfield>
-<app-sidebar *ngIf="isLoggedIn"></app-sidebar>
+<app-sidebar *ngIf="isLoggedIn && !isMapLoading"></app-sidebar>

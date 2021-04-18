@@ -97,6 +97,6 @@ mat-checkbox {
 
 .buttons {
     position: relative;
-    top: 10%;
-    left: 20px;
+    bottom: 0.01%;
+    left: 30%;
 }

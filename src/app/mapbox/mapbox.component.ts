@@ -36,7 +36,7 @@ export class MapboxComponent implements OnInit {
   private userSearchIconClickAmount: number = 0;
   isLoggedIn!: boolean;
   sidebarState!: Sidebar;
-
+  isMapLoading: boolean = true;
   constructor(
     private postService: PostService,
     private dialog: MatDialog,
@@ -100,6 +100,7 @@ export class MapboxComponent implements OnInit {
             this.userSearchIconClickAmount++;
             this.pullAndDisplayGJPointsFromDB();
             this.initMapLayersForData('data');
+            this.isMapLoading = false;
           } else {
             this.removeAllLayerAndSource('data');
             this.pullAndDisplayGJPointsFromSearchQuery();
