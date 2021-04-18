@@ -270,6 +270,7 @@ export class MapboxComponent implements OnInit {
           feature.geometry.coordinates[1]
         );
 
+        let moodString = this.moodStringGenerator(feature?.properties?.mood);
         var popup = new mapboxgl.Popup({
           offset: [0, -15],
           closeButton: false,
@@ -277,16 +278,16 @@ export class MapboxComponent implements OnInit {
         })
           .setLngLat(cords)
           .setHTML(
-            '<h3>' +
-              feature?.properties?.textBody +
+              '<h3>' +
+              feature?.properties?.username +
               '</h3><p>' +
-              'MoodRating:' +
-              feature?.properties?.mood +
+              moodString +
               '</p><p>' +
-              'Keyword:' +
+              'HashTag :' +
               feature?.properties?.keyword +
               '</p><p>' +
-              feature?.properties?.username
+              feature?.properties?.textBody 
+
           )
           .setLngLat(cords)
           .addTo(this.map);
@@ -298,6 +299,15 @@ export class MapboxComponent implements OnInit {
     });
     /*--------------------everyone's markers apart from user==============*/
   }
-
+  moodStringGenerator(mood: number): string|null {
+    if(mood===1) {
+      return "Coping Well";
+    } else if (mood === 2) {
+      return "Depressed";
+    } else if (mood === 3) {
+      return "Anxious";
+    }
+    return null;
+  }
 
 }

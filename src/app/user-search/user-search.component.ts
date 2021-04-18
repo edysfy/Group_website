@@ -24,13 +24,13 @@ export class UserSearchComponent implements OnInit, OnDestroy {
     step: 1,
   };
   mood: any = {
-    copingWell: false,
-    depression: false,
-    anxiety: false,
+    copingWell: true,
+    depression: true,
+    anxiety: true,
   };
   gender: any = {
-    male: false,
-    female: false,
+    male: true,
+    female: true,
   };
 
   constructor(private userSearchService: UserSearchService) {}
@@ -42,11 +42,11 @@ export class UserSearchComponent implements OnInit, OnDestroy {
       maxAge: 100,
       minDay: -3650,
       maxDay: 0,
-      copingWell: false,
-      depression: false,
-      anxiety: false,
-      male: false,
-      female: false,
+      copingWell: true,
+      depression: true,
+      anxiety: true,
+      male: true,
+      female: true,
     });
     this.userSearchService.getSearchQuery();
   }

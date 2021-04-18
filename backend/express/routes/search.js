@@ -7,6 +7,7 @@ const User = require("../../mongo_schema/user");
 router.post("", (req, res, next) => {
   GeoJson.find()
     .populate("properties.userDetails", ["age", "gender", "dob"])
+    .sort({ "properties.dateTime": -1 })
     .then((data) => {
         data = data.filter(
           (geoPost) =>
