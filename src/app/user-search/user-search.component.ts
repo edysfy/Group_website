@@ -1,9 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Options } from '@angular-slider/ngx-slider';
 import { UserSearchService } from '../service/user-search.service';
-import { MatCheckboxChange } from '@angular/material/checkbox';
-import { Search } from '../models/search';
-import { BehaviorSubject } from 'rxjs';
+
 
 @Component({
   selector: 'app-user-search',
@@ -34,31 +32,28 @@ export class UserSearchComponent implements OnInit, OnDestroy {
     male: true,
     female: true,
   };
-  searchQueryState!: BehaviorSubject<Search>;
 
-  constructor(private userSearchService: UserSearchService) {
-    this.searchQueryState = new BehaviorSubject<Search>({
-      minAge: this.ageMin,
-      maxAge: this.ageMax,
-      minDay: this.daysMin,
-      maxDay: this.daysMax,
-      copingWell: this.mood.copingWell,
-      depression: this.mood.depression,
-      anxiety: this.mood.anxiety,
-      male: this.gender.male,
-      female: this.gender.male,
-    });
-  }
+  constructor(private userSearchService: UserSearchService) {}
 
   ngOnInit(): void {
     this.userSearchService.setHasSearchInit(true);
-    this.searchQueryState.subscribe(state => {
-      console.log(state);
-    })
+    this.userSearchService.setSearchQueryState({
+      minAge: 0,
+      maxAge: 100,
+      minDay: -3650,
+      maxDay: 0,
+      copingWell: true,
+      depression: true,
+      anxiety: true,
+      male: true,
+      female: true,
+    });
+    this.userSearchService.getSearchQuery();
   }
 
   ngOnDestroy(): void {
     this.userSearchService.setHasSearchInit(false);
+    this.userSearchService.destroySubscriber();
   }
 
   onChange() {
@@ -71,9 +66,8 @@ export class UserSearchComponent implements OnInit, OnDestroy {
       depression: this.mood.depression,
       anxiety: this.mood.anxiety,
       male: this.gender.male,
-      female: this.gender.male,
-    }
-    this.searchQueryState.next(search);
+      female: this.gender.female,
+    };
+    this.userSearchService.setSearchQueryState(search);
   }
-
 }

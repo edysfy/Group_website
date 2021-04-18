@@ -7,12 +7,12 @@
         <div class="age">
           <p>Age:</p>
           <ngx-slider class="slider" [(value)]="ageMin" [(highValue)]="ageMax" [options]="optionAge"
-            (valueChange)="onChange()"></ngx-slider>
+            (valueChange)="onChange()" (highValueChange)="onChange()"></ngx-slider>
         </div>
         <div class="days">
           <p>Days:</p>
           <ngx-slider class="sliderDay" [(value)]="daysMin" [(highValue)]="daysMax" [options]="optionDays"
-            (valueChange)="onChange()"></ngx-slider>
+            (valueChange)="onChange()" (highValueChange)="onChange()"></ngx-slider>
         </div>
         <div class="mood">
           <p>Mood:</p>

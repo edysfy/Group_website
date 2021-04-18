@@ -150,6 +150,9 @@ export class MapboxComponent implements OnInit {
   pullAndDisplayGJPointsFromSearchQuery(): void {
     this.createDataSource('data');
     this.source = this.map.getSource('data');
+    this.userSearchService.getGeoSearchObvservable().subscribe(geoSearchArr => {
+      this.source.setData(new FeatureCollection(geoSearchArr));
+    })
   }
 
   initMapLayersForData(layer: string): void {
