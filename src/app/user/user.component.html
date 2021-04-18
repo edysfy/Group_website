@@ -2,124 +2,68 @@
   <div style="height: 50px;">
 
   </div>
-  <h1 style="width: 70%; margin-left: 20%; margin-top: 30px">
-    Welcome to EmoteMap
+  <h1>
+    EmoteProfile
   </h1>
   <h2 style="width: 70%; margin-left: 12%; text-align: center">
     Please enter you age and gender so we can accuratly represent mental health
     issues across different age groups and genders across the world
   </h2>
 
-  <div class="dob" style="display: flex; margin-left: 5%; margin-top: 40px">
+  <div class="dob" style="display: flex; margin-left: 5%; margin-top: 40px; position: relative; top: 70px">
     <p style="position: relative; top: 18px">Date Of Birth:</p>
-    <p
-      *ngIf="!isDobNull && !dobEdit"
-      style="width: 200px; position: relative; bottom: -16px; margin-left: 10px"
-    >
+    <p *ngIf="!isDobNull && !dobEdit" style="width: 200px; position: relative; bottom: -18px; margin-left: 10px">
       {{ userDetails.dob }}
     </p>
-    <button
-      *ngIf="!isDobNull && !dobEdit"
-      class="editdob-button"
-      mat-raised-button
-      color="primary"
-      (click)="onAgeEdit()"
-    >
+    <button *ngIf="!isDobNull && !dobEdit" class="editdob-button" mat-raised-button color="primary"
+      (click)="onAgeEdit()" style="position: relative; top: 12px">
       <mat-icon>edit</mat-icon>
     </button>
-    <form
-      (submit)="saveDate(dobForm)"
-      *ngIf="isDobNull || dobEdit"
-      #dobForm="ngForm"
-    >
-      <mat-form-field
-        appearance="fill"
-        style="
-          width: 200px;
+    <form (submit)="saveDate(dobForm)" *ngIf="isDobNull || dobEdit" #dobForm="ngForm" autocomplete="off">
+      <mat-form-field appearance="fill" style="
+          width: 190px;
           position: relative;
-          bottom: 18px;
+          bottom: 30px;
           margin-left: 10px;
-        "
-      >
-        <mat-label>Choose a date</mat-label>
-        <input
-          [max]="todayDate"
-          [min]="minDate"
-          matInput
-          name="dob"
-          [matDatepicker]="picker"
-          onkeydown="return false"
-          ngModel
-          #dobInput="ngModel"
-          required
-        />
-        <mat-error *ngIf="dobInput.invalid"
-          >Please enter a valid date.</mat-error
-        >
+          height: 10px;
+        ">
+        <mat-label class="labelDate">Choose a date</mat-label>
+        <input [max]="todayDate" [min]="minDate" matInput name="dob" [matDatepicker]="picker" onkeydown="return false"
+          ngModel #dobInput="ngModel" required />
+        <mat-error *ngIf="dobInput.invalid">Please enter a valid date.</mat-error>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
-      <button
-        class="dob-button"
-        mat-raised-button
-        color="primary"
-        type="submit"
-      >
+      <button class="dob-button" mat-raised-button color="primary" type="submit">
         <mat-icon>save</mat-icon>
       </button>
     </form>
   </div>
 
-  <div
-    class="age"
-    *ngIf="!isDobNull && !dobEdit"
-    style="width: 200px; position: relative; bottom: -16px; margin-left: 20px"
-  >
+  <div class="age" *ngIf="!isDobNull && !dobEdit"
+    style="width: 200px; position: relative; bottom: -110px; margin: 20px; left: 3px;">
     Age: {{ age }} years old
   </div>
 
-  <div class="gender" style="display: flex; margin-left: 5%; margin-top: 40px">
-    <form
-      (submit)="saveGender(genderForm)"
-      #genderForm="ngForm"
-      class="gender-tick"
-    >
-      <mat-label>Gender: </mat-label>
-      <mat-form-field *ngIf="isGenderNull || genderEdit" >
-        <input
-          matInput
-          name="gender"
-          ngModel
-          type="text"
-          placeholder="male/female"
-          #gender="ngModel"
-          required
-        />
-        <mat-error *ngIf="gender.invalid"
-          >Please enter male or female.</mat-error
-        >
+  <div class="gender" style="display: flex; margin-left: 5%; margin-top: 40px; position: relative; top: 120px">
+    <mat-label>Gender: </mat-label>
+    <form (submit)="saveGender(genderForm)" #genderForm="ngForm" class="gender-tick" autocomplete="off">
+      <mat-form-field *ngIf="isGenderNull || genderEdit" style="position: relative; bottom: 30px; left: 30px;">
+        <mat-label>male/female</mat-label>
+        <input matInput name="gender" ngModel type="text" #gender="ngModel" required />
+        <mat-error *ngIf="gender.invalid">Please enter male or female.</mat-error>
       </mat-form-field>
-      <button
-      *ngIf="isGenderNull || genderEdit" 
-        class="dob-button"
-        mat-raised-button
-        color="primary"
-        type="submit"
-      >
+      <button *ngIf="isGenderNull || genderEdit" class="dob-button" mat-raised-button color="primary"
+        style="position: relative; left: 78px; bottom: 32px;" type="submit">
         <mat-icon>save</mat-icon>
       </button>
     </form>
     <div *ngIf="!isGenderNull && !genderEdit" style="width: 200px; position: relative; margin-left: 10px">
-        {{userDetails.gender}}
+      {{userDetails.gender}}
     </div>
-    <button
-    *ngIf="!isGenderNull && !genderEdit"
-    class="editgender-button"
-    mat-raised-button
-    color="primary"
-    (click)="onGenderEdit()"
-  >
-    <mat-icon>edit</mat-icon>
-  </button>
+    <button *ngIf="!isGenderNull && !genderEdit" class="editgender-button" mat-raised-button color="primary"
+      (click)="onGenderEdit()" style="position: relative; left: 58px; bottom: 10px;">
+      <mat-icon>edit</mat-icon>
+    </button>
   </div>
 </div>

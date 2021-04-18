@@ -1,12 +1,13 @@
-
 <div class="full">
     <app-user *ngIf="isLoggedIn && sidebarState.profile" [@inOutAnimation]></app-user>
-    <app-userpost-display *ngIf="isLoggedIn && sidebarState.userPosts" [@inOutAnimation]  (flyToCords)="flyTo($event)"></app-userpost-display>
-    <app-user-search  *ngIf="isLoggedIn && sidebarState.search" [@inOutAnimation]></app-user-search>
+    <app-userpost-display *ngIf="isLoggedIn && sidebarState.userPosts" [@inOutAnimation] (flyToCords)="flyTo($event)">
+    </app-userpost-display>
+    <app-user-search *ngIf="isLoggedIn && sidebarState.search" [@inOutAnimation]></app-user-search>
     <app-key *ngIf="isLoggedIn && sidebarState.key" [@inOutAnimation]></app-key>
     <div id="map">
     </div>
-    <app-usersearch-display *ngIf="isLoggedIn && sidebarState.search" [@inOutAnimation] (flyToCords)="flyTo($event)"></app-usersearch-display>
+    <app-usersearch-display *ngIf="isLoggedIn && sidebarState.search" [@inOutAnimation] (flyToCords)="flyTo($event)">
+    </app-usersearch-display>
 </div>
 
 <app-searchfield *ngIf="!isLoggedIn" (flyToCords)="flyTo($event)"></app-searchfield>

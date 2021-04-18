@@ -74,7 +74,7 @@ export class UserComponent implements OnInit {
       this.isGenderNull = false;
       this.genderEdit = false;
       this.userDetails.gender = form.value.gender;
-      this.userService.updateGender(form.value.gender);
+      this.userService.updateGender(form.value.gender.toLowerCase());
     }
   }
 

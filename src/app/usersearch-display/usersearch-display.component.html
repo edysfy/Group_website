@@ -1,36 +1,31 @@
 <div class="search">
-    <div *ngIf="!noResults"  style="height: 100px; justify-content: center">
-      <h1>Search Results</h1>
+    <div *ngIf="!noResults" style="height: 100px; justify-content: center; position: relative; right: 20px;">
+        <h1>Search Results</h1>
     </div>
     <div *ngIf="noResults" style="height: 90px; justify-content: center">
-      <h1>No Results</h1>
+        <h1>No Results</h1>
     </div>
     <div class="userSearch">
-      <mat-accordion multi="true" *ngFor="let result of searchResults">
-        <mat-expansion-panel>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              {{ result.properties.keyword }}            
-            </mat-panel-title>
-            <mat-panel-description>
-              {{ result.properties.dateTime | date: "medium" }}
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <h3>Mood: {{ result.properties.mood }}</h3>
-          <p>{{ result.properties.textBody }}</p>
-          <mat-action-row>
-            <button
-              mat-fab
-              color="accent"
-              (click) = "onFlyTo(result.geometry.coordinates)"
-            >
-              <mat-icon>flight_takeof</mat-icon>
-            </button>
-          </mat-action-row>
-        </mat-expansion-panel>
-      </mat-accordion>
-      <div style="height: 80px">
-      </div>
+        <mat-accordion multi="true" *ngFor="let result of searchResults">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        {{ result.properties.keyword }}
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        {{ result.properties.dateTime | date: "medium" }}
+                    </mat-panel-description>
+                </mat-expansion-panel-header>
+                <h3>Mood: {{ result.properties.mood }}</h3>
+                <p>{{ result.properties.textBody }}</p>
+                <mat-action-row>
+                    <button mat-fab color="accent" (click)="onFlyTo(result.geometry.coordinates)">
+                        <mat-icon>flight_takeof</mat-icon>
+                    </button>
+                </mat-action-row>
+            </mat-expansion-panel>
+        </mat-accordion>
+        <div style="height: 80px">
+        </div>
     </div>
-  </div>
-  
+</div>

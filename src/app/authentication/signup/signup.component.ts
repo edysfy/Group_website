@@ -47,7 +47,7 @@ export class SignupComponent implements OnInit, OnDestroy {
       .createUser(form.value.username, form.value.password)
       .subscribe((response) => {
         if(response.regSuc) {
-          alert("Login Successful");
+          alert("Register Successful");
           this.route.navigate(['/login']);
         }else{
           alert("Username is taken");
