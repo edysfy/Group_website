@@ -17,8 +17,8 @@
               {{ userPost.properties.dateTime | date: "medium" }}
             </mat-panel-description>
           </mat-expansion-panel-header>
-          <h3>{{ moodArr[userPost.properties.mood] }}</h3>
-          <p>{{ userPost.properties.textBody }}</p>
+          <h3>EmoteMood: {{ moodArr[userPost.properties.mood] }}</h3>
+          <p>EmoteBody: {{ userPost.properties.textBody }}</p>
           <mat-action-row>
             <button mat-fab color="accent" (click)="onFlyTo(userPost.geometry.coordinates)">
               <mat-icon>flight_takeof</mat-icon>

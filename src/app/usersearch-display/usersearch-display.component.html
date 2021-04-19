@@ -17,9 +17,9 @@
                             {{ result.properties.dateTime | date: "medium" }}
                         </mat-panel-description>
                     </mat-expansion-panel-header>
-                    <h3>HashTag: {{ result.properties.keyword }}</h3>
-                    <h3>{{ moodArr[result.properties.mood] }}</h3>
-                    <p>{{ result.properties.textBody }}</p>
+                    <h3>EmoteMood: {{ moodArr[result.properties.mood] }}</h3>
+                    <h3>EmoteKeyword: {{ result.properties.keyword }}</h3>
+                    <p>EmoteBody: {{ result.properties.textBody }}</p>
                     <mat-action-row>
                         <button mat-fab color="accent" (click)="onFlyTo(result.geometry.coordinates)">
                             <mat-icon>flight_takeof</mat-icon>
