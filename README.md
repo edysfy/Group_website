@@ -17,9 +17,9 @@
 
 Hari Patel  [Front-end, Back-end, Databases]  
 ![Image of Hari](https://www.linkedin.com/in/hari-patel-027b89129/detail/photo/)  
-Alfred Graham  [Back-end, Databases]
+Alfred Graham  [Databases]
 ![Image of Hari](https://cdn.discordapp.com/attachments/824036552023867425/832652855018127420/145314026_1899328656885019_6092633530819469484_n_1.jpg)  
-Edward Hammersley  [Front-end, Back-end, Databases]
+Edward Hammersley  [Front-end]
 ![Image of Ed](https://www.linkedin.com/in/edward-h-3332211b0/detail/photo/)     
 Zaki Gill  [Front-end, Academic&Market Research, User-Testing/Prototyping]
 ![Image of Zaki](https://www.linkedin.com/in/zaki-gill-8bb020171/?originalSubdomain=uk)  
