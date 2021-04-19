@@ -11,7 +11,7 @@ export class UsersearchDisplayComponent implements OnInit {
   searchResults!: Array<IGeoJson>;
   panelOpenState: boolean = false;
   noResults!: boolean;
-  moodArr: string[] = ["filler","Coping Well", "Depressed", "Anxious"]
+  moodArr: string[] = ["filler","Happy", "Coping", "Sad"]
 
   @Output() flyToCords = new EventEmitter<number[]>();
 

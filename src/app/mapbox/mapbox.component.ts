@@ -301,11 +301,11 @@ export class MapboxComponent implements OnInit {
   }
   moodStringGenerator(mood: number): string|null {
     if(mood===1) {
-      return "Coping Well";
+      return "Happy";
     } else if (mood === 2) {
-      return "Depressed";
+      return "Coping";
     } else if (mood === 3) {
-      return "Anxious";
+      return "Sad";
     }
     return null;
   }

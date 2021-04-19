@@ -35,7 +35,7 @@
     display: flex;
     height: inherit;
     position: relative;
-    bottom: 70px;
+    bottom: 100px;
 }
 
 .anx {
@@ -47,6 +47,8 @@
 }
 
 .cop {
+    position: relative;
+    top: 20px;
     flex-grow: 1;
 }
 

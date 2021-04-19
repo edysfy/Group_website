@@ -13,17 +13,19 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./userpost.component.css'],
 })
 export class UserpostComponent implements OnInit, OnDestroy {
-  public rating: number | null;
+  public rating: string | null;
   form!: FormGroup;
   suber!: Subscription;
   searchActivated!: boolean;
+  sliderVal!: number|null;
 
   constructor(
     private dialogRef: MatDialogRef<UserpostComponent>,
     private postService: PostService,
     private userSearchService: UserSearchService
   ) {
-    this.rating = 2;
+    this.rating = 'Coping';
+    this.sliderVal = 2;
   }
 
   ngOnInit(): void {
@@ -60,11 +62,13 @@ export class UserpostComponent implements OnInit, OnDestroy {
       return;
     }
     this.dialogRef.close();
-    this.postService.createPost(
-      this.form.value.rating,
-      this.form.value.keyword,
-      this.form.value.post
-    );
+    if(this.sliderVal!=null) {
+      this.postService.createPost(
+        this.sliderVal,
+        this.form.value.keyword,
+        this.form.value.post
+      );
+    }
   }
 
   formatLabel(value: number) {
@@ -75,6 +79,13 @@ export class UserpostComponent implements OnInit, OnDestroy {
   }
 
   onSliderChange(event: MatSliderChange) {
-    this.rating = event.value;
+    this.sliderVal = event.value;
+    if(event.value === 1) {
+      this.rating = 'Happy'
+    } else if(event.value === 2) {
+      this.rating = 'Coping'
+    } else if(event.value === 3) {
+      this.rating = 'Sad'
+    }
   }
 }

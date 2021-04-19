@@ -86,7 +86,7 @@ mat-form-field {
 .sliderSl {
   position: relative;
   left: 10px;
-  top: 16px;
+  top: 30px;
   width: 100%;
   border-radius: 10px;
   transform: scale(1.3);
