@@ -15,9 +15,9 @@
 ## Team
 •	Name / photo / role for each team member.
 
-Hari Patel  [Team Leader, product/systems designer,Front-end, Back-end, Databases]  
+Hari Patel  [Team Leader, Product/Systems Designer,Front-end, Back-end, Database]  
 ![Image of Hari](https://www.linkedin.com/in/hari-patel-027b89129/detail/photo/)  
-Alfred Graham  [Databases]
+Alfred Graham  [Front-end]
 ![Image of Hari](https://cdn.discordapp.com/attachments/824036552023867425/832652855018127420/145314026_1899328656885019_6092633530819469484_n_1.jpg)  
 Edward Hammersley  [Front-end]
 ![Image of Ed](https://www.linkedin.com/in/edward-h-3332211b0/detail/photo/)     
