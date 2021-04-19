@@ -25,9 +25,9 @@ export class UserSearchComponent implements OnInit, OnDestroy {
     step: 1,
   };
   mood: any = {
-    copingWell: true,
-    depression: true,
-    anxiety: true,
+    happy: true,
+    coping: true,
+    sad: true,
   };
   gender: any = {
     male: true,
@@ -44,9 +44,9 @@ export class UserSearchComponent implements OnInit, OnDestroy {
       maxAge: 100,
       minDay: -3650,
       maxDay: 0,
-      copingWell: true,
-      depression: true,
-      anxiety: true,
+      happy: true,
+      coping: true,
+      sad: true,
       male: true,
       female: true,
     });
@@ -65,9 +65,9 @@ export class UserSearchComponent implements OnInit, OnDestroy {
       maxAge: this.ageMax,
       minDay: this.daysMin,
       maxDay: this.daysMax,
-      copingWell: this.mood.copingWell,
-      depression: this.mood.depression,
-      anxiety: this.mood.anxiety,
+      happy: this.mood.happy,
+      coping: this.mood.coping,
+      sad: this.mood.sad,
       male: this.gender.male,
       female: this.gender.female,
     };

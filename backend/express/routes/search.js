@@ -24,9 +24,9 @@ router.post("", (req, res, next) => {
       );
       data = filterGender(req.body.male, req.body.female, data);
       data = filterMood(
-        req.body.copingWell,
-        req.body.depression,
-        req.body.anxiety,
+        req.body.happy,
+        req.body.coping,
+        req.body.sad,
         data
       );
       res.status(200).json({ message: "search", geoSearchArray: data });

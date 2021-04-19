@@ -21,9 +21,9 @@ export class UserSearchService {
       maxAge: 100,
       minDay: -3650,
       maxDay: 0,
-      copingWell: false,
-      depression: false,
-      anxiety: false,
+      happy: false,
+      coping: false,
+      sad: false,
       male: false,
       female: false,
     });
@@ -39,6 +39,7 @@ export class UserSearchService {
 
   getSearchQuery(): void {
     this.sub = this.searchQueryState.subscribe((searchQuery) => {
+      console.log(searchQuery);
       this.http.post<{ message: string, geoSearchArray: IGeoJson[] }>(
         'http://localhost:3000/api/search',
         searchQuery

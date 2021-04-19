@@ -17,11 +17,11 @@
         <div class="mood">
           <p>Mood:</p>
           <section class="moodCheck">
-            <mat-checkbox [(ngModel)]="mood.copingWell" (change)="onChange()" color="primary">Happy
+            <mat-checkbox [(ngModel)]="mood.happy" (change)="onChange()" color="primary">Happy
             </mat-checkbox>
-            <mat-checkbox [(ngModel)]="mood.depression" (change)="onChange()" color="accent">Coping
+            <mat-checkbox [(ngModel)]="mood.coping" (change)="onChange()" color="accent">Coping
             </mat-checkbox>
-            <mat-checkbox [(ngModel)]="mood.anxiety" (change)="onChange()" color="warn">Sad</mat-checkbox>
+            <mat-checkbox [(ngModel)]="mood.sad" (change)="onChange()" color="warn">Sad</mat-checkbox>
           </section>
         </div>
         <div class="gender">

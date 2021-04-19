@@ -3,9 +3,9 @@ export interface Search {
     maxAge: number,
     minDay: number,
     maxDay: number,
-    copingWell: boolean,
-    depression: boolean,
-    anxiety: boolean,
+    happy: boolean,
+    coping: boolean,
+    sad: boolean,
     male: boolean,
     female: boolean,
 }
