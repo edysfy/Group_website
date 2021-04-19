@@ -90,7 +90,7 @@ The complexity of the issue of global mental illness means that there is no univ
 The Mental Elf is a 'no misinformation' mental health blogging website started by information scientist, Andre Tomlin. The blog is now a team of contributors aiming to bring fresh perspectives and considerable knowledge and clinical experience when talking about mental health.  
 
 ##### How EmoteMap solves the problem differently:
-Although their low-level information can provide information to those trying to understand their mental health better, Emote Map aims to build more of an experiential feel. On top of this Emote Map gives a communal feel, and is more so trying to combat the negative effects of current social communities
+Although their enlightening information can provide those trying to understand their mental health better the relevant knowledge, Emote Map aims to build more of a positive way for users to interact online. We aim to create a communal feel, whereby users can both be self-reflective as well as feel supported by other users who have had similar experiences and emotions.
 
 
 #### Website 2 - Young Minds https://youngminds.org.uk
@@ -98,8 +98,7 @@ Although their low-level information can provide information to those trying to 
 YoungMinds has partnered with 02 to gather tips and advise on how to enjoy a more positive time online. They work to tackle issues such as 'What kind of social media feed do I have?', 'How can I deal with online bullying?', or 'How can I block, mute, or report other accounts?'  
 
 ##### How EmoteMap solves the problem differently:  
-Although YoungMinds is making a difference to the current online community, and trying to fix what is already there, and is doing a good job at it etc.. we believe that EmoteMap steers people away from feeling that the only way they can experience a social life online is on mainstream social media sites such as instagram/facebook which play on human tendencies such as self-worth and take advantage of our submission to instant gratification. This be a more positive solution to instances exemplified by ethnographies such as the ‘always on’ culture - which proves that humans feel that they always need to be online to be relevant. We believe that it is too hard to combat such cultures, so we want to create a new, positive one.  
-EmoteMap makes the user the heart of the website. They themselves are the solution to the problem
+Although YoungMinds is addressing the negative impact that social media can have on the mental health of users head on, EmoteMap provides guidance to users for a variety of issues. We understand that a major contributing factor to mental health may be related to the use of social media, however we account for more factors than just this. We understand that global mental illness does not have a quick-fix. It is a complex and universal problem, which is why we encourage groups of users to unite over shared cultural and topical issues.
 
 
 #### Website 3 - The Mighty https://themighty.com
@@ -107,7 +106,7 @@ EmoteMap makes the user the heart of the website. They themselves are the soluti
 The Mighty publish real stories by real people living with disability, disease and mental illness. They aim to build a safe platform for their community to share stories, connect with others and raise support for the causes they believe in.
 
 ##### How EmoteMap solves the problem differently:
-Although the Mighty are building a positive online community in the same way that we seek to, we believe that we provide a visual/geographical representation that efficiently and effectively allows users to interact/ learn from others in a way that seeing date/time-based posts on The Mighty doesnt. In this sense, The feel of the community that we are trying to bring about through EmoteMap is interactive and insightful in a very unique way (give stat from questionnaire on uniqueness). It enables the user to gain a localised understanding of a very much  global problem in a way that not many other websites do… this is very much due to the map interface that is used.  
+The Mighty are building a positive online community in the same way that we seek to. We see light in this, as EmoteMap makes the user the heart of the website too. They themselves are a great starting point when it comes to solving the problem of global health mentally. However, Emote Map's interactive map interface enables the user to gain a localised understanding of a very much  global problem in a way that The Mighty does not. EmoteMap strives to engage the user through its interactive interface in order to create a positive environment for users to interact.
 
 
 
@@ -135,7 +134,6 @@ stuff
 
 <a name="conc"></a>
 ## Conclusion
-
 scope and future work must go here...
 Perhaps hometown / lived location could be something you grab from the user too
 (1 liked)
@@ -144,6 +142,4 @@ this is rreally important guys
 this feedback
 "I mean a user history mode that is mapped could be quite interesting, however, there is one thing I want you to think about (not necessarily to develop anything, but just to think about for your future work section of the report). Simply, how will this data be used and who will use it?
 
-If I clicked on your Edgware Earthquake post, how could I support you? This is where you make the jump from raising awareness, to going further."
-=======
-stuff
+If I clicked on your Edgware Earthquake post, how could I support you? This is where you make the jump from raising awareness, to going further
