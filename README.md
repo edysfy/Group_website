@@ -24,7 +24,8 @@ Edward Hammersley  [Front-end, Back-end, Databases]
 Zaki Gill  [Front-end, Academic&Market Research, User-Testing/Prototyping]
 ![Image of Zaki](https://www.linkedin.com/in/zaki-gill-8bb020171/?originalSubdomain=uk)  
 Tarn Williamson  [Front-end]
-![Image of Tarn](https://www.linkedin.com/in/tarn-williamson-8b2029153/detail/photo/)  
+![Image of Tarn]![Photo-TarnWilliamson](https://user-images.githubusercontent.com/46927723/115601398-ae3e8a00-a2d5-11eb-9177-ff69ff127a36.jpg)
+  
 
 <a name="intro"></a>
 # Introduction
