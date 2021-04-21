@@ -39,6 +39,9 @@ Tarn Williamson  [Front-end]
  1 - Create a writing tool that allows self-reflection in a similar way to blogging.  
  2 - Create a peer-led support network where users can interact with each other as a community.    
  3 - Create a tool that raises awareness and information through a visual heat-map based on an accumulation of users' mental health in different geolocations.
+### Video
+[See video here](https://github.com/edysfy/Group_website/blob/dev/Video_Demonstration.mp4)
+This link is referening dev branch, so change when video merged in main!
 
 
 <a name="backgrnd"></a>
