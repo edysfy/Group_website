@@ -134,6 +134,9 @@ Hari Patel ...
 
 Zaki Gill ...
 
+### Team use of Git
+In addition to the main branch, a 'dev' (development) branch was also created. Those members who were part of producing the website each created their own branch from 'dev'; this ensured that each member could work without being interrupted by conflicts. When a member was ready to submit their work, they would inform the others (via Discord) that they were soon going to merge and push - this avoided divergence of the 'dev' branch. The member would then ensure their 'dev' branch was up to date, merge their branch with 'dev' (after resolving any conflicts), before finally pushing. The member then informed the group of the push. At this point, another member may havbe requested temporary 'reservation' of the dev branch. After each major feature implementation, members would ensure the stability of the dev branch, before merging it with 'main'.
+
 <a name="eval"></a>
 ## Evaluation
 stuff
