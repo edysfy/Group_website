@@ -119,7 +119,20 @@ stuff
 
 <a name="sprints"></a>
 ## Sprints & Project Management
-stuff
+### Group Working Methods
+- Discord was used for the majority of the written communication. We setup a server and divided it into 6 channels: ‘general’, ‘front-end’, ‘back-end’, ‘ui’, ‘user-testing’ and ‘write-up’. Having individual channels meant that our communication was more organised, and reduced disruption to members working on alternative sections. Discord’s pinning feature also meant that key messages never went missing amongst a sea of other messages.
+- Microsoft Teams was used for video communication
+
+### Team Roles
+Tarn Williamson took on a front-end and media role. He designed the layout and wrote the text of the 'about' section of the website. The map's key and its icons were also desgined by Tarn. He produced the video demonstration of the website.
+
+Edward Hammersley ...
+
+Alfred Graham ...
+
+Hari Patel ...
+
+Zaki Gill ...
 
 <a name="eval"></a>
 ## Evaluation
