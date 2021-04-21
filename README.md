@@ -119,11 +119,17 @@ The Mighty are building a positive online community in the same way that we seek
 <a name="system"></a>
 ## System Implementation
 ### Stack architecture and system design (e.g. class diagrams, sequence diagrams)
+stuff
 ### Back End - MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams)
+stuff
 ### Middle Tier - Express, Node, the RESTful API
+stuff
 ### Front End - Angular. Details of implementation
+stuff
 ### Additional elements and components e.g. authentification. Tell us about any other aspects not covered above!
+stuff
 ### Deployment details (including Docker), include how you have been achieving continuous integration and deployment
+stuff
 
 <a name="uxdesign"></a>
 ## UX Design
