@@ -5,12 +5,17 @@
    border-radius: 30px;
    overflow-y: hidden !important;
    overflow-x: hidden !important;
-
  }
+
 
 .Keyword {
   background-color: whitesmoke;
 }
+
+.date {
+   color: red;
+}
+
 
 .search {
   background-color: whitesmoke;

@@ -32,11 +32,13 @@ export class SearchfieldComponent implements OnInit {
 
   onSearch() {
     this.searchData.clearData();
-    //console.log(this.form.value.keyword);
+
+
      for (var index = 0; index < this.userPosts.length; ++index) {
         // If keyword entered equals keyword in user posts
-        //console.log(this.userPosts[index].properties.keyword);
-        if (this.form.value.keyword == this.userPosts[index].properties.keyword) {
+        console.log(this.userPosts[index].properties.dateTime);
+        if (this.form.value.keyword == this.userPosts[index].properties.keyword
+        ) {
           this.searchData.addData(this.userPosts[index]);
            //console.log(this.form.value.keyword);
            //console.log(this.userPosts[index].properties.keyword);
