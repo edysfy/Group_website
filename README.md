@@ -9,7 +9,7 @@
 * [Evaluation](#eval)
 * [Conclusion](#conc)
 
-#Title: EmoteMap
+# Title: EmoteMap
 
 <a name="team"></a>
 ## Team
@@ -139,6 +139,8 @@ The user.js and search.js apis function similarly, but instead focus on fetching
 The search.js api is primarly concerned around generating constraints for fetching data from the database based on the users input in the searchfield in the side bar (e.g. fetching all posts made 10 or less days ago); it again does this through a http post request, but then also utilising functions from our GeoJson schema and filtering functions from the api to correctly populate an array to return to our user-search service which is then piped to the front end components to be displayed.
 
 ### Front End - Angular. Details of implementation
+#### Angular Material
+#### Forms
 #### Mapbox
 [Mapbox API](https://docs.mapbox.com/mapbox-gl-js/api/)
 
