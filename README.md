@@ -9,17 +9,17 @@ https://github.com/edysfy/Group_website.git
 * [Evaluation](#eval)
 * [Conclusion](#conc)
 
-#Title: EmoteMap
+# Title: EmoteMap
 
 <a name="team"></a>
 ## Team
 •	Name / photo / role for each team member.
 
-Hari Patel  [Front-end, Back-end, Databases]  
+Hari Patel  [Team Leader, Product/Systems Designer,Front-end, Back-end, Database]  
 ![Image of Hari](https://www.linkedin.com/in/hari-patel-027b89129/detail/photo/)  
-Alfred Graham  [Back-end, Databases]
+Alfred Graham  [Front-end]
 ![Image of Hari](https://cdn.discordapp.com/attachments/824036552023867425/832652855018127420/145314026_1899328656885019_6092633530819469484_n_1.jpg)  
-Edward Hammersley  [Front-end, Back-end, Databases]
+Edward Hammersley  [Front-end]
 ![Image of Ed](https://www.linkedin.com/in/edward-h-3332211b0/detail/photo/)     
 Zaki Gill  [Front-end, Academic&Market Research, User-Testing/Prototyping]
 ![Image of Zaki](https://www.linkedin.com/in/zaki-gill-8bb020171/?originalSubdomain=uk)  
@@ -75,31 +75,42 @@ Barak and Grohol have brought to light that online peer-led support groups have 
 
 In agreement with this, Bakar and Moore did a study on MySpace and discovered that those users who blogged frequently increased their social integration and friendship satisfaction scores compared to those who did not (Bakar & Moore, 2008).
 
+## How will EmoteMap solve the problem?
+### By introducing a more positive way for users to interact online
+We are not trying to reduce the interaction that humans have with online social platforms, it is clear that this will inevitably increase in forthcoming years. Instead, we want to address create an aspect to online sociality that is similarly interactive to current mainstream social media platforms but addresses mental health explicitly. For example, a topic of discussion within a post on EmoteMap could be on the anxiety induced by the use of Instagram.
+
+### By Creating an environment whereby users can be both self-reflective and feel supported by a community of users
+Blogs offer mental health intervention in a similar way to journaling. Although journalling has traditional been done in private to complement psychology, blogging has taken many would-be private journals and turned them public (Bakar & Moore, 2008). Feedback from others can help an individual learn to view feelings and thoughts in ways differently to how they would if they were left to their own devices
+
+### By solving a global problem locally
+The complexity of the issue of global mental illness means that there is no universal solution. We also acknowledge that those suffering mentally may be doing so due to culturally dependant reason. Therefore, a teacher facing stress, anxiety and depressing at the beginning of the academic year during the COVID-19 pandemic (Santamaría & Mondragon, 2021) may search keywords such as 'stress, anxiety, teachers, COVID'. The posts they read will most likely be completely different to those of someone experiencing intimate partner violence and unhealthy alcohol use in the Zambia.
+
+
+
 
 ### Industry Review: What differentiates EmoteMap?
 #### Website 1 - The Mental Elf https://www.nationalelfservice.net/mental-health/  
-##### Summary:   
+##### Summary:
 The Mental Elf is a 'no misinformation' mental health blogging website started by information scientist, Andre Tomlin. The blog is now a team of contributors aiming to bring fresh perspectives and considerable knowledge and clinical experience when talking about mental health.  
 
-##### How EmoteMap solves the problem differently:  
-Although their low-level information can provide information to those trying to understand their mental health better, Emote Map aims to build more of an experiential feel. On top of this Emote Map gives a communal feel, and is more so trying to combat the negative effects of current social communities
+##### How EmoteMap solves the problem differently:
+Although their enlightening information can provide those trying to understand their mental health better the relevant knowledge, Emote Map aims to build more of a positive way for users to interact online. We aim to create a communal feel, whereby users can both be self-reflective as well as feel supported by other users who have had similar experiences and emotions.
 
 
 #### Website 2 - Young Minds https://youngminds.org.uk
-##### Summary:  
+##### Summary:
 YoungMinds has partnered with 02 to gather tips and advise on how to enjoy a more positive time online. They work to tackle issues such as 'What kind of social media feed do I have?', 'How can I deal with online bullying?', or 'How can I block, mute, or report other accounts?'  
 
 ##### How EmoteMap solves the problem differently:  
-Although YoungMinds is making a difference to the current online community, and trying to fix what is already there, and is doing a good job at it etc.. we believe that EmoteMap steers people away from feeling that the only way they can experience a social life online is on mainstream social media sites such as instagram/facebook which play on human tendencies such as self-worth and take advantage of our submission to instant gratification. This be a more positive solution to instances exemplified by ethnographies such as the ‘always on’ culture - which proves that humans feel that they always need to be online to be relevant. We believe that it is too hard to combat such cultures, so we want to create a new, positive one.  
-EmoteMap makes the user the heart of the website. They themselves are the solution to the problem
+Although YoungMinds is addressing the negative impact that social media can have on the mental health of users head on, EmoteMap provides guidance to users for a variety of issues. We understand that a major contributing factor to mental health may be related to the use of social media, however we account for more factors than just this. We understand that global mental illness does not have a quick-fix. It is a complex and universal problem, which is why we encourage groups of users to unite over shared cultural and topical issues.
 
 
 #### Website 3 - The Mighty https://themighty.com
-##### Summary:  
+##### Summary:
 The Mighty publish real stories by real people living with disability, disease and mental illness. They aim to build a safe platform for their community to share stories, connect with others and raise support for the causes they believe in.
 
-##### How EmoteMap solves the problem differently:  
-Although the Mighty are building a positive online community in the same way that we seek to, we believe that we provide a visual/geographical representation that efficiently and effectively allows users to interact/ learn from others in a way that seeing date/time-based posts on The Mighty doesnt. In this sense, The feel of the community that we are trying to bring about through EmoteMap is interactive and insightful in a very unique way (give stat from questionnaire on uniqueness). It enables the user to gain a localised understanding of a very much  global problem in a way that not many other websites do… this is very much due to the map interface that is used.  
+##### How EmoteMap solves the problem differently:
+The Mighty are building a positive online community in the same way that we seek to. We see light in this, as EmoteMap makes the user the heart of the website too. They themselves are a great starting point when it comes to solving the problem of global health mentally. However, Emote Map's interactive map interface enables the user to gain a localised understanding of a very much  global problem in a way that The Mighty does not. EmoteMap strives to engage the user through its interactive interface in order to create a positive environment for users to interact.
 
 
 
@@ -111,6 +122,53 @@ Although the Mighty are building a positive online community in the same way tha
 
 <a name="system"></a>
 ## System Implementation
+### Stack architecture and system design (e.g. class diagrams, sequence diagrams)
+stuff
+### Back End - MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams)
+**MongoDB**
+
+**geoJsonSchema**: This holds all information relating to user posts. For user posts to be displayed ont the map correctly the post content (*postSchema*) and coordinates (*geoPositionSchema*) are required. *userDetails* in *postSchema* connects posts to the account which created the post and is used when filtering results.
+
+**userSchema**: This holds all the information relating to registered user accounts.
+
+![Entity Relationship Diagram](mongoDBerd.jpg)
+
+EmoteMap provides 5 integral features which interface with the back end:
+
+**Account creation**: The user is asked to enter a username and password (password is entered twice to ensure user has entered the password correctly). These details are then sent to the database via the API route user.js. Once received on the backend a response is returned through the API which is either successful, in which case an account is added to the database, or it is unsuccessful meaning the requested username is already in use and the account could not be created. If the response was unsuccessful the user is informed their account could not be created and that they should use a different username. Date of birth, gender and age are all set to null by default and can only be set once the user has logged in.   
+
+**Login**: After the user has created an account, they are then able to log in using their set credentials. The user’s entered username and password are sent to the backend via the API route user.js and queried on the database. If no matching username is found an unsuccessful response is returned and the user is prompted that they have entered an incorrect username. If a matching username is found (password is hashed and compared? Check with hari)
+**Post creation**: Posts can only be created when the user is logged in and are sent from the front end to the database via the API route geopost.js. The content of the post along with the users account name are added to the post database.
+
+**Display all user posts**: When a user first opens EmoteMap every single user post is displayed. To achieve this, once the website opened a request for every single user post is made via the API route geopost.js. These posts are then passed to Mapbox as a geoJSON array and displayed on the map.
+
+**Filter user posts and display**: User posts can be filtered by date, gender, age, mood and keyword.  Initially all these parameters are set to show all posts, for example the age range is set to 0 – 100 and gender is set to both male and female. Excluding the keyword, these parameters determine what posts are fetched from the database. Before the database is queried userSchema is joined with geoJsonSchema so each post contains also the user’s attributes. Whenever one of these parameters is changed the database is queried again loading in all the geoJSON points which adhere to the criteria into a geoJSON array in memory. This geoJSON array is then passed to Mapbox to be displayed on the map. When a user enters a keyword and presses search all posts found in the pre filtered geoJSON array with similar keywords are returned.
+
+### Middle Tier - Express, Node, the RESTful API
+Our project makes use of ExpressJs to build 3 core RESTful apis for our application; search.js, user.js, and geopost.js. The most important api is likely geopost.js; it serves as the main link between the front and backend, handling fetching and posting geoJSON data to and from our mapbox component and our mongoDB database. It uses http get requests to fetch an array of geoJSON data (all of the user posts – data points containing location, keywords, date/time of the post, user details and the post description) which is utilised by our services to pipe the data into components where needed.  Similarly, http post requests are used to take data from user input forms in components in the front end, and send them to our database for permanent storage. Http delete requests are also utilised for removing posts from the database, should a user request it from the front end.
+
+The user.js and search.js apis function similarly, but instead focus on fetching user data and search results respectively. User.js handles adding new users to the database when they sign up on the front end, and then consequently logging them in (http post), updating that data when a user chooses to input their date of birth and gender (using http put) and fetching user data if needed (http get).
+
+The search.js api is primarly concerned around generating constraints for fetching data from the database based on the users input in the searchfield in the side bar (e.g. fetching all posts made 10 or less days ago); it again does this through a http post request, but then also utilising functions from our GeoJson schema and filtering functions from the api to correctly populate an array to return to our user-search service which is then piped to the front end components to be displayed.
+
+### Front End - Angular. Details of implementation
+#### Angular Material
+#### Forms
+#### Mapbox
+[Mapbox API](https://docs.mapbox.com/mapbox-gl-js/api/)
+
+As our application is centred around displaying information on a map, one of the key aspects in developing the front end was to find and utilise a mapping api which could provide us with the display and interactivity features we needed. We considered other services, the most obvious being google maps, but decided to go with mapbox as not only is it open source, but had a far higher number of free map requests (50k vs 28k for google), and is comparatively lighter on resources to render the map within an application. It also has numerous graphical display options with easy-to-use documentation and examples to help us get our application running quickly. The mapbox-component is the central component within our angular application, with most of the central components being called from the mapbox-component html.
+
+The following is an overview of the key aspects of the api which we utilised. The first and most obvious is the map layer; the api provides numerous styles of world maps to display (we chose a dark colour scheme to better highlight the information in our data layers, to be covered shortly), which we initialise in the components ngOnInit function. The next and arguably most important aspect is the use of the “map.addSource” and “map.addLayer” api functions; within the addSource function is a key use of our geopost api and post service in angular; the component uses the service to call the api, which in turn fetches geoJson data (a special format of json files which stores coordinates and properties of data points) which contains all of the user posts. The mapbox api then stores this geoJson data in the component, which we then utilise in two addLayer functions.
+
+The addLayer function from the api provides numerous different styles of data presentation for displaying data on top of the map layer. Our first use of the function uses the “circle” type; the api allows us to display circles at each data-points’ location from the geoJson, and colour these circles depending on the data-points’ properties; we colour these circles based on the so called mood-rating that a user picks when making a post to our website – this provides the key functionality of the entire site, allowing users to see patterns in people’s emotions across the map, based on the circle colours. The addLayer function can also be configured such that its visibility is based on a certain zoom level of the map; we utilise this so that when a user has zoomed in the circle layer appears, but when they are zoomed out, the second layer – a heatmap layer – appears. The “heatmap” type is another layer type, and we use it to display the density of user points at a location, with different colours indicating more or less points clustered in a specific location.
+There are a few other key features of the api we use, centred around mouse events. Firstly, we utilise the api’s popup feature, such that when the circle layer is rendered (i.e. the user is zoomed in enough), when a user hovers the mouse over one of the displayed circles, a pop up appears, loading in the specific post data (keyword, rating and description) of that data point from the geoJson data. We also utilise the map.on(click) function to call our userpost-component in a dialog box, so a user can make a post at a specific location by clicking there if they are zoomed in enough. This component also utilises our geopost api and post service, but this time to send data to our database rather than fetch it.
+
+Finally, we use the api’s map.flyto function to move and zoom in on specific data points, which we call using an event listener in the mapbox-component html from a button click in the usersearch-display-component (which displays posts resulting from a user search).
+
+### Additional elements and components e.g. authentification. Tell us about any other aspects not covered above!
+stuff
+### Deployment details (including Docker), include how you have been achieving continuous integration and deployment
 stuff
 
 <a name="uxdesign"></a>
@@ -143,4 +201,12 @@ stuff
 
 <a name="conc"></a>
 ## Conclusion
-stuff
+scope and future work must go here...
+Perhaps hometown / lived location could be something you grab from the user too
+(1 liked)
+some more things we can add to the documenation
+this is rreally important guys
+this feedback
+"I mean a user history mode that is mapped could be quite interesting, however, there is one thing I want you to think about (not necessarily to develop anything, but just to think about for your future work section of the report). Simply, how will this data be used and who will use it?
+
+If I clicked on your Edgware Earthquake post, how could I support you? This is where you make the jump from raising awareness, to going further

@@ -19,13 +19,13 @@
 .box {
     position: relative;
     display: flex;
-    top: 30px;
+    top: 20px;
     border-radius: 30px;
     border-style: solid;
     border-width: 10px;
     border-color: white;
-    height: 83%;
-    width: 85%;
+    height: 85%;
+    width: 90%;
     background-color: transparent;
     flex-direction: column;
 }
@@ -44,3 +44,95 @@ p {
     padding: 30px;
 }
 
+.age {
+    display: flex;
+}
+
+.days{
+    display: flex;
+}
+
+.mood{
+    position: relative;
+    top: 15px;
+    display: flex;
+}
+
+.slider {
+    position: relative;
+    top: 3px;
+    width: 70%;
+}
+
+.sliderDay {
+    position: relative;
+    top: 3px;
+    width: 70%;
+    right: 10px;
+}
+
+.gender {
+    display: flex;
+}
+
+mat-checkbox {
+    font-family: 'Arvo', serif;
+    font-family: 'Fredoka One', cursive;
+    padding: 10px;
+}
+
+.moodCheck {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 25px
+}
+
+.genderCheck {
+    display: flex;
+    position: relative;
+    top: 20px;
+    right: 18px
+}
+
+h1{
+    position: relative;
+    top: 30px;
+}
+
+
+button{
+    height: 30px;
+    border-radius: 30px;
+}
+
+mat-icon {
+    position: relative;
+    bottom: 2px;
+}
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: white !important;
+  }
+
+mat-label {
+    color: white;
+}
+
+::ng-deep .mat-form-field-ripple {
+    background-color: white !important;
+}
+
+::ng-deep .mat-form-field-underline {
+    background-color: white !important;;
+}
+
+.keyword {
+    position: relative;
+    bottom: 55px;
+    left: 110px;
+}
+
+.search-button{
+    position: fixed;
+    left: 5px;
+}

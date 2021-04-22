@@ -18,13 +18,13 @@
 .box {
     position: relative;
     display: flex;
-    top: 30px;
+    top: 18px;
     border-radius: 30px;
     border-style: solid;
     border-width: 10px;
     border-color: white;
-    height: 83%;
-    width: 85%;
+    height: 85%;
+    width: 90%;
     background-color: transparent;
     flex-direction: column;
 }
@@ -35,7 +35,7 @@
     display: flex;
     height: inherit;
     position: relative;
-    bottom: 70px;
+    bottom: 100px;
 }
 
 .anx {
@@ -47,6 +47,8 @@
 }
 
 .cop {
+    position: relative;
+    top: 20px;
     flex-grow: 1;
 }
 

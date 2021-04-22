@@ -45,18 +45,21 @@ export class PostService {
       /*incoming data fom api matches IGeoJson data type
       so create geoJson object out of data*/
       .subscribe((geoPostData) => {
-        for (let i = 0; i < geoPostData.geoPost.length; i++) {
-          /*create a new geojson object and add it to the array*/
-          let incomingGJ = new GeoJson(
-            geoPostData.geoPost[i].properties,
-            geoPostData.geoPost[i].geometry.coordinates,
-            geoPostData.geoPost[i]._id
-          );
-          /*push object to the array*/
-          this.geoPosts.push(incomingGJ);
+        console.log(geoPostData);
+        if(this.geoPosts.length != geoPostData.geoPost.length) {
+          for (let i = 0; i < geoPostData.geoPost.length; i++) {
+            /*create a new geojson object and add it to the array*/
+            let incomingGJ = new GeoJson(
+              geoPostData.geoPost[i].properties,
+              geoPostData.geoPost[i].geometry.coordinates,
+              geoPostData.geoPost[i]._id
+            );
+            /*push object to the array*/
+              this.geoPosts.push(incomingGJ);
+          }
+          /*set the new state fom the geoJson array*/
+          this.geoPostSubject.next(this.geoPosts);
         }
-        /*set the new state fom the geoJson array*/
-        this.geoPostSubject.next(this.geoPosts);
       });
     /*return observable, used in mapbox component to listen to
     changes in state*/
@@ -80,15 +83,14 @@ export class PostService {
         coordinates: [coords.long, coords.lat],
       },
       properties: {
-        username: localStorage.getItem('token'),
+        userDetails: "null",
+        username: localStorage.getItem('username'),
         dateTime: new Date(),
         keyword: keyword,
         mood: rating,
         textBody: post,
       },
     };
-    console.log(newGeoPost);
-
     /*send this to our api, when get response store newGeoPost In Memory*/
     this.http
       .post<{ message: string; id: string, username: string}>(
@@ -96,9 +98,7 @@ export class PostService {
         newGeoPost
       )
       .subscribe((response) => {
-        console.log(response);
         /*create a new geoJson object to put in memory and render to app*/
-        newGeoPost.properties.username = response.username;
         const newGeoJson = new GeoJson(
           newGeoPost.properties,
           newGeoPost.geometry.coordinates,
@@ -110,7 +110,6 @@ export class PostService {
         this.userService.addPostToUserList(newGeoJson);
       });
   }
-
   /*takes is and then filters array if not in and sets new state
   and deletes the post in the db*/
   public deletePost(_id: string): void {

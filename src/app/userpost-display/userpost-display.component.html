@@ -1,41 +1,36 @@
-<div class="post">
-  <div style="height: 90px; justify-content: center">
-    <h1>Emote Timeline</h1>
-  </div>
-  <div *ngIf="!hasUserPosted" style="height: 90px; justify-content: center">
-    <h1>No EmotePosts</h1>
-  </div>
-  <div class="userPosts">
-    <mat-accordion multi="true" *ngFor="let userPost of userPosts">
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            {{ userPost.properties.keyword }}            
-          </mat-panel-title>
-          <mat-panel-description>
-            {{ userPost.properties.dateTime | date: "medium" }}
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <h3>Mood: {{ userPost.properties.mood }}</h3>
-        <p>{{ userPost.properties.textBody }}</p>
-        <mat-action-row>
-          <button
-            mat-fab
-            color="primary"
-            (click) = "onFlyTo(userPost.geometry.coordinates)"
-
-          >
-            <mat-icon>flight_takeof</mat-icon>
-          </button>
-          <button
-            mat-fab
-            color="primary"
-            (click) = "onDelete(userPost._id)"
-          >
-            <mat-icon>delete</mat-icon>
-          </button>
-        </mat-action-row>
-      </mat-expansion-panel>
-    </mat-accordion>
+  <div class="post">
+    <div class="border">
+    <div *ngIf="hasUserPosted" style="height: 100px; justify-content: center">
+      <h1>EmoteTimeline</h1>
+    </div>
+    <div *ngIf="!hasUserPosted" style="height: 90px; justify-content: center">
+      <h1>No EmotePosts</h1>
+    </div>
+    <div class="userPosts">
+      <mat-accordion multi="true" *ngFor="let userPost of userPosts">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{ userPost.properties.keyword }}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{ userPost.properties.dateTime | date: "medium" }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <h3>EmoteMood: {{ moodArr[userPost.properties.mood] }}</h3>
+          <p>EmoteBody: {{ userPost.properties.textBody }}</p>
+          <mat-action-row>
+            <button mat-fab color="accent" (click)="onFlyTo(userPost.geometry.coordinates)">
+              <mat-icon>flight_takeof</mat-icon>
+            </button>
+            <button mat-fab color="warn" (click)="onDelete(userPost._id)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </mat-action-row>
+        </mat-expansion-panel>
+      </mat-accordion>
+      <div style="height: 90px">
+      </div>
+    </div>
   </div>
 </div>

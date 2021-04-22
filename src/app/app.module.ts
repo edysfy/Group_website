@@ -41,6 +41,7 @@ import { UserpostDisplayComponent } from './userpost-display/userpost-display.co
 import {MatExpansionModule} from '@angular/material/expansion';
 import { UserSearchComponent } from './user-search/user-search.component';
 import { NgxSliderModule} from '@angular-slider/ngx-slider';
+import { UsersearchDisplayComponent } from './usersearch-display/usersearch-display.component';
 
 
 
@@ -84,6 +85,7 @@ const material = [
     KeyComponent,
     UserpostDisplayComponent,
     UserSearchComponent,
+    UsersearchDisplayComponent,
   ],
   imports: [
     BrowserModule,

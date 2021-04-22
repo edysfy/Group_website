@@ -13,6 +13,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class SearchResultComponent implements OnInit {
   public foundData: Array<GeoJson>
 
+
   constructor(public dialogRef: MatDialogRef<SearchResultComponent>, public searchData : DataSearchService) {
   this.changePosition;
   this.foundData = this.searchData.getData();
@@ -28,6 +29,7 @@ export class SearchResultComponent implements OnInit {
           console.log("textbody" + this.foundData[index].properties.textBody);
           console.log("mood" + this.foundData[index].properties.mood);
           console.log("username" + this.foundData[index].properties.username);
+          console.log("cords " + this.foundData[index].geometry.coordinates);
 
     }
   }
@@ -36,7 +38,15 @@ export class SearchResultComponent implements OnInit {
   }
   changePosition() {
        this.dialogRef.updatePosition({ top: '50px', left: '50px' });
-     }
+  }
+
+  onFlyTo(lngLat: number[]):void {
+
+    console.log(lngLat);
+    this.dialogRef.close(lngLat);
+  }
+
+
 
 
 }

@@ -1,8 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const GeoJson = require("../../mongo_schema/geoJson");
-const jwt = require("jsonwebtoken");
-const secretKey = require("../jwtsecretkey");
+const User = require("../../mongo_schema/user");
+
 
 /*gets all post from the db*/
 router.get("", (req, res, next) => {
@@ -23,39 +23,45 @@ router.get("", (req, res, next) => {
 
 /*saves a post to the database*/
 router.post("", (req, res, next) => {
-  const token = req.body.properties.username;
-  const dcryptTkn = jwt.verify(token, secretKey);
-  const username = dcryptTkn.username;
-  const newPost = new GeoJson({
-    type: req.body.type,
-    geometry: {
-      type: req.body.geometry.type,
-      coordinates: [
-        req.body.geometry.coordinates[0],
-        req.body.geometry.coordinates[1],
-      ],
-    },
-    properties: {
-      username: username,
-      dateTime: req.body.properties.dateTime,
-      keyword: req.body.properties.keyword,
-      mood: req.body.properties.mood,
-      textBody: req.body.properties.textBody,
-    },
-  });
-  console.log(newPost);
-  newPost
-    .save()
-    .then((dbResponse) => {
-      return res.status(200).json({
-        message: "geoPost saved in database",
-        id: dbResponse._id,
-        username: dbResponse.properties.username,
+  const username = req.body.properties.username;
+  User.find({ username: username })
+    .then((user) => {
+      const newPost = new GeoJson({
+        type: req.body.type,
+        geometry: {
+          type: req.body.geometry.type,
+          coordinates: [
+            req.body.geometry.coordinates[0],
+            req.body.geometry.coordinates[1],
+          ],
+        },
+        properties: {
+          userDetails: user[0]._id,
+          username: username,
+          dateTime: req.body.properties.dateTime,
+          keyword: req.body.properties.keyword,
+          mood: req.body.properties.mood,
+          textBody: req.body.properties.textBody,
+        },
       });
+      newPost
+        .save()
+        .then((dbResponse) => {
+          return res.status(200).json({
+            message: "geoPost saved in database",
+            id: dbResponse._id,
+          });
+        })
+        .catch((error) => {
+          res.status(400).json({
+            message: "unable to save this data",
+            error: error,
+          });
+        });
     })
     .catch((error) => {
-      res.status(400).json({
-        message: "unable to save this data",
+      res.status(500).json({
+        message: "user doesnt exist",
         error: error,
       });
     });
@@ -65,20 +71,20 @@ router.post("", (req, res, next) => {
 router.get("/:username", (req, res, next) => {
   GeoJson.find({
     "properties.username": req.params.username,
-  }).sort({"properties.dateTime": -1}).then((posts) => {
-    res
-      .status(200)
-      .json({
+  })
+    .sort({ "properties.dateTime": -1 })
+    .then((posts) => {
+      res.status(200).json({
         message: "sucessfull",
         userposts: posts,
-      })
-  })
-  .catch((error) => {
-    res.status(500).json({
-      message: "internal error",
-      error: error,
+      });
+    })
+    .catch((error) => {
+      res.status(500).json({
+        message: "internal error",
+        error: error,
+      });
     });
-  });;
 });
 
 /*removes post from the db*/

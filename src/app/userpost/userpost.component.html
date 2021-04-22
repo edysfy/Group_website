@@ -4,63 +4,30 @@
   <mat-card class="userpost">
     <div class="slider">
       <mat-form-field class="sliderForm">
-        <mat-label>Emote Value</mat-label>
-        <input
-          formControlName="rating"
-          matInput
-          [(ngModel)]="rating"
-          type="number"
-          min="0"
-          max="3"
-          onkeydown="return false"
-        />
+        <mat-label>Mood</mat-label>
+        <input formControlName="rating" matInput [(ngModel)]="rating" type="text" 
+          onkeydown="return false" style="height: 30px;"/>
       </mat-form-field>
-      <mat-slider
-        class="sliderSl"
-        thumbLabel
-        tickInterval="auto"
-        [displayWith]="formatLabel"
-        min="1"
-        max="3"
-        step="1"
-        [value]="rating"
-        (input)="onSliderChange($event)"
-      ></mat-slider>
+      <mat-slider class="sliderSl" tickInterval="auto" [displayWith]="formatLabel" min="1" max="3" step="1"
+        [value]="sliderVal" (input)="onSliderChange($event)"></mat-slider>
     </div>
 
     <mat-form-field appearance="outline" class="keyword">
       <mat-label>Emote Keyword</mat-label>
-      <input
-        formControlName="keyword"
-        matInput
-        type="text"
-        placeholder="Describe your Emote with a keyword... (e.g. 'excited', 'shocked')"
-        pattern="[a-zA-Z0-9]+"
-        autocomplete="disabled"
-      />
-      <div
-        class="keywordAlert"
-        *ngIf="
+      <input formControlName="keyword" matInput type="text"
+        placeholder="Describe your Emote with a keyword... (e.g. 'excited', 'shocked')" pattern="[a-zA-Z0-9]+"
+        autocomplete="disabled" />
+      <div class="keywordAlert" *ngIf="
           form.controls['keyword'].invalid && form.controls['keyword'].dirty
-        "
-      >
+        ">
         :) Enter one valid word :)
       </div>
     </mat-form-field>
     <mat-form-field appearance="outline" class="post">
       <mat-label>Emote Here</mat-label>
-      <textarea
-        style="resize: none"
-        formControlName="post"
-        matInput
-        type="text"
-        placeholder="Share why you are feeling so today... (e.g. new national lockdown)"
-        rows="14"
-      ></textarea>
-      <div
-        class="postAlert"
-        *ngIf="form.controls['post'].invalid && form.controls['post'].dirty"
-      >
+      <textarea style="resize: none" formControlName="post" matInput type="text"
+        placeholder="Share why you are feeling so today... (e.g. new national lockdown)" rows="14"></textarea>
+      <div class="postAlert" *ngIf="form.controls['post'].invalid && form.controls['post'].dirty">
         :) You have to enter a post :)
       </div>
     </mat-form-field>

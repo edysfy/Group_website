@@ -1,12 +1,54 @@
 <div class="search">
-    <div class="flexContainer">
-        <div class="box">
-            <h1 class="title">Emote Search</h1>
-            <br><br>
-            <div class="age">
-                <p>Age: </p>
-                <ngx-slider></ngx-slider>
-            </div>
+  <div class="flexContainer">
+    <div class="box">
+      <h1 class="title">EmoteSearch</h1>
+      <br /><br />
+      <div class="input" style="position: relative; top: 3%;">
+        <div class="age">
+          <p>Age:</p>
+          <ngx-slider class="slider" [(value)]="ageMin" [(highValue)]="ageMax" [options]="optionAge"
+            (valueChange)="onChange()" (highValueChange)="onChange()"></ngx-slider>
         </div>
+        <div class="days">
+          <p>Days:</p>
+          <ngx-slider class="sliderDay" [(value)]="daysMin" [(highValue)]="daysMax" [options]="optionDays"
+            (valueChange)="onChange()" (highValueChange)="onChange()"></ngx-slider>
+        </div>
+        <div class="mood">
+          <p>Mood:</p>
+          <section class="moodCheck">
+            <mat-checkbox [(ngModel)]="mood.happy" (change)="onChange()" color="primary">Happy
+            </mat-checkbox>
+            <mat-checkbox [(ngModel)]="mood.coping" (change)="onChange()" color="accent">Coping
+            </mat-checkbox>
+            <mat-checkbox [(ngModel)]="mood.sad" (change)="onChange()" color="warn">Sad</mat-checkbox>
+          </section>
+        </div>
+        <div class="gender">
+          <p>Gender:</p>
+          <section class="genderCheck">
+            <mat-checkbox [(ngModel)]="gender.male" (change)="onChange()" color="primary">Male</mat-checkbox>
+            <mat-checkbox [(ngModel)]="gender.female" (change)="onChange()" color="accent">Female</mat-checkbox>
+          </section>
+        </div>
+      </div>
+      <div style="position: relative; top: 25px">
+        <p>Keyword:</p>
+        <div class="keyword">
+          <form #keywordForm="ngForm" autocomplete="off">
+            <mat-form-field style="position: relative; bottom: 30px; left: 30px;">
+              <mat-label>Enter word here</mat-label>
+              <input matInput name="keyword" ngModel type="text" #keyword="ngModel" required pattern="[a-zA-Z0-9]+" />
+              <mat-error *ngIf="keyword.invalid">Please enter keyword (one word only).</mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary" style="position: relative; left: 50px; bottom: 22px;"
+              type="submit" (click)="sendKeyword(keywordForm)">
+              <mat-icon>search</mat-icon>
+            </button>
+          </form>
+        </div>
+        <p *ngIf="keywordWarning" style="position: relative; bottom: 70px; text-align: center;">Trigger a slider or
+          checkbox event to restart the search</p>
+      </div>
     </div>
-</div>
+  </div>

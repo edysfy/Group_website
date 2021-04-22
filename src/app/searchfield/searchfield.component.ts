@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { PostService } from '../service/post.service';
 import { GeoJson, IGeoJson } from '../models/geoJson';
 import { SearchResultComponent } from '../search-result/search-result.component';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { DataSearchService } from '../data-search.service';
 
 
@@ -15,6 +15,8 @@ import { DataSearchService } from '../data-search.service';
 export class SearchfieldComponent implements OnInit {
   form!: FormGroup
   userPosts: Array<GeoJson>
+
+  @Output() flyToCords = new EventEmitter<number[]>();
 
   constructor(public postService: PostService,private dialog: MatDialog,public searchData : DataSearchService) {
      // Get userpost array
@@ -30,11 +32,13 @@ export class SearchfieldComponent implements OnInit {
 
   onSearch() {
     this.searchData.clearData();
-    //console.log(this.form.value.keyword);
+
+
      for (var index = 0; index < this.userPosts.length; ++index) {
         // If keyword entered equals keyword in user posts
-        //console.log(this.userPosts[index].properties.keyword);
-        if (this.form.value.keyword == this.userPosts[index].properties.keyword) {
+        console.log(this.userPosts[index].properties.dateTime);
+        if (this.form.value.keyword == this.userPosts[index].properties.keyword
+        ) {
           this.searchData.addData(this.userPosts[index]);
            //console.log(this.form.value.keyword);
            //console.log(this.userPosts[index].properties.keyword);
@@ -42,13 +46,16 @@ export class SearchfieldComponent implements OnInit {
      }
      const dialogConfig = new MatDialogConfig();
      dialogConfig.autoFocus = true;
-     dialogConfig.width = '60%';
+     dialogConfig.width = '70%';
      dialogConfig.height = '78%';
      dialogConfig.hasBackdrop = true;
      dialogConfig.panelClass = 'custom-dialog';
      dialogConfig.position = {bottom: '3%'};
 
-     this.dialog.open(SearchResultComponent, dialogConfig);
+     const dialogRef = this.dialog.open(SearchResultComponent, dialogConfig);
+     dialogRef.afterClosed().subscribe(
+      data => this.flyToCords.emit(data)
+  );
   }
 
 }

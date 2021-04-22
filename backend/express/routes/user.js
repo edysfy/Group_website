@@ -112,6 +112,7 @@ function checkIfGenderNull(gender) {
   return gender;
 }
 
+/*path which updated the user details*/
 router.put("/:username", (req, res, next) => {
   if (req.body.gender != null) {
     User.updateOne({ username: req.params.username }, { gender: req.body.gender })

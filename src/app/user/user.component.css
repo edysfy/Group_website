@@ -7,22 +7,75 @@
     color: white;
     font-family: 'Arvo', serif;
     font-family: 'Fredoka One', cursive;
+    font-size: 20px;
+
+
+}
+
+.border {
+    position: relative;
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 10px;
+    border-color: white;
+    height: 85%;
+    top: 50px;
+    width: 90%;
+    left: 15px;
 }
 
 .dob-button {
     margin-left: 10px;
-    border-radius: 30px;
-    bottom: 15px;
+    border-radius: 20px;
+    bottom: 20px;
     position: relative;
-    height: 35px;
 }
 
 h1 {
     font-family: 'Arvo', serif;
     font-family: 'Fredoka One', cursive;
+    position: relative; 
+    top: 0px; 
+    left: 100px; 
+    font-size: 40px; 
 }
 
 h2 {
     font-family: 'Arvo', serif;
     font-family: 'Fredoka One', cursive;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+button{
+    height: 30px;
+    border-radius: 30px;
+}
+
+mat-icon {
+    position: relative;
+    bottom: 2px;
+}
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: white !important;
+  }
+  
+
+mat-label {
+    color: white;
+
+}
+
+.labelDate {
+    font-size: 15px;
+}
+
+mat-datepicker-toggle {
+    color: white;
+}
+
+
+::ng-deep .mat-form-field-ripple {
+    background-color: white !important;
 }
