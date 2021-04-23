@@ -110,7 +110,7 @@ The Mighty are building a positive online community in the same way that we seek
 
 
 
-[System implementation,UX design and development process][sysImp.md]
+[System implementation,UX design and development process](sysImp.md)
 
 
 
