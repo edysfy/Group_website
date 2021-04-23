@@ -19,12 +19,14 @@ Edward Hammersley  [Front-end]
 Zaki Gill  [Front-end, Academic&Market Research, User-Testing/Prototyping]
 ![Image of Zaki](https://www.linkedin.com/in/zaki-gill-8bb020171/?originalSubdomain=uk)  
 Tarn Williamson  [Front-end]
-![Image of Tarn](https://www.linkedin.com/in/tarn-williamson-8b2029153/detail/photo/)  
+![Image of Tarn](https://www.linkedin.com/in/tarn-williamson-8b2029153/detail/photo/)
+
+## Introduction, background and motivation
 <a name="first"></a>
 [Introduction, background and motivation](introSect.md)
-
+## System implementation,UX design and development process
 <a name="second"></a>
 [System implementation,UX design and development process](sysImp.md)
-
+## Evaluation and Conclusion
 <a name="third"></a>
 [Evaluation and Conclusion](evalSect.md)
