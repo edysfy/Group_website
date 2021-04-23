@@ -1,4 +1,4 @@
-
+https://github.com/edysfy/Group_website.git
 ## Table of contents
 * [Introduction, background and motivation](#first)
 * [System implementation,UX design and development process](#second)
@@ -19,6 +19,7 @@ Edward Hammersley  [Front-end]
 Zaki Gill  [Front-end, Academic&Market Research, User-Testing/Prototyping]
 ![Image of Zaki](https://www.linkedin.com/in/zaki-gill-8bb020171/?originalSubdomain=uk)  
 Tarn Williamson  [Front-end]
+
 ![Image of Tarn](https://www.linkedin.com/in/tarn-williamson-8b2029153/detail/photo/)
 
 ## Introduction, background and motivation
