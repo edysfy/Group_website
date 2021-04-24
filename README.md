@@ -11,15 +11,15 @@ https://github.com/edysfy/Group_website.git
 •	Name / photo / role for each team member.
 
 Hari Patel  [Team Leader, Product/Systems Designer,Front-end, Back-end, Database]  
-![Image of Hari](member_photos/HariPatel)  
+![Image of Hari](member_photos/HariPatel.jpg)  
 Alfred Graham  [Front-end]
-![Image of Hari](member_photos/AlfredGraham)  
+![Image of Hari](member_photos/AlfredGraham.jpg)  
 Edward Hammersley  [Front-end]
-![Image of Ed](member_photos/EdwardHammersely)     
+![Image of Ed](member_photos/EdwardHammersely.jpg)     
 Zaki Gill  [Front-end, Academic&Market Research, User-Testing/Prototyping]
-![Image of Zaki](member_photos/ZakiGill)  
+![Image of Zaki](member_photos/ZakiGill.jpg)  
 Tarn Williamson  [Front-end]
-![Image of Tarn](member_photos/TarnWilliamson)
+![Image of Tarn](member_photos/TarnWilliamson.jpg)
 
 ## Introduction, background and motivation
 <a name="first"></a>
