@@ -36,6 +36,50 @@ The search.js api is primarly concerned around generating constraints for fetchi
 
 ### Front End - Angular. Details of implementation
 #### Angular Material
+[Angular Material](https://material.angular.io)
+We extensively utilised angular material to quickly implement well designed graphic and interactive html elements into our website; for example in our userpost component, we utilise mat (angular material) form fields to encapsulate and display all the user input elements - one of which is a mat slider, used for entering a users 'mood rating'. We also utilise the mat icon library for the button icons on this form (i.e. the send and close buttons).
+```html
+<div class="slider">
+  <mat-form-field class="sliderForm">
+    <mat-label>Mood</mat-label>
+    <input formControlName="rating" matInput [(ngModel)]="rating" type="text"
+      onkeydown="return false" style="height: 30px;"/>
+  </mat-form-field>
+  <mat-slider class="sliderSl" tickInterval="auto" [displayWith]="formatLabel" min="1" max="3" step="1"
+    [value]="sliderVal" (input)="onSliderChange($event)"></mat-slider>
+</div>
+```
+
+In fact the userpost component itself is displayed using the mat dialog element, which we trigger from a click event (either from clicking on the map in the mapbox component or the post button in the sidebar component, which itself utilises a mat icon). This dialog allows us to display the component as a popup on top of the rest of the website.
+```javascript 
+createPost() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.postService.updateLongLat({
+        long: position.coords.longitude,
+        lat: position.coords.latitude,
+      });
+    });
+  }
+
+  /*open a new diaglog object and set the parameters*/
+  const dialogConfig = new MatDialogConfig();
+  dialogConfig.autoFocus = false;
+  dialogConfig.width = '55%';
+  dialogConfig.height = '70%';
+  dialogConfig.hasBackdrop = true;
+  dialogConfig.panelClass = 'custom-dialog';
+  dialogConfig.position = {bottom: '8%', right: '23%'};
+  this.dialog.open(UserpostComponent, dialogConfig);
+}
+```
+```html
+<div class="button" (click)="createPost()">
+  <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+    <mat-icon class="icon-display" inline=true>add</mat-icon>
+  </button>
+</div>
+```
 #### Forms
 #### Mapbox
 [Mapbox API](https://docs.mapbox.com/mapbox-gl-js/api/)
