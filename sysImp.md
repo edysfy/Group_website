@@ -329,6 +329,11 @@ stuff
 
 <a name="sprints"></a>
 ## Sprints & Project Management
+### Group working methods used (for instance did your team choose a particular style of agile? What communication channels did you use?)
+Discord was used for the majority of the written communication. We setup a server and divided it into 6 channels: ‘general’, ‘front-end’, ‘back-end’, ‘ui’, ‘user-testing’ and ‘write-up’. Having individual channels meant that our communication was more organised, and reduced disruption to members working on alternative sections. Discord’s pinning feature also meant that key messages never went missing amongst a sea of other messages.
+
+Microsoft Teams was used for video communication, and served perfectly for longer discussions. Often, we would choose video communication for when project-level decisions had to be made. For example, our original idea was to allow users to write a longer, more journal-like post. For multiple reasons, we decided to change the idea so that EmotePosts would be shorter personal updates. One reason was because we were concerned over the users' attention spans. It was more likely that a user would engage in multiple, short, and easy to read posts. This decision really changed our direction, and therefore required the input of all members, and ultimately a unanimous decision.
+
 ### Team use of Git, how your team used continuous integration / continuous deployment. Streamlining of workflow throughout.
 In addition to the main branch, a 'dev' (development) branch was also created. Those members who were part of producing the website each created their own branch from 'dev'; this ensured that each member could work without being interrupted by conflicts. When a member was ready to submit their work, they would inform the others (via Discord) that they were soon going to merge and push - this avoided divergence of the 'dev' branch. The member would then ensure their 'dev' branch was up to date, merge their branch with 'dev' (after resolving any conflicts), before finally pushing. The member then informed the group of the push. At this point, another member may have requested temporary 'reservation' of the 'dev' branch. After each major feature implementation, members would ensure the stability of the dev branch, before merging it with 'main'.
 
