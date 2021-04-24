@@ -1,10 +1,11 @@
 <h1 align="center"> EmoteMap </h1>
+
 ## Table of contents
 * [Introduction, background and motivation](#first)
 * [System implementation,UX design and development process](#second)
 * [Evaluation and Conclusion](#third)
 
-# Title: EmoteMap
+
 
 <a name="team"></a>
 ## Team
