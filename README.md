@@ -8,8 +8,6 @@ https://github.com/edysfy/Group_website.git
 
 <a name="team"></a>
 ## Team
-•	Name / photo / role for each team member.
-
 Hari Patel  [Team Leader, Product/Systems Designer,Front-end, Back-end, Database]  
 ![Image of Hari](member_photos/HariPatel.jpg)  
 Alfred Graham  [Front-end]
