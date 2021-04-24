@@ -42,12 +42,124 @@ The search.js api is primarly concerned around generating constraints for fetchi
 
 As our application is centred around displaying information on a map, one of the key aspects in developing the front end was to find and utilise a mapping api which could provide us with the display and interactivity features we needed. We considered other services, the most obvious being google maps, but decided to go with mapbox as not only is it open source, but had a far higher number of free map requests (50k vs 28k for google), and is comparatively lighter on resources to render the map within an application. It also has numerous graphical display options with easy-to-use documentation and examples to help us get our application running quickly. The mapbox-component is the central component within our angular application, with most of the central components being called from the mapbox-component html.
 
-The following is an overview of the key aspects of the api which we utilised. The first and most obvious is the map layer; the api provides numerous styles of world maps to display (we chose a dark colour scheme to better highlight the information in our data layers, to be covered shortly), which we initialise in the components ngOnInit function. The next and arguably most important aspect is the use of the “map.addSource” and “map.addLayer” api functions; within the addSource function is a key use of our geopost api and post service in angular; the component uses the service to call the api, which in turn fetches geoJson data (a special format of json files which stores coordinates and properties of data points) which contains all of the user posts. The mapbox api then stores this geoJson data in the component, which we then utilise in two addLayer functions.
+```html
+<div class="full">
+    <app-user *ngIf="isLoggedIn && sidebarState.profile" [@inOutAnimation]></app-user>
+    <app-userpost-display *ngIf="isLoggedIn && sidebarState.userPosts" [@inOutAnimation] (flyToCords)="flyTo($event)">
+    </app-userpost-display>
+    <app-user-search *ngIf="isLoggedIn && sidebarState.search" [@inOutAnimation]></app-user-search>
+    <app-key *ngIf="isLoggedIn && sidebarState.key" [@inOutAnimation]></app-key>
+    <div id="map">
+    </div>
+    <app-usersearch-display *ngIf="isLoggedIn && sidebarState.search" [@inOutAnimation] (flyToCords)="flyTo($event)">
+    </app-usersearch-display>
+</div>
 
+<app-searchfield *ngIf="!isLoggedIn" (flyToCords)="flyTo($event)"></app-searchfield>
+<app-sidebar *ngIf="isLoggedIn && !isMapLoading"></app-sidebar>
+
+```
+
+The following is an overview of the key aspects of the api which we utilised. The first and most obvious is the map layer; the api provides numerous styles of world maps to display (we chose a dark colour scheme to better highlight the information in our data layers, to be covered shortly), which we initialise in the components ngOnInit function.
+
+```javascript
+initMap(): void {
+  (mapboxgl as any).accessToken = environment.mapboxToken;
+  this.map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/dark-v10',
+    zoom: 2,
+    center: [-0.2101765, 51.5942466],
+  });
+}
+```
+The next and arguably most important aspect is the use of the “map.addSource” and “map.addLayer” api functions; within the addSource function is a key use of our geopost api and post service in angular; the component uses the service to call the api, which in turn fetches geoJson data (a special format of json files which stores coordinates and properties of data points) which contains all of the user posts. The mapbox api then stores this geoJson data in the component, which we then utilise in two addLayer functions.
+
+```javascript
+createDataSource(name: string): void {
+  this.map.addSource(name, {
+    type: 'geojson',
+    data: {
+      type: 'FeatureCollection',
+      features: [],
+    },
+  });
+}
+```
+```javascript
+pullAndDisplayGJPointsFromDB(): void {
+  this.createDataSource('data');
+  this.source = this.map.getSource('data');
+  this.postService.getGeoPostData().subscribe((geoPostArr) => {
+    this.source.setData(new FeatureCollection(geoPostArr));
+  });
+}
+```
 The addLayer function from the api provides numerous different styles of data presentation for displaying data on top of the map layer. Our first use of the function uses the “circle” type; the api allows us to display circles at each data-points’ location from the geoJson, and colour these circles depending on the data-points’ properties; we colour these circles based on the so called mood-rating that a user picks when making a post to our website – this provides the key functionality of the entire site, allowing users to see patterns in people’s emotions across the map, based on the circle colours. The addLayer function can also be configured such that its visibility is based on a certain zoom level of the map; we utilise this so that when a user has zoomed in the circle layer appears, but when they are zoomed out, the second layer – a heatmap layer – appears. The “heatmap” type is another layer type, and we use it to display the density of user points at a location, with different colours indicating more or less points clustered in a specific location.
+
+```js
+this.map.addLayer({
+  id: 'markers',
+  interactive: true,
+  type: 'circle',
+  source: layer,
+  minzoom: 9.2,
+  paint: {
+    'circle-stroke-color': '#fff',
+    'circle-stroke-width': 1,
+    'circle-radius': 5,
+    'circle-color': [
+      'step',
+      ['get', 'mood'],
+      '#EC986F',
+      1,
+      'rgb(65,182,196)',
+      2,
+      'rgb(254,204,92)',
+      3,
+      'rgb(227,26,28)',
+    ],
+  },
+});
+```
+
 There are a few other key features of the api we use, centred around mouse events. Firstly, we utilise the api’s popup feature, such that when the circle layer is rendered (i.e. the user is zoomed in enough), when a user hovers the mouse over one of the displayed circles, a pop up appears, loading in the specific post data (keyword, rating and description) of that data point from the geoJson data. We also utilise the map.on(click) function to call our userpost-component in a dialog box, so a user can make a post at a specific location by clicking there if they are zoomed in enough. This component also utilises our geopost api and post service, but this time to send data to our database rather than fetch it.
 
+```javascript
+this.map.on('click', (e) => {
+  if (this.isLoggedIn) {
+    const zoom = this.map.getZoom();
+    console.log(zoom);
+    if (zoom > 12) {
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.autoFocus = false;
+      dialogConfig.width = '55%';
+      dialogConfig.height = '70%';
+      dialogConfig.hasBackdrop = true;
+      dialogConfig.panelClass = 'custom-dialog';
+      dialogConfig.position = { bottom: '8%', right: '20%' };
+      this.dialog.open(UserpostComponent, dialogConfig);
+      this.postService.updateLongLat({
+        long: e.lngLat.lng,
+        lat: e.lngLat.lat,
+      });
+    }
+  }
+});
+```
+
 Finally, we use the api’s map.flyto function to move and zoom in on specific data points, which we call using an event listener in the mapbox-component html from a button click in the usersearch-display-component (which displays posts resulting from a user search).
+
+```javascript
+flyTo(lngLat: number[]) {
+  if(!isNaN(lngLat[0])&&!isNaN(lngLat[1])){
+    this.map.flyTo({
+    center: [lngLat[0], lngLat[1]],
+    zoom: 15,
+  });
+}
+}
+```
 
 ### Additional elements and components e.g. authentification. Tell us about any other aspects not covered above!
 stuff
