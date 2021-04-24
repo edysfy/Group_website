@@ -1,6 +1,7 @@
 ## Table of contents
 * [Introduction](#intro)
 * [Background and Motivation](#backgrnd)
+* [Video Demonstration](#video)
 
 <a name="intro"></a>
 # Introduction
@@ -83,3 +84,8 @@ The Mighty publish real stories by real people living with disability, disease a
 
 ##### How EmoteMap solves the problem differently:
 The Mighty are building a positive online community in the same way that we seek to. We see light in this, as EmoteMap makes the user the heart of the website too. They themselves are a great starting point when it comes to solving the problem of global health mentally. However, Emote Map's interactive map interface enables the user to gain a localised understanding of a very much  global problem in a way that The Mighty does not. EmoteMap strives to engage the user through its interactive interface in order to create a positive environment for users to interact.
+
+
+<a name="video"></a>
+## Video Demonstration
+[See video here](Video_Demonstration.mp4)

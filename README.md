@@ -1,33 +1,44 @@
-https://github.com/edysfy/Group_website.git
+<h1 align="center"> EmoteMap </h1>
+
 ## Table of contents
 * [Introduction, background and motivation](#first)
 * [System implementation,UX design and development process](#second)
 * [Evaluation and Conclusion](#third)
 
-# Title: EmoteMap
+
 
 <a name="team"></a>
 ## Team
-•	Name / photo / role for each team member.
-
 Hari Patel  [Team Leader, Product/Systems Designer,Front-end, Back-end, Database]  
-![Image of Hari](https://www.linkedin.com/in/hari-patel-027b89129/detail/photo/)  
+![Image of Hari](member_photos/HariPatel.jpg)  
 Alfred Graham  [Front-end]
-![Image of Hari](https://cdn.discordapp.com/attachments/824036552023867425/832652855018127420/145314026_1899328656885019_6092633530819469484_n_1.jpg)  
+![Image of Hari](member_photos/AlfredGraham.jpg)  
 Edward Hammersley  [Front-end]
-![Image of Ed](https://www.linkedin.com/in/edward-h-3332211b0/detail/photo/)     
+![Image of Ed](member_photos/EdwardHammersley.jpg)     
 Zaki Gill  [Front-end, Academic&Market Research, User-Testing/Prototyping]
-![Image of Zaki](https://www.linkedin.com/in/zaki-gill-8bb020171/?originalSubdomain=uk)  
+![Image of Zaki](member_photos/ZakiGill.jpg)  
 Tarn Williamson  [Front-end]
+![Image of Tarn](member_photos/TarnWilliamson.jpg)
 
-![Image of Tarn](https://www.linkedin.com/in/tarn-williamson-8b2029153/detail/photo/)
-
-## Introduction, background and motivation
 <a name="first"></a>
-[Introduction, background and motivation](introSect.md)
-## System implementation,UX design and development process
+## Introduction, background and motivation
+View our [Introduction, background and motivation](introSect.md) document to see;
+* Introduction
+* Background & Motivation
+* Industry Review
+
+
 <a name="second"></a>
-[System implementation,UX design and development process](sysImp.md)
-## Evaluation and Conclusion
+## System implementation,UX design and development process
+View our [System implementation,UX design and development process](sysImp.md) document to see;
+* System Implementation (Backend,API,Frontend)
+* UX Design (stakeholders,users)
+* Project Management & development process (continuous integration, use of github)
+
+
+
 <a name="third"></a>
-[Evaluation and Conclusion](evalSect.md)
+## Evaluation and Conclusion
+View our [Evaluation and Conclusion](evalSect.md) document to see;
+* Evaluation
+* Conclusion
