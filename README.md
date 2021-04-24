@@ -1,4 +1,4 @@
-https://github.com/edysfy/Group_website.git
+<h1 align="center"> EmoteMap </h1>
 ## Table of contents
 * [Introduction, background and motivation](#first)
 * [System implementation,UX design and development process](#second)
