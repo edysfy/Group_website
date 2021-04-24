@@ -29,14 +29,80 @@ EmoteMap provides 5 integral features which interface with the back end:
 
 ### Middle Tier - Express, Node, the RESTful API
 Our project makes use of ExpressJs to build 3 core RESTful apis for our application; search.js, user.js, and geopost.js. The most important api is likely geopost.js; it serves as the main link between the front and backend, handling fetching and posting geoJSON data to and from our mapbox component and our mongoDB database. It uses http get requests to fetch an array of geoJSON data (all of the user posts – data points containing location, keywords, date/time of the post, user details and the post description) which is utilised by our services to pipe the data into components where needed.  Similarly, http post requests are used to take data from user input forms in components in the front end, and send them to our database for permanent storage. Http delete requests are also utilised for removing posts from the database, should a user request it from the front end.
+```js
+/*gets all post from the db*/
+router.get("", (req, res, next) => {
+  GeoJson.find()
+    .then((allGeoPost) => {
+      res.status(200).json({
+        message: "Coordinates sent from database",
+        geoPost: allGeoPost,
+      });
+    })
+    .catch((error) => {
+      res.status(401).json({
+        message: "unable to retrieve the data",
+        error: error,
+      });
+    });
+});
+```
 
 The user.js and search.js apis function similarly, but instead focus on fetching user data and search results respectively. User.js handles adding new users to the database when they sign up on the front end, and then consequently logging them in (http post), updating that data when a user chooses to input their date of birth and gender (using http put) and fetching user data if needed (http get).
+```js
+router.put("/:username", (req, res, next) => {
+  if (req.body.gender != null) {
+    User.updateOne({ username: req.params.username }, { gender: req.body.gender })
+      .then((result) => {
+        res.json({message: "update gender sucessfull"})
+      })
+      .catch((error) => {
+        res.json({message: "no user"})
+      });
+  }
+})
+```
 
 The search.js api is primarly concerned around generating constraints for fetching data from the database based on the users input in the searchfield in the side bar (e.g. fetching all posts made 10 or less days ago); it again does this through a http post request, but then also utilising functions from our GeoJson schema and filtering functions from the api to correctly populate an array to return to our user-search service which is then piped to the front end components to be displayed.
+```js
+router.post("", (req, res, next) => {
+  GeoJson.find()
+    .populate("properties.userDetails", ["age", "gender", "dob"])
+    .sort({ "properties.dateTime": -1 })
+    .then((data) => {
+        data = data.filter(
+          (geoPost) =>
+            geoPost.properties.userDetails.age != null &&
+            geoPost.properties.userDetails.age >= req.body.minAge &&
+            geoPost.properties.userDetails.age <= req.body.maxAge
+        );
+      let minDate = generateDate(req.body.minDay);
+      let maxDate = generateDate(req.body.maxDay);
+      data = data.filter(
+        (geoPost) =>
+          minDate.getTime() <= geoPost.properties.dateTime.getTime() &&
+          maxDate.getTime() >= geoPost.properties.dateTime.getTime()
+      );
+      data = filterGender(req.body.male, req.body.female, data);
+      data = filterMood(
+        req.body.happy,
+        req.body.coping,
+        req.body.sad,
+        data
+      );
+      res.status(200).json({ message: "search", geoSearchArray: data });
+    })
+    .catch((err) => {
+      res.status(401).json({ error: err });
+      return;
+    });
+});
+```
 
 ### Front End - Angular. Details of implementation
 #### Angular Material
 [Angular Material](https://material.angular.io)
+
 We extensively utilised angular material to quickly implement well designed graphic and interactive html elements into our website; for example in our userpost component, we utilise mat (angular material) form fields to encapsulate and display all the user input elements - one of which is a mat slider, used for entering a users 'mood rating'. We also utilise the mat icon library for the button icons on this form (i.e. the send and close buttons).
 ```html
 <div class="slider">
@@ -81,6 +147,36 @@ createPost() {
 </div>
 ```
 #### Forms
+We make use of angular forms primarily in order to pass data from our user input elements to services and other components in our website; for example our login component uses angulars' ngForm directive to pass the users username and password from the html to our user authentication service (note the use of mat forms on the html side for displaying the form to the user).
+```js
+onLogin(form: NgForm) {
+  this.authService.login(form.value.username, form.value.password)
+  .subscribe((response) => {
+    if (response.token) {
+      this.authService.setLogin(response.token, response.username);
+      this.route.navigate([''])
+    }
+  });
+}
+```
+```html
+<mat-card class="loginForm">
+    <mat-spinner *ngIf="isLoading"></mat-spinner>
+    <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
+        <mat-form-field>
+            <input matInput name="username" ngModel type="text" placeholder="Username" #usernameInput="ngModel"
+                required>
+            <mat-error *ngIf="usernameInput.invalid">Please enter a valid username.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel"
+                required>
+            <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="accent" type="submit" *ngIf="!isLoading">Login</button>
+    </form>
+</mat-card>
+```
 #### Mapbox
 [Mapbox API](https://docs.mapbox.com/mapbox-gl-js/api/)
 
