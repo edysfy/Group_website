@@ -308,6 +308,23 @@ stuff
 
 <a name="uxdesign"></a>
 ## UX Design
+### Design Process and Early prototyping and ideation (including mood boards and paper prototyping)
+Our first real visualisation of the website consisted of a paper prototype. This ensured all members of the group were on the same page (no pun intended) regarding the initial layout, and allowed us to easily and to quickly make adjustments during a group discussion.
+
+### Identification of interacting users and broader stakeholders.
+stuff
+
+### UX approach – design heuristics/approach, design methods (design fiction / heuristics)
+stuff
+
+### Understanding of user group (questionnaires / user stories / interviews)
+To ensure that we continued to develop a website with the user in mind, we gathered user feedback throughout the project. This started as early as our paper prototypes, and proved to be useful. For example, the first paper prototype (which was also shared) demonstrated that new users would be greeted with an empty globe. They would then have to signup before gaining the ability to interact with the map. This was our initial plan because we wanted to encourage users to signup, however, user feedback revealed something important to us: the user was confused as to what signing up would allow them to do (aka they did not understand the purpose of the website straight away). We thought this may start to turn away newcomers. We changed the paper prototype to demonstrate to users that they could zoom in/out of the map, and read EmotePosts as soon as they enter the website. This also meant that the ‘serious play’ aspect was integrated immediately, and the user would learn in an active manner. We decided to include a ‘signup’ option on a sidebar. After implementing these changes, users grasped the concept much quicker when shown the paper prototype.
+
+The wireframe was also shared with external individuals, to gather further feedback (in the form of an accompanying questionnaire). The results of the questionnaire revealed potential improvements, which we then implemented. For example, one of the questions asked: ‘How would you go about improving the website?’. One answer suggested including a key for the different coloured markers. The image below shows the final state of the key that we decided to implement as a response to this feedback.
+[!Image of key](supporting_images/key.png)
+
+
+### Wireframes and interaction flow diagrams for final key subsystems.
 stuff
 
 <a name="sprints"></a>
