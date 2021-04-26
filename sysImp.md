@@ -310,6 +310,29 @@ We implemented a docker-compose script from early on in the development process,
 ## UX Design
 ### Design Process and Early prototyping and ideation (including mood boards and paper prototyping)
 
+# Sprints
+
+## Discussion of ideas and individual roles
+
+
+The aim of this portion of the project was to:
+
+- Get to grips with the project brief
+- Discuss and create a list of potential project ideas
+- Discuss personal preferences for individual roles
+- Set up and get familiar with the infrastructure required for collaboration moving forward
+
+This time was used to get to know the other group members and project brief itself. Having all come from different backgrounds, from music to engineering, a lot of varied and interesting project ideas were put forward. After some discussion we drafted up 4 potential ideas:
+
+**Higher or lower:** A simple game in which the user was asked which was item is "higher or lower", if they get the answer correct they are given a fact about the item which was lower. Below is a small demonstration on the topic of population size but question topics could be on a large variety of things:
+ADD PICTURE
+The game intention of this game was to be addictive, fun and educational.
+**Altitude explorer:** A 2D platformer game with similar mechanics to the app [Doodle Jump] but the user explores different altitudes on earth and in space. The player starts at the bottom of the sea and works their way up into space. As they travel up through different levels they learn facts about what is present at each altitude. For example at 10,927m below sea level the user would be told that this was the deepest manned sea dive ever recorded or at 10,668m above sea level they would be informed that this is the average height at which passenger planes fly. As the user went higher they would then learn about different planets and objects in space. Similar to the other idea this served to be entertaining but also educational.
+**Musical instruments through time:** A web page where users can browse musical instruments through time and when they are clicked the sound of the instrument is played. Aimed to teach users about musical anthropology in an engaging way, an interesting topic which our group consider to be overlooked and undervalued compared to other areas of music.
+**EmoMap:** A geographical diary where users can post diary entries which include their current location. Users can then look on the map at their archived posts and see how they were feeling in certain locations. This website idea aims to help users track and improve upon their mental wellbeing.
+
+After having drafted up some ideas and established everyone's academic backgrounds, we decided what project roles we would each be best suited to. Although we didn't intend to begin developing the software until later on, we decided it best we know roughly what area to start doing some preliminary research into.
+
 Our first real visualisation of the website consisted of a paper prototype. This ensured all members of the group were on the same page (no pun intended) regarding the initial layout, and allowed us to easily and to quickly make adjustments during a group discussion.
 
 ### Identification of interacting users and broader stakeholders.
@@ -348,3 +371,5 @@ Microsoft Teams was used for video communication, and served perfectly for longe
 In addition to the main branch, a 'dev' (development) branch was also created. Those members who were part of producing the website each created their own branch from 'dev'; this ensured that each member could work without being interrupted by conflicts. When a member was ready to submit their work, they would inform the others (via Discord) that they were soon going to merge and push - this avoided divergence of the 'dev' branch. The member would then ensure their 'dev' branch was up to date, merge their branch with 'dev' (after resolving any conflicts), before finally pushing. The member then informed the group of the push. At this point, another member may have requested temporary 'reservation' of the 'dev' branch. After each major feature implementation, members would ensure the stability of the dev branch, before merging it with 'main'.
 
 stuff
+
+[Doodle Jump]: <https://en.wikipedia.org/wiki/Doodle_Jump>
