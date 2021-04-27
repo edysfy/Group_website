@@ -369,6 +369,7 @@ After having drafted up some ideas and established everyone's academic backgroun
 - implemented sidebar
 - search functionality
 - user post history
+- about page added
 - at this stage almost feel website is complete. one last survey for UX
 - users now have to log in to be able to filter results, encourages posting and engaging with site
 - began to start formating write up/readme
