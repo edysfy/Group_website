@@ -370,13 +370,13 @@ After having drafted up some ideas and established everyone's academic backgroun
 - search functionality
 - user post history
 - at this stage almost feel website is complete. one last survey for UX
-- feedback says icons unclear, alter icons to have names
 - users now have to log in to be able to filter results, encourages posting and engaging with site
 - began to start formating write up/readme
 
 ## Sprint 6 Project Write up:
 [21st apr - hand in]
 - Write up
+- feedback says icons unclear, alter icons to have names
 
 
 <a name="uxdesign"></a>
