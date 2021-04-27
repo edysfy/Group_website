@@ -11,6 +11,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
 import { SidebarService } from '../service/sidebar.service';
 import { Sidebar } from '../models/Sidebar';
 import { UserSearchService } from '../service/user-search.service';
+import { DescriptPopupComponent } from '../descript-popup/descript-popup.component'
 
 @Component({
   selector: 'app-mapbox',
@@ -308,6 +309,19 @@ export class MapboxComponent implements OnInit {
       return "Sad";
     }
     return null;
+  }
+
+  openDesDialog() : void {
+    const dialogConfig = new MatDialogConfig();
+     dialogConfig.autoFocus = true;
+     dialogConfig.width = '70%';
+     dialogConfig.height = '78%';
+     dialogConfig.hasBackdrop = true;
+     dialogConfig.panelClass = 'custom-dialog';
+     dialogConfig.position = {bottom: '3%'};
+     console.log("ddffd");
+
+     const dialogRef = this.dialog.open(DescriptPopupComponent, dialogConfig);
   }
 
 }
