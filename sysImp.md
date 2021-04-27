@@ -306,10 +306,6 @@ stuff
 ### Deployment details (including Docker), include how you have been achieving continuous integration and deployment
 We implemented a docker-compose script from early on in the development process, which ended up being crucial in maintaining code quality and compatibility - we made sure that before each push to our group repository that the website was functioning both when running node server.js and docker-compose up. Docker was especially important for this as it provides a repeatable environment in the form of a docker container; we can be sure that if the project is working on one machine in docker, it will work on others. We primarily achieved continuous integration by utilising docker in this way, but also crucial was the factoring in of all the components of the MEAN stack from a very early stage. After deciding on the api we would use to present the map (mapbox) and setting up a basic template website using it, we quickly added an api (this api eventually became geopost.js) in order to deal with fetching the data for the map; even though this was collecting static data at first, it meant that functionally our website was behaving as it would when we we utilising all parts of the mean stack (i.e. when we added in a mongoDB database, this api would now fetch data from the database instead of using static data). This allowed us to test and run our website using node server.js (and docker-compose up) after every change as previously mentioned. As we also made use of github, allowing us to all share and download the most up to date files, we were able to continuously implement and integrate changes throughout the development process (see [Sprints & Project Management](#sprints) for more details).
 
-<a name="uxdesign"></a>
-## UX Design
-### Design Process and Early prototyping and ideation (including mood boards and paper prototyping)
-
 # Sprints
 
 ## Discussion of ideas and individual roles
@@ -336,7 +332,16 @@ The game intention of this game was to be addictive, fun and educational.
 
 After having drafted up some ideas and established everyone's academic backgrounds, we decided what project roles we would each be best suited to. Although we didn't intend to begin developing the software until later on, we decided it best we know roughly what area to start doing some preliminary research into.
 
-Our first real visualisation of the website consisted of a paper prototype. This ensured all members of the group were on the same page (no pun intended) regarding the initial layout, and allowed us to easily and to quickly make adjustments during a group discussion.
+
+<a name="uxdesign"></a>
+## UX Design
+### Design Process and Early prototyping and ideation (including mood boards and paper prototyping)
+Our first real visualisation of the website consisted of a paper prototype. This ensured all members of the group were on the same page (no pun intended) regarding the initial layout, and allowed us to easily and to quickly make adjustments during a group discussion. Our original prototype is shown here:
+
+<p align="center">
+<img src="supporting_images/Paper_prototype_start.jpeg" width="400">
+</p>
+
 
 ### Identification of interacting users and broader stakeholders.
 stuff
