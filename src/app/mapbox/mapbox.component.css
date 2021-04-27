@@ -9,8 +9,6 @@
 
 }
 
-
-
 #map {
     position: fixed;
     background-color: black;
@@ -21,13 +19,13 @@
     z-index: 0;
 }
 
-app-searchfield {
+button {
     position: fixed;
-    left:35%;
-    bottom: 30px;
+    left:90%;
+    bottom: 32px;
+    transform: scale(1.8);
+    border-radius: 50px;
 }
-
-
 
 app-sidebar {
     bottom: 0px;
@@ -37,7 +35,6 @@ app-sidebar {
     margin-top: -80px; 
     margin-left: -280px; 
 }
-
 
  app-user {
      z-index: 1;

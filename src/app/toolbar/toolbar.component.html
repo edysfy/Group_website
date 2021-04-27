@@ -5,11 +5,11 @@
     <span class="about">
       <a style="text-decoration: none;" routerLink='/about'>About</a>
     </span>
-    <span class="signUp">
-      <fa-icon routerLink='/signup' [icon]="faUserPlus"></fa-icon>
+    <span routerLink='/signup' class="signUp">
+      <a>SignUp</a>
     </span>
     <span routerLink='/login' class="login">
-      <fa-icon [icon]="faSignInAlt"></fa-icon>
+      <a>Login</a>
     </span>
   </div>
   <span class="aboutLI" *ngIf="isLoggedIn">

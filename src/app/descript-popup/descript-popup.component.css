@@ -1,0 +1,28 @@
+::ng-deep .custom-dialog  mat-dialog-container {
+    background-color: rgb(85, 95, 148,0.3);
+    justify-content: center;
+    text-align: left;
+    border-radius: 30px;
+    overflow-y: hidden !important;
+    overflow-x: hidden !important;
+  }
+ 
+ 
+ h1,h2{
+    position: relative;
+    color: White;
+    font-size: xx-large;
+    text-align: center;
+    font-family: 'Arvo', serif;
+    font-family: 'Fredoka One', cursive;
+  }
+  p{
+    color: White;
+    text-align: center;
+    font-size: x-large;
+    font-family: 'Arvo', serif;
+    font-family: 'Fredoka One', cursive;
+    padding: 10px;
+    line-height: 1.8;
+
+  }

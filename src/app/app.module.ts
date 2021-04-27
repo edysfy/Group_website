@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { SearchfieldComponent } from './searchfield/searchfield.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatInputModule } from '@angular/material/input';
@@ -30,7 +29,6 @@ import { AboutComponent } from './about/about.component';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { SearchResultComponent } from './search-result/search-result.component';
 import { MatListModule } from '@angular/material/list';
 import { UserComponent } from './user/user.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -42,6 +40,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
 import { UserSearchComponent } from './user-search/user-search.component';
 import { NgxSliderModule} from '@angular-slider/ngx-slider';
 import { UsersearchDisplayComponent } from './usersearch-display/usersearch-display.component';
+import { DescriptPopupComponent } from './descript-popup/descript-popup.component';
 
 
 
@@ -72,7 +71,6 @@ const material = [
   declarations: [
     AppComponent,
     ToolbarComponent,
-    SearchfieldComponent,
     MapboxComponent,
     LoginComponent,
     SignupComponent,
@@ -80,12 +78,12 @@ const material = [
     UserpostComponent,
     AboutComponent,
     SidebarComponent,
-    SearchResultComponent,
     UserComponent,
     KeyComponent,
     UserpostDisplayComponent,
     UserSearchComponent,
     UsersearchDisplayComponent,
+    DescriptPopupComponent,
   ],
   imports: [
     BrowserModule,

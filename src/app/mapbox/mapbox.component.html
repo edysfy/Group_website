@@ -10,5 +10,8 @@
     </app-usersearch-display>
 </div>
 
-<app-searchfield *ngIf="!isLoggedIn" (flyToCords)="flyTo($event)"></app-searchfield>
+<!-- <app-searchfield *ngIf="!isLoggedIn" (flyToCords)="flyTo($event)"></app-searchfield> -->
+<button *ngIf="!isLoggedIn" class="button" mat-raised-button color="primary" (click)="openDesDialog()">
+    Welcome
+  </button>
 <app-sidebar *ngIf="isLoggedIn && !isMapLoading"></app-sidebar>
