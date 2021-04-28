@@ -4,7 +4,7 @@
 * [Sprints & Project Management](#sprints)
 
 <a name="system"></a>
-## System Implementation
+# System Implementation
 ### Stack architecture and system design (e.g. class diagrams, sequence diagrams)
 stuff
 ### Back End - MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams)
@@ -13,7 +13,7 @@ stuff
 
 We choose MongoDb as a suitable database for our backend due to the nature of the GeoJson data structure required by Mapbox to display posts on the screen.
 Initially, we were unsure of how to display user posts, create a Heatmap, and whether to allow users to search for posts using polygons. Marceli recommended
-using MongoDb as it has a special part of the API designed to dealing with GeoJson queries. He mentioned that was a huge benefit of MongoDB. So to maximize our chances of success with being able to manipulate the Mapbox component in the front end, we chose MongoDB. 
+using MongoDb as it has a special part of the API designed to dealing with GeoJson queries. He mentioned that was a huge benefit of MongoDB. So to maximize our chances of success with being able to manipulate the Mapbox component in the front end, we chose MongoDB.
 
 There was some consideration to implement an SQL database due to the simple nature of our data model. As shown below, through the ERD, we could easily use join queries on the data which would have been beneficial in the search path of our API. However, due to the reason above, as well as being taught MongoDB in lectures. We stuck with MongoDB.
 
@@ -57,7 +57,7 @@ Lets talk about how the schema were made, why they were made and how they link t
 
 **geoJsonSchema**:
 This schema was the initial schema we started to develop. As a team, we decided that we needed a data structure that allows anyone to make a post and display it on the Mapbox component. That was our first priority. If we didnt have this functionality then users wouldn't be able to Emote their feeling, see the heatmap, and view other peoples posts. After some research, it was found that there is a pre-defined data strucuture called: "GeoJson". This standard builds upon JSON data format, however it requires certain attributes. GeoJson is a data structure that
-allows one to represent featues like geometry, along with any non-spatial attributes, that the developer has the freedom to define. When discovering this data structure we felt a sense of relief as we were really unsure as to model the data. This was the first GeoJson data structure we found in use: 
+allows one to represent featues like geometry, along with any non-spatial attributes, that the developer has the freedom to define. When discovering this data structure we felt a sense of relief as we were really unsure as to model the data. This was the first GeoJson data structure we found in use:
 
 <img src="supporting_images/gjdis.png" width="450px">
 
@@ -357,7 +357,8 @@ stuff
 ### Deployment details (including Docker), include how you have been achieving continuous integration and deployment
 We implemented a docker-compose script from early on in the development process, which ended up being crucial in maintaining code quality and compatibility - we made sure that before each push to our group repository that the website was functioning both when running node server.js and docker-compose up. Docker was especially important for this as it provides a repeatable environment in the form of a docker container; we can be sure that if the project is working on one machine in docker, it will work on others. We primarily achieved continuous integration by utilising docker in this way, but also crucial was the factoring in of all the components of the MEAN stack from a very early stage. After deciding on the api we would use to present the map (mapbox) and setting up a basic template website using it, we quickly added an api (this api eventually became geopost.js) in order to deal with fetching the data for the map; even though this was collecting static data at first, it meant that functionally our website was behaving as it would when we we utilising all parts of the mean stack (i.e. when we added in a mongoDB database, this api would now fetch data from the database instead of using static data). This allowed us to test and run our website using node server.js (and docker-compose up) after every change as previously mentioned. As we also made use of github, allowing us to all share and download the most up to date files, we were able to continuously implement and integrate changes throughout the development process (see [Sprints & Project Management](#sprints) for more details).
 
-# Sprints
+<a name="sprints"></a>
+# Sprints & Project Management
 
 ## Sprint 1: Project idea finalisation & set up CI infrastructure
 
@@ -374,7 +375,7 @@ Sprint aims:
 
 There were some different opinions amung the group regarding how the website should be layed out. Some felt that the login bar should slide in from the side and others felt that a whole new page should open. We decided to draw up paper prototype of both of these cases and conduct a user study to decide (_SEE PAPER PROTOTYPING_). We wanted our product to be as user driven as possible so getting user feedback early on was crucial.
 
-As well as discussing project ideas this period was used to get familiar with the tech stack we were going to be using and github. We each watched the lectures on Angular and github, set up a shared github repository and got familiar with its protocols by making a few pushes and pulls. Although we intended to specialise into certain areas later on, we all got familiar with the frontend and Angular so further down the line it would be possible to be more flexible if required. 
+As well as discussing project ideas this period was used to get familiar with the tech stack we were going to be using and github. We each watched the lectures on Angular and github, set up a shared github repository and got familiar with its protocols by making a few pushes and pulls. Although we intended to specialise into certain areas later on, we all got familiar with the frontend and Angular so further down the line it would be possible to be more flexible if required.
 
 
 
@@ -533,8 +534,7 @@ Our paper prototype served well at forming an initial visualisation of the websi
 </p>
 
 
-<a name="sprints"></a>
-## Sprints & Project Management
+
 ### Group working methods used (for instance did your team choose a particular style of agile? What communication channels did you use?)
 Discord was used for the majority of the written communication. We setup a server and divided it into 6 channels: ‘general’, ‘front-end’, ‘back-end’, ‘ui’, ‘user-testing’ and ‘write-up’. Having individual channels meant that our communication was more organised, and reduced disruption to members working on alternative sections. Discord’s pinning feature also meant that key messages never went missing amongst a sea of other messages.
 
