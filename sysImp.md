@@ -132,7 +132,7 @@ const postSchema = new mongoose.Schema({
 **UserModel**: <br/>
 This holds all the information relating to registered user accounts. Initially, we fathomed a guess as to what the attributes the userSchema should hold.
 It made sense for there to be a username, email, password, and geoPost attributes. We thought that the geoPost attribute will contain an array of GeoJson data, defined by the models above.
-So we would just have one Model called User, and whenever the user made a post-it will store the GeoJson data in the User model under the user. However, we thought this wouldn't be a good idea as it would cause more work for getting all the GeoJson. It's easier to get all GeoJson and filter by username than getting all the user's GeoJson and merging them into an array. Especially, when it would to searching the GeoJson with complex queries. We also got rid of the email as it was mentioned by numerous user feedback that it wasn't needed. We also added, date of birth, gender and age attributes to support searching for GeoJson by age and gender. <br/>
+So we would just have one Model called User, and whenever the user made a post-it will store the GeoJson data in the User model under the user. However, we thought this wouldn't be a good idea as it would cause more work for getting all the GeoJson. It's easier to get all GeoJson and manipulating that array on the API or frontend, than getting all the user's GeoJson and merging them into an array, before manipulating it. Especially, when it would to come searching the GeoJson with complex queries. We also got rid of the email as it was mentioned from numerous user feedback that it wasn't needed. When posting such sensitive information, users wanted to remain anomalous. We also added, date of birth, gender and age attributes to support searching for GeoJson by age and gender. <br/>
 Mongoose automatically adds and _Id attribute. This is stored with each GeoJson data that's created from the user 'Emoting'.
 ```js
 const userSchema = new mongoose.Schema({    
@@ -162,6 +162,9 @@ const userSchema = new mongoose.Schema({
   },
 });
 ```
+
+
+
 
 EmoteMap provides 5 integral features which interface with the back end:
 
