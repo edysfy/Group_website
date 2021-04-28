@@ -11,20 +11,19 @@ stuff
 
 **Why use MongoDB?**
 
-We choose MongoDb as a suitable database for our backend due the nature of the GeoJson data structure required by Mapbox to display posts on the screen.
-Initally, we were unsure on how to display user posts, to create a Heatmap, and weather allow users to search for posts using polygons. However, Marceli recommended
-to use MongoDb as it has a special part of the API designed to dealing with GeoJson queries. He mentioned that was a huge benefit of MongoDB. So to maximize our chances of 
-success with being able to manipulate the Mapbox component in the front end, we chose MongoDb.
+We choose MongoDb as a suitable database for our backend due to the nature of the GeoJson data structure required by Mapbox to display posts on the screen.
+Initially, we were unsure of how to display user posts, create a Heatmap, and whether allow users to search for posts using polygons. However, Marceli recommended
+using MongoDb as it has a special part of the API designed to dealing with GeoJson queries. He mentioned that was a huge benefit of MongoDB. So to maximize our chances of success with being able to manipulate the Mapbox component in the front end, we chose MongoDB.
 
 
 **Why use Mongoose**
 
-Upon having a team conversation with Marceli, it was recommended that we look into Mongoose as and Object Document Manager to make our lives easier and save time.
+Upon having a team conversation with Marceli, it was recommended that we look into Mongoose as an Object Document Manager to make our lives easier and save time.
 After some research, we decided to use Mongoose as the middleman between incoming/outgoing HTTP requests/responses between the API and our database.
-The syntax of Mongoose, was a lot simpler then raw MongoDb, and it definatlty was the right descsion as we were able to build the data models in a shorter time.
-Mongoose models are alot easer to initalise as they are capable of setting up default values automatically and validating the data with simple commands.
-MongoDB is inhetiently schema-less, however, mongoose allows the developer to define schemas for their data type. This was really use full at the start as we were able quickly,
-prototype our data models on the backend. Queries are alot easier to deal with as they allow functions to chain onto the Model and dont requre the emdedded mnmoincs that MongoDb requires so the developer eperince was alot smoother. I akin it to comparing using c to using python. While C is more efficent and allows more room for flexibility in ur code, python provides a layer of abstraction that makes it alot easier for scripting and experiementing with absract ideas.
+The syntax of Mongoose was a lot simpler than raw MongoDb, and it was the right decision as we were able to build the data models in a shorter time.
+Mongoose models are a lot easier to initialize as they are capable of setting up default values automatically and validating the data with simple commands.
+MongoDB is inherently schema-less, however, mongoose allows the developer to define schemas for their data type. This was used fully at the start as we were able quickly,
+prototype our data models on the backend. Queries are a lot easier to deal with as they allow functions to chain onto the Model and don't require the embedded mnemonics that MongoDb requires so the developer experience was a lot smoother. I akin it to comparing using c to using python. While C is more efficient and allows more room for flexibility in our code, python provides a layer of abstraction that makes it a lot easier for scripting and experimenting with abstract ideas.
 
 **geoJsonSchema**: 
 This holds all information relating to user posts. For user posts to be displayed ont the map correctly the post content (*postSchema*) and coordinates (*geoPositionSchema*) are required. *userDetails* in *postSchema* connects posts to the account which created the post and is used when filtering results.
