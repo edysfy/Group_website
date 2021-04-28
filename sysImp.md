@@ -133,7 +133,7 @@ const postSchema = new mongoose.Schema({
 This holds all the information relating to registered user accounts. Initially, we fathomed a guess as to what the attributes the userSchema should hold.
 It made sense for there to be a username, email, password, and geoPost attributes. We thought that the geoPost attribute will contain an array of GeoJson data, defined by the models above.
 So we would just have one Model called User, and whenever the user made a post-it will store the GeoJson data in the User model under the user. However, we thought this wouldn't be a good idea as it would cause more work for getting all the GeoJson. It's easier to get all GeoJson and manipulating that array on the API or frontend, than getting all the user's GeoJson and merging them into an array, before manipulating it. Especially, when it would to come searching the GeoJson with complex queries. We also got rid of the email as it was mentioned from numerous user feedback that it wasn't needed. When posting such sensitive information, users wanted to remain anomalous. We also added, date of birth, gender and age attributes to support searching for GeoJson by age and gender. <br/>
-Mongoose automatically adds and _Id attribute. This is stored with each GeoJson data that's created from the user 'Emoting'.
+Mongoose automatically adds and _Id attribute. This is the ID stored with each GeoJson data that's created from the user 'Emoting'.
 ```js
 const userSchema = new mongoose.Schema({    
   username: {
@@ -163,7 +163,13 @@ const userSchema = new mongoose.Schema({
 });
 ```
 
+### Middle Tier - Express, Node, the RESTful API
 
+**Node**: <br/>
+We used Node as the server side framework. This runtime enviroment allows us to run javascript code outside of the web browser. As, we were building the front-end with Angular, we decided that using node as an adquadte tool to build the backend api, as the languages needed for both are the same. The node server is built with the HTTP module, and listens for HTTP request/responses on a local port. We didn't build the whole api with Node. We use Express middleware build to an Express app. The Express app is a comprised of a series of function calls, that is passed into the Node Server as an argument.
+
+**Express Application** <br/>
+Express made dealing with responses and requests a lot easier. In the express app, when a request arrives to the applications url path, it filters down the subsequent HTTP methods in the app until it is resolved with a response. There is also a next function which directly tells the request to move to the next method. However in our application we never felt the need to use this. Before setting up the routing we needed initalise the application.
 
 
 EmoteMap provides 5 integral features which interface with the back end:
