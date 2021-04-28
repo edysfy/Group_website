@@ -378,7 +378,7 @@ To implement displaying the post data when a user hovers over a data point on th
 
 From our user feedback it was clear that first time users struggled to grasp the point of the website, and in fact some suggested we add a section to explain the site; so we did exactly that! We added an "about" component and a link in the toolbar that users could click through to, to learn more about the website. We also changed our colour scheme to a white toolbar on a black map, rather than pink on white, from feedback from our lecturers, and to make more clear the colourful data points on the map (the colours constrasted the black map far more than the white )
 
-We also finally implemented a user-post component, which allows new data to be added to website; this component makes use of angular forms to collect inputted data, which we then transform into geoJSON format using our post-service, to be added to our database.
+We also finally implemented a user-post component, which allows new data to be added to website; this component makes use of angular forms to collect inputted data, which we then transform into geoJSON format using our post-service, to be added to our database. As we had time at the end of this sprint, we also began to add in actual user functionality to the website - the singup/login buttons on the navbar where changed to actually route through to signup/login pages, which also use angular forms to collect user input and add new users to the database/verify users who are logging in.
 
 #### Key implementation issues found: ####
 <table>
@@ -389,16 +389,16 @@ We also finally implemented a user-post component, which allows new data to be a
   <th>Solution</th>
 </tr>
 <tr>
-  <td>MondoDB</td>
+  <td>MongoDB</td>
   <td>stuff</td>
   <td>stuff</td>
   <td>stuff</td>
 </tr>
 <tr>
   <td>Mapbox</td>
-  <td>stuff</td>
-  <td>stuff</td>
-  <td>stuff</td>
+  <td>User can hover over points on the map to see more detail, and can create their own posts to add to the map</td>
+  <td>Issues with correctly loading data from the database as opposed to static file</td>
+  <td>Mapbox had issues with calling the data directly from the database, so we implemented a geoJSON model which transformed the data from mongo into an object in memory that mapbox could correctly access </td>
 </tr>
 </table>
 
