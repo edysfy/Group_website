@@ -8,15 +8,26 @@
 ### Stack architecture and system design (e.g. class diagrams, sequence diagrams)
 stuff
 ### Back End - MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams)
-**MongoDB**
 
 **Why use MongoDB?**
 
 We choose MongoDb as a suitable database for our backend due the nature of the GeoJson data structure required by Mapbox to display posts on the screen.
-Initally, we were unsure on how to display user posts, to create a Heatmap, to allow users to search for posts using polygons. However, Mercelli recommended
-to use MongoDb as it has a special part of the API designed to
+Initally, we were unsure on how to display user posts, to create a Heatmap, and weather allow users to search for posts using polygons. However, Marceli recommended
+to use MongoDb as it has a special part of the API designed to dealing with GeoJson queries. He mentioned that was a huge benefit of MongoDB. So to maximize our chances of
+success with being able to manipulate the Mapbox component in the front end, we chose MongoDb.
 
-**geoJsonSchema**: This holds all information relating to user posts. For user posts to be displayed ont the map correctly the post content (*postSchema*) and coordinates (*geoPositionSchema*) are required. *userDetails* in *postSchema* connects posts to the account which created the post and is used when filtering results.
+
+**Why use Mongoose**
+
+Upon having a team conversation with Marceli, it was recommended that we look into Mongoose as and Object Document Manager to make our lives easier and save time.
+After some research, we decided to use Mongoose as the middleman between incoming/outgoing HTTP requests/responses between the API and our database.
+The syntax of Mongoose, was a lot simpler then raw MongoDb, and it definatlty was the right descsion as we were able to build the data models in a shorter time.
+Mongoose models are alot easer to initalise as they are capable of setting up default values automatically and validating the data with simple commands.
+MongoDB is inhetiently schema-less, however, mongoose allows the developer to define schemas for their data type. This was really use full at the start as we were able quickly,
+prototype our data models on the backend. Queries are alot easier to deal with as they allow functions to chain onto the Model and dont requre the emdedded mnmoincs that MongoDb requires so the developer eperince was alot smoother. I akin it to comparing using c to using python. While C is more efficent and allows more room for flexibility in ur code, python provides a layer of abstraction that makes it alot easier for scripting and experiementing with absract ideas.
+
+**geoJsonSchema**:
+This holds all information relating to user posts. For user posts to be displayed ont the map correctly the post content (*postSchema*) and coordinates (*geoPositionSchema*) are required. *userDetails* in *postSchema* connects posts to the account which created the post and is used when filtering results.
 
 **userSchema**: This holds all the information relating to registered user accounts.
 
@@ -322,11 +333,18 @@ After having got to grips with the brief and drafted up some potential ideas, we
 
 Sprint aims:
 
+<<<<<<< HEAD
 * Finalise project idea and scope
 * Create draft of website UX & create paper prototype
 * Conduct user survey using paper prototype
 * Set up a github repository
 
+=======
+- Finalise project idea and scope
+- Create draft of website UX & paper prototype
+- Conduct user survey using paper prototype
+- Set up a github repository
+>>>>>>> bbf1a8dd80355ba0c894c1555848555081529c35
 
 
 
@@ -382,7 +400,7 @@ To implement displaying the post data when a user hovers over a data point on th
 
 From our user feedback it was clear that first time users struggled to grasp the point of the website, and in fact some suggested we add a section to explain the site; so we did exactly that! We added an "about" component and a link in the toolbar that users could click through to, to learn more about the website. We also changed our colour scheme to a white toolbar on a black map, rather than pink on white, from feedback from our lecturers, and to make more clear the colourful data points on the map (the colours constrasted the black map far more than the white )
 
-We also finally implemented a user-post component, which allows new data to be added to website; this component makes use of angular forms to collect inputted data, which we then transform into geoJSON format using our post-service, to be added to our database.
+We also finally implemented a user-post component, which allows new data to be added to website; this component makes use of angular forms to collect inputted data, which we then transform into geoJSON format using our post-service, to be added to our database. As we had time at the end of this sprint, we also began to add in actual user functionality to the website - the singup/login buttons on the navbar where changed to actually route through to signup/login pages, which also use angular forms to collect user input and add new users to the database/verify users who are logging in.
 
 #### Key implementation issues found: ####
 <table>
@@ -393,16 +411,16 @@ We also finally implemented a user-post component, which allows new data to be a
   <th>Solution</th>
 </tr>
 <tr>
-  <td>MondoDB</td>
+  <td>MongoDB</td>
   <td>stuff</td>
   <td>stuff</td>
   <td>stuff</td>
 </tr>
 <tr>
   <td>Mapbox</td>
-  <td>stuff</td>
-  <td>stuff</td>
-  <td>stuff</td>
+  <td>User can hover over points on the map to see more detail, and can create their own posts to add to the map</td>
+  <td>Issues with correctly loading data from the database as opposed to static file</td>
+  <td>Mapbox had issues with calling the data directly from the database, so we implemented a geoJSON model which transformed the data from mongo into an object in memory that mapbox could correctly access </td>
 </tr>
 </table>
 
@@ -464,17 +482,6 @@ stuff
 stuff
 
 ### Understanding of user group (questionnaires / user stories / interviews)
-To ensure that we continued to develop a website with the user in mind, we gathered user feedback throughout the project. This started as early as our paper prototypes, and proved to be useful. For example, the first paper prototype (which was also shared) demonstrated that new users would be greeted with an empty globe. They would then have to signup before gaining the ability to interact with the map. This was our initial plan because we wanted to encourage users to signup, however, user feedback revealed something important to us: the user was confused as to what signing up would allow them to do (aka they did not understand the purpose of the website straight away). We thought this may start to turn away newcomers. We changed the paper prototype to demonstrate to users that they could zoom in/out of the map, and read EmotePosts as soon as they enter the website. This also meant that the ‘serious play’ aspect was integrated immediately, and the user would learn in an active manner. We decided to include a ‘signup’ option on a sidebar. After implementing these changes, users grasped the concept much quicker when shown the paper prototype.
-
-The wireframe was also shared with external individuals, to gather further feedback (in the form of an accompanying questionnaire). The results of the questionnaire revealed potential improvements, which we then implemented. For example, one of the questions asked: ‘How would you go about improving the website?’. One answer suggested including a key for the different coloured markers. The image below shows the final state of the key that we decided to implement as a response to this feedback.
-
-<img src="supporting_images/key.png" width="150">
-
-
-### Wireframes and interaction flow diagrams for final key subsystems.
-
-
-### Understanding of user group (questionnaires / user stories / interviews)
 To ensure that we continued to develop a website with the user in mind, we gathered user feedback throughout the project. This started as early as our paper prototypes, and proved to be useful. For example, the first paper prototype (which was also shared) demonstrated that new users would be greeted wth an empty globe. They would then have to signup before gaining the ability to interact with the map. This was our initial plan because we wanted to encourage users to signup, however, user feedback revealed something important to us: the user was confused as to what signing up would allow them to do (aka they did not understand the purpose of the website straight away). We thought this may start to turn away newcomers. We changed the paper prototype to demonstrate to users that they could zoom in/out of the map, and read EmotePosts as soon as they enter the website. This also meant that the ‘serious play’ aspect was integrated immediately, and the user would learn in an active manner. We decided to include a ‘signup’ option on a sidebar. After implementing these changes, users grasped the concept much quicker when shown the paper prototype. The image below shows the changes we made to our paper prototype as a response:
 
 <p align="center">
@@ -482,6 +489,15 @@ To ensure that we continued to develop a website with the user in mind, we gathe
 </p>
 
 The wireframe was also shared with external individuals, to gather further feedback (in the form of an accompanying quetionnaire). The results of the questionnaire revealed potential improvements, which we then implemented. For example, one of the questions asked: ‘How would you go about improving the website?’. One answer suggested including a key for the different coloured markers. The image below shows the final state of the key that we decided to implement as a response to this feedback.
+
+<img src="supporting_images/key.png" width="150">
+
+### Wireframes and interaction flow diagrams for final key subsystems.
+Our paper prototype served well at forming an initial visualisation of the website. In order to gain more useful feedback, we needed to demonstrate the website using a closer representation of a working product. Logically, a wireframe was the next best step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/share/NJ2D65MNBU/572059598) to go to our interactive wireframe. Below is a preview:
+
+<p align="center">
+<img src="supporting_images/wireframe_preview.png" width="700">
+</p>
 
 
 <a name="sprints"></a>
