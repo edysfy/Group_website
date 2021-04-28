@@ -14,7 +14,7 @@ stuff
 
 We choose MongoDb as a suitable database for our backend due the nature of the GeoJson data structure required by Mapbox to display posts on the screen.
 Initally, we were unsure on how to display user posts, to create a Heatmap, to allow users to search for posts using polygons. However, Mercelli recommended
-to use MongoDb as it has a special part of the API designed to 
+to use MongoDb as it has a special part of the API designed to
 
 **geoJsonSchema**: This holds all information relating to user posts. For user posts to be displayed ont the map correctly the post content (*postSchema*) and coordinates (*geoPositionSchema*) are required. *userDetails* in *postSchema* connects posts to the account which created the post and is used when filtering results.
 
@@ -354,20 +354,53 @@ After having drafted up some ideas and established everyone's academic backgroun
 
 ## Sprint 3: Serve dummy data from directly from API to frontend + set up data model:
 [11th mar - 27th mar]
-- getting user feedback (add description, some people said unclear what function of site is)
+
 - Set up site so dummy data is served through API route + Add linking to front end + making sure data model working in front end
 - build Data Model (user, post) + set up mongo schemas
 - adding user login functionality
 - implementing docker functionality for continuous integration
-- implemented mapbox heatmap example
+- began to implement mapbox heatmap example
 ## Sprint 4: Set up mongoDB and import dummy data + user authentification
 [28th mar - 10th apr]
-- set up so dummy data is stored in mongoDB + user posts add to this
-- implemented mapbox popup
-- after this decided to actually scrap the dummy data and instead populate with our own data
-- added functionality for users making posts
-- set up user authentication link to DB
-- changed colour scheme advice from lecturers
+This sprint was where we finally began to pull together the disperate elements of the website; our aims involved connecting the data fetching service to a function backend using mondoDB, instead of just returning static template data. This is where we also wanted to begin implementing some user feedback based off user questionnaires centered around our intial mockup. We also set a stretch goal of actually adding user profile, rather than have the posts be completely anonymous.
+
+Our agreed goals for this period were;
+* connect mondoDB to front end (so the front end is fetching data from our database)
+* add the functionality make posts (i.e. sending data to the front end)
+* begin implementing feedback from user study and from lecturers
+* finalize key mapbox api functionality (pop ups when hovering over a point on the map)
+* if time permits, add users to the database as well
+
+
+[ADD HOW MONGODB WAS IMPLEMENTED]
+
+To implement displaying the post data when a user hovers over a data point on the map required the use of a couple of the features of the mapbox api. Foremost was labeling the map marker layer with the interactive tag; `this.map.addLayer({ id: 'markers', interactive: true, .....})`. This allows the layer to be interacted with through mouse events. We first had the popup be triggered by clicking on the point, but decided it would be more intuitive for it to appear on a mouse hover; we made use of mapbox's `this.map.on('mouseenter', 'markers', (e)....` command to trigger mapbox's pop up feature, which then displays the data points geoJSON properties - which we are fetching from mondoDB as discussed above.
+
+From our user feedback it was clear that first time users struggled to grasp the point of the website, and in fact some suggested we add a section to explain the site; so we did exactly that! We added an "about" component and a link in the toolbar that users could click through to, to learn more about the website. We also changed our colour scheme to a white toolbar on a black map, rather than pink on white, from feedback from our lecturers, and to make more clear the colourful data points on the map (the colours constrasted the black map far more than the white )
+
+We also finally implemented a user-post component, which allows new data to be added to website; this component makes use of angular forms to collect inputted data, which we then transform into geoJSON format using our post-service, to be added to our database.
+
+#### Key implementation issues found: ####
+<table>
+<tr>
+  <th>Area</th>
+  <th>User Story</th>
+  <th>Issue</th>
+  <th>Solution</th>
+</tr>
+<tr>
+  <td>MondoDB</td>
+  <td>stuff</td>
+  <td>stuff</td>
+  <td>stuff</td>
+</tr>
+<tr>
+  <td>Mapbox</td>
+  <td>stuff</td>
+  <td>stuff</td>
+  <td>stuff</td>
+</tr>
+</table>
 
 ## Sprint 5 Users enter more details + can filter by them:
 [11th apr - 20th apr]
