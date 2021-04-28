@@ -465,6 +465,8 @@ We implemented a docker-compose script from early on in the development process,
 <a name="sprints"></a>
 # Sprints & Project Management
 
+
+
 ## Sprint 1: Project idea finalisation & set up CI infrastructure
 
 [16-27th feb]
@@ -478,42 +480,43 @@ Sprint aims:
 * Conduct user survey using paper prototype
 * Set up a github repository
 
-There were some different opinions amung the group regarding how the website should be layed out. Some felt that the login bar should slide in from the side and others felt that a whole new page should open. We decided to draw up paper prototype of both of these cases and conduct a user study to decide (_SEE PAPER PROTOTYPING_). We wanted our product to be as user driven as possible so getting user feedback early on was crucial.
+This sprint mainly involved discussing what features our website should have and roughly how they might be implimented. We all agreed the webpage's focal point would be a world map in which user posts can be seen and would appear as a heatmap in different colours depending on the mood rating of the post. We also discussed other fetures such as account creation and post filtering. Being unsure how complex it would be to impliment the map we chose to leave these features untill after we had implimented the map and posts.
+
+There were some different opinions amung the group regarding how the website should be layed out. Some felt that the login bar should slide in from the side and others felt that a whole new page should open. We decided to draw up paper prototype of both of these cases and conduct a user study to decide (_SEE PAPER PROTOTYPING_ + SURVAY). We wanted our product to be as user driven as possible so getting user feedback early on was crucial.
 
 As well as discussing project ideas this period was used to get familiar with the tech stack we were going to be using and github. We each watched the lectures on Angular and github, set up a shared github repository and got familiar with its protocols by making a few pushes and pulls. Although we intended to specialise into certain areas later on, we all got familiar with the frontend and Angular so further down the line it would be possible to be more flexible if required.
-
-
-
-
-
-
-
-
-
-
 
 ## Sprint 2: Work on feedback + find suitable API
 
 [27th feb - 10th mar]
 
-- review feedback from paper prototyping survey (eg: decide that log in bar should go from side)
-- begin working on boilerplate
-- decide on API required and add to site (list some other map api other than mapbox and why we chose mapbox?); added mapbox functionality and nav bar
-- mapbox comes with dummy earthquake data, which we used to begin testing out data presentation using the mapbox api
+With the scope of the project and the basic functionalities required established, we began building our website.
+
+Sprint aims:
+
+* Review feedback from paper prototyping survey
+* Create basic GUI (buttons purely aethteic, no functionality)
+* Select API for displaying data in a map format
+* Intergrate Mapbox API
+
+
+With group members now familiar with Angular and Github we began adding basic, purely visual, features to our site. Results from our paper prototyping survay helped us decide how our GUI should operate. Users prefered the log in being pulled in from the side as opposed to opening up a new page so we implimented it as such. We also added a header to the website which included a mockup of our logo and a home button. After some research it was apparent that [mapbox] provided all the functionality we required. We based our map around code taken from [Mapbox_heatmap]. This example code already included some demonstrational earthquake data. At this point in the project we intended to use this data in our final product as it showcased how our site would look once many posts had been made. With fairly big steps made towards how we would like the finished project to look aethstetically we decided to do some wireframing??? talk about user survay.... 
+
 
 ## Sprint 3: Serve dummy data from directly from API to frontend + set up data model:
 
 [11th mar - 27th mar]
 
-- getting user feedback (add description, some people said unclear what function of site is)
-- Set up site so dummy data is served through API route + Add linking to front end + making sure data model working in front end
-- build Data Model (user, post) + set up mongo schemas
-- adding user login functionality
-- implementing docker functionality for continuous integration
-- implemented mapbox heatmap example
+* getting user feedback (add description, some people said unclear what function of site is)
+* Set up site so dummy data is served through API route + Add linking to front end + making sure data model working in front end
+* build Data Model (user, post) + set up mongo schemas
+* adding user login functionality
+* implementing docker functionality for continuous integration
+* implemented mapbox heatmap example
+* began to implement mapbox heatmap example
 
-- began to implement mapbox heatmap example
 ## Sprint 4: Set up mongoDB and import dummy data + user authentification
+
 [28th mar - 10th apr]
 This sprint was where we finally began to pull together the disperate elements of the website; our aims involved connecting the data fetching service to a function backend using mondoDB, instead of just returning static template data. This is where we also wanted to begin implementing some user feedback based off user questionnaires centered around our intial mockup. We also set a stretch goal of actually adding user profile, rather than have the posts be completely anonymous.
 
@@ -645,3 +648,5 @@ In addition to the main branch, a 'dev' (development) branch was also created. T
 stuff
 
 [Doodle Jump]: <https://en.wikipedia.org/wiki/Doodle_Jump>
+[mapbox]: <https://www.mapbox.com/>
+[mapbox heatmap]: <https://docs.mapbox.com/mapbox-gl-js/example/heatmap-layer/> 
