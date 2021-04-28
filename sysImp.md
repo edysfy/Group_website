@@ -42,12 +42,21 @@ mongoose.connect(mongoDBConnect,{ useNewUrlParser: true, useUnifiedTopology: tru
 
 **MONGOOSE MODELS**
 
+**ERD of the whole data data model**
+
+![Entity Relationship Diagram](mongoDBerd.jpg)
+
+The ERD above shows the final data model that is utilised by our application. We defined a schema for each block in the ERD diagram. However, we only have two seperate collections in our database, which was defined by two models.
+```js
+module.exports = mongoose.model("User", userSchema);
+
+module.exports = mongoose.model("GeoJson", geoJsonSchema);
+```
+
 **geoJsonSchema**:
 This holds all information relating to user posts. For user posts to be displayed ont the map correctly the post content (*postSchema*) and coordinates (*geoPositionSchema*) are required. *userDetails* in *postSchema* connects posts to the account which created the post and is used when filtering results.
 
 **userSchema**: This holds all the information relating to registered user accounts.
-
-![Entity Relationship Diagram](mongoDBerd.jpg)
 
 EmoteMap provides 5 integral features which interface with the back end:
 
