@@ -61,13 +61,14 @@ allows one to represent features like "Geometry", along with any non-spatial att
 
 <img src="supporting_images/gjdis.png" width="650px">
 
-We gathered that you can display a set of GeoJson data by creating a "FeatureCollection". Each one of these will contain a set of GeoJson of type: "Feature". This was then the basis of our GeoJson model. We needed a model that accurately modeled a GeoJson "Feature", which could then be collected as a "FeatureCollection" on the front end. Each geoJson by default has type "Feature" (set in our api/geopost post path).
+We gathered that you can display a set of GeoJson data by creating a "FeatureCollection". Each one of these will contain a set of GeoJson of type: "Feature". This was then the basis of our GeoJson model. We needed a model that accurately modeled a GeoJson "Feature", which could then be collected as a "FeatureCollection" on the front end. 
 This is the geoJsonSchema that the GeoJson model is made from:
 ```js
 const geoJsonSchema = new mongoose.Schema({
   type: {
     type: String,
     required: true,
+    enum: ['Feature']
   },
   geometry: {
     type: geoPositionSchema,
@@ -79,6 +80,7 @@ const geoJsonSchema = new mongoose.Schema({
   },
 });
 ```
+Each geoJson by default has type "Feature".
 "Geometry" is an attribute that contains the *geoPositionSchema*, which is Mongoose sub-document and likes the two schemas together. The *geoPositionSchema* has an attribute: "type", which refers to the type of geometry. This could be "LineString", "Point" etc. We instantly knew it needed to be "Point", and we used the enum field in Mongoose to set it as a default. Each geometry attribute is required to have a set of coordinates. As we are representing a "Point", this needed to be an array of numbers, where the first element was the longitude and the second was the latitude. <br/>
 This is the *geoPositionSchema* that the GeoJson model is made from:
 ```js
@@ -94,14 +96,14 @@ const geoPositionSchema = new mongoose.Schema({
   },
 });
 ```
-The other attribute is "Properties". This is where we have the freedom to design the EmotePost data. And combine that with the geometry so the user's EmotePost can be displayed on the map.
+The other attribute is "properties". This is where we have the freedom to design the EmotePost data. And combine that with the geometry so the user's EmotePost can be displayed on the map.
 The *postSchema* is Mongoose sub-document that connected to the GeoJsonSchema via the "properties" attribute, this holds all information relating to user posts. 
-It contains the mood value, which is a number between 1-3 (inclusive) that models the emotions" Happy, Coping and Sad respectively. The text body is the string that contains the user's actual Emote description. The keyword sums up the post and is used so the users can search for specific keywords. The username is the user who made the post. The user details are an objectId type, which is referenced to the 'User' model. This is essentially a string that is the unique identifier for the user that creates the post. It allows Mongoose to search for a user in the User model with the same ID and populate the userDetail field with the data specific to that user. This essentially allows us to join the user details, from the User model to each geoJson post. Analogous, to a many to one relationship in relational databases. Where the user can have many posts but the post has one user. 
+It contains the mood value, which is a number between 1-3 (inclusive) that models the emotions" Happy, Coping and Sad respectively. The textBody is the string that contains the user's actual Emote description. The keyword sums up the post and is used so the users can search for specific keywords. The dateTime attribute contains the exact date time at which the post was made.The username is the user who made the post. The user details are an objectId type, which is referenced to the 'User' model. This is essentially a string that is the unique identifier for the user that creates the post. It allows Mongoose to search for a user in the User collection with the same ID and populate the userDetail field with the data specific to that user. This essentially allows us to join the user details, from the User model to each geoJson post. Analogous, to a many to one relationship in relational databases. Where the user can have many posts but the post has one user. 
 ```js
 const postSchema = new mongoose.Schema({
   userDetails: {
     type: mongoose.Schema.Types.ObjectId,
-    required: true,
+    required: true
     ref: 'User',
   },
   username: {
@@ -127,7 +129,39 @@ const postSchema = new mongoose.Schema({
 });
 ```
 
-**UserModel**: This holds all the information relating to registered user accounts.
+**UserModel**: <br/>
+This holds all the information relating to registered user accounts. Initially, we fathomed a guess as to what the attributes the userSchema should hold.
+It made sense for there to be a username, email, password, and geoPost attributes. We thought that the geoPost attribute will contain an array of GeoJson data, defined by the models above.
+So we would just have one Model called User, and whenever the user made a post-it will store the GeoJson data in the User model under the user. However, we thought this wouldn't be a good idea as it would cause more work for getting all the GeoJson. It's easier to get all GeoJson and filter by username than getting all the user's GeoJson and merging them into an array. Especially, when it would to searching the GeoJson with complex queries. We also got rid of the email as it was mentioned by numerous user feedback that it wasn't needed. We also added, date of birth, gender and age attributes to support searching for GeoJson by age and gender. <br/>
+Mongoose automatically adds and _Id attribute. This is stored with each GeoJson data that's created from the user 'Emoting'.
+```js
+const userSchema = new mongoose.Schema({    
+  username: {
+    type: String,
+    unique: true,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  dob: {
+    type: Date,
+    default: null,
+    required: false,
+  },
+  gender: {
+    type: String,
+    default: null,
+    required: false,
+  },
+  age: {
+    type: Number,
+    default: null,
+    required: false,
+  },
+});
+```
 
 EmoteMap provides 5 integral features which interface with the back end:
 
