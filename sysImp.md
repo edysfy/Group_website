@@ -329,22 +329,21 @@ We implemented a docker-compose script from early on in the development process,
 
 [16-27th feb]
 
-After having got to grips with the brief and drafted up some potential ideas, we began putting together an initial paper draft for our website.
+After having got to grips with the brief and decided on an idea, we began putting together an initial paper draft for our website.
 
 Sprint aims:
 
-<<<<<<< HEAD
-* Finalise project idea and scope
+* Clarify project idea and scope
 * Create draft of website UX & create paper prototype
 * Conduct user survey using paper prototype
 * Set up a github repository
 
-=======
-- Finalise project idea and scope
-- Create draft of website UX & paper prototype
-- Conduct user survey using paper prototype
-- Set up a github repository
->>>>>>> bbf1a8dd80355ba0c894c1555848555081529c35
+There were some different opinions amung the group regarding how the website should be layed out. Some felt that the login bar should slide in from the side and others felt that a whole new page should open. We decided to draw up paper prototype of both of these cases and conduct a user study to decide (_SEE PAPER PROTOTYPING_). We wanted our product to be as user driven as possible so getting user feedback early on was crucial.
+
+As well as discussing project ideas this period was used to get familiar with the tech stack we were going to be using and github. We each watched the lectures on Angular and github, set up a shared github repository and got familiar with its protocols by making a few pushes and pulls. Although we intended to specialise into certain areas later on, we all got familiar with the frontend and Angular so further down the line it would be possible to be more flexible if required. 
+
+
+
 
 
 
