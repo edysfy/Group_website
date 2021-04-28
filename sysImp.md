@@ -53,19 +53,81 @@ module.exports = mongoose.model("User", userSchema);
 module.exports = mongoose.model("GeoJson", geoJsonSchema);
 ```
 
-Lets talk about how the schema were made, why they were made and how they link together.
+Lets talk about how the models were made, why they were made and how they link together.
 
-**geoJsonSchema**:
-This schema was the initial schema we started to develop. As a team, we decided that we needed a data structure that allows anyone to make a post and display it on the Mapbox component. That was our first priority. If we didnt have this functionality then users wouldn't be able to Emote their feeling, see the heatmap, and view other peoples posts. After some research, it was found that there is a pre-defined data strucuture called: "GeoJson". This standard builds upon JSON data format, however it requires certain attributes. GeoJson is a data structure that
-allows one to represent featues like geometry, along with any non-spatial attributes, that the developer has the freedom to define. When discovering this data structure we felt a sense of relief as we were really unsure as to model the data. This was the first GeoJson data structure we found in use: 
+**GeoJsonModel**: <br/>
+This schema was the initial schema we started to develop. As a team, we decided that we needed a data structure that allowed anyone to make a post and display it on the Mapbox component. That was our priority. If we didn't have this functionality then users wouldn't be able to Emote their feeling, see the heatmap, and view other people's posts. After some research, it was found that there is a pre-defined data structure called: "GeoJson". This standard builds upon JSON data format, however, it requires certain attributes. GeoJson is a data structure that
+allows one to represent features like "Geometry", along with any non-spatial attributes that the developer has the freedom to define. When discovering this data structure we felt a sense of relief as we were unsure as to model the data. This was the first GeoJson data structure we found in use through a tutorial from "http://132.72.155.230:3838/js/geojson-1.html": 
 
-<img src="supporting_images/gjdis.png" width="450px">
+<img src="supporting_images/gjdis.png" width="650px">
 
-We gathered that you can display a set of GeoJson data by creating a "FeatureCollection". Each one of these will
+We gathered that you can display a set of GeoJson data by creating a "FeatureCollection". Each one of these will contain a set of GeoJson of type: "Feature". This was then the basis of our GeoJson model. We needed a model that accurately modeled a GeoJson "Feature", which could then be collected as a "FeatureCollection" on the front end. Each geoJson by default has type "Feature" (set in our api/geopost post path).
+This is the geoJsonSchema that the GeoJson model is made from:
+```js
+const geoJsonSchema = new mongoose.Schema({
+  type: {
+    type: String,
+    required: true,
+  },
+  geometry: {
+    type: geoPositionSchema,
+    required: true,
+  },
+  properties: {
+    type: postSchema,
+    required: true,
+  },
+});
+```
+"Geometry" is an attribute that contains the *geoPositionSchema*, which is Mongoose sub-document and likes the two schemas together. The *geoPositionSchema* has an attribute: "type", which refers to the type of geometry. This could be "LineString", "Point" etc. We instantly knew it needed to be "Point", and we used the enum field in Mongoose to set it as a default. Each geometry attribute is required to have a set of coordinates. As we are representing a "Point", this needed to be an array of numbers, where the first element was the longitude and the second was the latitude. <br/>
+This is the *geoPositionSchema* that the GeoJson model is made from:
+```js
+const geoPositionSchema = new mongoose.Schema({
+  type: {
+    type: String,
+    enum: ['Point'],
+    required: true,
+  },
+  coordinates: {
+    type: [Number],
+    required: true,
+  },
+});
+```
+The other attribute is "Properties". This is where we have the freedom to design the EmotePost data. And combine that with the geometry so the user's EmotePost can be displayed on the map.
+The *postSchema* is Mongoose sub-document that connected to the GeoJsonSchema via the "properties" attribute, this holds all information relating to user posts. 
+It contains the mood value, which is a number between 1-3 (inclusive) that models the emotions" Happy, Coping and Sad respectively. The text body is the string that contains the user's actual Emote description. The keyword sums up the post and is used so the users can search for specific keywords. The username is the user who made the post. The user details are an objectId type, which is referenced to the 'User' model. This is essentially a string that is the unique identifier for the user that creates the post. It allows Mongoose to search for a user in the User model with the same ID and populate the userDetail field with the data specific to that user. This essentially allows us to join the user details, from the User model to each geoJson post. Analogous, to a many to one relationship in relational databases. Where the user can have many posts but the post has one user. 
+```js
+const postSchema = new mongoose.Schema({
+  userDetails: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true,
+    ref: 'User',
+  },
+  username: {
+    type: String,
+    required: true
+  },
+  dateTime: {
+    type: Date,
+    required: true,
+  },
+  keyword: {
+    type: String,
+    required: true,
+  },
+  mood: {
+    type: Number,
+    required: true,
+  },
+  textBody: {
+    type: String,
+    required: true,
+  },
+});
+```
 
-This holds all information relating to user posts. For user posts to be displayed ont the map correctly the post content (*postSchema*) and coordinates (*geoPositionSchema*) are required. *userDetails* in *postSchema* connects posts to the account which created the post and is used when filtering results.
-
-**userSchema**: This holds all the information relating to registered user accounts.
+**UserModel**: This holds all the information relating to registered user accounts.
 
 EmoteMap provides 5 integral features which interface with the back end:
 
