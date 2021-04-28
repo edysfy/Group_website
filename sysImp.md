@@ -11,27 +11,52 @@ stuff
 
 **Why use MongoDB?**
 
-We choose MongoDb as a suitable database for our backend due the nature of the GeoJson data structure required by Mapbox to display posts on the screen.
-Initally, we were unsure on how to display user posts, to create a Heatmap, and weather allow users to search for posts using polygons. However, Marceli recommended
-to use MongoDb as it has a special part of the API designed to dealing with GeoJson queries. He mentioned that was a huge benefit of MongoDB. So to maximize our chances of
-success with being able to manipulate the Mapbox component in the front end, we chose MongoDb.
+We choose MongoDb as a suitable database for our backend due to the nature of the GeoJson data structure required by Mapbox to display posts on the screen.
+Initially, we were unsure of how to display user posts, create a Heatmap, and whether to allow users to search for posts using polygons. Marceli recommended
+using MongoDb as it has a special part of the API designed to dealing with GeoJson queries. He mentioned that was a huge benefit of MongoDB. So to maximize our chances of success with being able to manipulate the Mapbox component in the front end, we chose MongoDB. 
 
+There was some consideration to implement an SQL database due to the simple nature of our data model. As shown below, through the ERD, we could easily use join queries on the data which would have been beneficial in the search path of our API. However, due to the reason above, as well as being taught MongoDB in lectures. We stuck with MongoDB.
 
 **Why use Mongoose**
 
-Upon having a team conversation with Marceli, it was recommended that we look into Mongoose as and Object Document Manager to make our lives easier and save time.
+Upon having a team conversation with Marceli, it was recommended that we look into Mongoose as an Object Document Manager to make our lives easier and save time.
 After some research, we decided to use Mongoose as the middleman between incoming/outgoing HTTP requests/responses between the API and our database.
-The syntax of Mongoose, was a lot simpler then raw MongoDb, and it definatlty was the right descsion as we were able to build the data models in a shorter time.
-Mongoose models are alot easer to initalise as they are capable of setting up default values automatically and validating the data with simple commands.
-MongoDB is inhetiently schema-less, however, mongoose allows the developer to define schemas for their data type. This was really use full at the start as we were able quickly,
-prototype our data models on the backend. Queries are alot easier to deal with as they allow functions to chain onto the Model and dont requre the emdedded mnmoincs that MongoDb requires so the developer eperince was alot smoother. I akin it to comparing using c to using python. While C is more efficent and allows more room for flexibility in ur code, python provides a layer of abstraction that makes it alot easier for scripting and experiementing with absract ideas.
+The syntax of Mongoose was a lot simpler than raw MongoDb, and it was the right decision as we were able to build the data models in a shorter time.
+Mongoose models are a lot easier to initialize as they are capable of setting up default values automatically, and makes it easy to validate the data with simple commands.
+MongoDB is inherently schema-less, however, Mongoose allows the developer to define schemas for their data type. This was used fully at the start as we were able quickly,
+prototype our data models on the backend. Queries are a lot easier to deal with as they allow functions to chain onto the Model and don't require the embedded mnemonics that MongoDb requires so the developer experience was a lot smoother. This is akin to comparing using C to using Python. While C is more efficient and allows more room for flexibility in our code, Python provides a layer of abstraction that makes it a lot easier for scripting and experimenting with abstract ideas.
+
+**How did we connect MongoDb To our API?**
+
+Firstly, we needed to initialize the MongoDB database. So we created a free MongoDB account and created a cluster. We set the IP to all, so all of our team members can be sent requests through to the database, which usefull for testing, as we could all perform CRUD operations on the database. We then took the connection URL (which has our account details stored) and stored it as a variable: 'mongoDBConnect', in the Express application file. Mongoose as a simple method called "connect" that allows you to connect to the URL easily. Once Node is run, the database can now communicate with our API.
+
+```js
+mongoose.connect(mongoDBConnect,{ useNewUrlParser: true, useUnifiedTopology: true })
+.then(connection => {
+    console.log("Rest Api has successfully connected to mongoDb Database");
+})
+.catch(err=>{
+    console.log("Failed to connect ot mongoDb");
+})
+```
+
+**MONGOOSE MODELS**
+
+**ERD of the whole data data model**
+
+![Entity Relationship Diagram](mongoDBerd.jpg)
+
+The ERD above shows the final data model that is utilised by our application. We defined a schema for each block in the ERD diagram. However, we only have two seperate collections in our database, which was defined by two models.
+```js
+module.exports = mongoose.model("User", userSchema);
+
+module.exports = mongoose.model("GeoJson", geoJsonSchema);
+```
 
 **geoJsonSchema**:
 This holds all information relating to user posts. For user posts to be displayed ont the map correctly the post content (*postSchema*) and coordinates (*geoPositionSchema*) are required. *userDetails* in *postSchema* connects posts to the account which created the post and is used when filtering results.
 
 **userSchema**: This holds all the information relating to registered user accounts.
-
-![Entity Relationship Diagram](mongoDBerd.jpg)
 
 EmoteMap provides 5 integral features which interface with the back end:
 
