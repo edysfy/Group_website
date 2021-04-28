@@ -314,42 +314,19 @@ We implemented a docker-compose script from early on in the development process,
 
 # Sprints
 
-## Discussion of ideas and individual roles
-
-
-The aim of this portion of the project was to:
-
-- Get to grips with the project brief
-- Discuss and create a list of potential project ideas
-- Discuss personal preferences for individual roles
-- Set up and get familiar with the infrastructure required for collaboration moving forward
-
-This time was used to get to know the other group members and project brief itself. Having all come from different backgrounds, from music to engineering, a lot of varied and interesting project ideas were put forward. After some discussion we drafted up 4 potential ideas:
-
-**Higher or lower:** A simple game in which the user was asked which was item is "higher or lower", if they get the answer correct they are given a fact about the item which was lower. Below is a small demonstration on the topic of population size but question topics could be on a large variety of things:
-ADD PICTURE
-The game intention of this game was to be addictive, fun and educational.
-
-**Altitude explorer:** A 2D platformer game with similar mechanics to the app [Doodle Jump] but the user explores different altitudes on earth and in space. The player starts at the bottom of the sea and works their way up into space. As they travel up through different levels they learn facts about what is present at each altitude. For example at 10,927m below sea level the user would be told that this was the deepest manned sea dive ever recorded or at 10,668m above sea level they would be informed that this is the average height at which passenger planes fly. As the user went higher they would then learn about different planets and objects in space. Similar to the other idea this served to be entertaining but also educational.
-
-**Musical instruments through time:** A web page where users can browse musical instruments through time and when they are clicked the sound of the instrument is played. Aimed to teach users about musical anthropology in an engaging way, an interesting topic which our group consider to be overlooked and undervalued compared to other areas of music.
-
-**EmoMap:** A geographical diary where users can post diary entries which include their current location. Users can then look on the map at their archived posts and see how they were feeling in certain locations. This website idea aims to help users track and improve upon their mental wellbeing.
-
-After having drafted up some ideas and established everyone's academic backgrounds, we decided what project roles we would each be best suited to. Although we didn't intend to begin developing the software until later on, we decided it best we know roughly what area to start doing some preliminary research into.
-
 ## Sprint 1: Project idea finalisation & set up CI infrastructure
 
 [16-27th feb]
 
-After having got to grips with the brief and drafted some potential ideas down, we began putting together the first draft for our website.
+After having got to grips with the brief and drafted up some potential ideas, we began putting together an initial paper draft for our website.
 
 Sprint aims:
 
-- Finalise project idea and scope
-- Create draft of website UX & paper prototype 
-- Conduct user survey using paper prototype
-- Set up a github repository
+* Finalise project idea and scope
+* Create draft of website UX & create paper prototype
+* Conduct user survey using paper prototype
+* Set up a github repository
+
 
 
 
@@ -371,24 +348,17 @@ Sprint aims:
 
 [11th mar - 27th mar]
 
-<<<<<<< HEAD
 - getting user feedback (add description, some people said unclear what function of site is)
-=======
->>>>>>> 1764cf7d3bda73fe8aed7ea112bd45b10754edda
 - Set up site so dummy data is served through API route + Add linking to front end + making sure data model working in front end
 - build Data Model (user, post) + set up mongo schemas
 - adding user login functionality
 - implementing docker functionality for continuous integration
-<<<<<<< HEAD
 - implemented mapbox heatmap example
 
-=======
 - began to implement mapbox heatmap example
->>>>>>> 1764cf7d3bda73fe8aed7ea112bd45b10754edda
 ## Sprint 4: Set up mongoDB and import dummy data + user authentification
 
 [28th mar - 10th apr]
-<<<<<<< HEAD
 
 - set up so dummy data is stored in mongoDB + user posts add to this
 - implemented mapbox popup
@@ -396,7 +366,6 @@ Sprint aims:
 - added functionality for users making posts
 - set up user authentication link to DB
 - changed colour scheme advice from lecturers
-=======
 This sprint was where we finally began to pull together the disperate elements of the website; our aims involved connecting the data fetching service to a function backend using mondoDB, instead of just returning static template data. This is where we also wanted to begin implementing some user feedback based off user questionnaires centered around our intial mockup. We also set a stretch goal of actually adding user profile, rather than have the posts be completely anonymous.
 
 Our agreed goals for this period were;
@@ -436,7 +405,6 @@ We also finally implemented a user-post component, which allows new data to be a
   <td>stuff</td>
 </tr>
 </table>
->>>>>>> 1764cf7d3bda73fe8aed7ea112bd45b10754edda
 
 ## Sprint 5 Users enter more details + can filter by them:
 
@@ -460,9 +428,27 @@ We also finally implemented a user-post component, which allows new data to be a
 
 <a name="uxdesign"></a>
 
-## UX Design
+# UX Design
 
-### Design Process and Early prototyping and ideation (including mood boards and paper prototyping)
+## Design Process and Early prototyping and ideation (including mood boards and paper prototyping)
+
+### Idea formulation
+
+This time was used to get to know the other group members and project brief itself. Having all come from different backgrounds, from music to engineering, a lot of varied and interesting project ideas were put forward. After some discussion we drafted up 4 potential ideas:
+
+**Higher or lower:** A simple game in which the user was asked which was item is "higher or lower", if they get the answer correct they are given a fact about the item which was lower. Below is a small demonstration on the topic of population size but question topics could be on a large variety of things:
+ADD PICTURE
+The game intention of this game was to be addictive, fun and educational.
+
+**Altitude explorer:** A 2D platformer game with similar mechanics to the app [Doodle Jump] but the user explores different altitudes on earth and in space. The player starts at the bottom of the sea and works their way up into space. As they travel up through different levels they learn facts about what is present at each altitude. For example at 10,927m below sea level the user would be told that this was the deepest manned sea dive ever recorded or at 10,668m above sea level they would be informed that this is the average height at which passenger planes fly. As the user went higher they would then learn about different planets and objects in space. Similar to the other idea this served to be entertaining but also educational.
+
+**Musical instruments through time:** A web page where users can browse musical instruments through time and when they are clicked the sound of the instrument is played. Aimed to teach users about musical anthropology in an engaging way, an interesting topic which our group consider to be overlooked and undervalued compared to other areas of music.
+
+**EmoteMap:** A geographical diary where users can post diary entries which include their current location. Users can then look on the map at their archived posts and see how they were feeling in certain locations. This website idea aims to help users track and improve upon their mental wellbeing.
+
+A lot of time was spent discussing which project idea to use. The idea needed to be useful, original and also fit the brief. We decided that although we felt all the ideas were good, EmoteMap addressed the particularly relevant issue of mental health and isolation. COVID-19 has left many people isolated and struggling to cope with ongoing lockdowns. We decided to use the geographical diary element from the EmoteMap idea but make it so posts can be seen by other users online, making users feel less isolated and more connected. All group members agreed this idea had great potential and decided to finalise this as our project idea.
+
+
 
 Our first real visualisation of the website consisted of a paper prototype. This ensured all members of the group were on the same page (no pun intended) regarding the initial layout, and allowed us to easily and to quickly make adjustments during a group discussion. Our original prototype is shown here:
 
