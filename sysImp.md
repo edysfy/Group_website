@@ -409,15 +409,7 @@ As well as discussing project ideas this period was used to get familiar with th
 
 - began to implement mapbox heatmap example
 ## Sprint 4: Set up mongoDB and import dummy data + user authentification
-
 [28th mar - 10th apr]
-
-- set up so dummy data is stored in mongoDB + user posts add to this
-- implemented mapbox popup
-- after this decided to actually scrap the dummy data and instead populate with our own data
-- added functionality for users making posts
-- set up user authentication link to DB
-- changed colour scheme advice from lecturers
 This sprint was where we finally began to pull together the disperate elements of the website; our aims involved connecting the data fetching service to a function backend using mondoDB, instead of just returning static template data. This is where we also wanted to begin implementing some user feedback based off user questionnaires centered around our intial mockup. We also set a stretch goal of actually adding user profile, rather than have the posts be completely anonymous.
 
 Our agreed goals for this period were;
