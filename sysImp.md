@@ -332,30 +332,50 @@ The game intention of this game was to be addictive, fun and educational.
 
 After having drafted up some ideas and established everyone's academic backgrounds, we decided what project roles we would each be best suited to. Although we didn't intend to begin developing the software until later on, we decided it best we know roughly what area to start doing some preliminary research into.
 
-## Sprint 1: Create first draft of idea + set up CI infrastructure
+## Sprint 1: Project idea finalisation & set up CI infrastructure
+
 [16-27th feb]
-- finalize idea
-- set up continuous integration tools + set up repo with angular boilerplate (no map yet)
-- first draft of how website will look + paper prototype + conduct survey
-(should login bar pull in from side ect..)
+
+After having got to grips with the brief and drafted some potential ideas down, we began putting together the first draft for our website.
+
+Sprint aims:
+
+- Finalise project idea and scope
+- Create draft of website UX & paper prototype 
+- Conduct user survey using paper prototype
+- Set up a github repository
+
+
+
+
+
+
+
 
 ## Sprint 2: Work on feedback + find suitable API
+
 [27th feb - 10th mar]
+
 - review feedback from paper prototyping survey (eg: decide that log in bar should go from side)
 - begin working on boilerplate
 - decide on API required and add to site (list some other map api other than mapbox and why we chose mapbox?); added mapbox functionality and nav bar
 - mapbox comes with dummy earthquake data, which we used to begin testing out data presentation using the mapbox api
 
 ## Sprint 3: Serve dummy data from directly from API to frontend + set up data model:
+
 [11th mar - 27th mar]
+
 - getting user feedback (add description, some people said unclear what function of site is)
 - Set up site so dummy data is served through API route + Add linking to front end + making sure data model working in front end
 - build Data Model (user, post) + set up mongo schemas
 - adding user login functionality
 - implementing docker functionality for continuous integration
 - implemented mapbox heatmap example
+
 ## Sprint 4: Set up mongoDB and import dummy data + user authentification
+
 [28th mar - 10th apr]
+
 - set up so dummy data is stored in mongoDB + user posts add to this
 - implemented mapbox popup
 - after this decided to actually scrap the dummy data and instead populate with our own data
@@ -364,25 +384,31 @@ After having drafted up some ideas and established everyone's academic backgroun
 - changed colour scheme advice from lecturers
 
 ## Sprint 5 Users enter more details + can filter by them:
+
 [11th apr - 20th apr]
+
 - users now enter age, gender and can now can be filtered by this (posts linked to user accounts)
 - implemented sidebar
 - search functionality
 - user post history
-- about page added
 - at this stage almost feel website is complete. one last survey for UX
 - users now have to log in to be able to filter results, encourages posting and engaging with site
 - began to start formating write up/readme
 
 ## Sprint 6 Project Write up:
+
 [21st apr - hand in]
+
 - Write up
 - feedback says icons unclear, alter icons to have names
 
 
 <a name="uxdesign"></a>
+
 ## UX Design
+
 ### Design Process and Early prototyping and ideation (including mood boards and paper prototyping)
+
 Our first real visualisation of the website consisted of a paper prototype. This ensured all members of the group were on the same page (no pun intended) regarding the initial layout, and allowed us to easily and to quickly make adjustments during a group discussion. Our original prototype is shown here:
 
 <p align="center">
