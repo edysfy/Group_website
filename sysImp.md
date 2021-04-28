@@ -42,18 +42,23 @@ mongoose.connect(mongoDBConnect,{ useNewUrlParser: true, useUnifiedTopology: tru
 
 **MONGOOSE MODELS**
 
-**ERD of the whole data data model**
+**ERD of the whole data model**
 
 ![Entity Relationship Diagram](mongoDBerd.jpg)
 
-The ERD above shows the final data model that is utilised by our application. We defined a schema for each block in the ERD diagram. However, we only have two seperate collections in our database, which was defined by two models.
+The ERD above shows the final data model that is utilised by our application. We defined a schema for each block in the ERD diagram. However, we only have two seperate collections in our database, which was defined by two mongoose models.
 ```js
 module.exports = mongoose.model("User", userSchema);
 
 module.exports = mongoose.model("GeoJson", geoJsonSchema);
 ```
 
+Lets talk about how the schema were made, why they were made and how they link together.
+
 **geoJsonSchema**:
+This schema was the initial schema we started to develop. As a team, we decided that we needed a data structure that allows anyone to make a post and display it on the Mapbox component. That was our first priority. If we didnt have this functionality then users wouldn't be able to Emote their feeling, see the heatmap, and view other peoples posts. After some research, it was found that there is a pre-defined data strucuture called: "GeoJson". This standard builds upon JSON data format, however it requires certain attributes. 
+
+
 This holds all information relating to user posts. For user posts to be displayed ont the map correctly the post content (*postSchema*) and coordinates (*geoPositionSchema*) are required. *userDetails* in *postSchema* connects posts to the account which created the post and is used when filtering results.
 
 **userSchema**: This holds all the information relating to registered user accounts.
@@ -366,6 +371,15 @@ Sprint aims:
 There were some different opinions amung the group regarding how the website should be layed out. Some felt that the login bar should slide in from the side and others felt that a whole new page should open. We decided to draw up paper prototype of both of these cases and conduct a user study to decide (_SEE PAPER PROTOTYPING_). We wanted our product to be as user driven as possible so getting user feedback early on was crucial.
 
 As well as discussing project ideas this period was used to get familiar with the tech stack we were going to be using and github. We each watched the lectures on Angular and github, set up a shared github repository and got familiar with its protocols by making a few pushes and pulls. Although we intended to specialise into certain areas later on, we all got familiar with the frontend and Angular so further down the line it would be possible to be more flexible if required. 
+
+
+
+
+
+
+
+
+
 
 
 ## Sprint 2: Work on feedback + find suitable API
