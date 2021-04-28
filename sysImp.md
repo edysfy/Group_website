@@ -10,6 +10,12 @@ stuff
 ### Back End - MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams)
 **MongoDB**
 
+**Why use MongoDB?**
+
+We choose MongoDb as a suitable database for our backend due the nature of the GeoJson data structure required by Mapbox to display posts on the screen.
+Initally, we were unsure on how to display user posts, to create a Heatmap, to allow users to search for posts using polygons. However, Mercelli recommended
+to use MongoDb as it has a special part of the API designed to 
+
 **geoJsonSchema**: This holds all information relating to user posts. For user posts to be displayed ont the map correctly the post content (*postSchema*) and coordinates (*geoPositionSchema*) are required. *userDetails* in *postSchema* connects posts to the account which created the post and is used when filtering results.
 
 **userSchema**: This holds all the information relating to registered user accounts.
