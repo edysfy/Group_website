@@ -13,7 +13,7 @@ stuff
 
 We choose MongoDb as a suitable database for our backend due the nature of the GeoJson data structure required by Mapbox to display posts on the screen.
 Initally, we were unsure on how to display user posts, to create a Heatmap, and weather allow users to search for posts using polygons. However, Marceli recommended
-to use MongoDb as it has a special part of the API designed to dealing with GeoJson queries. He mentioned that was a huge benefit of MongoDB. So to maximize our chances of 
+to use MongoDb as it has a special part of the API designed to dealing with GeoJson queries. He mentioned that was a huge benefit of MongoDB. So to maximize our chances of
 success with being able to manipulate the Mapbox component in the front end, we chose MongoDb.
 
 
@@ -26,7 +26,7 @@ Mongoose models are alot easer to initalise as they are capable of setting up de
 MongoDB is inhetiently schema-less, however, mongoose allows the developer to define schemas for their data type. This was really use full at the start as we were able quickly,
 prototype our data models on the backend. Queries are alot easier to deal with as they allow functions to chain onto the Model and dont requre the emdedded mnmoincs that MongoDb requires so the developer eperince was alot smoother. I akin it to comparing using c to using python. While C is more efficent and allows more room for flexibility in ur code, python provides a layer of abstraction that makes it alot easier for scripting and experiementing with absract ideas.
 
-**geoJsonSchema**: 
+**geoJsonSchema**:
 This holds all information relating to user posts. For user posts to be displayed ont the map correctly the post content (*postSchema*) and coordinates (*geoPositionSchema*) are required. *userDetails* in *postSchema* connects posts to the account which created the post and is used when filtering results.
 
 **userSchema**: This holds all the information relating to registered user accounts.
@@ -358,7 +358,7 @@ After having got to grips with the brief and drafted some potential ideas down, 
 Sprint aims:
 
 - Finalise project idea and scope
-- Create draft of website UX & paper prototype 
+- Create draft of website UX & paper prototype
 - Conduct user survey using paper prototype
 - Set up a github repository
 
@@ -491,6 +491,11 @@ The wireframe was also shared with external individuals, to gather further feedb
 <img src="supporting_images/key.png" width="150">
 
 ### Wireframes and interaction flow diagrams for final key subsystems.
+Our paper prototype served well at forming an initial visualisation of the website. In order to gain more useful feedback, we needed to demonstrate the website using a closer representation of a working product. Logically, a wireframe was the next best step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/share/NJ2D65MNBU/572059598) to go to our interactive wireframe. Below is a preview:
+
+<p align="center">
+<img src="supporting_images/wireframe_preview.png" width="700">
+</p>
 
 
 <a name="sprints"></a>
