@@ -1,0 +1,62 @@
+Test Plan - Make sure key components are all functioning
+
+
+1 Outline/prerequisites
+
+1. Ensure you have pulled the latest commit from the repo
+2. Have docker installed and start it up
+3. Ensure google chrome is installed
+
+2 Setup and Teardown
+
+Setup
+
+1. Run npm install
+2. Run docker-compose up
+3. Open localhost 3000 on chrome
+
+Teardown
+1. Logout
+2. Close the running terminal process
+3. Run docker-compose down
+​
+3 Tests
+Before each test the Setup should be carried out, and after each test the Teardown should be carried out
+
+A. Test a user can create an account
+
+1. Click the 'sign up' button
+2. Enter a username and password
+3. Click submit
+4. The page should refresh to the log in page
+5. Enter username and password and click 'log in'
+6. Ensure the 'Emotemap' title in the nav bar changes to the new username
+
+B. Test a user can make posts
+
+1. Login (as described in test A)
+2. Click the 'plus' button
+3. Ensure a popup appears
+4. Fill in the popup and click 'send' button
+5. Ensure the post appears at your current location
+6. Hover over the post to see if the correct information pops up
+
+
+C. Test a user can search posts
+
+1. Login
+2. Click the 'account' button
+3. Fill in the gender and date of birth section
+4. Make a post (as described in test B)
+5. Click the search button
+6. Search with the keyword of the post you just made
+7. Ensure your post appears
+
+D. Test post timeline and delete works
+
+1. Login
+2. Make a post
+3. Click the 'timeline' button
+4. Ensure the post you just made appears
+5. Click the delete button
+6. Ensure the post disapears from the timeline and the map
