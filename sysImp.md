@@ -343,15 +343,6 @@ There were some different opinions amung the group regarding how the website sho
 As well as discussing project ideas this period was used to get familiar with the tech stack we were going to be using and github. We each watched the lectures on Angular and github, set up a shared github repository and got familiar with its protocols by making a few pushes and pulls. Although we intended to specialise into certain areas later on, we all got familiar with the frontend and Angular so further down the line it would be possible to be more flexible if required. 
 
 
-
-
-
-
-
-
-
-
-
 ## Sprint 2: Work on feedback + find suitable API
 
 [27th feb - 10th mar]
