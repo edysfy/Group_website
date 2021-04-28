@@ -44,7 +44,7 @@ mongoose.connect(mongoDBConnect,{ useNewUrlParser: true, useUnifiedTopology: tru
 
 **ERD of the whole data model**
 
-![Entity Relationship Diagram](mongoDBerd.jpg)
+<img src="supporting_images/mongoDBerd.jpg" width="650px">
 
 The ERD above shows the final data model that is utilised by our application. We defined a schema for each block in the ERD diagram. However, we only have two seperate collections in our database, which was defined by two mongoose models.
 ```js
@@ -56,8 +56,12 @@ module.exports = mongoose.model("GeoJson", geoJsonSchema);
 Lets talk about how the schema were made, why they were made and how they link together.
 
 **geoJsonSchema**:
-This schema was the initial schema we started to develop. As a team, we decided that we needed a data structure that allows anyone to make a post and display it on the Mapbox component. That was our first priority. If we didnt have this functionality then users wouldn't be able to Emote their feeling, see the heatmap, and view other peoples posts. After some research, it was found that there is a pre-defined data strucuture called: "GeoJson". This standard builds upon JSON data format, however it requires certain attributes. 
+This schema was the initial schema we started to develop. As a team, we decided that we needed a data structure that allows anyone to make a post and display it on the Mapbox component. That was our first priority. If we didnt have this functionality then users wouldn't be able to Emote their feeling, see the heatmap, and view other peoples posts. After some research, it was found that there is a pre-defined data strucuture called: "GeoJson". This standard builds upon JSON data format, however it requires certain attributes. GeoJson is a data structure that
+allows one to represent featues like geometry, along with any non-spatial attributes, that the developer has the freedom to define. When discovering this data structure we felt a sense of relief as we were really unsure as to model the data. This was the first GeoJson data structure we found in use: 
 
+<img src="supporting_images/gjdis.png" width="450px">
+
+We gathered that you can display a set of GeoJson data by creating a "FeatureCollection". Each one of these will
 
 This holds all information relating to user posts. For user posts to be displayed ont the map correctly the post content (*postSchema*) and coordinates (*geoPositionSchema*) are required. *userDetails* in *postSchema* connects posts to the account which created the post and is used when filtering results.
 
