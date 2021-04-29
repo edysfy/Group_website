@@ -7,10 +7,10 @@
 # System Implementation
 ## Stack architecture and system design (e.g. class diagrams, sequence diagrams)
 
-An initial overview of how we felt that the application should be structured: <br/>
+Before diving into the details of each stack, how they work and link together. Lets talk about the System Architecture as a whole.
+From a very broad perspective this is how application skeleton is structured: <br/>
 <img src="supporting_images/stack_arc_overview.png" width="650px">
 
-Before diving into the details of each stack, how they work and link together. Lets talk about the System Architecture as a whole.
 Initially, we needed three main components that comprise the stack.
 
 1. The MongoDB database: <br/>
