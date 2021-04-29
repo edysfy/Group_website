@@ -483,7 +483,7 @@ We implemented a docker-compose script from early on in the development process,
 
 [16-27th feb]
 
-After having got to grips with the brief and decided on an idea, we began putting together an initial paper draft for our website.
+After having got to grips with the brief and decided on an idea, this sprint was concerned with putting together an initial paper draft for our website, and setting up all the things we needed to enable continuous development and integration; namely our angular project and our github repository. We also tentatively began to collect feedback on our iniial paper prototype designs.
 
 Sprint aims:
 
@@ -492,9 +492,9 @@ Sprint aims:
 * Conduct user survey using paper prototype
 * Set up a github repository
 
-This sprint mainly involved discussing what features our website should have and roughly how they might be implimented. We all agreed the webpage's focal point would be a world map in which user posts can be seen and would appear as a heatmap in different colours depending on the mood rating of the post. We also discussed other fetures such as account creation and post filtering. Being unsure how complex it would be to impliment the map we chose to leave these features untill after we had implimented the map and posts.
+This sprint mainly involved discussing what features our website should have and roughly how they might be implimented. We all agreed the webpage's focal point would be a world map in which user posts can be seen and would appear as a heatmap in different colours depending on the mood rating of the post. We also discussed other features such as account creation and post filtering. Being unsure how complex it would be to implement the map we chose to leave these features until after we had implemented the map and posts.
 
-There were some different opinions amung the group regarding how the website should be layed out. Some felt that the login bar should slide in from the side and others felt that a whole new page should open. We decided to draw up paper prototype of both of these cases and conduct a user study to decide (_SEE PAPER PROTOTYPING_ + SURVAY). We wanted our product to be as user driven as possible so getting user feedback early on was crucial.
+There were some different opinions among the group regarding how the website should be laid-out. Some felt that the login bar should slide in from the side and others felt that a whole new page should open. We decided to draw up paper prototype of both of these cases and conduct a user study to decide (_SEE PAPER PROTOTYPING_ + SURVAY). We wanted our product to be as user driven as possible so getting user feedback early on was crucial.
 
 As well as discussing project ideas this period was used to get familiar with the tech stack we were going to be using and github. We each watched the lectures on Angular and github, set up a shared github repository and got familiar with its protocols by making a few pushes and pulls. Although we intended to specialise into certain areas later on, we all got familiar with the frontend and Angular so further down the line it would be possible to be more flexible if required.
 
@@ -502,7 +502,7 @@ As well as discussing project ideas this period was used to get familiar with th
 
 [27th feb - 10th mar]
 
-With the scope of the project and the basic functionalities required established, we began building our website.
+With the scope of the project and the basic functionalities required established, we began building our website proper, adding in the outlines of our eventual GUI, and crucially deciding on which map api we would use, and starting to implement it.
 
 Sprint aims:
 
