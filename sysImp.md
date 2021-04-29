@@ -552,6 +552,7 @@ At this point in the project we were intending to use this template data from on
 ## Sprint 3: Serve dummy data from directly from API to frontend + set up data model:
 
 [11th mar - 27th mar]
+
 At this stage of the project is where we began to implement the key features that we would need later for collecting and sending information to and from the backend; we added what would become `geopost.js`. On the backend, we began building the mongo schemas that we would require to store our post data in later stages. At this point is also when we established a test process involving docker to facilitate continuous integration. We also began collecting user feedback on our intial boilerpate website.
 
 Sprint aims for this period;
@@ -592,6 +593,7 @@ As the complexity of our project began to grow we decided to implement a test pr
 ## Sprint 4: Set up mongoDB and import dummy data + user authentification
 
 [28th mar - 10th apr]
+
 This sprint was where we finally began to pull together the disperate elements of the website; our aims involved connecting the data fetching service to a function backend using mondoDB, instead of just returning static template data. This is where we also wanted to begin implementing some user feedback based off user questionnaires centered around our intial mockup. We also set a stretch goal of actually adding user profile, rather than have the posts be completely anonymous.
 
 Our agreed goals for this period were;
