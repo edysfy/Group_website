@@ -57,11 +57,11 @@ Lets talk about how the models were made, why they were made and how they link t
 
 **GeoJsonModel**: <br/>
 This schema was the initial schema we started to develop. As a team, we decided that we needed a data structure that allowed anyone to make a post and display it on the Mapbox component. That was our priority. If we didn't have this functionality then users wouldn't be able to Emote their feeling, see the heatmap, and view other people's posts. After some research, it was found that there is a pre-defined data structure called: "GeoJson". This standard builds upon JSON data format, however, it requires certain attributes. GeoJson is a data structure that
-allows one to represent features like "Geometry", along with any non-spatial attributes that the developer has the freedom to define. When discovering this data structure we felt a sense of relief as we were unsure as to model the data. This was the first GeoJson data structure we found in use through a tutorial from "http://132.72.155.230:3838/js/geojson-1.html": 
+allows one to represent features like "Geometry", along with any non-spatial attributes that the developer has the freedom to define. When discovering this data structure we felt a sense of relief as we were unsure as to model the data. This was the first GeoJson data structure we found in use through a tutorial from "http://132.72.155.230:3838/js/geojson-1.html":
 
 <img src="supporting_images/gjdis.png" width="650px">
 
-We gathered that you can display a set of GeoJson data by creating a "FeatureCollection". Each one of these will contain a set of GeoJson of type: "Feature". This was then the basis of our GeoJson model. We needed a model that accurately modeled a GeoJson "Feature", which could then be collected as a "FeatureCollection" on the front end. 
+We gathered that you can display a set of GeoJson data by creating a "FeatureCollection". Each one of these will contain a set of GeoJson of type: "Feature". This was then the basis of our GeoJson model. We needed a model that accurately modeled a GeoJson "Feature", which could then be collected as a "FeatureCollection" on the front end.
 This is the geoJsonSchema that the GeoJson model is made from:
 ```js
 const geoJsonSchema = new mongoose.Schema({
@@ -97,8 +97,8 @@ const geoPositionSchema = new mongoose.Schema({
 });
 ```
 The other attribute is "properties". This is where we have the freedom to design the EmotePost data. And combine that with the geometry so the user's EmotePost can be displayed on the map.
-The *postSchema* is Mongoose sub-document that connected to the GeoJsonSchema via the "properties" attribute, this holds all information relating to user posts. 
-It contains the mood value, which is a number between 1-3 (inclusive) that models the emotions" Happy, Coping and Sad respectively. The textBody is the string that contains the user's actual Emote description. The keyword sums up the post and is used so the users can search for specific keywords. The dateTime attribute contains the exact date time at which the post was made.The username is the user who made the post. The user details are an objectId type, which is referenced to the 'User' model. This is essentially a string that is the unique identifier for the user that creates the post. It allows Mongoose to search for a user in the User collection with the same ID and populate the userDetail field with the data specific to that user. This essentially allows us to join the user details, from the User model to each geoJson post. Analogous, to a many to one relationship in relational databases. Where the user can have many posts but the post has one user. 
+The *postSchema* is Mongoose sub-document that connected to the GeoJsonSchema via the "properties" attribute, this holds all information relating to user posts.
+It contains the mood value, which is a number between 1-3 (inclusive) that models the emotions" Happy, Coping and Sad respectively. The textBody is the string that contains the user's actual Emote description. The keyword sums up the post and is used so the users can search for specific keywords. The dateTime attribute contains the exact date time at which the post was made.The username is the user who made the post. The user details are an objectId type, which is referenced to the 'User' model. This is essentially a string that is the unique identifier for the user that creates the post. It allows Mongoose to search for a user in the User collection with the same ID and populate the userDetail field with the data specific to that user. This essentially allows us to join the user details, from the User model to each geoJson post. Analogous, to a many to one relationship in relational databases. Where the user can have many posts but the post has one user.
 ```js
 const postSchema = new mongoose.Schema({
   userDetails: {
@@ -500,7 +500,7 @@ Sprint aims:
 * Intergrate Mapbox API
 
 
-With group members now familiar with Angular and Github we began adding basic, purely visual, features to our site. Results from our paper prototyping survay helped us decide how our GUI should operate. Users prefered the log in being pulled in from the side as opposed to opening up a new page so we implimented it as such. We also added a header to the website which included a mockup of our logo and a home button. After some research it was apparent that [mapbox] provided all the functionality we required. We based our map around code taken from [Mapbox_heatmap]. This example code already included some demonstrational earthquake data. At this point in the project we intended to use this data in our final product as it showcased how our site would look once many posts had been made. With fairly big steps made towards how we would like the finished project to look aethstetically we decided to do some wireframing??? talk about user survay.... 
+With group members now familiar with Angular and Github we began adding basic, purely visual, features to our site. Results from our paper prototyping survay helped us decide how our GUI should operate. Users prefered the log in being pulled in from the side as opposed to opening up a new page so we implimented it as such. We also added a header to the website which included a mockup of our logo and a home button. After some research it was apparent that [mapbox] provided all the functionality we required. We based our map around code taken from [Mapbox_heatmap]. This example code already included some demonstrational earthquake data. At this point in the project we intended to use this data in our final product as it showcased how our site would look once many posts had been made. With fairly big steps made towards how we would like the finished project to look aethstetically we decided to do some wireframing??? talk about user survay....
 
 
 ## Sprint 3: Serve dummy data from directly from API to frontend + set up data model:
@@ -622,7 +622,13 @@ To ensure that we continued to develop a website with the user in mind, we gathe
 <img src="supporting_images/Paper_prototype_before_and_after.jpeg" width="700">
 </p>
 
-The wireframe was also shared with external individuals, to gather further feedback (in the form of an accompanying quetionnaire). The results of the questionnaire revealed potential improvements, which we then implemented. For example, one of the questions asked: ‘How would you go about improving the website?’. One answer suggested including a key for the different coloured markers. The image below shows the final state of the key that we decided to implement as a response to this feedback.
+The wireframe was also shared with external individuals, with the ability to leave feedback in the form of comments. This revealed further potential improvements that we could make. The image below shows a suggestion that was made:
+
+<p align="center">
+<img src="supporting_images/Wireframe_with_feedback.png" width="700">
+</p>
+
+We kept this feedback in mind, and the final version of the key that we implemented looks like:
 
 <img src="supporting_images/key.png" width="150">
 
@@ -649,4 +655,4 @@ stuff
 
 [Doodle Jump]: <https://en.wikipedia.org/wiki/Doodle_Jump>
 [mapbox]: <https://www.mapbox.com/>
-[mapbox heatmap]: <https://docs.mapbox.com/mapbox-gl-js/example/heatmap-layer/> 
+[mapbox heatmap]: <https://docs.mapbox.com/mapbox-gl-js/example/heatmap-layer/>
