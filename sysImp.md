@@ -616,30 +616,33 @@ stuff
 stuff
 
 ### Understanding of user group (questionnaires / user stories / interviews)
-To ensure that we continued to develop a website with the user in mind, we gathered user feedback throughout the project. This started as early as our paper prototypes, and proved to be useful. For example, the first paper prototype (which was also shared) demonstrated that new users would be greeted wth an empty globe. They would then have to signup before gaining the ability to interact with the map. This was our initial plan because we wanted to encourage users to signup, however, user feedback revealed something important to us: the user was confused as to what signing up would allow them to do (aka they did not understand the purpose of the website straight away). We thought this may start to turn away newcomers. We changed the paper prototype to demonstrate to users that they could zoom in/out of the map, and read EmotePosts as soon as they enter the website. This also meant that the ‘serious play’ aspect was integrated immediately, and the user would learn in an active manner. We decided to include a ‘signup’ option on a sidebar. After implementing these changes, users grasped the concept much quicker when shown the paper prototype. The image below shows the changes we made to our paper prototype as a response:
+To ensure that we continued to develop a website with the user in mind, we gathered user feedback throughout the project. This started as early as our paper prototypes, and proved to be useful. For example, the first paper prototype (which was also shared) demonstrated that new users would be greeted with an empty globe. They would then have to signup before gaining the ability to interact with the map. This was our initial plan because we wanted to encourage users to signup, however, user feedback revealed something important to us: the user was confused as to what signing up would allow them to do (aka they did not understand the purpose of the website straight away). We thought this may start to turn away newcomers. We changed the paper prototype to demonstrate to users that they could zoom in/out of the map, and read EmotePosts as soon as they enter the website. This also meant that the ‘serious play’ aspect was integrated immediately, and the user would learn in an active manner. We decided to include a ‘signup’ option on a sidebar. After implementing these changes, users grasped the concept much quicker when shown the paper prototype. The image below shows the changes we made to our paper prototype as a response:
 
 <p align="center">
 <img src="supporting_images/Paper_prototype_before_and_after.jpeg" width="700">
 </p>
 
-The wireframe was also shared with external individuals, with the ability to leave feedback in the form of comments. This revealed further potential improvements that we could make. The image below shows a suggestion that was made:
+
+
+Our paper prototype served well at forming an initial visualisation of the website. In order to gain more useful feedback, we needed to demonstrate the website using a closer representation of a working product. Logically, a wireframe was the next best step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/share/NJ2D65MNBU/572059598) to go to our interactive wireframe. For more information on why we used a wireframe, please go to the evaluation section (!!!MAKE LINK HERE!!!). We provided users with a questionnaire, and also the ability to leave their own comments (in case they would like to leave feedback beyond what the questionnaire had asked). The majority (80%) of those that completed the questionnaire, agreed that an 'about' page would be useful for further clarification. As a response to this, we created an 'about' page, confirming what the website intends to do, and how:
+
+<p align="center">
+<img src="supporting_images/About_page.png" width="700">
+</p>
+
+The ability to post comments in addition to the questionnaire also proved useful, as a user suggested something beyond what they were asked. A screenshot of this comment is shown:
 
 <p align="center">
 <img src="supporting_images/Wireframe_with_feedback.png" width="700">
 </p>
 
-We kept this feedback in mind, and the final version of the key that we implemented looks like:
-
-<img src="supporting_images/key.png" width="150">
-
-### Wireframes and interaction flow diagrams for final key subsystems.
-Our paper prototype served well at forming an initial visualisation of the website. In order to gain more useful feedback, we needed to demonstrate the website using a closer representation of a working product. Logically, a wireframe was the next best step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/share/NJ2D65MNBU/572059598) to go to our interactive wireframe. Below is a preview:
+We kept this feedback in mind, and the final version of the key that we implemented (with the ability to show/hide) looks like:
 
 <p align="center">
-<img src="supporting_images/wireframe_preview.png" width="700">
+<img src="supporting_images/key.png" width="700">
 </p>
 
-
+### Wireframes and interaction flow diagrams for final key subsystems. - PERHAPS DELETE THIS AS WIREFRAME IS DISCUSSED ABOVE (MUCH MORE FLUID)
 
 ### Group working methods used (for instance did your team choose a particular style of agile? What communication channels did you use?)
 Discord was used for the majority of the written communication. We setup a server and divided it into 6 channels: ‘general’, ‘front-end’, ‘back-end’, ‘ui’, ‘user-testing’ and ‘write-up’. Having individual channels meant that our communication was more organised, and reduced disruption to members working on alternative sections. Discord’s pinning feature also meant that key messages never went missing amongst a sea of other messages.
