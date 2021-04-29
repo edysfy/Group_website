@@ -142,6 +142,7 @@ This holds all the information relating to registered user accounts. Initially, 
 It made sense for there to be a username, email, password, and geoPost attributes. We thought that the geoPost attribute will contain an array of GeoJson data, defined by the models above.
 So we would just have one Model called User, and whenever the user made a post-it will store the GeoJson data in the User model under the user. However, we thought this wouldn't be a good idea as it would cause more work for getting all the GeoJson. It's easier to get all GeoJson and manipulating that array on the API or frontend, than getting all the user's GeoJson and merging them into an array, before manipulating it. Especially, when it would to come searching the GeoJson with complex queries. We also got rid of the email as it was mentioned from numerous user feedback that it wasn't needed. When posting such sensitive information, users wanted to remain anomalous. We also added, date of birth, gender and age attributes to support searching for GeoJson by age and gender. <br/>
 Mongoose automatically adds and _Id attribute. This is the ID stored with each GeoJson data that's created from the user 'Emoting'.
+We set the username to be unique. So only unique values can be stored in the database. To do with we used a library called "mongoose-unique-validator".
 ```js
 const userSchema = new mongoose.Schema({    
   username: {
@@ -168,6 +169,7 @@ const userSchema = new mongoose.Schema({
     default: null,
     required: false,
   },
+  userSchema.plugin(uniqueValidatorPlugin);
 });
 ```
 
@@ -206,26 +208,115 @@ Lets break down this Express application and describe how it works:
     <br/>
     1. geopost.js => "/api/geopost": <br/>
         Here we dealt with all the requests that are related to the EmotePosts.
-          - We have a get method on the route. Once the request from the frontend hits this path. It calls a find() method of the GeoJson model that was created from the GeoJson schema. This finds all of the GeoJson points in the database and returns a promise. It's an asynchronous function. Once the promise returns all the GeoJson data points, we send a response back to the front end. The payload contains a JSON object that contains the GeoPosts array, and a message, with a status code 200 (meaning it was successful). This data is then utilized by the Post Service on the front end, which pipes the data into components where needed. If there is an error with the request, the server sends back the default error message. 
-          ```js
-          /*gets all post from the db*/
-          router.get("", (req, res, next) => {
-            GeoJson.find()
-              .then((allGeoPost) => {
-                res.status(200).json({
-                  message: "Coordinates sent from database",
-                  geoPost: allGeoPost,
+          - We have a GET method on the route. Once the request from the frontend hits this path it calls a find() method of the GeoJson model that was created from the GeoJson schema. This finds all of the GeoJson points in the database and returns a promise. It's an asynchronous function. Once the promise returns all the GeoJson data points, we send a response back to the front end. The payload contains a JSON object that contains the GeoPosts array, and a message, with a status code 200 (meaning it was successful). This data is then utilized by the Post Service on the front end, which pipes the data into components where needed. If there is an error with the request, the server sends back the default error message. 
+            ```js
+            /*gets all post from the db*/
+            router.get("", (req, res, next) => {
+              GeoJson.find()
+                .then((allGeoPost) => {
+                  res.status(200).json({
+                    message: "Coordinates sent from database",
+                    geoPost: allGeoPost,
+                  });
+                })
+                .catch((error) => {
+                  res.status(401).json({
+                    message: "unable to retrieve the data",
+                    error: error,
+                  });
                 });
-              })
-              .catch((error) => {
-                res.status(401).json({
-                  message: "unable to retrieve the data",
-                  error: error,
-                });
+            });
+            ```
+          - We have a POST method on this route. This saves the user's post in the database. The client has a GeoJson interface, which conforms to the GeoJson schema. This POST method comes with a GeoJson payload. We then get the username from this payload and call the find method on the User model, with the username as a filter query. This returns a promise. We then chain the then method, to wait for the promise. Once the user details return from the database, we create a new GeoJson Mongoose object. When we initialize it, we pass a javascript object (as a parameter) that conforms to the GeoJson schema. The object is comprised of attributes from the request body sent from the client, and the user details send from the database. We add the user's _id type to the userDetail attribute. This stores the user's unique id on the post, so we can join this data with the user's details, when searching. We then call the save method on this object, once the database returns the response that it saved, we create a new response to be sent back to the client that contains the _id of the saved geoJson post. This _id essentially gets added to the GeoJson object in the post-service (that was created on the frontend). We also have supplementary error handling to respond to the client if there is an issue.
+            ```js
+              /*saves a post to the database*/
+              router.post("", (req, res, next) => {
+                const username = req.body.properties.username;
+                User.find({ username: username })
+                  .then((user) => {
+                    const newPost = new GeoJson({
+                      type: req.body.type,
+                      geometry: {
+                        type: req.body.geometry.type,
+                        coordinates: [
+                          req.body.geometry.coordinates[0],
+                          req.body.geometry.coordinates[1],
+                        ],
+                      },
+                      properties: {
+                        userDetails: user[0]._id,
+                        username: username,
+                        dateTime: req.body.properties.dateTime,
+                        keyword: req.body.properties.keyword,
+                        mood: req.body.properties.mood,
+                        textBody: req.body.properties.textBody,
+                      },
+                    });
+                    newPost
+                      .save()
+                      .then((dbResponse) => {
+                        return res.status(200).json({
+                          message: "geoPost saved in database",
+                          id: dbResponse._id,
+                        });
+                      })
+                      .catch((error) => {
+                        res.status(400).json({
+                          message: "unable to save this data",
+                          error: error,
+                        });
+                      });
+                  })
+                  .catch((error) => {
+                    res.status(500).json({
+                      message: "user doesnt exist",
+                      error: error,
+                    });
+                  });
               });
-          });
-          ```
-
+            ```
+          - Also, we have another GET request on this route. However, we added a param variable to the URL path. So the URL is now: 'api/geopost/:username'. This is similar to the normal GET request. However, when we call the find method on the GeoJson Model, we use the username param as a filter query, meaning the database returns a GeoJson array that only contains posts related to that user. We sort it via DateTime using the Mongoose sort() method, meaning the newer posts are at the start of the array. We did this so our UI will display the user's timeline in that order. This is then sent back to the user-search service on the front end. Error handling response was also implemented.
+              ```js
+              /*sort the date by -1*/
+              router.get("/:username", (req, res, next) => {
+                GeoJson.find({
+                  "properties.username": req.params.username,
+                })
+                  .sort({ "properties.dateTime": -1 })
+                  .then((posts) => {
+                    res.status(200).json({
+                      message: "sucessfull",
+                      userposts: posts,
+                    });
+                  })
+                  .catch((error) => {
+                    res.status(500).json({
+                      message: "internal error",
+                      error: error,
+                    });
+                  });
+              });
+              ```
+          - Finally, we have a DELETE request. We added a param variable to the URL path. So the URL is now: 'api/geopost/:id'. The id contains the _id of the GeoJson Post. The _id is sent by the user service on the front end. We then call the deleteOne() method on the GeoJson Model and use the request param as a filter query. This then removes that user's post from the GeoJson collection. This allows the user to delete their posts. Error handling response was also implemented.
+            ```js
+            /*removes post from the db*/
+            router.delete("/:id", (req, res, next) => {
+              console.log(req.params.id);
+              GeoJson.deleteOne({ _id: req.params.id })
+                .then((result) => {
+                  res.status(200).json({
+                    message: "Post deleted",
+                    result: result,
+                  });
+                })
+                .catch((error) => {
+                  res.status(401).json({
+                    message: "Post doesn't exist",
+                    error: error,
+                  });
+                });
+            });
+            ```
 
 EmoteMap provides 5 integral features which interface with the back end:
 
@@ -270,39 +361,39 @@ router.put("/:username", (req, res, next) => {
 ```
 
 The search.js api is primarly concerned around generating constraints for fetching data from the database based on the users input in the searchfield in the side bar (e.g. fetching all posts made 10 or less days ago); it again does this through a http post request, but then also utilising functions from our GeoJson schema and filtering functions from the api to correctly populate an array to return to our user-search service which is then piped to the front end components to be displayed.
-```js
-router.post("", (req, res, next) => {
-  GeoJson.find()
-    .populate("properties.userDetails", ["age", "gender", "dob"])
-    .sort({ "properties.dateTime": -1 })
-    .then((data) => {
+  ```js
+  router.post("", (req, res, next) => {
+    GeoJson.find()
+      .populate("properties.userDetails", ["age", "gender", "dob"])
+      .sort({ "properties.dateTime": -1 })
+      .then((data) => {
+          data = data.filter(
+            (geoPost) =>
+              geoPost.properties.userDetails.age != null &&
+              geoPost.properties.userDetails.age >= req.body.minAge &&
+              geoPost.properties.userDetails.age <= req.body.maxAge
+          );
+        let minDate = generateDate(req.body.minDay);
+        let maxDate = generateDate(req.body.maxDay);
         data = data.filter(
           (geoPost) =>
-            geoPost.properties.userDetails.age != null &&
-            geoPost.properties.userDetails.age >= req.body.minAge &&
-            geoPost.properties.userDetails.age <= req.body.maxAge
+            minDate.getTime() <= geoPost.properties.dateTime.getTime() &&
+            maxDate.getTime() >= geoPost.properties.dateTime.getTime()
         );
-      let minDate = generateDate(req.body.minDay);
-      let maxDate = generateDate(req.body.maxDay);
-      data = data.filter(
-        (geoPost) =>
-          minDate.getTime() <= geoPost.properties.dateTime.getTime() &&
-          maxDate.getTime() >= geoPost.properties.dateTime.getTime()
-      );
-      data = filterGender(req.body.male, req.body.female, data);
-      data = filterMood(
-        req.body.happy,
-        req.body.coping,
-        req.body.sad,
-        data
-      );
-      res.status(200).json({ message: "search", geoSearchArray: data });
-    })
-    .catch((err) => {
-      res.status(401).json({ error: err });
-      return;
-    });
-});
+        data = filterGender(req.body.male, req.body.female, data);
+        data = filterMood(
+          req.body.happy,
+          req.body.coping,
+          req.body.sad,
+          data
+        );
+        res.status(200).json({ message: "search", geoSearchArray: data });
+      })
+      .catch((err) => {
+        res.status(401).json({ error: err });
+        return;
+      });
+  });
 ```
 
 ### Front End - Angular. Details of implementation
