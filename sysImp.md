@@ -630,16 +630,11 @@ Our paper prototype served well at forming an initial visualisation of the websi
 <img src="supporting_images/About_page.png" width="700">
 </p>
 
-The ability to post comments in addition to the questionnaire also proved useful, as a user suggested something beyond what they were asked. A screenshot of this comment is shown:
+The ability to post comments in addition to the questionnaire also proved useful, as a user suggested something beyond what they were asked. A screenshot of this comment is shown below (left). We kept this feedback in mind, and the final version of the key that we implemented (with the ability to show/hide) is also shown (right):
 
-<p align="center">
-<img src="supporting_images/Wireframe_with_feedback.png" width="700">
-</p>
-
-We kept this feedback in mind, and the final version of the key that we implemented (with the ability to show/hide) looks like:
-
-<p align="center">
-<img src="supporting_images/key.png" width="700">
+<p float="left">
+<img src="supporting_images/Wireframe_with_feedback.png" width="450">
+<img src="supporting_images/key.png" width="450">
 </p>
 
 ### Wireframes and interaction flow diagrams for final key subsystems. - PERHAPS DELETE THIS AS WIREFRAME IS DISCUSSED ABOVE (MUCH MORE FLUID)
