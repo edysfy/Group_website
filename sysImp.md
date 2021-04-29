@@ -210,12 +210,7 @@ router.get("", (req, res, next) => {
         geoPost: allGeoPost,
       });
     })
-    .catch((error) => {
-      res.status(401).json({
-        message: "unable to retrieve the data",
-        error: error,
-      });
-    });
+  .....
 });
 ```
 
