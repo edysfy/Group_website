@@ -7,8 +7,7 @@
 # System Implementation
 ## Stack architecture and system design (e.g. class diagrams, sequence diagrams)
 
-Before diving into the details of each stack, how they work and link together. <br/>
-Lets talk about the System Architecture as a whole.
+Before diving into the details of each stack, how they work and link together. Lets talk about the System Architecture as a whole.
 <br/> From a very broad perspective this is how application skeleton is structured: <br/>
 <br/>
 <img src="supporting_images/stack_arc_overview.png" width="650px">
@@ -332,6 +331,7 @@ Lets break down this Express application and describe how it works:
             - The search query contains a boolean for males and females. We filter out GeoJson if the gender is null, or male/female is false. The logic for this was held in filterGender.
         4. Filter posts by Mood:
             -The search query had boolean values for Happy, Coping, and Sad. Each GeoJson Post contains an emotion by default. As the user has an option to choose any combination of the 3 emotions, we filter out the false emotions. The logic for this was held in filterMood.
+        Once the GeoJson array has been filtered, we send it in a JSON object as an HTTP response to the User-Search-Service. It is then piped to other components that display the search query.
           ```js
           router.post("", (req, res, next) => {
             GeoJson.find()
@@ -366,20 +366,45 @@ Lets break down this Express application and describe how it works:
               }); 
           });
           ```
-
-
-
-
-
-EmoteMap provides 5 integral features which interface with the back end:
-
-**Account creation**: The user is asked to enter a username and password (password is entered twice to ensure user has entered the password correctly). These details are then sent to the database via the API route user.js. Once received on the backend a response is returned through the API which is either successful, in which case an account is added to the database, or it is unsuccessful meaning the requested username is already in use and the account could not be created. If the response was unsuccessful the user is informed their account could not be created and that they should use a different username. Date of birth, gender and age are all set to null by default and can only be set once the user has logged in.   
-
-**Login**: After the user has created an account, they are then able to log in using their set credentials. The user’s entered username and password are sent to the backend via the API route user.js and queried on the database. If no matching username is found an unsuccessful response is returned and the user is prompted that they have entered an incorrect username. If a matching username is found (password is hashed and compared? Check with hari)
-
-**Filter user posts and display**: User posts can be filtered by date, gender, age, mood and keyword.  Initially all these parameters are set to show all posts, for example the age range is set to 0 – 100 and gender is set to both male and female. Excluding the keyword, these parameters determine what posts are fetched from the database. Before the database is queried userSchema is joined with geoJsonSchema so each post contains also the user’s attributes. Whenever one of these parameters is changed the database is queried again loading in all the geoJSON points which adhere to the criteria into a geoJSON array in memory. This geoJSON array is then passed to Mapbox to be displayed on the map. When a user enters a keyword and presses search all posts found in the pre filtered geoJSON array with similar keywords are returned.
-
-
+          <br/>
+    3. user.js => "/api/user": <br/>
+        This route deals user registration, login, and allowing users to update their date of birth and gender values.
+          - "/api/user/signup" deals with registration. When a user signs up on the front end, the Authentication-service sends a payload containing the username and password. Firstly our API checks if the username is equal to  "null". If it is "null" it sends a response to the client with a message saying that the username is taken, and regSuc == false. This is because the Authentication-service checks if the username is "null" when the component initializes, so users cannot use "null" as their username. If this is fine, then we create a new User Mongoose Object, that takes the username and password as a parameter. We then save that into the User collection in that database. If the process is successful we send a response back to the client, with regSuc == true. The client uses regSuc to throw alerts to the user. Ie "Registration" successful. If the promise from the database returns an error, this means that the username has been taken. We send this response back to the client, with regSuc == false. The UI then displays an alert saying the username is taken.
+            ```js
+              router.post("/signup", (req, res, next) => {
+                /*cant use null as a username*/
+                if (req.body.username === "null") {
+                  return res.json({
+                    message: "Username Taken",
+                    regSuc: false,
+                  });
+                }
+                const user = new User({
+                  username: req.body.username,
+                  /*store hashed password in database*/
+                  password: req.body.password,
+                });
+                /*save the data in mongoDb*/
+                user
+                  .save()
+                  /*when promise arrives send the response back to the frontend*/
+                  .then((confirmDoc) => {
+                    res.status(201).json({
+                      message: "The user has been successfully registered",
+                      result: confirmDoc,
+                      regSuc: true,
+                    });
+                  })
+                  /*this error will be if the email/username isn't unique*/
+                  .catch((error) => {
+                    res.json({
+                      message: "Unable to login with these credentials",
+                      regSuc: false,
+                    });
+                  });
+              });
+              // });
+            ```
 
 
 ### Front End - Angular. Details of implementation
