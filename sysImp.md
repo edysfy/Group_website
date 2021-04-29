@@ -8,7 +8,8 @@
 ## Stack architecture and system design (e.g. class diagrams, sequence diagrams)
 
 Before diving into the details of each stack, how they work and link together. Lets talk about the System Architecture as a whole.
-From a very broad perspective this is how application skeleton is structured: <br/>
+<br/> From a very broad perspective this is how application skeleton is structured: <br/>
+<br/>
 <img src="supporting_images/stack_arc_overview.png" width="650px">
 
 Initially, we needed three main components that comprise the stack.
@@ -22,6 +23,8 @@ Initially, we needed three main components that comprise the stack.
 3. The frontend/UI: <br/>
     This is responsible for the user experience and data creation through the use of Angular forms. 
     The user can explore the map, create an account, log in, create Emote posts, view other users' posts, have access to their posts in a timeline, delete their posts, fly to a post, and search for other users' posts (by date, age, and gender). To display a map, we needed to connect to an external API. We had two options. One Mapbox and the other was GoogleMaps. Firstly, Mapbox was more appealing as it is the underdog. We didn't want to be involved with a conglomerate like Google. After digesting Mapbox's API, we realized it is capable of doing everything we wanted. Especially, displaying a heat map. It accepts geoJson data and provides the developer with a lot of support to customize and visualize that data on the map. It accepts data via a direct link to a URL path, or through building your objects. This was useful as it allowed us to use geoJson objects that are stored in memory on the front end. As an example (will be explained in a lot more detail in the front end), when the user made a post-it would automatically update the UI, as we stored the new post in a Service. The Mapbox component listens to changes in the geoJson array and re-renders the data on the map. We used a set of Angular Services to maintain state and allow data to flow between components on the frontend, as well as providing a link between the data flowing to the REST API.
+
+Lets go into some more depth...    
 
 ## Back End - MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams)
 
