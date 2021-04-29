@@ -701,7 +701,7 @@ We also finally implemented a user-post component, which allows new data to be a
 <a name="uxdesign"></a>
 
 # UX Design
-
+See our [UX Design](uxDesign.md) documentation;
 ## Design Process and Early prototyping and ideation (including mood boards and paper prototyping)
 
 ### Idea formulation
