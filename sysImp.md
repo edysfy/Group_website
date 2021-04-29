@@ -4,17 +4,192 @@
 * [Sprints & Project Management](#sprints)
 
 <a name="system"></a>
-## System Implementation
-### Stack architecture and system design (e.g. class diagrams, sequence diagrams)
-stuff
-### Back End - MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams)
-**MongoDB**
+# System Implementation
+## Stack architecture and system design (e.g. class diagrams, sequence diagrams)
+ 
+Before diving into the details of each stack, how they work and link together. Lets talk about the System Architecture as a whole. 
+Initially, we needed three main components that comprise the stack. 
 
-**geoJsonSchema**: This holds all information relating to user posts. For user posts to be displayed ont the map correctly the post content (*postSchema*) and coordinates (*geoPositionSchema*) are required. *userDetails* in *postSchema* connects posts to the account which created the post and is used when filtering results.
+1. The MongoDB database: <br/>
+    To store GeoJson and User data through two separate collections. This will communicate with the REST API through the ODM, Mongoose. It will have no direct connection to the front end due to security reasons. All data that is created on the front end will filter throughout API.
+    
+2. The REST API: <br/>
+    This is capable of dealing with incoming HTTP requests and adequately responds to the client. It is built with NodeJs and a framework called ExpressJs. It makes use of the HTTP protocol as a way of sending data from the client to the database. The client submits an HTTP request to the server. This request will have an HTTP param id, which is used to send data through the URL path. This is useful for sending user information from the client to the API, like a username. An HTTP body, which sends the main data structure created on the front end. As an example, when the user makes a new EmotePost, a javascript object is created and that is sent via Angular's HTTP client with that object as a payload. The server will have access to that via using the body method. HTTP headers are also sent. We intend to use the headers to send the JWT token to guard our routing paths on the back end. This essentially makes them accessible to users. Once a request has been detected at one of the servers' paths, it will perform adequate data processing. Ie storing data in the database, querying the database for data, and then send a response back to the client. This will contain, and data required, or messages that tell the client this request couldn't be handled in some way.
 
-**userSchema**: This holds all the information relating to registered user accounts.
+3. The frontend/UI: <br/>
+    This is reponsible for the user experience and data creation through the use of Angular forms. The user has the capabiblity to expore the map, create an account, login, create Emote posts, view other users posts, have acess to their posts in a timeline, delete their posts and search for other users posts (by date,age and gender). In order to display a map, we needed to connect to an external API. We had two options. One Mapbox and the other was GoogleMaps. Firstly, Mapbox was more appealling as it is the underdog. We didnt want to be invovled with a conglomerate like Google. After digesting Mapbox's API, we realised it is capable of doing everything we wanted. Espcially, displaying a heat map. It accepts geoJson data and provides the developer with alot of support to customise the visualization of that data on the map. It accepted data as a dierect link to a URL path, or through building your own javasctipy objects. This was useful as it allowed us to use geoJson object that are stored in memory on the front end. So when the user made a post it would automatically update the UI, as we stored the new post in a Service. The Mapbox component listens to changes in the the geoJson array and re-renders the data on the map. We used a set of Angular Services to mantain state and allow data to flow between components on the frontend. 
 
-![Entity Relationship Diagram](mongoDBerd.jpg)
+## Back End - MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams)
+
+### Why use MongoDB?
+
+We choose MongoDb as a suitable database for our backend due to the nature of the GeoJson data structure required by Mapbox to display posts on the screen.
+Initially, we were unsure of how to display user posts, create a Heatmap, and whether to allow users to search for posts using polygons. Marceli recommended
+using MongoDb as it has a special part of the API designed to dealing with GeoJson queries. He mentioned that was a huge benefit of MongoDB. So to maximize our chances of success with being able to manipulate the Mapbox component in the front end, we chose MongoDB.
+
+There was some consideration to implement an SQL database due to the simple nature of our data model. As shown below, through the ERD, we could easily use join queries on the data which would have been beneficial in the search path of our API. However, due to the reason above, as well as being taught MongoDB in lectures. We stuck with MongoDB.
+
+### Why use Mongoose
+
+Upon having a team conversation with Marceli, it was recommended that we look into Mongoose as an Object Document Manager to make our lives easier and save time.
+After some research, we decided to use Mongoose as the middleman between incoming/outgoing HTTP requests/responses between the API and our database.
+The syntax of Mongoose was a lot simpler than raw MongoDb, and it was the right decision as we were able to build the data models in a shorter time.
+Mongoose models are a lot easier to initialize as they are capable of setting up default values automatically, and makes it easy to validate the data with simple commands.
+MongoDB is inherently schema-less, however, Mongoose allows the developer to define schemas for their data type. This was used fully at the start as we were able quickly,
+prototype our data models on the backend. Queries are a lot easier to deal with as they allow functions to chain onto the Model and don't require the embedded mnemonics that MongoDb requires so the developer experience was a lot smoother. This is akin to comparing using C to using Python. While C is more efficient and allows more room for flexibility in our code, Python provides a layer of abstraction that makes it a lot easier for scripting and experimenting with abstract ideas.
+
+### How did we connect MongoDb To our API?
+
+Firstly, we needed to initialize the MongoDB database. So we created a free MongoDB account and created a cluster. We set the IP to all, so all of our team members can be sent requests through to the database, which usefull for testing, as we could all perform CRUD operations on the database. We then took the connection URL (which has our account details stored) and stored it as a variable: 'mongoDBConnect', in the Express application file. Mongoose as a simple method called "connect" that allows you to connect to the URL easily. Once Node is run, the database can now communicate with our API.
+
+```js
+mongoose.connect(mongoDBConnect,{ useNewUrlParser: true, useUnifiedTopology: true })
+.then(connection => {
+    console.log("Rest Api has successfully connected to mongoDb Database");
+})
+.catch(err=>{
+    console.log("Failed to connect ot mongoDb");
+})
+```
+
+### MONGOOSE MODELS
+
+#### ERD of the whole data model
+
+<img src="supporting_images/mongoDBerd.jpg" width="650px">
+
+The ERD above shows the final data model that is utilised by our application. We defined a schema for each block in the ERD diagram. However, we only have two seperate collections in our database, which was defined by two mongoose models.
+```js
+module.exports = mongoose.model("User", userSchema);
+
+module.exports = mongoose.model("GeoJson", geoJsonSchema);
+```
+
+Lets talk about how the models were made, why they were made and how they link together.
+
+#### GeoJsonModel : <br/>
+This schema was the initial schema we started to develop. As a team, we decided that we needed a data structure that allowed anyone to make a post and display it on the Mapbox component. That was our priority. If we didn't have this functionality then users wouldn't be able to Emote their feeling, see the heatmap, and view other people's posts. After some research, it was found that there is a pre-defined data structure called: "GeoJson". This standard builds upon JSON data format, however, it requires certain attributes. GeoJson is a data structure that
+allows one to represent features like "Geometry", along with any non-spatial attributes that the developer has the freedom to define. When discovering this data structure we felt a sense of relief as we were unsure as to model the data. This was the first GeoJson data structure we found in use through a tutorial from "http://132.72.155.230:3838/js/geojson-1.html": 
+
+<img src="supporting_images/gjdis.png" width="650px">
+
+We gathered that you can display a set of GeoJson data by creating a "FeatureCollection". Each one of these will contain a set of GeoJson of type: "Feature". This was then the basis of our GeoJson model. We needed a model that accurately modeled a GeoJson "Feature", which could then be collected as a "FeatureCollection" on the front end. 
+This is the geoJsonSchema that the GeoJson model is made from:
+```js
+const geoJsonSchema = new mongoose.Schema({
+  type: {
+    type: String,
+    required: true,
+    enum: ['Feature']
+  },
+  geometry: {
+    type: geoPositionSchema,
+    required: true,
+  },
+  properties: {
+    type: postSchema,
+    required: true,
+  },
+});
+```
+Each geoJson by default has type "Feature".
+"Geometry" is an attribute that contains the *geoPositionSchema*, which is Mongoose sub-document and likes the two schemas together. The *geoPositionSchema* has an attribute: "type", which refers to the type of geometry. This could be "LineString", "Point" etc. We instantly knew it needed to be "Point", and we used the enum field in Mongoose to set it as a default. Each geometry attribute is required to have a set of coordinates. As we are representing a "Point", this needed to be an array of numbers, where the first element was the longitude and the second was the latitude. <br/>
+This is the *geoPositionSchema* that the GeoJson model is made from:
+```js
+const geoPositionSchema = new mongoose.Schema({
+  type: {
+    type: String,
+    enum: ['Point'],
+    required: true,
+  },
+  coordinates: {
+    type: [Number],
+    required: true,
+  },
+});
+```
+The other attribute is "properties". This is where we have the freedom to design the EmotePost data. And combine that with the geometry so the user's EmotePost can be displayed on the map.
+The *postSchema* is Mongoose sub-document that connected to the GeoJsonSchema via the "properties" attribute, this holds all information relating to user posts. 
+It contains the mood value, which is a number between 1-3 (inclusive) that models the emotions" Happy, Coping and Sad respectively. The textBody is the string that contains the user's actual Emote description. The keyword sums up the post and is used so the users can search for specific keywords. The dateTime attribute contains the exact date time at which the post was made.The username is the user who made the post. The user details are an objectId type, which is referenced to the 'User' model. This is essentially a string that is the unique identifier for the user that creates the post. It allows Mongoose to search for a user in the User collection with the same ID and populate the userDetail field with the data specific to that user. This essentially allows us to join the user details, from the User model to each geoJson post. Analogous, to a many to one relationship in relational databases. Where the user can have many posts but the post has one user. 
+```js
+const postSchema = new mongoose.Schema({
+  userDetails: {
+    type: mongoose.Schema.Types.ObjectId,
+    required: true
+    ref: 'User',
+  },
+  username: {
+    type: String,
+    required: true
+  },
+  dateTime: {
+    type: Date,
+    required: true,
+  },
+  keyword: {
+    type: String,
+    required: true,
+  },
+  mood: {
+    type: Number,
+    required: true,
+  },
+  textBody: {
+    type: String,
+    required: true,
+  },
+});
+```
+
+#### UserModel: <br/>
+This holds all the information relating to registered user accounts. Initially, we fathomed a guess as to what the attributes the userSchema should hold.
+It made sense for there to be a username, email, password, and geoPost attributes. We thought that the geoPost attribute will contain an array of GeoJson data, defined by the models above.
+So we would just have one Model called User, and whenever the user made a post-it will store the GeoJson data in the User model under the user. However, we thought this wouldn't be a good idea as it would cause more work for getting all the GeoJson. It's easier to get all GeoJson and manipulating that array on the API or frontend, than getting all the user's GeoJson and merging them into an array, before manipulating it. Especially, when it would to come searching the GeoJson with complex queries. We also got rid of the email as it was mentioned from numerous user feedback that it wasn't needed. When posting such sensitive information, users wanted to remain anomalous. We also added, date of birth, gender and age attributes to support searching for GeoJson by age and gender. <br/>
+Mongoose automatically adds and _Id attribute. This is the ID stored with each GeoJson data that's created from the user 'Emoting'.
+```js
+const userSchema = new mongoose.Schema({    
+  username: {
+    type: String,
+    unique: true,
+    required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  dob: {
+    type: Date,
+    default: null,
+    required: false,
+  },
+  gender: {
+    type: String,
+    default: null,
+    required: false,
+  },
+  age: {
+    type: Number,
+    default: null,
+    required: false,
+  },
+});
+```
+
+### Middle Tier - Express, Node, the RESTful API
+
+**Node**: 
+<br/>
+We used Node as a runtime enviroment allowed us to run javascript code outside of the web browser. As, we were building the front-end with Angular, we decided that to use Node to build the backend API, as the languages needed for both are the same. This really helped team members work on both the front and the backend. The node server is built with the HTTP module, and listens for HTTP request/responses on a local port. We didn't build the whole api with Node. We use ExpressJs build to an Express app. The Express app is a comprised of a series of function calls and custom middleware that we developed. The Express app is passed into the Node Server as an argument.
+```js
+/*create server using express app and listen on port*/
+const server = http.createServer(app);
+server.listen(port);
+```
+
+**Express Application**:
+ <br/>
+Express made dealing with responses and requests a lot easier. In the express app, when a request arrives to the applications url path, it filters down the subsequent HTTP methods in the app until it is resolved with a response. There is also a next function which directly tells the request to move to the next method. However in our application we never felt the need to use this. Before setting up the routing we needed initalise the application.
+
 
 EmoteMap provides 5 integral features which interface with the back end:
 
@@ -306,17 +481,129 @@ stuff
 ### Deployment details (including Docker), include how you have been achieving continuous integration and deployment
 We implemented a docker-compose script from early on in the development process, which ended up being crucial in maintaining code quality and compatibility - we made sure that before each push to our group repository that the website was functioning both when running node server.js and docker-compose up. Docker was especially important for this as it provides a repeatable environment in the form of a docker container; we can be sure that if the project is working on one machine in docker, it will work on others. We primarily achieved continuous integration by utilising docker in this way, but also crucial was the factoring in of all the components of the MEAN stack from a very early stage. After deciding on the api we would use to present the map (mapbox) and setting up a basic template website using it, we quickly added an api (this api eventually became geopost.js) in order to deal with fetching the data for the map; even though this was collecting static data at first, it meant that functionally our website was behaving as it would when we we utilising all parts of the mean stack (i.e. when we added in a mongoDB database, this api would now fetch data from the database instead of using static data). This allowed us to test and run our website using node server.js (and docker-compose up) after every change as previously mentioned. As we also made use of github, allowing us to all share and download the most up to date files, we were able to continuously implement and integrate changes throughout the development process (see [Sprints & Project Management](#sprints) for more details).
 
-# Sprints
+<a name="sprints"></a>
+# Sprints & Project Management
 
-## Discussion of ideas and individual roles
 
 
-The aim of this portion of the project was to:
+## Sprint 1: Project idea finalisation & set up CI infrastructure
 
-- Get to grips with the project brief
-- Discuss and create a list of potential project ideas
-- Discuss personal preferences for individual roles
-- Set up and get familiar with the infrastructure required for collaboration moving forward
+[16-27th feb]
+
+After having got to grips with the brief and decided on an idea, we began putting together an initial paper draft for our website.
+
+Sprint aims:
+
+* Clarify project idea and scope
+* Create draft of website UX & create paper prototype
+* Conduct user survey using paper prototype
+* Set up a github repository
+
+This sprint mainly involved discussing what features our website should have and roughly how they might be implimented. We all agreed the webpage's focal point would be a world map in which user posts can be seen and would appear as a heatmap in different colours depending on the mood rating of the post. We also discussed other fetures such as account creation and post filtering. Being unsure how complex it would be to impliment the map we chose to leave these features untill after we had implimented the map and posts.
+
+There were some different opinions amung the group regarding how the website should be layed out. Some felt that the login bar should slide in from the side and others felt that a whole new page should open. We decided to draw up paper prototype of both of these cases and conduct a user study to decide (_SEE PAPER PROTOTYPING_ + SURVAY). We wanted our product to be as user driven as possible so getting user feedback early on was crucial.
+
+As well as discussing project ideas this period was used to get familiar with the tech stack we were going to be using and github. We each watched the lectures on Angular and github, set up a shared github repository and got familiar with its protocols by making a few pushes and pulls. Although we intended to specialise into certain areas later on, we all got familiar with the frontend and Angular so further down the line it would be possible to be more flexible if required.
+
+## Sprint 2: Work on feedback + find suitable API
+
+[27th feb - 10th mar]
+
+With the scope of the project and the basic functionalities required established, we began building our website.
+
+Sprint aims:
+
+* Review feedback from paper prototyping survey
+* Create basic GUI (buttons purely aethteic, no functionality)
+* Select API for displaying data in a map format
+* Intergrate Mapbox API
+
+
+With group members now familiar with Angular and Github we began adding basic, purely visual, features to our site. Results from our paper prototyping survay helped us decide how our GUI should operate. Users prefered the log in being pulled in from the side as opposed to opening up a new page so we implimented it as such. We also added a header to the website which included a mockup of our logo and a home button. After some research it was apparent that [mapbox] provided all the functionality we required. We based our map around code taken from [Mapbox_heatmap]. This example code already included some demonstrational earthquake data. At this point in the project we intended to use this data in our final product as it showcased how our site would look once many posts had been made. With fairly big steps made towards how we would like the finished project to look aethstetically we decided to do some wireframing??? talk about user survay.... 
+
+
+## Sprint 3: Serve dummy data from directly from API to frontend + set up data model:
+
+[11th mar - 27th mar]
+
+* getting user feedback (add description, some people said unclear what function of site is)
+* Set up site so dummy data is served through API route + Add linking to front end + making sure data model working in front end
+* build Data Model (user, post) + set up mongo schemas
+* adding user login functionality
+* implementing docker functionality for continuous integration
+* implemented mapbox heatmap example
+* began to implement mapbox heatmap example
+
+## Sprint 4: Set up mongoDB and import dummy data + user authentification
+
+[28th mar - 10th apr]
+This sprint was where we finally began to pull together the disperate elements of the website; our aims involved connecting the data fetching service to a function backend using mondoDB, instead of just returning static template data. This is where we also wanted to begin implementing some user feedback based off user questionnaires centered around our intial mockup. We also set a stretch goal of actually adding user profile, rather than have the posts be completely anonymous.
+
+Our agreed goals for this period were;
+* connect mondoDB to front end (so the front end is fetching data from our database)
+* add the functionality make posts (i.e. sending data to the front end)
+* begin implementing feedback from user study and from lecturers
+* finalize key mapbox api functionality (pop ups when hovering over a point on the map)
+* if time permits, add users to the database as well
+
+
+[ADD HOW MONGODB WAS IMPLEMENTED]
+
+To implement displaying the post data when a user hovers over a data point on the map required the use of a couple of the features of the mapbox api. Foremost was labeling the map marker layer with the interactive tag; `this.map.addLayer({ id: 'markers', interactive: true, .....})`. This allows the layer to be interacted with through mouse events. We first had the popup be triggered by clicking on the point, but decided it would be more intuitive for it to appear on a mouse hover; we made use of mapbox's `this.map.on('mouseenter', 'markers', (e)....` command to trigger mapbox's pop up feature, which then displays the data points geoJSON properties - which we are fetching from mondoDB as discussed above.
+
+From our user feedback it was clear that first time users struggled to grasp the point of the website, and in fact some suggested we add a section to explain the site; so we did exactly that! We added an "about" component and a link in the toolbar that users could click through to, to learn more about the website. We also changed our colour scheme to a white toolbar on a black map, rather than pink on white, from feedback from our lecturers, and to make more clear the colourful data points on the map (the colours constrasted the black map far more than the white )
+
+We also finally implemented a user-post component, which allows new data to be added to website; this component makes use of angular forms to collect inputted data, which we then transform into geoJSON format using our post-service, to be added to our database. As we had time at the end of this sprint, we also began to add in actual user functionality to the website - the singup/login buttons on the navbar where changed to actually route through to signup/login pages, which also use angular forms to collect user input and add new users to the database/verify users who are logging in.
+
+#### Key implementation issues found: ####
+<table>
+<tr>
+  <th>Area</th>
+  <th>User Story</th>
+  <th>Issue</th>
+  <th>Solution</th>
+</tr>
+<tr>
+  <td>MongoDB</td>
+  <td>stuff</td>
+  <td>stuff</td>
+  <td>stuff</td>
+</tr>
+<tr>
+  <td>Mapbox</td>
+  <td>User can hover over points on the map to see more detail, and can create their own posts to add to the map</td>
+  <td>Issues with correctly loading data from the database as opposed to static file</td>
+  <td>Mapbox had issues with calling the data directly from the database, so we implemented a geoJSON model which transformed the data from mongo into an object in memory that mapbox could correctly access </td>
+</tr>
+</table>
+
+## Sprint 5 Users enter more details + can filter by them:
+
+[11th apr - 20th apr]
+
+- users now enter age, gender and can now can be filtered by this (posts linked to user accounts)
+- implemented sidebar
+- search functionality
+- user post history
+- at this stage almost feel website is complete. one last survey for UX
+- users now have to log in to be able to filter results, encourages posting and engaging with site
+- began to start formating write up/readme
+
+## Sprint 6 Project Write up:
+
+[21st apr - hand in]
+
+- Write up
+- feedback says icons unclear, alter icons to have names
+
+
+<a name="uxdesign"></a>
+
+# UX Design
+
+## Design Process and Early prototyping and ideation (including mood boards and paper prototyping)
+
+### Idea formulation
 
 This time was used to get to know the other group members and project brief itself. Having all come from different backgrounds, from music to engineering, a lot of varied and interesting project ideas were put forward. After some discussion we drafted up 4 potential ideas:
 
@@ -328,61 +615,12 @@ The game intention of this game was to be addictive, fun and educational.
 
 **Musical instruments through time:** A web page where users can browse musical instruments through time and when they are clicked the sound of the instrument is played. Aimed to teach users about musical anthropology in an engaging way, an interesting topic which our group consider to be overlooked and undervalued compared to other areas of music.
 
-**EmoMap:** A geographical diary where users can post diary entries which include their current location. Users can then look on the map at their archived posts and see how they were feeling in certain locations. This website idea aims to help users track and improve upon their mental wellbeing.
+**EmoteMap:** A geographical diary where users can post diary entries which include their current location. Users can then look on the map at their archived posts and see how they were feeling in certain locations. This website idea aims to help users track and improve upon their mental wellbeing.
 
-After having drafted up some ideas and established everyone's academic backgrounds, we decided what project roles we would each be best suited to. Although we didn't intend to begin developing the software until later on, we decided it best we know roughly what area to start doing some preliminary research into.
-
-## Sprint 1: Create first draft of idea + set up CI infrastructure
-[16-27th feb]
-- finalize idea
-- set up continuous integration tools + set up repo with angular boilerplate (no map yet)
-- first draft of how website will look + paper prototype + conduct survey
-(should login bar pull in from side ect..)
-
-## Sprint 2: Work on feedback + find suitable API
-[27th feb - 10th mar]
-- review feedback from paper prototyping survey (eg: decide that log in bar should go from side)
-- begin working on boilerplate
-- decide on API required and add to site (list some other map api other than mapbox and why we chose mapbox?); added mapbox functionality and nav bar
-- mapbox comes with dummy earthquake data, which we used to begin testing out data presentation using the mapbox api
-
-## Sprint 3: Serve dummy data from directly from API to frontend + set up data model:
-[11th mar - 27th mar]
-- getting user feedback (add description, some people said unclear what function of site is)
-- Set up site so dummy data is served through API route + Add linking to front end + making sure data model working in front end
-- build Data Model (user, post) + set up mongo schemas
-- adding user login functionality
-- implementing docker functionality for continuous integration
-- implemented mapbox heatmap example
-## Sprint 4: Set up mongoDB and import dummy data + user authentification
-[28th mar - 10th apr]
-- set up so dummy data is stored in mongoDB + user posts add to this
-- implemented mapbox popup
-- after this decided to actually scrap the dummy data and instead populate with our own data
-- added functionality for users making posts
-- set up user authentication link to DB
-- changed colour scheme advice from lecturers
-
-## Sprint 5 Users enter more details + can filter by them:
-[11th apr - 20th apr]
-- users now enter age, gender and can now can be filtered by this (posts linked to user accounts)
-- implemented sidebar
-- search functionality
-- user post history
-- about page added
-- at this stage almost feel website is complete. one last survey for UX
-- users now have to log in to be able to filter results, encourages posting and engaging with site
-- began to start formating write up/readme
-
-## Sprint 6 Project Write up:
-[21st apr - hand in]
-- Write up
-- feedback says icons unclear, alter icons to have names
+A lot of time was spent discussing which project idea to use. The idea needed to be useful, original and also fit the brief. We decided that although we felt all the ideas were good, EmoteMap addressed the particularly relevant issue of mental health and isolation. COVID-19 has left many people isolated and struggling to cope with ongoing lockdowns. We decided to use the geographical diary element from the EmoteMap idea but make it so posts can be seen by other users online, making users feel less isolated and more connected. All group members agreed this idea had great potential and decided to finalise this as our project idea.
 
 
-<a name="uxdesign"></a>
-## UX Design
-### Design Process and Early prototyping and ideation (including mood boards and paper prototyping)
+
 Our first real visualisation of the website consisted of a paper prototype. This ensured all members of the group were on the same page (no pun intended) regarding the initial layout, and allowed us to easily and to quickly make adjustments during a group discussion. Our original prototype is shown here:
 
 <p align="center">
@@ -397,17 +635,6 @@ stuff
 stuff
 
 ### Understanding of user group (questionnaires / user stories / interviews)
-To ensure that we continued to develop a website with the user in mind, we gathered user feedback throughout the project. This started as early as our paper prototypes, and proved to be useful. For example, the first paper prototype (which was also shared) demonstrated that new users would be greeted with an empty globe. They would then have to signup before gaining the ability to interact with the map. This was our initial plan because we wanted to encourage users to signup, however, user feedback revealed something important to us: the user was confused as to what signing up would allow them to do (aka they did not understand the purpose of the website straight away). We thought this may start to turn away newcomers. We changed the paper prototype to demonstrate to users that they could zoom in/out of the map, and read EmotePosts as soon as they enter the website. This also meant that the ‘serious play’ aspect was integrated immediately, and the user would learn in an active manner. We decided to include a ‘signup’ option on a sidebar. After implementing these changes, users grasped the concept much quicker when shown the paper prototype.
-
-The wireframe was also shared with external individuals, to gather further feedback (in the form of an accompanying questionnaire). The results of the questionnaire revealed potential improvements, which we then implemented. For example, one of the questions asked: ‘How would you go about improving the website?’. One answer suggested including a key for the different coloured markers. The image below shows the final state of the key that we decided to implement as a response to this feedback.
-
-<img src="supporting_images/key.png" width="150">
-
-
-### Wireframes and interaction flow diagrams for final key subsystems.
-
-
-### Understanding of user group (questionnaires / user stories / interviews)
 To ensure that we continued to develop a website with the user in mind, we gathered user feedback throughout the project. This started as early as our paper prototypes, and proved to be useful. For example, the first paper prototype (which was also shared) demonstrated that new users would be greeted wth an empty globe. They would then have to signup before gaining the ability to interact with the map. This was our initial plan because we wanted to encourage users to signup, however, user feedback revealed something important to us: the user was confused as to what signing up would allow them to do (aka they did not understand the purpose of the website straight away). We thought this may start to turn away newcomers. We changed the paper prototype to demonstrate to users that they could zoom in/out of the map, and read EmotePosts as soon as they enter the website. This also meant that the ‘serious play’ aspect was integrated immediately, and the user would learn in an active manner. We decided to include a ‘signup’ option on a sidebar. After implementing these changes, users grasped the concept much quicker when shown the paper prototype. The image below shows the changes we made to our paper prototype as a response:
 
 <p align="center">
@@ -416,9 +643,17 @@ To ensure that we continued to develop a website with the user in mind, we gathe
 
 The wireframe was also shared with external individuals, to gather further feedback (in the form of an accompanying quetionnaire). The results of the questionnaire revealed potential improvements, which we then implemented. For example, one of the questions asked: ‘How would you go about improving the website?’. One answer suggested including a key for the different coloured markers. The image below shows the final state of the key that we decided to implement as a response to this feedback.
 
+<img src="supporting_images/key.png" width="150">
 
-<a name="sprints"></a>
-## Sprints & Project Management
+### Wireframes and interaction flow diagrams for final key subsystems.
+Our paper prototype served well at forming an initial visualisation of the website. In order to gain more useful feedback, we needed to demonstrate the website using a closer representation of a working product. Logically, a wireframe was the next best step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/share/NJ2D65MNBU/572059598) to go to our interactive wireframe. Below is a preview:
+
+<p align="center">
+<img src="supporting_images/wireframe_preview.png" width="700">
+</p>
+
+
+
 ### Group working methods used (for instance did your team choose a particular style of agile? What communication channels did you use?)
 Discord was used for the majority of the written communication. We setup a server and divided it into 6 channels: ‘general’, ‘front-end’, ‘back-end’, ‘ui’, ‘user-testing’ and ‘write-up’. Having individual channels meant that our communication was more organised, and reduced disruption to members working on alternative sections. Discord’s pinning feature also meant that key messages never went missing amongst a sea of other messages.
 
@@ -432,3 +667,5 @@ In addition to the main branch, a 'dev' (development) branch was also created. T
 stuff
 
 [Doodle Jump]: <https://en.wikipedia.org/wiki/Doodle_Jump>
+[mapbox]: <https://www.mapbox.com/>
+[mapbox heatmap]: <https://docs.mapbox.com/mapbox-gl-js/example/heatmap-layer/> 

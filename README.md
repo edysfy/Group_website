@@ -13,7 +13,7 @@ Hari Patel  [Team Leader, Product/Systems Designer,Front-end, Back-end, Database
 ![Image of Hari](member_photos/HariPatel.jpg)  
 Alfred Graham  [Front-end]
 ![Image of Hari](member_photos/AlfredGraham.jpg)  
-Edward Hammersley  [Front-end]
+Edward Hammersley  [Front-end, Project Management]
 ![Image of Ed](member_photos/EdwardHammersley.jpg)     
 Zaki Gill  [Front-end, Academic&Market Research, User-Testing/Prototyping]
 ![Image of Zaki](member_photos/ZakiGill.jpg)  
