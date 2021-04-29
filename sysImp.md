@@ -179,7 +179,7 @@ server.listen(port);
 ```
 
 #### Express Application:
-Express made dealing with responses and requests a lot easier. In the express app, when a request arrives to the applications url path, it filters down the subsequent HTTP methods in the app until it is resolved with a response. There is also a next function which directly tells the request to move to the next method. However in our application we never felt the need to use this. Before setting up the routing we needed initalise the application.
+Express made dealing with responses and requests a lot easier. In the express app, when a request arrives to the applications url path, it filters down the subsequent HTTP methods in the app until it is resolved with a response. There is also a next function which directly tells the request to move to the next method. However in our application we never felt the need to use this. Before setting up the routing we needed initalise the application. First we will cover the features enabled through our use of express apis, and then look at the code and the accompanying http requests in more detail;
 
 
 
@@ -195,7 +195,6 @@ EmoteMap provides 5 integral features which interface with the back end:
 
 **Filter user posts and display**: User posts can be filtered by date, gender, age, mood and keyword.  Initially all these parameters are set to show all posts, for example the age range is set to 0 – 100 and gender is set to both male and female. Excluding the keyword, these parameters determine what posts are fetched from the database. Before the database is queried userSchema is joined with geoJsonSchema so each post contains also the user’s attributes. Whenever one of these parameters is changed the database is queried again loading in all the geoJSON points which adhere to the criteria into a geoJSON array in memory. This geoJSON array is then passed to Mapbox to be displayed on the map. When a user enters a keyword and presses search all posts found in the pre filtered geoJSON array with similar keywords are returned.
 
-### Middle Tier - Express, Node, the RESTful API
 Our project makes use of ExpressJs to build 3 core RESTful apis for our application; search.js, user.js, and geopost.js. The most important api is likely geopost.js; it serves as the main link between the front and backend, handling fetching and posting geoJSON data to and from our mapbox component and our mongoDB database. It uses http get requests to fetch an array of geoJSON data (all of the user posts – data points containing location, keywords, date/time of the post, user details and the post description) which is utilised by our services to pipe the data into components where needed.  Similarly, http post requests are used to take data from user input forms in components in the front end, and send them to our database for permanent storage. Http delete requests are also utilised for removing posts from the database, should a user request it from the front end.
 ```js
 /*gets all post from the db*/
