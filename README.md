@@ -32,7 +32,7 @@ View our [Introduction, background and motivation](introSect.md) document to see
 ## System implementation,UX design and development process
 View our [System implementation,UX design and development process](sysImp.md) document to see;
 * System Implementation (Backend,API,Frontend)
-* UX Design (stakeholders,users)
+* [UX Design](uxDesign.md) (stakeholders,users)
 * Project Management & development process (continuous integration, use of github)
 
 

@@ -20,7 +20,7 @@ Initially, we needed three main components that comprise the stack.
     This is capable of dealing with incoming HTTP requests and adequately responds to the client. It is built with NodeJs and a framework called ExpressJs. It makes use of the HTTP protocol to send data from the client to the database. The client submits an HTTP request to the server. This request will have an HTTP param id, which is used to send data through the URL path. This is useful for sending user information from the client to the API, like a username. An HTTP body, which sends the main data structure created on the front end. As an example, when the user makes a new EmotePost, a javascript object is created and that is sent via Angular's HTTP client with that object as a payload. The server will have access to that via using the body method. HTTP headers are also sent. We intend to use the headers to send the JWT token to guard our routing paths on the back end. This essentially makes them accessible to users. Once a request has been detected at one of the servers' paths, it will perform adequate data processing. Ie storing data in the database, querying the database for data, and then send a response back to the client. This will contain, and data required, or messages that tell the client this request couldn't be handled in some way.
 
 3. The frontend/UI: <br/>
-    This is responsible for the user experience and data creation through the use of Angular forms. 
+    This is responsible for the user experience and data creation through the use of Angular forms.
     The user can explore the map, create an account, log in, create Emote posts, view other users' posts, have access to their posts in a timeline, delete their posts, fly to a post, and search for other users' posts (by date, age, and gender). To display a map, we needed to connect to an external API. We had two options. One Mapbox and the other was GoogleMaps. Firstly, Mapbox was more appealing as it is the underdog. We didn't want to be involved with a conglomerate like Google. After digesting Mapbox's API, we realized it is capable of doing everything we wanted. Especially, displaying a heat map. It accepts geoJson data and provides the developer with a lot of support to customize and visualize that data on the map. It accepts data via a direct link to a URL path, or through building your objects. This was useful as it allowed us to use geoJson objects that are stored in memory on the front end. As an example (will be explained in a lot more detail in the front end), when the user made a post-it would automatically update the UI, as we stored the new post in a Service. The Mapbox component listens to changes in the geoJson array and re-renders the data on the map. We used a set of Angular Services to maintain state and allow data to flow between components on the frontend, as well as providing a link between the data flowing to the REST API.
 
 ## Back End - MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams)
@@ -564,10 +564,10 @@ As the complexity of our project began to grow we decided to implement a test pr
   <th>Solution</th>
 </tr>
 <tr>
-  <td></td>
-  <td></td>
-  <td>stuff</td>
-  <td>stuff</td>
+  <td>Api/Express</td>
+  <td>The user will eventually be able to see up to date data on displayed on the map and can add to that data by making a post </td>
+  <td>intially the api returned a url to some data - however whilst we were exploring how to implement our backend, we discovered that this would add uneccessary processing time and be difficult to update with live data; we would have to transfer data from the database into another server, essentially having to call http fetch requests twice </td>
+  <td>we decided to return an array of geoJSON objects, also supported by mapbox, which would allow us to easily update and manipulate the data in memory, and reduce http get and post requests</td>
 </tr>
 <tr>
   <td>stuff</td>
