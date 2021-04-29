@@ -179,7 +179,7 @@ server.listen(port);
 ```
 
 #### Express Application:
-Express made dealing with responses and requests a lot easier. In the express app, when a request arrives to the applications url path, it filters down the subsequent HTTP methods in the app until it is resolved with a response. There is also a next function which directly tells the request to move to the next method. However in our application we never felt the need to use this. Before setting up the routing we needed initalise the application. First we will cover the features enabled through our use of express apis, and then look at the code and the accompanying http requests in more detail;
+Express made dealing with responses and requests a lot easier. In the express app, when a request arrives to the applications url path, it filters down the subsequent HTTP methods in the app until it is resolved with a response. There is also a next function which directly tells the request to move to the next method. However in our application we never felt the need to use this. Before setting up the routing we needed initalise the application. First we will cover the features/functions enabled through our use of express apis, and then look at the code and the accompanying http requests in more detail;
 
 
 
