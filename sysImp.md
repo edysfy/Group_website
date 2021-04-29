@@ -506,14 +506,14 @@ With the scope of the project and the basic functionalities required established
 Sprint aims:
 
 * Review feedback from paper prototyping survey
-* Create basic GUI (buttons purely aethteic, no functionality)
+* Create basic GUI (initially buttons had no functionality)
 * Select API for displaying data in a map format
 * Intergrate Mapbox API
 
 
-With group members now familiar with Angular and Github we began adding basic, purely visual, features to our site. Results from our paper prototyping survey helped us decide how our GUI should operate. For example, initial feedback suggested users prefered the login page being a seperate page, rather than a slide in as we had originally invisioned. We also added a navbar to the website which included a mockup of our logo and a home button.
+With group members now familiar with Angular and Github we began adding basic, purely visual, features to our site. Results from our paper prototyping survey helped us decide how our GUI should operate. For example, initial feedback suggested users prefered the login page being a seperate page, rather than a slide in as we had originally invisioned. We also added a navbar, making use of the angular material toolbar element, to the website which included a mockup of our logo and a home button.
 
-After some research it was apparent that [mapbox] provided all the functionality we required, chosing it over google maps because of its open source nature and large number of styling options, allowing us to more readily make changes as the project developed. Initially, we simply got a basic map to display along with the aforementioned navbar, as at this stage we were still familiarising ourselves with the mapbox api.
+After some research it was apparent that [mapbox] provided all the functionality we required, with us chosing it over google maps because of its open source nature and large number of styling options, allowing us to more readily make changes as the project developed. Initially, we simply got a basic map to display along with the aforementioned navbar, as at this stage we were still familiarising ourselves with the mapbox api.
 
 At this point in the project we were intending to use this template data from one of the examples from the documentation (the extensive examples being another reason we chose the mapbox api) in our final product as it showcased how our site would look once many posts had been made. With fairly big steps made towards how we would like the finished project to look aesthetically we were now ready to start adding in some of the websites key functionality!
 
@@ -527,16 +527,10 @@ At this point in the project we were intending to use this template data from on
   <th>Solution</th>
 </tr>
 <tr>
-  <td>stuff</td>
-  <td>stuff</td>
-  <td>stuff</td>
-  <td>stuff</td>
-</tr>
-<tr>
-  <td>stuff</td>
-  <td>stuff</td>
-  <td>stuff</td>
-  <td>stuff</td>
+  <td>Front End</td>
+  <td>User can interact with a navbar and have clear view of the map interface</td>
+  <td>navbar and mapbox component were not interacting nicely, with strange scrolling issues panning around the map</td>
+  <td>implement routing using angular so that instead of the toolbar and the map being in the mapbox html, the mapbox is loaded from `app.component.html` using a router outlet </td>
 </tr>
 </table>
 
