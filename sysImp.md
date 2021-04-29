@@ -566,8 +566,8 @@ As the complexity of our project began to grow we decided to implement a test pr
 <tr>
   <td>Api/Express</td>
   <td>The user will eventually be able to see up to date data on displayed on the map and can add to that data by making a post </td>
-  <td>intially the api returned a url to some data - however whilst we were exploring how to implement our backend, we discovered that this would add uneccessary processing time and be difficult to update with live data; we would have to transfer data from the database into another server, essentially having to call http fetch requests twice </td>
-  <td>we decided to return an array of geoJSON objects, also supported by mapbox, which would allow us to easily update and manipulate the data in memory, and reduce http get and post requests</td>
+  <td>Intially the api returned a url to some data - however whilst we were exploring how to implement our backend, we discovered that this would add uneccessary processing time and be difficult to update with live data; we would have to transfer data from the database into another server, essentially having to call http fetch requests twice </td>
+  <td>We decided to return an array of geoJSON objects from the api, also supported by mapbox, which would allow us to easily update and manipulate the data in memory, and reduce http get and post requests</td>
 </tr>
 <tr>
   <td>stuff</td>
