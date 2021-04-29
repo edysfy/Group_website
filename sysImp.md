@@ -210,7 +210,7 @@ router.get("", (req, res, next) => {
         geoPost: allGeoPost,
       });
     })
-  .....
+  /* function continues....*/
 });
 ```
 
