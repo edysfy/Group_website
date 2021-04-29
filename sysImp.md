@@ -12,7 +12,7 @@ Before diving into the details of each stack, how they work and link together. L
 <br/>
 <img src="supporting_images/stack_arc_overview.png" width="650px">
 
-Initially, we needed three main components that comprise the stack.
+We needed three main components that comprise the stack.
 
 1. The MongoDB database: <br/>
     To store GeoJson and User data through two separate collections. This will communicate with the REST API through the ODM, Mongoose. It will have no direct connection to the front end due to security reasons. All data that is created on the front end will filter throughout API.
@@ -21,7 +21,7 @@ Initially, we needed three main components that comprise the stack.
     This is capable of dealing with incoming HTTP requests and adequately responds to the client. It is built with NodeJs and a framework called ExpressJs. It makes use of the HTTP protocol to send data from the client to the database. The client submits an HTTP request to the server. This request will have an HTTP param id, which is used to send data through the URL path. This is useful for sending user information from the client to the API, like a username. An HTTP body, which sends the main data structure created on the front end. As an example, when the user makes a new EmotePost, a javascript object is created and that is sent via Angular's HTTP client with that object as a payload. The server will have access to that via using the body method. HTTP headers are also sent. We intend to use the headers to send the JWT token to guard our routing paths on the back end. This essentially makes them accessible to users. Once a request has been detected at one of the servers' paths, it will perform adequate data processing. Ie storing data in the database, querying the database for data, and then send a response back to the client. This will contain, and data required, or messages that tell the client this request couldn't be handled in some way.
 
 3. The frontend/UI: <br/>
-    This is responsible for the user experience and data creation through the use of Angular forms.
+    This is responsible for the user experience and data creation through the use of Angular forms. 
     The user can explore the map, create an account, log in, create Emote posts, view other users' posts, have access to their posts in a timeline, delete their posts, fly to a post, and search for other users' posts (by date, age, and gender). To display a map, we needed to connect to an external API. We had two options. One Mapbox and the other was GoogleMaps. Firstly, Mapbox was more appealing as it is the underdog. We didn't want to be involved with a conglomerate like Google. After digesting Mapbox's API, we realized it is capable of doing everything we wanted. Especially, displaying a heat map. It accepts geoJson data and provides the developer with a lot of support to customize and visualize that data on the map. It accepts data via a direct link to a URL path, or through building your objects. This was useful as it allowed us to use geoJson objects that are stored in memory on the front end. As an example (will be explained in a lot more detail in the front end), when the user made a post-it would automatically update the UI, as we stored the new post in a Service. The Mapbox component listens to changes in the geoJson array and re-renders the data on the map. We used a set of Angular Services to maintain state and allow data to flow between components on the frontend, as well as providing a link between the data flowing to the REST API.
 
 Lets go into some more depth...    
@@ -174,7 +174,7 @@ const userSchema = new mongoose.Schema({
 ### Middle Tier - Express, Node, the RESTful API
 
 #### Node:
-We used Node as a runtime enviroment allowed us to run javascript code outside of the web browser. As, we were building the front-end with Angular, we decided that to use Node to build the backend API, as the languages needed for both are the same. This really helped team members work on both the front and the backend. The node server is built with the HTTP module, and listens for HTTP request/responses on a local port. We didn't build the whole api with Node. We use ExpressJs build to an Express app. The Express app is a comprised of a series of function calls and custom middleware that we developed. The Express app is passed into the Node Server as an argument. Everytime a request is made against the server, the argument is called every time. So are Express middleware will essentially run and deal with the request. The server object is an event is an "EventEmitter", we use Express CRUD methods to listen to when an HTTP event is triggered.
+We used Node as a runtime enviroment allowed us to run javascript code outside  the web browser. As, we built the front-end with Angular, we decided that to use Node to build the backend API, as the languages needed for both are the same. This really helped team members work on both the front and the backend. The node server is built with the HTTP module, and listens for HTTP request/responses on a local port. We didn't build the whole api with Node. We use ExpressJs build to an Express app. The Express app is a comprised of a series of function calls and custom middleware that we developed. The Express app is passed into the Node Server as an argument. Every time a request is made against the server, the argument is called every time. So are Express middleware will essentially run and deal with the request. The server object is an event is an "EventEmitter", we use Express CRUD methods to listen to when an HTTP event is triggered.
 ```js
 /*create server using express app and listen on port*/
 const server = http.createServer(app);
@@ -182,9 +182,49 @@ server.listen(port);
 ```
 
 #### Express Application:
-Express made dealing with responses and requests a lot easier. In the express app, when a request arrives to the applications url path, it filters down the subsequent HTTP methods in the app until it is resolved with a response. There is also a next function which directly tells the request to move to the next method. However in our application we never felt the need to use this. Before setting up the routing we needed initalise the application. First we will cover the features/functions enabled through our use of express apis, and then look at the code and the accompanying http requests in more detail;
+Express made dealing with responses and requests a lot easier. In the express app, when a request arrives to the server's url path, it filters down the subsequent HTTP methods in the path until it is resolved with a response. There is also a next function which directly tells the request to move to the next method. However in our application we never felt the need to use this.
+Lets break down this Express application and describe how it works:
+1. app.js:
+      - This is the file that initializes the Express app object and exports it to the Server.js. We initialized the app with 'Cross-Origin-Referencing (cors)'. This is a middleware that makes sure our application can accept requests coming from different clients. For testing, some of us had our client running on running on a different port so this came in handy. The App also uses 'Bodyparser'. This parses incoming requests to JSON and allows the app to receive params data. We then issue a get request to the Index HTML file that is generated using Ng Build. So we can serve the Angular front end without using Ng Serve. Meaning it is compatible with Docker. 
+        ```js
+        app.use(express.static(path.join(__dirname, '../../dist/demosite')));
+        // Catch all other routes and return the index file
+        app.get('/', (req, res) => {
+          res.sendFile(path.join(__dirname, '../../dist/index.html'));
+        });
+        ```
+        Also, app.js uses the express router from the different files. The different paths of our API are joined together through this file.
+        ```js
+        app.use("/api/user",userRoutes);
+        app.use("/api/geopost",geopostRoutes);
+        app.use("/api/search",searchRoutes);
+        ```
 
-
+2. API Routes:
+    <br/>
+    This segment of the API was very important. It allowed us split the Express application into paths that deal a specific type request from the client. We had three routes. 
+    <br/>
+    1. geopost.js => "/api/geopost": <br/>
+        Here we dealt with all the requests that are related to the EmotePosts.
+          - We have a get method on the route. Once the request from the frontend hits this path. It calls a find() method of the GeoJson model that was created from the GeoJson schema. This finds all of the GeoJson points in the database and returns a promise. It's an asynchronous function. Once the promise returns all the GeoJson data points, we send a response back to the front end. The payload contains a JSON object that contains the GeoPosts array, and a message, with a status code 200 (meaning it was successful). This data is then utilized by the Post Service on the front end, which pipes the data into components where needed. If there is an error with the request, the server sends back the default error message. 
+          ```js
+          /*gets all post from the db*/
+          router.get("", (req, res, next) => {
+            GeoJson.find()
+              .then((allGeoPost) => {
+                res.status(200).json({
+                  message: "Coordinates sent from database",
+                  geoPost: allGeoPost,
+                });
+              })
+              .catch((error) => {
+                res.status(401).json({
+                  message: "unable to retrieve the data",
+                  error: error,
+                });
+              });
+          });
+          ```
 
 
 EmoteMap provides 5 integral features which interface with the back end:
@@ -192,14 +232,14 @@ EmoteMap provides 5 integral features which interface with the back end:
 **Account creation**: The user is asked to enter a username and password (password is entered twice to ensure user has entered the password correctly). These details are then sent to the database via the API route user.js. Once received on the backend a response is returned through the API which is either successful, in which case an account is added to the database, or it is unsuccessful meaning the requested username is already in use and the account could not be created. If the response was unsuccessful the user is informed their account could not be created and that they should use a different username. Date of birth, gender and age are all set to null by default and can only be set once the user has logged in.   
 
 **Login**: After the user has created an account, they are then able to log in using their set credentials. The user’s entered username and password are sent to the backend via the API route user.js and queried on the database. If no matching username is found an unsuccessful response is returned and the user is prompted that they have entered an incorrect username. If a matching username is found (password is hashed and compared? Check with hari)
-
 **Post creation**: Posts can only be created when the user is logged in and are sent from the front end to the database via the API route geopost.js. The content of the post along with the users account name are added to the post database.
 
 **Display all user posts**: When a user first opens EmoteMap every single user post is displayed. To achieve this, once the website opened a request for every single user post is made via the API route geopost.js. These posts are then passed to Mapbox as a geoJSON array and displayed on the map.
 
 **Filter user posts and display**: User posts can be filtered by date, gender, age, mood and keyword.  Initially all these parameters are set to show all posts, for example the age range is set to 0 – 100 and gender is set to both male and female. Excluding the keyword, these parameters determine what posts are fetched from the database. Before the database is queried userSchema is joined with geoJsonSchema so each post contains also the user’s attributes. Whenever one of these parameters is changed the database is queried again loading in all the geoJSON points which adhere to the criteria into a geoJSON array in memory. This geoJSON array is then passed to Mapbox to be displayed on the map. When a user enters a keyword and presses search all posts found in the pre filtered geoJSON array with similar keywords are returned.
 
-Our project makes use of ExpressJs to build 3 core RESTful apis for our application; `search.js`, `user.js`, and `geopost.js`. The most important api is likely `geopost.js`; it serves as the main link between the front and backend, handling fetching and posting geoJSON data to and from our mapbox component and our mongoDB database. It uses http get requests to fetch an array of geoJSON data (all of the user posts – data points containing location, keywords, date/time of the post, user details and the post description) which is utilised by our services to pipe the data into components where needed.  Similarly, http post requests are used to take data from user input forms in components in the front end, and send them to our database for permanent storage. Http delete requests are also utilised for removing posts from the database, should a user request it from the front end.
+### Middle Tier - Express, Node, the RESTful API
+Our project makes use of ExpressJs to build 3 core RESTful apis for our application; search.js, user.js, and geopost.js. The most important api is likely geopost.js; it serves as the main link between the front and backend, handling fetching and posting geoJSON data to and from our mapbox component and our mongoDB database. It uses http get requests to fetch an array of geoJSON data (all of the user posts – data points containing location, keywords, date/time of the post, user details and the post description) which is utilised by our services to pipe the data into components where needed.  Similarly, http post requests are used to take data from user input forms in components in the front end, and send them to our database for permanent storage. Http delete requests are also utilised for removing posts from the database, should a user request it from the front end.
 ```js
 /*gets all post from the db*/
 router.get("", (req, res, next) => {
@@ -219,7 +259,7 @@ router.get("", (req, res, next) => {
 });
 ```
 
-The `user.js` and `search.js` apis function similarly, but instead focus on fetching user data and search results respectively. `User.js` handles adding new users to the database when they sign up on the front end, and then consequently logging them in (http post), updating that data when a user chooses to input their date of birth and gender (using http put) and fetching user data if needed (http get).
+The user.js and search.js apis function similarly, but instead focus on fetching user data and search results respectively. User.js handles adding new users to the database when they sign up on the front end, and then consequently logging them in (http post), updating that data when a user chooses to input their date of birth and gender (using http put) and fetching user data if needed (http get).
 ```js
 router.put("/:username", (req, res, next) => {
   if (req.body.gender != null) {
@@ -234,7 +274,7 @@ router.put("/:username", (req, res, next) => {
 })
 ```
 
-The `search.js` api is primarly concerned around generating constraints for fetching data from the database based on the users input in the searchfield in the side bar (e.g. fetching all posts made 10 or less days ago); it again does this through a http post request, but then also utilising functions from our GeoJson schema and filtering functions from the api to correctly populate an array to return to our user-search service which is then piped to the front end components to be displayed.
+The search.js api is primarly concerned around generating constraints for fetching data from the database based on the users input in the searchfield in the side bar (e.g. fetching all posts made 10 or less days ago); it again does this through a http post request, but then also utilising functions from our GeoJson schema and filtering functions from the api to correctly populate an array to return to our user-search service which is then piped to the front end components to be displayed.
 ```js
 router.post("", (req, res, next) => {
   GeoJson.find()
@@ -567,12 +607,17 @@ As the complexity of our project began to grow we decided to implement a test pr
   <th>Solution</th>
 </tr>
 <tr>
-  <td>Api/Express</td>
-  <td>The user will eventually be able to see up to date data on displayed on the map and can add to that data by making a post </td>
-  <td>Intially the api returned a url to some data - however whilst we were exploring how to implement our backend, we discovered that this would add uneccessary processing time and be difficult to update with live data; we would have to transfer data from the database into another server, essentially having to call http fetch requests twice, and requiring a refresh to update the data </td>
-  <td>We decided to return an array of geoJSON objects from the api (also supported by mapbox), which would allow us to easily update and manipulate the data in memory by using our post-service to send the data to different components, manipulate the array, and eventually send information to the database, and reduce http get and post requests</td>
+  <td></td>
+  <td></td>
+  <td>stuff</td>
+  <td>stuff</td>
 </tr>
-
+<tr>
+  <td>stuff</td>
+  <td>stuff</td>
+  <td>stuff</td>
+  <td>stuff</td>
+</tr>
 </table>
 
 ## Sprint 4: Set up mongoDB and import dummy data + user authentification
