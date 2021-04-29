@@ -5,11 +5,22 @@
 
 <a name="system"></a>
 # System Implementation
-### Stack architecture and system design (e.g. class diagrams, sequence diagrams)
-stuff
-### Back End - MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams)
+## Stack architecture and system design (e.g. class diagrams, sequence diagrams)
+ 
+Before diving into the details of each stack, how they work and link together. We are going to describe the System Architecture as a whole. 
+Initially, we needed three main components that comprise the stack. 
+1. The MongoDB database:
+    To store GeoJson and User data through two separate collections. This will communicate with the REST API through the ODM, Mongoose. It will have no direct connection to the front end due to security reasons. All data that is created on the front end will filter throughout API.
+    
+2. The REST API:
+    This is capable of dealing with incoming HTTP requests and adequately responds to the client. It is built with NodeJs and a framework called ExpressJs. It makes use of the HTTP protocol as a way of sending data from the client to the database. The client submits an HTTP request to the server. This request will have an HTTP param id, which is used to send data through the URL path. This is useful for sending user information from the client to the API, like a username. An HTTP body, which sends the main data structure created on the front end. As an example, when the user makes a new EmotePost, a javascript object is created and that is sent via Angular's HTTP client with that object as a payload. The server will have access to that via using the body method. HTTP headers are also sent. We intend to use the headers to send the JWT token to guard our routing paths on the back end. This essentially makes them accessible to users. Once a request has been detected at one of the servers' paths, it will perform adequate data processing. Ie storing data in the database, querying the database for data, and then send a response back to the client. This will contain, and data required, or messages that tell the client this request couldn't be handled in some way.
 
-**Why use MongoDB?**
+
+3. The frontend user interface, which creates data and displays it on a map. This data is intended to be customizable to the user, and also can create interesting data visualization. We have the idea of creating a heatmap 
+
+## Back End - MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams)
+
+### Why use MongoDB?
 
 We choose MongoDb as a suitable database for our backend due to the nature of the GeoJson data structure required by Mapbox to display posts on the screen.
 Initially, we were unsure of how to display user posts, create a Heatmap, and whether to allow users to search for posts using polygons. Marceli recommended
@@ -17,7 +28,7 @@ using MongoDb as it has a special part of the API designed to dealing with GeoJs
 
 There was some consideration to implement an SQL database due to the simple nature of our data model. As shown below, through the ERD, we could easily use join queries on the data which would have been beneficial in the search path of our API. However, due to the reason above, as well as being taught MongoDB in lectures. We stuck with MongoDB.
 
-**Why use Mongoose**
+### Why use Mongoose
 
 Upon having a team conversation with Marceli, it was recommended that we look into Mongoose as an Object Document Manager to make our lives easier and save time.
 After some research, we decided to use Mongoose as the middleman between incoming/outgoing HTTP requests/responses between the API and our database.
@@ -26,7 +37,7 @@ Mongoose models are a lot easier to initialize as they are capable of setting up
 MongoDB is inherently schema-less, however, Mongoose allows the developer to define schemas for their data type. This was used fully at the start as we were able quickly,
 prototype our data models on the backend. Queries are a lot easier to deal with as they allow functions to chain onto the Model and don't require the embedded mnemonics that MongoDb requires so the developer experience was a lot smoother. This is akin to comparing using C to using Python. While C is more efficient and allows more room for flexibility in our code, Python provides a layer of abstraction that makes it a lot easier for scripting and experimenting with abstract ideas.
 
-**How did we connect MongoDb To our API?**
+### How did we connect MongoDb To our API?
 
 Firstly, we needed to initialize the MongoDB database. So we created a free MongoDB account and created a cluster. We set the IP to all, so all of our team members can be sent requests through to the database, which usefull for testing, as we could all perform CRUD operations on the database. We then took the connection URL (which has our account details stored) and stored it as a variable: 'mongoDBConnect', in the Express application file. Mongoose as a simple method called "connect" that allows you to connect to the URL easily. Once Node is run, the database can now communicate with our API.
 
@@ -40,9 +51,9 @@ mongoose.connect(mongoDBConnect,{ useNewUrlParser: true, useUnifiedTopology: tru
 })
 ```
 
-**MONGOOSE MODELS**
+### MONGOOSE MODELS
 
-**ERD of the whole data model**
+#### ERD of the whole data model
 
 <img src="supporting_images/mongoDBerd.jpg" width="650px">
 
@@ -55,7 +66,7 @@ module.exports = mongoose.model("GeoJson", geoJsonSchema);
 
 Lets talk about how the models were made, why they were made and how they link together.
 
-**GeoJsonModel**: <br/>
+#### GeoJsonModel : <br/>
 This schema was the initial schema we started to develop. As a team, we decided that we needed a data structure that allowed anyone to make a post and display it on the Mapbox component. That was our priority. If we didn't have this functionality then users wouldn't be able to Emote their feeling, see the heatmap, and view other people's posts. After some research, it was found that there is a pre-defined data structure called: "GeoJson". This standard builds upon JSON data format, however, it requires certain attributes. GeoJson is a data structure that
 allows one to represent features like "Geometry", along with any non-spatial attributes that the developer has the freedom to define. When discovering this data structure we felt a sense of relief as we were unsure as to model the data. This was the first GeoJson data structure we found in use through a tutorial from "http://132.72.155.230:3838/js/geojson-1.html": 
 
@@ -129,7 +140,7 @@ const postSchema = new mongoose.Schema({
 });
 ```
 
-**UserModel**: <br/>
+#### UserModel: <br/>
 This holds all the information relating to registered user accounts. Initially, we fathomed a guess as to what the attributes the userSchema should hold.
 It made sense for there to be a username, email, password, and geoPost attributes. We thought that the geoPost attribute will contain an array of GeoJson data, defined by the models above.
 So we would just have one Model called User, and whenever the user made a post-it will store the GeoJson data in the User model under the user. However, we thought this wouldn't be a good idea as it would cause more work for getting all the GeoJson. It's easier to get all GeoJson and manipulating that array on the API or frontend, than getting all the user's GeoJson and merging them into an array, before manipulating it. Especially, when it would to come searching the GeoJson with complex queries. We also got rid of the email as it was mentioned from numerous user feedback that it wasn't needed. When posting such sensitive information, users wanted to remain anomalous. We also added, date of birth, gender and age attributes to support searching for GeoJson by age and gender. <br/>
@@ -165,10 +176,17 @@ const userSchema = new mongoose.Schema({
 
 ### Middle Tier - Express, Node, the RESTful API
 
-**Node**: <br/>
-We used Node as the server side framework. This runtime enviroment allows us to run javascript code outside of the web browser. As, we were building the front-end with Angular, we decided that using node as an adquadte tool to build the backend api, as the languages needed for both are the same. The node server is built with the HTTP module, and listens for HTTP request/responses on a local port. We didn't build the whole api with Node. We use Express middleware build to an Express app. The Express app is a comprised of a series of function calls, that is passed into the Node Server as an argument.
+**Node**: 
+<br/>
+We used Node as a runtime enviroment allowed us to run javascript code outside of the web browser. As, we were building the front-end with Angular, we decided that to use Node to build the backend API, as the languages needed for both are the same. This really helped team members work on both the front and the backend. The node server is built with the HTTP module, and listens for HTTP request/responses on a local port. We didn't build the whole api with Node. We use ExpressJs build to an Express app. The Express app is a comprised of a series of function calls and custom middleware that we developed. The Express app is passed into the Node Server as an argument.
+```js
+/*create server using express app and listen on port*/
+const server = http.createServer(app);
+server.listen(port);
+```
 
-**Express Application** <br/>
+**Express Application**:
+ <br/>
 Express made dealing with responses and requests a lot easier. In the express app, when a request arrives to the applications url path, it filters down the subsequent HTTP methods in the app until it is resolved with a response. There is also a next function which directly tells the request to move to the next method. However in our application we never felt the need to use this. Before setting up the routing we needed initalise the application.
 
 
