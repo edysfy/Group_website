@@ -1,5 +1,5 @@
 # System Implementation
-## Stack architecture and system design (e.g. class diagrams, sequence diagrams)
+# Stack architecture and system design (e.g. class diagrams, sequence diagrams)
 
 Before diving into the details of each stack, how they work and link together. Lets talk about the System Architecture as a whole.
 <br/> From a very broad perspective this is how application skeleton is structured: <br/>
@@ -23,9 +23,9 @@ We needed three main components that comprise the stack.
 
 Lets go into some more depth...    
 
-## Back End - MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams)
+# Back End - MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams)
 
-### Why use MongoDB?
+## Why use MongoDB?
 
 We choose MongoDb as a suitable database for our backend due to the nature of the GeoJson data structure required by Mapbox to display posts on the screen.
 Initially, we were unsure of how to display user posts, create a Heatmap, and whether to allow users to search for posts using polygons. Marceli recommended
@@ -33,7 +33,7 @@ using MongoDb as it has a special part of the API designed to dealing with GeoJs
 
 There was some consideration to implement an SQL database due to the simple nature of our data model. As shown below, through the ERD, we could easily use join queries on the data which would have been beneficial in the search path of our API. However, due to the reason above, as well as being taught MongoDB in lectures. We stuck with MongoDB.
 
-### How did we connect MongoDb To our API?
+## How did we connect MongoDb To our API?
 
 Firstly, we needed to initialize the MongoDB database. So we created a free MongoDB account and created a cluster. We set the IP to all, so all of our team members can be sent requests through to the database, which useful for testing, as we could all perform CRUD operations on the database. We then took the connection URL (which has our account details stored) and stored it as a variable: 'mongoDBConnect', in the Express application file. Mongoose as a simple method called "connect" that allows you to connect to the URL easily. Once Node is run, the database can now communicate with our API.
 
@@ -47,9 +47,9 @@ mongoose.connect(mongoDBConnect,{ useNewUrlParser: true, useUnifiedTopology: tru
 })
 ```
 
-### MONGOOSE MODELS
+## MONGOOSE MODELS
 
-#### ERD of the whole data model
+### ERD of the whole data model
 
 <img src="supporting_images/mongoDBerd.jpg" width="650px">
 
@@ -60,7 +60,7 @@ module.exports = mongoose.model("User", userSchema);
 module.exports = mongoose.model("GeoJson", geoJsonSchema);
 ```
 
-#### GeoJsonModel : <br/>
+### GeoJsonModel : <br/>
 This schema was the initial schema we started to develop. As a team, we decided that we needed a data structure that allowed anyone to make a post and display it on the Mapbox component. That was our priority. If we didn't have this functionality then users wouldn't be able to Emote their feeling, see the heatmap, and view other people's posts. After some research, it was found that there is a pre-defined data structure called: "GeoJson". This standard builds upon JSON data format, however, it requires certain attributes. GeoJson is a data structure that
 allows one to represent features like "Geometry", along with any non-spatial attributes that the developer has the freedom to define. When discovering this data structure we felt a sense of relief as we were unsure as to model the data. This was the first GeoJson data structure we found in use through a tutorial from "http://132.72.155.230:3838/js/geojson-1.html":
 
@@ -134,7 +134,7 @@ const postSchema = new mongoose.Schema({
 });
 ```
 
-#### UserModel: <br/>
+### UserModel: <br/>
 This holds all the information relating to registered user accounts. Initially, we fathomed a guess as to what the attributes the userSchema should hold.
 It made sense for there to be a username, email, password, and geoPost attributes. We thought that the geoPost attribute will contain an array of GeoJson data that the user made, defined by the models above.
 So we would just have one Model called User, and whenever the user made a post-it will store the GeoJson data in the User Collection under the user. However, we thought this wouldn't be a good idea as it would cause more work for getting all the GeoJson. It's easier to get all GeoJson and manipulating that array on the API or frontend, than getting all the user's GeoJson and merging them into an array, before manipulating it. Especially, when it would to come searching the GeoJson with complex queries. We also got rid of the email as it was mentioned from numerous user feedback that it wasn't needed. When posting such sensitive information, users wanted to remain anomalous. We also added, date of birth, gender and age attributes to support searching for GeoJson by age and gender. <br/>
@@ -170,9 +170,9 @@ const userSchema = new mongoose.Schema({
 });
 ```
 
-### Middle Tier - Express, Node, the RESTful API
+## Middle Tier - Express, Node, the RESTful API
 
-#### Node:
+### Node:
 We used Node as a runtime enviroment allowed us to run javascript code outside  the web browser. As, we built the front-end with Angular, we decided that to use Node to build the backend API, as the languages needed for both are the same. This really helped team members work on both the front and the backend. The node server is built with the HTTP module, and listens for HTTP request/responses on a local port. We didn't build the whole api with Node. We use ExpressJs build to an Express app. The Express app is a comprised of a series of function calls and custom middleware that we developed. The Express app is passed into the Node Server as an argument. Every time a request is made against the server, the argument is called every time. So are Express middleware will essentially run and deal with the request. The server object is an event is an "EventEmitter", we use Express CRUD methods to listen to when an HTTP event is triggered.
 ```js
 /*create server using express app and listen on port*/
@@ -180,7 +180,7 @@ const server = http.createServer(app);
 server.listen(port);
 ```
 
-#### Express Application:
+### Express Application:
 Express made dealing with responses and requests a lot easier. In the express app, when a request arrives to the server's url path, it filters down the subsequent HTTP methods in the path until it is resolved with a response. There is also a next function which directly tells the request to move to the next method. However in our application we never felt the need to use this.
 Lets break down this Express application and describe how it works:
 1. app.js:
@@ -478,9 +478,9 @@ Lets break down this Express application and describe how it works:
               ```
 
 
-## Front End - Angular, Details of implementation
+# Front End - Angular, Details of implementation
 
-Our front end is comprised of many components. For the report we have been 
+Our front end is comprised of many components. We feel the best way to break down the implementation of the front end is by taking each service as the heart of how each process works. 
 
 
 
