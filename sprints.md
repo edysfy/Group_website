@@ -1,23 +1,50 @@
 # Sprints & Project Management
 
 ## Table of contents
+
 * [Group working methods used](#first)
 * [Discussion of team roles](#second)
 * [Documentation of your sprints](#third)
 * [Git and continuous integration](#fourth)
 
-
 <a name="first"></a>
-## Group working methods used (for instance did your team choose a particular style of agile? what communication channels did you use?)
+## Group working methods used
+
+### COVID-19
+
+Throughout the entirety of this project the UK has been in some degree of national lock down. Due to this, it has not been possible for the team to meet up in person and therefore all interaction within the team has taken place online. This has presented challenges. Without face to face interaction it is more difficult to form personal bonds which can help drive team moral. On top of this being limited to online interaction means jobs can tend to take longer to complete and ideas are more difficult to bounce of each other. To counteract this, we decided early on how we would collaborate and set up the infrastructure we would would require to do so.
+
+### Communication infrastructure
+
+Because of the restrictions mentioned above it was extremely important to keep every group member engaged and involved with the project. Discord was chosen to be our main platform for communication.
+
+#### [Discord]
+
+<td><img src="supporting_images/discord_logo.jpg"></td>
+
+Discord is a free instant messaging platform where users can communicate through messages, voice calls and video calls, send files and more. Users can also set up private chat "servers" which can be divided into specific chat rooms.
+
+We set up a private server on Discord right at the start of the project with a few specific chats: back end, front end and write up but as the project progressed we created more specific channels:
+
+<td><img src="supporting_images/discord_chats.jpg"></td>
+
+Having more specific chat rooms was extremely useful, if we wanted to refer back to a certain message or link we would go to that specific channel instead of trawling through hundreds of messages. Discord also allows you to pin and search for messages. This was great for saving specific ideas, links and files. As well as instant messaging we carried out all our video calls over Discord. 
+
+### Collaboration strategy
+
+
+
+
+
 
 <a name="second"></a>
 ## Discussion of team roles (specialisation is ok!). A summary of individual contributions (note: this is for reference, your team will all receive the same grade!).
 
 
 <a name="third"></a>
-## Sprints
+# Sprints
 
-### Sprint 1: Project idea finalisation & set up CI infrastructure
+## Sprint 1: Project idea finalisation & set up CI infrastructure
 
 [16-27th feb]
 
@@ -206,16 +233,35 @@ At this stage we were happy our website was in a good place, so we began to star
 
 [21st apr - hand in]
 
-At this stage we were purely focusing on the write up, with our minimal viable product completed. We were however making small changes to design elements as we continued to gather feedback
+- Write up
+- feedback says icons unclear, alter icons to have names
 
-Our aims for this sprint;
-- Finish the write up
-- Implement any final changes
+#### Key implementation issues found: ####
+<table>
+<tr>
+  <th>Area</th>
+  <th>User Story</th>
+  <th>Issue</th>
+  <th>Solution</th>
+</tr>
+<tr>
+  <td></td>
+  <td></td>
+  <td>stuff</td>
+  <td>stuff</td>
+</tr>
+<tr>
+  <td>stuff</td>
+  <td>stuff</td>
+  <td>stuff</td>
+  <td>stuff</td>
+</tr>
+</table>
 
-Most of our time for this sprint was spent writing, though again we also spent some time formatting and designing our report, and making UX design changes - for example we changed our login buttons to text instead of icons, as our feedback suggested that users found where to login unclear.
 
 <a name="fourth"></a>
 ## Team use of Git, how your team used continuous integration / continuous deployment. Streamlining of workflow throughout.
 
+[Discord]: (https://discord.com/)
 
 Next section; [Evaluation and Conclusion](evalSect.md)
