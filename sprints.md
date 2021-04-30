@@ -42,7 +42,7 @@ Agile software development refers to software development methodologies which ar
 
 ### Agile and our project
 
-The only stakeholder in our project was the end user. Therefore all feedback at each iteration came from user surveys and interviews. As documented in the [sprints] and [UX] at each stage of the development process we set goals based apon the user feedback collected in the last sprint. Once we had implimented the features described by our sprint goals we then repeated the process evaluating what we had done and getting more user feedback. This process 
+The only stakeholder in our project was the end user. Therefore all feedback at each iteration came from user surveys and interviews. As documented in the [sprints] and [UX] at each stage of the development process we set goals based apon the user feedback collected in the last sprint. Once we had implimented the features described by our sprint goals we then repeated the process evaluating what we had done and getting more user feedback. This process
 
 
 
@@ -255,6 +255,9 @@ Most of our time for this sprint was spent writing, though again we also spent s
 
 <a name="fourth"></a>
 ## Team use of Git, how your team used continuous integration / continuous deployment. Streamlining of workflow throughout.
+In addition to the main branch, a 'dev' (development) branch was also created. Those members who were part of producing the website each created their own branch from 'dev'; this ensured that each member could work without being interrupted by conflicts. When a member was ready to submit their work, they would inform the others (via Discord) that they were soon going to merge and push - this avoided divergence of the 'dev' branch. The member would then ensure their 'dev' branch was up to date, merge their branch with 'dev' (after resolving any conflicts), before finally pushing. The member then informed the group of the push. At this point, another member may have requested temporary 'reservation' of the 'dev' branch. After each major feature implementation, members would ensure the stability of the dev branch, before merging it with 'main'.
+
+
 
 [Discord]: (https://discord.com/)
 
