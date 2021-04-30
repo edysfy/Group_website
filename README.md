@@ -22,7 +22,7 @@
   <td><img src="member_photos/HariPatel.jpg" width="100" height="100"></td>
 </tr>
 <tr>
-  <td>Alfred Graham </td>
+  <td>Alfie Graham </td>
   <td>Front-end,Back-end</td>
   <td><img src="member_photos/AlfredGraham.jpg" width="100" height="100"></td>
 </tr>
