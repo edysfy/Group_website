@@ -10,15 +10,11 @@ import { SidebarService } from '../service/sidebar.service';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
-  isLoggedIn!: boolean;
   sidebarState!: Sidebar;
 
   constructor(private authService: AuthenticationService, private sidebarService: SidebarService) { }
 
   ngOnInit(): void {
-    this.authService.getAuthState().subscribe((logIn) => {
-      this.isLoggedIn = logIn;
-    });  
     this.sidebarService.getSidebarObvs().subscribe((sidebar) => {
       this.sidebarState = sidebar;
     })

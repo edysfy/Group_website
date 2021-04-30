@@ -1,4 +1,4 @@
-<h1 align="center"> EmoteMap </h1>
+<h1 align="center" style="colour: red"> EmoteMap </h1>
 
 ## Table of contents
 * [Introduction, background and motivation](#first)
@@ -18,12 +18,12 @@
 </tr>
 <tr>
   <td>Hari Patel</td>
-  <td>Team Leader, Product/Systems Designer,Front-end, Back-end, Database</td>
+  <td>Team Leader, Product and Systems Designer, Front-end, Back-end, Database</td>
   <td><img src="member_photos/HariPatel.jpg" width="100" height="100"></td>
 </tr>
 <tr>
   <td>Alfie Graham </td>
-  <td>Front-end,Back-end</td>
+  <td>Front-end, Back-end</td>
   <td><img src="member_photos/AlfredGraham.jpg" width="100" height="100"></td>
 </tr>
 <tr>
@@ -33,7 +33,7 @@
 </tr>
 <tr>
   <td>Zaki Gill</td>
-  <td>Front-end, Academic&Market Research, User-Testing/Prototyping</td>
+  <td>Front-end, Academic&Market Research, User-Testing and Prototyping</td>
   <td><img src="member_photos/ZakiGill.jpg" width="100" height="100"></td>
 </tr>
 <tr>
