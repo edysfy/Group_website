@@ -19,27 +19,27 @@
 <tr>
   <td>Hari Patel</td>
   <td>Team Leader, Product/Systems Designer,Front-end, Back-end, Database</td>
-  <td>![Image of Hari](member_photos/HariPatel.jpg) </td>
+  <td><img src="member_photos/HariPatel.jpg" width="100" height="100"></td>
 </tr>
 <tr>
   <td>Alfred Graham </td>
   <td>Front-end,Back-end</td>
-  <td>![Image of Hari](member_photos/AlfredGraham.jpg) </td>
+  <td><img src="member_photos/AlfredGraham.jpg" width="100" height="100"></td>
 </tr>
 <tr>
   <td>Edward Hammersley</td>
   <td>Front-end, Project Management</td>
-  <td>![Image of Ed](member_photos/EdwardHammersley.jpg)</td>
+  <td><img src="member_photos/EdwardHammersley.jpg" width="100" height="100"></td>
 </tr>
 <tr>
   <td>Zaki Gill</td>
   <td>Front-end, Academic&Market Research, User-Testing/Prototyping</td>
-  <td>![Image of Zaki](member_photos/ZakiGill.jpg) </td>
+  <td><img src="member_photos/ZakiGill.jpg" width="100" height="100"></td>
 </tr>
 <tr>
   <td>Tarn Williamson</td>
   <td>Front-end</td>
-  <td>![Image of Tarn](member_photos/TarnWilliamson.jpg)</td>
+  <td><img src="member_photos/TarnWilliamson.jpg" width="100" height="100"></td>
 </tr>
 </table>
 
