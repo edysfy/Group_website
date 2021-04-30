@@ -362,8 +362,8 @@ Lets break down this Express application and describe how it works:
           ```
           <br/>
     3. user.js => "/api/user": <br/>
-        This route deals user registration, login, and allowing users to update their date of birth and gender values.
-          - "/api/user/signup" deals with registration. When a user signs up on the front end, the Authentication-service sends a payload containing the username and password. Firstly our API checks if the username is equal to  "null". If it is "null" it sends a response to the client with a message saying that the username is taken, and regSuc == false. This is because the Authentication-service checks if the username is "null" when the component initializes, so users cannot use "null" as their username. If this is fine, then we create a new User Mongoose Object, that takes the username and password as a parameter. We then save that into the User collection in that database. If the process is successful we send a response back to the client, with regSuc == true. The client uses regSuc to throw alerts to the user. Ie "Registration" successful. If the promise from the database returns an error, this means that the username has been taken. We send this response back to the client, with regSuc == false. The UI then displays an alert saying the username is taken.
+        This route deals user registration, and authentication:
+          - "/api/user/signup" deals with registration. When a user signs up on the front end, the Authentication-service sends a payload containing the username and password. Firstly our API checks if the username is equal to  "null" string. If it is "null" it sends a response to the client with a message saying that the username is taken, and regSuc == false. This is because the Authentication-service checks if the username is "null" when the component initializes, so users cannot use "null" as their username. If this is fine, then we create a new User Mongoose Object, that takes the username and password as a parameter. We then save that into the User collection in that database. If the process is successful we send a response back to the client, with regSuc == true. The client uses regSuc to throw alerts to the user. Ie "Registration" successful. If the promise from the database returns an error, this means that the username has been taken. We send this response back to the client, with regSuc == false. The UI then displays an alert saying the username is taken. As a side note, we initally were using Bcrypt to hash the passwords, however due to issues with Docker, we decided to leave it out for the project. However, we fully understand the importance of hashing the passwords.
             ```js
               router.post("/signup", (req, res, next) => {
                 /*cant use null as a username*/
@@ -398,7 +398,26 @@ Lets break down this Express application and describe how it works:
                   });
               });
               // });
-            ```
+              ```
+          - "api/user/login" deals with user authenticaiton. When a user logs in up on the front end, the Authentication-service sends a payload containing the submitted username and password. Firstly our API checks if the username null. Initally, this was a precaution we made on the server. We instamtly sent a response back to client, if by chance, no username was submitted. We then called the findOne() method on the User Model, with the username as the filter query. The usernames are guaranteed to be unique by MongoDb, so we can safely assume that only one user will return. Once the user details has been sent from the database, via a promise. We store the password in memory and send it to passwordMatch function. This takes in the password from the client and the database and checks if they are identical. If not we send an error response back to the client with regSuc == false. This will alter the user that the passwords do not match. If succesfull, we create a JWT token that is made from the username, password and the secret key. To ensure the JWT is not hackable by people that dont know the key. We send a response with the JWT and username back to the Authentication-service, so it will be stored in the clients local storage.
+              ```js
+              router.post("/login", (req, res, next) => {
+                User.findOne({ username: req.body.username }).then((query) => {
+                  /*if username not in the database query is null*/
+                  if (query === null) {
+                    return res.json({
+                      message: "Incorrect username",
+                    });
+                  }
+                  /*get the password in db and compare to the request body password*/
+                  const userPassword = query.password;
+                  passwordMatch(req.body.username, req.body.password, userPassword, res);
+                });
+              });
+              ```
+              <br/>
+        This route also deals with supplying user details to the User-Service, as well as allowing the users to enter/edit their date of birth and gender:
+
 
 
 ### Front End - Angular. Details of implementation

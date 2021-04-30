@@ -20,7 +20,6 @@ import { SignupComponent } from './authentication/signup/signup.component';
 import { AuthenticationService } from './service/authentication.service';
 import { UrlStateService } from './service/url-state.service';
 import { PostService } from './service/post.service';
-import { DataSearchService } from './data-search.service';
 import { PostbuttonComponent } from './postbutton/postbutton.component';
 import { UserpostComponent } from './userpost/userpost.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -97,7 +96,6 @@ const material = [
     AuthenticationService,
     UrlStateService,
     PostService,
-    DataSearchService,
   ],
   bootstrap: [AppComponent],
   entryComponents: [UserpostComponent],
