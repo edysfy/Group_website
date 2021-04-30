@@ -33,10 +33,6 @@ export class PostService {
     console.log(this.clickCordsState.getValue());
   }
 
-  public getGeoPosts(): Array<GeoJson> {
-     return this.geoPosts;
-  }
-
   public getGeoPostData(): Observable<Array<GeoJson>> {
     this.http
       .get<{ message: string; geoPost: IGeoJson[] }>(
