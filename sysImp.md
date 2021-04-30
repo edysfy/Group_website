@@ -480,8 +480,13 @@ Lets break down this Express application and describe how it works:
 
 # Front End - Angular, Details of implementation
 
-Our front end is comprised of many components. We feel the best way to break down the implementation of the front end is by taking each service as the heart of how each process works. 
+Our front end is comprised of many components. We felt the best way to break down the implementation of the front end is by grouping the application by Services as they are heart of how each process works. 
 
+## Post Service:
+
+  ### Class Diagram:
+  
+  <img src="supporting_images/post.png" width="950px">
 
 
 
