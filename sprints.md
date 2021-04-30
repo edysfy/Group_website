@@ -206,31 +206,13 @@ At this stage we were happy our website was in a good place, so we began to star
 
 [21st apr - hand in]
 
-- Write up
-- feedback says icons unclear, alter icons to have names
+At this stage we were purely focusing on the write up, with our minimal viable product completed. We were however making small changes to design elements as we continued to gather feedback
 
-#### Key implementation issues found: ####
-<table>
-<tr>
-  <th>Area</th>
-  <th>User Story</th>
-  <th>Issue</th>
-  <th>Solution</th>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>stuff</td>
-  <td>stuff</td>
-</tr>
-<tr>
-  <td>stuff</td>
-  <td>stuff</td>
-  <td>stuff</td>
-  <td>stuff</td>
-</tr>
-</table>
+Our aims for this sprint;
+- Finish the write up
+- Implement any final changes
 
+Most of our time for this sprint was spent writing, though again we also spent some time formatting and designing our report, and making UX design changes - for example we changed our login buttons to text instead of icons, as our feedback suggested that users found where to login unclear.
 
 <a name="fourth"></a>
 ## Team use of Git, how your team used continuous integration / continuous deployment. Streamlining of workflow throughout.
