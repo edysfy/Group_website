@@ -4,7 +4,7 @@
 
 * [Group working methods used](#first)
 * [Discussion of team roles](#second)
-* [Documentation of your sprints](#third)
+* [Documentation of our sprints](#third)
 * [Git and continuous integration](#fourth)
 
 <a name="first"></a>
@@ -223,7 +223,7 @@ At this stage we were happy our website was in a good place, so we began to star
 </tr>
 <tr>
   <td>front-end</td>
-  <td>user has clear ui; they can easily navigate the website</td>
+  <td>website has clear ui; user can easily navigate the website</td>
   <td>We had two components allowing search, one in the sidebar but also a seperate component for non-logged in users. We had a lot of difficulty getting this component to position itself on the page correctly, and to get it to not break after a user clicked a button</td>
   <td>We decided to remove the component and only let logged in users search, so we didn't have a duplication of functionality. This also made the display of the map clearer for non-logged in users</td>
 </tr>
