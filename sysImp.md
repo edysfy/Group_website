@@ -510,7 +510,7 @@ Our front end is comprised of many components. We felt the best way to break dow
 
   ### Class Diagram:
   
-  <img src="upporting_images/user.png" width="950px">
+  <img src="supporting_images/user.png" width="950px">
 
 ## User-search Service:
 
