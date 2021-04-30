@@ -50,7 +50,11 @@ Again, we shared the wireframe with friends and family, and coupled it with a qu
 
 <img src="supporting_images/key.png" width="150">
 
+Results of the questionnaire showed that 80% of people thought an 'about' page would be useful for further clarification. As a response to this, we created an 'about' page, confirming what the website intends to do, and how:
 
+<p align="center">
+<img src="supporting_images/About_page.png" width="700">
+</p>
 
 ### UX approach – design heuristics/approach, design methods (design fiction / heuristics)
 stuff
