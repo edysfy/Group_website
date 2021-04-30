@@ -9,16 +9,40 @@
 
 <a name="team"></a>
 ## Team
-Hari Patel  [Team Leader, Product/Systems Designer,Front-end, Back-end, Database]  
-![Image of Hari](member_photos/HariPatel.jpg)  
-Alfred Graham  [Front-end]
-![Image of Hari](member_photos/AlfredGraham.jpg)  
-Edward Hammersley  [Front-end, Project Management]
-![Image of Ed](member_photos/EdwardHammersley.jpg)     
-Zaki Gill  [Front-end, Academic&Market Research, User-Testing/Prototyping]
-![Image of Zaki](member_photos/ZakiGill.jpg)  
-Tarn Williamson  [Front-end]
-![Image of Tarn](member_photos/TarnWilliamson.jpg)
+
+<table>
+<tr>
+  <th>Name</th>
+  <th>Role</th>
+  <th>Photo</th>
+</tr>
+<tr>
+  <td>Hari Patel</td>
+  <td>Team Leader, Product/Systems Designer,Front-end, Back-end, Database</td>
+  <td><img src="member_photos/HariPatel.jpg" width="100" height="100"></td>
+</tr>
+<tr>
+  <td>Alfred Graham </td>
+  <td>Front-end,Back-end</td>
+  <td><img src="member_photos/AlfredGraham.jpg" width="100" height="100"></td>
+</tr>
+<tr>
+  <td>Edward Hammersley</td>
+  <td>Front-end, Project Management</td>
+  <td><img src="member_photos/EdwardHammersley.jpg" width="100" height="100"></td>
+</tr>
+<tr>
+  <td>Zaki Gill</td>
+  <td>Front-end, Academic&Market Research, User-Testing/Prototyping</td>
+  <td><img src="member_photos/ZakiGill.jpg" width="100" height="100"></td>
+</tr>
+<tr>
+  <td>Tarn Williamson</td>
+  <td>Front-end</td>
+  <td><img src="member_photos/TarnWilliamson.jpg" width="100" height="100"></td>
+</tr>
+</table>
+
 
 <a name="first"></a>
 ## Introduction, background and motivation
@@ -30,10 +54,10 @@ View our [Introduction, background and motivation](introSect.md) document to see
 
 <a name="second"></a>
 ## System implementation,UX design and development process
-View our [System implementation,UX design and development process](sysImp.md) document to see;
-* System Implementation (Backend,API,Frontend)
-* UX Design (stakeholders,users)
-* Project Management & development process (continuous integration, use of github)
+Click the following links to see our documents on;
+* [System Implementation](sysImp.md) (Backend,API,Frontend)
+* [UX Design](uxDesign.md) (stakeholders,users)
+* [Project Management & development process](sprints.md) (continuous integration, use of github)
 
 
 
