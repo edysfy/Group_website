@@ -48,7 +48,9 @@ Our paper prototype served well at forming an initial visualisation of the websi
 
 Again, we shared the wireframe with friends and family, and coupled it with a questionnaire (I COULD INCLUDE LINK TO COPY OF QUESTIONNAIRE). One user reported that it would be useful to have a key on the map, informing the user on what coloured marker means what. As a direct response to this feedback, we implemented a key, which can be seen in the image below:
 
-<img src="supporting_images/key.png" width="150">
+<p align="center">
+<img src="supporting_images/key.png" width="700">
+</p>
 
 Results of the questionnaire showed that 80% of people thought an 'about' page would be useful for further clarification. As a response to this, we created an 'about' page, confirming what the website intends to do, and how:
 
