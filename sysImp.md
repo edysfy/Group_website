@@ -487,7 +487,36 @@ Our front end is comprised of many components. We felt the best way to break dow
   ### Class Diagram:
   
   <img src="supporting_images/post.png" width="950px">
+  
+## Authentication Service:
 
+  ### Class Diagram:
+  
+  <img src="supporting_images/auth.png" width="950px">
+
+## Sidebar Service:
+
+  ### Class Diagram:
+  
+  <img src="" width="950px">
+
+## URL-state Service:
+
+  ### Class Diagram:
+  
+  <img src="" width="950px">
+
+## User Service:
+
+  ### Class Diagram:
+  
+  <img src="" width="950px">
+
+## User-search Service:
+
+  ### Class Diagram:
+  
+  <img src="" width="950px">
 
 
 
