@@ -12,7 +12,7 @@
 
 ### COVID-19
 
-Throughout the entirety of this project the UK has been in some degree of national lock down. Due to this, it has not been possible for the team to meet up in person and therefore all interaction within the team has taken place online. This has presented challenges. Without face to face interaction it is more difficult to form personal bonds which can help drive team moral. On top of this being limited to online interaction means jobs can tend to take longer to complete and ideas are more difficult to bounce of each other. To counteract this, we decided early on how we would collaborate and set up the infrastructure we would would require to do so.
+Throughout the entirety of this project the UK has been in some degree of national lock down. Due to this, it has not been possible for the team to meet up in person and therefore all interaction within the team has taken place online. This has presented challenges. Without face to face interaction it is more difficult to form personal bonds which can help drive team morale. On top of this being limited to online interaction means jobs can tend to take longer to complete and ideas are more difficult to bounce of each other. To counteract this, we decided early on how we would collaborate and set up the infrastructure we would would require to do so.
 
 ### Communication infrastructure
 
@@ -26,7 +26,7 @@ Discord is a free instant messaging platform where users can communicate through
 
 We set up a private server on Discord right at the start of the project with a few specific chats: back end, front end and write up but as the project progressed we created more specific channels:
 
-<td><img src="supporting_images/discord_chats.jpg"></td>
+<td><img src="supporting_images/discord_chat.PNG"></td>
 
 Having more specific chat rooms was extremely useful, if we wanted to refer back to a certain message or link we would go to that specific channel instead of trawling through hundreds of messages. Discord also allows you to pin and search for messages. This was great for saving specific ideas, links and files. As well as instant messaging we carried out all our video calls over Discord.
 
@@ -42,7 +42,7 @@ Agile software development refers to software development methodologies which ar
 
 ### Agile and our project
 
-The only stakeholder in our project was the end user. Therefore all feedback at each iteration came from user surveys and interviews. As documented in the [sprints] and [UX] at each stage of the development process we set goals based apon the user feedback collected in the last sprint. Once we had implimented the features described by our sprint goals we then repeated the process evaluating what we had done and getting more user feedback. This process
+The only stakeholder in our project was the end user. Therefore all feedback at each iteration came from user surveys and interviews. As documented in the [sprints] and [UX] at each stage of the development process we set goals based apon the user feedback collected in the last sprint. Once we had implemented the features described by our sprint goals we then repeated the process evaluating what we had done and getting more user feedback. This process 
 
 
 
@@ -255,9 +255,6 @@ Most of our time for this sprint was spent writing, though again we also spent s
 
 <a name="fourth"></a>
 ## Team use of Git, how your team used continuous integration / continuous deployment. Streamlining of workflow throughout.
-In addition to the main branch, a 'dev' (development) branch was also created. Those members who were part of producing the website each created their own branch from 'dev'; this ensured that each member could work without being interrupted by conflicts. When a member was ready to submit their work, they would inform the others (via Discord) that they were soon going to merge and push - this avoided divergence of the 'dev' branch. The member would then ensure their 'dev' branch was up to date, merge their branch with 'dev' (after resolving any conflicts), before finally pushing. The member then informed the group of the push. At this point, another member may have requested temporary 'reservation' of the 'dev' branch. After each major feature implementation, members would ensure the stability of the dev branch, before merging it with 'main'.
-
-
 
 [Discord]: (https://discord.com/)
 
