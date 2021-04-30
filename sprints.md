@@ -1,8 +1,23 @@
 # Sprints & Project Management
 
+## Table of contents
+* [Group working methods used](#first)
+* [Discussion of team roles](#second)
+* [Documentation of your sprints](#third)
+* [Git and continuous integration](#fourth)
 
 
-## Sprint 1: Project idea finalisation & set up CI infrastructure
+<a name="first"></a>
+## Group working methods used (for instance did your team choose a particular style of agile? what communication channels did you use?)
+
+<a name="second"></a>
+## Discussion of team roles (specialisation is ok!). A summary of individual contributions (note: this is for reference, your team will all receive the same grade!).
+
+
+<a name="third"></a>
+## Sprints
+
+### Sprint 1: Project idea finalisation & set up CI infrastructure
 
 [16-27th feb]
 
@@ -21,7 +36,7 @@ There were some different opinions among the group regarding how the website sho
 
 As well as discussing project ideas this period was used to get familiar with the tech stack we were going to be using and github. We each watched the lectures on Angular and github, set up a shared github repository and got familiar with its protocols by making a few pushes and pulls. Although we intended to specialise into certain areas later on, we all got familiar with the frontend and Angular so further down the line it would be possible to be more flexible if required.
 
-## Sprint 2: Work on feedback + find suitable API
+### Sprint 2: Work on feedback + find suitable API
 
 [27th feb - 10th mar]
 
@@ -59,7 +74,7 @@ At this point in the project we were intending to use this template data from on
 </table>
 
 
-## Sprint 3: Serve dummy data from directly from API to frontend + set up data model:
+### Sprint 3: Serve dummy data from directly from API to frontend + set up data model:
 
 [11th mar - 27th mar]
 
@@ -144,7 +159,7 @@ We also finally implemented a user-post component, which allows new data to be a
 </tr>
 </table>
 
-## Sprint 5 Users enter more details + can filter by them:
+### Sprint 5 Users enter more details + can filter by them:
 
 [11th apr - 20th apr]
 
@@ -164,7 +179,7 @@ To add more functionality when a user logs in, we implemented a sidebar, the sta
 As the website was nearing completion, we carried out a further round of user questionnaires to gather feedback on the final website design, with some of the resulting design changes discussed in our [UX Design](uxDesign.md) document.
 
 At this stage we were happy our website was in a good place, so we began to start working on the project write up, initially focusing on formatting our README, and producing a rough outline of the content we needed to fill in.
- 
+
 #### Key implementation issues found: ####
 <table>
 <tr>
@@ -187,7 +202,7 @@ At this stage we were happy our website was in a good place, so we began to star
 </tr>
 </table>
 
-## Sprint 6 Project Write up:
+### Sprint 6 Project Write up:
 
 [21st apr - hand in]
 
@@ -215,5 +230,10 @@ At this stage we were happy our website was in a good place, so we began to star
   <td>stuff</td>
 </tr>
 </table>
+
+
+<a name="fourth"></a>
+## Team use of Git, how your team used continuous integration / continuous deployment. Streamlining of workflow throughout.
+
 
 Next section; [Evaluation and Conclusion](evalSect.md)
