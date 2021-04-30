@@ -41,6 +41,8 @@
   <td>Front-end</td>
   <td>![Image of Tarn](member_photos/TarnWilliamson.jpg)</td>
 </tr>
+</table>
+
 Hari Patel  [Team Leader, Product/Systems Designer,Front-end, Back-end, Database]  
 ![Image of Hari](member_photos/HariPatel.jpg)  
 Alfred Graham  [Front-end]
