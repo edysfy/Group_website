@@ -1,8 +1,50 @@
 # Sprints & Project Management
 
+## Table of contents
+
+* [Group working methods used](#first)
+* [Discussion of team roles](#second)
+* [Documentation of your sprints](#third)
+* [Git and continuous integration](#fourth)
+
+<a name="first"></a>
+## Group working methods used
+
+### COVID-19
+
+Throughout the entirety of this project the UK has been in some degree of national lock down. Due to this, it has not been possible for the team to meet up in person and therefore all interaction within the team has taken place online. This has presented challenges. Without face to face interaction it is more difficult to form personal bonds which can help drive team moral. On top of this being limited to online interaction means jobs can tend to take longer to complete and ideas are more difficult to bounce of each other. To counteract this, we decided early on how we would collaborate and set up the infrastructure we would would require to do so.
+
+### Communication infrastructure
+
+Because of the restrictions mentioned above it was extremely important to keep every group member engaged and involved with the project. Discord was chosen to be our main platform for communication.
+
+#### [Discord]
+
+<td><img src="supporting_images/discord_logo.jpg"></td>
+
+Discord is a free instant messaging platform where users can communicate through messages, voice calls and video calls, send files and more. Users can also set up private chat "servers" which can be divided into specific chat rooms.
+
+We set up a private server on Discord right at the start of the project with a few specific chats: back end, front end and write up but as the project progressed we created more specific channels:
+
+<td><img src="supporting_images/discord_chats.jpg"></td>
+
+Having more specific chat rooms was extremely useful, if we wanted to refer back to a certain message or link we would go to that specific channel instead of trawling through hundreds of messages. Discord also allows you to pin and search for messages. This was great for saving specific ideas, links and files. As well as instant messaging we carried out all our video calls over Discord.
+
+### Collaboration strategy
 
 
-## Sprint 1: Project idea finalisation & set up CI infrastructure
+
+
+
+
+<a name="second"></a>
+## Discussion of team roles (specialisation is ok!). A summary of individual contributions (note: this is for reference, your team will all receive the same grade!).
+
+
+<a name="third"></a>
+## Sprints
+
+### Sprint 1: Project idea finalisation & set up CI infrastructure
 
 [16-27th feb]
 
@@ -21,7 +63,7 @@ There were some different opinions among the group regarding how the website sho
 
 As well as discussing project ideas this period was used to get familiar with the tech stack we were going to be using and github. We each watched the lectures on Angular and github, set up a shared github repository and got familiar with its protocols by making a few pushes and pulls. Although we intended to specialise into certain areas later on, we all got familiar with the frontend and Angular so further down the line it would be possible to be more flexible if required.
 
-## Sprint 2: Work on feedback + find suitable API
+### Sprint 2: Work on feedback + find suitable API
 
 [27th feb - 10th mar]
 
@@ -59,7 +101,7 @@ At this point in the project we were intending to use this template data from on
 </table>
 
 
-## Sprint 3: Serve dummy data from directly from API to frontend + set up data model:
+### Sprint 3: Serve dummy data from directly from API to frontend + set up data model:
 
 [11th mar - 27th mar]
 
@@ -144,7 +186,7 @@ We also finally implemented a user-post component, which allows new data to be a
 </tr>
 </table>
 
-## Sprint 5 Users enter more details + can filter by them:
+### Sprint 5 Users enter more details + can filter by them:
 
 [11th apr - 20th apr]
 
@@ -164,7 +206,7 @@ To add more functionality when a user logs in, we implemented a sidebar, the sta
 As the website was nearing completion, we carried out a further round of user questionnaires to gather feedback on the final website design, with some of the resulting design changes discussed in our [UX Design](uxDesign.md) document.
 
 At this stage we were happy our website was in a good place, so we began to start working on the project write up, initially focusing on formatting our README, and producing a rough outline of the content we needed to fill in.
- 
+
 #### Key implementation issues found: ####
 <table>
 <tr>
@@ -187,33 +229,23 @@ At this stage we were happy our website was in a good place, so we began to star
 </tr>
 </table>
 
-## Sprint 6 Project Write up:
+### Sprint 6 Project Write up:
 
 [21st apr - hand in]
 
-- Write up
-- feedback says icons unclear, alter icons to have names
+At this stage we were purely focusing on the write up, with our minimal viable product completed. We were however making small changes to design elements as we continued to gather feedback
 
-#### Key implementation issues found: ####
-<table>
-<tr>
-  <th>Area</th>
-  <th>User Story</th>
-  <th>Issue</th>
-  <th>Solution</th>
-</tr>
-<tr>
-  <td></td>
-  <td></td>
-  <td>stuff</td>
-  <td>stuff</td>
-</tr>
-<tr>
-  <td>stuff</td>
-  <td>stuff</td>
-  <td>stuff</td>
-  <td>stuff</td>
-</tr>
-</table>
+Our aims for this sprint;
+- Finish the write up
+- Implement any final changes
+
+Most of our time for this sprint was spent writing, though again we also spent some time formatting and designing our report, and making UX design changes - for example we changed our login buttons to text instead of icons, as our feedback suggested that users found where to login unclear.
+
+
+
+<a name="fourth"></a>
+## Team use of Git, how your team used continuous integration / continuous deployment. Streamlining of workflow throughout.
+
+[Discord]: (https://discord.com/)
 
 Next section; [Evaluation and Conclusion](evalSect.md)

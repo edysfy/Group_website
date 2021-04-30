@@ -18,6 +18,9 @@ We needed three main components that comprise the stack.
     This is responsible for the user experience and data creation through the use of Angular forms.
     The user can explore the map, create an account, log in, create Emote posts, view other users' posts, have access to their posts in a timeline, delete their posts, fly to a post, and search for other users' posts (by date, age, and gender). To display a map, we needed to connect to an external API. We had two options. One Mapbox and the other was GoogleMaps. Firstly, Mapbox was more appealing as it is the underdog. We didn't want to be involved with a conglomerate like Google. After digesting Mapbox's API, we realized it is capable of doing everything we wanted. Especially, displaying a heat map. It accepts geoJson data and provides the developer with a lot of support to customize and visualize that data on the map. It accepts data via a direct link to a URL path, or through building your objects. This was useful as it allowed us to use geoJson objects that are stored in memory on the front end. As an example (will be explained in a lot more detail in the front end), when the user made a post-it would automatically update the UI, as we stored the new post in a Service. The Mapbox component listens to changes in the geoJson array and re-renders the data on the map. We used a set of Angular Services to maintain state and allow data to flow between components on the frontend, as well as providing a link between the data flowing to the REST API.
 
+
+ # ADD FULL STACK DIAGRAM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   
+
 Lets go into some more depth...    
 
 ## Back End - MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams)
@@ -363,7 +366,7 @@ Lets break down this Express application and describe how it works:
           <br/>
     3. user.js => "/api/user": <br/>
         This route deals user registration, and authentication:
-          - "/api/user/signup" deals with registration. When a user signs up on the front end, the Authentication-service sends a payload containing the username and password. Firstly our API checks if the username is equal to  "null" string. If it is "null" it sends a response to the client with a message saying that the username is taken, and regSuc == false. This is because the Authentication-service checks if the username is "null" when the component initializes, so users cannot use "null" as their username. If this is fine, then we create a new User Mongoose Object, that takes the username and password as a parameter. We then save that into the User collection in that database. If the process is successful we send a response back to the client, with regSuc == true. The client uses regSuc to throw alerts to the user. Ie "Registration" successful. If the promise from the database returns an error, this means that the username has been taken. We send this response back to the client, with regSuc == false. The UI then displays an alert saying the username is taken. As a side note, we initally were using Bcrypt to hash the passwords, however due to issues with Docker, we decided to leave it out for the project. However, we fully understand the importance of hashing the passwords.
+          - "/api/user/signup" deals with registration. When a user signs up on the front end, the Authentication-service sends a payload containing the username and password. Firstly our API checks if the username is equal to  "null" string. If it is "null" it sends a response to the client with a message saying that the username is taken, and regSuc == false. This is because the Authentication-service checks if the username is "null" when the component initializes, so users cannot use "null" as their username. If this is fine, then we create a new User Mongoose Object, that takes the username and password as a parameter. We then save that into the User collection in that database. If the process is successful we send a response back to the client, with regSuc == true. The front end uses regSuc to throw alerts to the user. Ie "Registration successful". If the promise from the database returns an error, this means that the username has been taken. We send this response back to the client, with regSuc == false. The UI then displays an alert saying the "username is taken". As a side note, we initially were using Bcrypt to hash the passwords, however, due to issues with Docker, we decided to leave it out for the project. However, we fully understand the importance of hashing the passwords.
             ```js
               router.post("/signup", (req, res, next) => {
                 /*cant use null as a username*/
@@ -399,7 +402,7 @@ Lets break down this Express application and describe how it works:
               });
               // });
               ```
-          - "api/user/login" deals with user authenticaiton. When a user logs in up on the front end, the Authentication-service sends a payload containing the submitted username and password. Firstly our API checks if the username null. Initally, this was a precaution we made on the server. We instamtly sent a response back to client, if by chance, no username was submitted. We then called the findOne() method on the User Model, with the username as the filter query. The usernames are guaranteed to be unique by MongoDb, so we can safely assume that only one user will return. Once the user details has been sent from the database, via a promise. We store the password in memory and send it to passwordMatch function. This takes in the password from the client and the database and checks if they are identical. If not we send an error response back to the client with regSuc == false. This will alter the user that the passwords do not match. If succesfull, we create a JWT token that is made from the username, password and the secret key. To ensure the JWT is not hackable by people that dont know the key. We send a response with the JWT and username back to the Authentication-service, so it will be stored in the clients local storage.
+          - "api/user/login" deals with user authentication. When a user logs in up on the front end, the Authentication-service sends a payload containing the submitted username and password. Firstly our API checks if the username null. Initially, this was a precaution we made on the server. We instantly sent a response back to the client, if by chance, no username was submitted. We then called the findOne() method on the User Model, with the username as the filter query. The usernames are guaranteed to be unique by MongoDb, so we can safely assume that only one user will return. Once the user details have been sent from the database, via a promise, we store the password and send it to the password match function. This takes in the password from the client and the database and checks if they are identical. If they don't match we send an error response back to the client with regSuc == false. This will alert the user that the passwords do not match. If successful, we create a JWT token that is made from the username, password, and secret key. To ensure the JWT is not hackable by people that don't know the key. We send a response with the JWT and username back to the Authentication-service, so it will be stored in the client's local storage. The main use of the JWT was to guard routes on the API. So when a request was made, if the HTTP header contains a valid JWT token then the function will carry on with its execution. However, we didn't have time to implement this.
               ```js
               router.post("/login", (req, res, next) => {
                 User.findOne({ username: req.body.username }).then((query) => {
@@ -417,11 +420,95 @@ Lets break down this Express application and describe how it works:
               ```
               <br/>
         This route also deals with supplying user details to the User-Service, as well as allowing the users to enter/edit their date of birth and gender:
+          - We have a GET method on route "api/user/login/:username". We used a params variable on the URL to send the username from the User-Service to the API.
+           Now, this is coming from the User-Service on the front end. This service is only functional when the user is authenticated, and their details are stored on the client's browser. So we are not worried if the username is null. We then called the findOne() method on the User Model, with the username as the filter query. When the database fulfills the promise, we need to do some data manipulation on the date and the gender. When a user creates an account, by default the date of birth and gender are null. Date of birth is also of type Date. The front end has a User interface, the User - date of birth attribute, is of type string (it was easier to deal with string on the front end). So we have two functions, convertDateToString - this takes in the date of birth from the database. If null it returns a string 'n/a', else it converts the Date to a string. CheckIfGenderIsNull takes the fender from the database and returns 'n/a' if it null. As the gender is already a string, if it is not null we don't need to alter it. We then return a response to the user, with an object that conforms to the user details on the front end. The service then pipes these details to the relevant UI components. Again, if there is an error we return that to the front end.
+              ```js
+                router.get("/:username", (req, res, next) => {
+                User.findOne({ username: req.params.username })
+                  .then((user) => {
+                    const date = convertDateToString(user.dob);
+                    const gender = checkIfGenderNull(user.gender);
+                    res.status(200).json({
+                      user: {
+                        username: user.username,
+                        dob: date,
+                        gender: gender,
+                        age: user.age,
+                      },
+                    });
+                  })
+                  .catch((error) => {
+                    res.json({
+                      exist: false,
+                    });
+                  });
+              });
+              ```
+          - We have a PUT method on this route "api/user/login/:username". We used a params variable on the URL to send the username from the User-Service to the API.
+           Now, this is coming from the User-Service on the front end. This service is only functional when the user is authenticated, and their details are stored on the client's browser. So we are not worried if the username is null. This allows the user the manually update their age/gender. If the user submits a new edit on the front end the User-Service will send a payload with the gender or date of birth to this path. We check to see which values are null then perform the appropriate update of the non-null value. We do this by calling the updateOne() method on the User model. This takes two parameters, the first is an object that specifies the user you want to update. We enter the username as it is a unique identifier. The second parameter takes in an object that describes specifies attributes that will be updated, with that data to replace the old data. Also, we calculate the user's age on the front end every time the user opens their profile. Whenever this happens, we update the user's age in the database. To keep it updated when each year passes.
+              ```js
+                /*path which updated the user details*/
+                router.put("/:username", (req, res, next) => {
+                  if (req.body.gender != null) {
+                    User.updateOne({ username: req.params.username }, { gender: req.body.gender })
+                      .then((result) => {
+                        res.json({message: "update gender sucessfull"})
+                      })
+                      .catch((error) => {
+                        res.json({message: "no user"})
+                      });
+                  } else if(req.body.dob != null) {
+                    User.updateOne({ username: req.params.username }, { dob: req.body.dob })
+                      .then((result) => {
+                        res.json({message: "update dob sucessfull"})
+                      })
+                      .catch((error) => {
+                        res.json({message: "no user"})
+                      });
+                  } else {
+                    User.updateOne({username: req.params.username}, {age: req.body.age})
+                    .then((result) => {
+                      res.json({message: "update age sucessfull"})
+                    })
+                    .catch((error) => {
+                      res.json({message: "no user"})
+                    });
+                  }
+                });
+              ```
+
+
+## Front End - Angular, Details of implementation
+
+Our front end is comprised of many components. For the report we have been 
 
 
 
-### Front End - Angular. Details of implementation
-#### Angular Material
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Angular Material
 [Angular Material](https://material.angular.io)
 
 We extensively utilised angular material to quickly implement well designed graphic and interactive html elements into our website; for example in our userpost component, we utilise mat (angular material) form fields to encapsulate and display all the user input elements - one of which is a mat slider, used for entering a users 'mood rating'. We also utilise the mat icon library for the button icons on this form (i.e. the send and close buttons).
@@ -621,6 +708,8 @@ flyTo(lngLat: number[]) {
 }
 }
 ```
+
+
 
 ### Additional elements and components e.g. authentification. Tell us about any other aspects not covered above!
 stuff
