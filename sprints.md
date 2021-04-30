@@ -148,6 +148,9 @@ We also finally implemented a user-post component, which allows new data to be a
 
 [11th apr - 20th apr]
 
+In this sprint we aimed to add to our website some of the more complex features, like searching through posts, and a user being able to view a timeline of the posts they have made, building upon the core foundation of sending and viewing posts we had established by the end of sprint 4. At this stage we also began transitioning from working on the website proper into gathering final user feedback and beginning to write our project report.
+
+Our sprint aims were;
 - users now enter age, gender and can now can be filtered by this (posts linked to user accounts)
 - implemented sidebar
 - search functionality
@@ -156,6 +159,12 @@ We also finally implemented a user-post component, which allows new data to be a
 - users now have to log in to be able to filter results, encourages posting and engaging with site
 - began to start formating write up/readme
 
+To add more functionality when a user logs in, we implemented a sidebar, the state of which was determined by our `sidebar.service`, which we triggered through button presses in our `sidebar.component.html` and `sidebar.component.ts`. Depending on the state of our `sidebar.service` different visual elements would be displayed; for example if the user clicks the postlist icon, the `userpost-display` component is called, which shows a scrollable timeline of the users post history. Another key aspect was the `usersearch-display` which required extensive use of angular services and api calls to our back end in order to return the correct results - the detailed implementation of this is discussed in our [System Implementation](sysImp.md) document.
+
+As the website was nearing completion, we carried out a further round of user questionnaires to gather feedback on the final website design, with some of the resulting design changes discussed in our [UX Design](uxDesign.md) document.
+
+At this stage we were happy our website was in a good place, so we began to start working on the project write up, initially focusing on formatting our README, and producing a rough outline of the content we needed to fill in.
+ 
 #### Key implementation issues found: ####
 <table>
 <tr>
