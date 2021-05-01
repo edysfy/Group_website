@@ -26,6 +26,7 @@ We knew we wanted to make an app that creates a sense of community in the area o
 <img src="supporting_images/Sarah.jpeg" width="100" align="left">
 "I’m a first year uni student, but I don’t feel like it. The pandemic has meant that we are studying from home, and I haven’t had the opportunity to make friends yet. I’m living with three other students, but I didn’t know them before I moved in, and I’m not so close to them. They all seem to be best friends already. It’s been hard moving to a new city during these times. I often feel alone. I know there must be so many others in my situation, but it’s easy to forget that. I love my course, but this is not what I expected. I wish I could share my feelings with others…"
 
+
 We all know the feeling of isolation, and we believe Sarah's case is relatable, and likely, particularly in the times of the pandemic.
 
 Admittedly, it was only until after we came up with the idea, that we saw its potential use for another type of user: some form of data analyst. The ability to search for EmotePosts makes it a likely interest for this user. We believe generating statistics from users' EmotePosts would be invaluable to research into mental health issues. Just as before, we created a character to represent this type of user. Meet Christina, 43:
