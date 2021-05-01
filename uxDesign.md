@@ -24,9 +24,7 @@ A lot of time was spent discussing which project idea to use. The idea needed to
 We knew we wanted to make an app that creates a sense of community in the area of mental health. For full details on the justification of the idea, please see LINK!. Our idea relied on three fundamental features: the ability to create an EmotePost, the ability to read EmotePosts, and the ability to search for EmotePosts by keyword. Changing any of these features would change the idea entirely. We thought it would be a good idea to create a character that represents a potential user. This character's story is intentionally ordinary. We would then keep this character in mind when developing the project, to help ensure the development was geared towards the potential user. Here's a bit about Sarah, 19:
 
 <img src="supporting_images/Sarah.jpeg" width="100" align="left">
-<div>
 "I’m a first year uni student, but I don’t feel like it. The pandemic has meant that we are studying from home, and I haven’t had the opportunity to make friends yet. I’m living with three other students, but I didn’t know them before I moved in, and I’m not so close to them. They all seem to be best friends already. It’s been hard moving to a new city during these times. I often feel alone. I know there must be so many others in my situation, but it’s easy to forget that. I love my course, but this is not what I expected. I wish I could share my feelings with others…"
-</div>
 
 We all know the feeling of isolation, and we believe Sarah's case is relatable, and likely, particularly in the times of the pandemic.
 
