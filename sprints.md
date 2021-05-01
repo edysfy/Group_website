@@ -20,7 +20,6 @@ Because of the restrictions mentioned above it was extremely important to keep e
 
 #### [Discord]
 
-<td><img src="supporting_images/discord_logo.jpg"></td>
 
 Discord is a free instant messaging platform where users can communicate through messages, voice calls and video calls, send files and more. Users can also set up private chat "servers" which can be divided into specific chat rooms.
 
@@ -42,7 +41,7 @@ Agile software development refers to software development methodologies which ar
 
 ### Agile and our project
 
-The only stakeholder in our project was the end user. Therefore all feedback at each iteration came from user surveys and interviews. As documented in the [sprints] and [UX] at each stage of the development process we set goals based apon the user feedback collected in the last sprint. Once we had implemented the features described by our sprint goals we then repeated the process evaluating what we had done and getting more user feedback. This process 
+The only stakeholder in our project was the end user. Therefore all feedback at each iteration came from user surveys and interviews. As documented in the [sprints] and [UX] at each stage of the development process we set goals based apon the user feedback collected in the last sprint. Once we had implemented the features described by our sprint goals we then repeated the process evaluating what we had done and getting more user feedback. This process
 
 
 
