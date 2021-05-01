@@ -39,7 +39,7 @@ Please see our UX section *link to UX section* where we discuss how users were a
 
 *picture of idea matrix up to date*
 
-Another method we used in evaluating our designs was an idea matrix. This was an excel spreadsheet that came to be extremely useful in prioritising what changes we were going to make to the website throughout the development process. We were able to populate the idea matrix with feedback data from both the questionnaires and semi-structured interviews.
+Another method we used in evaluating our designs was an idea matrix. This was an excel spreadsheet that came to be extremely useful in prioritising what changes we were going to make to the website throughout the development process.
 
 ### Questionnaires
 
@@ -65,13 +65,14 @@ These interviews were carried out throughout the development process all the way
 [Second Wireframe](/Users/zakigill/Desktop/2nd wireframe.png)   
 5/4/21: There reached a point where our first wireframe became out of date in relation to the level of development of the website. At the same time, we felt that the website was too undeveloped to be used by users. Therefore, we built a second wireframe so we could continue to evaluate our website against user preferences which enabled us to gain feedback from users at different stages during the development process as we built our website ahead of time.  
 
+*give a questionnaire stats between the two wireframes*
 
 ### Stage 3: INVOLVEMENT OF QUANTITATIVE FEEDBACK 24/3/21
 *screenshot of 5 point likert scale*
 
 24/3/21: Although we felt that interviews were a good source of creating qualitative feedback, we made a decision to try and increase our sample size when it came to evaluating our product and attempt to create some quantitative feedback. In order to achieve a quantitative metric for how a user would feel about our product, we decided it was necessary to ask some 'how much' and 'how many' questions at scale to our users. Very shortly after we started showing our first wireframe to users, we created a questionnaire that we could send alongside the link to the wireframe. Click on this link to see it! *link the questionnaire*. We tried to push the quantitative aspect of the questionnaires by using 5 point likert scale, as seen in the above figure.  
 
-*screenshot of the last question, and or question 7*
+*screenshot of  question 7*
 The questionnaires themselves did in fact hold a qualitative functionality to them. This was mainly in two of the questions, seen above, where we prompted the user for a response.  
 
 
@@ -80,14 +81,20 @@ In total we produced three  questionairres. The first two were sent to users alo
 
 
 ### Stage 4: INVOLVEMENT OF IDEA MATRIX 30/3/21
+30/3/21: Shortly after we started collecting quantitative data, we decided that it would be effective to create a method by which we could better draw insights from it. We made this decision because at this point we had received many suggestions from users in terms of how we could improve the user interface of our design. In this way we were able to populate the idea matrix with feedback data from both the questionnaires and semi-structured interviews.  
+
+Although the idea matrix complemented both the semi-structured interview feedback and the questionnaire data, we found that it was particularly useful for the last question on the questionnaire (see below)  
+
+*screenshot of last question on questionnaire*
 
 
 ### Stage 5: MOVE FROM WIREFRAMING TO PRSENTING TO USERS VIA LOCALHOST 5/4/21
 
-We continued using wireframes as a method of evaluation for our designs until the point  where our website was functional whereby we could show users the actual website through a local host.
+We continued using wireframes as a method of evaluation for our designs until our website was functional enough to show users via a local host. We felt that our website was developed enough by 27/3/21 (see sprint 3 in the sprints section for more information on exactly how developed the website was at this point). However there was a period where all team members were busy which meant that we conducted semi-structured interviews and collected questionnaire responses slightly later than expected.  
 
-- we were ready at the end of sprint 3 (27th march ) but we didn't end up actually doing semi-structured interviews and getting people to fill out the questionnaires after looking at the website on our laptops
-- reference sprint 3
+The way in which we obtained user feedback here was similar to that of the wireframes. However, we could only collect data from the questionnaire every time we showed a user the local host in person. This made it more difficult to get a substantial number of users to give their opinion than it was for the wireframes. In an attempt to combat this, we organised some zoom meetings where we could screenshare. *upload a screenshot of this*
+
+*stat difference between 2nd wireframe and what users thought when using local host*
 
 
 <a name="conc"></a>
