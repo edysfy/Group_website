@@ -18,9 +18,9 @@ Throughout the entirety of this project the UK has been in some degree of nation
 
 Because of the restrictions mentioned above it was extremely important to keep every group member engaged and involved with the project. Discord was chosen to be our main platform for communication.
 
-#### [Discord]
+#### Discord
 
-<td><img src="supporting_images/discord_logo.jpg"></td>
+[Discord](https://discord.com/)
 
 Discord is a free instant messaging platform where users can communicate through messages, voice calls and video calls, send files and more. Users can also set up private chat "servers" which can be divided into specific chat rooms.
 
@@ -42,7 +42,7 @@ Agile software development refers to software development methodologies which ar
 
 ### Agile and our project
 
-The only stakeholder in our project was the end user. Therefore all feedback at each iteration came from user surveys and interviews. As documented in the [sprints] and [UX] at each stage of the development process we set goals based apon the user feedback collected in the last sprint. Once we had implemented the features described by our sprint goals we then repeated the process evaluating what we had done and getting more user feedback. This process 
+The only stakeholder in our project was the end user. Therefore all feedback at each iteration came from user surveys and interviews. As documented in the [sprints] and [UX] at each stage of the development process we set goals based apon the user feedback collected in the last sprint. Once we had implemented the features described by our sprint goals we then repeated the process evaluating what we had done and getting more user feedback. This process
 
 
 
@@ -126,7 +126,7 @@ Sprint aims for this period;
 
 This api was initially set up to just return static dummy data - a geoJSON file containing earthquake data from an example in the mapbox api documentation. We then implemented a heatmap template from the mapbox documentation, to both test the api was correctly returning data but also as a base to build off when we add in our own data in later stages; we wanted a heatmap like effect for users emotions rather than earthquake magnitudes!
 
-We used this template to help define and develop our `geoJSON.js` mongo schema; i.e. a data structure that all user posts would follow, including a mood rating, keyword and an explanation (and eventually the username and date/time). We made sure this integrated with our data model of the application [REFERENCE DATA MODEL].
+We used this template to help define and develop our `geoJSON.js` mongo schema; i.e. a data structure that all user posts would follow, including a mood rating, keyword and an explanation (and eventually the username and date/time). We made sure this integrated with our data model of the application [REFERENCE DATA MODEL]. Over the rest of this sprint we also developed a model for the purpose of eventually adding user profiles to the website if time permits; our `user.js` model.
 
 As the complexity of our project began to grow we decided to implement a test process before each git commit and push, to ensure any local changes made did not break the website, which helped facilitate continuous integration as we were constantly compiling and testing our website after changes, and could be confident that code on the live repository was stable. See [our test plan](test_plan.txt) on our repository for details of this testing process.
 
@@ -254,8 +254,13 @@ Most of our time for this sprint was spent writing, though again we also spent s
 
 
 <a name="fourth"></a>
-## Team use of Git, how your team used continuous integration / continuous deployment. Streamlining of workflow throughout.
+## Team use of Git, how our team used continuous integration / continuous deployment.
 
-[Discord]: (https://discord.com/)
+In addition to the main branch, a 'dev' (development) branch was also created. This served as the branch which we continously iterated on. We used git to enable collaborative work on a large project, making sure to git fetch and pull every time before starting work, and every time before pushing any changes to the dev branch. This allowed us to maintain up to date files across our different machines and even when we were working on the same files; by fetching and pulling just before pushing, we made sure that any conflicts were fixed before being pushed to the dev branch. Some group members also use of their own branches, split off of the dev branch, to privately work and iterate on a new feature before merging back into dev branch.
+
+At regular intervals, usually at the end of sprints where we had achieved significant progress, we merged into our main branch, this time by submitting a pull request on github. After the pull request we would all pull the latest update, and make sure we could all compile and run the website on docker (we would also do this before every push, but this step served as a key point of verification that the website was in fact working), as described in our [System Implementation](sysImp.md) document, and run the [our test plan](test_plan.txt) as described in sprint 3. We would then commit the merge to main. In this way, throughout the development process, we continously compiled and utilised all elements of the MEAN stack from a very early point, helping us achieve continuous integration and deployment.
+
+
+
 
 Next section; [Evaluation and Conclusion](evalSect.md)
