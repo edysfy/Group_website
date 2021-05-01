@@ -33,7 +33,10 @@ We all know the feeling of isolation, and we believe Sarah's case is relatable, 
 
 Admittedly, it was only until after we came up with the idea, that we saw its potential use for another type of user: some form of data analyst. The ability to search for EmotePosts makes it a likely interest for this user. We believe generating statistics from users' EmotePosts would be invaluable to research into mental health issues. Just as before, we created a character to represent this type of user. Meet Christina, 43:
 
-  "I’m a data analyst at a mental-heath charity. My role is very important, but it is often overlooked when people think about tacking mental health. My job is to find trends in mental health. Right now, this involves analysing the results of questionnaires that we have given out, but this can be quite tedious, and not so many people respond to our requests. It would be great if I could somehow search for particular feelings, and understand what the current triggers are. We live in a changing world, so I expect these to change over time, and of course, over different locations."
+<p>
+<img src="supporting_images/Christina.jpeg" width="100" align="left">
+"I’m a data analyst at a mental-heath charity. My role is very important, but it is often overlooked when people think about tacking mental health. My job is to find trends in mental health. Right now, this involves analysing the results of questionnaires that we have given out, but this can be quite tedious, and not so many people respond to our requests. It would be great if I could somehow search for particular feelings, and understand what the current triggers are. We live in a changing world, so I expect these to change over time, and of course, over different locations."
+</p>
 
 
 ### Early prototyping - paper prototypes and feedback
