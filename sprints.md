@@ -254,8 +254,13 @@ Most of our time for this sprint was spent writing, though again we also spent s
 
 
 <a name="fourth"></a>
-## Team use of Git, how your team used continuous integration / continuous deployment. Streamlining of workflow throughout.
-In addition to the main branch, a 'dev' (development) branch was also created. Those members who were part of producing the website each created their own branch from 'dev'; this ensured that each member could work without being interrupted by conflicts. When a member was ready to submit their work, they would inform the others (via Discord) that they were soon going to merge and push - this avoided divergence of the 'dev' branch. The member would then ensure their 'dev' branch was up to date, merge their branch with 'dev' (after resolving any conflicts), before finally pushing. The member then informed the group of the push. At this point, another member may have requested temporary 'reservation' of the 'dev' branch. After each major feature implementation, members would ensure the stability of the dev branch, before merging it with 'main'.
+## Team use of Git, how our team used continuous integration / continuous deployment.
+
+In addition to the main branch, a 'dev' (development) branch was also created. This served as the branch which we continously iterated on. We used git to enable collaborative work on a large project, making sure to git fetch and pull every time before starting work, and every time before pushing any changes to the dev branch. This allowed us to maintain up to date files across our different machines and even when we were working on the same files; by fetching and pulling just before pushing, we made sure that any conflicts were fixed before being pushed to the dev branch. Some group members also use of their own branches, split off of the dev branch, to privately work and iterate on a new feature before merging back into dev branch.
+
+At regular intervals, usually at the end of sprints where we had achieved significant progress, we merged into our main branch, this time by submitting a pull request on github. After the pull request we would all pull the latest update, and make sure we could all compile and run the website on docker (we would also do this before every push, but this step served as a key point of verification that the website was in fact working), as described in our [System Implementation](sysImp.md) document, and run the [our test plan](test_plan.txt) as described in sprint 3. We would then commit the merge to main. In this way, throughout the development process, we continously compiled and utilised all elements of the MEAN stack from a very early point, helping us achieve continuous integration and deployment.
+
+
 
 
 Next section; [Evaluation and Conclusion](evalSect.md)
