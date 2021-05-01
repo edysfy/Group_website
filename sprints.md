@@ -20,6 +20,7 @@ Because of the restrictions mentioned above it was extremely important to keep e
 
 #### [Discord]
 
+[Discord](https://discord.com/)
 
 Discord is a free instant messaging platform where users can communicate through messages, voice calls and video calls, send files and more. Users can also set up private chat "servers" which can be divided into specific chat rooms.
 
@@ -125,7 +126,7 @@ Sprint aims for this period;
 
 This api was initially set up to just return static dummy data - a geoJSON file containing earthquake data from an example in the mapbox api documentation. We then implemented a heatmap template from the mapbox documentation, to both test the api was correctly returning data but also as a base to build off when we add in our own data in later stages; we wanted a heatmap like effect for users emotions rather than earthquake magnitudes!
 
-We used this template to help define and develop our `geoJSON.js` mongo schema; i.e. a data structure that all user posts would follow, including a mood rating, keyword and an explanation (and eventually the username and date/time). We made sure this integrated with our data model of the application [REFERENCE DATA MODEL].
+We used this template to help define and develop our `geoJSON.js` mongo schema; i.e. a data structure that all user posts would follow, including a mood rating, keyword and an explanation (and eventually the username and date/time). We made sure this integrated with our data model of the application [REFERENCE DATA MODEL]. Over the rest of this sprint we also developed a model for the purpose of eventually adding user profiles to the website if time permits; our `user.js` model.
 
 As the complexity of our project began to grow we decided to implement a test process before each git commit and push, to ensure any local changes made did not break the website, which helped facilitate continuous integration as we were constantly compiling and testing our website after changes, and could be confident that code on the live repository was stable. See [our test plan](test_plan.txt) on our repository for details of this testing process.
 
@@ -255,6 +256,6 @@ Most of our time for this sprint was spent writing, though again we also spent s
 <a name="fourth"></a>
 ## Team use of Git, how your team used continuous integration / continuous deployment. Streamlining of workflow throughout.
 
-[Discord]: (https://discord.com/)
+
 
 Next section; [Evaluation and Conclusion](evalSect.md)
