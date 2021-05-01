@@ -18,7 +18,7 @@ Throughout the entirety of this project the UK has been in some degree of nation
 
 Because of the restrictions mentioned above it was extremely important to keep every group member engaged and involved with the project. Discord was chosen to be our main platform for communication.
 
-#### [Discord]
+#### Discord
 
 [Discord](https://discord.com/)
 
