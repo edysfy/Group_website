@@ -4,7 +4,9 @@
 Before diving into the details of each stack, how they work and link together. Lets talk about the System Architecture as a whole.
 <br/> From a very broad perspective this is how application skeleton is structured: <br/>
 <br/>
+<p align="center">
 <img src="supporting_images/stack_arc_overview.png" width="650px">
+</p>
 
 We needed three main components that comprise the stack.
 
@@ -51,7 +53,9 @@ mongoose.connect(mongoDBConnect,{ useNewUrlParser: true, useUnifiedTopology: tru
 
 ### ERD of the whole data model
 
+<p align="center">
 <img src="supporting_images/mongoDBerd.jpg" width="650px">
+</p>
 
 The ERD above shows the final data model that is utilised by our application. We defined a schema for each block in the ERD diagram. However, we only have two seperate collections in our database, which was defined by two mongoose models.
 ```js
@@ -64,7 +68,9 @@ module.exports = mongoose.model("GeoJson", geoJsonSchema);
 This schema was the initial schema we started to develop. As a team, we decided that we needed a data structure that allowed anyone to make a post and display it on the Mapbox component. That was our priority. If we didn't have this functionality then users wouldn't be able to Emote their feeling, see the heatmap, and view other people's posts. After some research, it was found that there is a pre-defined data structure called: "GeoJson". This standard builds upon JSON data format, however, it requires certain attributes. GeoJson is a data structure that
 allows one to represent features like "Geometry", along with any non-spatial attributes that the developer has the freedom to define. When discovering this data structure we felt a sense of relief as we were unsure as to model the data. This was the first GeoJson data structure we found in use through a tutorial from "http://132.72.155.230:3838/js/geojson-1.html":
 
+<p align="center">
 <img src="supporting_images/gjdis.png" width="650px">
+</p>
 
 We gathered that you can display a set of GeoJson data by creating a "FeatureCollection". Each one of these will contain a set of GeoJson of type: "Feature". This was then the basis of our GeoJson model. We needed a model that accurately modeled a GeoJson "Feature", which could then be collected as a "FeatureCollection" on the front end.
 This is the geoJsonSchema that the GeoJson model is made from:
@@ -486,37 +492,49 @@ Our front end is comprised of many components. We felt the best way to break dow
 
   ### Class Diagram:
   
+  <p align="center">
   <img src="supporting_images/post.png" width="950px">
+  </p> 
   
 ## Authentication Service:
 
   ### Class Diagram:
   
+  <p align="center">
   <img src="supporting_images/auth.png" width="950px">
+  </p> 
 
 ## Sidebar Service:
 
   ### Class Diagram:
   
+  <p align="center">
   <img src="supporting_images/sidebar.png" width="950px">
+  </p> 
 
 ## URL-state Service:
 
   ### Class Diagram:
   
+  <p align="center">
   <img src="supporting_images/urlstate.png" width="550px">
+  </p>
 
 ## User Service:
 
   ### Class Diagram:
   
-  <img src="supporting_images/user.png" width="950px">
+  <p align="center">
+  <img src="supporting_images/user.png" width="950px"> 
+  </p>
 
 ## User-search Service:
 
   ### Class Diagram:
   
+  <p align="center">
   <img src="supporting_images/usersearch.png" width="950px">
+  </p>
 
 
 
