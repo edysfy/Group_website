@@ -21,7 +21,22 @@ A lot of time was spent discussing which project idea to use. The idea needed to
 
 ### Identification of our target users
 
-Our project aims to boost mental wellbeing, and does not specifically target particular causes of poor mental health. Of course, people of all ages, backgrounds, economic status etc. are capable of suffering. It is for this reason that the field we are working in is applicable to everyone. However, it is our application within this field that may cause different individuals to tend towards (or away from) our app. EmoteMap relies on the desire to share emotion, digitally. We designed a questionnaire to help us get a better understanding of who our target audience is. [IS THERE ANYTHING WE CAN SAY ABOUT HOW OUR FINDINGS INFLUENCED OUR SITE???].
+We knew we wanted to make an app that creates a sense of community in the area of mental health. For full details on the justification of the idea, please see LINK!. Our idea relied on three fundamental features: the ability to create an EmotePost, the ability to read EmotePosts, and the ability to search for EmotePosts by keyword. Changing any of these features would change the idea entirely. We thought it would be a good idea to create a character that represents a potential user. This character's story is intentionally ordinary. We would then keep this character in mind when developing the project, to help ensure the development was geared towards the potential user. Here's a bit about Sarah, 19:
+
+<p>
+<img src="supporting_images/Sarah.jpeg" width="100" align="left">
+"I’m a first year uni student, but I don’t feel like it. The pandemic has meant that we are studying from home, and I haven’t had the opportunity to make friends yet. I’m living with three other students, but I didn’t know them before I moved in, and I’m not so close to them. They all seem to be best friends already. It’s been hard moving to a new city during these times. I often feel alone. I know there must be so many others in my situation, but it’s easy to forget that. I love my course, but this is not what I expected. I wish I could share my feelings with others…"
+</p>
+
+
+We all know the feeling of isolation, and we believe Sarah's case is relatable, and likely, particularly in the times of the pandemic.
+
+Admittedly, it was only until after we came up with the idea, that we saw its potential use for another type of user: some form of data analyst. The ability to search for EmotePosts makes it a likely interest for this user. We believe generating statistics from users' EmotePosts would be invaluable to research into mental health issues. Just as before, we created a character to represent this type of user. Meet Christina, 43:
+
+<p>
+<img src="supporting_images/Christina.jpeg" width="100" align="left">
+"I’m a data analyst at a mental-heath charity. My role is very important, but it is often overlooked when people think about tacking mental health. My job is to find trends in mental health. Right now, this involves analysing the results of questionnaires that we have given out, but this can be quite tedious, and not so many people respond to our requests. It would be great if I could somehow search for particular feelings, and understand what the current triggers are. We live in a changing world, so I expect these to change over time, and of course, over different locations."
+</p>
 
 
 ### Early prototyping - paper prototypes and feedback
@@ -46,11 +61,18 @@ Our paper prototype served well at forming an initial visualisation of the websi
 <img src="supporting_images/wireframe_preview.png" width="700">
 </p>
 
-Again, we shared the wireframe with friends and family, and coupled it with a questionnaire (I COULD INCLUDE LINK TO COPY OF QUESTIONNAIRE). One user reported that it would be useful to have a key on the map, informing the user on what coloured marker means what. As a direct response to this feedback, we implemented a key, which can be seen in the image below:
+Again, we shared the wireframe with friends and family, and coupled it with a questionnaire (I COULD INCLUDE LINK TO COPY OF QUESTIONNAIRE). We provided users with a questionnaire, and also the ability to leave their own comments on the wireframe (in case they would like to leave feedback beyond what the questionnaire had asked). One user reported that it would be useful to have a key on the map, informing the user on what coloured marker means what. As a direct response to this feedback, we implemented a key. The final version of the key can be see below (right), alongside the original feedback (left).
 
-<img src="supporting_images/key.png" width="150">
+<p float="left">
+<img src="supporting_images/Wireframe_with_feedback.png" width="450">
+<img src="supporting_images/key.png" width="450">
+</p>
 
+Results of the questionnaire showed that 80% of people thought an 'about' page would be useful for further clarification. As a response to this, we created an 'about' page, confirming what the website intends to do, and how:
 
+<p align="center">
+<img src="supporting_images/About_page.png" width="700">
+</p>
 
 ### UX approach – design heuristics/approach, design methods (design fiction / heuristics)
 stuff
