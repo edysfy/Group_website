@@ -8,7 +8,7 @@
 * [Git and continuous integration](#fourth)
 
 <a name="first"></a>
-## Group working methods used
+## Group collaboration stratergy
 
 ### COVID-19
 
@@ -20,9 +20,8 @@ Because of the restrictions mentioned above it was extremely important to keep e
 
 #### Discord
 
-[Discord](https://discord.com/)
 
-Discord is a free instant messaging platform where users can communicate through messages, voice calls and video calls, send files and more. Users can also set up private chat "servers" which can be divided into specific chat rooms.
+[Discord](https://discord.com/) is a free instant messaging platform where users can communicate through messages, voice calls and video calls, send files and more. Users can also set up private chat "servers" which can be divided into specific chat rooms.
 
 We set up a private server on Discord right at the start of the project with a few specific chats: back end, front end and write up but as the project progressed we created more specific channels:
 
@@ -42,18 +41,43 @@ Agile software development refers to software development methodologies which ar
 
 ### Agile and our project
 
-The only stakeholder in our project was the end user. Therefore all feedback at each iteration came from user surveys and interviews. As documented in the [sprints] and [UX] at each stage of the development process we set goals based apon the user feedback collected in the last sprint. Once we had implemented the features described by our sprint goals we then repeated the process evaluating what we had done and getting more user feedback. This process
+The only stakeholder in our project was the end user. Therefore all feedback at each iteration came from user surveys and interviews. As documented in the [sprints] and [UX] at each stage of the development process we set goals based apon the user feedback collected in the last sprint. Once we had implemented the features described by our sprint goals we then repeated the process evaluating what we had done and getting more user feedback.
 
+This flexible but clearly defined process of of developing, evaluating then setting out goals provided the following benifits:
 
+**Each element of functionality well designed:** Every time a new feature was implemented it was thoroughly reviewed by both the group and end users before it could be finalised. This meant that every feature of the end product was well thought out and user approved.  
 
+**Encouraged regular more productive meetups:** Given the time constraints from both the project deadline and work from other modules it was important to keep meetings productive and not get sidetracked. Basing design desicions heavily on user feedback meant every video call had a purpose. Fresh user feedback and having each individually reviewed the relevent features before each meeting meant there was always useful content to be discussed.
+
+**Avoids final product being unfinished / not user friendly:** Constant feature creation and reviewal meant at each stage we added fully functional features. Working on smaller goals as opposed to thinking of the final product and having a lot of features as a work in progress meant we had a better idea of realistic time frames. This allowed us to know what features we would be able to implement in the limited time frame. This meant we didn't become over ambitious and end up getting to the hand in date with an unfinished product. Working on smaller, well refined and fully functional features also meant if we did run out of time we would still have something to show for our work.
 
 <a name="second"></a>
-## Discussion of team roles (specialisation is ok!). A summary of individual contributions (note: this is for reference, your team will all receive the same grade!).
+
+## Discussion of team roles
+
+Specialisation and utilising individual's strengths is an extremely important part in getting the best out of a team. For this reason we decided to discuss team roles early on. Our team was made up from a variety of different academic backgrounds, from anthropology to engineering, with some members strengths leaning towards the numerical and logic side of the spectrum and others in the direction of research and writing. These factors along with personal preference and discussion guided use towards choosing our individual roles. Although we agreed these roles would be flexible where need be, we felt it made sense to specialise early as to not waste time researching areas that could be covered by other members. This was a tactical decision as given the time constraints it was unrealistic for all members to learn the full stack.
+
+Individual member contributions:
 
 ### Edward
+
 In this project I carried out two main roles; foremost was working on the frontend, specifically in the mapbox implementation; after we picked the mapbox api to display a map on our website, I read through the mapbox documentation and examples and implemented and adapted the heatmap example, and added in the pop up functionality, as described in our [System Implementation](sysImp.md) document. I was also responsible for the initial implementation of an api to fetch data into the mapbox api, though this was quickly and heavily further developed by Hari. As well as this, I also created the `postbutton.component`, and the initial implementation of the `userpost.component` utilising angular forms and dialogs.
 
 The other role I fulfilled was project management, both on a coding and teamwork basis; I was responsible for implementing elements from the boilerplate code into our website, i.e. setting up docker-compatibility and `server.js`. On the teamwork side, I overviewed the projects progress and helped make sure we were working towards the goals set out in the mark scheme and that each team member had something to be working on at each stage in the development process.
+
+### Alfie
+
+### Hari
+
+I was the leader of the project. I instilled an initial vision for how the application concept be. I was explict to my team on the way we should go about building the application. I assigned team members tasks to do when developing the app, while offering advice when asked at how to get something to work in the code. I also, helped oversee the write up, offering feedback and extra things I thought should have been mentioned in the documentation, as well as writing the system implementation section. 
+
+My main task was building the application, and ensuring its quality. I got the initial prototypes working in the browser to give the team an idea of how the app will look on the computer. I then went on to develop the backend, defining the routes and the initialization of the Express app as well as the MongoDB schemas. I also worked on the front end. I was responsible for the styling of the application. I implemented the services and defined interfaces in the model's folder. I also implemented the user authentication, the search functionality, as well as the following components: login, signup, descript-popup, sidebar, toolbar, user, user-search, userpost, userpost-display, usersearch-display, and setting up the routing and allowing the data to flow dynamically between the full stack. I helped develop some functionality in Mapbox, like rendering different data streams on the map (from post and search service), as well as implementing the fly function.
+
+### Tarn
+
+### Zaki
+
+
 
 <a name="third"></a>
 ## Sprints

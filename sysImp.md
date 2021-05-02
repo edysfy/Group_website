@@ -496,6 +496,8 @@ Our front end is comprised of many components. We felt the best way to break dow
   <img src="supporting_images/post.png" width="950px">
   </p> 
 
+We inject the HTTP Client module into this service, so we can connect this service to our API.
+### How to get and display data:
 When the map is initialized for the first time, we want the user to see all the GeoJson Post's made by previous users, along with the heat map. This service is responsible for 'getting' all GeoJson data from the back end and passing it to the Mapbox component. As well as managing new entries being created by the user and 'posting' them to the backend. It also holds the latest updated coordinates that the user has registered. 
 For Mapbox to be able to render the GeoJson data from the backend, we need to convert it to a GeoJson javascript object. We defined a GeoJson class in the model folder.
   ```js
@@ -515,7 +517,7 @@ For Mapbox to be able to render the GeoJson data from the backend, we need to co
       }
   }
   ```
-We have a function getGeoPostData() in the Post Service, when this is called it sends a GET request to our API to retrieve the data. Once the data arrives, we convert each datatype into a GeoJson object as described above, and push it to the 'geoPost' array stored in the service. We pass the relevant data through the GeoJson constructor. Once this is complete, we have a Behaviour Subject called 'geoPostSubject', this maintains the state of the 'geoPost' array. It can return Observables, meaning other components in the application can subscribe to it and trigger functions when there is a change of state. We called the 'next' method on this 'geoPostSubject' and pass in the 'geoPost' array to update the state with the data from the backend. We also need a check. We only push data from the backend into the service if the 'geoPost' array length doesn't equal the array coming in from the back end. As this function, can be called multiple times by the Mapbox component, if this check wasn't in place it will render duplicate data. Once, we update the state we return 'geoPostSubject.asObservable()'.
+We have a function getGeoPostData() in the Post Service, when this is called it sends a GET request to our API to retrieve the data. Once the data arrives, we convert each data into a GeoJson object as described above (by passing the relevant data through the GeoJson constructor), and push it to the 'geoPost' array stored in the service. Once this is complete, we have a Behaviour Subject called 'geoPostSubject', this maintains the state of the 'geoPost' array. It can return Observables, meaning other components in the application can subscribe to it and trigger functions when there is a change of state. We called the 'next' method on this 'geoPostSubject' and pass in the 'geoPost' array to update the state with the data from the backend. We also need a check. We only push data from the backend into the service if the 'geoPost' array length doesn't equal the array coming in from the back end. As this function, can be called multiple times by the Mapbox component, if this check wasn't in place it will render duplicate data. Once, we update the state we return 'geoPostSubject.asObservable()'.
 
 This service is injected into the Mapbox component. When the component is initialized, it calls map.init(), which initializes the map as per our specifications. We then call the map.on('load'). This is a function that allows us to manipulate the map when the event 'load' is triggered.
 ```js
@@ -540,7 +542,7 @@ this.map.on('load', (e) => {
         });
 ```
 Firstly, this function combines the GeoJson data retrieved through the User-Search Service, and the GeoJson data retrieved via the Post Service. We don't want both sets of data to be rendered simultaneously. We subscribe to this boolean in the User Search Service. It is true when the search state is activated, and false otherwise (more details in User Search Service).  By default is it set to false when the user renders the app for the first time. As we alternate between the search-state and the post-state, we need to use a function called 'removeAllLayerAndSource('data')'. This essentially removes all the layers built from the GeoJson data sent from the previous Service. Ie it creates a blank map for the new data from the other service to be rendered. So it removes all the markers, heat-map, and user's markers. As well as removing the Mapbox 'data' source (source in Mapbox allows the developer Mapbox layers to create layers).
-When '!activatedUserSearch', and the previous Mapbox 'data' source has been wiped, we call 'pullAndDisplayGJPointsFromDB()'. This calls 'createDataSource('data')', and creates a data source called 'data', of type 'geojson'. The data it contains is of a type 'FeatureCollection' and initialised with and an empty array, which is going to contain the 'geoPost' array from the Post Service. We then subscribe to the 'getGeoPostData().asObservable' observable in the Post Service.  
+When '!activatedUserSearch', and the previous Mapbox 'data' source has been wiped, we call 'pullAndDisplayGJPointsFromDB()'. This calls 'createDataSource('data')', and creates a data source called 'data', of type 'geojson'. The data it contains is of a type 'FeatureCollection' and initialised with and an empty array, which is going to contain the 'geoPost' array from the Post Service. We then subscribe to the 'getGeoPostData()' method in the Post Service, as it returns an observable.  
 
 ```javascript
 createDataSource(name: string): void {
@@ -562,7 +564,7 @@ pullAndDisplayGJPointsFromDB(): void {
   });
 }
 ```
-Now we can retrieve the 'geoPost' array. When the GET request has been fulfilled, the data has been processed, and state updated. Mapbox will take that data, then call the 'setData()' function on the 'data' source we created. This takes a data set. We create a Feature Collection object (a class pre-defined in the model folder), that just takes in the 'geoPost' array from the service. 
+Now we can retrieve the 'geoPost' array. When the GET request has been fulfilled, the data has been processed, and state updated. Mapbox will take that data, then call the 'setData()' function on the 'data' source we created. This takes a data set. We create a Feature Collection object (a class pre-defined in the model folder), that just takes in the 'geoPost' array from the service. Mapbox uses to coordinates in 'geometry' attribute to position the data on the map.
 ```js
 export class FeatureCollection {
     type = 'FeatureCollection';
@@ -571,16 +573,179 @@ export class FeatureCollection {
 ```
 The source now contains the data. This data can use manipulated through the use of Mapbox's layers, and each layer can be displayed on the map in a customizable way.
 
-### Now is a good time to describe how Mapbox creates the markers, user markers and heat map.
+### Now is a good time to describe how Mapbox creates the markers, user markers and heat map:
 
+The function initMapLayersForData(layer: string), takes in the name the source that contains the data. We create three layers, as a way to display the GeoJson Posts to the user. The first layer is called 'markers':
+```js
+    this.map.addLayer({
+      id: 'markers',
+      interactive: true,
+      type: 'circle',
+      source: layer,
+      minzoom: 9.2,
+      paint: {
+        'circle-stroke-color': '#fff',
+        'circle-stroke-width': 1,
+        'circle-radius': 5,
+        'circle-color': [
+          'step',
+          ['get', 'mood'],
+          '#EC986F',
+          1,
+          'rgb(65,182,196)',
+          2,
+          'rgb(254,204,92)',
+          3,
+          'rgb(227,26,28)',
+        ],
+      },
+    });
+  ```
+  <p align="center">
+  <img src="supporting_images/circles.png" width="550px">
+  </p> 
+
+The API allows us to display circles at each location, defined by the coordinates in the 'geometry' attribute from the geoJson data point. We color these circles based on the so-called mood-rating that a user picks when making a post to our website – this provides the key functionality of the entire site, allowing users to see patterns in people’s emotions across the map, based on the circle colors. Blue => Happy, Yellow => Coping, Red => Sad. As the data is GeoJson, for each point Mapbox looks at the 'properties' attribute. You can use this attribute to display custom data on the map. We tell Mapbox to use the 'mood' attribute inside 'properties'. We assign a color for each value. The addLayer function can also be configured such that its visibility is based on a certain zoom level of the map; we utilize this so that when a user has zoomed in (to zoom > 9.2) the circle layer appears, but when they are zoomed out, the second layer – a 'heatmap' layer – appears:
+
+  <p align="center">
+  <img src="supporting_images/heatmap.png" width="550px">
+  </p> 
+
+The 'heatmap' type is another layer type, and we use it to display the density of the user's emotion values at a location. We interpolate the colors of the heatmap, it varies from blue (positive emotion in the area) to red (negative emotions in the area). The heatmap operates on a max zoom greater than 9. Again, it takes in the 'mood' values, we give a set of colors for each mood, the colors are spread linearly depending on the mood value. <br/>
+This final layer allows the user to distinguish their posts from other user's posts. We create a new layer called 'user-markers', from the 'data' source. Mapbox has a setFilter() method. 
+```js
+    this.map.setFilter('user-markers', [
+      '==',
+      'username',
+      this.authService.getUsername(),
+    ]);
+```   
+We pass the 'user-marker' layer into it. Then we say if the property 'username' is equal to the username stored in the auth service, load the GeoJson point with a marker that is built from an icon image: 'volcano-11' (this was taken from Mapbox's GitHub Page. You can see below how the user pin also comes with a 'volcano'.
+
+  <p align="center">
+  <img src="supporting_images/usermakers.png" width="550px">
+  </p> 
+
+For the 'markers' layer, we utilized Mapbox's popup feature, such that when the 'markers' layer is rendered (i.e. the user is zoomed in enough) and the user hovers over one of the displayed circles, a pop up appears, displaying the specific post data (keyword, mood and description) from the GeoJson data's 'properties' attribute. We also have a hover off event, that essentially destroys the popup.
+  
+  <p align="center">
+  <img src="supporting_images/hoverlayer.png" width="550px">
+  </p> 
+
+
+### How to post data:
+Initially, the user has to be authenticated before making a post. So the first thing we do is call upon the Authentication Service, inject it into Mapbox, and subscribe to getAuthMethod() in the service. This allows Mapbox to know if the user is authenticated, and can update the UI if the user logs off. Allowing a user to make EmotePosts is a core feature of our application. We need to display the Userpost component, which holds a form that the user can submit. We render this form on a mat-dialog component. 
+
+  <p align="center">
+  <img src="supporting_images/emotepost.png" width="550px">
+  </p> 
+
+The user can display this dialog in two ways.
+1. By clicking on the map:
+If the user is operating on a zoom level greater than 12 and is logged in, we can use the 'map.on('click')' method. This is an event listener. When the event is triggered, it will open a mat-dialog on top of the map, this dialog contains the Userpost component, which is a form that allows the user to submit their emotion, keyword, and post. Also, this event will update the longitude and latitude values in the Post Service, with the coordinates of the map where the user clicked.
+```javascript
+this.map.on('click', (e) => {
+  if (this.isLoggedIn) {
+    const zoom = this.map.getZoom();
+    console.log(zoom);
+    if (zoom > 12) {
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.autoFocus = false;
+      dialogConfig.width = '55%';
+      dialogConfig.height = '70%';
+      dialogConfig.hasBackdrop = true;
+      dialogConfig.panelClass = 'custom-dialog';
+      dialogConfig.position = { bottom: '8%', right: '20%' };
+      this.dialog.open(UserpostComponent, dialogConfig);
+      this.postService.updateLongLat({
+        long: e.lngLat.lng,
+        lat: e.lngLat.lat,
+      });
+    }
+  }
+});
+```
+2. By clicking the blue + icon on the sidebar (postbutton component):
+  <p align="center">
+  <img src="supporting_images/navbar.png" width="550px">
+  </p>
+  
+If the user is logged in. The Mapbox component will render the Sidebar component (using *ngIf directives), they now can access to the navbar. On the navbar, there is a blue + button. When the user clicks on this button, the same process happens as above, except the coordinates updated in the Post Service represent the User's actual location. If the user submits the form before the program fetches their coordinates, we alert the user that they can not proceed.
+  
+  <p align="center">
+  <img src="supporting_images/locationerr.png" width="550px">
+  </p>
+
+**How to submit?**  
+The Post Service is injected into the Userpost component. When the user presses the submit button. There is a series of steps until the submission is complete.
+1. We decided that the user cannot post will in search mode. So the Userpost component listens to the UserSearch service, by subscribing to 'getIsInSearchState()' method, to see if search mode is activated. If in search mode then the UI will display an alert to the user saying it is unable make a post.
+
+  <p align="center">
+  <img src="supporting_images/unablesearchmode.png" width="550px">
+  </p>
+
+2. We validate the form. The the 'keyword' input field must to contain one word ONLY, and they post body cannot be empty.
+
+  <p align="center">
+  <img src="supporting_images/formvalidaitno.png" width="550px">
+  </p>
+
+If the measures have been overcome, then the 'createPost()' method in the Post Service is called, and the values of the form are sent into the service. We create GeoJson data out of the form values, which matches the Mongoose GeoJson Schema on the backend. We use local storage to add the user's username to the GeoJson. We add the current coordinates in Post Service (obtained by the methods above) to the 'geometry' attribute. We use the HTTP POST method to send to the '/api/geopost' route on the API. After the response has arrived from the API and is successful, we push the GeoJson data to the 'geoPost' array and update the 'geoPostSubject' with the altered array, rendering the new Post onto Mapbox's layers dynamically. We also add posts to the user's GeoJson array stored in the User Service, so the new post will render dynamically on the Userpost-Display component. (more detail in User Service Section.)
   
 ## Authentication Service:
-
   ### Class Diagram:
   
   <p align="center">
   <img src="supporting_images/auth.png" width="950px">
   </p> 
+  We inject the HTTP Client module into this service, so we can connect this service to our API.  
+
+  The Authentication Service was a key part of our application. It allows users to gain extra functionality. For example, only users can make posts, view their posts in a timeline, delete their posts, search for others user's posts, and set their age and gender. For this to work, the Authentication Service distributes the authentication state throughout the application.
+
+  Lets take a look of the application when the user is NOT logged in:
+
+  <p align="center">
+  <img align="center" src="supporting_images/nonlogin.png" width="450px">
+  <img align="center" src="supporting_images/nonlogwelcome.png" width="450px">
+  </p> 
+
+  The user can only see the heatmap, pins, and can hover over the pins to read the post. Mapbox renders a button called welcome, when the user is not logged in. This displays a dialog that describes what you can do if you are not logged on.
+
+  Here is how the user can authenticate themselves:
+  -  They can click the 'Signup' or 'Login' text in the toolbar it it will route to these corresponding pages.
+
+  <p align="center">
+  <img align="center" src="supporting_images/singup.png" width="450px">
+  <img align="center" src="supporting_images/login.png" width="450px">
+  </p> 
+
+  
+  ### The process to register an account:
+  - We built signup UI using Angular's template-driven forms. We had basic validation on the field and used mat-error from Angular material to throw errors back to the user. The user has to enter a username, password, and repeat password to be able to submit the form. We didn't implement and fancy validation or password patterns using regex. Just made sure the entries were not null. When the 'register' button is pressed, we send the NgForm to an 'onSubmit()' function, in the Signup component. Here, we check if the password value is equivalent to the password match value. If not then we through an alert to the user saying the passwords don't. This is a feature to ensure the user enters the password they intend.
+
+  <p align="center">
+  <img align="center" src="supporting_images/passwordsnomatch.png" width="550px">
+  </p> 
+
+  The Authentication Service is injected into the Signup component. When the 'onSubmit()' function is fired. This passes the form's username and password values to Authentication Service's 'createUser()' method. Here, we create a javascript object out of this data and return the HTTP post method. So when we post the details using the HTTP client the function essentially is returning an Observable. This is a way for the Signup component to subscribe to the 'createUser()' method, and directly act accordingly when a response is sent by the server. 
+  ```js
+    createUser(username:  string, password: string) {
+    const userData = {
+      username: username,
+      password: password,
+    };
+    return this.http
+      .post<{ message: String; error: Error, regSuc: boolean }>(
+        'http://localhost:3000/api/user/signup',
+        userData
+      )
+  ```
+ The response is either a success or failure, determined by the 'regSuc' boolean the server sends to the client. If successful, we route to the Login page, so the user can log in. If it fails, that means the username has been taken and we alert the user.
+
+  <p align="center">
+  <img align="center" src="supporting_images/usernametaken.png" width="550px">
+  </p> 
+
 
 ## Sidebar Service:
 
