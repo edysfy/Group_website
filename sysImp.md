@@ -693,6 +693,17 @@ If the measures have been overcome, then the 'createPost()' method in the Post S
   <img src="supporting_images/auth.png" width="950px">
   </p> 
 
+  The authentication service was a key part of our application. It allows users to gain extra funcitonality. For example only users can make posts, view their posts in a timeline, delete their own posts and search for others users posts, and set their age and gender. In order for this to work, the authenication works to distriubte the authenication state throughout the application.
+
+  Lets take a look of the application when the user is NOT logged in:
+
+  <p align="left">
+  <img align="left" src="supporting_images/nonlogin.png" width="450px">
+  <img align="center" src="supporting_images/nonlogwelcome.png" width="450px">
+  </p> 
+
+  The 
+
 ## Sidebar Service:
 
   ### Class Diagram:
