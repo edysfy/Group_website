@@ -700,7 +700,7 @@ If the measures have been overcome, then the 'createPost()' method in the Post S
   </p> 
   We inject the HTTP Client module into this service, so we can connect this service to our API.  
 
-  The authentication service was a key part of our application. It allows users to gain extra funcitonality. For example only users can make posts, view their posts in a timeline, delete their own posts and search for others users posts, and set their age and gender. In order for this to work, the Authenication Service distriubte the authenication state throughout the application.
+  The Authentication Service was a key part of our application. It allows users to gain extra functionality. For example, only users can make posts, view their posts in a timeline, delete their posts, search for others user's posts, and set their age and gender. For this to work, the Authentication Service distributes the authentication state throughout the application.
 
   Lets take a look of the application when the user is NOT logged in:
 
