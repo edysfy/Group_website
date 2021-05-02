@@ -783,7 +783,7 @@ The Login component is very similar to the SignUp component. It is built using t
   Once the user is logged in the UI looks like this:
   
   <p align="center">
-  <img align="center" src="supporting_images/login.png" width="550px">
+  <img align="center" src="supporting_images/loginui.png" width="550px">
   </p> 
 
 The Mapbox component subscribes to the 'authState', and sets the isLoggedIn variable to what value the 'authState' observable emits. We then use *ngIf to conditionally render components on the map, depending on if the user is logged in or not.
