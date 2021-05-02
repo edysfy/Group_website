@@ -108,8 +108,7 @@
     </svg>
   </div>
   <mat-card class="signupForm">
-    <mat-spinner *ngIf="isLoading"></mat-spinner>
-    <form (submit)="onSubmit(registerForm)" #registerForm="ngForm" *ngIf="!isLoading">
+    <form (submit)="onSubmit(registerForm)" #registerForm="ngForm">
       <mat-form-field>
         <input matInput name="username" ngModel type="text" placeholder="Username" #usernameInput="ngModel" required>
         <mat-error *ngIf="usernameInput.invalid">Please enter a valid username.</mat-error>
@@ -124,7 +123,7 @@
           #samepassInput="ngModel" required>
         <mat-error *ngIf="samepassInput.invalid">Please enter you password.</mat-error>
       </mat-form-field>
-      <button mat-raised-button color="accent" type="submit" *ngIf="!isLoading">Register</button>
+      <button mat-raised-button color="accent" type="submit">Register</button>
     </form>
   </mat-card>
 </div>

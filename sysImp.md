@@ -697,12 +697,26 @@ If the measures have been overcome, then the 'createPost()' method in the Post S
 
   Lets take a look of the application when the user is NOT logged in:
 
-  <p align="left">
-  <img align="left" src="supporting_images/nonlogin.png" width="450px">
+  <p align="center">
+  <img align="center" src="supporting_images/nonlogin.png" width="450px">
   <img align="center" src="supporting_images/nonlogwelcome.png" width="450px">
   </p> 
 
-  The 
+  The user can only see the heatmap, pins, and can hover over the pins to read the post. Mapbox renders a button called welcome, when the user is not logged in. This displays a dialog that describes what you can do if you are not logged on.
+
+  Here is how the user can authenticate themselves:
+
+  <p align="center">
+  <img align="center" src="supporting_images/singup.png" width="450px">
+  <img align="center" src="supporting_images/login.png" width="450px">
+  </p> 
+  
+  The process to register an account:
+  - We built this using Angular's template driven forms. We had basic validation on the field and used mat-error from Angular material to throw errors of registration back to the user. The user has to enter a user, password and repeat password to be able to submit the form. When the 'register' button is pressed, we send the form to an onSubmit() function. Here, we check if the password value is equivlent to the password match value. If not then we through an alert to the user saying the passwords don't. This is a feature to ensure the user enters the password the intend.
+
+
+
+
 
 ## Sidebar Service:
 
