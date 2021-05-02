@@ -21,11 +21,11 @@ We needed three main components that comprise the stack.
     The user can explore the map, create an account, log in, create Emote posts, view other users' posts, have access to their posts in a timeline, delete their posts, fly to a post, and search for other users' posts (by date, age, and gender). To display a map, we needed to connect to an external API. We had two options. One Mapbox and the other was GoogleMaps. Firstly, Mapbox was more appealing as it is the underdog. We didn't want to be involved with a conglomerate like Google. After digesting Mapbox's API, we realized it is capable of doing everything we wanted. Especially, displaying a heat map. It accepts geoJson data and provides the developer with a lot of support to customize and visualize that data on the map. It accepts data via a direct link to a URL path, or through building your objects. This was useful as it allowed us to use geoJson objects that are stored in memory on the front end. As an example (will be explained in a lot more detail in the front end), when the user made a post-it would automatically update the UI, as we stored the new post in a Service. The Mapbox component listens to changes in the geoJson array and re-renders the data on the map. We used a set of Angular Services to maintain state and allow data to flow between components on the frontend, as well as providing a link between the data flowing to the REST API.
 
 
- # ADD FULL STACK DIAGRAM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   
+ # ADD SEQUECNE DIAGRAM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   
 
 Lets go into some more depth...    
 
-# Back End - MongoDB - database implementation, the data model that you developed your back end from (e.g. entity relationship diagrams)
+# MongoDB - database implementation
 
 ## Why use MongoDB?
 
@@ -495,6 +495,84 @@ Our front end is comprised of many components. We felt the best way to break dow
   <p align="center">
   <img src="supporting_images/post.png" width="950px">
   </p> 
+
+When the map is initialized for the first time, we want the user to see all the GeoJson Post's made by previous users, along with the heat map. This service is responsible for 'getting' all GeoJson data from the back end and passing it to the Mapbox component. As well as managing new entries being created by the user and 'posting' them to the backend. It also holds the latest updated coordinates that the user has registered. 
+For Mapbox to be able to render the GeoJson data from the backend, we need to convert it to a GeoJson javascript object. We defined a GeoJson class in the model folder.
+  ```js
+  export class GeoJson {
+      type = 'Feature';
+      geometry!: IGeoPosition;
+      properties!: IPost; 
+      _id: string;
+
+      constructor(properties: IPost, cord: number[], _id: string) {
+          this.properties = properties;
+          this.geometry = {
+              type: 'Point',
+              coordinates: cord,
+          };
+          this._id = _id;
+      }
+  }
+  ```
+We have a function getGeoPostData() in the Post Service, when this is called it sends a GET request to our API to retrieve the data. Once the data arrives, we convert each datatype into a GeoJson object as described above, and push it to the 'geoPost' array stored in the service. We pass the relevant data through the GeoJson constructor. Once this is complete, we have a Behaviour Subject called 'geoPostSubject', this maintains the state of the 'geoPost' array. It can return Observables, meaning other components in the application can subscribe to it and trigger functions when there is a change of state. We called the 'next' method on this 'geoPostSubject' and pass in the 'geoPost' array to update the state with the data from the backend. We also need a check. We only push data from the backend into the service if the 'geoPost' array length doesn't equal the array coming in from the back end. As this function, can be called multiple times by the Mapbox component, if this check wasn't in place it will render duplicate data. Once, we update the state we return 'geoPostSubject.asObservable()'.
+
+This service is injected into the Mapbox component. When the component is initialized, it calls map.init(), which initializes the map as per our specifications. We then call the map.on('load'). This is a function that allows us to manipulate the map when the event 'load' is triggered.
+```js
+this.map.on('load', (e) => {
+      this.userSearchService
+        .getIsInSearchState()
+        /*susbscrice to user search state*/
+        .subscribe((activatedUserSearch) => {
+          if (!activatedUserSearch) {
+            if (this.userSearchIconClickAmount > 0) {
+              this.removeAllLayerAndSource('data');
+            }
+            this.userSearchIconClickAmount++;
+            this.pullAndDisplayGJPointsFromDB();
+            this.initMapLayersForData('data');
+            this.isMapLoading = false;
+          } else {
+            this.removeAllLayerAndSource('data');
+            this.pullAndDisplayGJPointsFromSearchQuery();
+            this.initMapLayersForData('data');
+          }
+        });
+```
+Firstly, this function combines the GeoJson data retrieved through the User-Search Service, and the GeoJson data retrieved via the Post Service. We don't want both sets of data to be rendered simultaneously. We subscribe to this boolean in the User Search Service. It is true when the search state is activated, and false otherwise (more details in User Search Service).  By default is it set to false when the user renders the app for the first time. As we alternate between the search-state and the post-state, we need to use a function called 'removeAllLayerAndSource('data')'. This essentially removes all the layers built from the GeoJson data sent from the previous Service. Ie it creates a blank map for the new data from the other service to be rendered. So it removes all the markers, heat-map, and user's markers. As well as removing the Mapbox 'data' source (source in Mapbox allows the developer Mapbox layers to create layers).
+When '!activatedUserSearch', and the previous Mapbox 'data' source has been wiped, we call 'pullAndDisplayGJPointsFromDB()'. This calls 'createDataSource('data')', and creates a data source called 'data', of type 'geojson'. The data it contains is of a type 'FeatureCollection' and initialised with and an empty array, which is going to contain the 'geoPost' array from the Post Service. We then subscribe to the 'getGeoPostData().asObservable' observable in the Post Service.  
+
+```javascript
+createDataSource(name: string): void {
+  this.map.addSource(name, {
+    type: 'geojson',
+    data: {
+      type: 'FeatureCollection',
+      features: [],
+    },
+  });
+}
+```
+```javascript
+pullAndDisplayGJPointsFromDB(): void {
+  this.createDataSource('data');
+  this.source = this.map.getSource('data');
+  this.postService.getGeoPostData().subscribe((geoPostArr) => {
+    this.source.setData(new FeatureCollection(geoPostArr));
+  });
+}
+```
+Now we can retrieve the 'geoPost' array. When the GET request has been fulfilled, the data has been processed, and state updated. Mapbox will take that data, then call the 'setData()' function on the 'data' source we created. This takes a data set. We create a Feature Collection object (a class pre-defined in the model folder), that just takes in the 'geoPost' array from the service. 
+```js
+export class FeatureCollection {
+    type = 'FeatureCollection';
+    constructor(public features: Array<GeoJson>) {}
+}
+```
+The source now contains the data. This data can use manipulated through the use of Mapbox's layers, and each layer can be displayed on the map in a customizable way.
+
+### Now is a good time to describe how Mapbox creates the markers, user markers and heat map.
+
   
 ## Authentication Service:
 
@@ -761,10 +839,6 @@ flyTo(lngLat: number[]) {
 }
 ```
 
-
-
-### Additional elements and components e.g. authentification. Tell us about any other aspects not covered above!
-stuff
 ### Deployment details (including Docker), include how you have been achieving continuous integration and deployment
 We implemented a docker-compose script from early on in the development process, which ended up being crucial in maintaining code quality and compatibility - we made sure that before each push to our group repository that the website was functioning both when running node server.js and docker-compose up. Docker was especially important for this as it provides a repeatable environment in the form of a docker container; we can be sure that if the project is working on one machine in docker, it will work on others. We primarily achieved continuous integration by utilising docker in this way, but also crucial was the factoring in of all the components of the MEAN stack from a very early stage. After deciding on the api we would use to present the map (mapbox) and setting up a basic template website using it, we quickly added an api (this api eventually became geopost.js) in order to deal with fetching the data for the map; even though this was collecting static data at first, it meant that functionally our website was behaving as it would when we we utilising all parts of the mean stack (i.e. when we added in a mongoDB database, this api would now fetch data from the database instead of using static data). This allowed us to test and run our website using node server.js (and docker-compose up) after every change as previously mentioned. As we also made use of github, allowing us to all share and download the most up to date files, we were able to continuously implement and integrate changes throughout the development process (see [Sprints & Project Management](sprints.md) for more details).
 
