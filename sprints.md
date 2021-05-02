@@ -10,6 +10,19 @@
 <a name="first"></a>
 ## Group collaboration stratergy
 
+<a name="second"></a>
+## Discussion of team roles (specialisation is ok!). A summary of individual contributions (note: this is for reference, your team will all receive the same grade!).
+
+### Edward
+In this project I carried out two main roles; foremost was working on the frontend, specifically in the mapbox implementation; after we picked the mapbox api to display a map on our website, I read through the mapbox documentation and examples and implemented and adapted the heatmap example, and added in the pop up functionality, as described in our [System Implementation](sysImp.md) document. I was also responsible for the initial implementation of an api to fetch data into the mapbox api, though this was quickly and heavily further developed by Hari. As well as this, I also created the post-button, and the initial implementation of the `userpost.component` utilising angular forms and dialogs.
+
+The other role I fulfilled was project management, both on a coding and teamwork basis; I was responsible for implementing elements from the boilerplate code into our website, i.e. setting up docker-compatibility and `server.js`. On the teamwork side, I overviewed the projects progress and helped make sure we were working towards the goals set out in the mark scheme and that each team member had something to be working on at each stage in the development process.
+
+### Hari
+I was the leader of the project. I instilled an initial vision for how the application concept be. I was explict to my team on the way we should go about building the application. I assigned team members tasks to do when developing the app, while offering advice when asked at how to get something to work in the code. I also, helped oversee the write up, offering feedback and extra things I thought should have been mentioned in the documentation, as well as writing the system implementation section. 
+
+My main task was building the application. I got the initial prototypes working in the browser to give the team an idea of how the app will look on the computer. I then went on to build the backend, defining all the routes and the initialization of the Express app as well as the MongoDB schemas. I also worked on the front end. I was responsible for the styling of the application. I built the services and defined interfaces in the model's folder. I also implemented the user authentication, the search functionality, as well as the following components: login, signup, descript-popup, sidebar, toolbar, user, user-search, userpost, userpost-display, usersearch-display, and setting up the routing and allowing the data to flow dynamically between the full stack. I helped develop some functionality in Mapbox, like rendering different data streams on the map (from post and search service), as well as implementing the fly function.
+
 ### COVID-19
 
 Throughout the entirety of this project the UK has been in some degree of national lock down. Due to this, it has not been possible for the team to meet up in person and therefore all interaction within the team has taken place online. This has presented challenges. Without face to face interaction it is more difficult to form personal bonds which can help drive team morale. On top of this being limited to online interaction means jobs can tend to take longer to complete and ideas are more difficult to bounce of each other. To counteract this, we decided early on how we would collaborate and set up the infrastructure we would would require to do so.
