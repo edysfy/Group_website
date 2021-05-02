@@ -496,6 +496,7 @@ Our front end is comprised of many components. We felt the best way to break dow
   <img src="supporting_images/post.png" width="950px">
   </p> 
 
+### How to get and display data:
 When the map is initialized for the first time, we want the user to see all the GeoJson Post's made by previous users, along with the heat map. This service is responsible for 'getting' all GeoJson data from the back end and passing it to the Mapbox component. As well as managing new entries being created by the user and 'posting' them to the backend. It also holds the latest updated coordinates that the user has registered. 
 For Mapbox to be able to render the GeoJson data from the backend, we need to convert it to a GeoJson javascript object. We defined a GeoJson class in the model folder.
   ```js
@@ -573,7 +574,7 @@ The source now contains the data. This data can use manipulated through the use 
 
 ### Now is a good time to describe how Mapbox creates the markers, user markers and heat map:
 
-The function initMapLayersForData(layer: string), takes in the name the souce that contain's the data. We create three layers, as a way to display the GeoJson Posts to the user. The first layer is called 'markers':
+The function initMapLayersForData(layer: string), takes in the name the source that contains the data. We create three layers, as a way to display the GeoJson Posts to the user. The first layer is called 'markers':
 ```js
     this.map.addLayer({
       id: 'markers',
@@ -603,14 +604,14 @@ The function initMapLayersForData(layer: string), takes in the name the souce th
   <img src="supporting_images/circles.png" width="550px">
   </p> 
 
-The api allows us to display circles at each data-points’ location from the geoJson, and colour these circles depending on the data-points’ properties; we colour these circles based on the so called mood-rating that a user picks when making a post to our website – this provides the key functionality of the entire site, allowing users to see patterns in people’s emotions across the map, based on the circle colours. Blue => Happy, Yellow => Coping, Red => Sad. As the data is GeoJson, for each point Mapbox looks at the 'properties' attribute. You can use this attribute to display custom data on the map. We tell Mapbox to use the 'mood' attribute inside 'properties'. We assign a colour for each value. The addLayer function can also be configured such that its visibility is based on a certain zoom level of the map; we utilise this so that when a user has zoomed in (to zoom > 9.2) the circle layer appears, but when they are zoomed out, the second layer – a 'heatmap' layer – appears:
+The API allows us to display circles at each location, defined by the coordinates in the 'location' attribute from the geoJson data point. We color these circles based on the so-called mood-rating that a user picks when making a post to our website – this provides the key functionality of the entire site, allowing users to see patterns in people’s emotions across the map, based on the circle colors. Blue => Happy, Yellow => Coping, Red => Sad. As the data is GeoJson, for each point Mapbox looks at the 'properties' attribute. You can use this attribute to display custom data on the map. We tell Mapbox to use the 'mood' attribute inside 'properties'. We assign a color for each value. The addLayer function can also be configured such that its visibility is based on a certain zoom level of the map; we utilize this so that when a user has zoomed in (to zoom > 9.2) the circle layer appears, but when they are zoomed out, the second layer – a 'heatmap' layer – appears:
 
   <p align="center">
   <img src="supporting_images/heatmap.png" width="550px">
   </p> 
 
-The 'heatmap' type is another layer type, and we use it to display the density of users emotion values at a location. We interpolate the colours of the heatmap, it varies from blue (positive emotion in area) to red (negative emotions in the area). The heatmap operate on a max zoom greater then 9. Again, it takes in the 'mood' values, a we give a set of colours for each mood, the colours are spread lineraly depending on the mood value. <br/>
-This final layer allows the user to dinsigish their posts from other users posts. We create a new layer called 'user-markers', from the 'data' source. Mapbox has a setFilter() method. 
+The 'heatmap' type is another layer type, and we use it to display the density of the user's emotion values at a location. We interpolate the colors of the heatmap, it varies from blue (positive emotion in the area) to red (negative emotions in the area). The heatmap operates on a max zoom greater than 9. Again, it takes in the 'mood' values, we give a set of colors for each mood, the colors are spread linearly depending on the mood value. <br/>
+This final layer allows the user to distinguish their posts from other user's posts. We create a new layer called 'user-markers', from the 'data' source. Mapbox has a setFilter() method. 
 ```js
     this.map.setFilter('user-markers', [
       '==',
@@ -618,7 +619,10 @@ This final layer allows the user to dinsigish their posts from other users posts
       this.authService.getUsername(),
     ]);
 ```   
-We pass the 'user-markers' layer into it. Then we say if the property 'username' is qeual to the username stored in the auth service, load the GeoJson point with a marker that is built from a icon image: 'volcano-11' (this was taken from Mapbox's GitHub Page.
+We pass the 'user-marker' layer into it. Then we say if the property 'username' is equal to the username stored in the auth service, load the GeoJson point with a marker that is built from an icon image: 'volcano-11' (this was taken from Mapbox's GitHub Page. You can see below how the user pin also comes with a 'volcano'.
+
+### How to post data:
+
 
   <p align="center">
   <img src="supporting_images/usermakers.png" width="550px">
