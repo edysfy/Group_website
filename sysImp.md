@@ -20,9 +20,6 @@ We needed three main components that comprise the stack.
     This is responsible for the user experience and data creation through the use of Angular forms.
     The user can explore the map, create an account, log in, create Emote posts, view other users' posts, have access to their posts in a timeline, delete their posts, fly to a post, and search for other users' posts (by date, age, and gender). To display a map, we needed to connect to an external API. We had two options. One Mapbox and the other was GoogleMaps. Firstly, Mapbox was more appealing as it is the underdog. We didn't want to be involved with a conglomerate like Google. After digesting Mapbox's API, we realized it is capable of doing everything we wanted. Especially, displaying a heat map. It accepts geoJson data and provides the developer with a lot of support to customize and visualize that data on the map. It accepts data via a direct link to a URL path, or through building your objects. This was useful as it allowed us to use geoJson objects that are stored in memory on the front end. As an example (will be explained in a lot more detail in the front end), when the user made a post-it would automatically update the UI, as we stored the new post in a Service. The Mapbox component listens to changes in the geoJson array and re-renders the data on the map. We used a set of Angular Services to maintain state and allow data to flow between components on the frontend, as well as providing a link between the data flowing to the REST API.
 
-
- # ADD SEQUECNE DIAGRAM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   
-
 Lets go into some more depth...    
 
 # MongoDB - database implementation
@@ -822,6 +819,68 @@ The Authentication service is injected into the sidebar component. When the user
   <p align="center">
   <img src="supporting_images/sidebar.png" width="950px">
   </p> 
+
+  We defined a Sidebar Interface:
+  ```js
+  export interface Sidebar {
+    key: boolean,
+    profile: boolean,
+    userPosts: boolean,
+    search: boolean,
+    settings: boolean,
+  }
+  ```
+  The Sidebar Service contains a Behaviour Subject of type Sidebar (defined by the interface above), as an attribute and called 'sideBarState'. Its state is initialized with an object of type Sidebar with all attributes set to false. This service is injected into the Sidebar component.
+  When the Sidebar component is initialized, it calls 'getSideBarObvs()' from the Sidebar Service (that returns an observable from 'sideBarState') and subscribes to it. It then takes the value emitted from this observable and stores it as a variable, called 'sidebarState' within the component. The Sidebar component is comprised of several icons as shown below. 
+
+  <p align="center">
+  <img src="supporting_images/navbar.png" width="550px">
+  </p> 
+
+  Let's talk about the process of clicking the profile icon. The procedure is the same for the other icons. It's just the respective methods associated with the other icons that are triggered. When the user clicks the profile icon, a click event is triggered and it calls the "onProfileClick() method in the Sidebar component. This then calls this 'setProfileState()' from the Sidebar service. This method takes a boolean as a parameter. This boolean will essentially represent the next state of the profile attribute. So we get the current state of the profile attribute from the 'sidebarState' variable (within the component) and pass the opposite value into the function.
+  ```js
+    clickProfileIcon():void {
+    this.sidebarService.setProfileState(!this.sidebarState.profile);
+  }
+  ```
+  Now in the 'setProfileState()' method, we create a new Sidebar object, but the profile attribute will take the value of the parameter, and all other attributes are set to false. This ensures only one component can be rendered at a time. We call the 'next()' method on 'sideBarState' in the service, and pass the new Sidebar object into this state. However, we set a time out of 200ms. This is the same time as it takes for the components to ease in and out via a custom animation. This ensures a smooth transition from a component easing out to the new component easing in. Without this time out, the new component will appear before the old component disappears. This resulted in a horrible animation.
+  ```js
+  /*set the profile state*/
+  setProfileState(isClicked: boolean): void{
+    this.sideBarState.next(this.offState);
+    const newSBState = {
+      key: false,
+      profile: isClicked,
+      userPosts: false,
+      search: false,
+      settings: false,
+    }
+    setTimeout(() => {
+      this.sideBarState.next(newSBState);
+    },200)
+  }
+  ```
+  The Mapbox component also subscribes to 'sideBarState'. When there is a state change in the service, Mapbox listens to the new state emitted, and stores the new state as a variable called 'sidebarState' within the component. This state conditionally renders the components with the *ngIf directive. Eg, the profile component with render if the 'sidebarState.profile' is true, (and if logged in). Just a note. We defined a custom InOutAnimation and decorated the Mapbox component with it. We bound this decorator to the components rendered by the Sidebar Service so they can use the animation. We used Angular's built-in browser animation module.
+  ```js
+      <app-user *ngIf="isLoggedIn && sidebarState.profile" [@inOutAnimation]></app-user>
+  ```
+  Also, the Sidebar component will receive this new state, as it is subscribed to 'sideBarState' from the service. The profile icons changes color depending on whether the 'profile' attribute is true or false. If true, it will change to purple. Again, we manage this by using the *ngIf directive.
+  ```html
+    <div class="material-icons" (click)="clickProfileIcon()" *ngIf="!sidebarState.profile">
+        person
+    </div>
+    <div class="material-icons" (click)="clickProfileIcon()" *ngIf="sidebarState.profile" id="clicked">
+        person
+    </div>
+  ```
+  This is the UI state when 'sideBarState.profile' is true:
+
+  <p align="center">
+  <img src="supporting_images/sidebarstate.png" width="550px">
+  </p> 
+
+  Again, this is the same process for the other icons on the navbar.
+
 
 ## URL-state Service:
 
