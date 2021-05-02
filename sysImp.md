@@ -626,6 +626,13 @@ We pass the 'user-marker' layer into it. Then we say if the property 'username' 
   <img src="supporting_images/usermakers.png" width="550px">
   </p> 
 
+For the 'markers' layer, we utilized Mapbox's popup feature, such that when the 'markers' layer is rendered (i.e. the user is zoomed in enough) and the user hovers over one of the displayed circles, a pop up appears, displaying the specific post data (keyword, mood and description) from the GeoJson data's 'properties' attribute. We also have a hover off event, that essentially destroys the popup.
+  
+  <p align="center">
+  <img src="supporting_images/hoverlayer.png" width="550px">
+  </p> 
+
+
 ### How to post data:
 Initially, the user has to be authenticated before making a post. So the first thing we do is call upon the Authentication Service, inject it into Mapbox, and subscribe to getAuthMethod() in the service. This allows Mapbox to know if the user is authenticated, and can update the UI if the user logs off. Allowing a user to make EmotePosts is a core feature of our application. We need to display the Userpost component, which holds a form that the user can submit. We render this form on a mat-dialog component. 
 
@@ -686,14 +693,14 @@ The Post Service is injected into the Userpost component. When the user presses 
 If the measures have been overcome, then the 'createPost()' method in the Post Service is called, and the values of the form are sent into the service. We create GeoJson data out of the form values, which matches the Mongoose GeoJson Schema on the backend. We use local storage to add the user's username to the GeoJson. We add the current coordinates in Post Service (obtained by the methods above) to the 'geometry' attribute. We use the HTTP POST method to send to the '/api/geopost' route on the API. After the response has arrived from the API and is successful, we push the GeoJson data to the 'geoPost' array and update the 'geoPostSubject' with the altered array, rendering the new Post onto Mapbox's layers dynamically. We also add posts to the user's GeoJson array stored in the User Service, so the new post will render dynamically on the Userpost-Display component. (more detail in User Service Section.)
   
 ## Authentication Service:
-
   ### Class Diagram:
   
   <p align="center">
   <img src="supporting_images/auth.png" width="950px">
   </p> 
+  We inject the HTTP Client module into this service, so we can connect this service to our API.  
 
-  The authentication service was a key part of our application. It allows users to gain extra funcitonality. For example only users can make posts, view their posts in a timeline, delete their own posts and search for others users posts, and set their age and gender. In order for this to work, the authenication works to distriubte the authenication state throughout the application.
+  The authentication service was a key part of our application. It allows users to gain extra funcitonality. For example only users can make posts, view their posts in a timeline, delete their own posts and search for others users posts, and set their age and gender. In order for this to work, the Authenication Service distriubte the authenication state throughout the application.
 
   Lets take a look of the application when the user is NOT logged in:
 
@@ -705,17 +712,39 @@ If the measures have been overcome, then the 'createPost()' method in the Post S
   The user can only see the heatmap, pins, and can hover over the pins to read the post. Mapbox renders a button called welcome, when the user is not logged in. This displays a dialog that describes what you can do if you are not logged on.
 
   Here is how the user can authenticate themselves:
+  -  They can click the 'Signup' or 'Login' text in the toolbar it it will route to these corresponding pages.
 
   <p align="center">
   <img align="center" src="supporting_images/singup.png" width="450px">
   <img align="center" src="supporting_images/login.png" width="450px">
   </p> 
+
   
-  The process to register an account:
-  - We built this using Angular's template driven forms. We had basic validation on the field and used mat-error from Angular material to throw errors of registration back to the user. The user has to enter a user, password and repeat password to be able to submit the form. When the 'register' button is pressed, we send the form to an onSubmit() function. Here, we check if the password value is equivlent to the password match value. If not then we through an alert to the user saying the passwords don't. This is a feature to ensure the user enters the password the intend.
+  ### The process to register an account:
+  - We built signup UI using Angular's template-driven forms. We had basic validation on the field and used mat-error from Angular material to throw errors back to the user. The user has to enter a username, password, and repeat password to be able to submit the form. We didn't implement and fancy validation or password patterns using regex. Just made sure the entries were not null. When the 'register' button is pressed, we send the NgForm to an 'onSubmit()' function, in the Signup component. Here, we check if the password value is equivalent to the password match value. If not then we through an alert to the user saying the passwords don't. This is a feature to ensure the user enters the password they intend.
 
+  <p align="center">
+  <img align="center" src="supporting_images/passwordsnomatch.png" width="550px">
+  </p> 
 
+  The Authentication Service is injected into the Signup component. When the 'onSubmit()' function is fired. This passes the form's username and password values to Authentication Service's 'createUser()' method. Here, we create a javascript object out of this data and return the HTTP post method. So when we post the details using the HTTP client the function essentially is returning an Observable. This is a way for the Signup component to subscribe to the 'createUser()' method, and directly act accordingly when a response is sent by the server. 
+  ```js
+    createUser(username:  string, password: string) {
+    const userData = {
+      username: username,
+      password: password,
+    };
+    return this.http
+      .post<{ message: String; error: Error, regSuc: boolean }>(
+        'http://localhost:3000/api/user/signup',
+        userData
+      )
+  ```
+ The response is either a success or failure, determined by the 'regSuc' boolean the server sends to the client. If successful, we route to the Login page, so the user can log in. If it fails, that means the username has been taken and we alert the user.
 
+  <p align="center">
+  <img align="center" src="supporting_images/usernametaken.png" width="550px">
+  </p> 
 
 
 ## Sidebar Service:
