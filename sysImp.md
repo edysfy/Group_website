@@ -882,13 +882,42 @@ The Authentication service is injected into the sidebar component. When the user
   Again, this is the same process for the other icons on the navbar.
 
 
-## URL-state Service:
+## URL-State Service:
 
   ### Class Diagram:
   
   <p align="center">
   <img src="supporting_images/urlstate.png" width="550px">
   </p>
+
+  This service provides very a simple function. It wasn't needed but added a nice touch to the UI. It updated the title next to the EmoteMap logo with a title that was dependant on the URL parameter state. This state was held in the URL-State Service. Eg, If the Login Component was rendered, we updated the URL State in the URL Service, with the value of the parameter of the router. In this case, it would be 'login'. The Toolbar listens to this state and renders a title accordingly. Ie if the login component was rendered, it would display 'Login'. The Signup page will display 'SignUp'. The Mapbox component, if logged in will display the user's username, else will display 'EmoteMap'.
+  ```js
+    ngOnInit(): void {
+    /*listen to obesrvable path paramter in url service*/
+    this.urlStateService.getUrlObservable().subscribe((param) => {
+      /*change toolbar color and title due to different param*/
+      if (param === 'login') {
+        this.title = 'Login';
+      } else if (param === 'signup') {
+        this.title = 'Sign Up';
+      } else if (param === 'about') {
+        this.title = 'EmoteMap';
+      } else {
+        if(this.isLoggedIn) {
+          this.title = this.authService.getUsername();
+        }else {
+          this.title = 'EmoteMap';
+
+        }
+      }
+    });
+  ```
+
+  <p align="center">
+  <img align="center" src="supporting_images/tithp.png" width="250px">
+  <img align="center" src="supporting_images/titlogin.png" width="250px">
+  <img align="center" src="supporting_images/titmp.png" width="250px">
+  </p> 
 
 ## User Service:
 
