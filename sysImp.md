@@ -727,7 +727,7 @@ If the measures have been overcome, then the 'createPost()' method in the Post S
   <img align="center" src="supporting_images/passwordsnomatch.png" width="550px">
   </p> 
 
-  The Authentication Service is injected into the Signup component. When the 'onSubmit()' function is fired. This passes the form's username and password values to Authentication Service's 'createUser()' method. Here, we create a javascript object out of this data and return the HTTP post method. So when we post the details using the HTTP client the function essentially is returning an Observable. This is a way for the Signup component to subscribe to the 'createUser()' method, and directly act accordingly when a response is sent by the server. 
+  The Authentication Service is injected into the Signup component. After the password, match check in the 'onSubmit()' function, we pass the form's username and password values to Authentication Service's by calling its 'createUser()' method. Here, we create a javascript object out of this data and return the HTTP POST method. Which posts the payload to the 'signup' path in the API. This means the 'createUser()' is essentially returning an Observable. This is a way for the Signup component to subscribe to the 'createUser()' method in the 'onSubmit()' method and directly act accordingly when a response is sent by the server. 
   ```js
     createUser(username:  string, password: string) {
     const userData = {
@@ -746,6 +746,68 @@ If the measures have been overcome, then the 'createPost()' method in the Post S
   <img align="center" src="supporting_images/usernametaken.png" width="550px">
   </p> 
 
+  ### The process to login:
+ Firstly, it is important to mention that the FIRST time the Authentication Service is run by the browser it gets 'token' from local storage. If this token is not null, that means the user hasn't logged out and the browser still has the JWT in storage. We then set the 'authState' to true using the 'next()' method, as 'authState' is a Behaviour Subject. If the 'token' is null, the user hasn't logged in, and 'authState' maintains false as its value.
+```js
+  constructor(private http: HttpClient) { 
+    /*get jwt token from storage, if empty user not logged in*/
+    this.authToken = localStorage.getItem('token');
+    this.authState = new BehaviorSubject<boolean>(false);
+    if(this.authToken!=null) {
+      this.authState.next(true);
+      this.username = localStorage.getItem('username');
+    }else {
+      this.username="null";
+    }
+  }
+``` 
+The Login component is very similar to the SignUp component. It is built using the same form, methods and is validated the same way (except the need to validate whether passwords match). The Authentication Service is injected into the Login component. Once the user presses the 'login' button and the form is valid, the 'onLogin()' function takes the NgForm and passes the form's username and password values to Authentication Service's 'login()' method. Again, the process here is similar to the 'createUser()' method. However, the difference is that the payload is sent to the 'login' path in the API, and the response also contains a JWT token. We subscribe to the 'login()' method in the 'onLogin()' method in the Login component. The same as the Signup Component. When the server sends a response to the front end, check if to so if the JWT exists. If it does exist, we send the JWT, and the username to the Authentication service using its 'setLogin()' method, and route to the Mapbox component. If not then we send an alter to the user. The failure can arise due to the username not existing or the password being incorrect. The server sends an adequate message, so we can alert the user accordingly.
+```js
+  onLogin(form: NgForm) {
+    this.authService.login(form.value.username, form.value.password)
+    .subscribe((response) => {
+      if (response.token) {
+        this.authService.setLogin(response.token, response.username);
+        this.route.navigate([''])
+      }
+      else if(response.message == "Incorrect password") {
+        alert("Incorrect password");
+      } else {
+        alert("Incorrect username");
+      }
+    });
+  }
+  ```
+  The 'setLogin()' method, stores the JWT and username in memory and also stores it in local storage to allow the user to remain logged in, even if they close the application. We then set the 'authState' to true. As 'authState' is a Behaviour Subject, other components can subscribe to 'authState.asObservable()' and listen to dynamic changes in the Authentication state, as update the UI accordingly.  <br/>
+  
+  Once the user is logged in the UI looks like this:
+  
+  <p align="center">
+  <img align="center" src="supporting_images/login.png" width="550px">
+  </p> 
+
+The Mapbox component subscribes to the 'authState', and sets the isLoggedIn variable to what value the 'authState' observable emits. We then use *ngIf to conditionally render components on the map, depending on if the user is logged in or not.
+
+```js
+<div class="full">
+    <app-user *ngIf="isLoggedIn && sidebarState.profile" [@inOutAnimation]></app-user>
+    <app-userpost-display *ngIf="isLoggedIn && sidebarState.userPosts" [@inOutAnimation] (flyToCords)="flyTo($event)">
+    </app-userpost-display>
+    <app-user-search *ngIf="isLoggedIn && sidebarState.search" [@inOutAnimation]></app-user-search>
+    <app-key *ngIf="isLoggedIn && sidebarState.key" [@inOutAnimation]></app-key>
+    <div id="map">
+    </div>
+    <app-usersearch-display *ngIf="isLoggedIn && sidebarState.search" [@inOutAnimation] (flyToCords)="flyTo($event)">
+    </app-usersearch-display>
+</div>
+<button *ngIf="!isLoggedIn" class="button" mat-raised-button color="primary" (click)="openDesDialog()">
+    Welcome
+  </button>
+<app-sidebar *ngIf="isLoggedIn && !isMapLoading"></app-sidebar>
+```
+
+As you can see from above, the navbar, the user's timeline, key, search are all dependent on the user being authenticated, and the 'welcome' button is not. <br/>
+Methods in the User Service also retrieves the 'username' from local storage, to send the username in the API's URL as a parameter, when updating user details, or retrieving user data through the API (more in User Service section).
 
 ## Sidebar Service:
 
