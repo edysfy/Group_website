@@ -496,6 +496,7 @@ Our front end is comprised of many components. We felt the best way to break dow
   <img src="supporting_images/post.png" width="950px">
   </p> 
 
+We inject the HTTP Client module into this service, so we can connect this service to our API.
 ### How to get and display data:
 When the map is initialized for the first time, we want the user to see all the GeoJson Post's made by previous users, along with the heat map. This service is responsible for 'getting' all GeoJson data from the back end and passing it to the Mapbox component. As well as managing new entries being created by the user and 'posting' them to the backend. It also holds the latest updated coordinates that the user has registered. 
 For Mapbox to be able to render the GeoJson data from the backend, we need to convert it to a GeoJson javascript object. We defined a GeoJson class in the model folder.
@@ -516,7 +517,7 @@ For Mapbox to be able to render the GeoJson data from the backend, we need to co
       }
   }
   ```
-We have a function getGeoPostData() in the Post Service, when this is called it sends a GET request to our API to retrieve the data. Once the data arrives, we convert each datatype into a GeoJson object as described above, and push it to the 'geoPost' array stored in the service. We pass the relevant data through the GeoJson constructor. Once this is complete, we have a Behaviour Subject called 'geoPostSubject', this maintains the state of the 'geoPost' array. It can return Observables, meaning other components in the application can subscribe to it and trigger functions when there is a change of state. We called the 'next' method on this 'geoPostSubject' and pass in the 'geoPost' array to update the state with the data from the backend. We also need a check. We only push data from the backend into the service if the 'geoPost' array length doesn't equal the array coming in from the back end. As this function, can be called multiple times by the Mapbox component, if this check wasn't in place it will render duplicate data. Once, we update the state we return 'geoPostSubject.asObservable()'.
+We have a function getGeoPostData() in the Post Service, when this is called it sends a GET request to our API to retrieve the data. Once the data arrives, we convert each data into a GeoJson object as described above (by passing the relevant data through the GeoJson constructor), and push it to the 'geoPost' array stored in the service. Once this is complete, we have a Behaviour Subject called 'geoPostSubject', this maintains the state of the 'geoPost' array. It can return Observables, meaning other components in the application can subscribe to it and trigger functions when there is a change of state. We called the 'next' method on this 'geoPostSubject' and pass in the 'geoPost' array to update the state with the data from the backend. We also need a check. We only push data from the backend into the service if the 'geoPost' array length doesn't equal the array coming in from the back end. As this function, can be called multiple times by the Mapbox component, if this check wasn't in place it will render duplicate data. Once, we update the state we return 'geoPostSubject.asObservable()'.
 
 This service is injected into the Mapbox component. When the component is initialized, it calls map.init(), which initializes the map as per our specifications. We then call the map.on('load'). This is a function that allows us to manipulate the map when the event 'load' is triggered.
 ```js
@@ -621,12 +622,68 @@ This final layer allows the user to distinguish their posts from other user's po
 ```   
 We pass the 'user-marker' layer into it. Then we say if the property 'username' is equal to the username stored in the auth service, load the GeoJson point with a marker that is built from an icon image: 'volcano-11' (this was taken from Mapbox's GitHub Page. You can see below how the user pin also comes with a 'volcano'.
 
-### How to post data:
-
-
   <p align="center">
   <img src="supporting_images/usermakers.png" width="550px">
   </p> 
+
+### How to post data:
+Initially, the user has to be authenticated before making a post. So the first thing we do is call upon the Authentication Service, inject it into Mapbox, and subscribe to getAuthMethod() in the service. This allows Mapbox to know if the user is authenticated, and can update the UI if the user logs off. Allowing a user to make EmotePosts is a core feature of our application. We need to display the Userpost component, which holds a form that the user can submit. We render this form on a mat-dialog component. 
+
+  <p align="center">
+  <img src="supporting_images/emotepost.png" width="550px">
+  </p> 
+
+The user can display this dialog in two ways.
+1. By clicking on the map:
+If the user is operating on a zoom level greater than 12 and is logged in, we can use the 'map.on('click')' method. This is an event listener. When the event is triggered, it will open a mat-dialog on top of the map, this dialog contains the Userpost component, which is a form that allows the user to submit their emotion, keyword, and post. Also, this event will update the longitude and latitude values in the Post Service, with the coordinates of the map where the user clicked.
+```javascript
+this.map.on('click', (e) => {
+  if (this.isLoggedIn) {
+    const zoom = this.map.getZoom();
+    console.log(zoom);
+    if (zoom > 12) {
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.autoFocus = false;
+      dialogConfig.width = '55%';
+      dialogConfig.height = '70%';
+      dialogConfig.hasBackdrop = true;
+      dialogConfig.panelClass = 'custom-dialog';
+      dialogConfig.position = { bottom: '8%', right: '20%' };
+      this.dialog.open(UserpostComponent, dialogConfig);
+      this.postService.updateLongLat({
+        long: e.lngLat.lng,
+        lat: e.lngLat.lat,
+      });
+    }
+  }
+});
+```
+2. By clicking the blue + icon on the sidebar (postbutton component):
+  <p align="center">
+  <img src="supporting_images/navbar.png" width="550px">
+  </p>
+  
+If the user is logged in. The Mapbox component will render the Sidebar component (using *ngIf directives), they have access to the navbar (sidebar component). On the navbar, there is a blue + button. When the user clicks on this button does the same as above, except the coordinates updated in the Post Service represent the User's actual location. If the user submits the form before the program fetches their coordinates, we alert the user that they can not proceed.
+  
+  <p align="center">
+  <img src="supporting_images/locationerr.png" width="550px">
+  </p>
+
+**How to submit?**  
+The Post Service is injected into the Userpost component. When the user presses the submit button. There is a series of steps until the submission is complete.
+1. We decided that the user cannot post will in search mode. So the Userpost component listens to the UserSearch service, by subscribing to 'getIsInSearchState()' method, to see if search mode is activated. If in search mode then the UI will display an alert to the user saying it is unable make a post.
+
+  <p align="center">
+  <img src="supporting_images/unablesearchmode.png" width="550px">
+  </p>
+
+2. We validate the form. The the 'keyword' input field must to contain one word ONLY, and they post body cannot be empty.
+
+  <p align="center">
+  <img src="supporting_images/formvalidaitno.png" width="550px">
+  </p>
+
+If the measures have been overcome, then the 'createPost()' method in the Post Service is called, and the values of the form are sent into the service. We create GeoJson data out of the form values, which matches the Mongoose GeoJson Schema on the backend. We use local storage to add the user's username to the GeoJson. We use the HTTP POST method to send to the '/api/geopost' route on the API. After the response has arrived from the API and is successful, we push the GeoJson data to the 'geoPost' array and update the 'geoPostSubject' with the altered array, rendering the new Post onto Mapbox's layers dynamically. We also add posts to the user's GeoJson array stored in the User Service, so the new post will render dynamically on the Userpost-Display component. (more detail in User Service Section.)
   
 ## Authentication Service:
 
