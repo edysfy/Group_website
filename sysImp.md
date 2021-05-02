@@ -564,7 +564,7 @@ pullAndDisplayGJPointsFromDB(): void {
   });
 }
 ```
-Now we can retrieve the 'geoPost' array. When the GET request has been fulfilled, the data has been processed, and state updated. Mapbox will take that data, then call the 'setData()' function on the 'data' source we created. This takes a data set. We create a Feature Collection object (a class pre-defined in the model folder), that just takes in the 'geoPost' array from the service. 
+Now we can retrieve the 'geoPost' array. When the GET request has been fulfilled, the data has been processed, and state updated. Mapbox will take that data, then call the 'setData()' function on the 'data' source we created. This takes a data set. We create a Feature Collection object (a class pre-defined in the model folder), that just takes in the 'geoPost' array from the service. Mapbox uses to coordinates in 'geometry' attribute to position the data on the map.
 ```js
 export class FeatureCollection {
     type = 'FeatureCollection';
@@ -605,7 +605,7 @@ The function initMapLayersForData(layer: string), takes in the name the source t
   <img src="supporting_images/circles.png" width="550px">
   </p> 
 
-The API allows us to display circles at each location, defined by the coordinates in the 'location' attribute from the geoJson data point. We color these circles based on the so-called mood-rating that a user picks when making a post to our website – this provides the key functionality of the entire site, allowing users to see patterns in people’s emotions across the map, based on the circle colors. Blue => Happy, Yellow => Coping, Red => Sad. As the data is GeoJson, for each point Mapbox looks at the 'properties' attribute. You can use this attribute to display custom data on the map. We tell Mapbox to use the 'mood' attribute inside 'properties'. We assign a color for each value. The addLayer function can also be configured such that its visibility is based on a certain zoom level of the map; we utilize this so that when a user has zoomed in (to zoom > 9.2) the circle layer appears, but when they are zoomed out, the second layer – a 'heatmap' layer – appears:
+The API allows us to display circles at each location, defined by the coordinates in the 'geometry' attribute from the geoJson data point. We color these circles based on the so-called mood-rating that a user picks when making a post to our website – this provides the key functionality of the entire site, allowing users to see patterns in people’s emotions across the map, based on the circle colors. Blue => Happy, Yellow => Coping, Red => Sad. As the data is GeoJson, for each point Mapbox looks at the 'properties' attribute. You can use this attribute to display custom data on the map. We tell Mapbox to use the 'mood' attribute inside 'properties'. We assign a color for each value. The addLayer function can also be configured such that its visibility is based on a certain zoom level of the map; we utilize this so that when a user has zoomed in (to zoom > 9.2) the circle layer appears, but when they are zoomed out, the second layer – a 'heatmap' layer – appears:
 
   <p align="center">
   <img src="supporting_images/heatmap.png" width="550px">
@@ -663,7 +663,7 @@ this.map.on('click', (e) => {
   <img src="supporting_images/navbar.png" width="550px">
   </p>
   
-If the user is logged in. The Mapbox component will render the Sidebar component (using *ngIf directives), they have access to the navbar (sidebar component). On the navbar, there is a blue + button. When the user clicks on this button does the same as above, except the coordinates updated in the Post Service represent the User's actual location. If the user submits the form before the program fetches their coordinates, we alert the user that they can not proceed.
+If the user is logged in. The Mapbox component will render the Sidebar component (using *ngIf directives), they now can access to the navbar. On the navbar, there is a blue + button. When the user clicks on this button, the same process happens as above, except the coordinates updated in the Post Service represent the User's actual location. If the user submits the form before the program fetches their coordinates, we alert the user that they can not proceed.
   
   <p align="center">
   <img src="supporting_images/locationerr.png" width="550px">
@@ -683,7 +683,7 @@ The Post Service is injected into the Userpost component. When the user presses 
   <img src="supporting_images/formvalidaitno.png" width="550px">
   </p>
 
-If the measures have been overcome, then the 'createPost()' method in the Post Service is called, and the values of the form are sent into the service. We create GeoJson data out of the form values, which matches the Mongoose GeoJson Schema on the backend. We use local storage to add the user's username to the GeoJson. We use the HTTP POST method to send to the '/api/geopost' route on the API. After the response has arrived from the API and is successful, we push the GeoJson data to the 'geoPost' array and update the 'geoPostSubject' with the altered array, rendering the new Post onto Mapbox's layers dynamically. We also add posts to the user's GeoJson array stored in the User Service, so the new post will render dynamically on the Userpost-Display component. (more detail in User Service Section.)
+If the measures have been overcome, then the 'createPost()' method in the Post Service is called, and the values of the form are sent into the service. We create GeoJson data out of the form values, which matches the Mongoose GeoJson Schema on the backend. We use local storage to add the user's username to the GeoJson. We add the current coordinates in Post Service (obtained by the methods above) to the 'geometry' attribute. We use the HTTP POST method to send to the '/api/geopost' route on the API. After the response has arrived from the API and is successful, we push the GeoJson data to the 'geoPost' array and update the 'geoPostSubject' with the altered array, rendering the new Post onto Mapbox's layers dynamically. We also add posts to the user's GeoJson array stored in the User Service, so the new post will render dynamically on the Userpost-Display component. (more detail in User Service Section.)
   
 ## Authentication Service:
 
