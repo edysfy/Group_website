@@ -810,6 +810,11 @@ The Mapbox component subscribes to the 'authState', and sets the isLoggedIn vari
 As you can see from above, the navbar, the user's timeline, key, search are all dependent on the user being authenticated, and the 'welcome' button is not. <br/>
 Methods in the User Service also retrieves the 'username' from local storage, to send the username in the API's URL as a parameter, when updating user details, or retrieving user data through the API (more in User Service section).
 
+### How to log out?
+
+The Authentication service is injected into the sidebar component. When the user presses the logout icon in the navbar. It calls the 'logout()' in the Authentication Service. This then sets the authToken and username variables in memory to null, and sets 'authState' to false, while wiping all content in local storage. 'Window.location.reload()' is called, and that essentially takes the application back to its original state, refreshing the Mapbox component, altering the UI to reflect the fact that the user logged out.
+
+
 ## Sidebar Service:
 
   ### Class Diagram:
