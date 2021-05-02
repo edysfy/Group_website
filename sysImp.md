@@ -540,7 +540,7 @@ this.map.on('load', (e) => {
         });
 ```
 Firstly, this function combines the GeoJson data retrieved through the User-Search Service, and the GeoJson data retrieved via the Post Service. We don't want both sets of data to be rendered simultaneously. We subscribe to this boolean in the User Search Service. It is true when the search state is activated, and false otherwise (more details in User Search Service).  By default is it set to false when the user renders the app for the first time. As we alternate between the search-state and the post-state, we need to use a function called 'removeAllLayerAndSource('data')'. This essentially removes all the layers built from the GeoJson data sent from the previous Service. Ie it creates a blank map for the new data from the other service to be rendered. So it removes all the markers, heat-map, and user's markers. As well as removing the Mapbox 'data' source (source in Mapbox allows the developer Mapbox layers to create layers).
-When '!activatedUserSearch', and the previous Mapbox 'data' source has been wiped, we call 'pullAndDisplayGJPointsFromDB()'. This calls 'createDataSource('data')', and creates a data source called 'data', of type 'geojson'. The data it contains is of a type 'FeatureCollection' and initialised with and an empty array, which is going to contain the 'geoPost' array from the Post Service. We then subscribe to the 'getGeoPostData().asObservable' observable in the Post Service.  
+When '!activatedUserSearch', and the previous Mapbox 'data' source has been wiped, we call 'pullAndDisplayGJPointsFromDB()'. This calls 'createDataSource('data')', and creates a data source called 'data', of type 'geojson'. The data it contains is of a type 'FeatureCollection' and initialised with and an empty array, which is going to contain the 'geoPost' array from the Post Service. We then subscribe to the 'getGeoPostData()' method in the Post Service, as it returns an observable.  
 
 ```javascript
 createDataSource(name: string): void {
@@ -571,8 +571,58 @@ export class FeatureCollection {
 ```
 The source now contains the data. This data can use manipulated through the use of Mapbox's layers, and each layer can be displayed on the map in a customizable way.
 
-### Now is a good time to describe how Mapbox creates the markers, user markers and heat map.
+### Now is a good time to describe how Mapbox creates the markers, user markers and heat map:
 
+The function initMapLayersForData(layer: string), takes in the name the souce that contain's the data. We create three layers, as a way to display the GeoJson Posts to the user. The first layer is called 'markers':
+```js
+    this.map.addLayer({
+      id: 'markers',
+      interactive: true,
+      type: 'circle',
+      source: layer,
+      minzoom: 9.2,
+      paint: {
+        'circle-stroke-color': '#fff',
+        'circle-stroke-width': 1,
+        'circle-radius': 5,
+        'circle-color': [
+          'step',
+          ['get', 'mood'],
+          '#EC986F',
+          1,
+          'rgb(65,182,196)',
+          2,
+          'rgb(254,204,92)',
+          3,
+          'rgb(227,26,28)',
+        ],
+      },
+    });
+  ```
+  <p align="center">
+  <img src="supporting_images/circles.png" width="550px">
+  </p> 
+
+The api allows us to display circles at each data-points’ location from the geoJson, and colour these circles depending on the data-points’ properties; we colour these circles based on the so called mood-rating that a user picks when making a post to our website – this provides the key functionality of the entire site, allowing users to see patterns in people’s emotions across the map, based on the circle colours. Blue => Happy, Yellow => Coping, Red => Sad. As the data is GeoJson, for each point Mapbox looks at the 'properties' attribute. You can use this attribute to display custom data on the map. We tell Mapbox to use the 'mood' attribute inside 'properties'. We assign a colour for each value. The addLayer function can also be configured such that its visibility is based on a certain zoom level of the map; we utilise this so that when a user has zoomed in (to zoom > 9.2) the circle layer appears, but when they are zoomed out, the second layer – a 'heatmap' layer – appears:
+
+  <p align="center">
+  <img src="supporting_images/heatmap.png" width="550px">
+  </p> 
+
+The 'heatmap' type is another layer type, and we use it to display the density of users emotion values at a location. We interpolate the colours of the heatmap, it varies from blue (positive emotion in area) to red (negative emotions in the area). The heatmap operate on a max zoom greater then 9. Again, it takes in the 'mood' values, a we give a set of colours for each mood, the colours are spread lineraly depending on the mood value. <br/>
+This final layer allows the user to dinsigish their posts from other users posts. We create a new layer called 'user-markers', from the 'data' source. Mapbox has a setFilter() method. 
+```js
+    this.map.setFilter('user-markers', [
+      '==',
+      'username',
+      this.authService.getUsername(),
+    ]);
+```   
+We pass the 'user-markers' layer into it. Then we say if the property 'username' is qeual to the username stored in the auth service, load the GeoJson point with a marker that is built from a icon image: 'volcano-11' (this was taken from Mapbox's GitHub Page.
+
+  <p align="center">
+  <img src="supporting_images/usermakers.png" width="550px">
+  </p> 
   
 ## Authentication Service:
 
