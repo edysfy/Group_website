@@ -785,8 +785,8 @@ The Login component is very similar to the SignUp component. It is built using t
   <p align="center">
   <img align="center" src="supporting_images/loginui.png" width="550px">
   </p> 
-  
-Notice, that the toolbar has the user's username. The Authentication service is injected into the Toolbar component, which then subscribes to the 'authState'. If 'authState' is true, it calls the 'getUsername()' method in the Authentication Service and sets the message variable in the Toolbar component to the username, which is then displayed on the UI.
+
+Notice above, that the toolbar has the user's username. The Authentication service is injected into the Toolbar component, which then subscribes to the 'authState'. If 'authState' is true, it calls the 'getUsername()' method in the Authentication Service and sets the message variable in the Toolbar component to the username, which is then displayed on the UI.
 The Mapbox component subscribes to the 'authState', and sets the isLoggedIn variable to what value the 'authState' observable emits. We then use *ngIf to conditionally render components on the map, depending on if the user is logged in or not.
 
 ```js
