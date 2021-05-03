@@ -954,9 +954,9 @@ The Authentication service is injected into the sidebar component. When the user
   ```
 
   <p align="center">
-  <img align="center" src="supporting_images/tithp.png" width="250px">
+  <img align="center" src="supporting_images/tithp.png" width="275px">
   <img align="center" src="supporting_images/titlogin.png" width="250px">
-  <img align="center" src="supporting_images/titmp.png" width="250px">
+  <img align="center" src="supporting_images/titmp.png" width="390px">
   </p> 
 
   ### How does navigation work?:
