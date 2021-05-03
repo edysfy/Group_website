@@ -67,7 +67,7 @@ The other role I fulfilled was project management, both on a coding and teamwork
 
 ### Alfie
 
-Along with contributing to the writeup, my primary focus was on the backend of the website, most notably working with mongoDB. When we initially got our map working we used some example data from a https link provided by mapbox. I downloaded the example data to our project file and served it from there. After having done this I then set up a mongoDB account and imported the example data and then served our data from mongoDB. From here on I worked under Hari on the backend. 
+Along with contributing to the writeup, my primary focus was on the backend of the website, most notably working with mongoDB. When we initially got our map working we used some example data from a https link provided by mapbox. I downloaded the example data to our project file and served it from there. After having done this I then set up a mongoDB account and imported the example data and then served our data from mongoDB. From here on I worked under Hari on the backend.
 
 One other feature I implemented was the backend functionality of the basic search bar. I made it so users can now enter a keyword and all posts featuring something similar to the entered keyword would be logged to the console.
 
@@ -88,9 +88,9 @@ My main task was building the application, and ensuring its quality. I got the i
 <a name="third"></a>
 ## Sprints
 
-### Sprint 1: Project idea finalisation & set up CI infrastructure
+## Sprint 1: Project idea finalisation & set up CI infrastructure
 
-[16-27th feb]
+[15-27th Feb]
 
 After having got to grips with the brief and decided on an idea, this sprint was concerned with putting together an initial paper draft for our website, and setting up all the things we needed to enable continuous development and integration; namely our angular project and our github repository. We also tentatively began to collect feedback on our initial paper prototype designs.
 
@@ -107,7 +107,13 @@ There were some different opinions among the group regarding how the website sho
 
 As well as discussing project ideas this period was used to get familiar with the tech stack we were going to be using and github. We each watched the lectures on Angular and github, set up a shared github repository and got familiar with its protocols by making a few pushes and pulls. Although we intended to specialise into certain areas later on, we all got familiar with the frontend and Angular so further down the line it would be possible to be more flexible if required.
 
-### Sprint 2: Work on feedback + find suitable API
+### Meeting log
+
+**[15th Feb]** - This was the first meeting after having agreed upon our project goals and was used to scope out exactly what functionality our website would have. A lot of ideas were proposed and bounced around, particularly regarding the GUI of the site, and we decided to trial different GUIs using paper prototypes.
+
+**[26th Feb]** - With a very rough first draft of how our website would look and function we thought about what individual members would work on. One member suggested they would focus on user feedback + paper prototyping and we agreed they would put together some paper prototypes and conduct some interviews. The rest of the group's goal was getting familiar with the stack by watching the provided lectures and adding some basic elements to the website.
+
+## Sprint 2: Work on feedback + find suitable API
 
 [27th feb - 10th mar]
 
@@ -120,15 +126,13 @@ Sprint aims:
 * Select API for displaying data in a map format
 * Intergrate Mapbox API
 
-
 With group members now familiar with Angular and Github we began adding basic, purely visual, features to our site. Results from our paper prototyping survey helped us decide how our GUI should operate. For example, initial feedback suggested users prefered the login page being a seperate page, rather than a slide in as we had originally invisioned. We also added a navbar, making use of the angular material toolbar element, to the website which included a mockup of our logo and a home button.
 
-After some research it was apparent that [mapbox] provided all the functionality we required, with us chosing it over google maps because of its open source nature and large number of styling options, allowing us to more readily make changes as the project developed. Initially, we simply got a basic map to display along with the aforementioned navbar, as at this stage we were still familiarising ourselves with the mapbox api.
+After some research it was apparent that [mapbox] provided all the functionality we required, with us choosing it over google maps because of its open source nature and large number of styling options, allowing us to more readily make changes as the project developed. Initially, we simply got a basic map to display along with the aforementioned navbar, as at this stage we were still familiarising ourselves with the mapbox api.
 
 At this point in the project we were intending to use this template data from one of the examples from the documentation (the extensive examples being another reason we chose the mapbox api) in our final product as it showcased how our site would look once many posts had been made. With fairly big steps made towards how we would like the finished project to look aesthetically we were now ready to start adding in some of the websites key functionality!
 
-
-#### Key implementation issues found: ####
+### Key implementation issues found:
 <table>
 <tr>
   <th>Area</th>
@@ -144,19 +148,25 @@ At this point in the project we were intending to use this template data from on
 </tr>
 </table>
 
+### Meeting log:
 
-### Sprint 3: Serve dummy data from directly from API to frontend + set up data model:
+With each member assigned and working on a task and being in constant contact through Discord we decided to only meet once during this sprint.
 
-[11th mar - 27th mar]
+**[8th Mar]** - During this meeting we reviewed user feedback collected previously and decided to have our log in bar pull in from the side. With the basic aesthetic of the front end implemented we agreed for one group member to make some wire frames to be used in a user survey. At this point the other group members were working on the front end, 2 group members were assigned to work on front end aesthetics whilst the other two looking deeper into mapbox and how it would be link with the to-be-created backend.
+
+## Sprint 3: Serve dummy data from directly from API to frontend + set up data model:
+
+[11th Mar - 27th Mar]
 
 At this stage of the project is where we began to implement the key features that we would need later for collecting and sending information to and from the backend; we added what would become `geopost.js`. On the backend, we began building the mongo schemas that we would require to store our post data in later stages. At this point is also when we established a test process involving docker to facilitate continuous integration. We also began collecting user feedback on our intial boilerpate website.
 
-Sprint aims for this period;
+Sprint aims for this period:
+
 * Collect initial user feedback
 * Set up site so dummy data is served through API route + Add linking to front end + making sure data model working in front end
-* build Data Model (user, post) + set up mongo schemas
-* implementing docker functionality for continuous integration
-* began to implement mapbox heatmap example
+* Build Data Model (user, post) + set up mongo schemas
+* Implementing docker functionality for continuous integration
+* Began to implement mapbox heat map example
 
 This api was initially set up to just return static dummy data - a geoJSON file containing earthquake data from an example in the mapbox api documentation. We then implemented a heatmap template from the mapbox documentation, to both test the api was correctly returning data but also as a base to build off when we add in our own data in later stages; we wanted a heatmap like effect for users emotions rather than earthquake magnitudes!
 
@@ -164,7 +174,8 @@ We used this template to help define and develop our `geoJSON.js` mongo schema; 
 
 As the complexity of our project began to grow we decided to implement a test process before each git commit and push, to ensure any local changes made did not break the website, which helped facilitate continuous integration as we were constantly compiling and testing our website after changes, and could be confident that code on the live repository was stable. See [our test plan](test_plan.txt) on our repository for details of this testing process.
 
-#### Key implementation issues found: ####
+### Key implementation issues found:
+
 <table>
 <tr>
   <th>Area</th>
@@ -177,24 +188,27 @@ As the complexity of our project began to grow we decided to implement a test pr
   <td>The user will eventually be able to see up to date data on displayed on the map and can add to that data by making a post </td>
   <td>Intially the api returned a url to some data - however whilst we were exploring how to implement our backend, we discovered that this would add uneccessary processing time and be difficult to update with live data; we would have to transfer data from the database into another server, essentially having to call http fetch requests twice, and requiring a refresh to update the data </td>
   <td>We decided to return an array of geoJSON objects from the api (also supported by mapbox), which would allow us to easily update and manipulate the data in memory by using our post-service to send the data to different components, manipulate the array, and eventually send information to the database, and reduce http get and post requests</td>
-<tr>
-<tr><tr>
-<table>
-<br/>
+</tr>
+</table>
 
-### Sprint 4: Set up mongoDB and import dummy data + user authentification
+### Meeting log:
+
+**[16th Mar]** - We used this time to review what we had achieved to date, what needed to be done moving forward and who would do it. One member was allocated the task of conducting a user survey using the wire frames they had put together in the previous sprint. The rest of the team was split into two working pairs, 2 on the front end and 2 on back end. The two on the front end were tasked with making the front end look pretty and getting the mapbox example data to be displayed as required.
+
+**[22nd Mar] (Back end specifically)** - The two team members working on the backend (Alfie and Hari) decided to have a meeting to discuss which portions of the backend each would work on. It was decided that Alfie would work towards getting the example data to be served from a local file and Hari would put together some mongo schemas and look into mongoDB in general.
+
+## Sprint 4: Set up mongoDB and import dummy data + user authentification
 
 [28th mar - 10th apr]
 
-This sprint was where we finally began to pull together the disperate elements of the website; our aims involved connecting the data fetching service to a function backend using mondoDB, instead of just returning static template data. This is where we also wanted to begin implementing some user feedback based off user questionnaires centered around our intial mockup. We also set a stretch goal of actually adding user profile, rather than have the posts be completely anonymous.
+This sprint was where we finally began to pull together the disperate elements of the website; our aims involved connecting the data fetching service to a function backend using mondoDB, instead of just returning static template data. This is where we also wanted to begin implementing some user feedback based off user questionnaires centered around our initial mockup. We also set a stretch goal of actually adding user profile, rather than have the posts be completely anonymous.
 
 Our agreed goals for this period were;
-* connect mondoDB (mongoose) to front end (so the front end is fetching data from our database)
-* add the functionality make posts (i.e. sending data to the front end)
-* begin implementing feedback from user study and from lecturers
-* finalize key mapbox api functionality (pop ups when hovering over a point on the map)
-* if time permits, add users to the database as well
-
+* Connect mondoDB (mongoose) to front end (so the front end is fetching data from our database)
+* Add the functionality make posts (i.e. sending data to the front end)
+* Begin implementing feedback from user study and from lecturers
+* Finalize key mapbox api functionality (pop ups when hovering over a point on the map)
+* If time permits, add users to the database as well
 
 Upon having a team conversation with Marceli, it was recommended that we look into Mongoose as an Object Document Manager to make our lives easier and save time.
 After some research, we decided to use Mongoose as the middleman between incoming/outgoing HTTP requests/responses between the API and our database.
@@ -206,9 +220,9 @@ To implement displaying the post data when a user hovers over a data point on th
 
 From our user feedback it was clear that first time users struggled to grasp the point of the website, and in fact some suggested we add a section to explain the site; so we did exactly that! We added an "about" component and a link in the toolbar that users could click through to, to learn more about the website. We also changed our colour scheme to a white toolbar on a black map, rather than pink on white, from feedback from our lecturers, and to make more clear the colourful data points on the map (the colours constrasted the black map far more than the white )
 
-We also finally implemented a user-post component, which allows new data to be added to website; this component makes use of angular forms to collect inputted data, which we then transform into geoJSON format using our post-service, to be added to our database. As we had time at the end of this sprint, we also began to add in actual user functionality to the website, along with the `userpost.js` api to enable this - the singup/login buttons on the navbar where changed to actually route through to signup/login pages, which also use angular forms to collect user input and add new users to the database/verify users who are logging in.
+We also finally implemented a user-post component, which allows new data to be added to website; this component makes use of angular forms to collect inputted data, which we then transform into geoJSON format using our post-service, to be added to our database. As we had time at the end of this sprint, we also began to add in actual user functionality to the website, along with the `userpost.js` api to enable this - the sign up/login buttons on the navbar where changed to actually route through to signup/login pages, which also use angular forms to collect user input and add new users to the database/verify users who are logging in.
 
-#### Key implementation issues found: ####
+### Key implementation issues found:
 <table>
 <tr>
   <th>Area</th>
@@ -230,9 +244,13 @@ We also finally implemented a user-post component, which allows new data to be a
 </tr>
 </table>
 
-### Sprint 5 Users enter more details + can filter by them:
+### Meeting log:
 
-[11th apr - 20th apr]
+**[29th Mar]** - After reviewing the user feedback one of the team members working on the front end was allocated the task of putting together an about us page. At the start of this sprint most of the front end side of things was complete and just needed functionality added on the backend. Because of this, during this meeting we decided to move one of the members working on the front end to the backend. It was decided that one member of the team was tasked with working out the data model and mongo schemas and the others on posting and searching functionality. In the end one group member ended up implimenting a lot of the features we required including user authentication. 
+
+## Sprint 5 Users enter more details + can filter by them:
+
+[11th Apr - 20th Apr]
 
 In this sprint we aimed to add to our website some of the more complex features, like searching through posts, and a user being able to view a timeline of the posts they have made, building upon the core foundation of sending and viewing posts we had established by the end of sprint 4. At this stage we also began transitioning from working on the website proper into gathering final user feedback and beginning to write our project report.
 
@@ -251,7 +269,7 @@ As the website was nearing completion, we carried out a further round of user qu
 
 At this stage we were happy our website was in a good place, so we began to start working on the project write up, initially focusing on formatting our README, and producing a rough outline of the content we needed to fill in.
 
-#### Key implementation issues found: ####
+### Key implementation issues found:
 <table>
 <tr>
   <th>Area</th>
@@ -273,7 +291,7 @@ At this stage we were happy our website was in a good place, so we began to star
 </tr>
 </table>
 
-### Sprint 6 Project Write up:
+## Sprint 6 Project Write up:
 
 [21st apr - hand in]
 
