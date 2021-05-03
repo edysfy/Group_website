@@ -208,7 +208,7 @@ Lets break down this Express application and describe how it works:
     <br/>
     1. geopost.js => "/api/geopost": <br/>
         Here we dealt with all the requests that are related to the EmotePosts.
-          - We have a GET method on the route. Once the GET request from the frontend hits this path it calls a find() method on the GeoJson model that was created from the GeoJson schema. This finds all of the GeoJson points in the database and returns a promise. It's an asynchronous function. Once the promise returns all the GeoJson data points, we send a response back to the front end. The payload contains a JSON object that contains the GeoJson array (all Data), and a message, with a status code 200 (meaning it was successful). This data is then utilized by the Post Service on the front end, which pipes the data into components where needed. If there is an error with the request, the server sends back the default error message.
+          - We have a GET method on the route. Once the GET request from the frontend hits this path it calls a 'find' method on the GeoJson model that was created from the GeoJson schema. This finds all of the GeoJson points in the database and returns a promise. It's an asynchronous function. Once the promise returns all the GeoJson data points, we send a response back to the front end. The payload contains a JSON object that contains the GeoJson array (all Data), and a message, with a status code 200 (meaning it was successful). This data is then utilized by the Post Service on the front end, which pipes the data into components where needed. If there is an error with the request, the server sends back the default error message.
             ```js
             /*gets all post from the db*/
             router.get("", (req, res, next) => {
@@ -275,7 +275,7 @@ Lets break down this Express application and describe how it works:
                   });
               });
             ```
-          - Also, we have another GET request on this route. However, we added a param variable to the URL path. So the URL is now: 'api/geopost/:username'. This is similar to the normal GET request. However, when we call the find method on the GeoJson Model, we use the username param as a filter query, meaning the database returns a GeoJson array that only contains posts related to that user. We sort it via DateTime using the Mongoose sort() method, meaning the newer posts are at the start of the array. We did this so our UI will display the user's timeline in that order. This is then sent back to the User-Search-service on the front end. Error handling response was also implemented.
+          - Also, we have another GET request on this route. However, we added a param variable to the URL path. So the URL is now: 'api/geopost/:username'. This is similar to the normal GET request. However, when we call the find method on the GeoJson Model, we use the username param as a filter query, meaning the database returns a GeoJson array that only contains posts related to that user. We sort it via DateTime using the Mongoose 'sort' method, meaning the newer posts are at the start of the array. We did this so our UI will display the user's timeline in that order. This is then sent back to the User-Search-service on the front end. Error handling response was also implemented.
               ```js
               /*sort the date by -1*/
               router.get("/:username", (req, res, next) => {
@@ -297,7 +297,7 @@ Lets break down this Express application and describe how it works:
                   });
               });
               ```
-          - Finally, we have a DELETE request. We added a param variable to the URL path. So the URL is now: 'api/geopost/:id'. The id is the _id of the GeoJson Post to be deleted. The _id is sent by the User-service on the front end. We then call the deleteOne() method on the GeoJson Model and use the request param as a filter query. This then removes that user's post from the GeoJson collection. This allows the user to delete their posts. Error handling response was also implemented.
+          - Finally, we have a DELETE request. We added a param variable to the URL path. So the URL is now: 'api/geopost/:id'. The id is the _id of the GeoJson Post to be deleted. The _id is sent by the User-service on the front end. We then call the 'deleteOne' method on the GeoJson Model and use the request param as a filter query. This then removes that user's post from the GeoJson collection. This allows the user to delete their posts. Error handling response was also implemented.
             ```js
             /*removes post from the db*/
             router.delete("/:id", (req, res, next) => {
@@ -320,13 +320,13 @@ Lets break down this Express application and describe how it works:
             <br/>
     2. search.js => "/api/search": <br/>
         - This route deals with the search queries sent to the API from the User-Search-service. We defined a SearchQuery interface on the front end. When the user makes a query, a Search Object is created on the front end and sent via HTTP POST method by the User-Search-Service to "/api/search".
-        This route needs to filter the GeoJson collection with parameters set by the search query. So we use the find() method on the GeoJson model to get all GeoJson data. We chain populate() method. This method populates the attribute "userDetails" of each GeoJson with the age, gender, and date of birth of the corresponding user with the same _id as the value stored in "userDetails". We sort it via DateTime using the, meaning the newer posts are at the start of the array. We did this so our UI will display the search results in that order. <br/>
+        This route needs to filter the GeoJson collection with parameters set by the search query. So we use the 'find' method on the GeoJson model to get all GeoJson data. We chain ;;'populate' method. This method populates the attribute "userDetails" of each GeoJson with the age, gender, and date of birth of the corresponding user with the same _id as the value stored in "userDetails". We sort it via DateTime using the, meaning the newer posts are at the start of the array. We did this so our UI will display the search results in that order. <br/>
         This returns a promise. When we receive the GeoJson from the database, we embark on a filtering process. We use the filter method to filter out GeoJson data that are false in the callback function.
         1. Filter posts bound by min and max-age:
             - If the age is null then we remove the data. This means the user has not set their age, thus we decided that their data will not be included in the search. We then sure all posts are within the age range.
         2. Filter posts bound by a min date from the present to a max date from present;
             - The search query contains a min day and a max day. The maximum value the day can be is 0, which is the present day, and the minimum day is -3650 (10 years ago). We return all posts that were made between the minimum and maximum values.
-            - We create a function that generates a Date object from both day value. We apply getTime() method on the minDate and maxDate, and to the dates at which the GeoJson Posts were made. This gives the literal time in seconds. Dates closer to the present have a large value, thus we can compare dates and filter out the relevant ones.
+            - We create a function that generates a Date object from both day value. We apply 'getTime' method on the minDate and maxDate, and to the dates at which the GeoJson Posts were made. This gives the literal time in seconds. Dates closer to the present have a large value, thus we can compare dates and filter out the relevant ones.
         3. Filter posts by gender:
             - The search query contains a boolean for males and females. We filter out GeoJson if the gender is null, or male/female is false. The logic for this was held in filterGender.
         4. Filter posts by Mood:
@@ -405,7 +405,7 @@ Lets break down this Express application and describe how it works:
               });
               // });
               ```
-          - "api/user/login" deals with user authentication. When a user logs in up on the front end, the Authentication-service sends a payload containing the submitted username and password. Firstly our API checks if the username null. Initially, this was a precaution we made on the server. We instantly sent a response back to the client, if by chance, no username was submitted. We then called the findOne() method on the User Model, with the username as the filter query. The usernames are guaranteed to be unique by MongoDb, so we can safely assume that only one user will return. Once the user details have been sent from the database, via a promise, we store the password and send it to the password match function. This takes in the password from the client and the database and checks if they are identical. If they don't match we send an error response back to the client with regSuc == false. This will alert the user that the passwords do not match. If successful, we create a JWT token that is made from the username, password, and secret key. To ensure the JWT is not hackable by people that don't know the key. We send a response with the JWT and username back to the Authentication-service, so it will be stored in the client's local storage. The main use of the JWT was to guard routes on the API. So when a request was made, if the HTTP header contains a valid JWT token then the function will carry on with its execution. However, we didn't have time to implement this.
+          - "api/user/login" deals with user authentication. When a user logs in up on the front end, the Authentication-service sends a payload containing the submitted username and password. Firstly our API checks if the username null. Initially, this was a precaution we made on the server. We instantly sent a response back to the client, if by chance, no username was submitted. We then called the 'findOne' method on the User Model, with the username as the filter query. The usernames are guaranteed to be unique by MongoDb, so we can safely assume that only one user will return. Once the user details have been sent from the database, via a promise, we store the password and send it to the password match function. This takes in the password from the client and the database and checks if they are identical. If they don't match we send an error response back to the client with regSuc == false. This will alert the user that the passwords do not match. If successful, we create a JWT token that is made from the username, password, and secret key. To ensure the JWT is not hackable by people that don't know the key. We send a response with the JWT and username back to the Authentication-service, so it will be stored in the client's local storage. The main use of the JWT was to guard routes on the API. So when a request was made, if the HTTP header contains a valid JWT token then the function will carry on with its execution. However, we didn't have time to implement this.
               ```js
               router.post("/login", (req, res, next) => {
                 User.findOne({ username: req.body.username }).then((query) => {
@@ -424,7 +424,7 @@ Lets break down this Express application and describe how it works:
               <br/>
         This route also deals with supplying user details to the User-Service, as well as allowing the users to enter/edit their date of birth and gender:
           - We have a GET method on route "api/user/login/:username". We used a params variable on the URL to send the username from the User-Service to the API.
-           Now, this is coming from the User-Service on the front end. This service is only functional when the user is authenticated, and their details are stored on the client's browser. So we are not worried if the username is null. We then called the findOne() method on the User Model, with the username as the filter query. When the database fulfills the promise, we need to do some data manipulation on the date and the gender. When a user creates an account, by default the date of birth and gender are null. Date of birth is also of type Date. The front end has a User interface, the User - date of birth attribute, is of type string (it was easier to deal with string on the front end). So we have two functions, convertDateToString - this takes in the date of birth from the database. If null it returns a string 'n/a', else it converts the Date to a string. CheckIfGenderIsNull takes the fender from the database and returns 'n/a' if it null. As the gender is already a string, if it is not null we don't need to alter it. We then return a response to the user, with an object that conforms to the user details on the front end. The service then pipes these details to the relevant UI components. Again, if there is an error we return that to the front end.
+           Now, this is coming from the User-Service on the front end. This service is only functional when the user is authenticated, and their details are stored on the client's browser. So we are not worried if the username is null. We then called the 'findOne' method on the User Model, with the username as the filter query. When the database fulfills the promise, we need to do some data manipulation on the date and the gender. When a user creates an account, by default the date of birth and gender are null. Date of birth is also of type Date. The front end has a User interface, the User - date of birth attribute, is of type string (it was easier to deal with string on the front end). So we have two functions, convertDateToString - this takes in the date of birth from the database. If null it returns a string 'n/a', else it converts the Date to a string. CheckIfGenderIsNull takes the fender from the database and returns 'n/a' if it null. As the gender is already a string, if it is not null we don't need to alter it. We then return a response to the user, with an object that conforms to the user details on the front end. The service then pipes these details to the relevant UI components. Again, if there is an error we return that to the front end.
               ```js
                 router.get("/:username", (req, res, next) => {
                 User.findOne({ username: req.params.username })
@@ -448,7 +448,7 @@ Lets break down this Express application and describe how it works:
               });
               ```
           - We have a PUT method on this route "api/user/login/:username". We used a params variable on the URL to send the username from the User-Service to the API.
-           Now, this is coming from the User-Service on the front end. This service is only functional when the user is authenticated, and their details are stored on the client's browser. So we are not worried if the username is null. This allows the user the manually update their age/gender. If the user submits a new edit on the front end the User-Service will send a payload with the gender or date of birth to this path. We check to see which values are null then perform the appropriate update of the non-null value. We do this by calling the updateOne() method on the User model. This takes two parameters, the first is an object that specifies the user you want to update. We enter the username as it is a unique identifier. The second parameter takes in an object that describes specifies attributes that will be updated, with that data to replace the old data. Also, we calculate the user's age on the front end every time the user opens their profile. Whenever this happens, we update the user's age in the database. To keep it updated when each year passes.
+           Now, this is coming from the User-Service on the front end. This service is only functional when the user is authenticated, and their details are stored on the client's browser. So we are not worried if the username is null. This allows the user the manually update their age/gender. If the user submits a new edit on the front end the User-Service will send a payload with the gender or date of birth to this path. We check to see which values are null then perform the appropriate update of the non-null value. We do this by calling the 'updateOne' method on the User model. This takes two parameters, the first is an object that specifies the user you want to update. We enter the username as it is a unique identifier. The second parameter takes in an object that describes specifies attributes that will be updated, with that data to replace the old data. Also, we calculate the user's age on the front end every time the user opens their profile. Whenever this happens, we update the user's age in the database. To keep it updated when each year passes.
               ```js
                 /*path which updated the user details*/
                 router.put("/:username", (req, res, next) => {
@@ -483,6 +483,13 @@ Lets break down this Express application and describe how it works:
 
 # Front End - Angular, Details of implementation
 
+### Angular Material
+We heavily relied on the use of the [Angular Material](https://material.angular.io) library. This us provided pre-build UI components, that can be styled easily. <br/>
+#### Mapbox
+We used the [Mapbox API](https://docs.mapbox.com/mapbox-gl-js/api/), which provided us with a customizable map. That met our needs adequately. <br/><br/>
+The implementation of these API's are mentioned in more detail throughout the rest of the application.
+
+
 Our front end is comprised of many components. We felt the best way to break down the implementation of the front end is by grouping the application by Services as they are heart of how each process works. 
 
 ## Post Service:
@@ -514,9 +521,9 @@ For Mapbox to be able to render the GeoJson data from the backend, we need to co
       }
   }
   ```
-We have a function getGeoPostData() in the Post Service, when this is called it sends a GET request to our API to retrieve the data. Once the data arrives, we convert each data into a GeoJson object as described above (by passing the relevant data through the GeoJson constructor), and push it to the 'geoPost' array stored in the service. Once this is complete, we have a Behaviour Subject called 'geoPostSubject', this maintains the state of the 'geoPost' array. It can return Observables, meaning other components in the application can subscribe to it and trigger functions when there is a change of state. We called the 'next' method on this 'geoPostSubject' and pass in the 'geoPost' array to update the state with the data from the backend. We also need a check. We only push data from the backend into the service if the 'geoPost' array length doesn't equal the array coming in from the back end. As this function, can be called multiple times by the Mapbox component, if this check wasn't in place it will render duplicate data. Once, we update the state we return 'geoPostSubject.asObservable()'.
+We have a method 'getGeoPostData' in the Post Service, when this is called it sends a GET request to our API to retrieve the data. Once the data arrives, we convert each data into a GeoJson object as described above (by passing the relevant data through the GeoJson constructor), and push it to the 'geoPost' array stored in the service. Once this is complete, we have a Behaviour Subject called 'geoPostSubject', this maintains the state of the 'geoPost' array. It can return Observables, meaning other components in the application can subscribe to it and trigger functions when there is a change of state. We called the 'next' method on this 'geoPostSubject' and pass in the 'geoPost' array to update the state with the data from the backend. We also need a check. We only push data from the backend into the service if the 'geoPost' array length doesn't equal the array coming in from the back end. As this function, can be called multiple times by the Mapbox component, if this check wasn't in place it will render duplicate data. Once, we update the state we return 'geoPostSubject.asObservable'.
 
-This service is injected into the Mapbox component. When the component is initialized, it calls initMap(), which initializes the map as per our specifications. Mapbox provides numerous styles of world maps to display (we chose a dark colour scheme to better highlight the information in our data layers, to be covered shortly), which we initialise in the components ngOnInit function.
+This service is injected into the Mapbox component. When the component is initialized, it calls 'initMap', which initializes the map as per our specifications. Mapbox provides numerous styles of world maps to display (we chose a dark colour scheme to better highlight the information in our data layers, to be covered shortly), which we initialise in the components ngOnInit function.
 ```javascript
 initMap(): void {
   (mapboxgl as any).accessToken = environment.mapboxToken;
@@ -551,7 +558,7 @@ this.map.on('load', (e) => {
         });
 ```
 Firstly, this function combines the GeoJson data retrieved through the User-Search Service, and the GeoJson data retrieved via the Post Service. We don't want both sets of data to be rendered simultaneously. We subscribe to this boolean in the User Search Service. It is true when the search state is activated, and false otherwise (more details in User Search Service).  By default is it set to false when the user renders the app for the first time. As we alternate between the search-state and the post-state, we need to use a function called 'removeAllLayerAndSource('data')'. This essentially removes all the layers built from the GeoJson data sent from the previous Service. Ie it creates a blank map for the new data from the other service to be rendered. So it removes all the markers, heat-map, and user's markers. As well as removing the Mapbox 'data' source (source in Mapbox allows the developer Mapbox layers to create layers).
-When '!activatedUserSearch', and the previous Mapbox 'data' source has been wiped, we call 'pullAndDisplayGJPointsFromDB()'. This calls 'createDataSource('data')', and creates a data source called 'data', of type 'geojson'. The data it contains is of a type 'FeatureCollection' and initialised with and an empty array, which is going to contain the 'geoPost' array from the Post Service. We then subscribe to the 'getGeoPostData()' method in the Post Service, as it returns an observable.  
+When '!activatedUserSearch', and the previous Mapbox 'data' source has been wiped, we call 'pullAndDisplayGJPointsFromDB'. This calls 'createDataSource('data')', and creates a data source called 'data', of type 'geojson'. The data it contains is of a type 'FeatureCollection' and initialised with and an empty array, which is going to contain the 'geoPost' array from the Post Service. We then subscribe to the 'getGeoPostData' method in the Post Service, as it returns an observable.  
 
 ```javascript
 createDataSource(name: string): void {
@@ -573,7 +580,7 @@ pullAndDisplayGJPointsFromDB(): void {
   });
 }
 ```
-Now we can retrieve the 'geoPost' array. When the GET request has been fulfilled, the data has been processed, and state updated. Mapbox will take that data, then call the 'setData()' function on the 'data' source we created. This takes a data set. We create a Feature Collection object (a class pre-defined in the model folder), that just takes in the 'geoPost' array from the service. Mapbox uses to coordinates in 'geometry' attribute to position the data on the map.
+Now we can retrieve the 'geoPost' array. When the GET request has been fulfilled, the data has been processed, and state updated. Mapbox will take that data, then call the 'setData' function on the 'data' source we created. This takes a data set. We create a Feature Collection object (a class pre-defined in the model folder), that just takes in the 'geoPost' array from the service. Mapbox uses to coordinates in 'geometry' attribute to position the data on the map.
 ```js
 export class FeatureCollection {
     type = 'FeatureCollection';
@@ -621,7 +628,7 @@ The API allows us to display circles at each location, defined by the coordinate
   </p> 
 
 The 'heatmap' type is another layer type, and we use it to display the density of the user's emotion values at a location. We interpolate the colors of the heatmap, it varies from blue (positive emotion in the area) to red (negative emotions in the area). The heatmap operates on a max zoom greater than 9. Again, it takes in the 'mood' values, we give a set of colors for each mood, the colors are spread linearly depending on the mood value. <br/>
-This final layer allows the user to distinguish their posts from other user's posts. We create a new layer called 'user-markers', from the 'data' source. Mapbox has a setFilter() method. 
+This final layer allows the user to distinguish their posts from other user's posts. We create a new layer called 'user-markers', from the 'data' source. Mapbox has a setFilter method. 
 ```js
     this.map.setFilter('user-markers', [
       '==',
@@ -643,7 +650,7 @@ For the 'markers' layer, we utilized Mapbox's popup feature, such that when the 
 
 
 ### How to post data:
-Initially, the user has to be authenticated before making a post. So the first thing we do is call upon the Authentication Service, inject it into Mapbox, and subscribe to getAuthMethod() in the service. This allows Mapbox to know if the user is authenticated, and can update the UI if the user logs off. Allowing a user to make EmotePosts is a core feature of our application. We need to display the Userpost component, which holds a form that the user can submit. We render this form on a mat-dialog component. Mat-dialog is an Angular Material module, that pops a component to the screen with the highest z-index out of the other components.<br/>
+Initially, the user has to be authenticated before making a post. So the first thing we do is call upon the Authentication Service, inject it into Mapbox, and subscribe to 'getAuthMethod' in the service. This allows Mapbox to know if the user is authenticated, and can update the UI if the user logs off. Allowing a user to make EmotePosts is a core feature of our application. We need to display the Userpost component, which holds a form that the user can submit. We render this form on a mat-dialog component. Mat-dialog is an Angular Material module, that pops a component to the screen with the highest z-index out of the other components.<br/>
 Lets talk about the dybamics of the Userpost form...
 Angular comes reactive forms. This a module that allows the develop to build the form with more customization. This was the first form we built, and thought it would be complex, so we decided to build it with a reactive form. To build the form you have to define a FormGroup variable, which we called 'form'. You then have to equal this to a new FormGroup object, with a javascript objact as a paramter. This object with contain the fields of the form, as attributes. For each attribute to can add custom validation, as shown below.
 ```js
@@ -657,7 +664,7 @@ Angular comes reactive forms. This a module that allows the develop to build the
       }),
     });
 ```
-We create a form template, in the HTML file and bound the 'formGroup' attribute in the HTML to the 'form' variable initialized in the component. This allows us to manipulate the reactive form, and send its data to the Post Service. The most interesting attribute of 'form', what the rating. An interesting attribute of 'form' was 'rating'. We had a mat-slider component in the form and combined this to a mat-input field. This input field's NgModel is bound to the 'ratings' variable we defined. Its default value was 'Coping'. So the field initially displays this text to the user. The user can use the slider to choose values 1,2 and 3. Whenever the user used the slider and changed its value, an event was sent to the 'onSliderChange()' method. If the value of the event was 1, it set 'ratings' to be 'Happy', and set the respective emotions for 2 and 3. Now as 'ratings' is bound to the NgModel of the input field. The new emotion will be displayed to the user. It will also set another variable called 'sliderValue' to the value of the event the slider emits, ie 1,2 or 3. This value is sent to the Post Service with the other input field values when the form is submitted. This value is the mood attribute of the GeoJson 'properties' attribute.
+We create a form template, in the HTML file and bound the 'formGroup' attribute in the HTML to the 'form' variable initialized in the component. This allows us to manipulate the reactive form, and send its data to the Post Service. The most interesting attribute of 'form', what the rating. An interesting attribute of 'form' was 'rating'. We had a mat-slider component in the form and combined this to a mat-input field. This input field's NgModel is bound to the 'ratings' variable we defined. Its default value was 'Coping'. So the field initially displays this text to the user. The user can use the slider to choose values 1,2 and 3. Whenever the user used the slider and changed its value, an event was sent to the 'onSliderChange' method. If the value of the event was 1, it set 'ratings' to be 'Happy', and set the respective emotions for 2 and 3. Now as 'ratings' is bound to the NgModel of the input field. The new emotion will be displayed to the user. It will also set another variable called 'sliderValue' to the value of the event the slider emits, ie 1,2 or 3. This value is sent to the Post Service with the other input field values when the form is submitted. This value is the mood attribute of the GeoJson 'properties' attribute.
 
   <p align="center">
   <img src="supporting_images/emotepost.png" width="550px">
@@ -712,7 +719,7 @@ This is an asynchronous function. If the user submits the form before the progra
 
 **How to submit?**  
 The Post Service is injected into the Userpost component. When the user presses the submit button. There is a series of steps until the submission is complete.
-1. We decided that the user cannot post will in search mode. So the Userpost component listens to the UserSearch service, by subscribing to 'getIsInSearchState()' method, to see if search mode is activated. If in search mode then the UI will display an alert to the user saying it is unable make a post.
+1. We decided that the user cannot post will in search mode. So the Userpost component listens to the User-Search service, by subscribing to 'getIsInSearchState' method, to see if search mode is activated. If in search mode then the UI will display an alert to the user saying it is unable make a post.
 
   <p align="center">
   <img src="supporting_images/unablesearchmode.png" width="550px">
@@ -724,7 +731,7 @@ The Post Service is injected into the Userpost component. When the user presses 
   <img src="supporting_images/formvalidaitno.png" width="550px">
   </p>
 
-If the measures have been overcome, then the 'createPost()' method in the Post Service is called, and the values of the form are sent into the service. We create GeoJson data out of the form values, which matches the Mongoose GeoJson Schema on the backend. We use local storage to add the user's username to the GeoJson. We add the current coordinates in Post Service (obtained by the methods above) to the 'geometry' attribute. We use the HTTP POST method to send to the '/api/geopost' route on the API. After the response has arrived from the API and is successful, we push the GeoJson data to the 'geoPost' array and update the 'geoPostSubject' with the altered array, rendering the new Post onto Mapbox's layers dynamically. We also add posts to the user's GeoJson array stored in the User Service, so the new post will render dynamically on the Userpost-Display component. (more detail in User Service Section.)
+If the measures have been overcome, then the 'createPost' method in the Post Service is called, and the values of the form are sent into the service. We create GeoJson data out of the form values, which matches the Mongoose GeoJson Schema on the backend. We use local storage to add the user's username to the GeoJson. We add the current coordinates in Post Service (obtained by the methods above) to the 'geometry' attribute. We use the HTTP POST method to send to the '/api/geopost' route on the API. After the response has arrived from the API and is successful, we push the GeoJson data to the 'geoPost' array and update the 'geoPostSubject' with the altered array, rendering the new Post onto Mapbox's layers dynamically. We also add posts to the user's GeoJson array stored in the User Service, so the new post will render dynamically on the Userpost-Display component. (more detail in User Service Section.)
   
 ## Authentication Service:
   ### Class Diagram:
@@ -755,13 +762,13 @@ If the measures have been overcome, then the 'createPost()' method in the Post S
 
   
   ### The process to register an account:
-  - We built signup UI using Angular's template-driven forms. The user has to enter a username, password, and repeat password to be able to submit the form. We didn't implement and fancy validation or password patterns using regex. Just made sure the entries were not null. We had basic validation on the fields and used mat-error from Angular material to throw errors back to the user through the input fields. You can see in the left screenshot above, how the field is red, and display a message if they are empty when the user presses submit. This validation is simple with Angular Template forms. We added, ngModel, matInput, and the 'required' attributes to the HTML input fields within the form. This allows us to check if the NgModel value for the field is invalid. We conditionally render a mat-error HTML tag, if this is true. When the 'register' button is pressed, we send the NgForm to an 'onSubmit()' function, in the Signup component. Here, we check if the password value is equivalent to the password match value. If not then we through an alert to the user saying the passwords don't. This is a feature to ensure the user enters the password they intend.
+  - We built signup UI using Angular's template-driven forms. The user has to enter a username, password, and repeat password to be able to submit the form. We didn't implement and fancy validation or password patterns using regex. Just made sure the entries were not null. We had basic validation on the fields and used mat-error from Angular material to throw errors back to the user through the input fields. You can see in the left screenshot above, how the field is red, and display a message if they are empty when the user presses submit. This validation is simple with Angular Template forms. We added, ngModel, matInput, and the 'required' attributes to the HTML input fields within the form. This allows us to check if the NgModel value for the field is invalid. We conditionally render a mat-error HTML tag, if this is true. When the 'register' button is pressed, we send the NgForm to an 'onSubmit' function, in the Signup component. Here, we check if the password value is equivalent to the password match value. If not then we through an alert to the user saying the passwords don't. This is a feature to ensure the user enters the password they intend.
 
   <p align="center">
   <img align="center" src="supporting_images/passwordsnomatch.png" width="550px">
   </p> 
 
-  The Authentication Service is injected into the Signup component. After the password match check has complete in the 'onSubmit()' function, we pass the form's username and password values to Authentication Service's by calling its 'createUser()' method. Here, we create a javascript object out of this data and return the HTTP POST method. Which posts the payload to the 'signup' path in the API. This means the 'createUser()' is essentially returning an Observable. This just another way we allowed the Signup component to subscribe to the 'createUser()' method in the 'onSubmit()' method and directly act accordingly when a response is sent by the server. 
+  The Authentication Service is injected into the Signup component. After the password match check has complete in the 'onSubmit' function, we pass the form's username and password values to Authentication Service's by calling its 'createUser' method. Here, we create a javascript object out of this data and return the HTTP POST method. Which posts the payload to the 'signup' path in the API. This means the 'createUser' is essentially returning an Observable. This just another way we allowed the Signup component to subscribe to the 'createUser' method in the 'onSubmit' method and directly act accordingly when a response is sent by the server. 
   ```js
     createUser(username:  string, password: string) {
     const userData = {
@@ -781,7 +788,7 @@ If the measures have been overcome, then the 'createPost()' method in the Post S
   </p> 
 
   ### The process to login:
- Firstly, it is important to mention that the FIRST time the Authentication Service is run by the browser it gets 'token' from local storage. If this token is not null, that means the user hasn't logged out and the browser still has a hold of the user's the JsonWebToken (JWT). We then set the 'authState' to true using the 'next()' method, as 'authState' is a Behaviour Subject. If the 'token' is null, the user hasn't logged in, and 'authState' maintains false as its value.
+ Firstly, it is important to mention that the FIRST time the Authentication Service is run by the browser it gets 'token' from local storage. If this token is not null, that means the user hasn't logged out and the browser still has a hold of the user's the JsonWebToken (JWT). We then set the 'authState' to true using the 'next' method, as 'authState' is a Behaviour Subject. If the 'token' is null, the user hasn't logged in, and 'authState' maintains false as its value.
 ```js
   constructor(private http: HttpClient) { 
     /*get jwt token from storage, if empty user not logged in*/
@@ -795,7 +802,7 @@ If the measures have been overcome, then the 'createPost()' method in the Post S
     }
   }
 ``` 
-The Login component is very similar to the SignUp component. It is built using the same form, methods and is validated the same way (except the need to validate whether passwords match). The Authentication Service is injected into the Login component. Once the user presses the 'login' button and the form is valid, the 'onLogin()' function takes the NgForm and passes the form's username and password values to Authentication Service's 'login()' method. Again, the process here is similar to the 'createUser()' method. However, the difference is that the payload is sent to the 'login' path on the API, and the response from the server contains a JWT token. We subscribe to the 'login()' method in the 'onLogin()' method in the Login component. Still, the same as process as the Signup Component. When the server sends a response to the front end, check if to so if the JWT exists. If it does exist, we send the JWT, and the username to the Authentication service using its 'setLogin()' method, and route to the Mapbox component. If not then we send an alter to the user. The failure can arise due to the username not existing or the password being incorrect. The server sends an adequate message, so we can alert the user accordingly.
+The Login component is very similar to the SignUp component. It is built using the same form, methods and is validated the same way (except the need to validate whether passwords match). The Authentication Service is injected into the Login component. Once the user presses the 'login' button and the form is valid, the 'onLogin' method takes the NgForm and passes the form's username and password values to Authentication Service's 'login' method. Again, the process here is similar to the 'createUser' method. However, the difference is that the payload is sent to the 'login' path on the API, and the response from the server contains a JWT token. We subscribe to the 'login' method in the 'onLogin' method in the Login component. Still, the same as process as the Signup Component. When the server sends a response to the front end, check if to so if the JWT exists. If it does exist, we send the JWT, and the username to the Authentication service using its 'setLogin' method, and route to the Mapbox component. If not then we send an alter to the user. The failure can arise due to the username not existing or the password being incorrect. The server sends an adequate message, so we can alert the user accordingly.
 ```js
   onLogin(form: NgForm) {
     this.authService.login(form.value.username, form.value.password)
@@ -812,7 +819,7 @@ The Login component is very similar to the SignUp component. It is built using t
     });
   }
   ```
-  The 'setLogin()' method, stores the JWT and username in memory and in local storage to allow the user to remain logged in even if they close/refresh the application. We then set the 'authState' to true. As 'authState' is a Behaviour Subject, other components can subscribe to 'authState.asObservable()' and listen to dynamic changes in the Authentication state, and update the UI accordingly.  <br/>
+  The 'setLogin' method, stores the JWT and username in memory and in local storage to allow the user to remain logged in even if they close/refresh the application. We then set the 'authState' to true. As 'authState' is a Behaviour Subject, other components can subscribe to 'authState.asObservable' and listen to dynamic changes in the Authentication state, and update the UI accordingly.  <br/>
   
   Once the user is logged in the UI looks like this:
   
@@ -820,7 +827,7 @@ The Login component is very similar to the SignUp component. It is built using t
   <img align="center" src="supporting_images/loginui.png" width="550px">
   </p> 
 
-Notice above, that the toolbar has the user's username. The Authentication service is injected into the Toolbar component, which then subscribes to the 'authState'. If 'authState' is true, it calls the 'getUsername()' method in the Authentication Service and sets the message variable in the Toolbar component to the username, which is then displayed on the UI.
+Notice above, that the toolbar has the user's username. The Authentication service is injected into the Toolbar component, which then subscribes to the 'authState'. If 'authState' is true, it calls the 'getUsername' method in the Authentication Service and sets the message variable in the Toolbar component to the username, which is then displayed on the UI.
 The Mapbox component subscribes to the 'authState', and sets the isLoggedIn variable to what value the 'authState' observable emits. We then use *ngIf to conditionally render components on the map, depending on if the user is logged in or not.
 
 ```html
@@ -846,7 +853,7 @@ Methods in the User Service also retrieves the 'username' from local storage, to
 
 ### How to log out?
 
-The Authentication service is injected into the sidebar component. When the user presses the logout icon in the navbar. It calls the 'logout()' in the Authentication Service. This then sets the authToken and username variables in memory to null, and sets 'authState' to false, while wiping all content in local storage. 'Window.location.reload()' is called, and that essentially takes the application back to its original state, refreshing the Mapbox component, altering the UI to reflect the fact that the user logged out.
+The Authentication service is injected into the sidebar component. When the user presses the logout icon in the navbar. It calls the 'logout' in the Authentication Service. This then sets the authToken and username variables in memory to null, and sets 'authState' to false, while wiping all content in local storage. 'Window.location.reload' is called, and that essentially takes the application back to its original state, refreshing the Mapbox component, altering the UI to reflect the fact that the user logged out.
 
 <p align="center">
   <img src="supporting_images/logout.png" width="150px">
@@ -871,19 +878,19 @@ The Authentication service is injected into the sidebar component. When the user
   }
   ```
   The Sidebar Service contains a Behaviour Subject of type Sidebar (defined by the interface above), as an attribute and called 'sideBarState'. Its state is initialized with an object of type Sidebar with all attributes set to false. This service is injected into the Sidebar component.
-  When the Sidebar component is initialized, it calls 'getSideBarObvs()' from the Sidebar Service (that returns an observable from 'sideBarState') and subscribes to it. It then takes the value emitted from this observable and stores it as a variable, called 'sidebarState' within the component. The Sidebar component is comprised of several icons as shown below. 
+  When the Sidebar component is initialized, it calls 'getSideBarObvs' from the Sidebar Service (that returns an observable from 'sideBarState') and subscribes to it. It then takes the value emitted from this observable and stores it as a variable, called 'sidebarState' within the component. The Sidebar component is comprised of several icons as shown below. 
 
   <p align="center">
   <img src="supporting_images/navbar.png" width="550px">
   </p> 
 
-  Let's talk about the process of clicking the profile icon. The procedure is the same for the other icons. It's just the respective methods associated with the other icons that are triggered. When the user clicks the profile icon, a click event is triggered and it calls the "onProfileClick() method in the Sidebar component. This then calls this 'setProfileState()' from the Sidebar service. This method takes a boolean as a parameter. This boolean will essentially represent the next state of the profile attribute. So we get the current state of the profile attribute from the 'sidebarState' variable (within the component) and pass the opposite value into the function.
+  Let's talk about the process of clicking the profile icon. The procedure is the same for the other icons. It's just the respective methods associated with the other icons that are triggered. When the user clicks the profile icon, a click event is triggered and it calls the "onProfileClick method in the Sidebar component. This then calls this 'setProfileState' from the Sidebar service. This method takes a boolean as a parameter. This boolean will essentially represent the next state of the profile attribute. So we get the current state of the profile attribute from the 'sidebarState' variable (within the component) and pass the opposite value into the function.
   ```js
     clickProfileIcon():void {
     this.sidebarService.setProfileState(!this.sidebarState.profile);
   }
   ```
-  Now in the 'setProfileState()' method, we create a new Sidebar object, but the profile attribute will take the value of the parameter, and all other attributes are set to false. This ensures only one component can be rendered at a time. We call the 'next()' method on 'sideBarState' in the service, and pass the new Sidebar object into this state. However, we set a time out of 200ms. This is the same time as it takes for the components to ease in and out via a custom animation. This ensures a smooth transition from a component easing out to the new component easing in. Without this time out, the new component will appear before the old component disappears. This resulted in a horrible animation.
+  Now in the 'setProfileState' method, we create a new Sidebar object, but the profile attribute will take the value of the parameter, and all other attributes are set to false. This ensures only one component can be rendered at a time. We call the 'next' method on 'sideBarState' in the service, and pass the new Sidebar object into this state. However, we set a time out of 200ms. This is the same time as it takes for the components to ease in and out via a custom animation. This ensures a smooth transition from a component easing out to the new component easing in. Without this time out, the new component will appear before the old component disappears. This resulted in a horrible animation.
   ```js
   /*set the profile state*/
   setProfileState(isClicked: boolean): void{
@@ -1012,6 +1019,19 @@ The Authentication service is injected into the sidebar component. When the user
   <img src="supporting_images/user.png" width="850px"> 
   </p>
 
+Finally, we use the api’s map.flyto function to move and zoom in on specific data points, which we call using an event listener in the mapbox-component html from a button click in the usersearch-display-component (which displays posts resulting from a user search).
+
+```javascript
+flyTo(lngLat: number[]) {
+  if(!isNaN(lngLat[0])&&!isNaN(lngLat[1])){
+    this.map.flyTo({
+    center: [lngLat[0], lngLat[1]],
+    zoom: 15,
+  });
+}
+}
+```
+
 ## User-search Service:
 
   ### Class Diagram:
@@ -1028,60 +1048,113 @@ Lets start by discussing the anatomy of the User-Search Service. This is defined
   searchQueryState!: BehaviorSubject<Search>;
   private geoSearchState!: BehaviorSubject<Array<GeoJson>>;
 ```
-HasSearchInit, holds boolean as state. This commuicates to the other components whether the 'search' mode is activated or not. There are two components in our application that subscribe to this Behabiour subject using the 'getIsInSearchState()' method in the 'User-Search' service.
+HasSearchInit, is a Behaviour Subject variable of type boolean. This variable is responsible for communicating to other components that the user has activated search mode. 
+When the user clicks the search icon in the navbar, Mapbox will initialize the User-Search component. This component has the User-Search Service injected into it. We use the 'onInit' in the component, and call the 'setHasSearchInit' method in the User-Search Service. It takes a boolean as a parameter and we pass true. This function calls the 'next' method on 'hasSearchInit', and updates the state with the boolean sent from the User-Search component. This new state is broadcast to the components subscribed to this observable. 
+```js
+  setHasSearchInit(set: boolean): void {
+    this.hasSearchInit.next(set);
+  }
+```
+When the user changes the Sidebar state again, We make use of 'ngOnDestroy' directive in the User-Search component. This method calls the same function as above, but the boolean sent is false. This tells the components subscribed that the search mode has been deactivated. <br/>
+There are two components in our application that subscribe to this Behavior Subject using the 'getIsInSearchState' method in the 'User-Search' service:
 ```js
   getIsInSearchState(): BehaviorSubject<boolean> {
     return this.hasSearchInit;
   }
 ```
-We mentioned in the Post Service section, that when the map loads
+1. The Userpost Component: 
+- If the search mode is activated, then it will not allow to submit their EmotePost. 
+```js
+    if(this.searchActivated) {
+      this.dialogRef.close();
+      alert("Unable to post in search mode");
+      return;
+    }
+```
+2. The Mapbox Component: 
+- We mentioned, in the Post Service section, that when the map initialize sand calls the 'map.on('load')' event emitter we subscribe to 'hasSearchInit.asObservable'. When the search mode is false, the map will render the data coming from the Post Service. When true, Mapbox will clear all the layers created by the data from the Post Service. It Then calls the 'pullAndDisplayGJPointsFromSearchQuery' method. This creates a new 'data' source, and calls the 'getGeoSearchObvservable' from the User-Search service. This returns the 'geoSearchState.asObservable'. We then subscribe to this observable. The 'geoSearchState' Behaviour Subject contains state of type Array<GeoJson>. When the state of this Observable changes, Mapbox will obtain the new array and call the 'setData' method on the 'data' source. And pass the new FeatureCollecion object, which is made from the updated GeoJson array. Mapbox then creates the layers from this new 'data'. Again can refer to the "How to get and display data" section of this documentatoin. This how we get the map to instantly update the GeoJson points, without refreshing the page, when the user makes a new search query.
+```js 
+  pullAndDisplayGJPointsFromSearchQuery(): void {
+    this.createDataSource('data');
+    this.source = this.map.getSource('data');
+    this.userSearchService.getGeoSearchObvservable().subscribe(geoSearchArr => {
+      this.source.setData(new FeatureCollection(geoSearchArr));
+    })
+  }
+```
+### How does the user make a search query?
 
+ As mentioned previously, when the user clicks the Search icon on the navbar, Mapbox will render the User-Search and Usersearch-display component. Here is how the UI will appear when this event occurs: 
 
+  <p align="center">
+  <img src="supporting_images/usersearchui.png" width="650px">
+  </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Angular Material
-[Angular Material](https://material.angular.io)
-
-
-#### Mapbox
-[Mapbox API](https://docs.mapbox.com/mapbox-gl-js/api/)
-
-
-
-
-Finally, we use the api’s map.flyto function to move and zoom in on specific data points, which we call using an event listener in the mapbox-component html from a button click in the usersearch-display-component (which displays posts resulting from a user search).
-
-```javascript
-flyTo(lngLat: number[]) {
-  if(!isNaN(lngLat[0])&&!isNaN(lngLat[1])){
-    this.map.flyTo({
-    center: [lngLat[0], lngLat[1]],
-    zoom: 15,
-  });
-}
+We defined a Search interface. This interface holds the parameters that the API will use to filter through all the GeoJson data stored in the database. After some feedback from Marceli. He suggested that we search by age, date, gender. We thought it would be a good idea to use sliders to define the min and max-age, min and max days from the present day, and check boxes for gender and mood. This is the Search interface we defined:
+```js
+export interface Search {
+    minAge: number,
+    maxAge: number,
+    minDay: number,
+    maxDay: number,
+    happy: boolean,
+    coping: boolean,
+    sad: boolean,
+    male: boolean,
+    female: boolean,
 }
 ```
+The User-Search Service has a Behaviour Subject called 'searchQueryState', which has a type Search. This Behaviour Subject holds the state of the most recent search query.
+When the User-Search component renders for the first time, we call the 'setSearchQueryState' from the User-Search Service in the 'onInit' directive of the component. We pass an object, of type Search. This object is the first search query held in the User-Search service's state. This method takes the Search object and passes it into the 'next' method on 'searchQueryState' to store this search query in the service.
+```js
+    this.userSearchService.setSearchQueryState({
+      minAge: 0,
+      maxAge: 100,
+      minDay: -3650,
+      maxDay: 0,
+      happy: true,
+      coping: true,
+      sad: true,
+      male: true,
+      female: true,
+    });
+```
+We then call:
+```js
+    this.userSearchService.getSearchQuery();
+```
+When this function is called, it subscribes to 'searchQueryState.asObservable()'. Now, whenever the search query changes, it will use the HTTP client module to send an HTTP POST request to the 'api/search', with the search query held in the current state as the payload. The first query it will send when the search mode is activated in the query above. The reason we chose those values for the attributes is that we wanted to retrieve all the GeoJson data points and display them on the UI when search mode is activated. The API will send data from all ages, within the last 10 years, from both genders, and all the moods we defined, with that query. The API will send an HTTP response containing a GeoJson array. We iterate through the array, creating a GeoJson object out of each element, and pushing it 'geoSearchArr', which's stored within the method. When this is this process is finished, we then pass this array into the 'next' method on the 'geoSearchState' behavior subject. So the array that has been filtered with the most recent search query is stored within the User-Search Service.
+```js
+  getSearchQuery(): void {
+    this.sub = this.searchQueryState.asObservable().subscribe((searchQuery) => {
+      console.log(searchQuery);
+      this.http.post<{ message: string, geoSearchArray: IGeoJson[] }>(
+        'http://localhost:3000/api/search',
+        searchQuery
+      )
+      .subscribe(response => {
+        let geoSearchArr: Array<GeoJson> = new Array<GeoJson>();
+        for(let i = 0; i<response.geoSearchArray.length; i++) {
+          let incomingGJ = new GeoJson(
+            response.geoSearchArray[i].properties,
+            response.geoSearchArray[i].geometry.coordinates,
+            response.geoSearchArray[i]._id
+          );
+          geoSearchArr.push(incomingGJ);
+        }
+        this.geoSearchState.next(geoSearchArr);
+      });
+    });
+  }
+```
+There are two componants that are subscribed to 'geoSearchState':
+1. Mapbox Component subscribes to this when 'pullAndDisplayGJPointsFromSearchQuery()'. The details have been explained previously.
+2. Usersearch-Display component:
 
-### Deployment details (including Docker), include how you have been achieving continuous integration and deployment
+
+<br/>
+<br/>
+# Deployment details (including Docker), include how you have been achieving continuous integration and deployment
 We implemented a docker-compose script from early on in the development process, which ended up being crucial in maintaining code quality and compatibility - we made sure that before each push to our group repository that the website was functioning both when running node server.js and docker-compose up. Docker was especially important for this as it provides a repeatable environment in the form of a docker container; we can be sure that if the project is working on one machine in docker, it will work on others. We primarily achieved continuous integration by utilising docker in this way, but also crucial was the factoring in of all the components of the MEAN stack from a very early stage. After deciding on the api we would use to present the map (mapbox) and setting up a basic template website using it, we quickly added an api (this api eventually became geopost.js) in order to deal with fetching the data for the map; even though this was collecting static data at first, it meant that functionally our website was behaving as it would when we we utilising all parts of the mean stack (i.e. when we added in a mongoDB database, this api would now fetch data from the database instead of using static data). This allowed us to test and run our website using node server.js (and docker-compose up) after every change as previously mentioned. As we also made use of github, allowing us to all share and download the most up to date files, we were able to continuously implement and integrate changes throughout the development process (see [Sprints & Project Management](sprints.md) for more details).
 
 Next section; [UX Design](uxDesign.md)
