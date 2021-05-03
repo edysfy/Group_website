@@ -483,6 +483,13 @@ Lets break down this Express application and describe how it works:
 
 # Front End - Angular, Details of implementation
 
+### Angular Material
+We heavily relied on the use of the [Angular Material](https://material.angular.io) library. This us provided pre-build UI components, that can be styled easily. <br/>
+#### Mapbox
+We used the [Mapbox API](https://docs.mapbox.com/mapbox-gl-js/api/), which provided us with a customizable map. That met our needs adequately. <br/><br/>
+The implementation of these API's are mentioned in more detail throughout the rest of the application.
+
+
 Our front end is comprised of many components. We felt the best way to break down the implementation of the front end is by grouping the application by Services as they are heart of how each process works. 
 
 ## Post Service:
@@ -1058,12 +1065,10 @@ We mentioned in the Post Service section, that when the map loads
 
 
 
-### Angular Material
-[Angular Material](https://material.angular.io)
 
 
-#### Mapbox
-[Mapbox API](https://docs.mapbox.com/mapbox-gl-js/api/)
+
+
 
 
 
