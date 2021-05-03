@@ -37,10 +37,6 @@ With the ongoing COVID-19 lock downs and other modules requiring attention, we k
 
 Agile software development refers to software development methodologies which are based around an iterative design process where in each iteration stakeholder input is incorporated. This method provides frequent delivery of small portions of functionality, each portion being fitting with stakeholder requirements.
 
-<td><img src="supporting_images/agile.png"></td>
-
-### Agile and our project
-
 The only stakeholder in our project was the end user. Therefore all feedback at each iteration came from user surveys and interviews. As documented in the [sprints] and [UX] at each stage of the development process we set goals based apon the user feedback collected in the last sprint. Once we had implemented the features described by our sprint goals we then repeated the process evaluating what we had done and getting more user feedback.
 
 This flexible but clearly defined process of of developing, evaluating then setting out goals provided the following benifits:
@@ -94,6 +90,10 @@ My main task was building the application, and ensuring its quality. I got the i
 
 After having got to grips with the brief and decided on an idea, this sprint was concerned with putting together an initial paper draft for our website, and setting up all the things we needed to enable continuous development and integration; namely our angular project and our github repository. We also tentatively began to collect feedback on our initial paper prototype designs.
 
+### Meeting log
+
+**[15th Feb]** - This was the first meeting after having agreed upon our project goals, with the whole team attending, and was used to scope out exactly what functionality our website would have. A lot of ideas were proposed and bounced around, particularly regarding the GUI of the site; for example we initially envisioned all interaction with the website to take place in section that would slide in from the side. We decided to trial different GUIs using paper prototypes. We also used this time to designate team roles - [Discussion of team roles](#second). The goals we came up for in this period are as follows;
+
 Sprint aims:
 
 * Clarify project idea and scope
@@ -103,21 +103,23 @@ Sprint aims:
 
 This sprint mainly involved discussing what features our website should have and roughly how they might be implimented. We all agreed the webpage's focal point would be a world map in which user posts can be seen and would appear as a heatmap in different colours depending on the mood rating of the post. We also discussed other features such as account creation and post filtering. Being unsure how complex it would be to implement the map we chose to leave these features until after we had implemented the map and posts.
 
-There were some different opinions among the group regarding how the website should be laid-out. Some felt that the login bar should slide in from the side and others felt that a whole new page should open. We decided to draw up paper prototype of both of these cases and conduct a user study to decide (_SEE PAPER PROTOTYPING_ + SURVAY). We wanted our product to be as user driven as possible so getting user feedback early on was crucial.
+There were some different opinions among the group regarding how the website should be laid-out. Some felt that the login bar should slide in from the side and others felt that a whole new page should open. We decided to draw up paper prototype (see our [UX Design](uxDesign.md) document) of both of these cases and conduct a user study to decide. We wanted our product to be as user driven as possible so getting user feedback early on was crucial.
 
 As well as discussing project ideas this period was used to get familiar with the tech stack we were going to be using and github. We each watched the lectures on Angular and github, set up a shared github repository and got familiar with its protocols by making a few pushes and pulls. Although we intended to specialise into certain areas later on, we all got familiar with the frontend and Angular so further down the line it would be possible to be more flexible if required.
 
-### Meeting log
 
-**[15th Feb]** - This was the first meeting after having agreed upon our project goals and was used to scope out exactly what functionality our website would have. A lot of ideas were proposed and bounced around, particularly regarding the GUI of the site, and we decided to trial different GUIs using paper prototypes.
-
-**[26th Feb]** - With a very rough first draft of how our website would look and function we thought about what individual members would work on. One member suggested they would focus on user feedback + paper prototyping and we agreed they would put together some paper prototypes and conduct some interviews. The rest of the group's goal was getting familiar with the stack by watching the provided lectures and adding some basic elements to the website.
 
 ## Sprint 2: Work on feedback + find suitable API
 
 [27th feb - 10th mar]
 
 With the scope of the project and the basic functionalities required established, we began building our website proper, adding in the outlines of our eventual GUI, and crucially deciding on which map api we would use, and starting to implement it.
+
+### Meeting log:
+
+With each member assigned and working on a task and being in constant contact through Discord we decided to only meet once during this sprint.
+
+**[29th Mar]** - During this meeting (again the whole team attended) we focused on how we could iterate off of our paper prototype. We agreed for one group member (Zaki) to make some wire frames to be used in a user survey. We also debated which api to use for the map aspect of our idea; although some team members wanted to use google maps, we eventually decided upon the mapbox api, with some of the reasoning discussed later in this sprint. Now that we were also starting to get to grips with angular, we had a more in depth discussion of what features were feasible to produce in the timeframe we had for the project; at this stage Hari was keen on implementing user authentication, but as a group we decided on focusing purely on the map interface at this stage, as we were not sure how much time it would take to add in the features we wanted (we did eventually add in user authentication towards the end of the project). The goals for this period that we decided on are below.
 
 Sprint aims:
 
@@ -128,7 +130,7 @@ Sprint aims:
 
 With group members now familiar with Angular and Github we began adding basic, purely visual, features to our site. Results from our paper prototyping survey helped us decide how our GUI should operate. For example, initial feedback suggested users prefered the login page being a seperate page, rather than a slide in as we had originally invisioned. We also added a navbar, making use of the angular material toolbar element, to the website which included a mockup of our logo and a home button.
 
-After some research it was apparent that [mapbox] provided all the functionality we required, with us choosing it over google maps because of its open source nature and large number of styling options, allowing us to more readily make changes as the project developed. Initially, we simply got a basic map to display along with the aforementioned navbar, as at this stage we were still familiarising ourselves with the mapbox api.
+After some research it was apparent that mapbox provided all the functionality we required, with us choosing it over google maps because of its open source nature and large number of styling options, allowing us to more readily make changes as the project developed. Initially, we simply got a basic map to display along with the aforementioned navbar, as at this stage we were still familiarising ourselves with the mapbox api.
 
 At this point in the project we were intending to use this template data from one of the examples from the documentation (the extensive examples being another reason we chose the mapbox api) in our final product as it showcased how our site would look once many posts had been made. With fairly big steps made towards how we would like the finished project to look aesthetically we were now ready to start adding in some of the websites key functionality!
 
@@ -148,11 +150,6 @@ At this point in the project we were intending to use this template data from on
 </tr>
 </table>
 
-### Meeting log:
-
-With each member assigned and working on a task and being in constant contact through Discord we decided to only meet once during this sprint.
-
-**[8th Mar]** - During this meeting we reviewed user feedback collected previously and decided to have our log in bar pull in from the side. With the basic aesthetic of the front end implemented we agreed for one group member to make some wire frames to be used in a user survey. At this point the other group members were working on the front end, 2 group members were assigned to work on front end aesthetics whilst the other two looking deeper into mapbox and how it would be link with the to-be-created backend.
 
 ## Sprint 3: Serve dummy data from directly from API to frontend + set up data model:
 
@@ -160,7 +157,13 @@ With each member assigned and working on a task and being in constant contact th
 
 At this stage of the project is where we began to implement the key features that we would need later for collecting and sending information to and from the backend; we added what would become `geopost.js`. On the backend, we began building the mongo schemas that we would require to store our post data in later stages. At this point is also when we established a test process involving docker to facilitate continuous integration. We also began collecting user feedback on our intial boilerpate website.
 
-Sprint aims for this period:
+### Meeting log:
+
+**[11th Mar]** - At this meeting the whole team was present, and we decided use the time to designate key tasks to achieve the key features for the website. One member was allocated the task of conducting a user survey using the wire frames they had put together in the previous sprint (Zaki). The rest of the team was split into two working pairs, 2 on the front end (Ed and Tarn) and 2 on back end (Hari and Alfie). The two on the front end were tasked with integrating a mapbox example from the documentation.
+
+**[22nd Mar] (Back end specifically)** - The two team members working on the backend (Alfie and Hari) decided to have a meeting to discuss which portions of the backend each would work on. It was decided that Alfie would work towards getting the example data to be served from a local file and Hari would put together some mongo schemas and look into mongoDB and how we would store the geoJSON data required.
+
+Sprint aims we decided on for this period:
 
 * Collect initial user feedback
 * Set up site so dummy data is served through API route + Add linking to front end + making sure data model working in front end
@@ -191,17 +194,19 @@ As the complexity of our project began to grow we decided to implement a test pr
 </tr>
 </table>
 
-### Meeting log:
 
-**[16th Mar]** - We used this time to review what we had achieved to date, what needed to be done moving forward and who would do it. One member was allocated the task of conducting a user survey using the wire frames they had put together in the previous sprint. The rest of the team was split into two working pairs, 2 on the front end and 2 on back end. The two on the front end were tasked with making the front end look pretty and getting the mapbox example data to be displayed as required.
-
-**[22nd Mar] (Back end specifically)** - The two team members working on the backend (Alfie and Hari) decided to have a meeting to discuss which portions of the backend each would work on. It was decided that Alfie would work towards getting the example data to be served from a local file and Hari would put together some mongo schemas and look into mongoDB in general.
 
 ## Sprint 4: Set up mongoDB and import dummy data + user authentification
 
 [28th mar - 10th apr]
 
-This sprint was where we finally began to pull together the disperate elements of the website; our aims involved connecting the data fetching service to a function backend using mondoDB, instead of just returning static template data. This is where we also wanted to begin implementing some user feedback based off user questionnaires centered around our initial mockup. We also set a stretch goal of actually adding user profile, rather than have the posts be completely anonymous.
+This sprint was where we finally began to pull together the disperate elements of the website; our aims involved connecting the data fetching service to a function backend using mondoDB, instead of just returning static template data. This is where we also wanted to begin implementing some user feedback based off user questionnaires centred around our initial mockup. We also set a stretch goal of actually adding a user profile, rather than have the posts be completely anonymous.
+
+### Meeting log:
+
+**[29th Mar] (Backend and frontend)** - As an outcome of this meeting we wanted a list of remaining features that we needed in order to deliver a minimal viable product (see our goals for this sprint). We also wanted to discuss the feedback we had received on the state of the current website (this is discussed in more detail later in the sprint). We also decided at this stage that we would change the the emotion rating from a scale of 1-10 to 3 choices of happy, coping and sad, to make the trends/patterns of emotions on the map be more clear.
+
+**[9th Apr]** - This was a short meeting where the whole team met to discuss their progress. We also used this time to discuss some features we would like to add as extensions to the project, for example, connecting users who post with similar keywords (see our [Evaluation and Conclusion](evalSect.md) document for more detail).
 
 Our agreed goals for this period were;
 * Connect mondoDB (mongoose) to front end (so the front end is fetching data from our database)
@@ -244,15 +249,19 @@ We also finally implemented a user-post component, which allows new data to be a
 </tr>
 </table>
 
-### Meeting log:
 
-**[29th Mar]** - After reviewing the user feedback one of the team members working on the front end was allocated the task of putting together an about us page. At the start of this sprint most of the front end side of things was complete and just needed functionality added on the backend. Because of this, during this meeting we decided to move one of the members working on the front end to the backend. It was decided that one member of the team was tasked with working out the data model and mongo schemas and the others on posting and searching functionality. In the end one group member ended up implimenting a lot of the features we required including user authentication. 
 
 ## Sprint 5 Users enter more details + can filter by them:
 
 [11th Apr - 20th Apr]
 
 In this sprint we aimed to add to our website some of the more complex features, like searching through posts, and a user being able to view a timeline of the posts they have made, building upon the core foundation of sending and viewing posts we had established by the end of sprint 4. At this stage we also began transitioning from working on the website proper into gathering final user feedback and beginning to write our project report.
+
+### Meeting log:
+
+**[11th Apr]** - At this meeting we again discussed the aforementioned 'more complex features' and decided on the sprint aims below. We also discussed the visual design elements of these new features; initially wanting the user information to be accessible through popups, we decided on displaying it through a sidebar, in order to distinguish it from the popup that appears when a user makes a post; as the user posting was the most important feature we wanted it to be distinct.
+
+**[19th Apr]** - This was our first 'write-up' meeting; though we had been adding small sections to the project report up until this point, we used this meeting to review the current state of our report and deligate tasks; Zaki focusing on the introduction, Tarn the UX, Hari the System Implemention and Ed and Alfie the Sprints and project management (the whole team would work on the evaluation and conclusion).
 
 Our sprint aims were;
 - users now enter age, gender and can now can be filtered by this (posts linked to user accounts)
@@ -265,9 +274,7 @@ Our sprint aims were;
 
 To add more functionality when a user logs in, we implemented a sidebar, the state of which was determined by our `sidebar.service`, which we triggered through button presses in our `sidebar.component.html` and `sidebar.component.ts`. Depending on the state of our `sidebar.service` different visual elements would be displayed; for example if the user clicks the postlist icon, the `userpost-display` component is called, which shows a scrollable timeline of the users post history. Another key aspect was the `usersearch-display` which required extensive use of angular services and api calls to our back end in order to return the correct results - the detailed implementation of this is discussed in our [System Implementation](sysImp.md) document.
 
-As the website was nearing completion, we carried out a further round of user questionnaires to gather feedback on the final website design, with some of the resulting design changes discussed in our [UX Design](uxDesign.md) document.
-
-At this stage we were happy our website was in a good place, so we began to start working on the project write up, initially focusing on formatting our README, and producing a rough outline of the content we needed to fill in.
+As the website was nearing completion, we carried out a further round of user questionnaires to gather feedback on the final website design, with some of the resulting design changes discussed in our [UX Design](uxDesign.md) document. We also began to start working on the project write up, initially focusing on formatting our README, and producing a rough outline of the content we needed to fill in.
 
 ### Key implementation issues found:
 <table>
@@ -295,7 +302,13 @@ At this stage we were happy our website was in a good place, so we began to star
 
 [21st apr - hand in]
 
-At this stage we were purely focusing on the write up, with our minimal viable product completed. We were however making small changes to design elements as we continued to gather feedback
+At this stage we were purely focusing on the write up, with our minimal viable product completed. We were however making small changes to design elements as we continued to gather feedback.
+
+### Meeting log:
+
+Most of our communication at this stage was through our discord chat, where we were keeping each other up to date on the progress of our write up sections.
+
+**[27th Apr]** - In this meeting we discussed any final changes we thought we needed to make to the website based on the user feedback (discussed below), and also discussed the structuring of our project write up and its progress.
 
 Our aims for this sprint;
 - Finish the write up
