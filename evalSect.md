@@ -68,7 +68,7 @@ These interviews were carried out throughout the development process all the way
 *give a questionnaire stats between the two wireframes*
 
 ### Stage 3: INVOLVEMENT OF QUANTITATIVE FEEDBACK 24/3/21
-*screenshot of 5 point likert scale*
+*screenshot of 5 point likert scale*  
 
 24/3/21: Although we felt that interviews were a good source of creating qualitative feedback, we made a decision to try and increase our sample size when it came to evaluating our product and attempt to create some quantitative feedback. In order to achieve a quantitative metric for how a user would feel about our product, we decided it was necessary to ask some 'how much' and 'how many' questions at scale to our users. Very shortly after we started showing our first wireframe to users, we created a questionnaire that we could send alongside the link to the wireframe. Click on this link to see it! *link the questionnaire*. We tried to push the quantitative aspect of the questionnaires by using 5 point likert scale, as seen in the above figure.  
 
@@ -97,7 +97,7 @@ The way in which we obtained user feedback here was similar to that of the wiref
 *stat difference between 2nd wireframe and what users thought when using local host*
 
 
-## How successful was our evaluation of methods?
+## How successful were our methods of evaluation?
 
 On analysis of our qualitative data, we were able to conclude that throughout the process of feedback and the subsequent development of software, users started to see the purpose of the website as being more in line with what we initially set out for it to be. For us, this somewhat represented the success of the process behind how we evaluated user's perceptions of our product.    
 
