@@ -959,12 +959,81 @@ The Authentication service is injected into the sidebar component. When the user
   <img align="center" src="supporting_images/titmp.png" width="250px">
   </p> 
 
+  ***How does navigation work***
+  Firstly, we created a link between components and their respective URL paths, on the 'app-routing.ts' file. We also added an Authentication guard on the '/login' and '/signup' paths. This is another inbuilt module that comes with Angular. Checks the Authentication state, any time these paths have been triggered by the router. We set it so that if a user is logged in, and manually type in those URL paths on the browser, they will be re-routed back to the Mapbox Component. We felt it would be odd if the user is logged in and they still have access to the Login page and can log in again.
+  ```js
+    const routes: Routes = [
+    { path: '', component: MapboxComponent},
+    { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
+    { path: 'signup', component: SignupComponent, canActivate: [AuthGuard] },
+    { path: 'about', component: AboutComponent },
+  ];
+  ```
+  Now we have the routing paths set up, we can make use of them in the Toolbar Component. When initialized the Toolbar subscribes to the 'authState' in the Authentication Service, and stores the boolean as a local variable called 'isLoggedIn'. When the user is not logged in, this value will be false. So the Toolbar will show the 'Signup' and 'Login' anchor tags. The 'About' anchor tag is always displayed, regardless of the authentication state. These tags contain the Angular's routerLink attribute, and we set them equal to the corresponding URL path defined in the 'app-routing.ts' file. 
+
+  <p align="center">
+  <img align="center" src="supporting_images/toolbarnotlogin.png" width="550px">
+  </p> 
+  
+  So when the user clicks on the tags, it will render that component. When the user logs in, and 'isLoggedIn' is true, we use the *ngIf directive to remove the anchor tags mentioned above. Only the 'About' anchor tag will remain.
+    
+  <p align="center">
+  <img align="center" src="supporting_images/toolbarlogin.png" width="550px">
+  </p> 
+
+  The EmoteMap log, is also an anchor tag with a routerLink embedded into it. It routes the user back to the Mapbox component when on the on the other pages
+
+  ```html
+  <mat-toolbar class="toolbar_white" color="header">
+    <a routerLink=''> <img class="logo" width="80" height="80" alt="Earth Logo" src="./assets/logos/earth.png" /></a>
+    <span class="Title">{{title}}</span>
+    <div class="loginSect" *ngIf="!isLoggedIn">
+      <span class="about">
+        <a style="text-decoration: none;" routerLink='/about'>About</a>
+      </span>
+      <span routerLink='/signup' class="signUp">
+        <a>SignUp</a>
+      </span>
+      <span routerLink='/login' class="login">
+        <a>Login</a>
+      </span>
+    </div>
+    <span class="aboutLI" *ngIf="isLoggedIn">
+      <a style="text-decoration: none;" routerLink='/about'>About</a>
+    </span>
+  </mat-toolbar>
+  ```
+  When the user clicks the respective span tag, it will render the correspondint component on the screen.
+
+
+
+  ```html
+  <mat-toolbar class="toolbar_white" color="header">
+  <a routerLink=''> <img class="logo" width="80" height="80" alt="Earth Logo" src="./assets/logos/earth.png" /></a>
+  <span class="Title">{{title}}</span>
+  <div class="loginSect" *ngIf="!isLoggedIn">
+    <span class="about">
+      <a style="text-decoration: none;" routerLink='/about'>About</a>
+    </span>
+    <span routerLink='/signup' class="signUp">
+      <a>SignUp</a>
+    </span>
+    <span routerLink='/login' class="login">
+      <a>Login</a>
+    </span>
+  </div>
+  <span class="aboutLI" *ngIf="isLoggedIn">
+    <a style="text-decoration: none;" routerLink='/about'>About</a>
+  </span>
+</mat-toolbar>
+```
+
 ## User Service:
 
   ### Class Diagram:
   
   <p align="center">
-  <img src="supporting_images/user.png" width="950px"> 
+  <img src="supporting_images/user.png" width="850px"> 
   </p>
 
 ## User-search Service:
@@ -972,10 +1041,24 @@ The Authentication service is injected into the sidebar component. When the user
   ### Class Diagram:
   
   <p align="center">
-  <img src="supporting_images/usersearch.png" width="950px">
+  <img src="supporting_images/usersearch.png" width="650px">
   </p>
 
+This service is responsible for allowing the users to search for other user's posts, by age, gender, date and mood. <br/>
 
+Lets start by discussing the anatomy of the User-Search Service. This is defined by three attributes: 
+```js
+  hasSearchInit!: BehaviorSubject<boolean>;
+  searchQueryState!: BehaviorSubject<Search>;
+  private geoSearchState!: BehaviorSubject<Array<GeoJson>>;
+```
+HasSearchInit, holds boolean as state. This commuicates to the other components whether the 'search' mode is activated or not. There are two components in our application that subscribe to this Behabiour subject using the 'getIsInSearchState()' method in the 'User-Search' service.
+```js
+  getIsInSearchState(): BehaviorSubject<boolean> {
+    return this.hasSearchInit;
+  }
+```
+We mentioned in the Post Service section, that when the map loads
 
 
 
