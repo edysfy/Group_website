@@ -1019,6 +1019,19 @@ The Authentication service is injected into the sidebar component. When the user
   <img src="supporting_images/user.png" width="850px"> 
   </p>
 
+Finally, we use the api’s map.flyto function to move and zoom in on specific data points, which we call using an event listener in the mapbox-component html from a button click in the usersearch-display-component (which displays posts resulting from a user search).
+
+```javascript
+flyTo(lngLat: number[]) {
+  if(!isNaN(lngLat[0])&&!isNaN(lngLat[1])){
+    this.map.flyTo({
+    center: [lngLat[0], lngLat[1]],
+    zoom: 15,
+  });
+}
+}
+```
+
 ## User-search Service:
 
   ### Class Diagram:
@@ -1071,48 +1084,12 @@ There are two components in our application that subscribe to this Behavior Subj
 ```
 ### How does the user make a search query?
 
+ As mentioned previously, when the user presses the Search icon on the navbar, Mapbox will render the Userseach and Usersearch-display component. Here is how the UI will appear when this event occurs: 
 
+  <p align="center">
+  <img src="supporting_images/usersearchui.png" width="650px">
+  </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Finally, we use the api’s map.flyto function to move and zoom in on specific data points, which we call using an event listener in the mapbox-component html from a button click in the usersearch-display-component (which displays posts resulting from a user search).
-
-```javascript
-flyTo(lngLat: number[]) {
-  if(!isNaN(lngLat[0])&&!isNaN(lngLat[1])){
-    this.map.flyTo({
-    center: [lngLat[0], lngLat[1]],
-    zoom: 15,
-  });
-}
-}
-```
 
 ### Deployment details (including Docker), include how you have been achieving continuous integration and deployment
 We implemented a docker-compose script from early on in the development process, which ended up being crucial in maintaining code quality and compatibility - we made sure that before each push to our group repository that the website was functioning both when running node server.js and docker-compose up. Docker was especially important for this as it provides a repeatable environment in the form of a docker container; we can be sure that if the project is working on one machine in docker, it will work on others. We primarily achieved continuous integration by utilising docker in this way, but also crucial was the factoring in of all the components of the MEAN stack from a very early stage. After deciding on the api we would use to present the map (mapbox) and setting up a basic template website using it, we quickly added an api (this api eventually became geopost.js) in order to deal with fetching the data for the map; even though this was collecting static data at first, it meant that functionally our website was behaving as it would when we we utilising all parts of the mean stack (i.e. when we added in a mongoDB database, this api would now fetch data from the database instead of using static data). This allowed us to test and run our website using node server.js (and docker-compose up) after every change as previously mentioned. As we also made use of github, allowing us to all share and download the most up to date files, we were able to continuously implement and integrate changes throughout the development process (see [Sprints & Project Management](sprints.md) for more details).
