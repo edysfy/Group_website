@@ -38,7 +38,7 @@ export class UserSearchService {
   }
 
   getSearchQuery(): void {
-    this.sub = this.searchQueryState.subscribe((searchQuery) => {
+    this.sub = this.searchQueryState.asObservable().subscribe((searchQuery) => {
       console.log(searchQuery);
       this.http.post<{ message: string, geoSearchArray: IGeoJson[] }>(
         'http://localhost:3000/api/search',
