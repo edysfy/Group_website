@@ -483,6 +483,13 @@ Lets break down this Express application and describe how it works:
 
 # Front End - Angular, Details of implementation
 
+### Angular Material
+We heavily relied on the use of the [Angular Material](https://material.angular.io) library. This us provided pre-build UI components, that can be styled easily. <br/>
+#### Mapbox
+We used the [Mapbox API](https://docs.mapbox.com/mapbox-gl-js/api/), which provided us with a customizable map. That met our needs adequately. <br/><br/>
+The implementation of these API's are mentioned in more detail throughout the rest of the application.
+
+
 Our front end is comprised of many components. We felt the best way to break down the implementation of the front end is by grouping the application by Services as they are heart of how each process works. 
 
 ## Post Service:
@@ -954,60 +961,63 @@ The Authentication service is injected into the sidebar component. When the user
   ```
 
   <p align="center">
-  <img align="center" src="supporting_images/tithp.png" width="250px">
+  <img align="center" src="supporting_images/tithp.png" width="275px">
   <img align="center" src="supporting_images/titlogin.png" width="250px">
-  <img align="center" src="supporting_images/titmp.png" width="250px">
+  <img align="center" src="supporting_images/titmp.png" width="390px">
   </p> 
+
+  ### How does navigation work?:
+  Firstly, we created a link between components and their respective URL paths, on the 'app-routing.ts' file. We also added an Authentication guard on the '/login' and '/signup' paths. This is another inbuilt module that comes with Angular. Checks the Authentication state, any time these paths have been triggered by the router. We set it so that if a user is logged in, and manually type in those URL paths on the browser, they will be re-routed back to the Mapbox Component. We felt it would be odd if the user is logged in and they still have access to the Login page and can log in again.
+  ```js
+    const routes: Routes = [
+    { path: '', component: MapboxComponent},
+    { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
+    { path: 'signup', component: SignupComponent, canActivate: [AuthGuard] },
+    { path: 'about', component: AboutComponent },
+  ];
+  ```
+  Now we have the routing paths set up, we can make use of them in the Toolbar Component. When initialized the Toolbar subscribes to the 'authState' in the Authentication Service, and stores the boolean as a local variable called 'isLoggedIn'. When the user is not logged in, this value will be false. So the Toolbar will show the 'Signup' and 'Login' anchor tags. The 'About' anchor tag is always displayed, regardless of the authentication state. These tags contain the Angular's routerLink attribute, and we set them equal to the corresponding URL path defined in the 'app-routing.ts' file. 
+
+  <p align="center">
+  <img align="center" src="supporting_images/toolbarnotlogin.png" width="550px">
+  </p> 
+  
+  So when the user clicks on the tags, it will render that component. When the user logs in, and 'isLoggedIn' is true, we use the *ngIf directive to remove the anchor tags mentioned above. Only the 'About' anchor tag will remain.
+    
+  <p align="center">
+  <img align="center" src="supporting_images/toolbarlogin.png" width="550px">
+  </p> 
+
+  The EmoteMap log, is also an anchor tag with a routerLink embedded into it. It routes the user back to the Mapbox component when on the on the other pages
+
+  ```html
+  <mat-toolbar class="toolbar_white" color="header">
+  <a routerLink=''> <img class="logo" width="80" height="80" alt="Earth Logo" src="./assets/logos/earth.png" /></a>
+  <span class="Title">{{title}}</span>
+  <div class="loginSect" *ngIf="!isLoggedIn">
+    <span class="about">
+      <a style="text-decoration: none;" routerLink='/about'>About</a>
+    </span>
+    <span routerLink='/signup' class="signUp">
+      <a>SignUp</a>
+    </span>
+    <span routerLink='/login' class="login">
+      <a>Login</a>
+    </span>
+  </div>
+  <span class="aboutLI" *ngIf="isLoggedIn">
+    <a style="text-decoration: none;" routerLink='/about'>About</a>
+  </span>
+</mat-toolbar>
+```
 
 ## User Service:
 
   ### Class Diagram:
   
   <p align="center">
-  <img src="supporting_images/user.png" width="950px"> 
+  <img src="supporting_images/user.png" width="850px"> 
   </p>
-
-## User-search Service:
-
-  ### Class Diagram:
-  
-  <p align="center">
-  <img src="supporting_images/usersearch.png" width="950px">
-  </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Angular Material
-[Angular Material](https://material.angular.io)
-
-
-#### Mapbox
-[Mapbox API](https://docs.mapbox.com/mapbox-gl-js/api/)
-
-
-
 
 Finally, we use the api’s map.flyto function to move and zoom in on specific data points, which we call using an event listener in the mapbox-component html from a button click in the usersearch-display-component (which displays posts resulting from a user search).
 
@@ -1021,6 +1031,65 @@ flyTo(lngLat: number[]) {
 }
 }
 ```
+
+## User-search Service:
+
+  ### Class Diagram:
+  
+  <p align="center">
+  <img src="supporting_images/usersearch.png" width="650px">
+  </p>
+
+This service is responsible for allowing the users to search for other user's posts, by age, gender, date and mood. <br/>
+
+Lets start by discussing the anatomy of the User-Search Service. This is defined by three attributes: 
+```js
+  hasSearchInit!: BehaviorSubject<boolean>;
+  searchQueryState!: BehaviorSubject<Search>;
+  private geoSearchState!: BehaviorSubject<Array<GeoJson>>;
+```
+HasSearchInit, is a Behaviour Subject variable of type boolean. This variable is responsible for communicating to other components that the user has activated search mode. 
+When the user clicks the search icon in the navbar, Mapbox will initialize the Usersearch component. This component has the User-Search Service injected into it. We use the 'onInit()' in the component, and call the 'setHasSearchInit()' method in the User-Search Service. It takes a boolean as a parameter and we pass true. This function calls the 'next()' method on 'hasSearchInit', and updates the state with the boolean sent from the Usersearch component. This new state is broadcast to the components subscribed to this observable. 
+```js
+  setHasSearchInit(set: boolean): void {
+    this.hasSearchInit.next(set);
+  }
+```
+When the user changes the Sidebar state again, We make use of 'ngOnDestroy()' directive in the Usersearch component. This method calls the same function as above, but the boolean sent is false. This tells the components subscribed that the search mode has been deactivated. <br/>
+There are two components in our application that subscribe to this Behavior Subject using the 'getIsInSearchState()' method in the 'User-Search' service:
+```js
+  getIsInSearchState(): BehaviorSubject<boolean> {
+    return this.hasSearchInit;
+  }
+```
+1. The Userpost Component: 
+- If the search mode is activated, then it will not allow to submit their EmotePost. 
+```js
+    if(this.searchActivated) {
+      this.dialogRef.close();
+      alert("Unable to post in search mode");
+      return;
+    }
+```
+2. The Mapbox Component: 
+- We mentioned, in the Post Service section, that when the map initialize sand calls the 'map.on('load')' event emitter we subscribe to 'hasSearchInit.asObservable()'. When the search mode is false, the map will render the data coming from the Post Service. When true, Mapbox will clear all the layers created by the data from the Post Service. It Then calls the 'pullAndDisplayGJPointsFromSearchQuery()' method. This creates a new 'data' source, and calls the 'getGeoSearchObvservable()' from the User-Search service. This returns the 'geoSearchState.asObservable()'. We then subscribe to this observable. The 'geoSearchState' Behaviour Subject contains state of type Array<GeoJson>. When the state of this Observable changes, Mapbox will obtain the new array and call the 'setData()' method on the 'data' source. And pass the new FeatureCollecion object, which is made from the updated GeoJson array. Mapbox then creates the layers from this new 'data'. Again can refer to the "How to get and display data". This how we get the map to instantly update the GeoJson points, without refreshing the page, when the user makes a new search query.
+```js 
+  pullAndDisplayGJPointsFromSearchQuery(): void {
+    this.createDataSource('data');
+    this.source = this.map.getSource('data');
+    this.userSearchService.getGeoSearchObvservable().subscribe(geoSearchArr => {
+      this.source.setData(new FeatureCollection(geoSearchArr));
+    })
+  }
+```
+### How does the user make a search query?
+
+ As mentioned previously, when the user presses the Search icon on the navbar, Mapbox will render the Userseach and Usersearch-display component. Here is how the UI will appear when this event occurs: 
+
+  <p align="center">
+  <img src="supporting_images/usersearchui.png" width="650px">
+  </p>
+
 
 ### Deployment details (including Docker), include how you have been achieving continuous integration and deployment
 We implemented a docker-compose script from early on in the development process, which ended up being crucial in maintaining code quality and compatibility - we made sure that before each push to our group repository that the website was functioning both when running node server.js and docker-compose up. Docker was especially important for this as it provides a repeatable environment in the form of a docker container; we can be sure that if the project is working on one machine in docker, it will work on others. We primarily achieved continuous integration by utilising docker in this way, but also crucial was the factoring in of all the components of the MEAN stack from a very early stage. After deciding on the api we would use to present the map (mapbox) and setting up a basic template website using it, we quickly added an api (this api eventually became geopost.js) in order to deal with fetching the data for the map; even though this was collecting static data at first, it meant that functionally our website was behaving as it would when we we utilising all parts of the mean stack (i.e. when we added in a mongoDB database, this api would now fetch data from the database instead of using static data). This allowed us to test and run our website using node server.js (and docker-compose up) after every change as previously mentioned. As we also made use of github, allowing us to all share and download the most up to date files, we were able to continuously implement and integrate changes throughout the development process (see [Sprints & Project Management](sprints.md) for more details).
