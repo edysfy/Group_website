@@ -631,7 +631,21 @@ For the 'markers' layer, we utilized Mapbox's popup feature, such that when the 
 
 
 ### How to post data:
-Initially, the user has to be authenticated before making a post. So the first thing we do is call upon the Authentication Service, inject it into Mapbox, and subscribe to getAuthMethod() in the service. This allows Mapbox to know if the user is authenticated, and can update the UI if the user logs off. Allowing a user to make EmotePosts is a core feature of our application. We need to display the Userpost component, which holds a form that the user can submit. We render this form on a mat-dialog component. 
+Initially, the user has to be authenticated before making a post. So the first thing we do is call upon the Authentication Service, inject it into Mapbox, and subscribe to getAuthMethod() in the service. This allows Mapbox to know if the user is authenticated, and can update the UI if the user logs off. Allowing a user to make EmotePosts is a core feature of our application. We need to display the Userpost component, which holds a form that the user can submit. We render this form on a mat-dialog component. Mat-dialog is an Angular Material module, that pops a component to the screen with the highest z-index out of the other components.<br/>
+Lets talk about the dybamics of the Userpost form...
+Angular comes reactive forms. This a module that allows the develop to build the form with more customization. This was the first form we built, and thought it would be complex, so we decided to build it with a reactive form. To build the form you have to define a FormGroup variable, which we called 'form'. You then have to equal this to a new FormGroup object, with a javascript objact as a paramter. This object with contain the fields of the form, as attributes. For each attribute to can add custom validation, as shown below.
+```js
+    this.form = new FormGroup({
+      rating: new FormControl(null),
+      keyword: new FormControl(null, {
+        validators: [Validators.required, Validators.minLength(3)],
+      }),
+      post: new FormControl(null, {
+        validators: [Validators.required, Validators.maxLength(2000)],
+      }),
+    });
+```
+We create a form template, in the HTML file and bound the 'formGroup' attribute in the HTML to the 'form' variable initialized in the component. This allows us to manipulate the reactive form, and send its data to the Post Service. The most interesting attribute of 'form', what the rating. An interesting attribute of 'form' was 'rating'. We had a mat-slider component in the form and combined this to a mat-input field. This input field's NgModel is bound to the 'ratings' variable we defined. Its default value was 'Coping'. So the field initially displays this text to the user. The user can use the slider to choose values 1,2 and 3. Whenever the user used the slider and changed its value, an event was sent to the 'onSliderChange()' method. If the value of the event was 1, it set 'ratings' to be 'Happy', and set the respective emotions for 2 and 3. Now as 'ratings' is bound to the NgModel of the input field. The new emotion will be displayed to the user. It will also set another variable called 'sliderValue' to the value of the event the slider emits, ie 1,2 or 3. This value is sent to the Post Service with the other input field values when the form is submitted. This value is the mood attribute of the GeoJson 'properties' attribute.
 
   <p align="center">
   <img src="supporting_images/emotepost.png" width="550px">
@@ -681,7 +695,7 @@ The Post Service is injected into the Userpost component. When the user presses 
   <img src="supporting_images/unablesearchmode.png" width="550px">
   </p>
 
-2. We validate the form. The 'keyword' input field must contain one word ONLY, and the post body cannot be empty. The keyword is bound to be an alphanumeric single word. Angular has pattern attributes for input fields. So it will mean the field is invalid if the user won't match that pattern. We then have a div, that conditionally renders if the input fields are invalid, thus displaying the error message to the user.
+2.  We validate the form using the FormControl object. We define this object for each attribute when initializing a new FormGroup. The 'keyword' input field must contain one word ONLY and has a min length of three characters. The keyword is also bound to be an alphanumeric single word by defining a Regex pattern attribute on the HTML. So it will mean the field is invalid if the user won't match that pattern. The 'post' input field couldn't be empty and had a max character limit of 3000.  We then have a div, that conditionally renders if the input fields are invalid, thus displaying the error message to the user. We check vis using this boolean 'form.controls['form' ATTRIBUTE].invalid'.
 
   <p align="center">
   <img src="supporting_images/formvalidaitno.png" width="550px">
