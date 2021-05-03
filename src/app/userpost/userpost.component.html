@@ -5,7 +5,7 @@
     <div class="slider">
       <mat-form-field class="sliderForm">
         <mat-label>Mood</mat-label>
-        <input formControlName="rating" matInput [(ngModel)]="rating" type="text" 
+        <input formControlName="rating" matInput [ngModel]="rating" type="text" 
           onkeydown="return false" style="height: 30px;"/>
       </mat-form-field>
       <mat-slider class="sliderSl" tickInterval="auto" [displayWith]="formatLabel" min="1" max="3" step="1"

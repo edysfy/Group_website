@@ -20,9 +20,6 @@ We needed three main components that comprise the stack.
     This is responsible for the user experience and data creation through the use of Angular forms.
     The user can explore the map, create an account, log in, create Emote posts, view other users' posts, have access to their posts in a timeline, delete their posts, fly to a post, and search for other users' posts (by date, age, and gender). To display a map, we needed to connect to an external API. We had two options. One Mapbox and the other was GoogleMaps. Firstly, Mapbox was more appealing as it is the underdog. We didn't want to be involved with a conglomerate like Google. After digesting Mapbox's API, we realized it is capable of doing everything we wanted. Especially, displaying a heat map. It accepts geoJson data and provides the developer with a lot of support to customize and visualize that data on the map. It accepts data via a direct link to a URL path, or through building your objects. This was useful as it allowed us to use geoJson objects that are stored in memory on the front end. As an example (will be explained in a lot more detail in the front end), when the user made a post-it would automatically update the UI, as we stored the new post in a Service. The Mapbox component listens to changes in the geoJson array and re-renders the data on the map. We used a set of Angular Services to maintain state and allow data to flow between components on the frontend, as well as providing a link between the data flowing to the REST API.
 
-
- # ADD SEQUECNE DIAGRAM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   
-
 Lets go into some more depth...    
 
 # MongoDB - database implementation
@@ -519,7 +516,19 @@ For Mapbox to be able to render the GeoJson data from the backend, we need to co
   ```
 We have a function getGeoPostData() in the Post Service, when this is called it sends a GET request to our API to retrieve the data. Once the data arrives, we convert each data into a GeoJson object as described above (by passing the relevant data through the GeoJson constructor), and push it to the 'geoPost' array stored in the service. Once this is complete, we have a Behaviour Subject called 'geoPostSubject', this maintains the state of the 'geoPost' array. It can return Observables, meaning other components in the application can subscribe to it and trigger functions when there is a change of state. We called the 'next' method on this 'geoPostSubject' and pass in the 'geoPost' array to update the state with the data from the backend. We also need a check. We only push data from the backend into the service if the 'geoPost' array length doesn't equal the array coming in from the back end. As this function, can be called multiple times by the Mapbox component, if this check wasn't in place it will render duplicate data. Once, we update the state we return 'geoPostSubject.asObservable()'.
 
-This service is injected into the Mapbox component. When the component is initialized, it calls map.init(), which initializes the map as per our specifications. We then call the map.on('load'). This is a function that allows us to manipulate the map when the event 'load' is triggered.
+This service is injected into the Mapbox component. When the component is initialized, it calls initMap(), which initializes the map as per our specifications. Mapbox provides numerous styles of world maps to display (we chose a dark colour scheme to better highlight the information in our data layers, to be covered shortly), which we initialise in the components ngOnInit function.
+```javascript
+initMap(): void {
+  (mapboxgl as any).accessToken = environment.mapboxToken;
+  this.map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/dark-v10',
+    zoom: 2,
+    center: [-0.2101765, 51.5942466],
+  });
+}
+```
+We then call the map.on('load'). This is a function that allows us to manipulate the map when the event 'load' is triggered.
 ```js
 this.map.on('load', (e) => {
       this.userSearchService
@@ -626,8 +635,29 @@ We pass the 'user-marker' layer into it. Then we say if the property 'username' 
   <img src="supporting_images/usermakers.png" width="550px">
   </p> 
 
+For the 'markers' layer, we utilized Mapbox's popup feature, such that when the 'markers' layer is rendered (i.e. the user is zoomed in enough) and the user hovers over one of the displayed circles, a pop up appears, displaying the specific post data (keyword, mood and description) from the GeoJson data's 'properties' attribute. We also have a hover off event, that essentially destroys the popup.
+  
+  <p align="center">
+  <img src="supporting_images/hoverlayer.png" width="550px">
+  </p> 
+
+
 ### How to post data:
-Initially, the user has to be authenticated before making a post. So the first thing we do is call upon the Authentication Service, inject it into Mapbox, and subscribe to getAuthMethod() in the service. This allows Mapbox to know if the user is authenticated, and can update the UI if the user logs off. Allowing a user to make EmotePosts is a core feature of our application. We need to display the Userpost component, which holds a form that the user can submit. We render this form on a mat-dialog component. 
+Initially, the user has to be authenticated before making a post. So the first thing we do is call upon the Authentication Service, inject it into Mapbox, and subscribe to getAuthMethod() in the service. This allows Mapbox to know if the user is authenticated, and can update the UI if the user logs off. Allowing a user to make EmotePosts is a core feature of our application. We need to display the Userpost component, which holds a form that the user can submit. We render this form on a mat-dialog component. Mat-dialog is an Angular Material module, that pops a component to the screen with the highest z-index out of the other components.<br/>
+Lets talk about the dybamics of the Userpost form...
+Angular comes reactive forms. This a module that allows the develop to build the form with more customization. This was the first form we built, and thought it would be complex, so we decided to build it with a reactive form. To build the form you have to define a FormGroup variable, which we called 'form'. You then have to equal this to a new FormGroup object, with a javascript objact as a paramter. This object with contain the fields of the form, as attributes. For each attribute to can add custom validation, as shown below.
+```js
+    this.form = new FormGroup({
+      rating: new FormControl(null),
+      keyword: new FormControl(null, {
+        validators: [Validators.required, Validators.minLength(3)],
+      }),
+      post: new FormControl(null, {
+        validators: [Validators.required, Validators.maxLength(2000)],
+      }),
+    });
+```
+We create a form template, in the HTML file and bound the 'formGroup' attribute in the HTML to the 'form' variable initialized in the component. This allows us to manipulate the reactive form, and send its data to the Post Service. The most interesting attribute of 'form', what the rating. An interesting attribute of 'form' was 'rating'. We had a mat-slider component in the form and combined this to a mat-input field. This input field's NgModel is bound to the 'ratings' variable we defined. Its default value was 'Coping'. So the field initially displays this text to the user. The user can use the slider to choose values 1,2 and 3. Whenever the user used the slider and changed its value, an event was sent to the 'onSliderChange()' method. If the value of the event was 1, it set 'ratings' to be 'Happy', and set the respective emotions for 2 and 3. Now as 'ratings' is bound to the NgModel of the input field. The new emotion will be displayed to the user. It will also set another variable called 'sliderValue' to the value of the event the slider emits, ie 1,2 or 3. This value is sent to the Post Service with the other input field values when the form is submitted. This value is the mood attribute of the GeoJson 'properties' attribute.
 
   <p align="center">
   <img src="supporting_images/emotepost.png" width="550px">
@@ -663,7 +693,18 @@ this.map.on('click', (e) => {
   <img src="supporting_images/navbar.png" width="550px">
   </p>
   
-If the user is logged in. The Mapbox component will render the Sidebar component (using *ngIf directives), they now can access to the navbar. On the navbar, there is a blue + button. When the user clicks on this button, the same process happens as above, except the coordinates updated in the Post Service represent the User's actual location. If the user submits the form before the program fetches their coordinates, we alert the user that they can not proceed.
+If the user is logged in. The Mapbox component will render the Sidebar component (using *ngIf directives), they now can access to the navbar. On the navbar, there is a blue + button. When the user clicks on this button, the same process happens as above, except the coordinates updated in the Post Service represent the User's actual location. We get the coordinated by using the Javascript inbuilt navigator module:
+```js
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      this.postService.updateLongLat({
+        long: position.coords.longitude,
+        lat: position.coords.latitude,
+      });
+    });
+```    
+Once the coordinates have been obtained we update the coordinate state in the Post Service.
+This is an asynchronous function. If the user submits the form before the program fetches their coordinates, we alert the user that they can not proceed.
   
   <p align="center">
   <img src="supporting_images/locationerr.png" width="550px">
@@ -677,7 +718,7 @@ The Post Service is injected into the Userpost component. When the user presses 
   <img src="supporting_images/unablesearchmode.png" width="550px">
   </p>
 
-2. We validate the form. The the 'keyword' input field must to contain one word ONLY, and they post body cannot be empty.
+2.  We validate the form using the FormControl object. We define this object for each attribute when initializing a new FormGroup. The 'keyword' input field must contain one word ONLY and has a min length of three characters. The keyword is also bound to be an alphanumeric single word by defining a Regex pattern attribute on the HTML. So it will mean the field is invalid if the user won't match that pattern. The 'post' input field couldn't be empty and had a max character limit of 3000.  We then have a div, that conditionally renders if the input fields are invalid, thus displaying the error message to the user. We check vis using this boolean 'form.controls['form' ATTRIBUTE].invalid'.
 
   <p align="center">
   <img src="supporting_images/formvalidaitno.png" width="550px">
@@ -686,12 +727,130 @@ The Post Service is injected into the Userpost component. When the user presses 
 If the measures have been overcome, then the 'createPost()' method in the Post Service is called, and the values of the form are sent into the service. We create GeoJson data out of the form values, which matches the Mongoose GeoJson Schema on the backend. We use local storage to add the user's username to the GeoJson. We add the current coordinates in Post Service (obtained by the methods above) to the 'geometry' attribute. We use the HTTP POST method to send to the '/api/geopost' route on the API. After the response has arrived from the API and is successful, we push the GeoJson data to the 'geoPost' array and update the 'geoPostSubject' with the altered array, rendering the new Post onto Mapbox's layers dynamically. We also add posts to the user's GeoJson array stored in the User Service, so the new post will render dynamically on the Userpost-Display component. (more detail in User Service Section.)
   
 ## Authentication Service:
-
   ### Class Diagram:
   
   <p align="center">
   <img src="supporting_images/auth.png" width="950px">
   </p> 
+  We inject the HTTP Client module into this service, so we can connect this service to our API.  
+
+  The Authentication Service was a key part of our application. It allows users to gain extra functionality. For example, only users can make posts, view their posts in a timeline, delete their posts, search for others user's posts, and set their age and gender. For this to work, the Authentication Service distributes the authentication state throughout the application.
+
+  Lets take a look of the application when the user is NOT logged in:
+
+  <p align="center">
+  <img align="center" src="supporting_images/nonlogin.png" width="450px">
+  <img align="center" src="supporting_images/nonlogwelcome.png" width="450px">
+  </p> 
+
+  The user can only see the heatmap, pins, and can hover over the pins to read the post. Mapbox renders a button called welcome, when the user is not logged in. This displays a dialog that describes what you can do if you are not logged on.
+
+  Here is how the user can authenticate themselves:
+  -  They can click the 'Signup' or 'Login' text in the toolbar it it will route to these corresponding pages.
+
+  <p align="center">
+  <img align="center" src="supporting_images/singup.png" width="450px">
+  <img align="center" src="supporting_images/login.png" width="450px">
+  </p> 
+
+  
+  ### The process to register an account:
+  - We built signup UI using Angular's template-driven forms. The user has to enter a username, password, and repeat password to be able to submit the form. We didn't implement and fancy validation or password patterns using regex. Just made sure the entries were not null. We had basic validation on the fields and used mat-error from Angular material to throw errors back to the user through the input fields. You can see in the left screenshot above, how the field is red, and display a message if they are empty when the user presses submit. This validation is simple with Angular Template forms. We added, ngModel, matInput, and the 'required' attributes to the HTML input fields within the form. This allows us to check if the NgModel value for the field is invalid. We conditionally render a mat-error HTML tag, if this is true. When the 'register' button is pressed, we send the NgForm to an 'onSubmit()' function, in the Signup component. Here, we check if the password value is equivalent to the password match value. If not then we through an alert to the user saying the passwords don't. This is a feature to ensure the user enters the password they intend.
+
+  <p align="center">
+  <img align="center" src="supporting_images/passwordsnomatch.png" width="550px">
+  </p> 
+
+  The Authentication Service is injected into the Signup component. After the password match check has complete in the 'onSubmit()' function, we pass the form's username and password values to Authentication Service's by calling its 'createUser()' method. Here, we create a javascript object out of this data and return the HTTP POST method. Which posts the payload to the 'signup' path in the API. This means the 'createUser()' is essentially returning an Observable. This just another way we allowed the Signup component to subscribe to the 'createUser()' method in the 'onSubmit()' method and directly act accordingly when a response is sent by the server. 
+  ```js
+    createUser(username:  string, password: string) {
+    const userData = {
+      username: username,
+      password: password,
+    };
+    return this.http
+      .post<{ message: String; error: Error, regSuc: boolean }>(
+        'http://localhost:3000/api/user/signup',
+        userData
+      )
+  ```
+ The response is either a success or failure, determined by the 'regSuc' boolean the server sends to the client. If successful, we route to the Login page, so the user can log in. If it fails, that means the username has been taken and we alert the user.
+
+  <p align="center">
+  <img align="center" src="supporting_images/usernametaken.png" width="550px">
+  </p> 
+
+  ### The process to login:
+ Firstly, it is important to mention that the FIRST time the Authentication Service is run by the browser it gets 'token' from local storage. If this token is not null, that means the user hasn't logged out and the browser still has a hold of the user's the JsonWebToken (JWT). We then set the 'authState' to true using the 'next()' method, as 'authState' is a Behaviour Subject. If the 'token' is null, the user hasn't logged in, and 'authState' maintains false as its value.
+```js
+  constructor(private http: HttpClient) { 
+    /*get jwt token from storage, if empty user not logged in*/
+    this.authToken = localStorage.getItem('token');
+    this.authState = new BehaviorSubject<boolean>(false);
+    if(this.authToken!=null) {
+      this.authState.next(true);
+      this.username = localStorage.getItem('username');
+    }else {
+      this.username="null";
+    }
+  }
+``` 
+The Login component is very similar to the SignUp component. It is built using the same form, methods and is validated the same way (except the need to validate whether passwords match). The Authentication Service is injected into the Login component. Once the user presses the 'login' button and the form is valid, the 'onLogin()' function takes the NgForm and passes the form's username and password values to Authentication Service's 'login()' method. Again, the process here is similar to the 'createUser()' method. However, the difference is that the payload is sent to the 'login' path on the API, and the response from the server contains a JWT token. We subscribe to the 'login()' method in the 'onLogin()' method in the Login component. Still, the same as process as the Signup Component. When the server sends a response to the front end, check if to so if the JWT exists. If it does exist, we send the JWT, and the username to the Authentication service using its 'setLogin()' method, and route to the Mapbox component. If not then we send an alter to the user. The failure can arise due to the username not existing or the password being incorrect. The server sends an adequate message, so we can alert the user accordingly.
+```js
+  onLogin(form: NgForm) {
+    this.authService.login(form.value.username, form.value.password)
+    .subscribe((response) => {
+      if (response.token) {
+        this.authService.setLogin(response.token, response.username);
+        this.route.navigate([''])
+      }
+      else if(response.message == "Incorrect password") {
+        alert("Incorrect password");
+      } else {
+        alert("Incorrect username");
+      }
+    });
+  }
+  ```
+  The 'setLogin()' method, stores the JWT and username in memory and in local storage to allow the user to remain logged in even if they close/refresh the application. We then set the 'authState' to true. As 'authState' is a Behaviour Subject, other components can subscribe to 'authState.asObservable()' and listen to dynamic changes in the Authentication state, and update the UI accordingly.  <br/>
+  
+  Once the user is logged in the UI looks like this:
+  
+  <p align="center">
+  <img align="center" src="supporting_images/loginui.png" width="550px">
+  </p> 
+
+Notice above, that the toolbar has the user's username. The Authentication service is injected into the Toolbar component, which then subscribes to the 'authState'. If 'authState' is true, it calls the 'getUsername()' method in the Authentication Service and sets the message variable in the Toolbar component to the username, which is then displayed on the UI.
+The Mapbox component subscribes to the 'authState', and sets the isLoggedIn variable to what value the 'authState' observable emits. We then use *ngIf to conditionally render components on the map, depending on if the user is logged in or not.
+
+```html
+<div class="full">
+    <app-user *ngIf="isLoggedIn && sidebarState.profile" [@inOutAnimation]></app-user>
+    <app-userpost-display *ngIf="isLoggedIn && sidebarState.userPosts" [@inOutAnimation] (flyToCords)="flyTo($event)">
+    </app-userpost-display>
+    <app-user-search *ngIf="isLoggedIn && sidebarState.search" [@inOutAnimation]></app-user-search>
+    <app-key *ngIf="isLoggedIn && sidebarState.key" [@inOutAnimation]></app-key>
+    <div id="map">
+    </div>
+    <app-usersearch-display *ngIf="isLoggedIn && sidebarState.search" [@inOutAnimation] (flyToCords)="flyTo($event)">
+    </app-usersearch-display>
+</div>
+<button *ngIf="!isLoggedIn" class="button" mat-raised-button color="primary" (click)="openDesDialog()">
+    Welcome
+  </button>
+<app-sidebar *ngIf="isLoggedIn && !isMapLoading"></app-sidebar>
+```
+
+As you can see from above, the navbar, the user's timeline, key, search are all dependent on the user being authenticated, and the 'welcome' button is not. <br/>
+Methods in the User Service also retrieves the 'username' from local storage, to send the username in the API's URL as a parameter, when updating user details, or retrieving user data through the API (more in User Service section).
+
+### How to log out?
+
+The Authentication service is injected into the sidebar component. When the user presses the logout icon in the navbar. It calls the 'logout()' in the Authentication Service. This then sets the authToken and username variables in memory to null, and sets 'authState' to false, while wiping all content in local storage. 'Window.location.reload()' is called, and that essentially takes the application back to its original state, refreshing the Mapbox component, altering the UI to reflect the fact that the user logged out.
+
+<p align="center">
+  <img src="supporting_images/logout.png" width="150px">
+</p>
 
 ## Sidebar Service:
 
@@ -701,13 +860,104 @@ If the measures have been overcome, then the 'createPost()' method in the Post S
   <img src="supporting_images/sidebar.png" width="950px">
   </p> 
 
-## URL-state Service:
+  We defined a Sidebar Interface:
+  ```js
+  export interface Sidebar {
+    key: boolean,
+    profile: boolean,
+    userPosts: boolean,
+    search: boolean,
+    settings: boolean,
+  }
+  ```
+  The Sidebar Service contains a Behaviour Subject of type Sidebar (defined by the interface above), as an attribute and called 'sideBarState'. Its state is initialized with an object of type Sidebar with all attributes set to false. This service is injected into the Sidebar component.
+  When the Sidebar component is initialized, it calls 'getSideBarObvs()' from the Sidebar Service (that returns an observable from 'sideBarState') and subscribes to it. It then takes the value emitted from this observable and stores it as a variable, called 'sidebarState' within the component. The Sidebar component is comprised of several icons as shown below. 
+
+  <p align="center">
+  <img src="supporting_images/navbar.png" width="550px">
+  </p> 
+
+  Let's talk about the process of clicking the profile icon. The procedure is the same for the other icons. It's just the respective methods associated with the other icons that are triggered. When the user clicks the profile icon, a click event is triggered and it calls the "onProfileClick() method in the Sidebar component. This then calls this 'setProfileState()' from the Sidebar service. This method takes a boolean as a parameter. This boolean will essentially represent the next state of the profile attribute. So we get the current state of the profile attribute from the 'sidebarState' variable (within the component) and pass the opposite value into the function.
+  ```js
+    clickProfileIcon():void {
+    this.sidebarService.setProfileState(!this.sidebarState.profile);
+  }
+  ```
+  Now in the 'setProfileState()' method, we create a new Sidebar object, but the profile attribute will take the value of the parameter, and all other attributes are set to false. This ensures only one component can be rendered at a time. We call the 'next()' method on 'sideBarState' in the service, and pass the new Sidebar object into this state. However, we set a time out of 200ms. This is the same time as it takes for the components to ease in and out via a custom animation. This ensures a smooth transition from a component easing out to the new component easing in. Without this time out, the new component will appear before the old component disappears. This resulted in a horrible animation.
+  ```js
+  /*set the profile state*/
+  setProfileState(isClicked: boolean): void{
+    this.sideBarState.next(this.offState);
+    const newSBState = {
+      key: false,
+      profile: isClicked,
+      userPosts: false,
+      search: false,
+      settings: false,
+    }
+    setTimeout(() => {
+      this.sideBarState.next(newSBState);
+    },200)
+  }
+  ```
+  The Mapbox component also subscribes to 'sideBarState'. When there is a state change in the service, Mapbox listens to the new state emitted, and stores the new state as a variable called 'sidebarState' within the component. This state conditionally renders the components with the *ngIf directive. Eg, the profile component with render if the 'sidebarState.profile' is true, (and if logged in). Just a note. We defined a custom InOutAnimation and decorated the Mapbox component with it. We bound this decorator to the components rendered by the Sidebar Service so they can use the animation. We used Angular's built-in browser animation module.
+  ```js
+      <app-user *ngIf="isLoggedIn && sidebarState.profile" [@inOutAnimation]></app-user>
+  ```
+  Also, the Sidebar component will receive this new state, as it is subscribed to 'sideBarState' from the service. The profile icons changes color depending on whether the 'profile' attribute is true or false. If true, it will change to purple. Again, we manage this by using the *ngIf directive.
+  ```html
+    <div class="material-icons" (click)="clickProfileIcon()" *ngIf="!sidebarState.profile">
+        person
+    </div>
+    <div class="material-icons" (click)="clickProfileIcon()" *ngIf="sidebarState.profile" id="clicked">
+        person
+    </div>
+  ```
+  This is the UI state when 'sideBarState.profile' is true:
+
+  <p align="center">
+  <img src="supporting_images/sidebarstate.png" width="550px">
+  </p> 
+
+  Again, this is the same process for the other icons on the navbar.
+
+
+## URL-State Service:
 
   ### Class Diagram:
   
   <p align="center">
   <img src="supporting_images/urlstate.png" width="550px">
   </p>
+
+  This service provides very a simple function. It wasn't needed but added a nice touch to the UI. It updated the title next to the EmoteMap logo with a title that was dependant on the URL parameter state. This state was held in the URL-State Service. Eg, If the Login Component was rendered, we updated the URL State in the URL Service, with the value of the parameter of the router. In this case, it would be 'login'. The Toolbar listens to this state and renders a title accordingly. Ie if the login component was rendered, it would display 'Login'. The Signup page will display 'SignUp'. The Mapbox component, if logged in will display the user's username, else will display 'EmoteMap'.
+  ```js
+    ngOnInit(): void {
+    /*listen to obesrvable path paramter in url service*/
+    this.urlStateService.getUrlObservable().subscribe((param) => {
+      /*change toolbar color and title due to different param*/
+      if (param === 'login') {
+        this.title = 'Login';
+      } else if (param === 'signup') {
+        this.title = 'Sign Up';
+      } else if (param === 'about') {
+        this.title = 'EmoteMap';
+      } else {
+        if(this.isLoggedIn) {
+          this.title = this.authService.getUsername();
+        }else {
+          this.title = 'EmoteMap';
+
+        }
+      }
+    });
+  ```
+
+  <p align="center">
+  <img align="center" src="supporting_images/tithp.png" width="250px">
+  <img align="center" src="supporting_images/titlogin.png" width="250px">
+  <img align="center" src="supporting_images/titmp.png" width="250px">
+  </p> 
 
 ## User Service:
 
@@ -752,190 +1002,12 @@ If the measures have been overcome, then the 'createPost()' method in the Post S
 ### Angular Material
 [Angular Material](https://material.angular.io)
 
-We extensively utilised angular material to quickly implement well designed graphic and interactive html elements into our website; for example in our userpost component, we utilise mat (angular material) form fields to encapsulate and display all the user input elements - one of which is a mat slider, used for entering a users 'mood rating'. We also utilise the mat icon library for the button icons on this form (i.e. the send and close buttons).
-```html
-<div class="slider">
-  <mat-form-field class="sliderForm">
-    <mat-label>Mood</mat-label>
-    <input formControlName="rating" matInput [(ngModel)]="rating" type="text"
-      onkeydown="return false" style="height: 30px;"/>
-  </mat-form-field>
-  <mat-slider class="sliderSl" tickInterval="auto" [displayWith]="formatLabel" min="1" max="3" step="1"
-    [value]="sliderVal" (input)="onSliderChange($event)"></mat-slider>
-</div>
-```
 
-In fact the userpost component itself is displayed using the mat dialog element, which we trigger from a click event (either from clicking on the map in the mapbox component or the post button in the sidebar component, which itself utilises a mat icon). This dialog allows us to display the component as a popup on top of the rest of the website.
-```javascript
-createPost() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition((position) => {
-      this.postService.updateLongLat({
-        long: position.coords.longitude,
-        lat: position.coords.latitude,
-      });
-    });
-  }
-
-  /*open a new diaglog object and set the parameters*/
-  const dialogConfig = new MatDialogConfig();
-  dialogConfig.autoFocus = false;
-  dialogConfig.width = '55%';
-  dialogConfig.height = '70%';
-  dialogConfig.hasBackdrop = true;
-  dialogConfig.panelClass = 'custom-dialog';
-  dialogConfig.position = {bottom: '8%', right: '23%'};
-  this.dialog.open(UserpostComponent, dialogConfig);
-}
-```
-```html
-<div class="button" (click)="createPost()">
-  <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-    <mat-icon class="icon-display" inline=true>add</mat-icon>
-  </button>
-</div>
-```
-#### Forms
-We make use of angular forms primarily in order to pass data from our user input elements to services and other components in our website; for example our login component uses angulars' ngForm directive to pass the users username and password from the html to our user authentication service (note the use of mat forms on the html side for displaying the form to the user).
-```js
-onLogin(form: NgForm) {
-  this.authService.login(form.value.username, form.value.password)
-  .subscribe((response) => {
-    if (response.token) {
-      this.authService.setLogin(response.token, response.username);
-      this.route.navigate([''])
-    }
-  });
-}
-```
-```html
-<mat-card class="loginForm">
-    <mat-spinner *ngIf="isLoading"></mat-spinner>
-    <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
-        <mat-form-field>
-            <input matInput name="username" ngModel type="text" placeholder="Username" #usernameInput="ngModel"
-                required>
-            <mat-error *ngIf="usernameInput.invalid">Please enter a valid username.</mat-error>
-        </mat-form-field>
-        <mat-form-field>
-            <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel"
-                required>
-            <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
-        </mat-form-field>
-        <button mat-raised-button color="accent" type="submit" *ngIf="!isLoading">Login</button>
-    </form>
-</mat-card>
-```
 #### Mapbox
 [Mapbox API](https://docs.mapbox.com/mapbox-gl-js/api/)
 
-As our application is centred around displaying information on a map, one of the key aspects in developing the front end was to find and utilise a mapping api which could provide us with the display and interactivity features we needed. We considered other services, the most obvious being google maps, but decided to go with mapbox as not only is it open source, but had a far higher number of free map requests (50k vs 28k for google), and is comparatively lighter on resources to render the map within an application. It also has numerous graphical display options with easy-to-use documentation and examples to help us get our application running quickly. The mapbox-component is the central component within our angular application, with most of the central components being called from the mapbox-component html.
 
-```html
-<div class="full">
-    <app-user *ngIf="isLoggedIn && sidebarState.profile" [@inOutAnimation]></app-user>
-    <app-userpost-display *ngIf="isLoggedIn && sidebarState.userPosts" [@inOutAnimation] (flyToCords)="flyTo($event)">
-    </app-userpost-display>
-    <app-user-search *ngIf="isLoggedIn && sidebarState.search" [@inOutAnimation]></app-user-search>
-    <app-key *ngIf="isLoggedIn && sidebarState.key" [@inOutAnimation]></app-key>
-    <div id="map">
-    </div>
-    <app-usersearch-display *ngIf="isLoggedIn && sidebarState.search" [@inOutAnimation] (flyToCords)="flyTo($event)">
-    </app-usersearch-display>
-</div>
 
-<app-searchfield *ngIf="!isLoggedIn" (flyToCords)="flyTo($event)"></app-searchfield>
-<app-sidebar *ngIf="isLoggedIn && !isMapLoading"></app-sidebar>
-
-```
-
-The following is an overview of the key aspects of the api which we utilised. The first and most obvious is the map layer; the api provides numerous styles of world maps to display (we chose a dark colour scheme to better highlight the information in our data layers, to be covered shortly), which we initialise in the components ngOnInit function.
-
-```javascript
-initMap(): void {
-  (mapboxgl as any).accessToken = environment.mapboxToken;
-  this.map = new mapboxgl.Map({
-    container: 'map',
-    style: 'mapbox://styles/mapbox/dark-v10',
-    zoom: 2,
-    center: [-0.2101765, 51.5942466],
-  });
-}
-```
-The next and arguably most important aspect is the use of the “map.addSource” and “map.addLayer” api functions; within the addSource function is a key use of our geopost api and post service in angular; the component uses the service to call the api, which in turn fetches geoJson data (a special format of json files which stores coordinates and properties of data points) which contains all of the user posts. The mapbox api then stores this geoJson data in the component, which we then utilise in two addLayer functions.
-
-```javascript
-createDataSource(name: string): void {
-  this.map.addSource(name, {
-    type: 'geojson',
-    data: {
-      type: 'FeatureCollection',
-      features: [],
-    },
-  });
-}
-```
-```javascript
-pullAndDisplayGJPointsFromDB(): void {
-  this.createDataSource('data');
-  this.source = this.map.getSource('data');
-  this.postService.getGeoPostData().subscribe((geoPostArr) => {
-    this.source.setData(new FeatureCollection(geoPostArr));
-  });
-}
-```
-The addLayer function from the api provides numerous different styles of data presentation for displaying data on top of the map layer. Our first use of the function uses the “circle” type; the api allows us to display circles at each data-points’ location from the geoJson, and colour these circles depending on the data-points’ properties; we colour these circles based on the so called mood-rating that a user picks when making a post to our website – this provides the key functionality of the entire site, allowing users to see patterns in people’s emotions across the map, based on the circle colours. The addLayer function can also be configured such that its visibility is based on a certain zoom level of the map; we utilise this so that when a user has zoomed in the circle layer appears, but when they are zoomed out, the second layer – a heatmap layer – appears. The “heatmap” type is another layer type, and we use it to display the density of user points at a location, with different colours indicating more or less points clustered in a specific location.
-
-```js
-this.map.addLayer({
-  id: 'markers',
-  interactive: true,
-  type: 'circle',
-  source: layer,
-  minzoom: 9.2,
-  paint: {
-    'circle-stroke-color': '#fff',
-    'circle-stroke-width': 1,
-    'circle-radius': 5,
-    'circle-color': [
-      'step',
-      ['get', 'mood'],
-      '#EC986F',
-      1,
-      'rgb(65,182,196)',
-      2,
-      'rgb(254,204,92)',
-      3,
-      'rgb(227,26,28)',
-    ],
-  },
-});
-```
-
-There are a few other key features of the api we use, centred around mouse events. Firstly, we utilise the api’s popup feature, such that when the circle layer is rendered (i.e. the user is zoomed in enough), when a user hovers the mouse over one of the displayed circles, a pop up appears, loading in the specific post data (keyword, rating and description) of that data point from the geoJson data. We also utilise the map.on(click) function to call our userpost-component in a dialog box, so a user can make a post at a specific location by clicking there if they are zoomed in enough. This component also utilises our geopost api and post service, but this time to send data to our database rather than fetch it.
-
-```javascript
-this.map.on('click', (e) => {
-  if (this.isLoggedIn) {
-    const zoom = this.map.getZoom();
-    console.log(zoom);
-    if (zoom > 12) {
-      const dialogConfig = new MatDialogConfig();
-      dialogConfig.autoFocus = false;
-      dialogConfig.width = '55%';
-      dialogConfig.height = '70%';
-      dialogConfig.hasBackdrop = true;
-      dialogConfig.panelClass = 'custom-dialog';
-      dialogConfig.position = { bottom: '8%', right: '20%' };
-      this.dialog.open(UserpostComponent, dialogConfig);
-      this.postService.updateLongLat({
-        long: e.lngLat.lng,
-        lat: e.lngLat.lat,
-      });
-    }
-  }
-});
-```
 
 Finally, we use the api’s map.flyto function to move and zoom in on specific data points, which we call using an event listener in the mapbox-component html from a button click in the usersearch-display-component (which displays posts resulting from a user search).
 

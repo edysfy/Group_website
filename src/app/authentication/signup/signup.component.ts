@@ -13,7 +13,6 @@ import { UrlStateService } from 'src/app/service/url-state.service';
 })
 export class SignupComponent implements OnInit, OnDestroy {
   private subscriber!: Subscription;
-  isLoading: boolean = false;
 
 
   constructor(
