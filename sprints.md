@@ -67,6 +67,7 @@ The other role I fulfilled was project management, both on a coding and teamwork
 
 ### Alfie
 
+
 ### Hari
 
 I was the leader of the project. I instilled an initial vision for how the application concept be. I was explict to my team on the way we should go about building the application. I assigned team members tasks to do when developing the app, while offering advice when asked at how to get something to work in the code. I also, helped oversee the write up, offering feedback and extra things I thought should have been mentioned in the documentation, as well as writing the system implementation section. 
