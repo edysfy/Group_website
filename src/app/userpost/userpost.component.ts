@@ -63,6 +63,7 @@ export class UserpostComponent implements OnInit, OnDestroy {
     }
     this.dialogRef.close();
     if(this.sliderVal!=null) {
+      console.log(this.form);
       this.postService.createPost(
         this.sliderVal,
         this.form.value.keyword,
