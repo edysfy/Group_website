@@ -959,7 +959,7 @@ The Authentication service is injected into the sidebar component. When the user
   <img align="center" src="supporting_images/titmp.png" width="250px">
   </p> 
 
-  ***How does navigation work***
+  ### How does navigation work?:
   Firstly, we created a link between components and their respective URL paths, on the 'app-routing.ts' file. We also added an Authentication guard on the '/login' and '/signup' paths. This is another inbuilt module that comes with Angular. Checks the Authentication state, any time these paths have been triggered by the router. We set it so that if a user is logged in, and manually type in those URL paths on the browser, they will be re-routed back to the Mapbox Component. We felt it would be odd if the user is logged in and they still have access to the Login page and can log in again.
   ```js
     const routes: Routes = [
@@ -982,30 +982,6 @@ The Authentication service is injected into the sidebar component. When the user
   </p> 
 
   The EmoteMap log, is also an anchor tag with a routerLink embedded into it. It routes the user back to the Mapbox component when on the on the other pages
-
-  ```html
-  <mat-toolbar class="toolbar_white" color="header">
-    <a routerLink=''> <img class="logo" width="80" height="80" alt="Earth Logo" src="./assets/logos/earth.png" /></a>
-    <span class="Title">{{title}}</span>
-    <div class="loginSect" *ngIf="!isLoggedIn">
-      <span class="about">
-        <a style="text-decoration: none;" routerLink='/about'>About</a>
-      </span>
-      <span routerLink='/signup' class="signUp">
-        <a>SignUp</a>
-      </span>
-      <span routerLink='/login' class="login">
-        <a>Login</a>
-      </span>
-    </div>
-    <span class="aboutLI" *ngIf="isLoggedIn">
-      <a style="text-decoration: none;" routerLink='/about'>About</a>
-    </span>
-  </mat-toolbar>
-  ```
-  When the user clicks the respective span tag, it will render the correspondint component on the screen.
-
-
 
   ```html
   <mat-toolbar class="toolbar_white" color="header">
