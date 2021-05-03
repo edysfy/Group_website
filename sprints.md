@@ -94,7 +94,7 @@ After having got to grips with the brief and decided on an idea, this sprint was
 
 **[15th Feb]** - This was the first meeting after having agreed upon our project goals, with the whole team attending, and was used to scope out exactly what functionality our website would have. A lot of ideas were proposed and bounced around, particularly regarding the GUI of the site; for example we initially envisioned all interaction with the website to take place in section that would slide in from the side. We decided to trial different GUIs using paper prototypes. We also used this time to designate team roles - [Discussion of team roles](#second). The goals we came up for in this period are as follows;
 
-Sprint aims:
+### Sprint aims:
 
 * Clarify project idea and scope
 * Create draft of website UX & create paper prototype
@@ -121,7 +121,7 @@ With each member assigned and working on a task and being in constant contact th
 
 **[29th Mar]** - During this meeting (again the whole team attended) we focused on how we could iterate off of our paper prototype. We agreed for one group member (Zaki) to make some wire frames to be used in a user survey. We also debated which api to use for the map aspect of our idea; although some team members wanted to use google maps, we eventually decided upon the mapbox api, with some of the reasoning discussed later in this sprint. Now that we were also starting to get to grips with angular, we had a more in depth discussion of what features were feasible to produce in the timeframe we had for the project; at this stage Hari was keen on implementing user authentication, but as a group we decided on focusing purely on the map interface at this stage, as we were not sure how much time it would take to add in the features we wanted (we did eventually add in user authentication towards the end of the project). The goals for this period that we decided on are below.
 
-Sprint aims:
+### Sprint aims:
 
 * Review feedback from paper prototyping survey
 * Create basic GUI (initially buttons had no functionality)
@@ -163,7 +163,7 @@ At this stage of the project is where we began to implement the key features tha
 
 **[22nd Mar] (Back end specifically)** - The two team members working on the backend (Alfie and Hari) decided to have a meeting to discuss which portions of the backend each would work on. It was decided that Alfie would work towards getting the example data to be served from a local file and Hari would put together some mongo schemas and look into mongoDB and how we would store the geoJSON data required.
 
-Sprint aims we decided on for this period:
+### Sprint aims we decided on for this period:
 
 * Collect initial user feedback
 * Set up site so dummy data is served through API route + Add linking to front end + making sure data model working in front end
@@ -208,7 +208,8 @@ This sprint was where we finally began to pull together the disperate elements o
 
 **[9th Apr]** - This was a short meeting where the whole team met to discuss their progress. We also used this time to discuss some features we would like to add as extensions to the project, for example, connecting users who post with similar keywords (see our [Evaluation and Conclusion](evalSect.md) document for more detail).
 
-Our agreed goals for this period were;
+### Our agreed goals for this period were;
+
 * Connect mondoDB (mongoose) to front end (so the front end is fetching data from our database)
 * Add the functionality make posts (i.e. sending data to the front end)
 * Begin implementing feedback from user study and from lecturers
@@ -263,7 +264,8 @@ In this sprint we aimed to add to our website some of the more complex features,
 
 **[19th Apr]** - This was our first 'write-up' meeting; though we had been adding small sections to the project report up until this point, we used this meeting to review the current state of our report and deligate tasks; Zaki focusing on the introduction, Tarn the UX, Hari the System Implemention and Ed and Alfie the Sprints and project management (the whole team would work on the evaluation and conclusion).
 
-Our sprint aims were;
+### Our sprint aims were;
+
 - users now enter age, gender and can now can be filtered by this (posts linked to user accounts)
 - implemented sidebar
 - search functionality
@@ -310,7 +312,8 @@ Most of our communication at this stage was through our discord chat, where we w
 
 **[27th Apr]** - In this meeting we discussed any final changes we thought we needed to make to the website based on the user feedback (discussed below), and also discussed the structuring of our project write up and its progress.
 
-Our aims for this sprint;
+### Our aims for this sprint;
+
 - Finish the write up
 - Implement any final changes
 
