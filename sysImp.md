@@ -1035,13 +1035,41 @@ Lets start by discussing the anatomy of the User-Search Service. This is defined
   searchQueryState!: BehaviorSubject<Search>;
   private geoSearchState!: BehaviorSubject<Array<GeoJson>>;
 ```
-HasSearchInit, holds boolean as state. This commuicates to the other components whether the 'search' mode is activated or not. There are two components in our application that subscribe to this Behabiour subject using the 'getIsInSearchState()' method in the 'User-Search' service.
+HasSearchInit, is a Behaviour Subject variable of type boolean. This variable is responsible for communicating to other components that the user has activated search mode. 
+When the user clicks the search icon in the navbar, Mapbox will initialize the Usersearch component. This component has the User-Search Service injected into it. We use the 'onInit()' in the component, and call the 'setHasSearchInit()' method in the User-Search Service. It takes a boolean as a parameter and we pass true. This function calls the 'next()' method on 'hasSearchInit', and updates the state with the boolean sent from the Usersearch component. This new state is broadcast to the components subscribed to this observable. 
+```js
+  setHasSearchInit(set: boolean): void {
+    this.hasSearchInit.next(set);
+  }
+```
+When the user changes the Sidebar state again, We make use of 'ngOnDestroy()' directive in the Usersearch component. This method calls the same function as above, but the boolean sent is false. This tells the components subscribed that the search mode has been deactivated. <br/>
+There are two components in our application that subscribe to this Behavior Subject using the 'getIsInSearchState()' method in the 'User-Search' service:
 ```js
   getIsInSearchState(): BehaviorSubject<boolean> {
     return this.hasSearchInit;
   }
 ```
-We mentioned in the Post Service section, that when the map loads
+1. The Userpost Component: 
+- If the search mode is activated, then it will not allow to submit their EmotePost. 
+```js
+    if(this.searchActivated) {
+      this.dialogRef.close();
+      alert("Unable to post in search mode");
+      return;
+    }
+```
+2. The Mapbox Component: 
+- We mentioned, in the Post Service section, that when the map initialize sand calls the 'map.on('load')' event emitter we subscribe to 'hasSearchInit.asObservable()'. When the search mode is false, the map will render the data coming from the Post Service. When true, Mapbox will clear all the layers created by the data from the Post Service. It Then calls the 'pullAndDisplayGJPointsFromSearchQuery()' method. This creates a new 'data' source, and calls the 'getGeoSearchObvservable()' from the User-Search service. This returns the 'geoSearchState.asObservable()'. We then subscribe to this observable. The 'geoSearchState' Behaviour Subject contains state of type Array<GeoJson>. When the state of this Observable changes, Mapbox will obtain the new array and call the 'setData()' method on the 'data' source. And pass the new FeatureCollecion object, which is made from the updated GeoJson array. Mapbox then creates the layers from this new 'data'. Again can refer to the "How to get and display data". This how we get the map to instantly update the GeoJson points, without refreshing the page, when the user makes a new search query.
+```js 
+  pullAndDisplayGJPointsFromSearchQuery(): void {
+    this.createDataSource('data');
+    this.source = this.map.getSource('data');
+    this.userSearchService.getGeoSearchObvservable().subscribe(geoSearchArr => {
+      this.source.setData(new FeatureCollection(geoSearchArr));
+    })
+  }
+```
+### How does the user make a search query?
 
 
 
