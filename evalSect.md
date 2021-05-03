@@ -97,6 +97,19 @@ The way in which we obtained user feedback here was similar to that of the wiref
 *stat difference between 2nd wireframe and what users thought when using local host*
 
 
+## How successful was our evaluation of methods?
+
+### Limitations
+We used Survey Monkey's sample size calculator to calculate our sample size. This forced us to think about the population that may be using our product and therefore question how big our market was. Considering our end users in this way made us contemplate how much feedback data was enough.  As seen in the figure above, our sample size was *X* whilst  our actual sample size was *x*. Although we did not reach the ideal sample size, we realised that we could only ultimately analuse the data that we could gather. This shortfall of responders therefore makes it difficult to be certain of our analysis at this point.  
+Although our sample size could have been higher, we followed the notion that when carrying out our evaluation we would balance richness with practicality (*reference lecture*). When creating our feedback data we were constantly considering the analysis phase and how we would go on to analyse that data. In order to thoroughly and accurately analyse our data in a just way, we dedicated time. As a result of this, we at some points opted to collect a smaller amount of qualitative data which we could analyse robustly. For example, carrying out qualitative user feedback such as semi-structured interviews was time-consuming as we needed to spend time re-listening to the audio and extracting the relevant responses to questions before entering this feedback data into the idea matrix. Ultimately, although our feedback data lacked in terms of sample size because of this, we were able to make the analysis of the data much richer.  
+Another possible limitation to our evaluation was our inability to show enough users our most up to date version of the product when we moved to doing so on a local host as opposed to a wireframe. In order to do this, we would need to either show someone in person or organise a Microsoft Teams or Zoom meeting which proved time consuming and less successful when it came to quantitative data collection. It was much easier for a user to use the link to a wireframe and then fill out the questionnaire. This is demonstrated by the fact that we had *X questionnaire completions for the final questionnaire as opposed to the first two*. 
+
+*screenshot of sample size calc*
+*screenshot of figure for actual sample data*
+
+###
+
+
 <a name="conc"></a>
 # Conclusion
 scope and future work must go here...
@@ -122,3 +135,6 @@ If I clicked on your Edgware Earthquake post, how could I support you? This is w
 One extension idea we have involves further inter-user interaction and communication in a local area. Here is the idea, demonstrated with an example: 'Bristol is notorious for its limited parking. On a particular residential road, there is a bus stop that has been out-of-service for years. Despite paying for a parking permit, residents have been told that they are not allowed to park on the bus stop even if that means parking on another road. Residents are upset as they often find themselves struggling to park after a busy day at work. Naturally, they individually take to EmoteMap to express their feelings. To their surprise, they discover that others feel the same way. This is because EmoteMap has identified multiple people within an area expressing similar feelings over the same issue. EmoteMap then asks the individuals if they would like to initialise a discussion group, in hope of resolving the local issue.' This extension would involve the ability to identify multiple users within a local area reporting the same issue. Furthermore, some form of chat service would need to be implemented. !!!!Perhaps we could briefly mention what tools could be used to achieve this?!!!!!!!
 
 At a late stage in our development, one user made an important point on privacy: they were concerned about sharing their location when making an Emote Post. This is a valid concern and we questioned how we may be able to deal with this issue in future development of the project. Submitting Emote Posts without some form of geolocation voids the project's idea entirely. We therefore propose an alternative direction: to give users the ability to pin their posts to an area (such as a district), instead of a precise location. We believe this would be a good balance between privacy, and having the ability to see trends in emotion across different areas of the globe. It would be interesting to survey whether such a feature would encourage those previously concerned over privacy to then use the site.
+
+
+focus on mens mental health
