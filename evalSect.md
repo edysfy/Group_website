@@ -99,15 +99,24 @@ The way in which we obtained user feedback here was similar to that of the wiref
 
 ## How successful was our evaluation of methods?
 
+On analysis of our qualitative data, we were able to conclude that throughout the process of feedback and the subsequent development of software, users started to see the purpose of the website as being more in line with what we initially set out for it to be. For us, this somewhat represented the success of the process behind how we evaluated user's perceptions of our product.    
+
+However, there were some limiting factors and debatable areas of improvement to this process that we are aware of.  
+
+*1. to see/ineract with other users’ posts (e.g – to gain insight...)
+-	2. to view trends in experienced emotions globally
+-	screenshot of ability to see others’ posts on the website
+-	screenshot of comment for this point*
+
+
 ### Limitations
 We used Survey Monkey's sample size calculator to calculate our sample size. This forced us to think about the population that may be using our product and therefore question how big our market was. Considering our end users in this way made us contemplate how much feedback data was enough.  As seen in the figure above, our sample size was *X* whilst  our actual sample size was *x*. Although we did not reach the ideal sample size, we realised that we could only ultimately analuse the data that we could gather. This shortfall of responders therefore makes it difficult to be certain of our analysis at this point.  
 Although our sample size could have been higher, we followed the notion that when carrying out our evaluation we would balance richness with practicality (*reference lecture*). When creating our feedback data we were constantly considering the analysis phase and how we would go on to analyse that data. In order to thoroughly and accurately analyse our data in a just way, we dedicated time. As a result of this, we at some points opted to collect a smaller amount of qualitative data which we could analyse robustly. For example, carrying out qualitative user feedback such as semi-structured interviews was time-consuming as we needed to spend time re-listening to the audio and extracting the relevant responses to questions before entering this feedback data into the idea matrix. Ultimately, although our feedback data lacked in terms of sample size because of this, we were able to make the analysis of the data much richer.  
-Another possible limitation to our evaluation was our inability to show enough users our most up to date version of the product when we moved to doing so on a local host as opposed to a wireframe. In order to do this, we would need to either show someone in person or organise a Microsoft Teams or Zoom meeting which proved time consuming and less successful when it came to quantitative data collection. It was much easier for a user to use the link to a wireframe and then fill out the questionnaire. This is demonstrated by the fact that we had *X questionnaire completions for the final questionnaire as opposed to the first two*. 
+Another possible limitation to our evaluation was our inability to show enough users our most up to date version of the product when we moved to doing so on a local host as opposed to a wireframe. In order to do this, we would need to either show someone in person or organise a Microsoft Teams or Zoom meeting which proved time consuming and less successful when it came to quantitative data collection. It was much easier for a user to use the link to a wireframe and then fill out the questionnaire. This is demonstrated by the fact that we had *X questionnaire completions for the final questionnaire as opposed to the first two*.
 
 *screenshot of sample size calc*
 *screenshot of figure for actual sample data*
 
-###
 
 
 <a name="conc"></a>
