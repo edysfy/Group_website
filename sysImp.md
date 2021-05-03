@@ -484,7 +484,8 @@ Lets break down this Express application and describe how it works:
 # Front End - Angular, Details of implementation
 
 ### Angular Material
-We heavily relied on the use of the [Angular Material](https://material.angular.io) library. This us provided pre-build UI components, that can be styled easily. <br/>
+We heavily relied on the use of the [Angular Material](https://material.angular.io) library. This us provided pre-build UI components, that can be styled easily. 
+Any word starting with 'mat-' is a component from Angular Material. <br/>
 #### Mapbox
 We used the [Mapbox API](https://docs.mapbox.com/mapbox-gl-js/api/), which provided us with a customizable map. That met our needs adequately. <br/><br/>
 The implementation of these API's are mentioned in more detail throughout the rest of the application.
@@ -1173,7 +1174,7 @@ The user can generate a new search query by interacting with the search form bui
 
 As a side note, we needed to initialize the variables that are bound to the form with the same values we used to create the search query when the User-Search component is initialized. So the form's UI will match the initial data received and displayed on the map when search mode is initialized.
 
-Now, whenever the user makes a change to the UI, ie move the slider or check a box, a change event is triggered and we bound that to the 'onChange' method in the component. When this method is called we create a new Search object. We equal the attributes to the corresponding variables stored in the component, which are data-bound to the components on the form. We then call the 'setSearchQueryState' method and pass through the new search query object. This updates the 'searchQueryState' with the new search query. At initialisation, we subscribed to 'searchQueryState.asObservable'. So this state change will trigger an HTTP POST request to the API with the new search query as the payload. As stated previously, when the API sends a response, we process the data and update 'geoSearchState' with this new array.
+Now, whenever the user makes a change to the UI, ie move the slider or check a box, a change event is triggered and we bound that to the 'onChange' method in the component. When this method is called we create a new Search object. We equal the attributes to the corresponding variables stored in the component, which are data-bound to the components on the form. We then call the 'setSearchQueryState' method and pass through the new search query object.
 ```js
   onChange() {
     this.keywordWarning = false;
@@ -1191,13 +1192,63 @@ Now, whenever the user makes a change to the UI, ie move the slider or check a b
     this.userSearchService.setSearchQueryState(search);
   }
 ```
-
+This updates the 'searchQueryState' with the new search query. At initialisation, we subscribed to 'searchQueryState.asObservable'. So this state change will trigger an HTTP POST request to the API with the new search query as the payload. As stated previously, when the API sends a response, we process the data and update 'geoSearchState' with this new array. <br/><br/>
 There are two componants that are subscribed to 'geoSearchState' and listen to its change in state:
 1. Mapbox Component subscribes to this when 'pullAndDisplayGJPointsFromSearchQuery()'. The details have been explained previously.
 2. Usersearch-Display component.
 
 ### How does the Usersearch-display work?
 
+This component's purpose is to display the search results in a way similar to the user's timeline. In its 'onInit' directive, we subscribe to the 'geoSearchState' in the User-Search Service. When the state changes, the new array returned from the API will get stored in this component in a variable called 'search results. We do a length check on the array. If the length of the array is 0, we set a boolean called 'noResults' to true. This conditionally renders a title 'No Results' on the UI, using *ngIf on a div.
+
+<p align="center">
+<img src="supporting_images/noresults.png" width="450px">
+</p>
+
+We used the mat-accordion component to display each element in the 'searchResults' array, along with the *ngFor directive. This allows the user to hide and extend elements of the GeoJson data. For the mood, we didn't want to just display the mood value in the GeoJson element. We wanted to display the actual mood. So we created a static array called 'moodArr':
+```js
+  moodArr: string[] = ["filler","Happy", "Coping", "Sad"]
+```
+We take the mood value from the GeoJson, and display moodArr[moodvalue], in the mat-accordion element. We used Angular's text interpolation to display the GeoJson data in the mat-accordion component.
+```html
+<mat-expansion-panel>
+    <mat-expansion-panel-header>
+        <mat-panel-title>
+            {{ result.properties.username }}
+        </mat-panel-title>
+        <mat-panel-description>
+            {{ result.properties.dateTime | date: "medium" }}
+        </mat-panel-description>
+    </mat-expansion-panel-header>
+    <h3>EmoteMood: {{ moodArr[result.properties.mood] }}</h3>
+    <h3>EmoteKeyword: {{ result.properties.keyword }}</h3>
+    <p>EmoteBody: {{ result.properties.textBody }}</p>
+    <mat-action-row>
+```                    
+
+We also implemented a fly-to button, on each accordion. When the user clicks the button, it triggers the 'onFlyTo' method in the component. This function takes the GeoJson's coordinates and passed them through an event emitter. 
+```js
+  onFlyTo(lngLat: number[]):void {
+    this.flyToCords.emit(lngLat);
+  }
+```
+This component is the child component of Mapbox. Mapbox is bound to this event emitter. When an event is emitted, the Usersearch-Display components pass the coordinated up to Mapbox, and the 'flyTo' function in Mapbox is triggers. Flying the user to the GeoJson EmotePost on the map.
+```js
+  flyTo(lngLat: number[]) {
+    if(!isNaN(lngLat[0])&&!isNaN(lngLat[1])){
+      this.map.flyTo({
+      center: [lngLat[0], lngLat[1]],
+      zoom: 15,
+    });
+  }
+  }
+```
+Here is how the Usersearch-Dislay component looks:
+
+  <p align="center">
+  <img align="center" src="supporting_images/closedacc.png" width="450px">
+  <img align="center" src="supporting_images/openacc.png" width="450px">
+  </p> 
 
 
 <br/>
