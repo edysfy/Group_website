@@ -20,9 +20,6 @@ We needed three main components that comprise the stack.
     This is responsible for the user experience and data creation through the use of Angular forms.
     The user can explore the map, create an account, log in, create Emote posts, view other users' posts, have access to their posts in a timeline, delete their posts, fly to a post, and search for other users' posts (by date, age, and gender). To display a map, we needed to connect to an external API. We had two options. One Mapbox and the other was GoogleMaps. Firstly, Mapbox was more appealing as it is the underdog. We didn't want to be involved with a conglomerate like Google. After digesting Mapbox's API, we realized it is capable of doing everything we wanted. Especially, displaying a heat map. It accepts geoJson data and provides the developer with a lot of support to customize and visualize that data on the map. It accepts data via a direct link to a URL path, or through building your objects. This was useful as it allowed us to use geoJson objects that are stored in memory on the front end. As an example (will be explained in a lot more detail in the front end), when the user made a post-it would automatically update the UI, as we stored the new post in a Service. The Mapbox component listens to changes in the geoJson array and re-renders the data on the map. We used a set of Angular Services to maintain state and allow data to flow between components on the frontend, as well as providing a link between the data flowing to the REST API.
 
-
- # ADD SEQUECNE DIAGRAM!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   
-
 Lets go into some more depth...    
 
 # MongoDB - database implementation
@@ -727,7 +724,7 @@ If the measures have been overcome, then the 'createPost()' method in the Post S
   <img align="center" src="supporting_images/passwordsnomatch.png" width="550px">
   </p> 
 
-  The Authentication Service is injected into the Signup component. When the 'onSubmit()' function is fired. This passes the form's username and password values to Authentication Service's 'createUser()' method. Here, we create a javascript object out of this data and return the HTTP post method. So when we post the details using the HTTP client the function essentially is returning an Observable. This is a way for the Signup component to subscribe to the 'createUser()' method, and directly act accordingly when a response is sent by the server. 
+  The Authentication Service is injected into the Signup component. After the password, match check in the 'onSubmit()' function, we pass the form's username and password values to Authentication Service's by calling its 'createUser()' method. Here, we create a javascript object out of this data and return the HTTP POST method. Which posts the payload to the 'signup' path in the API. This means the 'createUser()' is essentially returning an Observable. This is a way for the Signup component to subscribe to the 'createUser()' method in the 'onSubmit()' method and directly act accordingly when a response is sent by the server. 
   ```js
     createUser(username:  string, password: string) {
     const userData = {
@@ -746,6 +743,74 @@ If the measures have been overcome, then the 'createPost()' method in the Post S
   <img align="center" src="supporting_images/usernametaken.png" width="550px">
   </p> 
 
+  ### The process to login:
+ Firstly, it is important to mention that the FIRST time the Authentication Service is run by the browser it gets 'token' from local storage. If this token is not null, that means the user hasn't logged out and the browser still has the JWT in storage. We then set the 'authState' to true using the 'next()' method, as 'authState' is a Behaviour Subject. If the 'token' is null, the user hasn't logged in, and 'authState' maintains false as its value.
+```js
+  constructor(private http: HttpClient) { 
+    /*get jwt token from storage, if empty user not logged in*/
+    this.authToken = localStorage.getItem('token');
+    this.authState = new BehaviorSubject<boolean>(false);
+    if(this.authToken!=null) {
+      this.authState.next(true);
+      this.username = localStorage.getItem('username');
+    }else {
+      this.username="null";
+    }
+  }
+``` 
+The Login component is very similar to the SignUp component. It is built using the same form, methods and is validated the same way (except the need to validate whether passwords match). The Authentication Service is injected into the Login component. Once the user presses the 'login' button and the form is valid, the 'onLogin()' function takes the NgForm and passes the form's username and password values to Authentication Service's 'login()' method. Again, the process here is similar to the 'createUser()' method. However, the difference is that the payload is sent to the 'login' path in the API, and the response also contains a JWT token. We subscribe to the 'login()' method in the 'onLogin()' method in the Login component. The same as the Signup Component. When the server sends a response to the front end, check if to so if the JWT exists. If it does exist, we send the JWT, and the username to the Authentication service using its 'setLogin()' method, and route to the Mapbox component. If not then we send an alter to the user. The failure can arise due to the username not existing or the password being incorrect. The server sends an adequate message, so we can alert the user accordingly.
+```js
+  onLogin(form: NgForm) {
+    this.authService.login(form.value.username, form.value.password)
+    .subscribe((response) => {
+      if (response.token) {
+        this.authService.setLogin(response.token, response.username);
+        this.route.navigate([''])
+      }
+      else if(response.message == "Incorrect password") {
+        alert("Incorrect password");
+      } else {
+        alert("Incorrect username");
+      }
+    });
+  }
+  ```
+  The 'setLogin()' method, stores the JWT and username in memory and also stores it in local storage to allow the user to remain logged in, even if they close the application. We then set the 'authState' to true. As 'authState' is a Behaviour Subject, other components can subscribe to 'authState.asObservable()' and listen to dynamic changes in the Authentication state, as update the UI accordingly.  <br/>
+  
+  Once the user is logged in the UI looks like this:
+  
+  <p align="center">
+  <img align="center" src="supporting_images/loginui.png" width="550px">
+  </p> 
+
+Notice above, that the toolbar has the user's username. The Authentication service is injected into the Toolbar component, which then subscribes to the 'authState'. If 'authState' is true, it calls the 'getUsername()' method in the Authentication Service and sets the message variable in the Toolbar component to the username, which is then displayed on the UI.
+The Mapbox component subscribes to the 'authState', and sets the isLoggedIn variable to what value the 'authState' observable emits. We then use *ngIf to conditionally render components on the map, depending on if the user is logged in or not.
+
+```js
+<div class="full">
+    <app-user *ngIf="isLoggedIn && sidebarState.profile" [@inOutAnimation]></app-user>
+    <app-userpost-display *ngIf="isLoggedIn && sidebarState.userPosts" [@inOutAnimation] (flyToCords)="flyTo($event)">
+    </app-userpost-display>
+    <app-user-search *ngIf="isLoggedIn && sidebarState.search" [@inOutAnimation]></app-user-search>
+    <app-key *ngIf="isLoggedIn && sidebarState.key" [@inOutAnimation]></app-key>
+    <div id="map">
+    </div>
+    <app-usersearch-display *ngIf="isLoggedIn && sidebarState.search" [@inOutAnimation] (flyToCords)="flyTo($event)">
+    </app-usersearch-display>
+</div>
+<button *ngIf="!isLoggedIn" class="button" mat-raised-button color="primary" (click)="openDesDialog()">
+    Welcome
+  </button>
+<app-sidebar *ngIf="isLoggedIn && !isMapLoading"></app-sidebar>
+```
+
+As you can see from above, the navbar, the user's timeline, key, search are all dependent on the user being authenticated, and the 'welcome' button is not. <br/>
+Methods in the User Service also retrieves the 'username' from local storage, to send the username in the API's URL as a parameter, when updating user details, or retrieving user data through the API (more in User Service section).
+
+### How to log out?
+
+The Authentication service is injected into the sidebar component. When the user presses the logout icon in the navbar. It calls the 'logout()' in the Authentication Service. This then sets the authToken and username variables in memory to null, and sets 'authState' to false, while wiping all content in local storage. 'Window.location.reload()' is called, and that essentially takes the application back to its original state, refreshing the Mapbox component, altering the UI to reflect the fact that the user logged out.
+
 
 ## Sidebar Service:
 
@@ -755,13 +820,104 @@ If the measures have been overcome, then the 'createPost()' method in the Post S
   <img src="supporting_images/sidebar.png" width="950px">
   </p> 
 
-## URL-state Service:
+  We defined a Sidebar Interface:
+  ```js
+  export interface Sidebar {
+    key: boolean,
+    profile: boolean,
+    userPosts: boolean,
+    search: boolean,
+    settings: boolean,
+  }
+  ```
+  The Sidebar Service contains a Behaviour Subject of type Sidebar (defined by the interface above), as an attribute and called 'sideBarState'. Its state is initialized with an object of type Sidebar with all attributes set to false. This service is injected into the Sidebar component.
+  When the Sidebar component is initialized, it calls 'getSideBarObvs()' from the Sidebar Service (that returns an observable from 'sideBarState') and subscribes to it. It then takes the value emitted from this observable and stores it as a variable, called 'sidebarState' within the component. The Sidebar component is comprised of several icons as shown below. 
+
+  <p align="center">
+  <img src="supporting_images/navbar.png" width="550px">
+  </p> 
+
+  Let's talk about the process of clicking the profile icon. The procedure is the same for the other icons. It's just the respective methods associated with the other icons that are triggered. When the user clicks the profile icon, a click event is triggered and it calls the "onProfileClick() method in the Sidebar component. This then calls this 'setProfileState()' from the Sidebar service. This method takes a boolean as a parameter. This boolean will essentially represent the next state of the profile attribute. So we get the current state of the profile attribute from the 'sidebarState' variable (within the component) and pass the opposite value into the function.
+  ```js
+    clickProfileIcon():void {
+    this.sidebarService.setProfileState(!this.sidebarState.profile);
+  }
+  ```
+  Now in the 'setProfileState()' method, we create a new Sidebar object, but the profile attribute will take the value of the parameter, and all other attributes are set to false. This ensures only one component can be rendered at a time. We call the 'next()' method on 'sideBarState' in the service, and pass the new Sidebar object into this state. However, we set a time out of 200ms. This is the same time as it takes for the components to ease in and out via a custom animation. This ensures a smooth transition from a component easing out to the new component easing in. Without this time out, the new component will appear before the old component disappears. This resulted in a horrible animation.
+  ```js
+  /*set the profile state*/
+  setProfileState(isClicked: boolean): void{
+    this.sideBarState.next(this.offState);
+    const newSBState = {
+      key: false,
+      profile: isClicked,
+      userPosts: false,
+      search: false,
+      settings: false,
+    }
+    setTimeout(() => {
+      this.sideBarState.next(newSBState);
+    },200)
+  }
+  ```
+  The Mapbox component also subscribes to 'sideBarState'. When there is a state change in the service, Mapbox listens to the new state emitted, and stores the new state as a variable called 'sidebarState' within the component. This state conditionally renders the components with the *ngIf directive. Eg, the profile component with render if the 'sidebarState.profile' is true, (and if logged in). Just a note. We defined a custom InOutAnimation and decorated the Mapbox component with it. We bound this decorator to the components rendered by the Sidebar Service so they can use the animation. We used Angular's built-in browser animation module.
+  ```js
+      <app-user *ngIf="isLoggedIn && sidebarState.profile" [@inOutAnimation]></app-user>
+  ```
+  Also, the Sidebar component will receive this new state, as it is subscribed to 'sideBarState' from the service. The profile icons changes color depending on whether the 'profile' attribute is true or false. If true, it will change to purple. Again, we manage this by using the *ngIf directive.
+  ```html
+    <div class="material-icons" (click)="clickProfileIcon()" *ngIf="!sidebarState.profile">
+        person
+    </div>
+    <div class="material-icons" (click)="clickProfileIcon()" *ngIf="sidebarState.profile" id="clicked">
+        person
+    </div>
+  ```
+  This is the UI state when 'sideBarState.profile' is true:
+
+  <p align="center">
+  <img src="supporting_images/sidebarstate.png" width="550px">
+  </p> 
+
+  Again, this is the same process for the other icons on the navbar.
+
+
+## URL-State Service:
 
   ### Class Diagram:
   
   <p align="center">
   <img src="supporting_images/urlstate.png" width="550px">
   </p>
+
+  This service provides very a simple function. It wasn't needed but added a nice touch to the UI. It updated the title next to the EmoteMap logo with a title that was dependant on the URL parameter state. This state was held in the URL-State Service. Eg, If the Login Component was rendered, we updated the URL State in the URL Service, with the value of the parameter of the router. In this case, it would be 'login'. The Toolbar listens to this state and renders a title accordingly. Ie if the login component was rendered, it would display 'Login'. The Signup page will display 'SignUp'. The Mapbox component, if logged in will display the user's username, else will display 'EmoteMap'.
+  ```js
+    ngOnInit(): void {
+    /*listen to obesrvable path paramter in url service*/
+    this.urlStateService.getUrlObservable().subscribe((param) => {
+      /*change toolbar color and title due to different param*/
+      if (param === 'login') {
+        this.title = 'Login';
+      } else if (param === 'signup') {
+        this.title = 'Sign Up';
+      } else if (param === 'about') {
+        this.title = 'EmoteMap';
+      } else {
+        if(this.isLoggedIn) {
+          this.title = this.authService.getUsername();
+        }else {
+          this.title = 'EmoteMap';
+
+        }
+      }
+    });
+  ```
+
+  <p align="center">
+  <img align="center" src="supporting_images/tithp.png" width="250px">
+  <img align="center" src="supporting_images/titlogin.png" width="250px">
+  <img align="center" src="supporting_images/titmp.png" width="250px">
+  </p> 
 
 ## User Service:
 
