@@ -1084,13 +1084,13 @@ There are two components in our application that subscribe to this Behavior Subj
 ```
 ### How does the user make a search query?
 
- As mentioned previously, when the user clicks the Search icon on the navbar, Mapbox will render the User-Search and Usersearch-display component. Here is how the UI will appear when this event occurs: 
+ Mentioned previously, when the user clicks the Search icon on the navbar, Mapbox will render the User-Search and Usersearch-display component due to that in Sidebar state. Here is how the UI will appear when this event occurs: 
 
   <p align="center">
   <img src="supporting_images/usersearchui.png" width="650px">
   </p>
 
-We defined a Search interface. This interface holds the parameters that the API will use to filter through all the GeoJson data stored in the database. After some feedback from Marceli. He suggested that we search by age, date, gender. We thought it would be a good idea to use sliders to define the min and max-age, min and max days from the present day, and check boxes for gender and mood. This is the Search interface we defined:
+We needed to define a Search interface, wich holds the parameters that the API will use to filter through all the GeoJson data stored in the database. After some feedback from Marceli. He suggested that we search by age, date, gender. We thought it would be a good idea to use sliders to define the min and max-age, min and max days from the present day, and check boxes for gender and mood. This is the Search interface we defined:
 ```js
 export interface Search {
     minAge: number,
@@ -1105,7 +1105,7 @@ export interface Search {
 }
 ```
 The User-Search Service has a Behaviour Subject called 'searchQueryState', which has a type Search. This Behaviour Subject holds the state of the most recent search query.
-When the User-Search component renders for the first time, we call the 'setSearchQueryState' from the User-Search Service in the 'onInit' directive of the component. We pass an object, of type Search. This object is the first search query held in the User-Search service's state. This method takes the Search object and passes it into the 'next' method on 'searchQueryState' to store this search query in the service.
+When the User-Search component renders for the first time, we call the 'setSearchQueryState' from the User-Search Service in the 'onInit' directive of the component. We create a new object of type Search, and pass it though the method as a parameter. This object is the first search query held in the User-Search service's state. This method takes the Search object and passes it into the 'next' method on 'searchQueryState' to store the new search query as state in the service.
 ```js
     this.userSearchService.setSearchQueryState({
       minAge: 0,
@@ -1147,9 +1147,57 @@ When this function is called, it subscribes to 'searchQueryState.asObservable()'
     });
   }
 ```
-There are two componants that are subscribed to 'geoSearchState':
+The user can generate a new search query by interacting with the search form built in the User-Search component. Let us discuss how each component of the form works.
+1. The Age Slider: 
+- This is built using an ngx-slider. We store variables called, 'ageMin' and 'ageMax' in the component. We then 'two-way' bind the ngx attributes 'value' and 'highValue' to these variables. Whenever the user moves the min or max slider handle, the variables' values stored in the component will update dynamically, and depend on the attributes in the ngx-slider. We initialized the ngx-slider the with and object, called 'optionAge' of type Options. This has attributes, min, max, and step. We set this based on the age ranging from 0 to 100 and set the step to 1. We bind this to the 'options' attribute of the ngx-slider.
+```html
+  <ngx-slider class="slider" [(value)]="ageMin" [(highValue)]="ageMax" [options]="optionAge"
+    (valueChange)="onChange()" (highValueChange)="onChange()"></ngx-slider>
+```
+2. The Days Slider:
+- This is set up the same as the Age slider, but the initial values range from -3650 to 0, and we use the variables 'minDay, and 'maxDay'. The range means the user can search for EmotePosts, which is bound between posts made 10 years ago to the present day.
+3. The Mood Checkboxes:
+- Here we grouped three mat-checkbox components. We defined a 'mood' object in the component, with the 'happy', 'coping', and 'sad' as attributes. These are booleans. We initialized these values to true. We used two-way data binding on the NgModel attribute for each checkbox to the mood attributes. As the mood values are initially true, the checkbox's appear ticked.  When the user clicks the checkbox, the value in NgModel will alternate its boolean value, and these values are bound to the mood object. So its attribute values will also change.
+```html
+          <p>Mood:</p>
+        <section class="moodCheck">
+          <mat-checkbox [(ngModel)]="mood.happy" (change)="onChange()" color="primary">Happy
+          </mat-checkbox>
+          <mat-checkbox [(ngModel)]="mood.coping" (change)="onChange()" color="accent">Coping
+          </mat-checkbox>
+          <mat-checkbox [(ngModel)]="mood.sad" (change)="onChange()" color="warn">Sad</mat-checkbox>
+        </section>
+```          
+4. The Gender Checkboxes:
+- This is set up the same as the mood checkboxes, but the checkboxes are bound to a 'gender' object with attributes 'male' and 'female'. They are booleans.
+
+As a side note, we needed to initialize the variables that are bound to the form with the same values we used to create the search query when the User-Search component is initialized. So the form's UI will match the initial data received and displayed on the map when search mode is initialized.
+
+Now, whenever the user makes a change to the UI, ie move the slider or check a box, a change event is triggered and we bound that to the 'onChange' method in the component. When this method is called we create a new Search object. We equal the attributes to the corresponding variables stored in the component, which are data-bound to the components on the form. We then call the 'setSearchQueryState' method and pass through the new search query object. This updates the 'searchQueryState' with the new search query. At initialisation, we subscribed to 'searchQueryState.asObservable'. So this state change will trigger an HTTP POST request to the API with the new search query as the payload. As stated previously, when the API sends a response, we process the data and update 'geoSearchState' with this new array.
+```js
+  onChange() {
+    this.keywordWarning = false;
+    let search = {
+      minAge: this.ageMin,
+      maxAge: this.ageMax,
+      minDay: this.daysMin,
+      maxDay: this.daysMax,
+      happy: this.mood.happy,
+      coping: this.mood.coping,
+      sad: this.mood.sad,
+      male: this.gender.male,
+      female: this.gender.female,
+    };
+    this.userSearchService.setSearchQueryState(search);
+  }
+```
+
+There are two componants that are subscribed to 'geoSearchState' and listen to its change in state:
 1. Mapbox Component subscribes to this when 'pullAndDisplayGJPointsFromSearchQuery()'. The details have been explained previously.
-2. Usersearch-Display component:
+2. Usersearch-Display component.
+
+### How does the Usersearch-display work?
+
 
 
 <br/>
