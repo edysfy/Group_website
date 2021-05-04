@@ -5,7 +5,8 @@
 * [References](#references)
 
 
-# <p style="text-align: center;">EmoteMap</p>
+# EmoteMap
+**Connecting people on the Internet, the right way**
 [See video demonstration here](Video_Demonstration.mp4) which explains how EmoteMap works!
 
 <a name="intro"></a>
