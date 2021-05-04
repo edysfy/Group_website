@@ -133,7 +133,13 @@ If I clicked on your Edgware Earthquake post, how could I support you? This is w
 
 ### Reflect on the working practices of your group, how well they did or did not work, e.g, management of issues, communication, Agile (etc).
 
-### Reflective discussion of the success of the project. How well did your project fulfil the brief? Were all of your own objectives met
+Taken as a whole, we worked quite effectively as team, with the clear team roles and constant communication over discord helping greatly in facilitating collaboration and continuous integration, as we were very quickly able to discuss issues and solutions, and delegate who should should be tasked with implementing those solutions.
+
+We did have issues in the first couple of sprints around effectively using github and angular, as most of the team were still getting to grips with both technologies, but once we implemented a rigid process of fetching and pulling from our repository before and after every local change, these issues subsided.
+
+As discussed in our [Project Management & development process](sprints.md) document, the use of discord channels greatly aided discussion as we were able to keep focused the discussion on disperate elements of the project, instead of having one chat where everything was lumped into one place, meaning that we were able to keep track of and refer to implementation issues in specific areas.
+
+### Reflective discussion of the success of the project. How well did our project fulfil the brief? Were all of our objectives met?
 
 Broadly, we would argue that our project has been a success, both in meeting the brief and fulfilling our own objectives, although more so in some areas than others. The project brief was to develop a web app around the concept of 'serious play'; in our case we took that to mean bringing attention to a real world problem in a new and engaging - a playful - way, along with the prehaps enabling ways to address the problem.
 
