@@ -1248,9 +1248,9 @@ This component is the child component of Mapbox. Mapbox is bound to this event e
 Here is how the Usersearch-Dislay component looks (accordion closed and open):
 
   <p align="center">
-  <img align="center" src="supporting_images/closedacc.png" width="150px">
-  <img align="center" src="supporting_images/openacc.png" width="150px">
-  </p>
+  <img align="center" src="supporting_images/closedacc.png" width="350px">
+  <img align="center" src="supporting_images/openacc.png" width="350px">
+  </p> 
 
 ## User Service:
 
@@ -1264,7 +1264,7 @@ This service, allowing the user to set and edit their gender and dob, as well as
 
 ### This is how the User component looks on the UI, when the user has not entered their gender or date of birth:
   <p align="center">
-  <img src="supporting_images/usercomp.png" width="350px">
+  <img src="supporting_images/usercomp.png" width="550px">
   </p>
 
 We defined a User interface:

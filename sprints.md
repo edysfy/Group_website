@@ -8,22 +8,32 @@
 * [Git and continuous integration](#fourth)
 
 <a name="first"></a>
-## Group collaboration stratergy
+
+## Group collaboration strategy
 
 ### Communication infrastructure
 
-Because of the restrictions mentioned above it was extremely important to keep every group member engaged and involved with the project. Discord was chosen to be our main platform for communication.
+Due to COVID-19 we were unable to meet up in person, this made it extremely important to keep every group member engaged and involved throughout project. Effective communication online is underpinned by the platform used. At a bare minimum we needed to be able to instantly message, send files and send pictures amongst the group.
 
-#### Discord
+The two tools that the group was familiar with and facilitate these needs were [Microsoft Teams](https://www.microsoft.com/en-ww/microsoft-teams/group-chat-software) and [Discord](https://discord.com/). Both platforms offer [similar features](https://droplr.com/how-to/productivity-tools/discord-vs-microsoft-teams/). Microsoft Teams allows for sharing of larger files however this was not a concern of ours given the majority of our file sharing was done on github. We decided to use Discord primarily because we preferred the GUI and were familiar with the platform having used it in the past.
 
+### Discord
 
 [Discord](https://discord.com/) is a free instant messaging platform where users can communicate through messages, voice calls and video calls, send files and more. Users can also set up private chat "servers" which can be divided into specific chat rooms.
 
-We set up a private server on Discord right at the start of the project with a few specific chats: back end, front end and write up but as the project progressed we created more specific channels:
+We set up a private server on Discord right at the start of the project. We found the following features particularly useful throughout our project:
+
+**Specific chat rooms:** Initually we set ip the serve with a few specific chats: back end, front end and write up but as the project progressed we created more specific channels as required:
 
 <td><img src="supporting_images/discord_chat.PNG"></td>
 
-Having more specific chat rooms was extremely useful, if we wanted to refer back to a certain message or link we would go to that specific channel instead of trawling through hundreds of messages. Discord also allows you to pin and search for messages. This was great for saving specific ideas, links and files. As well as instant messaging we carried out all our video calls over Discord.
+Having the group chat divided into specific areas kept our workflow and ideas organised. If we were looking for a particular file or idea we had previously mentioned we could look under the relevent area instead of trawling through one massive chat. Specific chats also enhanced our workflow. For example when our team split having 2 working on the front end and 2 on the back end we each used the corresponding chat. This meant that the team working on the front end wouldn't have to waste time reading irrelivent messages on the backend and visa versa which saved time.
+
+**Message pinning:** Discord has a feature where you can pin messages. These messages are then saved to the pinned messages in the chat they were sent and can be viewed easily. This came in handy when we wanted to save a particular idea or link and because pinned messages were specific to each chat they were especually easy to find. For example when formulating initial project ideas we wrote a description of each idea and pinned it to the chat for reference. Without this feature these ideas would have had to be put together on a separate document to avoid them being potentially lost.
+
+**Keyword searching:** Discord allows you to search chats for messages by keyword returning any message featuring the entered keyword along with the position in the chat it appears. This saved time when looking for certain parts of our discussions that we may not have pinned as we didn't realise they would be useful later on. This feature was particularly useful when working on the write up. We had documented most key points throughout our project but for ones we had missed it was simple to look them up. For example finding our discussions regarding Mapbox was as simple as searching in 'mapbox' and we would have all parts of the chat where this word was mentioned.
+
+**Screen sharing:** When in a video chat Discord allows you to share your screen. This was particularly useful for demonstrating new features to the group before agreeing to make a push or demonstrating issues with the site. One example where this came in handy is when we discovered that our site malfunctioned on one of our group members pcs because of its dimensions. This group member was able to demonstrate this to the group via screen share so it could be fixed.
 
 ### Workflow strategy
 
