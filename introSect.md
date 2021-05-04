@@ -1,11 +1,9 @@
 ## Table of contents
 * [Introduction](#intro)
 * [Background and Motivation](#backgrnd)
-* [How Will EmoteMap Solve the Problem?](#solve)
+* [EmoteMap Will Solve the Problem by...](#solve)
+* [Industry Review: What Differentiates EmoteMap](#differentiate)
 * [References](#references)
-
-
-**Connecting people on the Internet, the right way**
 
 <a name="intro"></a>
 # Introduction
@@ -68,8 +66,8 @@ The complexity of the issue of global mental illness means that there is no univ
 ### 4) Empowering non-users with relevant data
 We seek to empower analysts and organisations with data that will aid them in their efforts to combat the issue of mental illness globally. This will be an indirect contribution to solving the problem. For example, a charity could raise awareness for mental illness by showcasing visual data taken from EmoteMap's heat map interface which would allow for a comprehensive explanation of how many people feel depressed in certain areas.
 
-
-### Industry Review: What differentiates EmoteMap?
+* [EmoteMap Will Solve the Problem by...](#solve)
+# Industry Review: What Differentiates EmoteMap?
 #### Website 1 - The Mental Elf
 ##### Summary:
 The Mental Elf is a 'no misinformation' mental health blogging website started by information scientist, Andre Tomlin. The blog is now a team of contributors aiming to bring fresh perspectives, considerable knowledge, and clinical experience when talking about mental health.  
