@@ -31,7 +31,6 @@ export class UsersearchDisplayComponent implements OnInit {
 
   onFlyTo(lngLat: number[]):void {
     this.flyToCords.emit(lngLat);
-    console.log(lngLat);
   }
 
 }
