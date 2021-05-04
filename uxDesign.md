@@ -80,7 +80,7 @@ Our paper prototype served well at forming an initial visualisation of the websi
 <img src="supporting_images/wireframe_preview.png" width="700">
 </p>
 
-Again, we shared the wireframe with friends and family, and coupled it with a questionnaire (I COULD INCLUDE LINK TO COPY OF QUESTIONNAIRE). We provided users with a questionnaire, and also the ability to leave their own comments on the wireframe (in case they would like to leave feedback beyond what the questionnaire had asked). One user reported that it would be useful to have a key on the map, informing the user on what coloured marker means what. As a direct response to this feedback, we implemented a key. The final version of the key can be see below (right), alongside the original feedback (left).
+Again, we shared the wireframe with friends and family, and coupled it with a questionnaire. As well as the questionnaire, we provided the ability to leave comments on the wireframe (in case they would like to leave feedback beyond what the questionnaire had asked). One user reported that it would be useful to have a key on the map, informing the user on what coloured marker means what. As a direct response to this feedback, we implemented a key. The final version of the key can be see below (right), alongside the original feedback (left).
 
 <p float="left">
 <img src="supporting_images/Wireframe_with_feedback.png" width="450">
