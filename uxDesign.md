@@ -74,7 +74,7 @@ On a small paper prototype, the number of options can look slightly overwhelming
 
 ### On to wireframes
 
-Our paper prototype served well at forming an initial visualisation of the website, and for receiving feedback on core features. In order to gain feedback more related to user experience, we needed to demonstrate the website using a closer representation of a working product. Logically, a wireframe was the next best step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/share/NJ2D65MNBU/572059598) to go to our interactive wireframe. Below is a preview:
+Our paper prototype served well at forming an initial visualisation of the website, and for receiving feedback on core features. In order to gain feedback more related to user experience, we needed to demonstrate the website using a closer representation of a working product. Logically, a wireframe was the next best step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/EmoteMap-prototype-2-ckn7hacvv1nm601590k9h8044/ckn7han2m109p012d8epohsri/play) to go to our interactive wireframe. Below is a preview:
 
 <p align="center">
 <img src="supporting_images/wireframe_preview.png" width="700">
@@ -92,11 +92,6 @@ Results of the questionnaire showed that 80% of people thought an 'about' page w
 <p align="center">
 <img src="supporting_images/About_page.png" width="700">
 </p>
-
-### UX approach – design heuristics/approach, design methods (design fiction / heuristics)
-stuff
-
-### Understanding of user group (questionnaires / user stories / interviews)
 
 
 
