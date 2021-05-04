@@ -115,7 +115,7 @@ User: "Yeah, or you could make use of the map, and have a button that locates th
   </em>
 </p>
 
-![Fly_feature](Supporting_images/Fly_feature.gif)
+![](Supporting_images/Fly_feature.gif)
 
 
 
