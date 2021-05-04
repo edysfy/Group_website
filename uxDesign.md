@@ -99,6 +99,14 @@ Results of the questionnaire showed that 80% of people thought an 'about' page w
 <img src="supporting_images/About_page.png" width="700">
 </p>
 
+As our final documented method for UX improvment, we came up with an idea - a live demonstration session. The idea was to first explain the project, before handing the wireframe over to the user. We told the user to imagine that they were using the real, working app. We asked if they could talk out loud their intentions as they were navigating the website. We thought this may be helpful as it would allow us to get a better idea of how users would use our app, and also to allow discussion regarding any ideas, or suggestions they may have. From the recording that was made, we have included a section that was particularly useful for our UX development.
+ 
+User: "Okay, I've just posted to say that I'm super excited to be getting my first shot of the vaccine tomorrow! Let me see who else is making EmotePosts about vaccines. Oh wow, there are so many positive posts about vaccines [imagining]. Although the UK is pretty ahead, so I guess there would be quite a few negative ones from other parts of the world.
+Team member: "Yes, the  real working search results will show you posts from all over the world."
+User: "That's really cool. How do I see where each post is from?"
+Team member: "Good point, you can't right now, but we should include that in the post."
+User: "Yeah, or you could make use of the map, and have a button that locates the post."
+
 
 
 
