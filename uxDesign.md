@@ -93,11 +93,6 @@ Results of the questionnaire showed that 80% of people thought an 'about' page w
 <img src="supporting_images/About_page.png" width="700">
 </p>
 
-### UX approach – design heuristics/approach, design methods (design fiction / heuristics)
-stuff
-
-### Understanding of user group (questionnaires / user stories / interviews)
-
 
 
 
