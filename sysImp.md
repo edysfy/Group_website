@@ -1,5 +1,16 @@
 # System Implementation
-# Stack architecture and system design (e.g. class diagrams, sequence diagrams)
+
+# Table of contents
+
+* [Stack architecture and system design](#first)
+* [MongoDB - database implementation](#second)
+* [Middle Tier - Express, Node, the RESTful API](#third)
+* [Front End - Angular](#fourth)
+* [Deployment details](#fifth)
+
+
+# Stack architecture and system design 
+<a name="first"></a>
 
 Before diving into the details of each stack, how they work and link together. Lets talk about the System Architecture as a whole.
 <br/> From a very broad perspective this is how application skeleton is structured: <br/>
@@ -23,6 +34,7 @@ We needed three main components that comprise the stack.
 Lets go into some more depth...    
 
 # MongoDB - database implementation
+<a name="second"></a>
 
 ## Why use MongoDB?
 
@@ -174,6 +186,7 @@ const userSchema = new mongoose.Schema({
 ```
 
 ## Middle Tier - Express, Node, the RESTful API
+<a name="third"></a>
 
 ### Node:
 We used Node as a runtime enviroment allowed us to run javascript code outside  the web browser. As, we built the front-end with Angular, we decided that to use Node to build the backend API, as the languages needed for both are the same. This really helped team members work on both the front and the backend. The node server is built with the HTTP module, and listens for HTTP request/responses on a local port. We didn't build the whole api with Node. We use ExpressJs build to an Express app. The Express app is a comprised of a series of function calls and custom middleware that we developed. The Express app is passed into the Node Server as an argument. Every time a request is made against the server, the argument is called every time. So are Express middleware will essentially run and deal with the request. The server object is an event is an "EventEmitter", we use Express CRUD methods to listen to when an HTTP event is triggered.
@@ -482,6 +495,7 @@ Lets break down this Express application and describe how it works:
 
 
 # Front End - Angular, Details of implementation
+<a name="forth"></a>
 
 ### Angular Material
 We heavily relied on the use of the [Angular Material](https://material.angular.io) library. This us provided pre-build UI components, that can be styled easily. 
@@ -1358,6 +1372,8 @@ The method in the Post Service also sends an HTTP DELETE request to the API, sen
 
 
 # Deployment details (including Docker), include how you have been achieving continuous integration and deployment
+<a name="fifth"></a>
+
 We implemented a docker-compose script from early on in the development process, which ended up being crucial in maintaining code quality and compatibility - we made sure that before each push to our group repository that the website was functioning both when running node server.js and docker-compose up. Docker was especially important for this as it provides a repeatable environment in the form of a docker container; we can be sure that if the project is working on one machine in docker, it will work on others. We primarily achieved continuous integration by utilising docker in this way, but also crucial was the factoring in of all the components of the MEAN stack from a very early stage. After deciding on the api we would use to present the map (mapbox) and setting up a basic template website using it, we quickly added an api (this api eventually became geopost.js) in order to deal with fetching the data for the map; even though this was collecting static data at first, it meant that functionally our website was behaving as it would when we we utilising all parts of the mean stack (i.e. when we added in a mongoDB database, this api would now fetch data from the database instead of using static data). This allowed us to test and run our website using node server.js (and docker-compose up) after every change as previously mentioned. As we also made use of github, allowing us to all share and download the most up to date files, we were able to continuously implement and integrate changes throughout the development process (see [Sprints & Project Management](sprints.md) for more details).
 
 Next section; [UX Design](uxDesign.md)
