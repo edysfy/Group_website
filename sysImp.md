@@ -9,7 +9,7 @@
 * [Deployment details](#fifth)
 
 
-# Stack architecture and system design 
+# Stack architecture and system design
 <a name="first"></a>
 
 Before diving into the details of each stack, how they work and link together. Lets talk about the System Architecture as a whole.
@@ -497,12 +497,19 @@ Lets break down this Express application and describe how it works:
 # Front End - Angular, Details of implementation
 <a name="forth"></a>
 
-### Angular Material
-We heavily relied on the use of the [Angular Material](https://material.angular.io) library. This us provided pre-build UI components, that can be styled easily. 
+Note we made use of [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped) for some type definitions in our project.
+
+### Angular Material/Font-Awesome
+We heavily relied on the use of the [Angular Material](https://material.angular.io) library. This us provided pre-build UI components, that can be styled easily.
 Any word starting with 'mat-' is a component from Angular Material. <br/>
+
+We also made use of [Font-Awesome](https://github.com/FortAwesome/Font-Awesome) for some fonts and icons in our project.
+
 #### Mapbox
 We used the [Mapbox API](https://docs.mapbox.com/mapbox-gl-js/api/), which provided us with a customizable map. That met our needs adequately. <br/><br/>
 The implementation of these API's are mentioned in more detail throughout the rest of the application.
+
+We also made use of these [type definitions](https://github.com/yuhki50/types-mapbox-gl) in our mapbox implementation.
 
 
 Our front end is comprised of many components. We felt the best way to break down the implementation of the front end is by grouping the application by Services as they are heart of how each process works.
@@ -1190,7 +1197,7 @@ There are two componants that are subscribed to 'geoSearchState' and listen to i
 1. Mapbox Component subscribes to this when 'pullAndDisplayGJPointsFromSearchQuery()'. The details have been explained previously.
 2. Usersearch-Display component.
 
-The user can also search by keyword. When the user submits this keyword, the 'sendKeyword' method gets called, which then uses the User-Search service to get the GeoJson array in memory, filter through it using the keyword, and update the state with that new array. Which will automatically update the Mapbox UI, and the Usersearch-Display. 
+The user can also search by keyword. When the user submits this keyword, the 'sendKeyword' method gets called, which then uses the User-Search service to get the GeoJson array in memory, filter through it using the keyword, and update the state with that new array. Which will automatically update the Mapbox UI, and the Usersearch-Display.
 
 ### How does the Usersearch-display work?
 <a name="us"></a>
@@ -1221,7 +1228,7 @@ The "filler" element is needed as the mood values are 1,2 and 3. We take the moo
     <mat-action-row>
 ```                    
 
-We also implemented a fly-to button, on each accordion. When the user clicks the button, it triggers the 'onFlyTo' method in the component. This function takes the GeoJson's coordinates and passed them through an event emitter. 
+We also implemented a fly-to button, on each accordion. When the user clicks the button, it triggers the 'onFlyTo' method in the component. This function takes the GeoJson's coordinates and passed them through an event emitter.
 ```js
   onFlyTo(lngLat: number[]):void {
     this.flyToCords.emit(lngLat);
@@ -1243,7 +1250,7 @@ Here is how the Usersearch-Dislay component looks (accordion closed and open):
   <p align="center">
   <img align="center" src="supporting_images/closedacc.png" width="150px">
   <img align="center" src="supporting_images/openacc.png" width="150px">
-  </p> 
+  </p>
 
 ## User Service:
 
@@ -1334,7 +1341,7 @@ This is how the User component looks on the UI, when the user has not entered th
   <p align="center">
   <img src="supporting_images/uinogender.png" width="350px">
   </p>
-When either of these values are null, then the users EmotePost wont appear on the search results from the User-Search. We ask the user for these values to allow users to search for EmotePosts by age and gender. 
+When either of these values are null, then the users EmotePost wont appear on the search results from the User-Search. We ask the user for these values to allow users to search for EmotePosts by age and gender.
 
 ### This is how the Userpost-Display looks on the UI:
   <p align="center">
@@ -1342,7 +1349,7 @@ When either of these values are null, then the users EmotePost wont appear on th
   <img src="supporting_images/etopen.png" width="350px">
   </p>
 
-When the user, clicks on the list icon on the sidebar, it sets the corresponding sidebar state to true, meaning Mapbox will render the component. The User service is injected into the Usersearch-Display component. In its 'onInit' directive, we call the 'getUserPosts' method from that User Service and subscribes to it. This method obtains the user's username from local storage and makes an HTTP GET request to the 'api/user/' route. While sending the username as a request param in the URL. It returns a GeoJson array, with posts ONLY made by the user. The Userpost-Display gets this array as it is subscribes to the state in the User Service and stores it in a local variable called 'userPosts'. We use *ngFor directive to display the posts on the UI using the mat-accordion component. It also has a fly-to button. This is the same as in the Usersearch-Display component. More information on the implementation and fly-to functionally can be found in the [User-Search Service](#us) section above. 
+When the user, clicks on the list icon on the sidebar, it sets the corresponding sidebar state to true, meaning Mapbox will render the component. The User service is injected into the Usersearch-Display component. In its 'onInit' directive, we call the 'getUserPosts' method from that User Service and subscribes to it. This method obtains the user's username from local storage and makes an HTTP GET request to the 'api/user/' route. While sending the username as a request param in the URL. It returns a GeoJson array, with posts ONLY made by the user. The Userpost-Display gets this array as it is subscribes to the state in the User Service and stores it in a local variable called 'userPosts'. We use *ngFor directive to display the posts on the UI using the mat-accordion component. It also has a fly-to button. This is the same as in the Usersearch-Display component. More information on the implementation and fly-to functionally can be found in the [User-Search Service](#us) section above.
 
 The difference is that each mat-accordion component comes with a delete button. When the user clicks this it passes the '_id' of the GeoJson element to the 'onDelete' method. This deletes the element with that _id stored in state in the User Service. Which is automatically re-renders the UI in User-Display component, and in the Post Service, which automatically re-renders the data displayed through Mapbox.
 ```js
