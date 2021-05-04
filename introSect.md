@@ -5,7 +5,7 @@
 * [References](#references)
 
 
-<p style="text-align: center;">EmoteMap</p>
+# <p style="text-align: center;">EmoteMap</p>
 [See video demonstration here](Video_Demonstration.mp4) which explains how EmoteMap works!
 
 <a name="intro"></a>
