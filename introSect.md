@@ -5,39 +5,38 @@
 * [References](#references)
 
 
-# EmoteMap
 **Connecting people on the Internet, the right way**
-[See video demonstration here](Video_Demonstration.mp4) which explains how EmoteMap works!
 
 <a name="intro"></a>
 # Introduction
 
 ### Abstract
+[See video demonstration here](Video_Demonstration.mp4) which explains how EmoteMap works!
 
-### objectives
- 1 - Create a writing tool that allows self-reflection in a similar way to blogging.
- 2 - Create a peer-led support network where users can interact with each other as a community.    
+### Objectives
+ 1 - Create a writing tool that allows self-reflection in a similar way to blogging.  
+ 2 - Create a peer-led support network where users can interact with each other as a community.      
  3 - Create a tool that raises awareness and information through a visual heat-map based on an accumulation of users' mental health in different geolocations.
 
-## Who is our Target Market and Stakeholders?
+## Who is our Target Market & Stakeholders?
 The end user our team seeks to attain to is any male or female on the planet who has access to the Internet over the age of 13.  Please see Sarah's fictional user story in our [UX section](uxDesign.md) where we talk about our end users in more detail, including Sarah's fictional user story which serves as an example of a way in which we aim for users to interact with EmoteMap. There are *X* number of people in our target population. When it came to evaluating exactly how users interpreted our designs throughout the development process we found, through [Smart Survey's sample size calculator](https://www.smartsurvey.co.uk/sample-size-calculator), our required sample size  for a target population of this size was *X*. Please see our Limitations heading of the [Evaluation section](evalSect.md) for a more in depth discussion about the sample size of our market.    
 
-Our team aimed to address two key stakeholders:  
-First was the type of end user that made up our target market, as explained above. Second would be any analyst or organisation who would benefit from the data provided by EmoteMap about the different emotions and experiences felt globally. This could be in the form of visual data provided by our heat map, data extracted from the experiences and emotions logged by users; either as part of their blog post, the keyword emotion that they chose to log (e.g - "anxious"), user geolocation, or the 1-3 scale of emotion logged by the user. We envisage this kind of stakeholder to be a data analyst or a mental health organisation for example. For a more detailed investigation into this type of stakeholder, please see Christina's fictional story in our [UX section](uxDesign.md) which can help you visualise exactly how this kind of stakeholder would benefit from using EmoteMap.
+Our team aimed to address two key stakeholders:    
+Our first was the type of end user that made up our target market, as explained above. Second would be any analyst or organisation who would benefit from the data provided by EmoteMap about the different emotions and experiences felt globally. This could be in the form of visual data provided by our heat map, data extracted from the experiences and emotions logged by users; either as part of their blog post, the keyword emotion that they chose to log (e.g - "anxious"), user geolocation, or the 1-3 scale of emotion logged by the user. We envisage this kind of stakeholder to be a data analyst or a mental health organisation for example. For a more detailed investigation into this type of stakeholder, please see Christina's fictional story in our [UX section](uxDesign.md) which can help you visualise exactly how this kind of stakeholder would benefit from using EmoteMap.
 
 <a name="backgrnd"></a>
-## Background and Motivation
+# Background and Motivation
 ### The Problem
 Our team addresses both the problem of poor  mental health globally and the inadequacy of today's mainstream social media in addressing it. To make the problem more digestible we decided to define it in two parts. In the first, we explain the issue of poor mental health which has become significantly worse as a result of the global lockdown. In the second we address the related issue of online culture's inadequacy to acknowledge the first problem. Current mainstream social platforms found online can be ,in fact, detrimental to it.
 
-### Framing The Problem part 1: Mental illness globally
+### The First Part of the Problem: Mental illness globally
 Our team seeks to address the problem of mental illness globally. We do not believe that you can define mental illness simply as sadness or insanity. It is not a binary or exclusive concept in this way. Rather, we see it as a complex and universal problem. A time series curated by the Institute for Health Metrics Evaluation demonstrates that in a recent year about 13% of the global population suffered from some kind of mental disorder (Guardian, 2011). The British charity, Mind, refers to a statistic that one in four people will experience some form of mental illness in a given year  (Mind, 2020). Over in America it has been noted by the Anxiety and Depression Association of America that anxiety disorders are the most common mental illness in the US, effecting 40 million adults aged 18 and older (ADAA, 2021). Ironically, although anxiety is highly treatable only 36.9% of those suffering receive treatment (ADAA, 2021).  
 
 We view mental illness as a global phenomenon, experienced in different ways around the world. For example, the incidence of catastrophic healthcare expenditure in Mexican households caring for a person with a mental disorder (Castro et. al, 2020) is not a naturally relatable topic for someone experiencing depression in the UK. At the same time, those Mexicans suffering from catastrophic healthcare expenditure will find it hard share similar coping mechanisms with Syrians dealing with mental distress in ongoing conflict and non-conflict settings during COVID-19. Emotemap seeks to unite people experiencing this universal and complex phenomenon at a local level, whereby users can find people going through similar experiences and emotions by searching for a keyword or looking in a certain location.
 
 This part of the problem is particularly prominent today as a result of lockdown and social distancing measures. 60% of adults and 68% of young people have said their mental health has worsened during lockdown (Mind, 2020). In addition to this many who have never previously experienced mental health problems have seen their mental health and wellbeing decline during lockdown (Mind, 2020).
 
-### Framing The Problem part 2: Current online societies are detrimental to mental health
+### The Second Part of the Problem: Current online societies are detrimental to mental health
 The compulsive use of social media amongst our population is increasing. By 2022 it is forecast that there will be 3 billion active monthly users of social media and therefore has become an integral part of society. As our lives become more heavily dependant on online culture, the impact that it has on our mental health is exacerbated.  
 
 Mainstream social platforms are detrimental to humans' mental health. Harris and Pettman believe that algorithms in mainstream social media platforms hijack our psychological vulnerabilities and exploit our minds' weaknesses by playing to our emotional disposition of seeking social reassurance (Harris, 2016). On the surface, social media appears to be ultra-social and therefore we use it in the hope that it will make us feel less alone. However, after continued use it becomes evident that each user has their own inner life, which we are not part of. Through noticing this users receive a strong 'rebound loneliness' (Pettman, 2016:20). In agreement with this, according to a new Cigna study, 7 out of 10 heavy social media users reported feelings of loneliness (Cigna, 2008).  
@@ -56,17 +55,17 @@ Barak and Grohol have brought to light that online peer-led support groups have 
 In agreement with this, Bakar and Moore did a study on MySpace and discovered that those users who blogged frequently increased their social integration and friendship satisfaction scores compared to those who did not (Bakar & Moore, 2008).  
 
 <a name="solve"></a>
-## How will EmoteMap solve the problem?
-### By introducing a more positive way for users to interact online
+# EmoteMap Will Solve the Problem by...
+### 1) Introducing a more positive way for users to interact online
 We are not trying to reduce the interaction that humans have with online social platforms, it is clear that this will inevitably increase in forthcoming years. Instead, we want to create an aspect to online sociality that is similar in interactivity to current mainstream social media platforms but addresses mental health explicitly.
 
-### By Creating an environment whereby users can be both self-reflective and feel supported by a community of users
+### 2) Creating an environment whereby users can be both self-reflective and feel supported by a community of users
 Blogs offer mental health intervention in a similar way to journaling. Although journalling has traditional been done in private to complement psychology, blogging has taken many would-be private journals and turned them public (Bakar & Moore, 2008). Feedback from others can help an individual learn to view feelings and thoughts in ways differently to how they would if they were left to their own devices.
 
-### By solving a global problem locally
+### 3) Solving a global problem locally
 The complexity of the issue of global mental illness means that there is no universal solution. We also acknowledge that those suffering mentally may be doing so due to culturally dependant reasons. Therefore, a teacher facing stress, anxiety and depressing at the beginning of the academic year during the COVID-19 pandemic (Santamaría & Mondragon, 2021) may search keywords such as 'stress, anxiety, teachers, COVID'. The posts they read will most likely be completely different to those of someone experiencing intimate partner violence and unhealthy alcohol use in the Zambia (Kane et. al, 2021).
 
-### By empowering non-users with relevant data
+### 4) Empowering non-users with relevant data
 We seek to empower analysts and organisations with data that will aid them in their efforts to combat the issue of mental illness globally. This will be an indirect contribution to solving the problem. For example, a charity could raise awareness for mental illness by showcasing visual data taken from EmoteMap's heat map interface which would allow for a comprehensive explanation of how many people feel depressed in certain areas.
 
 
