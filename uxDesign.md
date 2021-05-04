@@ -71,7 +71,7 @@ Before moving on to the next prototype design, we took a moment to reflect on ou
 <img src="supporting_images/Paper_prototype_search_criteria.jpeg" width="400">
 </p>
 <p align="center">
-<img src="supporting_images/Filter_feature.jpeg" width="400">
+<img src="supporting_images/Filter_feature.png" width="400">
 </p>
 
 On a small paper prototype, the number of options can look slightly overwhelming, however this will change when on a larger screen. To get a balance between flexibility and simplicity, we made each selection optional, so the user does not have to complete each field if they would like to make a short and easy search.
