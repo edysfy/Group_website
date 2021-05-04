@@ -5,9 +5,8 @@
 * [References](#references)
 
 
-# **EmoteMap**
-### Video Demonstration: How it Works
-[See video here](Video_Demonstration.mp4)
+<p style="text-align: center;">EmoteMap</p>
+[See video demonstration here](Video_Demonstration.mp4) which explains how EmoteMap works!
 
 <a name="intro"></a>
 # Introduction
