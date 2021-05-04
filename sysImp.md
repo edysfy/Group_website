@@ -1241,8 +1241,8 @@ This component is the child component of Mapbox. Mapbox is bound to this event e
 Here is how the Usersearch-Dislay component looks (accordion closed and open):
 
   <p align="center">
-  <img align="center" src="supporting_images/closedacc.png" width="150px">
-  <img align="center" src="supporting_images/openacc.png" width="150px">
+  <img align="center" src="supporting_images/closedacc.png" width="350px">
+  <img align="center" src="supporting_images/openacc.png" width="350px">
   </p> 
 
 ## User Service:
