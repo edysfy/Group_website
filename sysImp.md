@@ -1021,18 +1021,88 @@ The Authentication service is injected into the sidebar component. When the user
   <img src="supporting_images/user.png" width="850px">
   </p>
 
-Finally, we use the api’s map.flyto function to move and zoom in on specific data points, which we call using an event listener in the mapbox-component html from a button click in the usersearch-display-component (which displays posts resulting from a user search).
+This service, allowing the user to set and edit their gender and dob, as well as getting the users posts and displaying it on a timeline. It works with two components. The User and the Userpost-Display component.
 
-```javascript
-flyTo(lngLat: number[]) {
-  if(!isNaN(lngLat[0])&&!isNaN(lngLat[1])){
-    this.map.flyTo({
-    center: [lngLat[0], lngLat[1]],
-    zoom: 15,
-  });
-}
+This is how the User component looks on the UI, when the user has not entered their gender or date of birth:
+  <p align="center">
+  <img src="supporting_images/usercomp.png" width="450px">
+  </p>
+
+We defined a User interface:
+```js
+export interface User {
+    username: string,
+    dob: string,
+    age?: number,
+    gender: string,
 }
 ```
+When the user, clicks on the profile icon on the sidebar, it sets the corresponding sidebar state to true, meaning Mapbox will render the component. The User service is injected into the User component. In its 'onInit' directive, we call the 'getUserFromDB' method from that User Service, and subscribe to it. This method obtains the user's username from local storage and makes an HTTP GET request to the 'api/user/' route. While sending the username as a request param in the URL. The server responds with an object of type User, defined by the interface above. Then we store this in a Behaviour Subject called 'userDetails'. We then return 'userDetails.asObservable' observable, which is what we subscribe to in the component. We store the result from this observable in a local variable called 'userDetails'. The username obtained from local storage can not be null, as this method is only called from a component that requires the user to be logged in to access. <br/>
+
+```js
+  getUserFromDB(): Observable<User> {
+    const username = localStorage.getItem('username');
+    this.http
+      .get<{ user: User }>('http://localhost:3000/api/user/' + username)
+      .subscribe((res) => {
+        if (res != null) {
+          this.userDetails.next(res.user);
+        }
+      });
+    return this.userDetails.asObservable();
+  }
+```
+Let us discuss how the gender section of the form works. We check if the user's gender value is 'n/a'. We define booleans, 'isGenderNull' (set to true is == 'n/a') and is  'genderEdit' (is true when the user clicks the edit button). These booleans conditionally render the components on the User components HTML form. This is a template form. The gender input field is shown to the user if 'isGenderNull' or 'genderEdit' is true. So this means if the user is new, and has not set their gender, or made a mistake and wants to change their gender, they can re-enter it into the input field. We used the Regex Pattern attribute that comes with Angular Material and set the pattern to 'male|female'. If the user submits a value different to this, mat-error, with throw an error, halting the submission process. The save button, as shown in the picture above, is rendered when either of these booleans is true. When the user clicks save, and there is no error. The form calls 'saveGender' method and passes the form values as a parameter.
+```js
+    <div class="gender" style="display: flex; margin-left: 5%; margin-top: 40px; position: relative; top: 120px">
+      <mat-label>Gender: </mat-label>
+      <form (submit)="saveGender(genderForm)" #genderForm="ngForm" class="gender-tick" autocomplete="off">
+        <mat-form-field *ngIf="isGenderNull || genderEdit" style="position: relative; bottom: 30px; left: 30px;">
+          <mat-label>male/female</mat-label>
+          <input matInput name="gender" ngModel type="text" #gender="ngModel" required pattern="male|female"/>
+          <mat-error *ngIf="gender.invalid">Please enter male or female (lowercase).</mat-error>
+        </mat-form-field>
+        <button *ngIf="isGenderNull || genderEdit" class="dob-button" mat-raised-button color="primary"
+          style="position: relative; left: 78px; bottom: 32px;" type="submit">
+          <mat-icon>save</mat-icon>
+        </button>
+      </form>
+      <div *ngIf="!isGenderNull && !genderEdit" style="width: 200px; position: relative; margin-left: 10px">
+        {{userDetails.gender}}
+      </div>
+      <button *ngIf="!isGenderNull && !genderEdit" class="editgender-button" mat-raised-button color="primary"
+        (click)="onGenderEdit()" style="position: relative; left: 58px; bottom: 10px;">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+```
+In 'saveGender' method, we set both 'genderEdit' and 'isGenderNull' to false. Store the forms gender value in the 'userDetails.gender' variable, then call the 'updateGender' method in the User Service, passing the form's gender value as a parameter. This method gets the username from local storage and passes the gender, with the username, to the API, which then stores the gender with the user's data in the User Collection. So the next time the user opens the User component, 'isGenderNull' will be false. When 'isGenderNull' and 'genderEdit' are both false, the form renders the user's gender on the UI, using text interpolation on the variable 'userDetails.gender'. Also, the save button disappears, and the edit button appears.  When the user clicks the edit button, it calls 'onGenderEdit' method, which sets 'genderEdit' to true. This initiates the process discussed above. We used the *ngIf directive to control the form's state.
+```js
+  /*update the users gender in the database*/
+  updateGender(gender: string): void {
+    const username = localStorage.getItem('username');
+    this.http
+      .put<{ message: string }>('http://localhost:3000/api/user/' + username, {
+        gender: gender,
+      })
+      .subscribe((message) => console.log(message));
+  }
+```  
+The date of birth is analogous to this, except we use an input field, combined with a mat-datepicker to allow the user to 'pick' their date. The date is bound to dates up to 100 years from today. To match the Age limit in the User-Search component. The booleans that control the form are called 'isDobNull' and 'dobEdit'. Also, when the user presses the save button the method 'saveGender' is called in the component. This sets both booleans to false and calls the 'updateDate' method in the User Service to save the date of birth in the database. It also saves the date of birth as a string in the 'userDetails.age' variable. It also calls the 'calculateAge' method in the component. Thisbirth the date of birth to calculate the age of the user. This is then displayed to the user, along with the date of brith using text interpolation. This method also calls 'updateAge' in the User Service, to store the age value in the database. Also, this function is called in the 'onInit' directive when the date of birth and gender are not equal to 'n/a'. We need to do this to continually keep the age up to date, and consistent with the current year.
+```js
+  calculateAge(dob: string) {
+    const birthday = Date.parse(dob);
+    const ageDifTime = Date.now() - birthday;
+    const age = new Date(ageDifTime);
+    this.age = Math.abs(age.getUTCFullYear() - 1970);
+    this.userService.updateAge(this.age);
+  }
+```
+This is how the User component looks on the UI, when the user has not entered their gender but has entered their date of birth:
+  <p align="center">
+  <img src="supporting_images/uinogender.png" width="450px">
+  </p>
+When either of these values are null, then the users EmotePost wont appear on the search results from the User-Search.
 
 ## User-search Service:
 
@@ -1198,6 +1268,8 @@ There are two componants that are subscribed to 'geoSearchState' and listen to i
 1. Mapbox Component subscribes to this when 'pullAndDisplayGJPointsFromSearchQuery()'. The details have been explained previously.
 2. Usersearch-Display component.
 
+The user can also search by keyword. When the user submits this keyword, the 'sendKeyword' method gets called, which then uses the User-Search service to get the GeoJson array in memory, filter through it using the keyword, and update the state with that new array. Which will automatically update the Mapbox UI, and the Usersearch-Display. 
+
 ### How does the Usersearch-display work?
 
 This component's purpose is to display the search results in a way similar to the user's timeline. In its 'onInit' directive, we subscribe to the 'geoSearchState' in the User-Search Service. When the state changes, the new array returned from the API will get stored in this component in a variable called 'search results. We do a length check on the array. If the length of the array is 0, we set a boolean called 'noResults' to true. This conditionally renders a title 'No Results' on the UI, using *ngIf on a div.
@@ -1210,7 +1282,7 @@ We used the mat-accordion component to display each element in the 'searchResult
 ```js
   moodArr: string[] = ["filler","Happy", "Coping", "Sad"]
 ```
-We take the mood value from the GeoJson, and display moodArr[moodvalue], in the mat-accordion element. We used Angular's text interpolation to display the GeoJson data in the mat-accordion component.
+The "filler" element is needed as the mood values are 1,2 and 3. We take the mood value from the GeoJson, and display moodArr[moodvalue], in the mat-accordion element. We used Angular's text interpolation to display the GeoJson data in the mat-accordion component.
 ```html
 <mat-expansion-panel>
     <mat-expansion-panel-header>
@@ -1244,7 +1316,7 @@ This component is the child component of Mapbox. Mapbox is bound to this event e
   }
   }
 ```
-Here is how the Usersearch-Dislay component looks:
+Here is how the Usersearch-Dislay component looks (accordion closed and open):
 
   <p align="center">
   <img align="center" src="supporting_images/closedacc.png" width="150px">
