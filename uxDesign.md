@@ -99,6 +99,9 @@ Results of the questionnaire showed that 80% of people thought an 'about' page w
 <img src="supporting_images/About_page.png" width="700">
 </p>
 
+
+### Live user sessions
+
 As our final documented method for UX improvment, we came up with an idea - a live demonstration session. The idea was to first explain the project, before handing the wireframe over to the user. We told the user to imagine that they were using the real, working app. We asked if they could talk out loud their intentions as they were navigating the website. We thought this may be helpful as it would allow us to get a better idea of how users would use our app, and also to allow discussion regarding any ideas, or suggestions they may have. From the recording that was made, we have included a section that was particularly useful for our UX development.
 
 <p>
@@ -114,6 +117,8 @@ Team member: "Good point, you can't right now, but we should include that in the
 User: "Yeah, or you could make use of the map, and have a button that locates the post."
   </em>
 </p>
+
+A gif of the implemented fly-in feature can be seen below:
 
 <p align="center">
   <img src="supporting_images/Fly_feature.gif" alt="animated" />
