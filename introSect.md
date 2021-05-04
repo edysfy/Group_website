@@ -1,14 +1,12 @@
 ## Table of contents
-* [Video Demonstration: How it Works](#video)
 * [Introduction](#intro)
 * [Background and Motivation](#backgrnd)
 * [How Will EmoteMap Solve the Problem?](#solve)
 * [References](#references)
 
 
-
-<a name="video"></a>
-## Video Demonstration: How it Works
+# **EmoteMap**
+### Video Demonstration: How it Works
 [See video here](Video_Demonstration.mp4)
 
 <a name="intro"></a>
