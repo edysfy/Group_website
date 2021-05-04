@@ -1264,7 +1264,7 @@ This service, allowing the user to set and edit their gender and dob, as well as
 
 ### This is how the User component looks on the UI, when the user has not entered their gender or date of birth:
   <p align="center">
-  <img src="supporting_images/usercomp.png" width="350px">
+  <img src="supporting_images/usercomp.png" width="550px">
   </p>
 
 We defined a User interface:
