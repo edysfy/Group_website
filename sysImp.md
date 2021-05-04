@@ -5,7 +5,7 @@
 * [Stack architecture and system design](#first)
 * [MongoDB - database implementation](#second)
 * [Middle Tier - Express, Node, the RESTful API](#third)
-* [Front End - Angular](#fourth)
+* [Front End - Angular](#forth)
 * [Deployment details](#fifth)
 
 
