@@ -10,10 +10,6 @@
 <a name="first"></a>
 ## Group collaboration stratergy
 
-### COVID-19
-
-Throughout the entirety of this project the UK has been in some degree of national lock down. Due to this, it has not been possible for the team to meet up in person and therefore all interaction within the team has taken place online. This has presented challenges. Without face to face interaction it is more difficult to form personal bonds which can help drive team morale. On top of this being limited to online interaction means jobs can tend to take longer to complete and ideas are more difficult to bounce of each other. To counteract this, we decided early on how we would collaborate and set up the infrastructure we would would require to do so.
-
 ### Communication infrastructure
 
 Because of the restrictions mentioned above it was extremely important to keep every group member engaged and involved with the project. Discord was chosen to be our main platform for communication.
