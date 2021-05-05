@@ -68,11 +68,13 @@ Please see our [UX section](uxDesign.md) where we discuss how users were able to
 <img src="supporting_images/feedback.png" width="600">
 </p>
 
-As demonstrated by the screenshot of some feedback a user left, a limitation that we experienced when sending out the link to users can be seen. Some users were confused by the concept of a wireframe and thought that it was more interactive than it was in reality. Due to the fact that users thought  the wireframe should work in the same way as the website would, we recognise that perhaps we should have either been clearer when sending out the message with the link in or carried out more guided walkthroughs of the wireframe in order to avoid this issue
+As demonstrated by the screenshot of some feedback a user left, a limitation that we experienced when sending out the link to users can be seen. In this case, the 'x' on the comment that they are referring to was part of the screenshot of the webpage that we had uploaded as part of wireframe. Thus, this user did not understand the concept of a wireframe and thought that it was more interactive and accurate than it was. Due to the fact that some users thought  the wireframe should work in the same way as the website would, we recognise that perhaps we should have either been clearer when sending out the message with the link in or carried out more guided walkthroughs of the wireframe in order to avoid this issue.
 
 
 ### Evaluation Technique 3: Idea Matrix
-*picture of idea matrix up to date*
+<p align="center">
+<img src="idea_matrix" width="600">
+</p>
 
 Another method we used in evaluating our designs was an idea matrix. This was an excel spreadsheet that came to be extremely useful in prioritising what changes we were going to make to the website throughout the development process.
 
@@ -200,4 +202,7 @@ One extension idea we have involves further inter-user interaction and communica
 At a late stage in our development, one user made an important point on privacy: they were concerned about sharing their location when making an Emote Post. This is a valid concern and we questioned how we may be able to deal with this issue in future development of the project. Submitting Emote Posts without some form of geolocation voids the project's idea entirely. We therefore propose an alternative direction: to give users the ability to pin their posts to an area (such as a district), instead of a precise location. We believe this would be a good balance between privacy, and having the ability to see trends in emotion across different areas of the globe. It would be interesting to survey whether such a feature would encourage those previously concerned over privacy to then use the site.
 
 
-focus on mens mental health
+focus on mens mental health     
+
+
+mention how we want to do more testing than stated in the test file (see td)
