@@ -59,7 +59,7 @@ To learn more about how our paper prototyping allowed us, at a very early stage,
 ### Evaluation Technique 2: Wireframing
 <p>
 <img src="supporting_images/firstwireframe.png" width="400" align="left">
-Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop easily through a link, [like this one for our second wireframe!](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built onto screenshots of the website as it looked at the time.    
+Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop easily through a link, [Link display text - like this one for our second wireframe!](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built onto screenshots of the website as it looked at the time.    
 
 Please see our [UX section](uxDesign.md) where we discuss how users were able to engage with our website and leave comments on what they thought about their experience with it.
 </p>
@@ -76,7 +76,7 @@ As demonstrated by the screenshot of some feedback a user left, a limitation tha
 <img src="supporting_images/idea_matrix.png" width="600">
 </p>
 
-Another method we used in evaluating our designs was an idea matrix. This was an excel spreadsheet that came to be extremely useful in prioritising what changes we were going to make to the website throughout the development process.
+Another method we used in evaluating our designs was an idea matrix. This was an excel spreadsheet that came to be extremely useful in prioritising user suggestions and thus which changes we were going to make to the website throughout the development process.
 
 ### Evaluation Technique 4: Questionnaires
 
