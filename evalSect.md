@@ -73,7 +73,7 @@ As demonstrated by the screenshot of some feedback a user left, a limitation tha
 
 ### Evaluation Technique 3: Idea Matrix
 <p align="center">
-<img src="idea_matrix" width="600">
+<img src="supporting_images/idea_matrix.png" width="600">
 </p>
 
 Another method we used in evaluating our designs was an idea matrix. This was an excel spreadsheet that came to be extremely useful in prioritising what changes we were going to make to the website throughout the development process.
