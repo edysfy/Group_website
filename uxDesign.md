@@ -56,6 +56,7 @@ On a small paper prototype, the number of options can look slightly overwhelming
 <br>
 <br>
 <img src="supporting_images/Paper_prototype_search_criteria.jpeg" width="700" align="center">
+<br>
 
 ### On to wireframes
 
@@ -67,12 +68,7 @@ Our paper prototype served well at forming an initial visualisation of the websi
 
 Again, we shared the wireframe with friends and family, and coupled it with a questionnaire. As well as the questionnaire, we provided the ability to leave comments on the wireframe (in case they would like to leave feedback beyond what the questionnaire had asked). One user reported that it would be useful to have a key on the map, informing the user on what coloured marker means what. As a direct response to this feedback, we implemented a key. The final version of the key can be see below (bottom), alongside the original feedback (top).
 
-<p align="center">
-<img src="supporting_images/Wireframe_with_feedback.png" width="450">
-</p>
-<p align="center">
-<img src="supporting_images/key.png" width="450">
-</p>
+<img src="supporting_images/Wireframe_with_feedback.png" align="center" width="450"><img src="supporting_images/key.png" align="center" width="450">
 
 Results of the questionnaire showed that 80% of people thought an 'about' page would be useful for further clarification. As a response to this, we created an 'about' page, confirming what the website intends to do, and how:
 
