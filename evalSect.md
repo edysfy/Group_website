@@ -34,7 +34,7 @@ Below is a short summary of our 5 main techniques of evaluating our design throu
 
 
 <p>
-<img src="supporting_images/Paper_prototype_start.jpeg" width="250" align="left">
+<img src="/Users/zakigill/Documents/SEng/Group_website/1st Wireframe.png" width="250" align="left">
 This process involved drawing our first interpretations of what we envisaged our website to look like on paper and then showing and observing potential users' interaction with it. The process of paper prototyping involved three roles..  
 
 
