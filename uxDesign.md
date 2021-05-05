@@ -54,7 +54,8 @@ Before moving on to the next prototype design, we took a moment to reflect on ou
 
 On a small paper prototype, the number of options can look slightly overwhelming, however this will change when on a larger screen. To get a balance between flexibility and simplicity, we made each selection optional, so the user does not have to complete each field if they would like to make a short and easy search.
 <br>
-<img src="supporting_images/Paper_prototype_search_criteria.jpeg" width="400" align="center">
+<br>
+<img src="supporting_images/Paper_prototype_search_criteria.jpeg" width="700" align="center">
 
 <br>
 <br>
