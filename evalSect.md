@@ -3,9 +3,9 @@
 * [Conclusion](#conc)
 
 <a name="eval"></a>
-# Evaluation
+# EVALUATION
 
-# Methodology
+# a) Methodology
 
 
 In order to evaluate how our product would be received by users we used five techniques throughout the process; paper prototyping, wireframing, an idea matrix, questionnaires, semi-structured interviews.
