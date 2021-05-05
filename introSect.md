@@ -9,12 +9,15 @@
 # Introduction
 
 ### Abstract
-[See video demonstration here](Video_Demonstration.mp4) which explains how EmoteMap works!
+TO FINISH DO ABSTRACT....
 
 ### Objectives
- 1 - Create a writing tool that allows self-reflection in a similar way to blogging.  
- 2 - Create a peer-led support network where users can interact with each other as a community.      
- 3 - Create a tool that raises awareness and information through a visual heat-map based on an accumulation of users' mental health in different geolocations.
+ - Create a writing tool that allows self-reflection in a similar way to blogging and journaling.  
+ - Create a peer-led support network where users can interact with each other as a community.      
+ - Create a tool that raises awareness and information through a visual heat-map based on an accumulation of users' mental health in different geolocations.
+
+### Trailer
+To get an overview of the Ethos of EmoteMap please view our [trailer](https://www.youtube.com/watch?v=SMLlnLANZNY).
 
 ## Who is our Target Market & Stakeholders?
 The end user our team seeks to attain to is any male or female on the planet who has access to the Internet over the age of 13.  Please see Sarah's fictional user story in our [UX section](uxDesign.md) where we talk about our end users in more detail, including Sarah's fictional user story which serves as an example of a way in which we aim for users to interact with EmoteMap. There are *X* number of people in our target population. When it came to evaluating exactly how users interpreted our designs throughout the development process we found, through [Smart Survey's sample size calculator](https://www.smartsurvey.co.uk/sample-size-calculator), our required sample size  for a target population of this size was *X*. Please see our Limitations heading of the [Evaluation section](evalSect.md) for a more in depth discussion about the sample size of our market.    
@@ -52,21 +55,23 @@ Barak and Grohol have brought to light that online peer-led support groups have 
 
 In agreement with this, Bakar and Moore did a study on MySpace and discovered that those users who blogged frequently increased their social integration and friendship satisfaction scores compared to those who did not (Bakar & Moore, 2008).  
 
+[Holding Emotions in:](https://www.betterhealth.vic.gov.au/health/HealthyLiving/negative-emotions#:~:text=Holding%20onto%20negative%20emotions%20causes%20a%20downward%20spiral,-Negative%20emotions%20stop&text=This%20only%20prolongs%20the%20anger,example%2C%20expressing%20anger%20with%20violence.Journaling) Journaling is an exercise to process the thoughts, hardships and emotions. If people experience high and negative emissions, they tend to choose not to act in a safe way and process their emotion. He haven't been taught how to do this in school. This can be damaging to your psyche. This just lengthens sorrow and creates a foggy smokescreen through which one see life. In general, it was taught people how to cope with negative emissions. Journaling is a way to distinguish you from your thinking and your feelings. You get it out on paper instead of keeping the ideas in your mind. Giving you a new perspective into the roots of your issues. [It induces a dissociative feeling with your psyche, and halts the negative thought loops](https://owlsandindigo.com/how-to-stop-negative-thinking-with-this-one-journaling-exercise-from-someone-with-anxiety/)
+
+
 <a name="solve"></a>
 # EmoteMap Will Solve the Problem by...
 ### 1) Introducing a more positive way for users to interact online
-We are not trying to reduce the interaction that humans have with online social platforms, it is clear that this will inevitably increase in forthcoming years. Instead, we want to create an aspect to online sociality that is similar in interactivity to current mainstream social media platforms but addresses mental health explicitly.
+We are not trying to reduce the interaction that humans have with online social platforms, it is clear that this will inevitably increase in forthcoming years. Instead, we want to create an aspect to online sociality that is similar in interactivity to current mainstream social media platforms but addresses mental healßth explicitly.
 
 ### 2) Creating an environment whereby users can be both self-reflective and feel supported by a community of users
-Blogs offer mental health intervention in a similar way to journaling. Although journalling has traditional been done in private to complement psychology, blogging has taken many would-be private journals and turned them public (Bakar & Moore, 2008). Feedback from others can help an individual learn to view feelings and thoughts in ways differently to how they would if they were left to their own devices.
+Blogs offer mental health intervention in a similar way to journaling. Although journaling has traditional been done in private to complement psychology, blogging has taken many would-be private journals and turned them public (Bakar & Moore, 2008). We want to build an application where users can view emotional posts across time and locations across the globe. EmoteMap combines blogging and journaling. It will allow the user to remain anomalous why journaling, but in a sense they can view other users' journals, making it similar to blogging. This a sense of playfulness and fun in comparison to normal journals. Feedback from others can help an individual learn to view feelings and thoughts in ways different from how they would if they were left to their own devices. We understand there are trolls on the internet. So we are aiming to build EmoteMap in a way that stops trolls from bringing people down. We want the site to be a place of solace, sharing, and caring. We aim to do this by implementing the capability of allowing users to leave positive emoji's/postive comments ONLY on other user's posts, or have volunteers speak to users going through distress.
 
 ### 3) Solving a global problem locally
-The complexity of the issue of global mental illness means that there is no universal solution. We also acknowledge that those suffering mentally may be doing so due to culturally dependant reasons. Therefore, a teacher facing stress, anxiety and depressing at the beginning of the academic year during the COVID-19 pandemic (Santamaría & Mondragon, 2021) may search keywords such as 'stress, anxiety, teachers, COVID'. The posts they read will most likely be completely different to those of someone experiencing intimate partner violence and unhealthy alcohol use in the Zambia (Kane et. al, 2021).
+The complexity of the issue of global mental illness means that there is no universal solution. We also acknowledge that those suffering mentally may be doing so due to culturally dependant reasons. Therefore, a teacher facing stress, anxiety and depressing at the beginning of the academic year during the COVID-19 pandemic (Santamaría & Mondragon, 2021) may search keywords such as 'stress, anxiety, teachers, COVID'. The posts they read will most likely be completely different to those of someone experiencing intimate partner violence and unhealthy alcohol use in the Zambia (Kane et. al, 2021). This intends to develop a sense of togetherness. As people can now see how other users are going through the same issue, in regions close to where the user is. The user will get an experience of how people in their area a feeling and take action. We plan to allow users going through similar issues to build local support groups where they can work through their issues.
 
 ### 4) Empowering non-users with relevant data
-We seek to empower analysts and organisations with data that will aid them in their efforts to combat the issue of mental illness globally. This will be an indirect contribution to solving the problem. For example, a charity could raise awareness for mental illness by showcasing visual data taken from EmoteMap's heat map interface which would allow for a comprehensive explanation of how many people feel depressed in certain areas.
+We seek to empower analysts and organisations with data that will aid them in their efforts to combat the issue of mental illness globally. This will be an indirect contribution to solving the problem. For example, a charity could raise awareness for mental illness by showcasing visual data taken from EmoteMap's heat map interface which would allow for a comprehensive explanation of how many people feel depressed in certain areas. Or a private organization can focus its efforts to combat mental health in a specific area.
 
-* [EmoteMap Will Solve the Problem by...](#solve)
 # Industry Review: What Differentiates EmoteMap?
 #### Website 1 - The Mental Elf
 ##### Summary:

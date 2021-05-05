@@ -1,10 +1,16 @@
 ## Table of contents
-* [Evaluation](#eval)
-* [Conclusion](#conc)
+1. [Evaluation](#eval)
+* [a) Methodology](#method)
+* [b) Timeline of Evaluation Methods](#timeline)
+* [c) How Successful was our Evaluation of User Feedback?](#success)
+
+2. [Conclusion](#conc)
 
 <a name="eval"></a>
-## Evaluation
-## Methodology of Evaluating our Designs
+# EVALUATION
+
+<a name="method"></a>
+# a) Methodology
 
 
 In order to evaluate how our product would be received by users we used five techniques throughout the process; paper prototyping, wireframing, an idea matrix, questionnaires, semi-structured interviews.
@@ -24,34 +30,61 @@ Below is a short summary of our 5 main techniques of evaluating our design throu
 - -	talk in more detail about each thing e.g – Paper Prottyping wizard of oz
 - ensure you are talking about 'what is this method?'*
 
-### Paper prototyping
-This process involved drawing our first interpretations of what we envisaged our website to look like on paper and then showing and observing potential users' interaction with it.  
-*expand on paper prototyping - wizard of oz etc in google docs*
-To learn more about how our paper prototyping allowed us, at a very early stage, obtain our first UX feedback and its essential role in our early ideation see the UX section *link to UX section*. We go into more detail about the process of paper prototyping in the timeline below.  
+### Evaluation Technique 1: Paper prototyping
 
 
-### Wireframing
+<p>
+<img src="supporting_images/Paper_prototype_start.jpeg" width="250" align="left">
+This process involved drawing our first interpretations of what we envisaged our website to look like on paper and then showing and observing potential users' interaction with it. The process of paper prototyping involved three roles..  
 
-Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop through a link [Link display text - like this one for our second wireframe!](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built onto screenshots of the website as it looked at the time.  
-Please see our UX section *link to UX section* where we discuss how users were able to engage with our website and leave comments on what they thought about their experience with it.
 
-### Idea Matrix  
+**1. User:**
+*The user was the person that would be trying the system, saying out loud what they were thinking as they tried to navigate the paper prototype*    
 
+**2. Observer:**
+*This person watched from a distance away and did not interact or say anything to other people taking part in the process. However, they maintained an important role here, which was to take notes on any critical incidents. This way, we could gauge any parts of our early ideation that strongly effected the usability of our design.*   
+
+**3. Facilitator:**
+*This person acted as the leader of process, guiding the user through the prototype and asking key questions along the way. It was their job to encourage the user to think aloud by asking questions about their thought pattern such as "Do you know what is going on at this point?" or "What would you do next now that you are on the Sign Up page?". Or perhaps if the user was stuck (which happened a lot at the stage of paper prototyping!), "Do you find anything here useful, in terms of figuring out what you would like to do next?"*     
+
+A limitation here was that Our teams' paper prototyping was limited by the need to social distance. Members of our team were only able to work with two family members or housemates. Despite emphasising to any one participating to act as impartially as possible, it  can be argued that the fact that people lived with us helped us carry out this process was detrimental because we needed the user to be as truthful as possible, whilst people we live with were more likely to tell us what we wanted to hear about our designs.
+
+
+
+To learn more about how our paper prototyping allowed us, at a very early stage, obtain our first UX feedback and its essential role in our early ideation see the [UX section](uxDesign.md) , where we give specific examples of user preferences after seeing our paper prototype which then went on to influence our design process.
+
+</p>
+
+
+### Evaluation Technique 2: Wireframing
+<p>
+<img src="supporting_images/firstwireframe.png" width="250" align="left">
+Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop easily through a link, [like this one for our second wireframe!](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built onto screenshots of the website as it looked at the time.    
+
+Please see our [UX section](uxDesign.md) where we discuss how users were able to engage with our website and leave comments on what they thought about their experience with it.
+</p>
+
+
+
+### Evaluation Technique 3: Idea Matrix
 *picture of idea matrix up to date*
 
 Another method we used in evaluating our designs was an idea matrix. This was an excel spreadsheet that came to be extremely useful in prioritising what changes we were going to make to the website throughout the development process.
 
-### Questionnaires
+### Evaluation Technique 4: Questionnaires
 
-Our group used questionnaires both as a qualitative and quantitative method of evaluating our designs. It was our main form of quantitative feedback as we were able to send a link *insert link* to as many users as we could who had just used one of our wireframes or been shown our most up to date website on a local host. This way, we could gain insights at scale into how users interpreted our website through them answering questions such as "Would you recommend this product to a friend?", "Do you think this website is solving a serious problem?" or "How would you improve this website?".   
+Our grouped used questionnaires as our main form of quantitative feedback as we were able to send a link *insert link* to as many users as we could who had just used one of our wireframes or been shown our most up to date website on a local host. This way, we could gain insights at scale into how users interpreted our website through them answering questions such as "Would you recommend this product to a friend?", "Do you think this website is solving a serious problem?" or "How would you improve this website?".    
 
+In total we produced three questionnaires. The first two were sent to users alongside the wireframes and the last one was filled out by users after they had used the website on a local host. The last two questionnaires asked the same questions as the first, but we improved it slightly. *Give example of how you improved this*  
 
-### Semi-structured interviews  
+### Evaluation Technique 5: Semi-structured interviews  
 These interviews were carried out throughout the development process all the way from paper-prototyping at the beginning, to presenting the website on a local host in its most complete form. We saw interviews as the main form of qualitative feedback.
 
-
-## Timeline of Evaluation Methods  
-[Image of Timeline](/Users/zakigill/Desktop/Timeline of Evaluation .png)  
+<a name="timeline"></a>
+# b)Timeline of Evaluation Methods  
+<p align="center">
+<img src="supporting_images/Paper_prototype_start.jpeg" width="400">
+</p>
 
 ### Stage 1: FEEDBACK ON EARLY IDEATION 21/2/21
 21/2/21: Paper prototyping was a key part of getting our idea off the ground and taking an abstract concept in our heads to a more consolidated one. Although our idea of how the website would look was completely premature, this was our first attempt at getting a feel for how users would interact with the website. Users were able to give us a sense of direction in this way before we started coding anything
@@ -75,11 +108,6 @@ These interviews were carried out throughout the development process all the way
 *screenshot of  question 7*
 The questionnaires themselves did in fact hold a qualitative functionality to them. This was mainly in two of the questions, seen above, where we prompted the user for a response.  
 
-
-In total we produced three  questionairres. The first two were sent to users alongside the wireframes and the last one was filled out by users after they had used the website on a local host. The last two questionnaires asked the same questions as the first, but we improved it slightly. *Give example of how you improved this*  
-
-
-
 ### Stage 4: INVOLVEMENT OF IDEA MATRIX 30/3/21
 30/3/21: Shortly after we started collecting quantitative data, we decided that it would be effective to create a method by which we could better draw insights from it. We made this decision because at this point we had received many suggestions from users in terms of how we could improve the user interface of our design. In this way we were able to populate the idea matrix with feedback data from both the questionnaires and semi-structured interviews.  
 
@@ -96,8 +124,8 @@ The way in which we obtained user feedback here was similar to that of the wiref
 
 *stat difference between 2nd wireframe and what users thought when using local host*
 
-
-## How successful were our methods of evaluation?
+<a name="success"></a>
+# c)How Successful was our Evaluation of User Feedback?
 
 On analysis of our qualitative data, we were able to conclude that throughout the process of feedback and the subsequent development of software, users started to see the purpose of the website as being more in line with what we initially set out for it to be. For us, this somewhat represented the success of the process behind how we evaluated user's perceptions of our product.    
 
@@ -120,7 +148,7 @@ Another possible limitation to our evaluation was our inability to show enough u
 
 
 <a name="conc"></a>
-# Conclusion
+# CONCLUSION
 scope and future work must go here...
 Perhaps hometown / lived location could be something you grab from the user too
 (1 liked)
