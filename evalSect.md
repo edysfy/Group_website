@@ -38,13 +38,13 @@ Below is a short summary of our 5 main techniques of evaluating our design throu
 This process involved drawing our first interpretations of what we envisaged our website to look like on paper and then showing and observing potential users' interaction with it. The process of paper prototyping involved three roles..  
 
 
-**2. User**
+**1. User:**
 *The user was the person that would be trying the system, saying out loud what they were thinking as they tried to navigate the paper prototype*    
 
-**3. Observer**
+**2. Observer:**
 *This person watched from a distance away and did not interact or say anything to other people taking part in the process. However, they maintained an important role here, which was to take notes on any critical incidents. This way, we could gauge any parts of our early ideation that strongly effected the usability of our design.*   
 
-**4. Facilitator:**
+**3. Facilitator:**
 *This person acted as the leader of process, guiding the user through the prototype and asking key questions along the way. It was their job to encourage the user to think aloud by asking questions about their thought pattern such as "Do you know what is going on at this point?" or "What would you do next now that you are on the Sign Up page?". Or perhaps if the user was stuck (which happened a lot at the stage of paper prototyping!), "Do you find anything here useful, in terms of figuring out what you would like to do next?"*     
 
 A limitation here was that Our teams' paper prototyping was limited by the need to social distance. Members of our team were only able to work with two family members or housemates. Despite emphasising to any one participating to act as impartially as possible, it  can be argued that the fact that people lived with us helped us carry out this process was detrimental because we needed the user to be as truthful as possible, whilst people we live with were more likely to tell us what we wanted to hear about our designs.
