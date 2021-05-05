@@ -1,7 +1,10 @@
 ## Table of contents
 1. [Evaluation](#eval)
-*  [a) Methodology](#method)
-* [Conclusion](#conc)
+* [a) Methodology](#method)
+* [b) Timeline of Evaluation Methods](#timeline)
+* [c) How Successful was our Evaluation of User Feedback?](#success)
+
+2. [Conclusion](#conc)
 
 <a name="eval"></a>
 # EVALUATION
@@ -52,8 +55,8 @@ Our group used questionnaires both as a qualitative and quantitative method of e
 ### Evaluation Technique 5: Semi-structured interviews  
 These interviews were carried out throughout the development process all the way from paper-prototyping at the beginning, to presenting the website on a local host in its most complete form. We saw interviews as the main form of qualitative feedback.
 
-
-# Timeline of Evaluation Methods  
+<a name="timeline"></a>
+# b)Timeline of Evaluation Methods  
 ![Image of Timeline](/Users/zakigill/Desktop/Timeline of Evaluation .png)  
 
 ### Stage 1: FEEDBACK ON EARLY IDEATION 21/2/21
@@ -99,8 +102,8 @@ The way in which we obtained user feedback here was similar to that of the wiref
 
 *stat difference between 2nd wireframe and what users thought when using local host*
 
-
-# How successful were our methods of evaluation?
+<a name="success"></a>
+# c)How Successful was our Evaluation of User Feedback?
 
 On analysis of our qualitative data, we were able to conclude that throughout the process of feedback and the subsequent development of software, users started to see the purpose of the website as being more in line with what we initially set out for it to be. For us, this somewhat represented the success of the process behind how we evaluated user's perceptions of our product.    
 
