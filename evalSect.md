@@ -25,34 +25,34 @@ Below is a short summary of our 5 main techniques of evaluating our design throu
 - -	talk in more detail about each thing e.g – Paper Prottyping wizard of oz
 - ensure you are talking about 'what is this method?'*
 
-### Paper prototyping
+### Evaluation Technique 1: Paper prototyping
 This process involved drawing our first interpretations of what we envisaged our website to look like on paper and then showing and observing potential users' interaction with it.  
 *expand on paper prototyping - wizard of oz etc in google docs*
 To learn more about how our paper prototyping allowed us, at a very early stage, obtain our first UX feedback and its essential role in our early ideation see the UX section *link to UX section*. We go into more detail about the process of paper prototyping in the timeline below.  
 
 
-### Wireframing
+### Evaluation Technique 2: Wireframing
 
 Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop through a link [Link display text - like this one for our second wireframe!](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built onto screenshots of the website as it looked at the time.  
 Please see our UX section *link to UX section* where we discuss how users were able to engage with our website and leave comments on what they thought about their experience with it.
 
-### Idea Matrix  
+### Evaluation Technique 3: Idea Matrix  
 
 *picture of idea matrix up to date*
 
 Another method we used in evaluating our designs was an idea matrix. This was an excel spreadsheet that came to be extremely useful in prioritising what changes we were going to make to the website throughout the development process.
 
-### Questionnaires
+### Evaluation Technique 4: Questionnaires
 
 Our group used questionnaires both as a qualitative and quantitative method of evaluating our designs. It was our main form of quantitative feedback as we were able to send a link *insert link* to as many users as we could who had just used one of our wireframes or been shown our most up to date website on a local host. This way, we could gain insights at scale into how users interpreted our website through them answering questions such as "Would you recommend this product to a friend?", "Do you think this website is solving a serious problem?" or "How would you improve this website?".   
 
 
-### Semi-structured interviews  
+### Evaluation Technique 5: Semi-structured interviews  
 These interviews were carried out throughout the development process all the way from paper-prototyping at the beginning, to presenting the website on a local host in its most complete form. We saw interviews as the main form of qualitative feedback.
 
 
 # Timeline of Evaluation Methods  
-[Image of Timeline](/Users/zakigill/Desktop/Timeline of Evaluation .png)  
+![Image of Timeline](/Users/zakigill/Desktop/Timeline of Evaluation .png)  
 
 ### Stage 1: FEEDBACK ON EARLY IDEATION 21/2/21
 21/2/21: Paper prototyping was a key part of getting our idea off the ground and taking an abstract concept in our heads to a more consolidated one. Although our idea of how the website would look was completely premature, this was our first attempt at getting a feel for how users would interact with the website. Users were able to give us a sense of direction in this way before we started coding anything
@@ -121,7 +121,7 @@ Another possible limitation to our evaluation was our inability to show enough u
 
 
 <a name="conc"></a>
-# Conclusion
+# CONCLUSION
 scope and future work must go here...
 Perhaps hometown / lived location could be something you grab from the user too
 (1 liked)
