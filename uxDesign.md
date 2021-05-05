@@ -56,6 +56,7 @@ On a small paper prototype, the number of options can look slightly overwhelming
 <br>
 <br>
 <br>
+<br>
 <img src="supporting_images/Paper_prototype_search_criteria.jpeg" width="400" align="right">
 
 <br>
