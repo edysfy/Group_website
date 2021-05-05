@@ -1,12 +1,5 @@
 <h1 align="center" style="colour: red"> EmoteMap </h1>
 
-## Table of contents
-* [Introduction, background and motivation](#first)
-* [System implementation,UX design and development process](#second)
-* [Evaluation and Conclusion](#third)
-
-
-
 <a name="team"></a>
 ## Team
 

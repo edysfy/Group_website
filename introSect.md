@@ -9,12 +9,15 @@
 # Introduction
 
 ### Abstract
-[See video demonstration here](Video_Demonstration.mp4) which explains how EmoteMap works!
+TO FINISH DO ABSTRACT....
 
 ### Objectives
- 1 - Create a writing tool that allows self-reflection in a similar way to blogging.  
- 2 - Create a peer-led support network where users can interact with each other as a community.      
- 3 - Create a tool that raises awareness and information through a visual heat-map based on an accumulation of users' mental health in different geolocations.
+ - Create a writing tool that allows self-reflection in a similar way to blogging and journaling.  
+ - Create a peer-led support network where users can interact with each other as a community.      
+ - Create a tool that raises awareness and information through a visual heat-map based on an accumulation of users' mental health in different geolocations.
+
+### Trailer
+To get an overview of the Ethos of EmoteMap please view our [trailer](https://www.youtube.com/watch?v=SMLlnLANZNY).
 
 ## Who is our Target Market & Stakeholders?
 The end user our team seeks to attain to is any male or female on the planet who has access to the Internet over the age of 13.  Please see Sarah's fictional user story in our [UX section](uxDesign.md) where we talk about our end users in more detail, including Sarah's fictional user story which serves as an example of a way in which we aim for users to interact with EmoteMap. There are *X* number of people in our target population. When it came to evaluating exactly how users interpreted our designs throughout the development process we found, through [Smart Survey's sample size calculator](https://www.smartsurvey.co.uk/sample-size-calculator), our required sample size  for a target population of this size was *X*. Please see our Limitations heading of the [Evaluation section](evalSect.md) for a more in depth discussion about the sample size of our market.    
