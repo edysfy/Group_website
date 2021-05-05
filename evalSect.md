@@ -31,18 +31,27 @@ Below is a short summary of our 5 main techniques of evaluating our design throu
 - ensure you are talking about 'what is this method?'*
 
 ### Evaluation Technique 1: Paper prototyping
+
+
+<p>
+<img src="supporting_images/Sarah.png" width="100" align="left">
 This process involved drawing our first interpretations of what we envisaged our website to look like on paper and then showing and observing potential users' interaction with it.  
 *expand on paper prototyping - wizard of oz etc in google docs*
-To learn more about how our paper prototyping allowed us, at a very early stage, obtain our first UX feedback and its essential role in our early ideation see the UX section *link to UX section*. We go into more detail about the process of paper prototyping in the timeline below.  
+To learn more about how our paper prototyping allowed us, at a very early stage, obtain our first UX feedback and its essential role in our early ideation see the UX section *link to UX section*. We go into more detail about the process of paper prototyping in the timeline below.
+</p>
+
 
 
 ### Evaluation Technique 2: Wireframing
 
+<p align="center">
+<img src="supporting_images/Paper_prototype_start.jpeg" width="400">
+</p>
+
 Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop through a link [like this one for our second wireframe!](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built onto screenshots of the website as it looked at the time.  
 Please see our [UX section](uxDesign.md) where we discuss how users were able to engage with our website and leave comments on what they thought about their experience with it.
 
-### Evaluation Technique 3: Idea Matrix  
-
+### Evaluation Technique 3: Idea Matrix
 *picture of idea matrix up to date*
 
 Another method we used in evaluating our designs was an idea matrix. This was an excel spreadsheet that came to be extremely useful in prioritising what changes we were going to make to the website throughout the development process.
