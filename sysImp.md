@@ -1,6 +1,6 @@
 # System Implementation
 
-# Table of contents
+## Table of contents
 
 * [Stack architecture and system design](#first)
 * [MongoDB - database implementation](#second)
@@ -9,42 +9,43 @@
 * [Deployment details](#fifth)
 
 
-# Stack architecture and system design
+## Stack architecture and system design
+
 <a name="first"></a>
 
 Before diving into the details of each stack, how they work and link together. Lets talk about the System Architecture as a whole.
-<br/> From a very broad perspective this is how application skeleton is structured: <br/>
+
+From a very broad perspective this is how application skeleton is structured:
+
 <br/>
 <p align="center">
 <img src="supporting_images/stack_arc_overview.png" width="650px">
 </p>
 
-We needed three main components that comprise the stack.
+The stack was made up of three main components:
 
 1. The MongoDB database: <br/>
     To store GeoJson and User data through two separate collections. This will communicate with the REST API through the ODM, Mongoose. It will have no direct connection to the front end due to security reasons. All data that is created on the front end will filter throughout API.
 
 2. The REST API: <br/>
-    This is capable of dealing with incoming HTTP requests and adequately responds to the client. It is built with NodeJs and a framework called ExpressJs. It makes use of the HTTP protocol to send data from the client to the database. The client submits an HTTP request to the server. This request will have an HTTP param id, which is used to send data through the URL path. This is useful for sending user information from the client to the API, like a username. An HTTP body, which sends the main data structure created on the front end. As an example, when the user makes a new EmotePost, a javascript object is created and that is sent via Angular's HTTP client with that object as a payload. The server will have access to that via using the body method. HTTP headers are also sent. We intend to use the headers to send the JWT token to guard our routing paths on the back end. This essentially makes them accessible to users. Once a request has been detected at one of the servers' paths, it will perform adequate data processing. Ie storing data in the database, querying the database for data, and then send a response back to the client. This will contain, and data required, or messages that tell the client this request couldn't be handled in some way.
+    This is capable of dealing with incoming HTTP requests and adequately responds to the client. It is built with NodeJs and a framework called ExpressJs. It makes use of the HTTP protocol to send data from the client to the database. The client submits an HTTP request to the server. This request will have an HTTP param id, which is used to send data through the URL path. This is useful for sending user information like a username from the client to the API. A HTTP body, which sends the main data structure created on the front end. As an example, when the user makes a new EmotePost, a javascript object is created and that is sent via Angular's HTTP client with that object as a payload. The server will have access to that via the body method. HTTP headers are also sent. We intend to use the headers to send the JWT token to guard our routing paths on the back end. This essentially makes them accessible to users. Once a request has been detected at one of the servers' paths, it will perform adequate data processing i.e storing data in the database, querying the database for data, and then send a response back to the client. This will contain the data required or messages that tell the client this request couldn't be handled in some way.
 
-3. The frontend/UI: <br/>
-    This is responsible for the user experience and data creation through the use of Angular forms.
-    The user can explore the map, create an account, log in, create Emote posts, view other users' posts, have access to their posts in a timeline, delete their posts, fly to a post, and search for other users' posts (by date, age, and gender). To display a map, we needed to connect to an external API. We had two options. One Mapbox and the other was GoogleMaps. Firstly, Mapbox was more appealing as it is the underdog. We didn't want to be involved with a conglomerate like Google. After digesting Mapbox's API, we realized it is capable of doing everything we wanted. Especially, displaying a heat map. It accepts geoJson data and provides the developer with a lot of support to customize and visualize that data on the map. It accepts data via a direct link to a URL path, or through building your objects. This was useful as it allowed us to use geoJson objects that are stored in memory on the front end. As an example (will be explained in a lot more detail in the front end), when the user made a post-it would automatically update the UI, as we stored the new post in a Service. The Mapbox component listens to changes in the geoJson array and re-renders the data on the map. We used a set of Angular Services to maintain state and allow data to flow between components on the frontend, as well as providing a link between the data flowing to the REST API.
+3. The front end/ UI: <br/>
+    This is responsible for the user experience and data creation through the use of Angular forms. The user can explore the map, create an account, log in, create Emote posts, view other users' posts, have access to their posts in a timeline, delete their posts, fly to a post, and search for other users' posts (by date, age, and gender). To display a map, we needed to connect to an external API. We had two options: Mapbox and GoogleMaps. Firstly, Mapbox was more appealing as it is the underdog. We didn't want to be involved with a conglomerate like Google. After digesting Mapbox's API, we realized it is capable of doing everything we wanted, in particular displaying a heat map. It accepts geoJson data and provides the developer with a lot of support to customize and visualize that data on the map. It accepts data via a direct link to a URL path, or through building your objects. This was useful as it allowed us to use geoJson objects that are stored in memory on the front end. As an example (this will be explained in a lot more detail in the front end), when the user makes a post it would automatically update the UI as we stored the new post in a service. The Mapbox component listens to changes in the geoJson array and re-renders the data on the map. We used a set of Angular Services to maintain state and allow data to flow between components on the frontend as well as providing a link between the data flowing to the REST API.
 
-Lets go into some more depth...    
+Lets go into some more depth...
 
-# MongoDB - database implementation
+## MongoDB - database implementation
+
 <a name="second"></a>
 
-## Why use MongoDB?
+### Why MongoDB?
 
-We choose MongoDb as a suitable database for our backend due to the nature of the GeoJson data structure required by Mapbox to display posts on the screen.
-Initially, we were unsure of how to display user posts, create a Heatmap, and whether to allow users to search for posts using polygons. Marceli recommended
-using MongoDb as it has a special part of the API designed to dealing with GeoJson queries. He mentioned that was a huge benefit of MongoDB. So to maximize our chances of success with being able to manipulate the Mapbox component in the front end, we chose MongoDB.
+We choose to use MongoDb as our database due to the nature of the GeoJson data structure required by Mapbox to display posts on the screen. Initially, we were unsure of how to display user posts, create a Heatmap, and whether to allow users to search for posts using polygons. Marceli recommended using MongoDb as it has a special part of the API designed to dealing with GeoJson queries. He mentioned that was a huge benefit of using MongoDB. For this reason we decided to use MongoDB.
 
-There was some consideration to implement an SQL database due to the simple nature of our data model. As shown below, through the ERD, we could easily use join queries on the data which would have been beneficial in the search path of our API. However, due to the reason above, as well as being taught MongoDB in lectures. We stuck with MongoDB.
+We considered using a SQL database due to the simple nature of our data model. As shown below, through the ERD, we could easily use join queries on the data which would have been beneficial in the search path of our API. However, due to the reason above, as well as being taught MongoDB in lectures. We stuck with MongoDB.
 
-## How did we connect MongoDb To our API?
+### How did we connect MongoDb To our API?
 
 Firstly, we needed to initialize the MongoDB database. So we created a free MongoDB account and created a cluster. We set the IP to all, so all of our team members can be sent requests through to the database, which useful for testing, as we could all perform CRUD operations on the database. We then took the connection URL (which has our account details stored) and stored it as a variable: 'mongoDBConnect', in the Express application file. Mongoose as a simple method called "connect" that allows you to connect to the URL easily. Once Node is run, the database can now communicate with our API.
 
