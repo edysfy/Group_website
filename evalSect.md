@@ -34,7 +34,7 @@ Below is a short summary of our 5 main techniques of evaluating our design throu
 
 
 <p>
-<img src="supporting_images/Sarah.png" width="100" align="left">
+<img src="supporting_images/Paper_prototype_start.jpeg" width="250" align="left">
 This process involved drawing our first interpretations of what we envisaged our website to look like on paper and then showing and observing potential users' interaction with it.  
 *expand on paper prototyping - wizard of oz etc in google docs*
 To learn more about how our paper prototyping allowed us, at a very early stage, obtain our first UX feedback and its essential role in our early ideation see the UX section *link to UX section*. We go into more detail about the process of paper prototyping in the timeline below.
