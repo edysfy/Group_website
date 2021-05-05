@@ -52,7 +52,7 @@ These interviews were carried out throughout the development process all the way
 
 
 # Timeline of Evaluation Methods  
-![Image of Timeline](/Users/zakigill/Desktop/Timeline of Evaluation .png)  
+![Image of Timeline](/Users/zakigill/Desktop/Timeline of Evaluation.png)  
 
 ### Stage 1: FEEDBACK ON EARLY IDEATION 21/2/21
 21/2/21: Paper prototyping was a key part of getting our idea off the ground and taking an abstract concept in our heads to a more consolidated one. Although our idea of how the website would look was completely premature, this was our first attempt at getting a feel for how users would interact with the website. Users were able to give us a sense of direction in this way before we started coding anything
