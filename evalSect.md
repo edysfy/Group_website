@@ -38,8 +38,8 @@ To learn more about how our paper prototyping allowed us, at a very early stage,
 
 ### Evaluation Technique 2: Wireframing
 
-Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop through a link [Link display text - like this one for our second wireframe!](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built onto screenshots of the website as it looked at the time.  
-Please see our UX section *link to UX section* where we discuss how users were able to engage with our website and leave comments on what they thought about their experience with it.
+Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop through a link [like this one for our second wireframe!](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built onto screenshots of the website as it looked at the time.  
+Please see our [UX section](uxDesign.md) where we discuss how users were able to engage with our website and leave comments on what they thought about their experience with it.
 
 ### Evaluation Technique 3: Idea Matrix  
 
