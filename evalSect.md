@@ -65,7 +65,7 @@ Please see our [UX section](uxDesign.md) where we discuss how users were able to
 </p>
 
 <p align="center">
-<img src="supporting_images/feedback.png" width="400">
+<img src="supporting_images/feedback.png" width="600">
 </p>
 
 As demonstrated by the screenshot of some feedback a user left, a limitation that we experienced when sending out the link to users can be seen. Some users were confused by the concept of a wireframe and thought that it was more interactive than it was in reality. Due to the fact that users thought  the wireframe should work in the same way as the website would, we recognise that perhaps we should have either been clearer when sending out the message with the link in or carried out more guided walkthroughs of the wireframe in order to avoid this issue
