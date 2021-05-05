@@ -57,14 +57,6 @@ On a small paper prototype, the number of options can look slightly overwhelming
 <br>
 <img src="supporting_images/Paper_prototype_search_criteria.jpeg" width="700" align="center">
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
 ### On to wireframes
 
 Our paper prototype served well at forming an initial visualisation of the website, and for receiving feedback on core features. In order to gain feedback more related to user experience, we needed to demonstrate the website using a closer representation of a working product. Logically, a wireframe was the next best step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/EmoteMap-prototype-2-ckn7hacvv1nm601590k9h8044/ckn7han2m109p012d8epohsri/play) to go to our interactive wireframe. Below is a preview:
