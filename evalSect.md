@@ -80,9 +80,12 @@ Another method we used in evaluating our designs was an idea matrix. This was an
 
 ### Evaluation Technique 4: Questionnaires
 
+
+<p>
+<img src="supporting_images/questionnaire.png" width="400" align="left">
 Our grouped used questionnaires as our main form of quantitative feedback as we were able to send a link, such as [this one](https://www.smartsurvey.co.uk/s/S58J8X/) to as many users as we could who had revently used one of our wireframes or been shown our most up to date website on a local host. This way, we could gain insights at scale into how users interpreted our website through them answering questions such as "Would you recommend this product to a friend?", "Do you think this website is solving a serious problem?" or "How would you improve this website?".    
 
-In total we produced three questionnaires. The first two were sent to users alongside the wireframes and the last one was filled out by users after they had used the website on a local host. The last two questionnaires asked the same questions as the first, but we improved it slightly. For example, we added a 'if not, why not' option to answers that currently only included 'yes' and 'no' so that we did not force the user to have to take longer with it but gave them the option to leave more detailed feedback if they wished. On top of this we ensred that we eflected the different points on the scale itself, instead of having just numbers. For example, instead of having options 1-5, we would have:  
+In total we produced three questionnaires. The first two were sent to users alongside the wireframes and the last one was filled out by users after they had used the website on a local host. The last two questionnaires asked the same questions as the first, but we improved it slightly. For example, we added a 'if not, why not' option to answers that currently only included 'yes' and 'no' so that we did not force the user to have to take longer with it but gave them the option to leave more detailed feedback if they wished. On top of this we ensured that we reflected the different points on the scale itself, instead of having just numbers. For example as possible choices to the question 'How playful did you find this website?', instead of having options 1-5, we would have:  
 1 - not playful at all  
 2 - not very playful  
 3 - somewhat playful   
@@ -92,10 +95,18 @@ In total we produced three questionnaires. The first two were sent to users alon
 *Here are links to all three of our questionnaires if you are interested:*    
  [1st questionnaire (1st wireframe)](https://www.smartsurvey.co.uk/s/S58J8X/)  
  [2nd questionnaire (2nd wireframe)](https://www.smartsurvey.co.uk/s/S58J8X/)  
- [3rd questionnaire (Our most up to date website shown on a local host)](https://www.smartsurvey.co.uk/s/S58J8X/)  
+ [3rd questionnaire (Our most up to date website shown on a local host)](https://www.smartsurvey.co.uk/s/S58J8X/) 
+</p>
+
+<p align="center">
+<img src="supporting_images/feedback.png" width="600">
+</p>
+
+
 
 ### Evaluation Technique 5: Semi-structured interviews  
-These interviews were carried out throughout the development process all the way from paper-prototyping at the beginning, to presenting the website on a local host in its most complete form. We saw interviews as the main form of qualitative feedback.
+
+
 
 <a name="timeline"></a>
 # b)Timeline of Evaluation Methods  
