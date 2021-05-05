@@ -18,6 +18,11 @@ Due to COVID-19 we were unable to meet up in person, this made it extremely impo
 The two tools that the group was familiar with and facilitate these needs were [Microsoft Teams](https://www.microsoft.com/en-ww/microsoft-teams/group-chat-software) and [Discord](https://discord.com/). Both platforms offer [similar features](https://droplr.com/how-to/productivity-tools/discord-vs-microsoft-teams/). Microsoft Teams allows for sharing of larger files however this was not a concern of ours given the majority of our file sharing was done on github. We decided to use Discord primarily because we preferred the GUI and were familiar with the platform having used it in the past. We used microsoft more sparingly. 
 
 ### Teams
+  
+  <p align="center">
+  <img src="supporting_images/teamsmetting.png" width="350px">
+  </p>
+
 This software was useful for allowing us to receive feedback from our lectures on the Thursday sessions. We would record the meetings, and that allowed us to review the advice given to us. For example, Allison offered some feedback on our report and how we could enhance it. As well as discussing the important implication the mark scheme would have on our report. A couple of our team members were not unable to attend the meeting. However, they were able to rewatch the video.  Teams were also used to share code. For example, The was a time when Hari explained how the routing of the API should be structured. We have a meeting, where he shared the screen so members could understang how routing works with ExpressJs. This helped as we were not able to discuss the code face to face due to COVID-19, and really helped speed up development time. This was particularly useful for demonstrating new features to the group before agreeing to make a push or demonstrating issues with the site. One example where this came in handy is when we discovered that our site malfunctioned on one of our group members computer because of its dimensions. This group member was able to demonstrate this to the group via screen share so it could be fixed.
 
 
@@ -49,9 +54,9 @@ Having the group chat divided into specific areas kept our workflow and ideas or
 
 ### Workflow strategy
 
-With the ongoing COVID-19 lock downs and other modules requiring attention, we knew our workflow strategy had to be flexible. We wanted our website to be as user driven as possible and given the short time frame it was essential that we had user feedback throughout the design process. For both these reasons we chose to adopt the agile framework.
+With the ongoing COVID-19 lock downs and other modules requiring attention, we knew our workflow strategy had to be flexible. We wanted our website to be as user driven as possible and given the short time frame it was essential that we had user feedback throughout the design process. For both these reasons we chose to adopt the agile framework. We wanted to minimize the amount of work requried by making sure out side was tailored by user requirements.
 
-### Agile
+### [Agile](https://en.wikipedia.org/wiki/Agile_software_development)
   
   <p align="center">
   <img src="supporting_images/6t8232hs.jpg" width="450px">
@@ -65,7 +70,7 @@ This flexible but clearly defined process of developing, evaluating then setting
 
 **Each element of functionality well designed:** Every time a new feature was implemented it was thoroughly reviewed by both the group and end users before it could be finalised. This meant that every feature of the end product was well thought out and user approved.  
 
-**Encouraged regular more productive meetups:** Given the time constraints from both the project deadline and work from other modules it was important to keep meetings productive and not get sidetracked. Basing design desicions heavily on user feedback meant every video call had a purpose. Fresh user feedback and having each individually reviewed the relevent features before each meeting meant there was always useful content to be discussed.
+**Encouraged regular more productive meetups:** Given the time constraints from both the project deadline and work from other modules it was important to keep meetings productive and not get sidetracked. Basing design desicions heavily on user feedback meant every video call had a purpose. Agile develoment hinders on "Face-Face" communication. Fresh user feedback and having each individually reviewed the relevent features before each meeting meant there was always useful content to be discussed.
 
 **Avoids final product being unfinished / not user friendly:** Constant feature creation and reviewal meant at each stage we added fully functional features. Working on smaller goals as opposed to thinking of the final product and having a lot of features as a work in progress meant we had a better idea of realistic time frames. This allowed us to know what features we would be able to implement in the limited time frame. This meant we didn't become over ambitious and end up getting to the hand in date with an unfinished product. Working on smaller, well refined and fully functional features also meant if we did run out of time we would still have something to show for our work. 
 
@@ -125,7 +130,7 @@ After having got to grips with the brief and decided on an idea, this sprint was
 
 This sprint mainly involved discussing what features our website should have and roughly how they might be implimented. We all agreed the webpage's focal point would be a world map in which user posts can be seen and would appear as a heatmap in different colours depending on the mood rating of the post. We also discussed other features such as account creation and post filtering. Being unsure how complex it would be to implement the map we chose to leave these features until after we had implemented the map and posts.
 
-There were some different opinions among the group regarding how the website should be laid-out. Some felt that the login bar should slide in from the side and others felt that a whole new page should open. We decided to draw up paper prototype (see our [UX Design](uxDesign.md) document) of both of these cases and conduct a user study to decide. We wanted our product to be as user driven as possible so getting user feedback early on was crucial.
+There were some different opinions among the group regarding how the website should be laid-out. Some felt that the login bar should slide in from the side and others felt that a whole new page should open. We decided to draw up paper prototype (see our [UX Design](uxDesign.md) document) of both of these cases and conduct a user study to decide. We wanted our product to be as user driven as possible so getting user feedback early on was crucial. One of our professors also mentioned that having the applicatoin being as unique as possible is must. We mention that idea of routing the user to a new page when they were to make post
 
 As well as discussing project ideas this period was used to get familiar with the tech stack we were going to be using and github. We each watched the lectures on Angular and github, set up a shared github repository and got familiar with its protocols by making a few pushes and pulls. Although we intended to specialise into certain areas later on, we all got familiar with the frontend and Angular so further down the line it would be possible to be more flexible if required.
 
