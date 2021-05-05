@@ -36,6 +36,7 @@ Below is a short summary of our 5 main techniques of evaluating our design throu
 <p>
 <img src="supporting_images/Paper_prototype_start.jpeg" width="250" align="left">
 This process involved drawing our first interpretations of what we envisaged our website to look like on paper and then showing and observing potential users' interaction with it. The process of paper prototyping involved three roles..  
+
 **1. Facilitator**
 *This person acted as the leader of process, guiding the user through the prototype and asking key questions along the way. It was their job to encourage the user to think aloud by asking questions about their thought pattern such as "Do you know what is going on at this point?" or "What would you do next now that you are on the Sign Up page?". Or perhaps if the user was stuck (which happened a lot at the stage of paper prototyping!), "Do you find anything here useful, in terms of figuring out what you would like to do next?"*    
 
