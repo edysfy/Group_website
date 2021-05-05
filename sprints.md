@@ -99,6 +99,8 @@ My main task was building the application, and ensuring its quality. I got the i
 
 ### Tarn
 
+During the development of the application, I took on a front-end role. For example, I wrote, designed and built the 'about' section of the application. I also designed the icons found in the map's 'key', as well building the key feature itself. Another contribution I made to the project was concept development; the original proposed idea was very similiar, but involved writing longer journal-like posts. It was my idea to instead shorten these into quick and easy-to-read updates. I also recorded and produced the trailer/overview video of the application. Finally, I was responsible for writing the 'user experience' part of the write-up.
+
 ### Zaki
 
 
