@@ -15,7 +15,11 @@
 
 Due to COVID-19 we were unable to meet up in person, this made it extremely important to keep every group member engaged and involved throughout project. Effective communication online is underpinned by the platform used. At a bare minimum we needed to be able to instantly message, send files and send pictures amongst the group.
 
-The two tools that the group was familiar with and facilitate these needs were [Microsoft Teams](https://www.microsoft.com/en-ww/microsoft-teams/group-chat-software) and [Discord](https://discord.com/). Both platforms offer [similar features](https://droplr.com/how-to/productivity-tools/discord-vs-microsoft-teams/). Microsoft Teams allows for sharing of larger files however this was not a concern of ours given the majority of our file sharing was done on github. We decided to use Discord primarily because we preferred the GUI and were familiar with the platform having used it in the past.
+The two tools that the group was familiar with and facilitate these needs were [Microsoft Teams](https://www.microsoft.com/en-ww/microsoft-teams/group-chat-software) and [Discord](https://discord.com/). Both platforms offer [similar features](https://droplr.com/how-to/productivity-tools/discord-vs-microsoft-teams/). Microsoft Teams allows for sharing of larger files however this was not a concern of ours given the majority of our file sharing was done on github. We decided to use Discord primarily because we preferred the GUI and were familiar with the platform having used it in the past. We used microsoft more sparingly. 
+
+### Teams
+This software was useful for allowing us to receive feedback from our lectures on the Thursday sessions. We would record the meetings, and that allowed us to review the advice given to us. For example, Allison offered some feedback on our report and how we could enhance it. As well as discussing the important implication the mark scheme would have on our report. A couple of our team members were not unable to attend the meeting. However, they were able to rewatch the video.  Teams were also used to share code. For example, The was a time when Hari explained how the routing of the API should be structured. We have a meeting, where he shared the screen so members could understang how routing works with ExpressJs. This helped as we were not able to discuss the code face to face due to COVID-19, and really helped speed up development time. This was particularly useful for demonstrating new features to the group before agreeing to make a push or demonstrating issues with the site. One example where this came in handy is when we discovered that our site malfunctioned on one of our group members computer because of its dimensions. This group member was able to demonstrate this to the group via screen share so it could be fixed.
+
 
 ### Discord
 
@@ -25,15 +29,23 @@ We set up a private server on Discord right at the start of the project. We foun
 
 **Specific chat rooms:** Initually we set ip the serve with a few specific chats: back end, front end and write up but as the project progressed we created more specific channels as required:
 
-<td><img src="supporting_images/discord_chat.PNG"></td>
+  <p align="center">
+  <img src="supporting_images/discord_chat.PNG" width="350px">
+  </p>
 
 Having the group chat divided into specific areas kept our workflow and ideas organised. If we were looking for a particular file or idea we had previously mentioned we could look under the relevent area instead of trawling through one massive chat. Specific chats also enhanced our workflow. For example when our team split having 2 working on the front end and 2 on the back end we each used the corresponding chat. This meant that the team working on the front end wouldn't have to waste time reading irrelivent messages on the backend and visa versa which saved time.
 
-**Message pinning:** Discord has a feature where you can pin messages. These messages are then saved to the pinned messages in the chat they were sent and can be viewed easily. This came in handy when we wanted to save a particular idea or link and because pinned messages were specific to each chat they were especually easy to find. For example when formulating initial project ideas we wrote a description of each idea and pinned it to the chat for reference. Without this feature these ideas would have had to be put together on a separate document to avoid them being potentially lost.
+**Message pinning:** Discord has a feature where you can pin messages. These messages are then saved to the pinned messages in the chat they were sent and can be viewed easily. This came in handy when we wanted to save a particular idea or link and because pinned messages were specific to each chat they were especually easy to find. For example when formulating initial project ideas we wrote a description of each idea and pinned it to the chat for reference. Without this feature these ideas would have had to be put together on a separate document to avoid them being potentially lost. Another, an important use of pinning was allowing us to save the important documentation we needed for both the back and front end. For example, we could go to the pins on the front end chat, and instantly see the documentation relating to marker implementation using GeoJson.
 
-**Keyword searching:** Discord allows you to search chats for messages by keyword returning any message featuring the entered keyword along with the position in the chat it appears. This saved time when looking for certain parts of our discussions that we may not have pinned as we didn't realise they would be useful later on. This feature was particularly useful when working on the write up. We had documented most key points throughout our project but for ones we had missed it was simple to look them up. For example finding our discussions regarding Mapbox was as simple as searching in 'mapbox' and we would have all parts of the chat where this word was mentioned.
+  <p align="center">
+  <img src="supporting_images/mapboxpin.png" width="350px">
+  </p>
 
-**Screen sharing:** When in a video chat Discord allows you to share your screen. This was particularly useful for demonstrating new features to the group before agreeing to make a push or demonstrating issues with the site. One example where this came in handy is when we discovered that our site malfunctioned on one of our group members pcs because of its dimensions. This group member was able to demonstrate this to the group via screen share so it could be fixed.
+**Keyword searching:** Discord allows you to search chats for messages by keyword returning any message featuring the entered keyword along with the position in the chat it appears. This saved time when looking for certain parts of our discussions that we may not have pinned as we didn't realise they would be useful later on. This feature was particularly useful when working on the write up. We had documented most key points throughout our project but for ones we had missed it was simple to look them up. For example finding our discussions regarding Mapbox was as simple as searching in 'MongoDb' and we would have all parts of the chat where this word was mentioned.
+
+  <p align="center">
+  <img src="supporting_images/msearch.png" width="550px">
+  </p>
 
 ### Workflow strategy
 
@@ -41,17 +53,19 @@ With the ongoing COVID-19 lock downs and other modules requiring attention, we k
 
 ### Agile
 
+
+
 Agile software development refers to software development methodologies which are based around an iterative design process where in each iteration stakeholder input is incorporated. This method provides frequent delivery of small portions of functionality, each portion being fitting with stakeholder requirements.
 
 The only stakeholder in our project was the end user. Therefore all feedback at each iteration came from user surveys and interviews. As documented in the [sprints] and [UX] at each stage of the development process we set goals based apon the user feedback collected in the last sprint. Once we had implemented the features described by our sprint goals we then repeated the process evaluating what we had done and getting more user feedback.
 
-This flexible but clearly defined process of of developing, evaluating then setting out goals provided the following benifits:
+This flexible but clearly defined process of developing, evaluating then setting out goals provided the following benifits:
 
 **Each element of functionality well designed:** Every time a new feature was implemented it was thoroughly reviewed by both the group and end users before it could be finalised. This meant that every feature of the end product was well thought out and user approved.  
 
 **Encouraged regular more productive meetups:** Given the time constraints from both the project deadline and work from other modules it was important to keep meetings productive and not get sidetracked. Basing design desicions heavily on user feedback meant every video call had a purpose. Fresh user feedback and having each individually reviewed the relevent features before each meeting meant there was always useful content to be discussed.
 
-**Avoids final product being unfinished / not user friendly:** Constant feature creation and reviewal meant at each stage we added fully functional features. Working on smaller goals as opposed to thinking of the final product and having a lot of features as a work in progress meant we had a better idea of realistic time frames. This allowed us to know what features we would be able to implement in the limited time frame. This meant we didn't become over ambitious and end up getting to the hand in date with an unfinished product. Working on smaller, well refined and fully functional features also meant if we did run out of time we would still have something to show for our work.
+**Avoids final product being unfinished / not user friendly:** Constant feature creation and reviewal meant at each stage we added fully functional features. Working on smaller goals as opposed to thinking of the final product and having a lot of features as a work in progress meant we had a better idea of realistic time frames. This allowed us to know what features we would be able to implement in the limited time frame. This meant we didn't become over ambitious and end up getting to the hand in date with an unfinished product. Working on smaller, well refined and fully functional features also meant if we did run out of time we would still have something to show for our work. 
 
 <a name="second"></a>
 
