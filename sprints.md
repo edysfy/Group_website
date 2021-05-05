@@ -52,14 +52,16 @@ Having the group chat divided into specific areas kept our workflow and ideas or
 With the ongoing COVID-19 lock downs and other modules requiring attention, we knew our workflow strategy had to be flexible. We wanted our website to be as user driven as possible and given the short time frame it was essential that we had user feedback throughout the design process. For both these reasons we chose to adopt the agile framework.
 
 ### Agile
-
-
+  
+  <p align="center">
+  <img src="supporting_images/6t8232hs.jpg" width="450px">
+  </p>
 
 Agile software development refers to software development methodologies which are based around an iterative design process where in each iteration stakeholder input is incorporated. This method provides frequent delivery of small portions of functionality, each portion being fitting with stakeholder requirements.
 
 The only stakeholder in our project was the end user. Therefore all feedback at each iteration came from user surveys and interviews. As documented in the [sprints] and [UX] at each stage of the development process we set goals based apon the user feedback collected in the last sprint. Once we had implemented the features described by our sprint goals we then repeated the process evaluating what we had done and getting more user feedback.
 
-This flexible but clearly defined process of developing, evaluating then setting out goals provided the following benifits:
+This flexible but clearly defined process of developing, evaluating then setting out goals provided the following benefits:
 
 **Each element of functionality well designed:** Every time a new feature was implemented it was thoroughly reviewed by both the group and end users before it could be finalised. This meant that every feature of the end product was well thought out and user approved.  
 
