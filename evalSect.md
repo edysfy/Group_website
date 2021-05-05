@@ -34,7 +34,7 @@ Below is a short summary of our 5 main techniques of evaluating our design throu
 
 
 <p>
-<img src="/Users/zakigill/Documents/SEng/Group_website/1st Wireframe.png" width="250" align="left">
+<img src="supporting_images/Paper_prototype_start.jpeg" width="250" align="left">
 This process involved drawing our first interpretations of what we envisaged our website to look like on paper and then showing and observing potential users' interaction with it. The process of paper prototyping involved three roles..  
 
 
@@ -58,7 +58,7 @@ To learn more about how our paper prototyping allowed us, at a very early stage,
 
 ### Evaluation Technique 2: Wireframing
 <p>
-<img src="/Users/zakigill/Documents/SEng/Group_website/supporting_images/1st Wireframe.png" width = 250 align="left">
+<img src="/Users/zakigill/Documents/SEng/Group_website/1st Wireframe.png" width = 250 align="left">
 Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop easily through a link, [like this one for our second wireframe!](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built onto screenshots of the website as it looked at the time.    
 
 Please see our [UX section](uxDesign.md) where we discuss how users were able to engage with our website and leave comments on what they thought about their experience with it.
