@@ -68,6 +68,11 @@ Please see our [UX section](uxDesign.md) where we discuss how users were able to
 <img src="supporting_images/feedback.png" width="600">
 </p>
 
+
+<p align="center">
+<img src="supporting_images/feedback.png" width="600">
+</p>
+
 As demonstrated by the screenshot of some feedback a user left, a limitation that we experienced when sending out the link to users can be seen. In this case, the 'x' on the comment that they are referring to was part of the screenshot of the webpage that we had uploaded as part of wireframe. Thus, this user did not understand the concept of a wireframe and thought that it was more interactive and accurate than it was. Due to the fact that some users thought  the wireframe should work in the same way as the website would, we recognise that perhaps we should have either been clearer when sending out the message with the link in or carried out more guided walkthroughs of the wireframe in order to avoid this issue.
 
 
@@ -95,12 +100,9 @@ In total we produced three questionnaires. The first two were sent to users alon
 *Here are links to all three of our questionnaires if you are interested:*    
  [1st questionnaire (1st wireframe)](https://www.smartsurvey.co.uk/s/S58J8X/)  
  [2nd questionnaire (2nd wireframe)](https://www.smartsurvey.co.uk/s/S58J8X/)  
- [3rd questionnaire (Our most up to date website shown on a local host)](https://www.smartsurvey.co.uk/s/S58J8X/) 
+ [3rd questionnaire (Our most up to date website shown on a local host)](https://www.smartsurvey.co.uk/s/S58J8X/)
 </p>
 
-<p align="center">
-<img src="supporting_images/feedback.png" width="600">
-</p>
 
 
 
