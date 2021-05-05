@@ -58,7 +58,7 @@ To learn more about how our paper prototyping allowed us, at a very early stage,
 
 ### Evaluation Technique 2: Wireframing
 <p>
-<img src="/Users/zakigill/Documents/SEng/Group_website/supporting_images/firstwireframe.png" width = 250 align="left">
+<img src="/Users/zakigill/Documents/SEng/Group_website/supporting_images/firstwireframe.png" width ="250" align="left">
 Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop easily through a link, [like this one for our second wireframe!](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built onto screenshots of the website as it looked at the time.    
 
 Please see our [UX section](uxDesign.md) where we discuss how users were able to engage with our website and leave comments on what they thought about their experience with it.
@@ -73,8 +73,9 @@ Another method we used in evaluating our designs was an idea matrix. This was an
 
 ### Evaluation Technique 4: Questionnaires
 
-Our group used questionnaires both as a qualitative and quantitative method of evaluating our designs. It was our main form of quantitative feedback as we were able to send a link *insert link* to as many users as we could who had just used one of our wireframes or been shown our most up to date website on a local host. This way, we could gain insights at scale into how users interpreted our website through them answering questions such as "Would you recommend this product to a friend?", "Do you think this website is solving a serious problem?" or "How would you improve this website?".   
+Our grouped used questionnaires as our main form of quantitative feedback as we were able to send a link *insert link* to as many users as we could who had just used one of our wireframes or been shown our most up to date website on a local host. This way, we could gain insights at scale into how users interpreted our website through them answering questions such as "Would you recommend this product to a friend?", "Do you think this website is solving a serious problem?" or "How would you improve this website?".    
 
+In total we produced three questionnaires. The first two were sent to users alongside the wireframes and the last one was filled out by users after they had used the website on a local host. The last two questionnaires asked the same questions as the first, but we improved it slightly. *Give example of how you improved this*  
 
 ### Evaluation Technique 5: Semi-structured interviews  
 These interviews were carried out throughout the development process all the way from paper-prototyping at the beginning, to presenting the website on a local host in its most complete form. We saw interviews as the main form of qualitative feedback.
@@ -106,11 +107,6 @@ These interviews were carried out throughout the development process all the way
 
 *screenshot of  question 7*
 The questionnaires themselves did in fact hold a qualitative functionality to them. This was mainly in two of the questions, seen above, where we prompted the user for a response.  
-
-
-In total we produced three  questionairres. The first two were sent to users alongside the wireframes and the last one was filled out by users after they had used the website on a local host. The last two questionnaires asked the same questions as the first, but we improved it slightly. *Give example of how you improved this*  
-
-
 
 ### Stage 4: INVOLVEMENT OF IDEA MATRIX 30/3/21
 30/3/21: Shortly after we started collecting quantitative data, we decided that it would be effective to create a method by which we could better draw insights from it. We made this decision because at this point we had received many suggestions from users in terms of how we could improve the user interface of our design. In this way we were able to populate the idea matrix with feedback data from both the questionnaires and semi-structured interviews.  
