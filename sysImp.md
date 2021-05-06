@@ -47,9 +47,10 @@ We considered using a SQL database due to the simple nature of our data model. A
 
 ### How did we connect MongoDb To our API?
 
-Firstly, we needed to initialize the MongoDB database. So we created a free MongoDB account and created a cluster. We set the IP to all, so all of our team members can be sent requests through to the database, which useful for testing, as we could all perform CRUD operations on the database. We then took the connection URL (which has our account details stored) and stored it as a variable: 'mongoDBConnect', in the Express application file. Mongoose as a simple method called "connect" that allows you to connect to the URL easily. Once Node is run, the database can now communicate with our API.
+Firstly, we needed to initialize the MongoDB database. So we created a free MongoDB account and created a cluster. We set the IP access to all, so all of our team members can be sent requests through to the database, which useful for testing, as we could all perform CRUD operations on the database. We created '.env' file that stores all of our MongoDB connection credentials, like username and password. Added this to '.gitignore' so these details are not accessable through git. Then imported these varabled using 'dotenv' library, and created a MongoDb connection URL.We then stored the connection URL as a variable: 'mongoDBConnect', in the Express application file. Mongoose as a simple method called "connect" that allows you to connect to the URL easily. Once Node is run, the database can now communicate with our API.
 
 ```js
+const mongoDBConnect = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}/${MONGO_DB}?retryWrites=true&w=majority`;
 mongoose.connect(mongoDBConnect,{ useNewUrlParser: true, useUnifiedTopology: true })
 .then(connection => {
     console.log("Rest Api has successfully connected to mongoDb Database");
