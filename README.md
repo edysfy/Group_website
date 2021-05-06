@@ -1,9 +1,9 @@
 <p align="center">
-<img src="supporting_images/titmp.png" width="850px">
+<img src="supporting_images/titmp.png" width="650px">
 </p>
 
 <a name="team"></a>
-## Team
+# Team
 
 <table>
 <tr>
