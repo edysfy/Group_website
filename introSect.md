@@ -30,6 +30,11 @@ Our team aimed to address two key stakeholders:
 Our first was the type of end user that made up our target market, as explained above. Second would be any analyst or organisation who would benefit from the data provided by EmoteMap about the different emotions and experiences felt globally. This could be in the form of visual data provided by our heat map, data extracted from the experiences and emotions logged by users; either as part of their blog post, the keyword emotion that they chose to log (e.g - "anxious"), user geolocation, or the 1-3 scale of emotion logged by the user. We envisage this kind of stakeholder to be a data analyst or a mental health organisation for example. For a more detailed investigation into this type of stakeholder, please see Christina's fictional story in our [UX section](uxDesign.md) which can help you visualise exactly how this kind of stakeholder would benefit from using EmoteMap.
 
 <a name="backgrnd"></a>
+
+<p align="center">
+<img src="supporting_images/shutterstock_174741554-e1519911636917.jpg" width="550px">
+</p
+
 # The Problem: Background and Motivation
 ### The Problem
 Our team addresses both the problem of poor  mental health globally and the inadequacy of today's mainstream social media in addressing it. To make the problem more digestible we decided to define it in two parts. In the first, we explain the issue of poor mental health which has become significantly worse as a result of the global lockdown. In the second we address the related issue of online culture's inadequacy to acknowledge the first problem. Current mainstream social platforms found online can be ,in fact, detrimental to it.
