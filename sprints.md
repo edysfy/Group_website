@@ -92,7 +92,7 @@ The other role I fulfilled was project management, both on a coding and teamwork
 
 Along with contributing to the writeup, my primary focus was on the backend of the website, most notably working with mongoDB. When we initially got our map working we used some example data from a https link provided by mapbox. I downloaded the example data to our project file and served it from there. After having done this I then set up a mongoDB account and imported the example data and then served our data from mongoDB. From here on I worked under Hari on the backend.
 
-One other feature I implemented was the backend functionality of the basic search bar. I made it so users can now enter a keyword and all posts featuring something similar to the entered keyword would be logged to the console.
+One other feature I implemented was the frontend component of the basic search bar. This allowed non-authenicated users to enter a keyword and all posts featuring something similar to the entered keyword would be logged to the console. This however was scrapped, as we made a complex search feature for authenticated users only. 
 
 Although my contribution to writing actual source code was less when compared to some group members, throughout the project I played an important role in discussion and formulation of ideas and remained as active as possible on our Discord server.
 
@@ -100,7 +100,7 @@ Although my contribution to writing actual source code was less when compared to
 
 I was the leader of the project. I instilled an initial vision for how the application concept be. I was explict to my team on the way we should go about building the application. I assigned team members tasks to do when developing the app, while offering advice when asked at how to get something to work in the code. I also, helped oversee the write up, offering feedback and extra things I thought should have been mentioned in the documentation, as well as writing the system implementation section.
 
-My main task was building the application, and ensuring its quality. I got the initial prototypes working in the browser to give the team an idea of how the app will look on the computer. I then lead the develop for the backend, defining the routes and the initialization of the Express app as well as the MongoDB schemas. I also worked on the front end. I was responsible for the styling of the application. I also lead the implemention of the services and defined interfaces in the model's folder. I also lead the implemention the user authentication, the search functionality, as well as the following components: login, signup, descript-popup, sidebar, toolbar, user, user-search, userpost, userpost-display, usersearch-display, and setting up the routing and allowing the data to flow dynamically between the full stack. I helped develop some functionality in Mapbox, like rendering different data streams on the map (from post and search service), as well as implementing the fly function.
+My main task was building the application, and ensuring its quality. I got the initial prototypes working in the browser to give the team an idea of how the app will look on the computer. I then lead the development for the backend, defining the routes and the initialization of the Express app as well as the MongoDB schemas. I also worked on the front end. I was responsible for the styling of the application with css. I also implemented of the services and defined interfaces in the model's folder. I also implemented the user authentication, the user-search functionality, as well as the following components: login, signup, descript-popup, sidebar, toolbar, user, user-search, userpost, userpost-display, usersearch-display, and setting up the routing and allowing the data to flow dynamically between the full stack. I helped develop some functionality in Mapbox, like rendering different data streams on the map (from post and search service), as well as implementing the fly function.
 
 ### Tarn
 
@@ -377,4 +377,4 @@ At regular intervals, usually at the end of sprints where we had achieved signif
 After new features were added, we would then also get user feedback and as a group evaluate the current project, helping us evaluate the feature but also to start off the CI (continuous integration) pipeline again for the next sprint. As an example, one feature we developed was a search bar for non-users; we discussed, developed and tested the feature using the CI pipeline as described - however we decided this feature wasn't needed (see implementation issues for sprint 5).
 
 
-Next section; [Evaluation and Conclusion](evalSect.md)
+Next section: [Evaluation and Conclusion](evalSect.md)
