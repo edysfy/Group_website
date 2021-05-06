@@ -1,4 +1,6 @@
-<h1 align="center" style="colour: red"> EmoteMap </h1>
+<p align="center">
+<img src="supporting_images/titmp.png" width="850px">
+</p>
 
 <a name="team"></a>
 ## Team
