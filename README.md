@@ -2,8 +2,8 @@
 <img src="supporting_images/titmp.png" width="650px">
 </p>
 
-<a name="team"></a>
-# Team
+<a align="center" name="team"></a>
+# Firstly, meet the Emote Team :-)
 
 <table>
 <tr>
