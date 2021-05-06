@@ -2,8 +2,34 @@
 <img src="supporting_images/titmp.png" width="650px">
 </p>
 
+
+
+<a name="first"></a>
+## Introduction, background and motivation
+View our [Introduction, background and motivation](introSect.md) document to see;
+* Introduction
+* Background & Motivation
+* Industry Review
+
+
+<a name="second"></a>
+## System implementation,UX design and development process
+Click the following links to see our documents on;
+* [UX Design](uxDesign.md) (stakeholders,users)
+* [System Implementation](sysImp.md) (MongoDb,Backend,Frontend)
+* [Project Management & development process](sprints.md) (continuous integration, use of github)
+
+
+
+<a name="third"></a>
+## Evaluation and Conclusion
+View our [Evaluation and Conclusion](evalSect.md) document to see;
+* Evaluation
+* Conclusion
+
+
 <a align="center" name="team"></a>
-# Firstly, meet the Emote Team :-)
+# Meet the Emote Team :-)
 
 <table>
 <tr>
@@ -37,27 +63,3 @@
   <td><img src="member_photos/TarnWilliamson.jpg" width="100" height="100"></td>
 </tr>
 </table>
-
-
-<a name="first"></a>
-## Introduction, background and motivation
-View our [Introduction, background and motivation](introSect.md) document to see;
-* Introduction
-* Background & Motivation
-* Industry Review
-
-
-<a name="second"></a>
-## System implementation,UX design and development process
-Click the following links to see our documents on;
-* [UX Design](uxDesign.md) (stakeholders,users)
-* [System Implementation](sysImp.md) (MongoDb,Backend,Frontend)
-* [Project Management & development process](sprints.md) (continuous integration, use of github)
-
-
-
-<a name="third"></a>
-## Evaluation and Conclusion
-View our [Evaluation and Conclusion](evalSect.md) document to see;
-* Evaluation
-* Conclusion
