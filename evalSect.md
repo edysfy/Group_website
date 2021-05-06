@@ -58,27 +58,57 @@ To learn more about how our paper prototyping allowed us, at a very early stage,
 
 ### Evaluation Technique 2: Wireframing
 <p>
-<img src="supporting_images/firstwireframe.png" width="250" align="left">
-Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop easily through a link, [like this one for our second wireframe!](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built onto screenshots of the website as it looked at the time.    
+<img src="supporting_images/firstwireframe.png" width="400" align="left">
+Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop easily through a link [like this one](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built onto screenshots of the website as it looked at the time.    
 
 Please see our [UX section](uxDesign.md) where we discuss how users were able to engage with our website and leave comments on what they thought about their experience with it.
 </p>
 
+<p align="center">
+<img src="supporting_images/feedback.png" width="600">
+</p>
+
+
+<p align="center">
+<img src="supporting_images/feedback.png" width="600">
+</p>
+
+As demonstrated by the screenshot of some feedback a user left, a limitation that we experienced when sending out the link to users can be seen. In this case, the 'x' on the comment that they are referring to was part of the screenshot of the webpage that we had uploaded as part of wireframe. Thus, this user did not understand the concept of a wireframe and thought that it was more interactive and accurate than it was. Due to the fact that some users thought  the wireframe should work in the same way as the website would, we recognise that perhaps we should have either been clearer when sending out the message with the link in or carried out more guided walkthroughs of the wireframe in order to avoid this issue.
 
 
 ### Evaluation Technique 3: Idea Matrix
-*picture of idea matrix up to date*
+<p align="center">
+<img src="supporting_images/idea_matrix.png" width="600">
+</p>
 
-Another method we used in evaluating our designs was an idea matrix. This was an excel spreadsheet that came to be extremely useful in prioritising what changes we were going to make to the website throughout the development process.
+Another method we used in evaluating our designs was an idea matrix. This was an excel spreadsheet that came to be extremely useful in prioritising user suggestions and thus which changes we were going to make to the website throughout the development process.
 
 ### Evaluation Technique 4: Questionnaires
 
-Our grouped used questionnaires as our main form of quantitative feedback as we were able to send a link *insert link* to as many users as we could who had just used one of our wireframes or been shown our most up to date website on a local host. This way, we could gain insights at scale into how users interpreted our website through them answering questions such as "Would you recommend this product to a friend?", "Do you think this website is solving a serious problem?" or "How would you improve this website?".    
 
-In total we produced three questionnaires. The first two were sent to users alongside the wireframes and the last one was filled out by users after they had used the website on a local host. The last two questionnaires asked the same questions as the first, but we improved it slightly. *Give example of how you improved this*  
+<p>
+<img src="supporting_images/questionnaire.png" width="550" align="left">
+Our grouped used questionnaires as our main form of quantitative feedback as we were able to send a link, such as [this one](https://www.smartsurvey.co.uk/s/S58J8X/) to as many users as we could who had revently used one of our wireframes or been shown our most up to date website on a local host. This way, we could gain insights at scale into how users interpreted our website through them answering questions such as "Would you recommend this product to a friend?", "Do you think this website is solving a serious problem?" or "How would you improve this website?".    
+
+In total we produced three questionnaires. The first two were sent to users alongside the wireframes and the last one was filled out by users after they had used the website on a local host. The last two questionnaires asked the same questions as the first, but we improved it slightly. For example, we added a 'if not, why not' option to answers that currently only included 'yes' and 'no' so that we did not force the user to have to take longer with it but gave them the option to leave more detailed feedback if they wished. On top of this we ensured that we reflected the different points on the scale itself, instead of having just numbers. For example as possible choices to the question 'How playful did you find this website?', instead of having options 1-5, we would have:  
+1 - not playful at all  
+2 - not very playful  
+3 - somewhat playful   
+4 - very playful
+5 - extremely playful  
+
+*Here are links to all three of our questionnaires if you are interested:*    
+ [1st questionnaire (1st wireframe)](https://www.smartsurvey.co.uk/s/S58J8X/)  
+ [2nd questionnaire (2nd wireframe)](https://www.smartsurvey.co.uk/s/S58J8X/)  
+ [3rd questionnaire (Our most up to date website shown on a local host)](https://www.smartsurvey.co.uk/s/S58J8X/)
+</p>
+
+
+
 
 ### Evaluation Technique 5: Semi-structured interviews  
-These interviews were carried out throughout the development process all the way from paper-prototyping at the beginning, to presenting the website on a local host in its most complete form. We saw interviews as the main form of qualitative feedback.
+
+
 
 <a name="timeline"></a>
 # b)Timeline of Evaluation Methods  
@@ -195,4 +225,7 @@ One extension idea we have involves further inter-user interaction and communica
 At a late stage in our development, one user made an important point on privacy: they were concerned about sharing their location when making an Emote Post. This is a valid concern and we questioned how we may be able to deal with this issue in future development of the project. Submitting Emote Posts without some form of geolocation voids the project's idea entirely. We therefore propose an alternative direction: to give users the ability to pin their posts to an area (such as a district), instead of a precise location. We believe this would be a good balance between privacy, and having the ability to see trends in emotion across different areas of the globe. It would be interesting to survey whether such a feature would encourage those previously concerned over privacy to then use the site.
 
 
-focus on mens mental health
+focus on mens mental health     
+
+
+mention how we want to do more testing than stated in the test file (see td)

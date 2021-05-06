@@ -15,7 +15,16 @@
 
 Due to COVID-19 we were unable to meet up in person, this made it extremely important to keep every group member engaged and involved throughout project. Effective communication online is underpinned by the platform used. At a bare minimum we needed to be able to instantly message, send files and send pictures amongst the group.
 
-The two tools that the group was familiar with and facilitate these needs were [Microsoft Teams](https://www.microsoft.com/en-ww/microsoft-teams/group-chat-software) and [Discord](https://discord.com/). Both platforms offer [similar features](https://droplr.com/how-to/productivity-tools/discord-vs-microsoft-teams/). Microsoft Teams allows for sharing of larger files however this was not a concern of ours given the majority of our file sharing was done on github. We decided to use Discord primarily because we preferred the GUI and were familiar with the platform having used it in the past.
+The two tools that the group was familiar with and facilitate these needs were [Microsoft Teams](https://www.microsoft.com/en-ww/microsoft-teams/group-chat-software) and [Discord](https://discord.com/). Both platforms offer [similar features](https://droplr.com/how-to/productivity-tools/discord-vs-microsoft-teams/). Microsoft Teams allows for sharing of larger files however this was not a concern of ours given the majority of our file sharing was done on github. We decided to use Discord primarily because we preferred the GUI and were familiar with the platform having used it in the past. We used microsoft more sparingly. 
+
+### Teams
+  
+  <p align="center">
+  <img src="supporting_images/teamsmetting.png" width="350px">
+  </p>
+
+This software was useful for allowing us to receive feedback from our lectures on the Thursday sessions. We would record the meetings, and that allowed us to review the advice given to us. For example, Allison offered some feedback on our report and how we could enhance it. As well as discussing the important implication the mark scheme would have on our report. A couple of our team members were not unable to attend the meeting. However, they were able to rewatch the video.  Teams were also used to share code. For example, The was a time when Hari explained how the routing of the API should be structured. We have a meeting, where he shared the screen so members could understang how routing works with ExpressJs. This helped as we were not able to discuss the code face to face due to COVID-19, and really helped speed up development time. This was particularly useful for demonstrating new features to the group before agreeing to make a push or demonstrating issues with the site. One example where this came in handy is when we discovered that our site malfunctioned on one of our group members computer because of its dimensions. This group member was able to demonstrate this to the group via screen share so it could be fixed.
+
 
 ### Discord
 
@@ -25,33 +34,45 @@ We set up a private server on Discord right at the start of the project. We foun
 
 **Specific chat rooms:** Initually we set ip the serve with a few specific chats: back end, front end and write up but as the project progressed we created more specific channels as required:
 
-<td><img src="supporting_images/discord_chat.PNG"></td>
+  <p align="center">
+  <img src="supporting_images/discord_chat.PNG" width="350px">
+  </p>
 
 Having the group chat divided into specific areas kept our workflow and ideas organised. If we were looking for a particular file or idea we had previously mentioned we could look under the relevent area instead of trawling through one massive chat. Specific chats also enhanced our workflow. For example when our team split having 2 working on the front end and 2 on the back end we each used the corresponding chat. This meant that the team working on the front end wouldn't have to waste time reading irrelivent messages on the backend and visa versa which saved time.
 
-**Message pinning:** Discord has a feature where you can pin messages. These messages are then saved to the pinned messages in the chat they were sent and can be viewed easily. This came in handy when we wanted to save a particular idea or link and because pinned messages were specific to each chat they were especually easy to find. For example when formulating initial project ideas we wrote a description of each idea and pinned it to the chat for reference. Without this feature these ideas would have had to be put together on a separate document to avoid them being potentially lost.
+**Message pinning:** Discord has a feature where you can pin messages. These messages are then saved to the pinned messages in the chat they were sent and can be viewed easily. This came in handy when we wanted to save a particular idea or link and because pinned messages were specific to each chat they were especually easy to find. For example when formulating initial project ideas we wrote a description of each idea and pinned it to the chat for reference. Without this feature these ideas would have had to be put together on a separate document to avoid them being potentially lost. Another, an important use of pinning was allowing us to save the important documentation we needed for both the back and front end. For example, we could go to the pins on the front end chat, and instantly see the documentation relating to marker implementation using GeoJson.
 
-**Keyword searching:** Discord allows you to search chats for messages by keyword returning any message featuring the entered keyword along with the position in the chat it appears. This saved time when looking for certain parts of our discussions that we may not have pinned as we didn't realise they would be useful later on. This feature was particularly useful when working on the write up. We had documented most key points throughout our project but for ones we had missed it was simple to look them up. For example finding our discussions regarding Mapbox was as simple as searching in 'mapbox' and we would have all parts of the chat where this word was mentioned.
+  <p align="center">
+  <img src="supporting_images/mapboxpin.png" width="350px">
+  </p>
 
-**Screen sharing:** When in a video chat Discord allows you to share your screen. This was particularly useful for demonstrating new features to the group before agreeing to make a push or demonstrating issues with the site. One example where this came in handy is when we discovered that our site malfunctioned on one of our group members pcs because of its dimensions. This group member was able to demonstrate this to the group via screen share so it could be fixed.
+**Keyword searching:** Discord allows you to search chats for messages by keyword returning any message featuring the entered keyword along with the position in the chat it appears. This saved time when looking for certain parts of our discussions that we may not have pinned as we didn't realise they would be useful later on. This feature was particularly useful when working on the write up. We had documented most key points throughout our project but for ones we had missed it was simple to look them up. For example finding our discussions regarding Mapbox was as simple as searching in 'MongoDb' and we would have all parts of the chat where this word was mentioned.
+
+  <p align="center">
+  <img src="supporting_images/msearch.png" width="550px">
+  </p>
 
 ### Workflow strategy
 
-With the ongoing COVID-19 lock downs and other modules requiring attention, we knew our workflow strategy had to be flexible. We wanted our website to be as user driven as possible and given the short time frame it was essential that we had user feedback throughout the design process. For both these reasons we chose to adopt the agile framework.
+With the ongoing COVID-19 lock downs and other modules requiring attention, we knew our workflow strategy had to be flexible. We wanted our website to be as user driven as possible and given the short time frame it was essential that we had user feedback throughout the design process. For both these reasons we chose to adopt the agile framework. We wanted to minimize the amount of work requried by making sure out side was tailored by user requirements.
 
-### Agile
+### [Agile](https://en.wikipedia.org/wiki/Agile_software_development)
+  
+  <p align="center">
+  <img src="supporting_images/6t8232hs.jpg" width="450px">
+  </p>
 
 Agile software development refers to software development methodologies which are based around an iterative design process where in each iteration stakeholder input is incorporated. This method provides frequent delivery of small portions of functionality, each portion being fitting with stakeholder requirements.
 
 The only stakeholder in our project was the end user. Therefore all feedback at each iteration came from user surveys and interviews. As documented in the [sprints] and [UX] at each stage of the development process we set goals based apon the user feedback collected in the last sprint. Once we had implemented the features described by our sprint goals we then repeated the process evaluating what we had done and getting more user feedback.
 
-This flexible but clearly defined process of of developing, evaluating then setting out goals provided the following benifits:
+This flexible but clearly defined process of developing, evaluating then setting out goals provided the following benefits:
 
 **Each element of functionality well designed:** Every time a new feature was implemented it was thoroughly reviewed by both the group and end users before it could be finalised. This meant that every feature of the end product was well thought out and user approved.  
 
-**Encouraged regular more productive meetups:** Given the time constraints from both the project deadline and work from other modules it was important to keep meetings productive and not get sidetracked. Basing design desicions heavily on user feedback meant every video call had a purpose. Fresh user feedback and having each individually reviewed the relevent features before each meeting meant there was always useful content to be discussed.
+**Encouraged regular more productive meetups:** Given the time constraints from both the project deadline and work from other modules it was important to keep meetings productive and not get sidetracked. Basing design desicions heavily on user feedback meant every video call had a purpose. Agile develoment hinders on "Face-Face" communication. Fresh user feedback and having each individually reviewed the relevent features before each meeting meant there was always useful content to be discussed.
 
-**Avoids final product being unfinished / not user friendly:** Constant feature creation and reviewal meant at each stage we added fully functional features. Working on smaller goals as opposed to thinking of the final product and having a lot of features as a work in progress meant we had a better idea of realistic time frames. This allowed us to know what features we would be able to implement in the limited time frame. This meant we didn't become over ambitious and end up getting to the hand in date with an unfinished product. Working on smaller, well refined and fully functional features also meant if we did run out of time we would still have something to show for our work.
+**Avoids final product being unfinished / not user friendly:** Constant feature creation and reviewal meant at each stage we added fully functional features. Working on smaller goals as opposed to thinking of the final product and having a lot of features as a work in progress meant we had a better idea of realistic time frames. This allowed us to know what features we would be able to implement in the limited time frame. This meant we didn't become over ambitious and end up getting to the hand in date with an unfinished product. Working on smaller, well refined and fully functional features also meant if we did run out of time we would still have something to show for our work. 
 
 <a name="second"></a>
 
@@ -83,11 +104,28 @@ My main task was building the application, and ensuring its quality. I got the i
 
 ### Tarn
 
+During the development of the application, I took on a front-end role. For example, I wrote, designed and built the 'about' section of the application. I also designed the icons found in the map's 'key', as well building the key feature itself. Another contribution I made to the project was concept development; the original proposed idea was very similiar, but involved writing longer journal-like posts. It was my idea to instead shorten these into quick and easy-to-read updates. I also recorded and produced the trailer/overview video of the application. Finally, I was responsible for writing the 'user experience' part of the write-up.
+
 ### Zaki
 
-
-
 <a name="third"></a>
+
+### Pre-sprint idea formulation
+
+This time was used to get to know the other group members and project brief itself. Having all come from different backgrounds, from music to engineering, a lot of varied and interesting project ideas were put forward. After some discussion we drafted up 4 potential ideas:
+
+**Higher or lower:** A simple game in which the user was asked which was item is "higher or lower", if they get the answer correct they are given a fact about the item which was lower. Below is a small demonstration on the topic of population size but question topics could be on a large variety of things:
+ADD PICTURE
+The game intention of this game was to be addictive, fun and educational.
+
+**Altitude explorer:** A 2D platformer game with similar mechanics to the app [Doodle Jump] but the user explores different altitudes on earth and in space. The player starts at the bottom of the sea and works their way up into space. As they travel up through different levels they learn facts about what is present at each altitude. For example at 10,927m below sea level the user would be told that this was the deepest manned sea dive ever recorded or at 10,668m above sea level they would be informed that this is the average height at which passenger planes fly. As the user went higher they would then learn about different planets and objects in space. Similar to the other idea this served to be entertaining but also educational.
+
+**Musical instruments through time:** A web page where users can browse musical instruments through time and when they are clicked the sound of the instrument is played. Aimed to teach users about musical anthropology in an engaging way, an interesting topic which our group consider to be overlooked and undervalued compared to other areas of music.
+
+**EmoteMap:** A geographical diary where users can post diary entries which include their current location. Users can then look on the map at their archived posts and see how they were feeling in certain locations. This website idea aims to help users track and improve upon their mental wellbeing.
+
+A lot of time was spent discussing which project idea to use. The idea needed to be useful, original and also fit the brief. We decided that although we felt all the ideas were good, EmoteMap addressed the particularly relevant issue of mental health and isolation. COVID-19 has left many people isolated and struggling to cope with ongoing lockdowns. We decided to use the geographical diary element from the EmoteMap idea but make it so posts can be seen by other users online, making users feel less isolated and more connected. All group members agreed this idea had great potential and decided to finalise this as our project idea.
+
 ## Sprints
 
 ## Sprint 1: Project idea finalisation & set up CI infrastructure
@@ -109,7 +147,7 @@ After having got to grips with the brief and decided on an idea, this sprint was
 
 This sprint mainly involved discussing what features our website should have and roughly how they might be implimented. We all agreed the webpage's focal point would be a world map in which user posts can be seen and would appear as a heatmap in different colours depending on the mood rating of the post. We also discussed other features such as account creation and post filtering. Being unsure how complex it would be to implement the map we chose to leave these features until after we had implemented the map and posts.
 
-There were some different opinions among the group regarding how the website should be laid-out. Some felt that the login bar should slide in from the side and others felt that a whole new page should open. We decided to draw up paper prototype (see our [UX Design](uxDesign.md) document) of both of these cases and conduct a user study to decide. We wanted our product to be as user driven as possible so getting user feedback early on was crucial.
+There were some different opinions among the group regarding how the website should be laid-out. Some felt that the login bar should slide in from the side and others felt that a whole new page should open. We decided to draw up paper prototype (see our [UX Design](uxDesign.md) document) of both of these cases and conduct a user study to decide. We wanted our product to be as user driven as possible so getting user feedback early on was crucial. One of our professors also mentioned that having the applicatoin being as unique as possible is must. We mention that idea of routing the user to a new page when they were to make post
 
 As well as discussing project ideas this period was used to get familiar with the tech stack we were going to be using and github. We each watched the lectures on Angular and github, set up a shared github repository and got familiar with its protocols by making a few pushes and pulls. Although we intended to specialise into certain areas later on, we all got familiar with the frontend and Angular so further down the line it would be possible to be more flexible if required.
 

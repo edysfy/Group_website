@@ -30,6 +30,7 @@
     "angular-double-slider": "^2.0.2",
     "angular-material": "^1.2.2",
     "cors": "^2.8.5",
+    "dotenv": "^9.0.0",
     "ejs": "^2.6.1",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
