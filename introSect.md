@@ -85,6 +85,11 @@ We seek to empower analysts and organisations with data that will aid them in th
 </p>
 
 # Industry Review: What Differentiates EmoteMap?
+
+<p align="center">
+<img src="supporting_images/thementaleld.png" width="450px">
+</p>
+
 #### Website 1 - The Mental Elf (https://www.nationalelfservice.net/mental-health/)
 ##### Summary:
 The Mental Elf is a 'no misinformation' mental health blogging website started by information scientist, Andre Tomlin. The blog is now a team of contributors aiming to bring fresh perspectives, considerable knowledge, and clinical experience when talking about mental health.  
@@ -92,29 +97,40 @@ The Mental Elf is a 'no misinformation' mental health blogging website started b
 ##### How EmoteMap solves the problem differently:
 Although The Mental Elf's enlightening information can provide those trying to understand their mental health better the relevant knowledge, Emote Map aims to build more of a positive way for users to interact online. We aim to create a communal feel, whereby users can both be self-reflective as well as feel supported by other users who have had similar experiences and emotions.
 
+<p align="center">
+<img src="supporting_images/youngminds.png" width="450px">
+</p>
 
 #### Website 2 - Young Minds (https://youngminds.org.uk/)
 ##### Summary:
-YoungMinds has partnered with 02 to gather tips and advise on how to enjoy a more positive time online. They work to tackle issues such as 'What kind of social media feed do I have?', 'How can I deal with online bullying?', or 'How can I block, mute, or report other accounts?'  
+YoungMinds has partnered with 02 to gather tips and advise on how to enjoy a more positive time online. They work to tackle issues such as 'What kind of social media feed do I have?', 'How can I deal with online bullying?', or 'How can I block, mute, or report other accounts?'. This is a great website for people who are going through online hate and abuse to seek help, there is not much to fault on it, however this does bode a question? How do can we stop online bullying and hate? How can we stop this on social media?.
 
 ##### How EmoteMap solves the problem differently:  
-Although YoungMinds is explicitly addressing the negative impact that social media can have on the mental health of users, EmoteMap provides guidance to users for a variety of issues. We understand that a major contributing factor to poor mental health is the use of social media, however we account for more factors than just this. We understand that global mental illness does not have a quick-fix. It is a complex and universal problem, which is why we encourage groups of users to unite over shared cultural and topical issues.
+Although YoungMinds is explicitly addressing the negative impact that social media can have on the mental health of users, EmoteMap guides users on a variety of issues. We understand that a major contributing factor to poor mental health is the use of social media, however, we account for more factors than just this. We understand that global mental illness does not have a quick fix. It is a complex and universal problem, which is why we encourage groups of users to unite over shared cultural and topical issues. Also, people are going to use social media in one form or another. It has become part of our way to seek connection. Most platforms today provide a place for online abuse to take place, there is no moderation. EmoteMap can still be a social media platform but it will be a platform for good. Where people can escape from the darker places of the internet, and support one another. While still being a part of a social media platform.
 
+<p align="center">
+<img src="supporting_images/them.png" width="450px">
+</p>
 
 #### Website 3 - The Mighty (https://themighty.com/)
 ##### Summary:
-The Mighty publish real stories by real people living with disability, disease and mental illness. They aim to build a safe platform for their community to share stories, connect with others and raise support for the causes they believe in.
+YoungMinds has partnered with 02 to gather tips and advice on how to enjoy a more positive time online. They work to tackle issues such as 'What kind of social media feed do I have?', 'How can I deal with online bullying?', or 'How can I block, mute, or report other accounts?'. This is a great website for people who are going through online hate and abuse to seek help, there is not much to fault on. However, this does bode a question? How do can we stop online bullying and hate? How can we stop this on social media?
 
 ##### How EmoteMap solves the problem differently:
-The Mighty are building a positive online community in the same way that we seek to. We see light in this, as EmoteMap makes the user the heart of the website too. They themselves are a great starting point when it comes to solving the problem of global health mentally. However, Emote Map's encapsulating map interface enables the user to gain a localised understanding of a very much  global problem in a way that The Mighty does not. EmoteMap strives to engage the user through its map interface in order to create a positive environment for users to communicate.
+The Mighty are building a positive online community in the same way that we seek to. We see light in this, as EmoteMap makes the user the heart of the website too. They are a great starting point when it comes to solving the problem of global health mentally. However, Emote Map's encapsulating map interface enables the visitors to gain a localized understanding of a very much global problem in a way that The Mighty does not. In Mighty non-users cannot see what these communities are up to, which can turn away people who are not looking to join a community. EmoteMap, allows non-users to still read and gain an understanding of what people are going through in certain areas. This might spark an interest in someone to provide help. EmoteMap will be a place for these people to direct supports its users.
+
+<p align="center">
+<img src="supporting_images/ourworldindata.png" width="450px">
+</p>
 
 #### Website 4 - Our World In Data (https://ourworldindata.org/mental-health)
 ##### Summary:
-This is a website that displays mental health disorders, across the globe with varying categories. You can search countries rate of depressio, anxiety and other mental health issues. It is displays accruate data from the past 30 years. However, the interactivity it is boring, and I dont really want to remain on the site.
+This is a website that displays mental health disorders, across the globe with varying categories. You can search a country's rate of depression, anxiety, and other mental health issues. It is displays accurate data from the past 30 years. However, the interactivity is boring, and wouldn't want to remain on the site.
 
 ##### How EmoteMap solves the problem differently:
-Although this application displays mental health issues around the globe. It doesn't bring about change. EmoteMap will be different as it shows real emotions/thoughts of people across regions of the globe while allowing users to interact with others developing connections to these regions and increasing a sense of community. In essence, it combines this website, with the attributes of the websites above. Making it a unique product. It can be a platform where people can offer direct support and bring about change. Emotemap will have beautiful UX keeping people interested in seeing what others are feeling.
+Although this application displays mental health issues around the globe, it doesn't bring about change. EmoteMap will be different as it shows real emotions/thoughts of people across regions of the globe while allowing users to interact with others developing connections to these regions and increasing a sense of community. In essence, it combines this website, with the attributes of the websites above. Making it a unique product. It can be a platform where people can offer direct support and bring about change. EmoteMap will have beautiful UX keeping people interested in seeing what others are feeling.
 
+From this research, we believe that there is a gap within the market place to build EmoteMap. EmoteMap is set out to solve the issues described above, and do what no other application is doing at the moment.
 
 Next section: [UX Design](uxDesign.md)
 
