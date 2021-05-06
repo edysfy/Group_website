@@ -16,8 +16,8 @@ const {
 } = process.env;
 
 
-
-const mongoDBConnect = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@emotemap.esifj.mongodb.net/postDB?retryWrites=true&w=majority`;
+const mongoDBConnect = "mongodb+srv://alfie:unigroup15@emotemap.esifj.mongodb.net/postDB?retryWrites=true&w=majority";
+/*const mongoDBConnect = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@emotemap.esifj.mongodb.net/postDB?retryWrites=true&w=majority`;*/
 
 /*init an express middleware*/
 const app = express();
