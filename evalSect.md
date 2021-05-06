@@ -112,7 +112,7 @@ In total we produced three questionnaires. The first two were sent to users alon
 We carried out semi-structured interviews as a method of gathering qualitative feedback data. Our interviews were on average 10 minutes long and were conducted after someone had interacted with our paper prototype, a wireframe, or the most up to date version on a local host. The questions we asked in each interview varied depending on the stage of the development process that we found ourselves at. We were able to ask very specific questions about our UX this way. For example, at a relatively early stage of the development process we were trying to decide whether to have the post landing page appear from the left hand side. As seen by the images above , we were able to show the user two potential layouts that we sketched on the website [Invision](https://www.invisionapp.com). Being able hear their reasons behind their decisions about our user interface was extremely useful.
 
 On top of this, we would always ensure that we asked a general and open ended question at the end of the interview about how the user thought we could improve the user experience as it was, or if they had any ideas. That being said, something extremely insightful that we noticed when conducting interviews was that the user would constantly be making comments about how they would want the website to be improved as they were interacting with the wireframe or prototype. Due to the fact
-that we recorded the audio to our interviews, we were able to make use out of these suggestions.
+that we recorded the audio to our interviews, we were able to make use out of any suggestions.
 </p>
 
 
