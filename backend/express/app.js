@@ -8,6 +8,12 @@ const searchRoutes = require('./routes/search');
 
 const path = require('path');
 
+const {
+  MONGO_USERNAME,
+  MONGO_PASSWORD,
+  MONGO_HOSTNAME,
+} = process.env;
+
 const mongoDBConnect = "mongodb+srv://alfie:unigroup15@emotemap.esifj.mongodb.net/postDB?retryWrites=true&w=majority";
 
 /*init an express middleware*/
@@ -31,6 +37,7 @@ app.get('/', (req, res) => {
 mongoose.connect(mongoDBConnect,{ useNewUrlParser: true, useUnifiedTopology: true })
 .then(connection => {
     console.log("Rest Api has successfully connected to mongoDb Database");
+    console.log(MONGO_HOSTNAME)
 })
 .catch(err=>{
     console.log("Failed to connect ot mongoDb");

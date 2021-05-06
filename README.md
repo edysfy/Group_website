@@ -48,8 +48,8 @@ View our [Introduction, background and motivation](introSect.md) document to see
 <a name="second"></a>
 ## System implementation,UX design and development process
 Click the following links to see our documents on;
-* [System Implementation](sysImp.md) (Backend,API,Frontend)
 * [UX Design](uxDesign.md) (stakeholders,users)
+* [System Implementation](sysImp.md) (MongoDb,Backend,Frontend)
 * [Project Management & development process](sprints.md) (continuous integration, use of github)
 
 
