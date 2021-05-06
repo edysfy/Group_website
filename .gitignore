@@ -49,5 +49,4 @@ tarn_log.txt
 Thumb
 #env1
 .env
-#env2
-./backend/express/.env
+
