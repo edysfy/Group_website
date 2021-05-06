@@ -5,7 +5,7 @@ const cors = require('cors');
 const userRoutes = require('./routes/user');
 const geopostRoutes = require('./routes/geopost');
 const searchRoutes = require('./routes/search');
-
+const dotenv = require('dotenv').config();
 const path = require('path');
 
 const {
@@ -15,9 +15,7 @@ const {
   MONGO_DB,
 } = process.env;
 
-
-const mongoDBConnect = "mongodb+srv://alfie:unigroup15@emotemap.esifj.mongodb.net/postDB?retryWrites=true&w=majority";
-/*const mongoDBConnect = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@emotemap.esifj.mongodb.net/postDB?retryWrites=true&w=majority`;*/
+const mongoDBConnect = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}/${MONGO_DB}?retryWrites=true&w=majority`;
 
 /*init an express middleware*/
 const app = express();
