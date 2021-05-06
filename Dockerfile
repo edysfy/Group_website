@@ -14,6 +14,7 @@ USER node
 
 # Run the command inside your image filesystem.
 RUN npm install
+
 COPY --chown=node:node . .
 
 
