@@ -151,6 +151,10 @@ From this research, we believe that there is a gap within the market place to bu
 3. There is a big stigma of mental health, making people unwilling to seek help.
 4. People don't take mental health as a serious issue.
 
+<p align="center">
+<img src="supporting_images/download-1.jpg" width="450px">
+</p>
+
 ### What we wish for in society
 
 Our team wishes to live in a society where people care about mental health. Where they see mental health as a serious issue and support them as much as they would someone with a physical disability. If people start to care about this issue, then the stigma dies. Meaning people with mental health problems will actively seek help. We also want to create an attractive online community that can replace other social media platforms, be a place of solace, and in turn decreases mental health problems. 
@@ -174,6 +178,4 @@ Next section: [UX Design](uxDesign.md)
 12. Pettman, D, (2015) ‘Infinite Distraction: paying attention to social media’ *Polity* 31-48, 79-97  
 13. Scheff, T, J, (1979) 'Catharsis in Healing, Ritual, and Drama' *Berkeley: University of California Press*  
 14. Ulrich, P, Lutgendorf, S, (2002) 'Journaling about stressful events: Effects of cognitive processing and emotional expression' *Springer Link* 244-250  
-15. (Blog) The Mighty https://themighty.com
-16. (Blog) Young Minds  https://youngminds.org.uk
-17. (Blog) The Mental Elf https://www.nationalelfservice.net/mental-health/
+
