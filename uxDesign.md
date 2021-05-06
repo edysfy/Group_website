@@ -1,3 +1,7 @@
+<p align="center">
+<img src="supporting_images/download-3.jpg" width="550px">
+</p>
+
 # UX Design
 
 ## Identification of our target users
