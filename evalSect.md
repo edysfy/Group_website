@@ -137,7 +137,7 @@ that we recorded the audio to our interviews, we were able to make use out of an
 <a name="timeline"></a>
 # b)Timeline of Evaluation Methods
 <p align="center">
-<img src="supporting_images/timeline.png" width="400">
+<img src="supporting_images/timeline.png" width="700">
 </p>
 
 ### Stage 1: FEEDBACK ON EARLY IDEATION 21/2/21
