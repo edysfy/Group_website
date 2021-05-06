@@ -63,7 +63,7 @@ In agreement with this, Bakar and Moore did a study on MySpace and discovered th
 
 
 <p align="center">
-<img src="supporting_images/mentalhealth.jpg" width="550px">
+<img src="supporting_images/download.jpg" width="550px">
 </p>
 
 <a name="solve"></a>
