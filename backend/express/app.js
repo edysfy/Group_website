@@ -15,7 +15,7 @@ const {
   MONGO_DB,
 } = process.env;
 
-const mongoDBConnect = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}/postDB?retryWrites=true&w=majority`;
+const mongoDBConnect = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}/${MONGO_DB}?retryWrites=true&w=majority`;
 
 /*init an express middleware*/
 const app = express();
