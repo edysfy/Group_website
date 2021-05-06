@@ -5,7 +5,9 @@ const cors = require('cors');
 const userRoutes = require('./routes/user');
 const geopostRoutes = require('./routes/geopost');
 const searchRoutes = require('./routes/search');
+const dotenv = require('dotenv');
 
+dotenv.config();
 const path = require('path');
 
 const {
@@ -14,7 +16,7 @@ const {
   MONGO_HOSTNAME,
 } = process.env;
 
-const mongoDBConnect = "mongodb+srv://alfie:unigroup15@emotemap.esifj.mongodb.net/postDB?retryWrites=true&w=majority";
+const mongoDBConnect = `mongodb+srv://${MONGO_USERNAME}:${MONGO_PASSWORD}@${MONGO_HOSTNAME}/postDB?retryWrites=true&w=majority`;
 
 /*init an express middleware*/
 const app = express();
@@ -37,7 +39,6 @@ app.get('/', (req, res) => {
 mongoose.connect(mongoDBConnect,{ useNewUrlParser: true, useUnifiedTopology: true })
 .then(connection => {
     console.log("Rest Api has successfully connected to mongoDb Database");
-    console.log(MONGO_HOSTNAME)
 })
 .catch(err=>{
     console.log("Failed to connect ot mongoDb");
