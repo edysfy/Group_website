@@ -1,5 +1,5 @@
 <p align="center">
-<img src="supporting_images/mentalhealth.jpg" width="650px">
+<img src="supporting_images/mentalhealth.jpg" width="550px">
 </p>
 
 ## Table of contents
@@ -61,6 +61,10 @@ In agreement with this, Bakar and Moore did a study on MySpace and discovered th
 
 [Holding Emotions in:](https://www.betterhealth.vic.gov.au/health/HealthyLiving/negative-emotions#:~:text=Holding%20onto%20negative%20emotions%20causes%20a%20downward%20spiral,-Negative%20emotions%20stop&text=This%20only%20prolongs%20the%20anger,example%2C%20expressing%20anger%20with%20violence.Journaling) Journaling is an exercise to process the thoughts, hardships and emotions. If people experience high and negative emissions, they tend to choose not to act in a safe way and process their emotion. He haven't been taught how to do this in school. This can be damaging to your psyche. This just lengthens sorrow and creates a foggy smokescreen through which one see life. In general, it was taught people how to cope with negative emissions. Journaling is a way to distinguish you from your thinking and your feelings. You get it out on paper instead of keeping the ideas in your mind. Giving you a new perspective into the roots of your issues. [It induces a dissociative feeling with your psyche, and halts the negative thought loops](https://owlsandindigo.com/how-to-stop-negative-thinking-with-this-one-journaling-exercise-from-someone-with-anxiety/)
 
+
+<p align="center">
+<img src="supporting_images/mentalhealth.jpg" width="550px">
+</p>
 
 <a name="solve"></a>
 # EmoteMap Will Solve the Problem by...
