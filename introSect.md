@@ -98,7 +98,7 @@ The Mighty are building a positive online community in the same way that we seek
 
 
 
-Next section; [System Implementation](sysImp.md)
+Next section: [UX Design](uxDesign.md)
 
 <a name="references"></a>
 ## References

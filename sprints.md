@@ -92,7 +92,7 @@ The other role I fulfilled was project management, both on a coding and teamwork
 
 Along with contributing to the writeup, my primary focus was on the backend of the website, most notably working with mongoDB. When we initially got our map working we used some example data from a https link provided by mapbox. I downloaded the example data to our project file and served it from there. After having done this I then set up a mongoDB account and imported the example data and then served our data from mongoDB. From here on I worked under Hari on the backend.
 
-One other feature I implemented was the backend functionality of the basic search bar. I made it so users can now enter a keyword and all posts featuring something similar to the entered keyword would be logged to the console.
+One other feature I implemented was the frontend component of the basic search bar. This allowed non-authenicated users to enter a keyword and all posts featuring something similar to the entered keyword would be logged to the console. This however was scrapped, as we made a complex search feature for authenticated users only. 
 
 Although my contribution to writing actual source code was less when compared to some group members, throughout the project I played an important role in discussion and formulation of ideas and remained as active as possible on our Discord server.
 
@@ -377,4 +377,4 @@ At regular intervals, usually at the end of sprints where we had achieved signif
 After new features were added, we would then also get user feedback and as a group evaluate the current project, helping us evaluate the feature but also to start off the CI (continuous integration) pipeline again for the next sprint. As an example, one feature we developed was a search bar for non-users; we discussed, developed and tested the feature using the CI pipeline as described - however we decided this feature wasn't needed (see implementation issues for sprint 5).
 
 
-Next section; [Evaluation and Conclusion](evalSect.md)
+Next section: [Evaluation and Conclusion](evalSect.md)
