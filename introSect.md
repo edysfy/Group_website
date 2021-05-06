@@ -85,7 +85,7 @@ We seek to empower analysts and organisations with data that will aid them in th
 </p>
 
 # Industry Review: What Differentiates EmoteMap?
-#### Website 1 - The Mental Elf
+#### Website 1 - The Mental Elf (https://www.nationalelfservice.net/mental-health/)
 ##### Summary:
 The Mental Elf is a 'no misinformation' mental health blogging website started by information scientist, Andre Tomlin. The blog is now a team of contributors aiming to bring fresh perspectives, considerable knowledge, and clinical experience when talking about mental health.  
 
@@ -93,7 +93,7 @@ The Mental Elf is a 'no misinformation' mental health blogging website started b
 Although The Mental Elf's enlightening information can provide those trying to understand their mental health better the relevant knowledge, Emote Map aims to build more of a positive way for users to interact online. We aim to create a communal feel, whereby users can both be self-reflective as well as feel supported by other users who have had similar experiences and emotions.
 
 
-#### Website 2 - Young Minds
+#### Website 2 - Young Minds (https://youngminds.org.uk/)
 ##### Summary:
 YoungMinds has partnered with 02 to gather tips and advise on how to enjoy a more positive time online. They work to tackle issues such as 'What kind of social media feed do I have?', 'How can I deal with online bullying?', or 'How can I block, mute, or report other accounts?'  
 
@@ -101,13 +101,19 @@ YoungMinds has partnered with 02 to gather tips and advise on how to enjoy a mor
 Although YoungMinds is explicitly addressing the negative impact that social media can have on the mental health of users, EmoteMap provides guidance to users for a variety of issues. We understand that a major contributing factor to poor mental health is the use of social media, however we account for more factors than just this. We understand that global mental illness does not have a quick-fix. It is a complex and universal problem, which is why we encourage groups of users to unite over shared cultural and topical issues.
 
 
-#### Website 3 - The Mighty
+#### Website 3 - The Mighty (https://themighty.com/)
 ##### Summary:
 The Mighty publish real stories by real people living with disability, disease and mental illness. They aim to build a safe platform for their community to share stories, connect with others and raise support for the causes they believe in.
 
 ##### How EmoteMap solves the problem differently:
 The Mighty are building a positive online community in the same way that we seek to. We see light in this, as EmoteMap makes the user the heart of the website too. They themselves are a great starting point when it comes to solving the problem of global health mentally. However, Emote Map's encapsulating map interface enables the user to gain a localised understanding of a very much  global problem in a way that The Mighty does not. EmoteMap strives to engage the user through its map interface in order to create a positive environment for users to communicate.
 
+#### Website 4 - Our World In Data (https://ourworldindata.org/mental-health)
+##### Summary:
+This is a website that displays mental health disorders, across the globe with varying categories. You can search countries rate of depressio, anxiety and other mental health issues. It is displays accruate data from the past 30 years. However, the interactivity it is boring, and I dont really want to remain on the site.
+
+##### How EmoteMap solves the problem differently:
+Although this application displays mental health issues around the globe. It doesn't bring about change. EmoteMap will be different as it shows real emotions/thoughts of people across regions of the globe while allowing users to interact with others developing connections to these regions and increasing a sense of community. In essence, it combines this website, with the attributes of the websites above. Making it a unique product. It can be a platform where people can offer direct support and bring about change. Emotemap will have beautiful UX keeping people interested in seeing what others are feeling.
 
 
 Next section: [UX Design](uxDesign.md)
