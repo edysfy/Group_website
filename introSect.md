@@ -1,3 +1,7 @@
+<p align="center">
+<img src="supporting_images/mentalhealth.jpg" width="650px">
+</p>
+
 ## Table of contents
 * [Introduction](#intro)
 * [The Problem: Background and Motivation](#backgrnd)
