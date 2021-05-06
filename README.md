@@ -4,7 +4,6 @@
 
 <div align="center">
 
-https://user-images.githubusercontent.com/60075283/117048437-e482fd00-ad0a-11eb-8bc6-6154e8acdac0.mp4
 
 </div>
 
