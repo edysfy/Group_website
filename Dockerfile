@@ -15,10 +15,8 @@ USER node
 # Run the command inside your image filesystem.
 RUN npm install
 
-#build the website
-RUN ./node_modules/.bin/ng build
-
 COPY --chown=node:node . .
+
 
 # Add metadata to the image to describe which port the container is listening on at runtime.
 EXPOSE 3000
