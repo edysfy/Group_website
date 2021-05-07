@@ -117,12 +117,13 @@ It is also worth mentioning here that after showing this version to Marceli, we 
   <img align="center" src="supporting_images/slideout.png" width="450px">
   </p>
 
-We had a team meeting to discuss this, then sought advice of one of our professors whom specialised in HCI. He suggested to make it playful, have the post pop out onto the screen, we all agreed that was the best design our of all three methods. So after some time experimenting with css on a mat-dialog component, we came up with a pop-up like this: 
+We had a team meeting to discuss this, then sought the advice of one of our professors who specializes in HCI. He suggested making it playful by having the post-pop out onto the screen, we all agreed that was the best design of all three methods. So after some time experimenting with CSS on a mat-dialog component. We initially used a picker element to pick the emotion, but then started experimenting with Angular's slider and liked that instead. We came up with a pop-up like this: 
 
   <p align="center">
   <img align="center" src="supporting_images/postform.png" width="450px">
   </p>
 
+This post form didn't change much, it allowed the user to provide the information required to fulfill their need that was specified above. The user can enter their emotion type, keyword, and journal entry. We did make a small change to this later. We didn't want to show a number (1 being sad to 3 representing happy) to represent the emotion on the form. Instead of showing numbers, we replaced it with the text, 'happy', 'coping', and 'sad'.
 
 ### A moment of reflection
 
