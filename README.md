@@ -2,11 +2,11 @@
 <img src="supporting_images/titmp.png" width="650px">
 </p>
 
-  ## Click the GIHFY to fly to the trailer...
+  ## Click the GIHFY and fly to the trailer...
 
 <div align="center">
   
-  [![IMAGE ALT TEXT](supporting_images/newintro.gif)](https://www.youtube.com/watch?v=SMLlnLANZNY)
+  [![IMAGE ALT TEXT](supporting_images/intro.gif)](https://www.youtube.com/watch?v=SMLlnLANZNY)
 
 </div>
 
