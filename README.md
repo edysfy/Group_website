@@ -4,12 +4,9 @@
 
 <div align="center">
 NEED TO GET VIDEO IMBEDDED
-### Click the GIF to fly to the trailer...
-<p align="center">
-  <img src="supporting_images/Fly_feature.gif" alt="animated" />
-  <a href="https://www.youtube.com/watch?v=SMLlnLANZNY"></a>
-</p>
-</div>
+### Click the GIPHY to fly to the trailer...
+
+[![IMAGE ALT TEXT](supporting_images/Fly_feature.gif)](https://www.youtube.com/watch?v=SMLlnLANZNY)
 
 <a name="first"></a>
 ## Introduction, background and motivation
