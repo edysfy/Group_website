@@ -45,7 +45,7 @@ The disadvantages of teams (leading mainly used discord):
 
 
 <p align="center">
-<img src="supporting_images/Discord-on-PS4-1431338.jpg" width="500px">
+<img src="supporting_images/Discord_Purple_Tight.png.1ed2ade737b458d4ddda66c03346311a.png" width="700px">
 </p>
 
 ### Discord
