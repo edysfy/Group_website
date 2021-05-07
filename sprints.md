@@ -1,6 +1,3 @@
-<p align="center">
-<img src="supporting_images/download.png" width="550px">
-</p>
 
 # Sprints & Project Management
 

@@ -1,6 +1,4 @@
-<p align="center">
-<img src="supporting_images/download-2.jpg" width="550px">
-</p>
+
 
 
 # System Implementation

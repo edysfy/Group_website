@@ -1,6 +1,4 @@
-<p align="center">
-<img src="supporting_images/mentalhealth.jpg" width="550px">
-</p>
+
 
 ## Table of contents
 * [Introduction](#intro)
