@@ -55,7 +55,7 @@ The identification of this second type of user highlighted the importance of cre
 </table>
 
 
-### Early prototyping - paper prototypes and feedback
+## Early prototyping - paper prototypes and feedback
 
 <img src="supporting_images/Paper_prototype_start.jpeg" width="350" align="right">
 Our three key users had been identified, and it was now time to start putting our idea into action. The first real visualisation of the website consisted of a paper prototype. This ensured all members of the group were on the same page (no pun intended) regarding the layout, and allowed us to easily and to quickly make adjustments during a group discussion. The creation of this prototype really was the first time the ideas we had shared verbally were coming together in a physical, visual form. Because of this, we focused on making it as simple as possible, including only the core features. At this point in time, we had decided that the core features were: ability to signup (and login), be able to zoom in and out of the map, read EmotePosts of other users, create EmotePosts and search for EmotePosts. Our original, finalised paper prototype is shown to the right.
@@ -79,6 +79,8 @@ One final piece of feedback on our paper prototype was to remove the button(s) t
 
 Overall, we were pleased with how useful the paper prototype approach was. Despite forming only a very basic visualisation, we gathered invaluable feedback that had an impact on our project development from an early stage.
 
+## On to the Computer...
+
 From this, we went on to build the initial prototype of EmoteMap. We choose a pink and blue theme because members of our team believed it represented the ethos of EmoteMap, as pink can be an emotional color, and we included the icons for 'about', 'login', and title 'about'. Initially, this has no functionality and was just a way for us to see the initial vision of EmoteMap coming into existence. 
 
 
@@ -96,6 +98,19 @@ At this stage we has a basic prototype. We were getting used to Mapbox and its G
   <p align="center">
   <img align="center" src="supporting_images/ugly.png" width="550px">
   </p>
+
+Now we needed needed to display the form that allowed the user to make a post and display it on the map. At the start there were several ways design patterns we could have used. The final version was mentioned in the paper prototype above. However, there were some prelimary ideas we went through:
+
+1. Was to have the user click a button/map and have the the user route to a new age:
+  <p align="center">
+  <img align="center" src="supporting_images/gotonewpage.png" width="350px">
+  </p>
+
+2. Was to have the form slide out from the screen:
+  <p align="center">
+  <img align="center" src="supporting_images/slideout.png" width="350px">
+  </p>
+
 
 ### A moment of reflection
 
