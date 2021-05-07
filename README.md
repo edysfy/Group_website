@@ -2,7 +2,7 @@
 <img src="supporting_images/titmp.png" width="650px">
 </p>
 
-  ## Click the image to fly to the trailer...
+  ## Click the GIF to fly to the trailer...
 
 <div align="center">
   
