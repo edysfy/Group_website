@@ -5,20 +5,39 @@
 
 ## Identification of our target users
 
-We knew we wanted to make an app that creates a sense of community in the area of mental health. For full details on the justification of the idea, please see LINK!. Our idea relied on three fundamental features: the ability to create an EmotePost, the ability to read EmotePosts, and the ability to search for EmotePosts by keyword. Changing any of these features would change the idea entirely. We thought it would be a good idea to create a character that represents a potential user. This character's story is intentionally ordinary. We would then keep this character in mind when developing the project, to help ensure the development was geared towards the potential user. Here's a bit about Sarah, 19:
+We knew we wanted to make an app that creates a sense of community in the area of mental health. For full details on the justification of the idea, please see [Introduction, background and motivation](introSect.md). From this we belived our initial idea relied on three fundamental features: the ability to create an EmotePost, the ability to read EmotePosts, and the ability to search for EmotePosts by keyword. Changing any of these features would change the idea entirely. We thought it would be a good idea to create a character that represents a potential user. This character's story is intentionally ordinary. We would then keep this character in mind when developing the project, to help ensure the development was geared towards the potential user. Here's a bit about Sarah, 19:
 
-<p>
-<img src="supporting_images/Sarah.png" width="100" align="left">
-"I’m a first year uni student, but I don’t feel like it. The pandemic has meant that we are studying from home, and I haven’t had the opportunity to make friends yet. I’m living with three other students, but I didn’t know them before I moved in, and I’m not so close to them. They all seem to be best friends already. It’s been hard moving to a new city during these times. I often feel alone. I know there must be so many others in my situation, but it’s easy to forget that. I love my course, but this is not what I expected. I wish I could share my feelings with others…"
-</p>
-
+<table>
+<tr>
+  <th>Photo</th>
+  <th>Description</th>
+  <th>How does EmoteMap impact</th>
+</tr>
+<tr>
+  <td><img src="supporting_images/Sarah.png" width="100" align="left"></td>
+  <td>"I’m a first year uni student, but I don’t feel like it. The pandemic has meant that we are studying from home, and I haven’t had the opportunity to make friends yet. I’m living with three other students, but I didn’t know them before I moved in, and I’m not so close to them. They all seem to be best friends already. It’s been hard moving to a new city during these times. I often feel alone. I know there must be so many others in my situation, but it’s easy to forget that. I love my course, but this is not what I expected. I wish I could share my feelings with others…"</td>
+  <td>Sarah is feeling down, she would use EmoteMap by venting her emotions, and using it like a journal. Helping her de-stress, and seperate her emotions from her mind. She would post, attach a keyword and emotion to it. She can search for other posts with the same keyword. She can see what others are going through. She can get a sense that she is not alone. At the moment, EmoteMap only allows users to post and view other posts to give a sense of community. However the can be built upon in the future: See Evaluation and Conclusion</td>
+</tr>
+</table>
 
 We all know the feeling of isolation, and we believe Sarah's case is relatable, and likely, particularly in the times of the pandemic.
 
 Admittedly, it was only until after we came up with the idea, that we saw its potential use for another type of user: some form of data analyst. The ability to search for EmotePosts makes it a likely interest for this user. We believe generating statistics from users' EmotePosts would be invaluable to research into mental health issues. Just as before, we created a character to represent this type of user. Meet Christina, 43:
 
+<table>
+<tr>
+  <th>Photo</th>
+  <th>Description</th>
+  <th>How does EmoteMap impact</th>
+</tr>
+<tr>
+  <td><img src="supporting_images/Christina.png" width="100" align="left"></td>
+  <td>"I’m a data analyst at a mental-health charity. My role is very important, but it is often overlooked when people think about tackling mental health. My job is to find trends in mental health. Right now, this involves analysing the results of questionnaires that we have given out, but this can be quite tedious, and not so many people respond to our requests. It would be great if I could somehow search for particular feelings, and understand what the current triggers are. We live in a changing world, so I expect these to change over time, and of course, over different locations. My charity uses this important data to direct their efforts precisely, certain areas at people with specific attributes."</td>
+  <td>Christina can use EmoteMap to show her employers in the areas where a lot of people are going through a particular issue. She can make use of emote maps search to filter posts through emotions, age, gender, and keyword. The charity can use this data to directly impact areas. Helping people at a fast rate. For example, They can increase volanteers or put on anti-stigma campaigns in that area</td>
+</tr>
+</table>
+
 <p>
-<img src="supporting_images/Christina.png" width="100" align="left">
 "I’m a data analyst at a mental-health charity. My role is very important, but it is often overlooked when people think about tackling mental health. My job is to find trends in mental health. Right now, this involves analysing the results of questionnaires that we have given out, but this can be quite tedious, and not so many people respond to our requests. It would be great if I could somehow search for particular feelings, and understand what the current triggers are. We live in a changing world, so I expect these to change over time, and of course, over different locations. My charity uses this important data to direct their efforts precisely, certain areas at people with specific attributes."
 </p>
 
