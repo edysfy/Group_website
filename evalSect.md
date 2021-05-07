@@ -59,6 +59,7 @@ To learn more about how our paper prototyping allowed us, at a very early stage,
 ### Evaluation Technique 2: Wireframing
 <p>
 <img src="supporting_images/firstwireframe.png" width="400" align="left">
+
 Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop easily through a link [like this one](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built onto screenshots of the website as it looked at the time.
 
 Please see our [UX section](uxDesign.md) where we discuss how users were able to engage with our website and leave comments on what they thought about their experience with it.
@@ -68,7 +69,9 @@ Please see our [UX section](uxDesign.md) where we discuss how users were able to
 <img src="supporting_images/feedback.png" width="600">
 </p>
 
-As demonstrated by the screenshot of some feedback a user left, a limitation that we experienced when sending out the link to users can be seen. In this case, the 'x' on the comment that they are referring to was part of the screenshot of the webpage that we had uploaded as part of wireframe. Thus, this user did not understand the concept of a wireframe and thought that it was more interactive and accurate than it was. Due to the fact that some users thought  the wireframe should work in the same way as the website would, we recognise that perhaps we should have either been clearer when sending out the message with the link in or carried out more guided walkthroughs of the wireframe in order to avoid this issue.
+As demonstrated by the screenshot of some feedback a user left, a limitation that we experienced when sending out the link to users can be seen. In this case, the 'x' on the comment that they are referring to was part of the screenshot of the webpage that we had uploaded as part of wireframe. Thus, this user did not understand the concept of a wireframe and thought that it was more interactive and accurate than it was. Due to the fact that some users thought  the wireframe should work in the same way as the website would, we recognise that perhaps we should have either been clearer when sending out the message with the link in or carried out more guided walkthroughs of the wireframe in order to avoid this issue.    
+
+Below is a screenshot of a text we sent to people who agreed to look at our wireframe and then fill out a questionnaire.
 
 <p align="center">
 <img src="supporting_images/imessage.png" width="400">
@@ -92,12 +95,7 @@ Another method we used in evaluating our designs was an idea matrix. This was an
 <img src="supporting_images/questionnaire.png" width="550" align="left">
 Our grouped used questionnaires as our main form of quantitative feedback as we were able to send a link, such as [this one](https://www.smartsurvey.co.uk/s/S58J8X/) to as many users as we could who had revently used one of our wireframes or been shown our most up to date website on a local host. This way, we could gain insights at scale into how users interpreted our website through them answering questions such as "Would you recommend this product to a friend?", "Do you think this website is solving a serious problem?" or "How would you improve this website?".
 
-In total we produced three questionnaires. The first two were sent to users alongside the wireframes and the last one was filled out by users after they had used the website on a local host. The last two questionnaires asked the same questions as the first, but we improved it slightly. For example, we added a 'if not, why not' option to answers that currently only included 'yes' and 'no' so that we did not force the user to have to take longer with it but gave them the option to leave more detailed feedback if they wished. On top of this we ensured that we reflected the different points on the scale itself, instead of having just numbers. For example as possible choices to the question 'How playful did you find this website?', instead of just having options 1-5, we would have:
-1 - not playful at all
-2 - not very playful
-3 - somewhat playful
-4 - very playful
-5 - extremely playful
+In total we produced three questionnaires. The first two were sent to users alongside the wireframes and the last one was filled out by users after they had used the website on a local host. The last two questionnaires asked the same questions as the first, but we improved it slightly. For example, we added a 'if not, why not' option to answers that currently only included 'yes' and 'no' so that we did not force the user to have to take longer with it but gave them the option to leave more detailed feedback if they wished.
 
 *Here are links to all three of our questionnaires if you are interested:*
  [1st questionnaire (1st wireframe)](https://www.smartsurvey.co.uk/s/S58J8X/)
@@ -105,7 +103,17 @@ In total we produced three questionnaires. The first two were sent to users alon
  [3rd questionnaire (Our most up to date website shown on a local host)](https://www.smartsurvey.co.uk/s/S58J8X/)
 </p>
 
+<p align="left">
+<img src="supporting_images/right.png" width="300">
+</p>
+<p align="right">
+<img src="supporting_images/left.png" width="300">
+</p>
 
+
+
+
+The questionnaires themselves did in fact hold a qualitative functionality to them. This was mainly in two of the questions, seen above, where we prompted the user for a response.
 
 
 ### Evaluation Technique 5: Semi-structured interviews
@@ -145,7 +153,7 @@ that we recorded the audio to our interviews, we were able to make use out of an
 ### Stage 1: Early Ideation & Paper Prototyping 21/2/21
 21/2/21: Paper prototyping was a key part of getting our idea off the ground and taking an abstract concept in our heads to a more consolidated one. Although our idea of how the website would look was completely premature, this was our first attempt at getting a feel for how users would interact with the website. Users were able to give us a sense of direction in this way before we started coding anything
 
-24/2/21: Paper prototyping naturally led us to start conducting semi-structured interviews. The process of paper prototyping, as explained above(link to above), somewhat resembled the process of an interview. As a group, we ensured that we conducted such interviews with people after they had undergone the paper prototyping from this date onwards. This method of qualitative evaluation continued throughout the rest of our development process, being conducted with users after they had seen the wireframe or been shown the most up to date version of the website on a local host.
+24/2/21: Paper prototyping naturally led us to start conducting semi-structured interviews. The process of paper prototyping, as explained above, somewhat resembled the process of an interview. As a group, we ensured that we conducted such interviews with people after they had undergone the paper prototyping from this date onwards. This method of qualitative evaluation continued throughout the rest of our development process, being conducted with users after they had seen the wireframe or been shown the most up to date version of the website on a local host.
 
 ### Stage 2: Move to Wireframing 17/3/21
 [First wireframe](/Users/zakigill/Desktop/1st Wireframe.png)
@@ -154,36 +162,68 @@ that we recorded the audio to our interviews, we were able to make use out of an
 [Second Wireframe](/Users/zakigill/Desktop/2nd wireframe.png)
 5/4/21: There reached a point where our first wireframe became out of date in relation to the level of development of the website. At the same time, we felt that the website was too undeveloped to be used by users. Therefore, we built a second wireframe so we could continue to evaluate our website against user preferences which enabled us to gain feedback from users at different stages during the development process as we built our website ahead of time.
 
-*give a questionnaire stats between the two wireframes*
 
-### Stage 3: Involvement of Quantitative Feedback 24/3/21
+### Stage 3: Quantitative Feedback Involvement 24/3/21
 *screenshot of 5 point likert scale*
 
-24/3/21: Although we felt that interviews were a good source of creating qualitative feedback, we made a decision to try and increase our sample size when it came to evaluating our product and attempt to create some quantitative feedback. In order to achieve a quantitative metric for how a user would feel about our product, we decided it was necessary to ask some 'how much' and 'how many' questions at scale to our users. Very shortly after we started showing our first wireframe to users, we created a questionnaire that we could send alongside the link to the wireframe. Click on this link to see it! *link the questionnaire*. We tried to push the quantitative aspect of the questionnaires by using 5 point likert scale, as seen in the above figure.
+24/3/21: Although we felt that interviews were a good source of creating qualitative feedback, we made a decision to try and increase our sample size when it came to evaluating our product and attempt to create some quantitative feedback. In order to achieve a quantitative metric for how a user would feel about our product, we decided it was necessary to ask some 'how much' and 'how many' questions at scale to our users. Very shortly after we started showing our first wireframe to users, we created a questionnaire that we could send alongside the link to the wireframe. We tried to push the quantitative aspect of the questionnaires by using 5 point likert scale, as seen in the above figure. For example, in improving our first questionnaire to our second one,  ensured that we reflected the different points on the scale itself, instead of having just numbers. For example as possible choices to the question 'How playful did you find this website?', instead of just having options 1-5, we would have:    
+1 - not playful at all
+2 - not very playful
+3 - somewhat playful
+4 - very playful
+5 - extremely playful
 
-*screenshot of  question 7*
-The questionnaires themselves did in fact hold a qualitative functionality to them. This was mainly in two of the questions, seen above, where we prompted the user for a response.
 
-### Stage 4: INVOLVEMENT OF IDEA MATRIX 30/3/21
-30/3/21: Shortly after we started collecting quantitative data, we decided that it would be effective to create a method by which we could better draw insights from it. We made this decision because at this point we had received many suggestions from users in terms of how we could improve the user interface of our design. In this way we were able to populate the idea matrix with feedback data from both the questionnaires and semi-structured interviews.
 
-Although the idea matrix complemented both the semi-structured interview feedback and the questionnaire data, we found that it was particularly useful for the last question on the questionnaire (see below)
+### Stage 4: Idea Matrix  30/3/21
+30/3/21: Shortly after we started collecting quantitative data, we decided that it would be effective to create a method by which we could better draw insights from it. We made this decision because at this point we had received many suggestions from users in terms of how we could improve the user interface of our design. In this way we were able to populate the idea matrix with the recorded feedback data from both the questionnaires and semi-structured interviews.
 
-*screenshot of last question on questionnaire*
+Although the idea matrix complemented both the semi-structured interview feedback and the questionnaire data, we found that it was particularly useful for the last question on the questionnaire: "How would you go about improving the website?(e.g - is there something missing to you?)"
 
 
 ### Stage 5: Presenting Webpage to Users on Local Host 5/4/21
 
-We continued using wireframes as a method of evaluation for our designs until our website was functional enough to show users via a local host. We felt that our website was developed enough by 27/3/21 (see sprint 3 in the sprints section for more information on exactly how developed the website was at this point). However there was a period where all team members were busy which meant that we conducted semi-structured interviews and collected questionnaire responses slightly later than expected.
+We continued using wireframes as a method of evaluation for our designs until our website was functional enough to show users via a local host. We felt that our website was developed enough by 27/3/21 (see sprint 3 in the sprints section for more information on exactly how developed the website was at this point). However there was a period where all team members were busy which meant that we conducted interviews and collected questionnaire responses for the users that were shown the webpage on the local host slightly later than expected.    
 
-The way in which we obtained user feedback here was similar to that of the wireframes. However, we could only collect data from the questionnaire every time we showed a user the local host in person. This made it more difficult to get a substantial number of users to give their opinion than it was for the wireframes. In an attempt to combat this, we organised some zoom meetings where we could screenshare. *upload a screenshot of this*
+<p align="left">
+<img src="supporting_images/navigation_left.png" width="500">
+</p>
+<p align="right">
+<img src="supporting_images/navigation_right.png" width="500">
+</p>
 
-*stat difference between 2nd wireframe and what users thought when using local host*
+For our group, we found this stage particularly significant as our design involved the navigation of a map, and the creation of a post which contained a personal message. Due to this nature of our design, there is quite a personalised element to how a user interacts with it. Thus, for our user feedback to be more accurate and meaningful, having users experience the actual website was significant to evaluating and improving our designs in the development process. In agreement with this, we found that users found it much easier to navigate the website in this way, as opposed to using the wireframe. See the screenshot above which shows the feedback from the last two questionnaires which proves this.
+
+
+<p align="center">
+<img src="supporting_images/numberofparticipants.png" width="600">
+</p>
+
+The way in which we obtained user feedback here was similar to that of the wireframes. However, a limitation here was that we could only collect data from the questionnaire every time we showed a user the local host in person. As proven by the image above, which shows number of users who carried out our final questionnaire in comparison to our first two with the wireframes, this made it more difficult to get a substantial number of users to give their opinion than it was for the wireframes. In an attempt to combat this, we organised some zoom meetings where we could screen share.    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <a name="success"></a>
 # c)How Successful was our Evaluation of User Feedback?
 
-On analysis of our qualitative data, we were able to conclude that throughout the process of feedback and the subsequent development of software, users started to see the purpose of the website as being more in line with what we initially set out for it to be. For us, this somewhat represented the success of the process behind how we evaluated user's perceptions of our product.
+On analysis of our qualitative data, we were able to conclude that throughout the process of feedback and the subsequent development of software, users started to see the purpose of the website as being more in line with what we initially set out for it to be. For us, this somewhat represented the success of the process behind how we evaluated user's perceptions of our product.    
+
 
 However, there were some limiting factors and debatable areas of improvement to this process that we are aware of.
 
