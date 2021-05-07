@@ -19,8 +19,14 @@ Admittedly, it was only until after we came up with the idea, that we saw its po
 
 <p>
 <img src="supporting_images/Christina.png" width="100" align="left">
-"I’m a data analyst at a mental-heath charity. My role is very important, but it is often overlooked when people think about tackling mental health. My job is to find trends in mental health. Right now, this involves analysing the results of questionnaires that we have given out, but this can be quite tedious, and not so many people respond to our requests. It would be great if I could somehow search for particular feelings, and understand what the current triggers are. We live in a changing world, so I expect these to change over time, and of course, over different locations."
+"I’m a data analyst at a mental-health charity. My role is very important, but it is often overlooked when people think about tackling mental health. My job is to find trends in mental health. Right now, this involves analysing the results of questionnaires that we have given out, but this can be quite tedious, and not so many people respond to our requests. It would be great if I could somehow search for particular feelings, and understand what the current triggers are. We live in a changing world, so I expect these to change over time, and of course, over different locations. My charity uses this important data to direct their efforts precisely, certain areas at people with specific attributes."
 </p>
+
+<p>
+<img src="supporting_images/Christina.png" width="100" align="left">
+"I'm a regular person looking to make a difference in some way. I am not sure what cause I would want to contribute in. There are many option. I wish there was an application that give me a good concrete evidence of how these issues are across the globe. I want know what people are going through at ccertain locations. I dont know how I can contribute. Maybe through donations at local charties, or offering my support through volenteering at locations where the struggle is real."
+</p>
+
 
 
 The identification of this second type of user highlighted the importance of creating a clear and easy-to-use search interface. Because we identified these users early, our front-end planning was designed with them in mind from the very start.
