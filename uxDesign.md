@@ -110,18 +110,18 @@ It is also worth mentioning here that after showing this version to Marceli, we 
 
 1. Was to have the user click a button/map and have the the user route to a new age:
   <p align="center">
-  <img align="left" src="supporting_images/gotonewpage.png" width="350px">
+  <img align="center" src="supporting_images/gotonewpage.png" width="350px">
   </p>
 
 2. Was to have the form slide out from the screen:
   <p align="center">
-  <img align="left" src="supporting_images/slideout.png" width="350px">
+  <img align="center" src="supporting_images/slideout.png" width="350px">
   </p>
 
 We had a team meeting to discuss this, then sought advice of one of our professors whom specialised in HCI. He suggested to make it playful, have the post pop out onto the screen, we all agreed that was the best design our of all three methods. So after some time experimenting with css on a mat-dialog component, we came up with a pop-up like this: 
 
   <p align="center">
-  <img align="left" src="supporting_images/slideout.png" width="350px">
+  <img align="center" src="supporting_images/postform.png" width="350px">
   </p>
 
 
