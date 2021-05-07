@@ -6,7 +6,7 @@
 
 <div align="center">
   
-  [![IMAGE ALT TEXT](supporting_images/intro.gif)](https://www.youtube.com/watch?v=SMLlnLANZNY)
+  
 
 </div>
 
