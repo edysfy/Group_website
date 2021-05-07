@@ -124,7 +124,7 @@ Our two characters served as both inspiration and guidance for the initial key f
 Although this is a perfectly good idea, time restrictions meant that this could not be implemented. As a group, we discussed this and looked for alternative ideas. We decided that the best thing to do was to recommend support for those in need of help. We attached this change to our 'about' page:
 
 <p align="center">
-<img src="supporting_images/about_page_support.png" width="700">
+<img src="supporting_images/about_support.png" width="700">
 </p>
 
 
