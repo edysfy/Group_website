@@ -23,13 +23,13 @@ The two tools that the group was familiar with and facilitate these needs were [
 <img src="supporting_images/mt.jpeg" width="1000px">
 </p>
 
-### Teams
+
+This software was useful for allowing us to receive feedback from our lectures on the Thursday sessions. We held our scrums using here. 
   
   <p align="center">
   <img src="supporting_images/teamsmetting.png" width="550px">
   </p>
 
-This software was useful for allowing us to receive feedback from our lectures on the Thursday sessions. We held our scrums using here. 
 The advantages to using teams were:
 - We would record the meetings, and that allowed us to review the advice given to us. For example, Allison offered some feedback on our report and how we could enhance it. As well as discussing the important implication the mark scheme would have on our report. A couple of our team members were not unable to attend the meeting. However, they were able to rewatch the video.  
 
@@ -47,8 +47,6 @@ The disadvantages of teams (leading mainly used discord):
 <p align="center">
 <img src="supporting_images/Discord_Purple_Tight.png.1ed2ade737b458d4ddda66c03346311a.png" width="700px">
 </p>
-
-### Discord
 
 [Discord](https://discord.com/) is a free instant messaging platform where users can communicate through messages, voice calls and video calls, send files and more. Users can also set up private chat "servers" which can be divided into specific chat rooms.
 
@@ -79,6 +77,8 @@ Having the group chat divided into specific areas kept our workflow and ideas or
   - Unable to share videos.
   - Unable to share screens.
   - The video chat is very basic in comparison to teams.
+
+  As you can see the combination of Teams and Discord, resembles ying and yang. The advantages of Discord compensated for the disadvantages of Teams and vice versa.
 
 ### Workflow strategy
 
