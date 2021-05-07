@@ -84,15 +84,16 @@ The complexity of the issue of global mental illness means that there is no univ
 ### 4) Empowering non-users with relevant data and reducing the stigma of mental health.
 We seek to empower analysts and organisations with data that will aid them in their efforts to combat the issue of mental illness globally. This will be an indirect contribution to solving the problem. For example, a charity could raise awareness for mental illness by showcasing visual data taken from EmoteMap's heat map interface which would allow for a comprehensive explanation of how many people feel depressed in certain areas. Or a private organization can focus its efforts to combat mental health in a specific area. It can be a place for anyone to visit and see how the world's feeling, see how people feeling. Maybe people will open their hearts, and get inspired about the field, reducing the prejudice and make mental health problems more mainstream. EmoteMap will show the world that mental health is an issue that should be taken seriously. Maybe we can read the posts of people with psychosis and see how actually think/feel and offer compassion to them. Maybe the NHS will see the posts of people like Lucy, and pay more attention to her needs.
 
+<p align="center">
+<img src="supporting_images/mutuals-industry-review-2020_cq5dam.web.1400.jpg" width="650px">
+</p>
+
 ## Who is our Target Market & Stakeholders?
 Our team seeks to influence and impact any person on the planet who has access to the Internet over the age of 13.  Please see Sarah's fictional user story in our [UX section](uxDesign.md) where we talk about our end users in more detail, including Sarah's fictional user story which serves as an example of a way in which we aim for users to interact with EmoteMap. There are *X* number of people in our target population. When it came to evaluating exactly how users interpreted our designs throughout the development process we found, through [Smart Survey's sample size calculator](https://www.smartsurvey.co.uk/sample-size-calculator), our required sample size  for a target population of this size was *X*. Please see our Limitations heading of the [Evaluation section](evalSect.md) for a more in depth discussion about the sample size of our market.    
 
 Our team aimed to address two key stakeholders:    
 Our first was the type of end user that made up our target market, as explained above. Second would be any analyst or organisation who would benefit from the data provided by EmoteMap about the different emotions and experiences felt globally. This could be in the form of visual data provided by our heat map, data extracted from the experiences and emotions logged by users; either as part of their blog post, the keyword emotion that they chose to log (e.g - "anxious"), user geolocation, or the 1-3 scale of emotion logged by the user. We envisage this kind of stakeholder to be a data analyst or a mental health organisation for example. For a more detailed investigation into this type of stakeholder, please see Christina's fictional story in our [UX section](uxDesign.md) which can help you visualise exactly how this kind of stakeholder would benefit from using EmoteMap.
 
-<p align="center">
-<img src="supporting_images/mutuals-industry-review-2020_cq5dam.web.1400.jpg" width="650px">
-</p>
 
 # Industry Review: What Differentiates EmoteMap?
 
