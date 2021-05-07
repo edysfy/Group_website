@@ -4,9 +4,9 @@
 
   ## Click the Giphy to fly to the trailer...
 
-<div align="center">
+<div align="center" width="560">
   
-  [![IMAGE ALT TEXT](supporting_images/Fly_feature.gif)](https://www.youtube.com/watch?v=SMLlnLANZNY)
+  [![IMAGE ALT TEXT](supporting_images/intro.gif)](https://www.youtube.com/watch?v=SMLlnLANZNY)
 
 </div>
 
