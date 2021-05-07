@@ -92,17 +92,17 @@ Results of the questionnaire also showed that 80% of people thought an 'about' p
 As our final documented method for UX improvment, we came up with an idea - a live demonstration session. The idea was to first explain the project, before handing the wireframe over to the user. We told the user to imagine that they were using the real, working app. We asked if they could talk aloud their intentions as they were navigating the website. We thought this may be helpful as it would allow us to get a better idea of how users would use our app, and also to allow discussion regarding any ideas, or suggestions they may have. From the recording that was made, we have included a section that was particularly useful for our UX development.
 
 <p>
-  <em>
-User: "Okay, I've just posted to say that I'm super excited to be getting my first shot of the vaccine tomorrow! Let me see who else is making EmotePosts about vaccines. [imagining] Oh wow, there are so many positive posts about vaccines. Although the UK is pretty ahead, so I guess there would be quite a few negative ones from other parts of the world."
+<em>
+User1: "Okay, I've just posted to say that I'm super excited to be getting my first shot of the vaccine tomorrow! Let me see who else is making EmotePosts about vaccines. [imagining] Oh wow, there are so many positive posts about vaccines. Although the UK is pretty ahead, so I guess there would be quite a few negative ones from other parts of the world."
 
 Team member: "Yes, the  real working search results will show you posts from all over the world."
 
-User: "That's really cool. How do I see where each post is from?"
+User1: "That's really cool. How do I see where each post is from?"
 
 Team member: "Good point, you can't right now, but we should include that in the post."
 
-User: "Yeah, or you could make use of the map, and have a button that locates the post."
-  </em>
+User1: "Yeah, or you could make use of the map, and have a button that locates the post."
+</em>
 </p>
 
 By having the user speak aloud during this exercise, it generated discussion. This was incredibly useful to do at the wireframe stage, because when using the wireframe it is difficult to get a true sense of the working product. For example, an interactive and moving map is a foundation of our application, yet the more static-like nature of a wireframe struggles to remind the user of this. Without the discussion, the user may not have had the idea of wanting to home-in on another post. This probably would have been different if the user was trialing the real product. However, our discussion, as demonstrated, proved to be helpful in identifying limitations/opportunities.
@@ -112,6 +112,29 @@ A gif of the implemented home-in feature (nicknamed 'fly-in feature' by the team
 <p align="center">
   <img src="supporting_images/Fly_feature.gif" alt="animated" />
 </p>
+
+
+We have also shown below a snippet from another live session with a different user. This user helped identify another useful feature, particularly for Sarah.
+
+<p>
+<em>
+User2: So can I make as many posts as I want?
+
+Team member: Of course, there are no limitations in that sense.
+
+User2: Okay good, because I like to make regular updates on my social media accounts [laughs].
+
+Team member: You won't have problems here.
+
+User 2: Where can I see my previous posts?
+
+Team member: Actually, you can only see them on the map right now.
+
+User 2: Oh, I think it would be good to have a list somewhere. This would also help users keep track of their feelings. I know some people like to keep a diary of how they feel from day to day, this could complement something like that.
+</em>
+</p>
+
+
 
 
 ### Final Remarks Regarding UX
