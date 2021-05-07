@@ -1,4 +1,7 @@
-# System Implementation
+<p align="center">
+<img src="supporting_images/SI.png" width="850px">
+</p>
+
 
 ## Table of contents
 

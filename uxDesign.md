@@ -1,4 +1,7 @@
-# UX Design
+<p align="center">
+<img src="supporting_images/UX.png" width="650px">
+</p>
+
 
 ## Identification of our target users
 
