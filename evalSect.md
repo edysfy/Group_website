@@ -1,3 +1,7 @@
+<p align="center">
+<img src="supporting_images/EC.png" width="800px">
+</p>
+
 ## Table of contents
 1. [Evaluation](#eval)
 * [a) Methodology](#method)

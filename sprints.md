@@ -1,5 +1,6 @@
-
-# Sprints & Project Management
+<p align="center">
+<img src="supporting_images/PMDP.png" width="1000px">
+</p>
 
 ## Table of contents
 
