@@ -137,7 +137,7 @@ User2: Oh, I think it would be good to have a list somewhere. This would also he
 This user was perfectly right; the ability to easily track your own EmotePosts is invaluable. We wanted to create a user interface that would allow a user to easily navigate through their history. See below for our final version:
 
 <p align="center">
-<img src="supporting_images/history_posts.png" width="700">
+  <img src="supporting_images/EmotePosts_history.gif" alt="animated" />
 </p>
 
 
