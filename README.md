@@ -2,11 +2,14 @@
 <img src="supporting_images/titmp.png" width="650px">
 </p>
 
-<div align="center">
-NEED TO GET VIDEO IMBEDDED
-### Click the GIPHY to fly to the trailer...
+  ## Click the Giphy to fly to the trailer...
 
-[![IMAGE ALT TEXT](supporting_images/Fly_feature.gif)](https://www.youtube.com/watch?v=SMLlnLANZNY)
+<div align="center">
+  
+  [![IMAGE ALT TEXT](supporting_images/Fly_feature.gif)](https://www.youtube.com/watch?v=SMLlnLANZNY)
+
+</div>
+
 
 <a name="first"></a>
 ## Introduction, background and motivation
