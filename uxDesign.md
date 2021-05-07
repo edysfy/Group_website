@@ -33,13 +33,15 @@ The identification of this second type of user highlighted the importance of cre
 
 ### Early prototyping - paper prototypes and feedback
 
-Our two key users had been identified, and it was now time to start putting our idea into action. The first real visualisation of the website consisted of a paper prototype. This ensured all members of the group were on the same page (no pun intended) regarding the layout, and allowed us to easily and to quickly make adjustments during a group discussion. The creation of this prototype really was the first time the ideas we had shared verbally were coming together in a physical, visual form. Because of this, we focused on making it as simple as possible, including only the core features. At this point in time, we had decided that the core features were: ability to signup (and login), be able to zoom in and out of the map, read EmotePosts of other users, create EmotePosts and search for EmotePosts. Our original, finalised paper prototype is shown here:
+<img src="supporting_images/Paper_prototype_start.jpeg" width="350" align="right">
+Our two key users had been identified, and it was now time to start putting our idea into action. The first real visualisation of the website consisted of a paper prototype. This ensured all members of the group were on the same page (no pun intended) regarding the layout, and allowed us to easily and to quickly make adjustments during a group discussion. The creation of this prototype really was the first time the ideas we had shared verbally were coming together in a physical, visual form. Because of this, we focused on making it as simple as possible, including only the core features. At this point in time, we had decided that the core features were: ability to signup (and login), be able to zoom in and out of the map, read EmotePosts of other users, create EmotePosts and search for EmotePosts. Our original, finalised paper prototype is shown to the right.
 
-<p align="center">
-<img src="supporting_images/Paper_prototype_start.jpeg" width="400">
-</p>
-
+<br>
+<br>
 At this point, our prototype consisted of only the ideas we had come up with within the team. Despite the fact that our team consisted of five individuals of different academic backgrounds, we were still prone to 'tunnel vision'. We knew that it was crucial to get external feedback, and as early as possible. We shared our paper prototype with friends and family. At this stage, we understood it was difficult to grasp the concept of the project looking at a paper prototype alone, so we informed the individuals on the idea beforehand. We were looking for feedback on our core features, and in the form of writtem comments (questionnaires with specific questions were used during the wireframe phase, at this stage we did not want to place any restrictions on the feedback).
+<br>
+<br>
+<br>
 
 One individual made an important suggestion: to remove the need to signup before interacting with the globe and other user posts. We originally planned it like so to encourage more people to signup. However the individual's reasoning was a stronger point: they warned that the user would be signing up to something they may not completely understand, and in some cases this may turn the potential user away entirely. Of course, we could have put an 'about' page as the splash screen, but it should be interactive, and allow users to learn by doing (this would immediately integrate the ‘serious play’ aspect). We also decided to include a ‘signup’ option on a sidebar. The image below shows the changes we made to our paper prototype as a response:
 
@@ -55,14 +57,11 @@ Overall, we were pleased with how useful the paper prototype approach was. Despi
 
 ### A moment of reflection
 
-Before moving on to the next prototype design, we took a moment to reflect on our project progression in the context of our two fictional users. At this point in time, an EmotePost consisted of an emotion (e.g. lonely) and a description. We had a particular concern regarding Christina, the data analyst, as she was only able to search based on a particular emotion (amongst potentially hundreds if not thousands). Our decided improvement was to include a few more search criteria, to give her mor flexibility. One addition to the EmotePosts themselves was a  'mood rating'. We proposed three categories: 'happy', 'coping' and 'sad'. If mood ratings were to be attached to each post, it would be very easy to filter them. This was simply an addition, and not a replacement of the pre-existing emotion field. We decided to keep the emotion field for the benefit of Sarah. Emotions are complex, and we thought it would be undermining for example to only give the user the ability to select 'sad', when really they are feeling either depressed, anxious, or lonely. The mood ratings therefore served as search categories. We also added more (optional) search criteria for increased flexibility. The image below (top) shows the prototype plan, and the other image (bottom) shows the final implementation.
+<img src="supporting_images/Filter_feature.png" width="250" align="right">
 
-<p align="center">
-<img src="supporting_images/Paper_prototype_search_criteria.jpeg" width="400">
-</p>
-<p align="center">
-<img src="supporting_images/Filter_feature.png" width="400">
-</p>
+Before moving on to the next prototype design, we took a moment to reflect on our project progression in the context of our two fictional users. At this point in time, an EmotePost consisted of an emotion (e.g. lonely) and a description. We had a particular concern regarding Christina, the data analyst, as she was only able to search based on a particular emotion (amongst potentially hundreds if not thousands). Our decided improvement was to include a few more search criteria, to give her mor flexibility. One addition to the EmotePosts themselves was a  'mood rating'. We proposed three categories: 'happy', 'coping' and 'sad'. If mood ratings were to be attached to each post, it would be very easy to filter them. This was simply an addition, and not a replacement of the pre-existing emotion field. We decided to keep the emotion field for the benefit of Sarah. Emotions are complex, and we thought it would be undermining for example to only give the user the ability to select 'sad', when really they are feeling either depressed, anxious, or lonely. The mood ratings therefore served as search categories. We also added more (optional) search criteria for increased flexibility. The image below shows the prototype plan, and the image to the right shows the final implementation.
+
+<img src="supporting_images/Paper_prototype_search_criteria.jpeg" width="700" align="center">
 
 On a small paper prototype, the number of options can look slightly overwhelming, however this will change when on a larger screen. To get a balance between flexibility and simplicity, we made each selection optional, so the user does not have to complete each field if they would like to make a short and easy search.
 
@@ -74,16 +73,22 @@ Our paper prototype served well at forming an initial visualisation of the websi
 <img src="supporting_images/wireframe_preview.png" width="700">
 </p>
 
-Again, we shared the wireframe with friends and family, and coupled it with a questionnaire. As well as the questionnaire, we provided the ability to leave comments on the wireframe (in case they would like to leave feedback beyond what the questionnaire had asked). One user reported that it would be useful to have a key on the map, informing the user on what coloured marker means what. As a direct response to this feedback, we implemented a key. The final version of the key can be see below (bottom), alongside the original feedback (top).
+Again, we shared the wireframe with friends and family, and coupled it with a questionnaire. As well as the questionnaire, we provided the ability to leave comments on the wireframe itself. One user reported that it would be useful to have a key on the map, informing the user on what coloured marker means what. As a direct response to this feedback, we implemented a key. The final version of the key can be see below (bottom), alongside the original feedback (top).
 
 <p align="center">
-<img src="supporting_images/Wireframe_with_feedback.png" width="450">
-</p>
-<p align="center">
-<img src="supporting_images/key.png" width="450">
+<img src="supporting_images/Wireframe_with_feedback.png" width="600">
+<img src="supporting_images/key.png" width="600">
 </p>
 
-Results of the questionnaire showed that 80% of people thought an 'about' page would be useful for further clarification. As a response to this, we created an 'about' page, confirming what the website intends to do, and how:
+Another user suggested a 'welcome screen'. We decided to implement a semi-transparant view in order to keep the map present for the user's first impression. Below the feedback is our final implementation of this feature.
+
+<p align="center">
+<img src="supporting_images/welcome_feedback.png" width="700">
+<img src="supporting_images/welcome_screen.png" width="700">
+</p>
+
+
+Results of the questionnaire also showed that 80% of people thought an 'about' page would be useful for further clarification. As a response to this, we created an 'about' page, confirming what the website intends to do, and how:
 
 <p align="center">
 <img src="supporting_images/About_page.png" width="700">
@@ -92,32 +97,71 @@ Results of the questionnaire showed that 80% of people thought an 'about' page w
 
 ### Live user sessions
 
-As our final documented method for UX improvment, we came up with an idea - a live demonstration session. The idea was to first explain the project, before handing the wireframe over to the user. We told the user to imagine that they were using the real, working app. We asked if they could talk out loud their intentions as they were navigating the website. We thought this may be helpful as it would allow us to get a better idea of how users would use our app, and also to allow discussion regarding any ideas, or suggestions they may have. From the recording that was made, we have included a section that was particularly useful for our UX development.
+As our final documented method for UX improvment, we came up with an idea - a live demonstration session. The idea was to first explain the project, before handing the wireframe over to the user. We told the user to imagine that they were using the real, working app. We asked if they could talk aloud their intentions as they were navigating the website. We thought this may be helpful as it would allow us to get a better idea of how users would use our app, and also to allow discussion regarding any ideas, or suggestions they may have. From the recording that was made, we have included a section that was particularly useful for our UX development.
 
 <p>
-  <em>
-User: "Okay, I've just posted to say that I'm super excited to be getting my first shot of the vaccine tomorrow! Let me see who else is making EmotePosts about vaccines. Oh wow, there are so many positive posts about vaccines [imagining]. Although the UK is pretty ahead, so I guess there would be quite a few negative ones from other parts of the world."
+<em>
+User1: "Okay, I've just posted to say that I'm super excited to be getting my first shot of the vaccine tomorrow! Let me see who else is making EmotePosts about vaccines. [imagining] Oh wow, there are so many positive posts about vaccines. Although the UK is pretty ahead, so I guess there would be quite a few negative ones from other parts of the world."
 
 Team member: "Yes, the  real working search results will show you posts from all over the world."
 
-User: "That's really cool. How do I see where each post is from?"
+User1: "That's really cool. How do I see where each post is from?"
 
 Team member: "Good point, you can't right now, but we should include that in the post."
 
-User: "Yeah, or you could make use of the map, and have a button that locates the post."
-  </em>
+User1: "Yeah, or you could make use of the map, and have a button that locates the post."
+</em>
 </p>
 
-A gif of the implemented fly-in feature can be seen below:
+By having the user speak aloud during this exercise, it generated discussion. This was incredibly useful to do at the wireframe stage, because when using the wireframe it is difficult to get a true sense of the working product. For example, an interactive and moving map is a foundation of our application, yet the more static-like nature of a wireframe struggles to remind the user of this. Without the discussion, the user may not have had the idea of wanting to home-in on another post. This probably would have been different if the user was trialing the real product. However, our discussion, as demonstrated, proved to be helpful in identifying limitations/opportunities.
+
+A gif of the implemented home-in feature (nicknamed 'fly-in feature' by the team) can be seen below:
 
 <p align="center">
   <img src="supporting_images/Fly_feature.gif" alt="animated" />
 </p>
 
 
+We have also shown below a snippet from another live session with a different user. This user helped identify another useful feature, particularly for Sarah.
+
+<p>
+<em>
+User2: So can I make as many posts as I want?
+
+Team member: Of course, there are no limitations in that sense.
+
+User2: Okay good, because I like to make regular updates on my social media accounts [laughs].
+
+Team member: You won't have problems here.
+
+User2: Where can I see my previous posts?
+
+Team member: Actually, you can only see them on the map right now.
+
+User2: Oh, I think it would be good to have a list somewhere. This would also help users keep track of their feelings. I know some people like to keep a diary of how they feel from day to day, this could complement something like that.
+</em>
+</p>
+
+This user was perfectly right; the ability to easily track your own EmotePosts is invaluable. We wanted to create a user interface that would allow a user to easily navigate through their history. See below for our final version:
+
+<p align="center">
+  <img src="supporting_images/EmotePosts_history.gif" alt="animated" />
+</p>
 
 
 
+### Final Remarks Regarding UX
+Our two characters served as both inspiration and guidance for the initial key features of our application. User feedback proved to highlight useful features that certainly contributed to an improved user experience. It should be noted. however, that not all feedback was acted on. The reason for this was not because we disagreed, but because it was far beyond the scope of our project at this current time (MENTION THAT WE WILL TALK ABOUT THIS MORE IN PROJECT EXTENSION IDEAS PART). Nevertheless, feedback of this nature sometimes inspired us to implement a user's idea slightly differently to what was intended. We will finish this section with an example of this. See below for a user's suggestion:
+
+<p align="center">
+<img src="supporting_images/therapist_feedback.png" width="700">
+</p>
+
+Although this is a perfectly good idea, time restrictions meant that this could not be implemented. As a group, we discussed this and looked for alternative ideas. We decided that the best thing to do was to recommend support for those in need of help. We attached this change to our 'about' page:
+
+<p align="center">
+<img src="supporting_images/about_support.png" width="700">
+</p>
 
 
 
