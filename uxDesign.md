@@ -65,14 +65,22 @@ Our paper prototype served well at forming an initial visualisation of the websi
 <img src="supporting_images/wireframe_preview.png" width="700">
 </p>
 
-Again, we shared the wireframe with friends and family, and coupled it with a questionnaire. As well as the questionnaire, we provided the ability to leave comments on the wireframe (in case they would like to leave feedback beyond what the questionnaire had asked). One user reported that it would be useful to have a key on the map, informing the user on what coloured marker means what. As a direct response to this feedback, we implemented a key. The final version of the key can be see below (bottom), alongside the original feedback (top).
+Again, we shared the wireframe with friends and family, and coupled it with a questionnaire. As well as the questionnaire, we provided the ability to leave comments on the wireframe itself. One user reported that it would be useful to have a key on the map, informing the user on what coloured marker means what. As a direct response to this feedback, we implemented a key. The final version of the key can be see below (bottom), alongside the original feedback (top).
 
 <p align="center">
 <img src="supporting_images/Wireframe_with_feedback.png" width="600">
 <img src="supporting_images/key.png" width="600">
 </p>
 
-Results of the questionnaire showed that 80% of people thought an 'about' page would be useful for further clarification. As a response to this, we created an 'about' page, confirming what the website intends to do, and how:
+Another user suggested a 'welcome screen'. We decided to implement a semi-transparant view in order to keep the map present for the user's first impression. Below the feedback is our final implementation of this feature.
+
+<p align="center">
+<img src="supporting_images/welcome_feedback.png" width="700">
+<img src="supporting_images/welcome_screen.png" width="700">
+</p>
+
+
+Results of the questionnaire also showed that 80% of people thought an 'about' page would be useful for further clarification. As a response to this, we created an 'about' page, confirming what the website intends to do, and how:
 
 <p align="center">
 <img src="supporting_images/About_page.png" width="700">
