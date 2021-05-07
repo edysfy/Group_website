@@ -27,7 +27,6 @@ TO FINISH DO ABSTRACT....
 <img src="supporting_images/shutterstock_174741554-e1519911636917.jpg" width="550px">
 </p
 
-# The Problem: Background and Motivation
 ### The Problem
 Our team addresses both the problem of poor  mental health globally and the inadequacy of today's mainstream social media in addressing it. To make the problem more digestible we decided to define it in two parts. In the first, we explain the issue of poor mental health which has become significantly worse as a result of the global lockdown. In the second we address the related issue of online culture's inadequacy to acknowledge the first problem. Current mainstream social platforms found online can be ,in fact, detrimental to it.
 
@@ -92,7 +91,7 @@ The complexity of the issue of global mental illness means that there is no univ
 We seek to empower analysts and organisations with data that will aid them in their efforts to combat the issue of mental illness globally. This will be an indirect contribution to solving the problem. For example, a charity could raise awareness for mental illness by showcasing visual data taken from EmoteMap's heat map interface which would allow for a comprehensive explanation of how many people feel depressed in certain areas. Or a private organization can focus its efforts to combat mental health in a specific area. It can be a place for anyone to visit and see how the world's feeling, see how people feeling. Maybe people will open their hearts, and get inspired about the field, reducing the prejudice and make mental health problems more mainstream. EmoteMap will show the world that mental health is an issue that should be taken seriously. Maybe we can read the posts of people with psychosis and see how actually think/feel and offer compassion to them. Maybe the NHS will see the posts of people like Lucy, and pay more attention to her needs.
 
 <p align="center">
-<img src="supporting_images/mutuals-industry-review-2020_cq5dam.web.1400.jpg" width="650px">
+<img src="supporting_images/mutuals-industry-review-2020_cq5dam.web.1400.jpg" width="1000px">
 </p>
 
 ## Who is our Target Market & Stakeholders?

@@ -19,13 +19,17 @@ Due to COVID-19 we were unable to meet up in person, this made it extremely impo
 
 The two tools that the group was familiar with and facilitate these needs were [Microsoft Teams](https://www.microsoft.com/en-ww/microsoft-teams/group-chat-software) and [Discord](https://discord.com/). Both platforms offer [similar features](https://droplr.com/how-to/productivity-tools/discord-vs-microsoft-teams/). Microsoft Teams allows for sharing of larger files however this was not a concern of ours given the majority of our file sharing was done on github. We decided to use Discord primarily because we preferred the GUI and were familiar with the platform having used it in the past. We used microsoft more sparingly. 
 
-### Teams
+<p align="center">
+<img src="supporting_images/mt.jpeg" width="1000px">
+</p>
+
+
+This software was useful for allowing us to receive feedback from our lectures on the Thursday sessions. We held our scrums using here. 
   
   <p align="center">
   <img src="supporting_images/teamsmetting.png" width="550px">
   </p>
 
-This software was useful for allowing us to receive feedback from our lectures on the Thursday sessions. We held our scrums using here. 
 The advantages to using teams were:
 - We would record the meetings, and that allowed us to review the advice given to us. For example, Allison offered some feedback on our report and how we could enhance it. As well as discussing the important implication the mark scheme would have on our report. A couple of our team members were not unable to attend the meeting. However, they were able to rewatch the video.  
 
@@ -39,7 +43,10 @@ The disadvantages of teams (leading mainly used discord):
 
 - We were more familiar with the functionality of discord than teams.
 
-### Discord
+
+<p align="center">
+<img src="supporting_images/Discord_Purple_Tight.png.1ed2ade737b458d4ddda66c03346311a.png" width="700px">
+</p>
 
 [Discord](https://discord.com/) is a free instant messaging platform where users can communicate through messages, voice calls and video calls, send files and more. Users can also set up private chat "servers" which can be divided into specific chat rooms.
 
@@ -71,6 +78,8 @@ Having the group chat divided into specific areas kept our workflow and ideas or
   - Unable to share screens.
   - The video chat is very basic in comparison to teams.
 
+  As you can see the combination of Teams and Discord, resembles ying and yang. The advantages of Discord compensated for the disadvantages of Teams and vice versa.
+
 ### Workflow strategy
 
 With the ongoing COVID-19 lock downs and other modules requiring attention, we knew our workflow strategy had to be flexible. We wanted our website to be as user driven as possible and given the short time frame it was essential that we had user feedback throughout the design process. For both these reasons we chose to adopt the agile framework. We wanted to minimize the amount of work requried by making sure out side was tailored by user requirements.
@@ -81,9 +90,9 @@ With the ongoing COVID-19 lock downs and other modules requiring attention, we k
   <img src="supporting_images/6t8232hs.jpg" width="450px">
   </p>
 
-It was suggested from our professers that Agile software development would be an adequate way of developing this project. Agile software development refers to software development methodologies which are based around an iterative design process where in each iteration stakeholder input is incorporated. This method provides frequent delivery of small portions of functionality, each portion being fitting with stakeholder requirements. 
+It was suggested by our professors that Agile software development would be an adequate way of developing this project. Agile software development refers to software development methodologies which are based around an iterative design process where in each iteration stakeholder input is incorporated. This method provides frequent delivery of small portions of functionality, each portion being fitting with stakeholder requirements.
 
-The only stakeholder in our project was the end user. Therefore all feedback at each iteration came from user surveys and interviews. As documented in the [sprints] and [UX] at each stage of the development process we set goals based apon the user feedback collected in the last sprint. Once we had implemented the features described by our sprint goals we then repeated the process evaluating what we had done and getting more user feedback.
+Aside from the data analyist, the primary stakeholder we considered in our project was the end user. Therefore all feedback at each iteration came from user surveys and interviews. As documented in the [sprints] and [UX](uxDesign.md) at each stage of the development process we set goals based upon feedback collected in the last sprint. Once we had implemented the features described by our sprint goals we then repeated the process, evaluating what we had done and getting more user feedback.
 
 This flexible but clearly defined process of developing, evaluating then setting out goals provided the following benefits:
 
@@ -92,8 +101,6 @@ This flexible but clearly defined process of developing, evaluating then setting
 - **Encouraged regular more productive meetups:** Given the time constraints from both the project deadline and work from other modules, it was important to keep meetings productive and not get sidetracked. Basing design decisions heavily on user feedback meant every video call had a purpose. Agile development hinders on "Face-Face" communication. Fresh user feedback and having each individually reviewed the relevant features before each meeting meant there was always useful content to be discussed. From the start of the sprints, we set up biweekly meetings. We would have the meetings at the end of the Group Project's lectures. Initially, this enabled us to, implement the advice given by our professors and ask them questions in our meeting room. Also, felt this was a good time to have these meetings because the content was fresh in our minds. We easily come up with suggestions of how to proceed with the rest of the week, while being influenced by the structure the module was taught. These meetings have us a time to look back and reflect upon our progress, identify weaknesses and issues within the project, allow team members to voice their opinion and offer suggestions, and set goals for the remaining week or until the next meeting. We set agenda for the next meeting. If we felt they were no important issues or change in our project, we would decide not to meet until the next scrum.
 
 - **Avoids final product being unfinished / not user friendly:** Constant feature creation and reviewal meant at each stage we added fully functional features. Working on smaller goals as opposed to thinking of the final product and having a lot of features as a work in progress meant we had a better idea of realistic time frames. This allowed us to know what features we would be able to implement in the limited time frame. This meant we didn't become over ambitious and end up getting to the hand in date with an unfinished product. Working on smaller, well refined and fully functional features also meant if we did run out of time we would still have something to show for our work. 
-
-However, this 
 
 <a name="second"></a>
 
@@ -131,7 +138,7 @@ During the development of the application, I took on a front-end role. For examp
 
 <a name="third"></a>
 
-### Pre-sprint idea formulation
+## Pre-sprint idea formulation
 
 This time was used to get to know the other group members and project brief itself. Having all come from different backgrounds, from music to engineering, a lot of varied and interesting project ideas were put forward. After some discussion we drafted up 4 potential ideas:
 
