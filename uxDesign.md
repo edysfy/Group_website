@@ -81,7 +81,7 @@ Overall, we were pleased with how useful the paper prototype approach was. Despi
 
 ## On to the Computer...
 
-From this, we went on to build the initial prototype of EmoteMap. We choose a pink and blue theme because members of our team believed it represented the ethos of EmoteMap, as pink can be an emotional color, and we included the icons for 'about', 'login', and title 'about'. Initially, this has no functionality and was just a way for us to see the initial vision of EmoteMap coming into existence. 
+From this, we went on to build the initial prototype of EmoteMap. We choose a pink and blue theme because members of our team believed it represented the ethos of EmoteMap, as pink can be an emotional color, and we included the icons for 'about', 'login', and the title 'about'. Initially, this has no functionality and was just a way for us to see the initial vision of EmoteMap coming into existence. 
 
 
   <p align="center">
@@ -89,26 +89,39 @@ From this, we went on to build the initial prototype of EmoteMap. We choose a pi
   <img align="center" src="supporting_images/orginal2.png" width="450px">
   </p>
 
-We started experimenting with Mapbox's circle markers. This was a demo provided to by Mapbox and really gave us an insight into how we can display different emotions on the map with colours.
+We started experimenting with Mapbox's circle markers. This was a demo provided by Mapbox and gave us an insight into how we can display different emotions on the map with varying colors. We also used [freelogodesign.org/](https://www.freelogodesign.org/), to come up with a variety of different logos to suit our application, and decided to go with the globe.
+
+  <p align="center">
+  <img align="center" src="src/assets/logos/earth.png" width="250px">
+  <img align="center" src="src/assets/logos/handslogo.png" width="250px">
+  <img align="center" src="src/assets/logos/messagelogo.png" width="250px">
+  <img align="center" src="src/assets/logos/treelogowhite.png" width="250px">
+  </p>
 
 ## Implementation of the initial search and post form.
 
-At this stage we has a basic prototype. We were getting used to Mapbox and its GeoJson requirements. Before dealing with user authentication, we wanted to display GeoJson data on the map, implement a basic search filter, and allow users to post by clicking on a button, and routing user to a post page so they can make a post. Ed also, suggested that we get rid of the white map, and use a black map as the contrast between pink was preferred. After some feedback from family and friends, It became obvious that the black map was preferred over this theme. This is what the application looked like after implementing those features. 
+At this stage, we have a basic prototype. We were getting used to Mapbox and its GeoJson requirements. Before dealing with user authentication, we wanted to display GeoJson data on the map, implement a basic search filter, and allow users to post by clicking on a button, and routing users to a post page so they can make a post. Ed, suggested that we get rid of the white map, and use a black map as the contrast between pink was preferred. After some feedback from family and friends, It became obvious that the black map was preferred over this theme. This is what the application looked like after implementing those features. 
 
   <p align="center">
   <img align="center" src="supporting_images/ugly.png" width="550px">
   </p>
 
-Now we needed needed to display the form that allowed the user to make a post and display it on the map. At the start there were several ways design patterns we could have used. The final version was mentioned in the paper prototype above. However, there were some prelimary ideas we went through:
+It is also worth mentioning here that after showing this version to Marceli, we received some initial criticism on the theme. He said that these colors were not appealing. He suggested that a white navbar will contrast well with the black map. So we tested it out and liked the result. Now we needed to display the form that allowed the user to make a post and display it on the map. At the start, there were several ways of design patterns we could have used. The final version was mentioned in the paper prototype above. However, there were some preliminary ideas we went through:
 
 1. Was to have the user click a button/map and have the the user route to a new age:
   <p align="center">
-  <img align="center" src="supporting_images/gotonewpage.png" width="350px">
+  <img align="left" src="supporting_images/gotonewpage.png" width="350px">
   </p>
 
 2. Was to have the form slide out from the screen:
   <p align="center">
-  <img align="center" src="supporting_images/slideout.png" width="350px">
+  <img align="left" src="supporting_images/slideout.png" width="350px">
+  </p>
+
+We had a team meeting to discuss this, then sought advice of one of our professors whom specialised in HCI. He suggested to make it playful, have the post pop out onto the screen, we all agreed that was the best design our of all three methods. So after some time experimenting with css on a mat-dialog component, we came up with a pop-up like this: 
+
+  <p align="center">
+  <img align="left" src="supporting_images/slideout.png" width="350px">
   </p>
 
 
