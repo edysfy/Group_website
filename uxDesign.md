@@ -126,14 +126,19 @@ User2: Okay good, because I like to make regular updates on my social media acco
 
 Team member: You won't have problems here.
 
-User 2: Where can I see my previous posts?
+User2: Where can I see my previous posts?
 
 Team member: Actually, you can only see them on the map right now.
 
-User 2: Oh, I think it would be good to have a list somewhere. This would also help users keep track of their feelings. I know some people like to keep a diary of how they feel from day to day, this could complement something like that.
+User2: Oh, I think it would be good to have a list somewhere. This would also help users keep track of their feelings. I know some people like to keep a diary of how they feel from day to day, this could complement something like that.
 </em>
 </p>
 
+This user was perfectly right; the ability to easily track your own EmotePosts is invaluable. We wanted to create a user interface that would allow a user to easily navigate through their history. See below for our final version:
+
+<p align="center">
+<img src="supporting_images/history_posts.png" width="700">
+</p>
 
 
 
