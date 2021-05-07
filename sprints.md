@@ -24,11 +24,22 @@ The two tools that the group was familiar with and facilitate these needs were [
 ### Teams
   
   <p align="center">
-  <img src="supporting_images/teamsmetting.png" width="350px">
+  <img src="supporting_images/teamsmetting.png" width="550px">
   </p>
 
-This software was useful for allowing us to receive feedback from our lectures on the Thursday sessions. We would record the meetings, and that allowed us to review the advice given to us. For example, Allison offered some feedback on our report and how we could enhance it. As well as discussing the important implication the mark scheme would have on our report. A couple of our team members were not unable to attend the meeting. However, they were able to rewatch the video.  Teams were also used to share code. For example, The was a time when Hari explained how the routing of the API should be structured. We have a meeting, where he shared the screen so members could understang how routing works with ExpressJs. This helped as we were not able to discuss the code face to face due to COVID-19, and really helped speed up development time. This was particularly useful for demonstrating new features to the group before agreeing to make a push or demonstrating issues with the site. One example where this came in handy is when we discovered that our site malfunctioned on one of our group members computer because of its dimensions. This group member was able to demonstrate this to the group via screen share so it could be fixed.
+This software was useful for allowing us to receive feedback from our lectures on the Thursday sessions. We held our scrums using here. 
+The advantages to using teams were:
+- We would record the meetings, and that allowed us to review the advice given to us. For example, Allison offered some feedback on our report and how we could enhance it. As well as discussing the important implication the mark scheme would have on our report. A couple of our team members were not unable to attend the meeting. However, they were able to rewatch the video.  
 
+- Teams were also used to share code via sharing screens. For example, The was a time when Hari explained how the routing of the API should be structured. We have a meeting, where he shared the screen so members could understang how routing works with ExpressJs. This helped as we were not able to discuss the code face to face due to COVID-19, and really helped speed up development time. This was particularly useful for demonstrating new features to the group before agreeing to make a push or demonstrating issues with the site. Another example when this came in handy is when we discovered that our site need dit not cater well to large screen sizes, due to our css code when Tarn was sharing his screen. This group member was able to demonstrate this to the group via screen share so it could be fixed.
+
+The disadvantages of teams (leading mainly used discord): 
+
+- The UI was not as satisfying to use.
+
+- Teams felt less responsive and smooth than discord.
+
+- We were more familiar with the functionality of discord than teams.
 
 ### Discord
 
@@ -36,7 +47,7 @@ This software was useful for allowing us to receive feedback from our lectures o
 
 We set up a private server on Discord right at the start of the project. We found the following features particularly useful throughout our project:
 
-**Specific chat rooms:** Initually we set ip the serve with a few specific chats: back end, front end and write up but as the project progressed we created more specific channels as required:
+**Specific chat rooms:** Initially we set just had one chat thread when using discord but as the project progressed we created more specific channels, as material was getting lost in the chat.  Our team members would miss vital conversations in the single chat and it became obvious that there was no structure while maintaining this way of communication.
 
   <p align="center">
   <img src="supporting_images/discord_chat.PNG" width="350px">
@@ -56,6 +67,12 @@ Having the group chat divided into specific areas kept our workflow and ideas or
   <img src="supporting_images/msearch.png" width="550px">
   </p>
 
+  We did notice some disadvantages to using discord:
+  
+  - Unable to share videos.
+  - Unable to share screens.
+  - The video chat is very basic in comparison to teams.
+
 ### Workflow strategy
 
 With the ongoing COVID-19 lock downs and other modules requiring attention, we knew our workflow strategy had to be flexible. We wanted our website to be as user driven as possible and given the short time frame it was essential that we had user feedback throughout the design process. For both these reasons we chose to adopt the agile framework. We wanted to minimize the amount of work requried by making sure out side was tailored by user requirements.
@@ -66,17 +83,19 @@ With the ongoing COVID-19 lock downs and other modules requiring attention, we k
   <img src="supporting_images/6t8232hs.jpg" width="450px">
   </p>
 
-Agile software development refers to software development methodologies which are based around an iterative design process where in each iteration stakeholder input is incorporated. This method provides frequent delivery of small portions of functionality, each portion being fitting with stakeholder requirements.
+It was suggested from our professers that Agile software development would be an adequate way of developing this project. Agile software development refers to software development methodologies which are based around an iterative design process where in each iteration stakeholder input is incorporated. This method provides frequent delivery of small portions of functionality, each portion being fitting with stakeholder requirements. 
 
 The only stakeholder in our project was the end user. Therefore all feedback at each iteration came from user surveys and interviews. As documented in the [sprints] and [UX] at each stage of the development process we set goals based apon the user feedback collected in the last sprint. Once we had implemented the features described by our sprint goals we then repeated the process evaluating what we had done and getting more user feedback.
 
 This flexible but clearly defined process of developing, evaluating then setting out goals provided the following benefits:
 
-**Each element of functionality well designed:** Every time a new feature was implemented it was thoroughly reviewed by both the group and end users before it could be finalised. This meant that every feature of the end product was well thought out and user approved.  
+- **Each element of functionality well designed:** Every time a new feature was implemented it was thoroughly reviewed by both the group and end users before it could be finalised. It required us to make small commits, to ensure the code worked and was well tested thoroughly. This meant that every feature of the end product was well thought out and user approved.  
 
-**Encouraged regular more productive meetups:** Given the time constraints from both the project deadline and work from other modules it was important to keep meetings productive and not get sidetracked. Basing design desicions heavily on user feedback meant every video call had a purpose. Agile develoment hinders on "Face-Face" communication. Fresh user feedback and having each individually reviewed the relevent features before each meeting meant there was always useful content to be discussed.
+- **Encouraged regular more productive meetups:** Given the time constraints from both the project deadline and work from other modules, it was important to keep meetings productive and not get sidetracked. Basing design decisions heavily on user feedback meant every video call had a purpose. Agile development hinders on "Face-Face" communication. Fresh user feedback and having each individually reviewed the relevant features before each meeting meant there was always useful content to be discussed. From the start of the sprints, we set up biweekly meetings. We would have the meetings at the end of the Group Project's lectures. Initially, this enabled us to, implement the advice given by our professors and ask them questions in our meeting room. Also, felt this was a good time to have these meetings because the content was fresh in our minds. We easily come up with suggestions of how to proceed with the rest of the week, while being influenced by the structure the module was taught. These meetings have us a time to look back and reflect upon our progress, identify weaknesses and issues within the project, allow team members to voice their opinion and offer suggestions, and set goals for the remaining week or until the next meeting. We set agenda for the next meeting. If we felt they were no important issues or change in our project, we would decide not to meet until the next scrum.
 
-**Avoids final product being unfinished / not user friendly:** Constant feature creation and reviewal meant at each stage we added fully functional features. Working on smaller goals as opposed to thinking of the final product and having a lot of features as a work in progress meant we had a better idea of realistic time frames. This allowed us to know what features we would be able to implement in the limited time frame. This meant we didn't become over ambitious and end up getting to the hand in date with an unfinished product. Working on smaller, well refined and fully functional features also meant if we did run out of time we would still have something to show for our work. 
+- **Avoids final product being unfinished / not user friendly:** Constant feature creation and reviewal meant at each stage we added fully functional features. Working on smaller goals as opposed to thinking of the final product and having a lot of features as a work in progress meant we had a better idea of realistic time frames. This allowed us to know what features we would be able to implement in the limited time frame. This meant we didn't become over ambitious and end up getting to the hand in date with an unfinished product. Working on smaller, well refined and fully functional features also meant if we did run out of time we would still have something to show for our work. 
+
+However, this 
 
 <a name="second"></a>
 
@@ -108,7 +127,7 @@ My main task was building the application, and ensuring its quality. I got the i
 
 ### Tarn
 
-During the development of the application, I took on a front-end role. For example, I wrote, designed and built the 'about' section of the application. I also designed the icons found in the map's 'key', as well building the key feature itself. Another contribution I made to the project was concept development; the original proposed idea was very similiar, but involved writing longer journal-like posts. It was my idea to instead shorten these into quick and easy-to-read updates. I also recorded and produced the trailer/overview video of the application. Finally, I was responsible for writing the 'user experience' part of the write-up.
+During the development of the application, I took on a front-end role. For example, I wrote, designed and built the 'about' section of the application. I also designed the icons found in the map's 'key', as well building the feature itself. Another contribution I made to the project was concept development; the original proposed idea was very similiar, but involved writing longer journal-like posts. It was my idea to instead shorten these into quick and easy-to-read updates. I also recorded and produced the trailer/overview video of the application. Finally, I was responsible for writing the 'user experience' part of the write-up.
 
 ### Zaki
 
@@ -376,9 +395,9 @@ Our development process for each sprint first began with a group meeting, where 
 
 On our project github, in addition to the main branch, a 'dev' (development) branch was also created. This served as the branch which we continously iterated on. We used git to enable collaborative work on a large project, making sure to git fetch and pull every time before starting work, and every time before pushing any changes to the dev branch. This allowed us to maintain up to date files across our different machines and even when we were working on the same files; by fetching and pulling just before pushing, we made sure that any conflicts were fixed before being pushed to the dev branch. Some group members also use of their own branches, split off of the dev branch, to privately work and iterate on a new feature before merging back into dev branch.
 
-At regular intervals, usually at the end of sprints where we had achieved significant progress, we merged into our main branch, this time by submitting a pull request on github. After the pull request we would all pull the latest update, and make sure we could all compile and run the website on docker (we would also do this before every push, but this step served as a key point of verification that the website was in fact working), as described in our [System Implementation](sysImp.md) document, and run [our test plan](test_plan.txt) as described in sprint 3. We would then commit the merge to main. In this way, throughout the development process, we continously compiled and utilised all elements of the MEAN stack from a very early point, helping us achieve continuous integration and deployment.
+At regular intervals, usually at the end of sprints where we had achieved significant progress, we merged into our main branch, this time by submitting a pull request on github. After the pull request we would all pull the latest update, and make sure we could all compile and run the website on docker (we would also do this before every push, but this step served as a key point of verification that the website was in fact working), as described in our [System Implementation](sysImp.md) document, and run [our test plan](test_plan.txt) as described in sprint 3. We would then commit the merge to main. In this way, throughout the development process, we continously compiled and utilised all elements of the MEAN stack from a very early point, helping us achieve continuous integration and deployment. We didnt feel the need to use the staging branch, as we werent going to deploy the site live during the project. We when we pushed to the main branch, we would use the latest commit here in our user testing.
 
-After new features were added, we would then also get user feedback and as a group evaluate the current project, helping us evaluate the feature but also to start off the CI (continuous integration) pipeline again for the next sprint. As an example, one feature we developed was a search bar for non-users; we discussed, developed and tested the feature using the CI pipeline as described - however we decided this feature wasn't needed (see implementation issues for sprint 5).
+After new features were added, we would then also get user feedback and as a group evaluate the current project, helping us evaluate the feature but also to start off the CI (continuous integration) pipeline again for the next sprint. As an example, one feature we developed was a search bar for non-users; we discussed, developed and tested the feature using the CI pipeline as described - based on user feedback, we decided it wasnt needed and removed this from our code (see implementation issues for sprint 5).
 
 
 Next section: [Evaluation and Conclusion](evalSect.md)
