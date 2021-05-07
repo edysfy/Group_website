@@ -22,7 +22,7 @@ From a very broad perspective this is how application skeleton is structured:
 
 <br/>
 <p align="center">
-<img src="supporting_images/stack_arc_overview.png" width="650px">
+<img src="supporting_images/stack_arc_overview.png" width="800px">
 </p>
 
 The stack was made up of three main components:

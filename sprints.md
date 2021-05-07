@@ -19,6 +19,10 @@ Due to COVID-19 we were unable to meet up in person, this made it extremely impo
 
 The two tools that the group was familiar with and facilitate these needs were [Microsoft Teams](https://www.microsoft.com/en-ww/microsoft-teams/group-chat-software) and [Discord](https://discord.com/). Both platforms offer [similar features](https://droplr.com/how-to/productivity-tools/discord-vs-microsoft-teams/). Microsoft Teams allows for sharing of larger files however this was not a concern of ours given the majority of our file sharing was done on github. We decided to use Discord primarily because we preferred the GUI and were familiar with the platform having used it in the past. We used microsoft more sparingly. 
 
+<p align="center">
+<img src="supporting_images/mt.jpeg" width="1000px">
+</p>
+
 ### Teams
   
   <p align="center">
@@ -38,6 +42,11 @@ The disadvantages of teams (leading mainly used discord):
 - Teams felt less responsive and smooth than discord.
 
 - We were more familiar with the functionality of discord than teams.
+
+
+<p align="center">
+<img src="supporting_images/Discord_Purple_Tight.png.1ed2ade737b458d4ddda66c03346311a.png" width="700px">
+</p>
 
 ### Discord
 
