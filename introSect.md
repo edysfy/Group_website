@@ -1,4 +1,6 @@
-
+<p align="center">
+<img src="supporting_images/introduction.png" width="1000px">
+</p>
 
 ## Table of contents
 * [Introduction](#intro)
