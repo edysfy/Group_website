@@ -4,8 +4,11 @@
 
 <div align="center">
 NEED TO GET VIDEO IMBEDDED
-### Trailer
-To get an overview of the Ethos of EmoteMap please view our [trailer](https://www.youtube.com/watch?v=SMLlnLANZNY).
+### Click the GIF to fly to the trailer...
+<p align="center">
+  <img src="supporting_images/Fly_feature.gif" alt="animated" />
+  <a href="https://www.youtube.com/watch?v=SMLlnLANZNY"></a>
+</p>
 </div>
 
 <a name="first"></a>
