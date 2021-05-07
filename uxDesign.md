@@ -1,5 +1,5 @@
 <p align="center">
-<img src="supporting_images/download-3.jpg" width="550px">
+<img src="supporting_images/UX.png" width="650px">
 </p>
 
 # UX Design

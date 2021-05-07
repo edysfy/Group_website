@@ -29,7 +29,7 @@ export class ToolbarComponent implements OnInit {
     private authService: AuthenticationService,
     private route: Router,
   ) {
-    this.title = 'Introduction, Background and Motivation';
+    this.title = 'UX Design';
     this.subscriber = this.authService.getAuthState().subscribe((logIn) => {
       this.isLoggedIn = logIn;
     });
