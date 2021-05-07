@@ -1,5 +1,5 @@
 <p align="center">
-<img src="supporting_images/mentalhealth.jpg" width="550px">
+<img src="supporting_images/introduction.png" width="1000px">
 </p>
 
 ## Table of contents
@@ -31,6 +31,13 @@ TO FINISH DO ABSTRACT....
 ### The Problem
 Our team addresses both the problem of poor  mental health globally and the inadequacy of today's mainstream social media in addressing it. To make the problem more digestible we decided to define it in two parts. In the first, we explain the issue of poor mental health which has become significantly worse as a result of the global lockdown. In the second we address the related issue of online culture's inadequacy to acknowledge the first problem. Current mainstream social platforms found online can be ,in fact, detrimental to it.
 
+### Summary of the problems
+
+1. There has been an increase in mental health issues across the globe.
+2. Online communities have become a place contributing to mental health issues.
+3. There is a big stigma of mental health, making people unwilling to seek help.
+4. People don't take mental health as a serious issue.
+
 ### The First Part of the Problem: Mental illness globally
 Our team seeks to address the problem of mental illness globally. We do not believe that you can define mental illness simply as sadness or insanity. It is not a binary or exclusive concept in this way. Rather, we see it as a complex and universal problem. A time series curated by the Institute for Health Metrics Evaluation demonstrates that in a recent year about 13% of the global population suffered from some kind of mental disorder (Guardian, 2011). The British charity, Mind, refers to a statistic that one in four people will experience some form of mental illness in a given year  (Mind, 2020). Over in America it has been noted by the Anxiety and Depression Association of America that anxiety disorders are the most common mental illness in the US, effecting 40 million adults aged 18 and older (ADAA, 2021). Ironically, although anxiety is highly treatable only 36.9% of those suffering receive treatment (ADAA, 2021).  
 
@@ -49,7 +56,7 @@ As a result of this developing dependency on social media we believe that it is 
 
 See the next section where we discover how blogging and online peer-led support groups can help solve this problem. 
 
-### A third issue worth mentioning: Mental Illness Stigma and lack of care
+### A third and fourth problem: Mental Illness Stigma and lack of care
 
 [Clare Henderson](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3698814/), published an important paper. She discovered that globally, more the 70% of people do not seek treatment when they have a mental health issue. This is a massive number. This is due to the prejudice against people who are suffering from mental illness, and the fear of discrimination against people with a mental illness. She mentions that people with serious problems like psychosis are more likely to be perceived as violent, when in fact there is no direct correlation between the two. The human mind is quick to judge, and from this study, this seems the case that is happening with mental health. She suggested that large-scale anti-stigma campaigns could increase the number of people willing to receive help. 
 
@@ -143,12 +150,6 @@ Although this application displays mental health issues around the globe, it doe
 
 From this research, we believe that there is a gap within the market place to build EmoteMap. EmoteMap is set out to solve the issues described above, and do what no other application is doing at the moment.
 
-### Overview of the problem
-
-1. There has been an increase in mental health issues across the globe.
-2. Online communities have become a place contributing to mental health issues.
-3. There is a big stigma of mental health, making people unwilling to seek help.
-4. People don't take mental health as a serious issue.
 
 <p align="center">
 <img src="supporting_images/download-1.jpg" width="450px">

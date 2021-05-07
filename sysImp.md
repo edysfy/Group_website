@@ -1,9 +1,7 @@
 <p align="center">
-<img src="supporting_images/download-2.jpg" width="550px">
+<img src="supporting_images/SI.png" width="850px">
 </p>
 
-
-# System Implementation
 
 ## Table of contents
 
