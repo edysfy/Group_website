@@ -129,7 +129,7 @@ This post form didn't change much, though we did make a small change to this lat
 
 ### Displaying EmotePosts
 
-It was obvious to us from the start that we needed use the GeoJson data created from the form above and display it on the map visually through using a marker. There were two options we thought of.  Using a marker pin, like in google maps, or using svg circles. The markers (like the blue one in the pink themed screenshot) just felt to clunky, so we decided to use the circles. Mapbox also comes with a hover event feature, we used this to display a pop-up that contained the EmotePost data when a user hovers of a marker with their mouse. We decided to mapped each emotion with a corresponding colour. Happy => Blue , Coping => Yellow, Sad => Red.
+It was obvious to us from the start that we needed use the GeoJson data created from the form above and display it on the map visually through using a marker. There were two options we thought of.  Using a marker pin, like in google maps, or using svg circles. The markers (like the blue one in the pink themed screenshot) just felt to clunky, so we decided to use the circles. Mapbox also comes with a hover event feature, we used this to display a pop-up that contained the EmotePost data when a user hovers of a marker with their mouse. After feedback Zaki received from some users, we decided to mapped each emotion with a corresponding colour. Happy => Blue , Coping => Yellow, Sad => Red.
 
 ## The heatmap
 
@@ -156,7 +156,13 @@ We needed to take into consideration the needs of Christine, and to an extent, D
 
 ### User authentication and features.
 
-We now needed to design the UI for the login and signup processes, and the features available for the user when they log into the application.
+We now needed to design the UI for the login and signup processes. We recievied feedback from the users changing the icons for 'signup' and 'login' to text, as there was some issued with them nagivating the application.
+
+  <!-- <p align="center">
+  <img align="center" src="supporting_images/mbhp.png" width="320px">
+  <img align="center" src="supporting_images/mbc.png" width="320px">
+  <img align="center" src="supporting_images/mbt.png" width="250px">
+  </p> -->
 
 ### A moment of reflection
 
@@ -183,13 +189,18 @@ Again, we shared the wireframe with friends and family, and coupled it with a qu
 <img src="supporting_images/key.png" width="600">
 </p>
 
-Another user suggested a 'welcome screen'. We decided to implement a semi-transparant view in order to keep the map present for the user's first impression. Below the feedback is our final implementation of this feature. We then didn't see the need for keeping the basic search bar on the map for non-users, so we removed it.
+Another user suggested a 'welcome screen' for users not authenticated. We implemented a welcome button on the map which triggered a semi-transparent pop-up to keep the map present for the user's first impression. Below the feedback is our final implementation of this feature. We also had negative feedback from the users regarding the basic search bar that non-authenticated users could use to search. We decided to remove this and felt the new 'welcome' was enough functionality for non-users could have. 
 
 <p align="center">
-<img src="supporting_images/welcome_feedback.png" width="700">
-<img src="supporting_images/welcome_screen.png" width="700">
+<img src="supporting_images/welcome_feedback.png" width="500">
+<img src="supporting_images/removesearch.png" width="500">
 </p>
 
+<br> Leading to the final landing page for non-authenticated users: <br>
+<p align="center">
+<img src="supporting_images/landing.png" width="500">
+<img src="supporting_images/landingpopup.png" width="500">
+</p>
 
 Results of the questionnaire also showed that 80% of people thought an 'about' page would be useful for further clarification. As a response to this, we created an 'about' page, confirming what the website intends to do, and how:
 
