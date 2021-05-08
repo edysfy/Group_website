@@ -239,7 +239,7 @@ Our paper prototype served well at forming an initial visualisation of the websi
 <img src="supporting_images/wireframe_preview.png" width="700">
 </p>
 <a name="first"></a>
-Again, we shared the wireframe with friends and family, and coupled it with a questionnaire. As well as the questionnaire, we provided the ability to leave comments on the wireframe itself. One user reported that it would be useful to have a key on the map, informing the user on what coloured marker means what. As a direct response to this feedback, we implemented a key. The final version of the key can be see below (bottom), alongside the original feedback (top).
+Again, we shared the wireframe with friends and family, and coupled it with a questionnaire. As well as the questionnaire, we provided the ability to leave comments on the wireframe itself. One user reported that it would be useful to have a key on the map, informing the user on what coloured marker means what. As a direct response to this feedback, we implemented a key. The final version of the key can be see below (bottom), alongside the original feedback (top). <br>
 
 <p align="center">
 <img src="supporting_images/Wireframe_with_feedback.png" width="500">
