@@ -226,7 +226,7 @@ We showed [this stage](#third) to Marceli, his feedback was this:
   <img align="center" src="supporting_images/marcelifeedbackani.png" width="550px">
   </p>
 
-We implemented this animation, and then [incoorpated the theme we developed for the search component](#sp) to end up with the final UI: 
+We implemented this animation, and then [incoorpated the theme we developed for the search component](#sp) to all other components to end up with the final UI: 
 
   <p align="center">
   <img align="center" src="supporting_images/finalui.gif" width="550px">
