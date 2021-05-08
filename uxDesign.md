@@ -117,14 +117,14 @@ It is also worth mentioning here that after showing this version to Marceli, we 
 
 We had a team meeting to discuss this, then sought the advice of one of our professors who specializes in HCI. He suggested making it playful by having the post-pop out onto the screen, we all agreed that was the best design of all three methods. So after some time experimenting with CSS on a mat-dialog component. We initially used a picker element to pick the mood, but then started experimenting with Angular's slider and liked that instead. 
 <br><br>
-We took a moment to reflect on our project progression in the context of our three fictional users. At this point in time, an EmotePost consisted of an keyword (e.g. lonely) and a description. We had a particular concern regarding Christina, the data analyst, as she was only able to search based on a particular emotion (amongst potentially hundreds if not thousands). Our decided improvement was to include a few more search criteria, to give her more flexibility. One addition to the EmotePosts themselves was a 'mood rating'. We proposed three categories: 'happy', 'coping' and 'sad'. If mood ratings were to be attached to each post, it would be very easy to filter them. This was simply an addition, and not a replacement of the pre-existing emotion field. We decided to keep the emotion field for the benefit of Sarah. Emotions are complex, and we thought it would be undermining for example to only give the user the ability to select 'sad', when really they are feeling either depressed, anxious, or lonely. <br> 
+We took a moment to reflect on our project progression in the context of our three fictional users. At this point in time, an EmotePost consisted of an keyword (e.g. lonely) and a description. We had a particular concern regarding Christina, the data analyst, as she was only able to search based on a particular emotion (amongst potentially hundreds if not thousands). Our decided improvement was to include a few more search criteria, to give her more flexibility. One addition to the EmotePosts themselves was a 'mood rating'. We proposed three categories: 'happy', 'coping' and 'sad'. If mood ratings were to be attached to each post, it would be very easy to filter them. This was simply an addition, and not a replacement of the pre-existing keyword field. We decided to keep the keyword field for the benefit of Sarah. Emotions are complex, and we thought it would be undermining for example to only give the user the ability to select 'sad', when really they are feeling either depressed, anxious, or lonely. However, to keep within the time frame we only had three emotions. These mood ratings therefore served as search categories. <br> 
 We came up with a pop-up like this: 
 
   <p align="center">
   <img align="center" src="supporting_images/postform.png" width="450px">
   </p>
 
-This post form didn't change much, though we did make a small change to this later. We didn't want to display a number (3 being sad to 1 being happy) to represent the mood on the form. Instead of showing numbers, we mapped it with the text, 'happy', 'coping', and 'sad'. 
+This post form didn't change much, though we did make a small change to this later. We didn't want to display a number (1 being happy to 3 being 'sad') to represent the mood on the form. Instead of showing numbers, we mapped it with the text, 'happy', 'coping', and 'sad'. 
 
 ### Displaying EmotePosts
 
@@ -168,25 +168,37 @@ But first, We received feedback from the users changing the icons for 'signup' a
     <img align="center" src="supporting_images/newnavbar.png" width="500px">
   </p>
 
-We decided that when the user clicks the text, the user will be routed to the corresponding path. Marceli recommended a great open source for [SVG images](https://undraw.co/illustrations). We picked the 'signup' SVG because it resembles a new person being welcomed into the family, and the 'login' SVG resembles one who is eager to get back to the application". Purple is a good secondary colour to white.
+We decided that when the user clicks the text, the user will be routed to the corresponding path. Marceli recommended a great open source for [SVG images](https://undraw.co/illustrations). We picked the 'signup' SVG because it resembles a new person being welcomed into the family, and the 'login' SVG resembles one who is eager to get back to the application". Purple is a good secondary colour to white, and we want add some extra flair with CSS, so when they user hovers over the form, it creates a black shadow.
 
   <p align="center">
   <img align="center" src="supporting_images/singup.png" width="450px">
   <img align="center" src="supporting_images/login.png" width="450px">
   </p>
 
+We made an initial paper prototype that we thought would be reasonable and fulfills the needs of the user requirements specified in the user stories above:
+
+  <p align="center">
+  <img align="center" src="supporting_images/UIPP.png" width="450px">
+  </p>
+
+The sidebar was to include: 
+- Key => This tells the user the color code of the EmotePost (further information on the development of this is in the wireframes section below).
+- User Profile => This is where the user can enter their date of birth and gender. We combine this data with their EmotePost so other users can filter posts using these attributes too.
+- User Timeline => This is where the user can view their EmotePosts, ordered by newest date, and have the option to 'fly-to' location and delete posts (further information on the development of this is in the wireframes section below).
+- User Search => This allows the user to search for EmotePosts based on gender, age, keyword, emotion, and date of when posts were made
+- Logout => A button where the user could log out.
 
 ### A moment of reflection
 
 <img src="supporting_images/Filter_feature.png" width="250" align="right">
 
-The mood ratings therefore served as search categories. We also added more (optional) search criteria for increased flexibility. The image below shows the prototype plan, and the image to the right shows the final implementation.
+ We also added more (optional) search criteria for increased flexibility. The image below shows the prototype plan, and the image to the right shows the final implementation.
 
 <img src="supporting_images/Paper_prototype_search_criteria.jpeg" width="700" align="center">
 
 On a small paper prototype, the number of options can look slightly overwhelming, however this will change when on a larger screen. To get a balance between flexibility and simplicity, we made each selection optional, so the user does not have to complete each field if they would like to make a short and easy search.
 
-### On to wireframes
+### How wireframe feedback influence our UI...
 
 Our paper prototype served well at forming an initial visualisation of the website, and for receiving feedback on core features. In order to gain feedback more related to user experience, we needed to demonstrate the website using a closer representation of a working product. Logically, a wireframe was the next best step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/EmoteMap-prototype-2-ckn7hacvv1nm601590k9h8044/ckn7han2m109p012d8epohsri/play) or [here](https://zaki744910.invisionapp.com/console/share/NJ2D65MNBU/572059598/play) to go to our interactive wireframe. Below is a preview:
 
@@ -214,7 +226,7 @@ Another user suggested a 'welcome screen' for users not authenticated. We implem
 <img src="supporting_images/landingpopup.png" width="500">
 </p>
 
-Results of the questionnaire also showed that 80% of people thought an 'about' page would be useful for further clarification. As a response to this, we created an 'about' page, confirming what the website intends to do, and how:
+Initially, we didn't implement an 'about' page in the application. We were thinking of implementing it, so we left the 'about' text on the navbar. Results of the questionnaire also showed that 80% of people thought an 'about' page would be useful for further clarification. As a response to this, we created an 'about' page, confirming what the website intends to do, and how:
 
 <p align="center">
 <img src="supporting_images/About_page.png" width="700">
