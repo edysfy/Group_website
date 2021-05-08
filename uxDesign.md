@@ -210,7 +210,8 @@ However, we discovered that the sidebar didn't look too good. We took inspiratio
 
 <img src="supporting_images/Filter_feature.png" width="250" align="right">
 
-The image below shows the prototype plan, and the image to the right shows the final implementation. On a small paper prototype, the number of options can look slightly overwhelming, however this will change when on a larger screen. To get a balance between flexibility and simplicity, we made each selection optional, so the user does not have to complete each field if they would like to make a short and easy search. We wanted to use colours that followed the theme of the site. We added a white border. Also, were experimenting with the transparency and liked the look the purple being translucent, showing the map underneath. We settled on this style and applied this to all of the other components. 
+The image below shows the prototype plan, and the image to the right shows the final implementation. On a small paper prototype, the number of options can look slightly overwhelming, however this will change when on a larger screen. To get a balance between flexibility and simplicity, we made each selection optional, so the user does not have to complete each field if they would like to make a short and easy search. We wanted to use colours that followed the theme of the site. We added a white border. Also, were experimenting with the transparency and liked the look the purple being translucent, showing the map underneath. We settled on this style and applied this to all of the other components.
+<br> 
 <img src="supporting_images/Paper_prototype_search_criteria.jpeg" width="700" align="center">
 <br>
 We wanted to use colours that followed the theme of the site. We added a white border. Also, were experimenting with the transparency and liked the look the purple being translucent, showing the map underneath. We settled on this style and applied this to all of the other components. 
