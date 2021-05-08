@@ -128,14 +128,18 @@ This post form didn't change much, it had all the requirements to fulfill their 
 ## The heatmap
 
 We needed to take into consideration the needs of Christine, and to an extent, Dan. We needed a way to display the mood/emotions across the globe in an attractive style, so they could use this data for their interests and spark curiosity into the nature of users' posts at certain locations. This was on our agenda in a team scrum. We were looking through Mapbox's data visualization features. There were several ideas we could use. 
+
 - To just have the different colored circles for each EmotePost (shown in the pink prototype above) on the map.
 - Use Mapbox's heatmap feature, which displays the density of a specified attribute, with customizable colors.
 - To create circle clustering, which clusters the data into bigger circles as you zoom out.
 - To tile the data onto a map.
+
 <br>We test out all three methods. We thought that the heatmap was the best, accurate, and easiest way to represent the mood. We assigned the same colors for the heatmap as the circles used to represent the EmotePosts. We tested out these methods on our users, and it was split between the heatmap and tiling. Also, there were a couple of ways we could represent the heatmap. 
+
 - Have a button to turn it on.
 - Have it on all the time as a layer on top of the circles.
 - Have it fade out and in depending on the zoom level.
+
 <br>We just decided to go with the third option.
 
   <p align="center">
