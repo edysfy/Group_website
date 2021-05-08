@@ -133,7 +133,7 @@ It was obvious to us from the start that we needed use the GeoJson data created 
 - Coping => Yellow, 
 - Sad => Red.
 
-We made the authenticated users posts distinguishable from others by adding an extra SVG.<br>
+For the benefit of our users being able to distinguish their own posts on the map to other users, we made them distinguishable from others by adding an extra SVG on underneath the circle in the shape of a volcano.<br>
 
 ## The heatmap
 
@@ -158,9 +158,9 @@ We needed to take into consideration the needs of Christine, and to an extent, D
 
 We just decided to go with the third option.
 
-### User authentication and features.
+## User authentication and features.
 
-We now needed to design the UI for the login and signup processes. <br>
+We now needed to design the UI for the login and signup processes. <br><br>
 But first, We received feedback from the users changing the icons for 'signup' and 'login' to text, as there was some issue with them navigating the application. So we made the following changes to the navbar.
 
   <p align="center">
@@ -177,7 +177,7 @@ We decided that when the user clicks the text, the user will be routed to the co
   <img align="center" src="supporting_images/login.png" width="450px">
   </p>
 
-We made an initial paper prototype that we thought would be reasonable and fulfills the needs of the user requirements specified in the [user stories](#us) above:
+We made an initial paper prototype that we thought would be reasonable and fulfills the needs of the user requirements specified in the [user stories](#us):
 
   <p align="center">
   <img align="center" src="supporting_images/UIPP.png" width="450px">
@@ -197,9 +197,8 @@ We is the initial build of this prototype:
   <p align="center">
   <img align="center" src="supporting_images/sbnav.png" width="450px">
   </p>
-
-However, we discovered that the sidebar didn't look too good. We took inspiration from MacOS and converted the sidebar into a horizontal navbar at the bottom of the screen. Apple's software generally has a simple, minimalistic user-friendly design. We drew upon this principle and used animations to hide and show the relevant components that are activated when the user clicks an icon on the navbar. In addition, we felt it was a nice touch to incorporate the user's username in the top navbar and colour the icon when the user activated its state.
 <a name="third"></a>
+However, we discovered that the sidebar didn't look too good. We took inspiration from MacOS and converted the sidebar into a horizontal navbar at the bottom of the screen. Apple's software generally has a simple, minimalistic user-friendly design. We drew upon this principle and used animations to hide and show the relevant components that are activated when the user clicks an icon on the navbar. In addition, we felt it was a nice touch to incorporate the user's username in the top navbar and colour the icon when the user activated its state.
 <br> Here is a representation of this stage: 
   
   <p align="center">
@@ -207,14 +206,16 @@ However, we discovered that the sidebar didn't look too good. We took inspiratio
   </p>
 
 
-### User Search Prototype
+## User Search Prototype
 
 <img src="supporting_images/Filter_feature.png" width="250" align="right">
 
-The image below shows the prototype plan, and the image to the right shows the final implementation. On a small paper prototype, the number of options can look slightly overwhelming, however this will change when on a larger screen. To get a balance between flexibility and simplicity, we made each selection optional, so the user does not have to complete each field if they would like to make a short and easy search. We wanted to use colours that followed the theme, so we build this component with a white border. However, we were experimenting with the transparency and like the look the purple being translucent, and showing the map underneath. We settled on this style and applied this to all of the other components. 
+The image below shows the prototype plan, and the image to the right shows the final implementation. On a small paper prototype, the number of options can look slightly overwhelming, however this will change when on a larger screen. To get a balance between flexibility and simplicity, we made each selection optional, so the user does not have to complete each field if they would like to make a short and easy search. We wanted to use colours that followed the theme of the site. We added a white border. Also, were experimenting with the transparency and liked the look the purple being translucent, showing the map underneath. We settled on this style and applied this to all of the other components. 
 <img src="supporting_images/Paper_prototype_search_criteria.jpeg" width="700" align="center">
+<br>
+We wanted to use colours that followed the theme of the site. We added a white border. Also, were experimenting with the transparency and liked the look the purple being translucent, showing the map underneath. We settled on this style and applied this to all of the other components. 
 
-### Final UI theme, and animation
+## Final UI theme, and animation
 
 We showed [this stage](#third) to Marceli, his feedback was this:
 
@@ -222,16 +223,19 @@ We showed [this stage](#third) to Marceli, his feedback was this:
   <img align="center" src="supporting_images/marcelifeedbackani.png" width="450px">
   </p>
 
-We implemented this animation, and then incoorpated the theme we developed for the search component to end up with the final UI:  
+We implemented this animation, and then incoorpated the theme we developed for the search component to end up with the final UI: 
 
-### How wireframe feedback influence our UI...
-<a name="first"></a>
+  <p align="center">
+  <img align="center" src="supporting_images/finalui.gif" width="450px">
+  </p>
+
+## How wireframe feedback influence our UI...
 Our paper prototype served well at forming an initial visualisation of the website, and for receiving feedback on core features. In order to gain feedback more related to user experience, we needed to demonstrate the website using a closer representation of a working product. Logically, a wireframe was the next best step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/EmoteMap-prototype-2-ckn7hacvv1nm601590k9h8044/ckn7han2m109p012d8epohsri/play) or [here](https://zaki744910.invisionapp.com/console/share/NJ2D65MNBU/572059598/play) to go to our interactive wireframe. Below is a preview:
 
 <p align="center">
 <img src="supporting_images/wireframe_preview.png" width="700">
 </p>
-
+<a name="first"></a>
 Again, we shared the wireframe with friends and family, and coupled it with a questionnaire. As well as the questionnaire, we provided the ability to leave comments on the wireframe itself. One user reported that it would be useful to have a key on the map, informing the user on what coloured marker means what. As a direct response to this feedback, we implemented a key. The final version of the key can be see below (bottom), alongside the original feedback (top).
 
 <p align="center">
@@ -259,10 +263,9 @@ Initially, we didn't implement an 'about' page in the application. We were think
 </p>
 
 
-### Live user sessions
-<a name="second"></a>
+## Live user sessions
 As our final documented method for UX improvment, we came up with an idea - a live demonstration session. The idea was to first explain the project, before handing the wireframe over to the user. We told the user to imagine that they were using the real, working app. We asked if they could talk aloud their intentions as they were navigating the website. We thought this may be helpful as it would allow us to get a better idea of how users would use our app, and also to allow discussion regarding any ideas, or suggestions they may have. From the recording that was made, we have included a section that was particularly useful for our UX development.
-
+<a name="second"></a>
 This user helped identify another useful feature, particularly for Sarah.
 
 <p>
