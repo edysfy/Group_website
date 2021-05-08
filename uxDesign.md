@@ -89,7 +89,7 @@ From this, we went on to build the initial prototype of EmoteMap. We choose a pi
   <img align="center" src="supporting_images/orginal2.png" width="450px">
   </p>
 
-We started experimenting with Mapbox's circle markers. This was a demo provided by Mapbox and gave us an insight into how we can display different emotions on the map with varying colors (shown in the right picture). We also used [freelogodesign.org/](https://www.freelogodesign.org/), to come up with a variety of different logos to suit our application, and decided to go with the globe (we cant show below as uses black text).
+We started experimenting with Mapbox's circle markers. This was a demo provided by Mapbox and gave us an insight into how we can display different emotions on the map with varying colors (shown in the right picture). We also used [freelogodesign.org/](https://www.freelogodesign.org/), to come up with a variety of different logos to suit our application, and decided to go with the globe (we cant show below as uses black text). We made the logo a button in the toolbar, so users can find their way back to the map when on a different route.
 
   <p align="center">
   <img align="center" src="src/assets/logos/handslogo.png" width="250px">
@@ -107,17 +107,17 @@ At this stage, we have a basic prototype. We were getting used to Mapbox and its
 
 It is also worth mentioning here that after showing this version to Marceli, we received some initial criticism on the theme. He said that these colors were not appealing. He suggested that a white navbar will contrast well with the black map. So we tested it out and liked the result. Now we needed to display the form that allowed the user to make a post and display it on the map. At the start, there were several ways of design patterns we could have used. The final version was mentioned in the paper prototype above. However, there were some preliminary ideas we went through:
 
-1. Was to have the user click a button/map and have the the user route to a new age:
-2. Was to have the form slide out from the screen:
+1. Was to have the user click a button/map and have the the user route to a new age.
+2. Was to have the form slide out from the screen.
 
   <p align="center">
-  <img align="center" src="supporting_images/gotonewpage.png" width="450px">
-    <img align="center" src="supporting_images/slideout.png" width="450px">
+  <img align="center" src="supporting_images/gotonewpage.png" width="350px">
+    <img align="center" src="supporting_images/slideout.png" width="350px">
   </p>
 
 
 We had a team meeting to discuss this, then sought the advice of one of our professors who specializes in HCI. He suggested making it playful by having the post-pop out onto the screen, we all agreed that was the best design of all three methods. So after some time experimenting with CSS on a mat-dialog component. We initially used a picker element to pick the mood, but then started experimenting with Angular's slider and liked that instead. 
-<br>
+<br><br>
 We took a moment to reflect on our project progression in the context of our three fictional users. At this point in time, an EmotePost consisted of an keyword (e.g. lonely) and a description. We had a particular concern regarding Christina, the data analyst, as she was only able to search based on a particular emotion (amongst potentially hundreds if not thousands). Our decided improvement was to include a few more search criteria, to give her more flexibility. One addition to the EmotePosts themselves was a 'mood rating'. We proposed three categories: 'happy', 'coping' and 'sad'. If mood ratings were to be attached to each post, it would be very easy to filter them. This was simply an addition, and not a replacement of the pre-existing emotion field. We decided to keep the emotion field for the benefit of Sarah. Emotions are complex, and we thought it would be undermining for example to only give the user the ability to select 'sad', when really they are feeling either depressed, anxious, or lonely. <br> 
 We came up with a pop-up like this: 
 
@@ -126,6 +126,10 @@ We came up with a pop-up like this:
   </p>
 
 This post form didn't change much, though we did make a small change to this later. We didn't want to display a number (3 being sad to 1 being happy) to represent the mood on the form. Instead of showing numbers, we mapped it with the text, 'happy', 'coping', and 'sad'. 
+
+### Displaying EmotePosts
+
+It was obvious to us from the start that we needed use the GeoJson data created from the form above and display it on the map visually through using a marker. There were two options we thought of.  Using a marker pin, like in google maps, or using svg circles. The markers (like the blue one in the pink themed screenshot) just felt to clunky, so we decided to use the circles. Mapbox also comes with a hover event feature, we used this to display a pop-up that contained the EmotePost data when a user hovers of a marker with their mouse. We decided to mapped each emotion with a corresponding colour. Happy => Blue , Coping => Yellow, Sad => Red.
 
 ## The heatmap
 
@@ -158,7 +162,7 @@ We now needed to design the UI for the login and signup processes, and the featu
 
 <img src="supporting_images/Filter_feature.png" width="250" align="right">
 
-Before moving on to the next prototype design, we took a moment to reflect on our project progression in the context of our three fictional users. At this point in time, an EmotePost consisted of an emotion (e.g. lonely) and a description. We had a particular concern regarding Christina, the data analyst, as she was only able to search based on a particular emotion (amongst potentially hundreds if not thousands). Our decided improvement was to include a few more search criteria, to give her mor flexibility. One addition to the EmotePosts themselves was a  'mood rating'. We proposed three categories: 'happy', 'coping' and 'sad'. If mood ratings were to be attached to each post, it would be very easy to filter them. This was simply an addition, and not a replacement of the pre-existing emotion field. We decided to keep the emotion field for the benefit of Sarah. Emotions are complex, and we thought it would be undermining for example to only give the user the ability to select 'sad', when really they are feeling either depressed, anxious, or lonely. The mood ratings therefore served as search categories. We also added more (optional) search criteria for increased flexibility. The image below shows the prototype plan, and the image to the right shows the final implementation.
+The mood ratings therefore served as search categories. We also added more (optional) search criteria for increased flexibility. The image below shows the prototype plan, and the image to the right shows the final implementation.
 
 <img src="supporting_images/Paper_prototype_search_criteria.jpeg" width="700" align="center">
 
@@ -179,7 +183,7 @@ Again, we shared the wireframe with friends and family, and coupled it with a qu
 <img src="supporting_images/key.png" width="600">
 </p>
 
-Another user suggested a 'welcome screen'. We decided to implement a semi-transparant view in order to keep the map present for the user's first impression. Below the feedback is our final implementation of this feature.
+Another user suggested a 'welcome screen'. We decided to implement a semi-transparant view in order to keep the map present for the user's first impression. Below the feedback is our final implementation of this feature. We then didn't see the need for keeping the basic search bar on the map for non-users, so we removed it.
 
 <p align="center">
 <img src="supporting_images/welcome_feedback.png" width="700">
