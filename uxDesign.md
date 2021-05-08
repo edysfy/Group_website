@@ -188,6 +188,14 @@ The sidebar was to include:
 - User Search => This allows the user to search for EmotePosts based on gender, age, keyword, emotion, and date of when posts were made
 - Logout => A button where the user could log out.
 
+We built out this prototype, however, we discovered that the sidebar didn't look too good. We took inspiration from MacOs and converted the sidebar into a horizontal navbar at the bottom of the screen. Apple's software generally has a simple, minimalistic user-friendly design. We drew upon this principle and used animations to hide and show the relevant components that are activated when the user clicks an icon on the navbar. Speaking of which, Marceli recommended using [Google Icons](https://fonts.google.com/icons/) to represent the features describes above on the navbar. In addition, we felt it was a nice touch to incorporate the user's username in the top navbar and colour the icon when the user activated its state.
+<br> Here is a representation of this stage: 
+  
+  <p align="center">
+  <img align="center" src="supporting_images/sidebarslide.gif" width="450px">
+  </p>
+
+
 ### A moment of reflection
 
 <img src="supporting_images/Filter_feature.png" width="250" align="right">
