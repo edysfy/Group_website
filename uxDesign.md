@@ -84,8 +84,8 @@ Overall, we were pleased with how useful the paper prototype approach was. Despi
 From this, we went on to build the initial prototype of EmoteMap. We choose a pink and blue theme because members of our team believed it represented the ethos of EmoteMap, as pink can be an emotional color, and we included the icons for 'about', 'login', and the title 'about'. Initially, this has no functionality and was just a way for us to see the initial vision of EmoteMap coming into existence. 
 
   <p align="center">
-  <img align="center" src="supporting_images/orig.png" width="550px">
-  <img align="center" src="supporting_images/orginal2.png" width="550px">
+  <img align="center" src="supporting_images/orig.png" width="500px">
+  <img align="center" src="supporting_images/orginal2.png" width="500px">
   </p>
 
 We started experimenting with Mapbox's circle markers. This was a demo provided by Mapbox and gave us an insight into how we can display different emotions on the map with varying colors (shown in the right picture). We also used [freelogodesign.org/](https://www.freelogodesign.org/), to come up with a variety of different logos to suit our application, and decided to go with the globe (we cant show below as uses black text). We made the logo a button in the toolbar, so users can find their way back to the map when on a different route.
@@ -173,8 +173,8 @@ But first, We received feedback from the users changing the icons for 'signup' a
 We decided that when the user clicks the text, the user will be routed to the corresponding path. Marceli recommended a great open source for [SVG images](https://undraw.co/illustrations). We picked the 'signup' SVG because it resembles a new person being welcomed into the family, and the 'login' SVG resembles one who is eager to get back to the application". Purple is a good secondary colour to white, and we want add some extra flair with CSS, so when they user hovers over the form it creates a black shadow.
 
   <p align="center">
-  <img align="center" src="supporting_images/singup.png" width="550px">
-  <img align="center" src="supporting_images/login.png" width="550px">
+  <img align="center" src="supporting_images/singup.png" width="500px">
+  <img align="center" src="supporting_images/login.png" width="500px">
   </p>
 
 We made an initial paper prototype that we thought would be reasonable and fulfills the needs of the user requirements specified in the [user stories](#us):
@@ -240,21 +240,21 @@ Our paper prototype served well at forming an initial visualisation of the websi
 Again, we shared the wireframe with friends and family, and coupled it with a questionnaire. As well as the questionnaire, we provided the ability to leave comments on the wireframe itself. One user reported that it would be useful to have a key on the map, informing the user on what coloured marker means what. As a direct response to this feedback, we implemented a key. The final version of the key can be see below (bottom), alongside the original feedback (top).
 
 <p align="center">
-<img src="supporting_images/Wireframe_with_feedback.png" width="550">
-<img src="supporting_images/key.png" width="550">
+<img src="supporting_images/Wireframe_with_feedback.png" width="500">
+<img src="supporting_images/key.png" width="500">
 </p>
 
 Another user suggested a 'welcome screen' for users not authenticated. We implemented a welcome button on the map which triggered a semi-transparent pop-up to keep the map present for the user's first impression. Below the feedback is our final implementation of this feature. We also had negative feedback from the users regarding the basic search bar that non-authenticated users could use to search. We decided to remove this and felt the new 'welcome' was enough functionality for non-users could have. 
 
 <p align="center">
-<img src="supporting_images/welcome_feedback.png" width="550">
-<img src="supporting_images/removesearch.png" width="550">
+<img src="supporting_images/welcome_feedback.png" width="500">
+<img src="supporting_images/removesearch.png" width="500">
 </p>
 
 <br> Leading to the final landing page for non-authenticated users: <br>
 <p align="center">
-<img src="supporting_images/landing.png" width="550">
-<img src="supporting_images/landingpopup.png" width="550">
+<img src="supporting_images/landing.png" width="500">
+<img src="supporting_images/landingpopup.png" width="500">
 </p>
 
 Initially, we didn't implement an 'about' page in the application. We were thinking of implementing it, so we left the 'about' text on the navbar. Results of the questionnaire also showed that 80% of people thought an 'about' page would be useful for further clarification. As a response to this, we created an 'about' page, confirming what the website intends to do, and how:
