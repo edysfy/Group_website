@@ -187,7 +187,7 @@ The sidebar was to include:
 - Key => This tells the user the color code of the EmotePost (further information on the development of this is in the ['wireframes'](#first) section below).
 - User Profile => This is where the user can enter their date of birth and gender. We combine this data with their EmotePost so other users can filter posts using these attributes too.
 - User Timeline => This is where the user can view their EmotePosts, ordered by newest date, and have the option to 'fly-to' location and delete posts (further information on the development of this is in the ['live-user sessions stage'](#second) section below).
-- User Search => This allows the user to search for EmotePosts based on gender, age, keyword, emotion, and date of when posts were made
+- User Search => This allows the user to search for EmotePosts based on gender, age, keyword, emotion, and date of when posts were made. We also added a user-search display component. To display the search results in a Timeline instead of being just on the map(further information on the development of this is in the ['live-user sessions stage'](#second) section below).
 - Logout => A button where the user could log out.
 
 We also added a blue user post button on the navbar (user can access the pop up Emote form with their current coordinates used as location). Marceli, recommended using [Google Icons](https://fonts.google.com/icons/) to represent the features describes above on the navbar.
@@ -207,13 +207,15 @@ However, we discovered that the sidebar didn't look too good. We took inspiratio
 
 
 ## User Search Prototype
-
+<a name="sp"></a>
 <img src="supporting_images/Filter_feature.png" width="250" align="right">
 
 The image below shows the prototype plan, and the image to the right shows the final implementation. On a small paper prototype, the number of options can look slightly overwhelming, however this will change when on a larger screen. To get a balance between flexibility and simplicity, we made each selection optional, so the user does not have to complete each field if they would like to make a short and easy search. We wanted to use colours that followed the theme of the site. We added a white border. Also, were experimenting with the transparency and liked the look the purple being translucent, showing the map underneath. We settled on this style and applied this to all of the other components.
-<br> 
+<br> <br>
+
 <img src="supporting_images/Paper_prototype_search_criteria.jpeg" width="700" align="center">
-<br>
+<br><br>
+
 We wanted to use colours that followed the theme of the site. We added a white border. Also, were experimenting with the transparency and liked the look the purple being translucent, showing the map underneath. We settled on this style and applied this to all of the other components. 
 
 ## Final UI theme, and animation
@@ -224,7 +226,7 @@ We showed [this stage](#third) to Marceli, his feedback was this:
   <img align="center" src="supporting_images/marcelifeedbackani.png" width="550px">
   </p>
 
-We implemented this animation, and then incoorpated the theme we developed for the search component to end up with the final UI: 
+We implemented this animation, and then [incoorpated the theme we developed for the search component](#sp) to end up with the final UI: 
 
   <p align="center">
   <img align="center" src="supporting_images/finalui.gif" width="550px">
