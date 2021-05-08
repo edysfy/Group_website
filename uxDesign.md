@@ -185,8 +185,8 @@ Our paper prototype served well at forming an initial visualisation of the websi
 Again, we shared the wireframe with friends and family, and coupled it with a questionnaire. As well as the questionnaire, we provided the ability to leave comments on the wireframe itself. One user reported that it would be useful to have a key on the map, informing the user on what coloured marker means what. As a direct response to this feedback, we implemented a key. The final version of the key can be see below (bottom), alongside the original feedback (top).
 
 <p align="center">
-<img src="supporting_images/Wireframe_with_feedback.png" width="600">
-<img src="supporting_images/key.png" width="600">
+<img src="supporting_images/Wireframe_with_feedback.png" width="500">
+<img src="supporting_images/key.png" width="500">
 </p>
 
 Another user suggested a 'welcome screen' for users not authenticated. We implemented a welcome button on the map which triggered a semi-transparent pop-up to keep the map present for the user's first impression. Below the feedback is our final implementation of this feature. We also had negative feedback from the users regarding the basic search bar that non-authenticated users could use to search. We decided to remove this and felt the new 'welcome' was enough functionality for non-users could have. 
