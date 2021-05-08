@@ -4,7 +4,7 @@
 
 
 ## Identification of our target users
-
+<a name="us"></a>
 We knew we wanted to make an app that creates a sense of community in the area of mental health. For full details on the justification of the idea, please see [Introduction, background and motivation](introSect.md). From this we belived our initial idea relied on three fundamental features: the ability to create an EmotePost, the ability to read EmotePosts, and the ability to search for EmotePosts by keyword. Changing any of these features would change the idea entirely. We thought it would be a good idea to create a character that represents a potential user. This character's story is intentionally ordinary. We would then keep this character in mind when developing the project, to help ensure the development was geared towards the potential user. 
 <br><br> Here's a bit about Sarah, 19:
 <table>
@@ -84,8 +84,8 @@ Overall, we were pleased with how useful the paper prototype approach was. Despi
 From this, we went on to build the initial prototype of EmoteMap. We choose a pink and blue theme because members of our team believed it represented the ethos of EmoteMap, as pink can be an emotional color, and we included the icons for 'about', 'login', and the title 'about'. Initially, this has no functionality and was just a way for us to see the initial vision of EmoteMap coming into existence. 
 
   <p align="center">
-  <img align="center" src="supporting_images/orig.png" width="450px">
-  <img align="center" src="supporting_images/orginal2.png" width="450px">
+  <img align="center" src="supporting_images/orig.png" width="500px">
+  <img align="center" src="supporting_images/orginal2.png" width="500px">
   </p>
 
 We started experimenting with Mapbox's circle markers. This was a demo provided by Mapbox and gave us an insight into how we can display different emotions on the map with varying colors (shown in the right picture). We also used [freelogodesign.org/](https://www.freelogodesign.org/), to come up with a variety of different logos to suit our application, and decided to go with the globe (we cant show below as uses black text). We made the logo a button in the toolbar, so users can find their way back to the map when on a different route.
@@ -117,21 +117,23 @@ It is also worth mentioning here that after showing this version to Marceli, we 
 
 We had a team meeting to discuss this, then sought the advice of one of our professors who specializes in HCI. He suggested making it playful by having the post-pop out onto the screen, we all agreed that was the best design of all three methods. So after some time experimenting with CSS on a mat-dialog component. We initially used a picker element to pick the mood, but then started experimenting with Angular's slider and liked that instead. 
 <br><br>
-We took a moment to reflect on our project progression in the context of our three fictional users. At this point in time, an EmotePost consisted of an keyword (e.g. lonely) and a description. We had a particular concern regarding Christina, the data analyst, as she was only able to search based on a particular emotion (amongst potentially hundreds if not thousands). Our decided improvement was to include a few more search criteria, to give her more flexibility. One addition to the EmotePosts themselves was a 'mood rating'. We proposed three categories: 'happy', 'coping' and 'sad'. If mood ratings were to be attached to each post, it would be very easy to filter them. This was simply an addition, and not a replacement of the pre-existing emotion field. We decided to keep the emotion field for the benefit of Sarah. Emotions are complex, and we thought it would be undermining for example to only give the user the ability to select 'sad', when really they are feeling either depressed, anxious, or lonely. <br> 
+We took a moment to reflect on our project progression in the context of our three fictional users. At this point in time, an EmotePost consisted of an keyword (e.g. lonely) and a description. We had a particular concern regarding Christina, the data analyst, as she was only able to search based on a particular emotion (amongst potentially hundreds if not thousands). Our decided improvement was to include a few more search criteria, to give her more flexibility. One addition to the EmotePosts themselves was a 'mood rating'. We proposed three categories: 'happy', 'coping' and 'sad'. If mood ratings were to be attached to each post, it would be very easy to filter them. This was simply an addition, and not a replacement of the pre-existing keyword field. We decided to keep the keyword field for the benefit of Sarah. Emotions are complex, and we thought it would be undermining for example to only give the user the ability to select 'sad', when really they are feeling either depressed, anxious, or lonely. However, to keep within the time frame we only had three emotions. These mood ratings therefore served as search categories. <br> 
 We came up with a pop-up like this: 
 
   <p align="center">
-  <img align="center" src="supporting_images/postform.png" width="450px">
+  <img align="center" src="supporting_images/postform.png" width="550px">
   </p>
 
-This post form didn't change much, though we did make a small change to this later. We didn't want to display a number (3 being sad to 1 being happy) to represent the mood on the form. Instead of showing numbers, we mapped it with the text, 'happy', 'coping', and 'sad'. 
+This post form didn't change much, though we did make a small change to this later. We didn't want to display a number (1 being happy to 3 being 'sad') to represent the mood on the form. Instead of showing numbers, we mapped it with the text, 'happy', 'coping', and 'sad'. 
 
 ### Displaying EmotePosts
 
-It was obvious to us from the start that we needed use the GeoJson data created from the form above and display it on the map visually through using a marker. There were two options we thought of.  Using a marker pin, like in google maps, or using svg circles. The markers (like the blue one in the pink themed screenshot) just felt to clunky, so we decided to use the circles. Mapbox also comes with a hover event feature, we used this to display a pop-up that contained the EmotePost data when a user hovers of a marker with their mouse. After feedback Zaki received from some users, we decided to mapped each emotion with a corresponding colour. <br>
+It was obvious to us from the start that we needed use the GeoJson data created from the form above and display it on the map visually through using a marker. There were two options we thought of.  Using a marker pin, like in google maps, or using svg circles. The markers (like the blue one in the pink themed screenshot) just felt to clunky, so we decided to use the circles. Mapbox also comes with a hover event feature, we used this to display a pop-up that contained the EmotePost data when a user hovers of a marker with their mouse. After feedback Zaki received from some users, we decided to mapped each emotion with a corresponding colour. 
 - Happy => Blue 
 - Coping => Yellow, 
 - Sad => Red.
+
+For the benefit of our users being able to distinguish their own posts on the map to other users, we made them distinguishable from others by adding an extra SVG on underneath the circle in the shape of a volcano.<br>
 
 ## The heatmap
 
@@ -156,36 +158,85 @@ We needed to take into consideration the needs of Christine, and to an extent, D
 
 We just decided to go with the third option.
 
-### User authentication and features.
+## User authentication and features.
 
-We now needed to design the UI for the login and signup processes. <br>
+We now needed to design the UI for the login and signup processes. <br><br>
 But first, We received feedback from the users changing the icons for 'signup' and 'login' to text, as there was some issue with them navigating the application. So we made the following changes to the navbar.
 
   <p align="center">
-  <img align="center" src="supporting_images/icons.png" width="320px">
+  <img align="center" src="supporting_images/icons.png" width="550px">
   </p>
     <p align="center">
-    <img align="center" src="supporting_images/newnavbar.png" width="320px">
+    <img align="center" src="supporting_images/newnavbar.png" width="550px">
   </p>
 
-### A moment of reflection
+We decided that when the user clicks the text, the user will be routed to the corresponding path. Marceli recommended a great open source for [SVG images](https://undraw.co/illustrations). We picked the 'signup' SVG because it resembles a new person being welcomed into the family, and the 'login' SVG resembles one who is eager to get back to the application". Purple is a good secondary colour to white, and we want add some extra flair with CSS, so when they user hovers over the form it creates a black shadow.
+
+  <p align="center">
+  <img align="center" src="supporting_images/singup.png" width="500px">
+  <img align="center" src="supporting_images/login.png" width="500px">
+  </p>
+
+We made an initial paper prototype that we thought would be reasonable and fulfills the needs of the user requirements specified in the [user stories](#us):
+
+  <p align="center">
+  <img align="center" src="supporting_images/UIPP.png" width="550px">
+  </p>
+
+The sidebar was to include: 
+- Key => This tells the user the color code of the EmotePost (further information on the development of this is in the ['wireframes'](#first) section below).
+- User Profile => This is where the user can enter their date of birth and gender. We combine this data with their EmotePost so other users can filter posts using these attributes too.
+- User Timeline => This is where the user can view their EmotePosts, ordered by newest date, and have the option to 'fly-to' location and delete posts (further information on the development of this is in the ['live-user sessions stage'](#second) section below).
+- User Search => This allows the user to search for EmotePosts based on gender, age, keyword, emotion, and date of when posts were made
+- Logout => A button where the user could log out.
+
+We also added a blue user post button on the navbar (user can access the pop up Emote form with their current coordinates used as location). Marceli, recommended using [Google Icons](https://fonts.google.com/icons/) to represent the features describes above on the navbar.
+
+We is the initial build of this prototype:
+  
+  <p align="center">
+  <img align="center" src="supporting_images/sbnav.png" width="550px">
+  </p>
+<a name="third"></a>
+However, we discovered that the sidebar didn't look too good. We took inspiration from MacOS and converted the sidebar into a horizontal navbar at the bottom of the screen. Apple's software generally has a simple, minimalistic user-friendly design. We drew upon this principle and used animations to hide and show the relevant components that are activated when the user clicks an icon on the navbar. In addition, we felt it was a nice touch to incorporate the user's username in the top navbar and colour the icon when the user activated its state.
+<br> Here is a representation of this stage: 
+  
+  <p align="center">
+  <img align="center" src="supporting_images/sidebarslide.gif" width="550px">
+  </p>
+
+
+## User Search Prototype
 
 <img src="supporting_images/Filter_feature.png" width="250" align="right">
 
-The mood ratings therefore served as search categories. We also added more (optional) search criteria for increased flexibility. The image below shows the prototype plan, and the image to the right shows the final implementation.
-
+The image below shows the prototype plan, and the image to the right shows the final implementation. On a small paper prototype, the number of options can look slightly overwhelming, however this will change when on a larger screen. To get a balance between flexibility and simplicity, we made each selection optional, so the user does not have to complete each field if they would like to make a short and easy search. We wanted to use colours that followed the theme of the site. We added a white border. Also, were experimenting with the transparency and liked the look the purple being translucent, showing the map underneath. We settled on this style and applied this to all of the other components.
+<br> 
 <img src="supporting_images/Paper_prototype_search_criteria.jpeg" width="700" align="center">
+<br>
+We wanted to use colours that followed the theme of the site. We added a white border. Also, were experimenting with the transparency and liked the look the purple being translucent, showing the map underneath. We settled on this style and applied this to all of the other components. 
 
-On a small paper prototype, the number of options can look slightly overwhelming, however this will change when on a larger screen. To get a balance between flexibility and simplicity, we made each selection optional, so the user does not have to complete each field if they would like to make a short and easy search.
+## Final UI theme, and animation
 
-### On to wireframes
+We showed [this stage](#third) to Marceli, his feedback was this:
 
+  <p align="center">
+  <img align="center" src="supporting_images/marcelifeedbackani.png" width="550px">
+  </p>
+
+We implemented this animation, and then incoorpated the theme we developed for the search component to end up with the final UI: 
+
+  <p align="center">
+  <img align="center" src="supporting_images/finalui.gif" width="550px">
+  </p>
+
+## How wireframe feedback influence our UI...
 Our paper prototype served well at forming an initial visualisation of the website, and for receiving feedback on core features. In order to gain feedback more related to user experience, we needed to demonstrate the website using a closer representation of a working product. Logically, a wireframe was the next best step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/EmoteMap-prototype-2-ckn7hacvv1nm601590k9h8044/ckn7han2m109p012d8epohsri/play) or [here](https://zaki744910.invisionapp.com/console/share/NJ2D65MNBU/572059598/play) to go to our interactive wireframe. Below is a preview:
 
 <p align="center">
 <img src="supporting_images/wireframe_preview.png" width="700">
 </p>
-
+<a name="first"></a>
 Again, we shared the wireframe with friends and family, and coupled it with a questionnaire. As well as the questionnaire, we provided the ability to leave comments on the wireframe itself. One user reported that it would be useful to have a key on the map, informing the user on what coloured marker means what. As a direct response to this feedback, we implemented a key. The final version of the key can be see below (bottom), alongside the original feedback (top).
 
 <p align="center">
@@ -206,24 +257,52 @@ Another user suggested a 'welcome screen' for users not authenticated. We implem
 <img src="supporting_images/landingpopup.png" width="500">
 </p>
 
-Results of the questionnaire also showed that 80% of people thought an 'about' page would be useful for further clarification. As a response to this, we created an 'about' page, confirming what the website intends to do, and how:
+Initially, we didn't implement an 'about' page in the application. We were thinking of implementing it, so we left the 'about' text on the navbar. Results of the questionnaire also showed that 80% of people thought an 'about' page would be useful for further clarification. As a response to this, we created an 'about' page, confirming what the website intends to do, and how:
 
 <p align="center">
 <img src="supporting_images/About_page.png" width="700">
 </p>
 
 
-### Live user sessions
-
+## Live user sessions
 As our final documented method for UX improvment, we came up with an idea - a live demonstration session. The idea was to first explain the project, before handing the wireframe over to the user. We told the user to imagine that they were using the real, working app. We asked if they could talk aloud their intentions as they were navigating the website. We thought this may be helpful as it would allow us to get a better idea of how users would use our app, and also to allow discussion regarding any ideas, or suggestions they may have. From the recording that was made, we have included a section that was particularly useful for our UX development.
+<a name="second"></a>
+This user helped identify another useful feature, particularly for Sarah.
 
 <p>
 <em>
-User1: "Okay, I've just posted to say that I'm super excited to be getting my first shot of the vaccine tomorrow! Let me see who else is making EmotePosts about vaccines. [imagining] Oh wow, there are so many positive posts about vaccines. Although the UK is pretty ahead, so I guess there would be quite a few negative ones from other parts of the world."
+User1: So can I make as many posts as I want?
+
+Team member: Of course, there are no limitations in that sense.
+
+User1: Okay good, because I like to make regular updates on my social media accounts [laughs].
+
+Team member: You won't have problems here.
+
+User1: Where can I see my previous posts?
+
+Team member: Actually, you can only see them on the map right now.
+
+User1: Oh, I think it would be good to have a list somewhere. This would also help users keep track of their feelings. I know some people like to keep a diary of how they feel from day to day, this could complement something like that. I would like to have the option to delete these posts also.
+</em>
+</p>
+
+This user was perfectly right; the ability to easily track your EmotePosts is invaluable. We wanted to create a user interface that would allow a user to easily navigate through their history, and having the option to delete posts.  See below for our final version:
+
+<p align="center">
+  <img src="supporting_images/EmotePosts_history.gif" alt="animated" />
+</p>
+
+We also incorporated this idea into the search results. Initially, we planned for the search component to just display the relevant GeoJson data on the map. However, we built a search display component and incorporated it as another component on top of the map, when the search mode was activated. Please click [here](#frth) to see it in action:
+<br>
+We have also shown below a snippet from another live session with a different user.
+<p>
+<em>
+User2: "Okay, I've just posted to say that I'm super excited to be getting my first shot of the vaccine tomorrow! Let me see who else is making EmotePosts about vaccines. [imagining] Oh wow, there are so many positive posts about vaccines. Although the UK is pretty ahead, so I guess there would be quite a few negative ones from other parts of the world."
 
 Team member: "Yes, the  real working search results will show you posts from all over the world."
 
-User1: "That's really cool. How do I see where each post is from?"
+User2: "That's really cool. How do I see where each post is from?"
 
 Team member: "Good point, you can't right now, but we should include that in the post."
 
@@ -234,38 +313,10 @@ User1: "Yeah, or you could make use of the map, and have a button that locates t
 By having the user speak aloud during this exercise, it generated discussion. This was incredibly useful to do at the wireframe stage, because when using the wireframe it is difficult to get a true sense of the working product. For example, an interactive and moving map is a foundation of our application, yet the more static-like nature of a wireframe struggles to remind the user of this. Without the discussion, the user may not have had the idea of wanting to home-in on another post. This probably would have been different if the user was trialing the real product. However, our discussion, as demonstrated, proved to be helpful in identifying limitations/opportunities.
 
 A gif of the implemented home-in feature (nicknamed 'fly-in feature' by the team) can be seen below:
-
+<a name="frth"></a>
 <p align="center">
   <img src="supporting_images/Fly_feature.gif" alt="animated" />
 </p>
-
-
-We have also shown below a snippet from another live session with a different user. This user helped identify another useful feature, particularly for Sarah.
-
-<p>
-<em>
-User2: So can I make as many posts as I want?
-
-Team member: Of course, there are no limitations in that sense.
-
-User2: Okay good, because I like to make regular updates on my social media accounts [laughs].
-
-Team member: You won't have problems here.
-
-User2: Where can I see my previous posts?
-
-Team member: Actually, you can only see them on the map right now.
-
-User2: Oh, I think it would be good to have a list somewhere. This would also help users keep track of their feelings. I know some people like to keep a diary of how they feel from day to day, this could complement something like that. I would like to have the option to delete these posts also.
-</em>
-</p>
-
-This user was perfectly right; the ability to easily track your own EmotePosts is invaluable. We wanted to create a user interface that would allow a user to easily navigate through their history, and having the option to their own delete posts. See below for our final version:
-
-<p align="center">
-  <img src="supporting_images/EmotePosts_history.gif" alt="animated" />
-</p>
-
 
 
 ### Final Remarks Regarding UX
@@ -280,13 +331,5 @@ Although this is a perfectly good idea, time restrictions meant that this could 
 <p align="center">
 <img src="supporting_images/about_support.png" width="700">
 </p>
-
-
-
-[Doodle Jump]: <https://en.wikipedia.org/wiki/Doodle_Jump>
-[mapbox]: <https://www.mapbox.com/>
-[mapbox heatmap]: <https://docs.mapbox.com/mapbox-gl-js/example/heatmap-layer/>
-
-
 
 Next section; [System Implementation](sysImp.md)
