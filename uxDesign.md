@@ -108,14 +108,13 @@ At this stage, we have a basic prototype. We were getting used to Mapbox and its
 It is also worth mentioning here that after showing this version to Marceli, we received some initial criticism on the theme. He said that these colors were not appealing. He suggested that a white navbar will contrast well with the black map. So we tested it out and liked the result. Now we needed to display the form that allowed the user to make a post and display it on the map. At the start, there were several ways of design patterns we could have used. The final version was mentioned in the paper prototype above. However, there were some preliminary ideas we went through:
 
 1. Was to have the user click a button/map and have the the user route to a new age:
+2. Was to have the form slide out from the screen:
+
   <p align="center">
   <img align="center" src="supporting_images/gotonewpage.png" width="450px">
+    <img align="center" src="supporting_images/slideout.png" width="450px">
   </p>
 
-2. Was to have the form slide out from the screen:
-  <p align="center">
-  <img align="center" src="supporting_images/slideout.png" width="450px">
-  </p>
 
 We had a team meeting to discuss this, then sought the advice of one of our professors who specializes in HCI. He suggested making it playful by having the post-pop out onto the screen, we all agreed that was the best design of all three methods. So after some time experimenting with CSS on a mat-dialog component. We initially used a picker element to pick the mood, but then started experimenting with Angular's slider and liked that instead. We came up with a pop-up like this: 
 
@@ -134,6 +133,12 @@ We needed to take into consideration the needs of Christine, and to an extent, D
 - To create circle clustering, which clusters the data into bigger circles as you zoom out.
 - To tile the data onto a map.
 
+  <p align="center">
+  <img align="center" src="supporting_images/mbhp.png" width="320px">
+  <img align="center" src="supporting_images/mbc.png" width="320px">
+  <img align="center" src="supporting_images/mbt.png" width="250px">
+  </p>
+
 <br>We test out all three methods. We thought that the heatmap was the best, accurate, and easiest way to represent the mood. We assigned the same colors for the heatmap as the circles used to represent the EmotePosts. We tested out these methods on our users, and it was split between the heatmap and tiling. Also, there were a couple of ways we could represent the heatmap. 
 
 - Have a button to turn it on.
@@ -142,11 +147,9 @@ We needed to take into consideration the needs of Christine, and to an extent, D
 
 <br>We just decided to go with the third option.
 
-  <p align="center">
-  <img align="center" src="supporting_images/mbhp.png" width="320px">
-  <img align="center" src="supporting_images/mbc.png" width="320px">
-  <img align="center" src="supporting_images/mbt.png" width="250px">
-  </p>
+### User authentication and features.
+
+We now needed to design the UI for the login and signup processes, and the features available for the user when they log into the application.
 
 ### A moment of reflection
 
