@@ -89,7 +89,7 @@ From this, we went on to build the initial prototype of EmoteMap. We choose a pi
   <img align="center" src="supporting_images/orginal2.png" width="450px">
   </p>
 
-We started experimenting with Mapbox's circle markers. This was a demo provided by Mapbox and gave us an insight into how we can display different emotions on the map with varying colors. We also used [freelogodesign.org/](https://www.freelogodesign.org/), to come up with a variety of different logos to suit our application, and decided to go with the globe (we cant show below as uses black text).
+We started experimenting with Mapbox's circle markers. This was a demo provided by Mapbox and gave us an insight into how we can display different emotions on the map with varying colors (shown in the right picture). We also used [freelogodesign.org/](https://www.freelogodesign.org/), to come up with a variety of different logos to suit our application, and decided to go with the globe (we cant show below as uses black text).
 
   <p align="center">
   <img align="center" src="src/assets/logos/handslogo.png" width="250px">
@@ -97,7 +97,7 @@ We started experimenting with Mapbox's circle markers. This was a demo provided 
   <img align="center" src="src/assets/logos/treelogowhite.png" width="250px">
   </p>
 
-## Implementation of the initial search and post form.
+## Implementation of the initial search bar and post form.
 
 At this stage, we have a basic prototype. We were getting used to Mapbox and its GeoJson requirements. Before dealing with user authentication, we wanted to display GeoJson data on the map, implement a basic search filter, and allow users to post by clicking on a button, and routing users to a post page so they can make a post. Ed, suggested that we get rid of the white map, and use a black map as the contrast between pink was preferred. After some feedback from family and friends, It became obvious that the black map was preferred over this theme. This is what the application looked like after implementing those features. 
 
@@ -132,11 +132,11 @@ We needed to take into consideration the needs of Christine, and to an extent, D
 - Use Mapbox's heatmap feature, which displays the density of a specified attribute, with customizable colors.
 - To create circle clustering, which clusters the data into bigger circles as you zoom out.
 - To tile the data onto a map.
-We test out all three methods. We thought that the heatmap was the best, accurate, and easiest way to represent the mood. We assigned the same colors for the heatmap as the circles used to represent the EmotePosts. We tested out these methods on our users, and it was split between the heatmap and tiling. Also, there were a couple of ways we could represent the heatmap. 
+<br>We test out all three methods. We thought that the heatmap was the best, accurate, and easiest way to represent the mood. We assigned the same colors for the heatmap as the circles used to represent the EmotePosts. We tested out these methods on our users, and it was split between the heatmap and tiling. Also, there were a couple of ways we could represent the heatmap. 
 - Have a button to turn it on.
 - Have it on all the time as a layer on top of the circles.
 - Have it fade out and in depending on the zoom level.
-We just decided to go with the third option.
+<br>We just decided to go with the third option.
 
   <p align="center">
   <img align="center" src="supporting_images/mbhp.png" width="320px">
@@ -156,7 +156,7 @@ On a small paper prototype, the number of options can look slightly overwhelming
 
 ### On to wireframes
 
-Our paper prototype served well at forming an initial visualisation of the website, and for receiving feedback on core features. In order to gain feedback more related to user experience, we needed to demonstrate the website using a closer representation of a working product. Logically, a wireframe was the next best step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/EmoteMap-prototype-2-ckn7hacvv1nm601590k9h8044/ckn7han2m109p012d8epohsri/play) to go to our interactive wireframe. Below is a preview:
+Our paper prototype served well at forming an initial visualisation of the website, and for receiving feedback on core features. In order to gain feedback more related to user experience, we needed to demonstrate the website using a closer representation of a working product. Logically, a wireframe was the next best step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/EmoteMap-prototype-2-ckn7hacvv1nm601590k9h8044/ckn7han2m109p012d8epohsri/play) or [here](https://zaki744910.invisionapp.com/console/share/NJ2D65MNBU/572059598/play) to go to our interactive wireframe. Below is a preview:
 
 <p align="center">
 <img src="supporting_images/wireframe_preview.png" width="700">
