@@ -162,11 +162,13 @@ We now needed to design the UI for the login and signup processes. <br>
 But first, We received feedback from the users changing the icons for 'signup' and 'login' to text, as there was some issue with them navigating the application. So we made the following changes to the navbar.
 
   <p align="center">
-  <img align="center" src="supporting_images/icons.png" width="320px">
+  <img align="center" src="supporting_images/icons.png" width="500px">
   </p>
     <p align="center">
-    <img align="center" src="supporting_images/newnavbar.png" width="320px">
+    <img align="center" src="supporting_images/newnavbar.png" width="500px">
   </p>
+
+We decided that when the user clicks the text, the user will be routed to the corresponding path. Marceli recommended a great open source for [SVG images](https://undraw.co/illustrations). We picked the 'signup' SVG because it resembles a new person being welcomed into the family, and the 'login' SVG resembles one who is eager to get back to the application"
 
 ### A moment of reflection
 
