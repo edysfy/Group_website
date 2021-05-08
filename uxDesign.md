@@ -168,7 +168,13 @@ But first, We received feedback from the users changing the icons for 'signup' a
     <img align="center" src="supporting_images/newnavbar.png" width="500px">
   </p>
 
-We decided that when the user clicks the text, the user will be routed to the corresponding path. Marceli recommended a great open source for [SVG images](https://undraw.co/illustrations). We picked the 'signup' SVG because it resembles a new person being welcomed into the family, and the 'login' SVG resembles one who is eager to get back to the application"
+We decided that when the user clicks the text, the user will be routed to the corresponding path. Marceli recommended a great open source for [SVG images](https://undraw.co/illustrations). We picked the 'signup' SVG because it resembles a new person being welcomed into the family, and the 'login' SVG resembles one who is eager to get back to the application". Purple is a good secondary colour to white.
+
+  <p align="center">
+  <img align="center" src="supporting_images/singup.png" width="450px">
+  <img align="center" src="supporting_images/login.png" width="450px">
+  </p>
+
 
 ### A moment of reflection
 
