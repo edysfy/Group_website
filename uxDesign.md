@@ -116,13 +116,16 @@ It is also worth mentioning here that after showing this version to Marceli, we 
   </p>
 
 
-We had a team meeting to discuss this, then sought the advice of one of our professors who specializes in HCI. He suggested making it playful by having the post-pop out onto the screen, we all agreed that was the best design of all three methods. So after some time experimenting with CSS on a mat-dialog component. We initially used a picker element to pick the mood, but then started experimenting with Angular's slider and liked that instead. We came up with a pop-up like this: 
+We had a team meeting to discuss this, then sought the advice of one of our professors who specializes in HCI. He suggested making it playful by having the post-pop out onto the screen, we all agreed that was the best design of all three methods. So after some time experimenting with CSS on a mat-dialog component. We initially used a picker element to pick the mood, but then started experimenting with Angular's slider and liked that instead. 
+<br>
+We took a moment to reflect on our project progression in the context of our three fictional users. At this point in time, an EmotePost consisted of an keyword (e.g. lonely) and a description. We had a particular concern regarding Christina, the data analyst, as she was only able to search based on a particular emotion (amongst potentially hundreds if not thousands). Our decided improvement was to include a few more search criteria, to give her more flexibility. One addition to the EmotePosts themselves was a 'mood rating'. We proposed three categories: 'happy', 'coping' and 'sad'. If mood ratings were to be attached to each post, it would be very easy to filter them. This was simply an addition, and not a replacement of the pre-existing emotion field. We decided to keep the emotion field for the benefit of Sarah. Emotions are complex, and we thought it would be undermining for example to only give the user the ability to select 'sad', when really they are feeling either depressed, anxious, or lonely. <br> 
+We came up with a pop-up like this: 
 
   <p align="center">
   <img align="center" src="supporting_images/postform.png" width="450px">
   </p>
 
-This post form didn't change much, it had all the requirements to fulfill their need that was specified above. The user can enter their mood type, keyword, and journal entry. We did make a small change to this later. We didn't want to display a number (3 being sad to 1 being happy) to represent the mood on the form. Instead of showing numbers, we mapped it with the text, 'happy', 'coping', and 'sad'. At this state we decided to use circles to represent the posts on the map, with 'blue'='happy', 'yellow'='coping', 'red'='sad'. 
+This post form didn't change much, though we did make a small change to this later. We didn't want to display a number (3 being sad to 1 being happy) to represent the mood on the form. Instead of showing numbers, we mapped it with the text, 'happy', 'coping', and 'sad'. 
 
 ## The heatmap
 
