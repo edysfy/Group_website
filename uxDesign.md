@@ -83,7 +83,6 @@ Overall, we were pleased with how useful the paper prototype approach was. Despi
 
 From this, we went on to build the initial prototype of EmoteMap. We choose a pink and blue theme because members of our team believed it represented the ethos of EmoteMap, as pink can be an emotional color, and we included the icons for 'about', 'login', and the title 'about'. Initially, this has no functionality and was just a way for us to see the initial vision of EmoteMap coming into existence. 
 
-
   <p align="center">
   <img align="center" src="supporting_images/orig.png" width="450px">
   <img align="center" src="supporting_images/orginal2.png" width="450px">
@@ -129,7 +128,10 @@ This post form didn't change much, though we did make a small change to this lat
 
 ### Displaying EmotePosts
 
-It was obvious to us from the start that we needed use the GeoJson data created from the form above and display it on the map visually through using a marker. There were two options we thought of.  Using a marker pin, like in google maps, or using svg circles. The markers (like the blue one in the pink themed screenshot) just felt to clunky, so we decided to use the circles. Mapbox also comes with a hover event feature, we used this to display a pop-up that contained the EmotePost data when a user hovers of a marker with their mouse. After feedback Zaki received from some users, we decided to mapped each emotion with a corresponding colour. Happy => Blue , Coping => Yellow, Sad => Red.
+It was obvious to us from the start that we needed use the GeoJson data created from the form above and display it on the map visually through using a marker. There were two options we thought of.  Using a marker pin, like in google maps, or using svg circles. The markers (like the blue one in the pink themed screenshot) just felt to clunky, so we decided to use the circles. Mapbox also comes with a hover event feature, we used this to display a pop-up that contained the EmotePost data when a user hovers of a marker with their mouse. After feedback Zaki received from some users, we decided to mapped each emotion with a corresponding colour. <br>
+- Happy => Blue 
+- Coping => Yellow, 
+- Sad => Red.
 
 ## The heatmap
 
@@ -152,17 +154,19 @@ We needed to take into consideration the needs of Christine, and to an extent, D
 - Have it on all the time as a layer on top of the circles.
 - Have it fade out and in depending on the zoom level.
 
-<br>We just decided to go with the third option.
+We just decided to go with the third option.
 
 ### User authentication and features.
 
-We now needed to design the UI for the login and signup processes. We recievied feedback from the users changing the icons for 'signup' and 'login' to text, as there was some issued with them nagivating the application.
+We now needed to design the UI for the login and signup processes. <br>
+But first, We received feedback from the users changing the icons for 'signup' and 'login' to text, as there was some issue with them navigating the application. So we made the following changes to the navbar.
 
-  <!-- <p align="center">
-  <img align="center" src="supporting_images/mbhp.png" width="320px">
-  <img align="center" src="supporting_images/mbc.png" width="320px">
-  <img align="center" src="supporting_images/mbt.png" width="250px">
-  </p> -->
+  <p align="center">
+  <img align="center" src="supporting_images/icons.png" width="320px">
+  </p>
+    <p align="center">
+    <img align="center" src="supporting_images/newnavbar.png" width="320px">
+  </p>
 
 ### A moment of reflection
 
@@ -252,11 +256,11 @@ User2: Where can I see my previous posts?
 
 Team member: Actually, you can only see them on the map right now.
 
-User2: Oh, I think it would be good to have a list somewhere. This would also help users keep track of their feelings. I know some people like to keep a diary of how they feel from day to day, this could complement something like that.
+User2: Oh, I think it would be good to have a list somewhere. This would also help users keep track of their feelings. I know some people like to keep a diary of how they feel from day to day, this could complement something like that. I would like to have the option to delete these posts also.
 </em>
 </p>
 
-This user was perfectly right; the ability to easily track your own EmotePosts is invaluable. We wanted to create a user interface that would allow a user to easily navigate through their history. See below for our final version:
+This user was perfectly right; the ability to easily track your own EmotePosts is invaluable. We wanted to create a user interface that would allow a user to easily navigate through their history, and having the option to their own delete posts. See below for our final version:
 
 <p align="center">
   <img src="supporting_images/EmotePosts_history.gif" alt="animated" />
@@ -265,7 +269,7 @@ This user was perfectly right; the ability to easily track your own EmotePosts i
 
 
 ### Final Remarks Regarding UX
-Our two characters served as both inspiration and guidance for the initial key features of our application. User feedback proved to highlight useful features that certainly contributed to an improved user experience. It should be noted. however, that not all feedback was acted on. The reason for this was not because we disagreed, but because it was far beyond the scope of our project at this current time (MENTION THAT WE WILL TALK ABOUT THIS MORE IN PROJECT EXTENSION IDEAS PART). Nevertheless, feedback of this nature sometimes inspired us to implement a user's idea slightly differently to what was intended. We will finish this section with an example of this. See below for a user's suggestion:
+Our three characters served as both inspiration and guidance for the initial key features of our application. User feedback proved to highlight useful features that certainly contributed to an improved user experience. It should be noted. however, that not all feedback was acted on. The reason for this was not because we disagreed, but because it was far beyond the scope of our project at this current time (MENTION THAT WE WILL TALK ABOUT THIS MORE IN PROJECT EXTENSION IDEAS PART). Nevertheless, feedback of this nature sometimes inspired us to implement a user's idea slightly differently to what was intended. We will finish this section with an example of this. See below for a user's suggestion:
 
 <p align="center">
 <img src="supporting_images/therapist_feedback.png" width="700">
