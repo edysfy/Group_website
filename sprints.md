@@ -110,6 +110,10 @@ Its also worth mentioning the disadvantages we discovered while using this this 
 
 <a name="second"></a>
 
+  <p align="center">
+  <img src="supporting_images/download-1.png" width="550px">
+  </p>
+
 ## Discussion of team roles
 
 Specialisation and utilising individual's strengths is an extremely important part in getting the best out of a team. For this reason we decided to discuss team roles early on. Our team was made up from a variety of different academic backgrounds, from anthropology to engineering, with some members strengths leaning towards the numerical and logic side of the spectrum and others in the direction of research and writing. These factors along with personal preference and discussion guided use towards choosing our individual roles. Although we agreed these roles would be flexible where need be, we felt it made sense to specialise early as to not waste time researching areas that could be covered by other members. This was a tactical decision as given the time constraints it was unrealistic for all members to learn the full stack.
@@ -320,7 +324,7 @@ We also finally implemented a user-post component, which allows new data to be a
   <th>Solution</th>
 </tr>
 <tr>
-  <td>Login Route API/td>
+  <td>Login Route API</td>
   <td>Sarah forgot here password when creating an account, so she had two accounts with the same username stored in our database</td>
   <td>Initially we had it so one the user only had to type their password once when registering. They might have made a typo, and now their password is forgotten. They could also create a user with the same username. However, this is bad as we want each user to have a unique username</td>
   <td>Set up the API so mongoDb makes sure every username in unque in the database. Added a re-type password on the front end to ensure the user enters the correct password</td>
