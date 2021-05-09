@@ -96,11 +96,17 @@ Aside from the data analyist, the primary stakeholder we considered in our proje
 
 This flexible but clearly defined process of developing, evaluating then setting out goals provided the following benefits:
 
-- **Each element of functionality well designed:** Every time a new feature was implemented it was thoroughly reviewed by both the group and end users before it could be finalised. It required us to make small commits, to ensure the code worked and was well tested thoroughly. This meant that every feature of the end product was well thought out and user approved.  
+- **Each element of functionality well designed and had room for improvements:** Every time a new feature was implemented it was thoroughly reviewed by both the group and end users before it could be finalised. It required us to make small commits, to ensure the code worked and was well tested thoroughly. This meant that every feature of the end product was well thought out and user approved. 
 
 - **Encouraged regular more productive meetups:** Given the time constraints from both the project deadline and work from other modules, it was important to keep meetings productive and not get sidetracked. Basing design decisions heavily on user feedback meant every video call had a purpose. Agile development hinders on "Face-Face" communication. Fresh user feedback and having each individually reviewed the relevant features before each meeting meant there was always useful content to be discussed. From the start of the sprints, we set up biweekly meetings. We would have the meetings at the end of the Group Project's lectures. Initially, this enabled us to, implement the advice given by our professors and ask them questions in our meeting room. Also, felt this was a good time to have these meetings because the content was fresh in our minds. We easily come up with suggestions of how to proceed with the rest of the week, while being influenced by the structure the module was taught. These meetings have us a time to look back and reflect upon our progress, identify weaknesses and issues within the project, allow team members to voice their opinion and offer suggestions, and set goals for the remaining week or until the next meeting. We set agenda for the next meeting. If we felt they were no important issues or change in our project, we would decide not to meet until the next scrum.
 
 - **Avoids final product being unfinished / not user friendly:** Constant feature creation and reviewal meant at each stage we added fully functional features. Working on smaller goals as opposed to thinking of the final product and having a lot of features as a work in progress meant we had a better idea of realistic time frames. This allowed us to know what features we would be able to implement in the limited time frame. This meant we didn't become over ambitious and end up getting to the hand in date with an unfinished product. Working on smaller, well refined and fully functional features also meant if we did run out of time we would still have something to show for our work. 
+
+Its also worth mentioning the disadvantages we discovered while using this this method:
+
+- **long development time:** Occasionally some components would take a while to develop. After an interaction, user feedback was not instant, meaning we had to move onto other aspects of the software.
+
+- **No structure to the project:**  There were times where we were unsure when the project will finish. If we used a more rigid method, we could set this time for ourselves. However, iterations were unpredictable. This did cause some anxiety in the project. A large chunk of your project is dependent on an external partner/client. That brings a sense of unpredictability.
 
 <a name="second"></a>
 
@@ -391,7 +397,9 @@ Most of our communication at this stage was through our discord chat, where we w
 
 Most of our time for this sprint was spent writing, though again we also spent some time formatting and designing our report, and making UX design changes - for example we changed our login buttons to text instead of icons, as our feedback suggested that users found where to login unclear.
 
-
+  <p align="center">
+  <img src="supporting_images/github.jpg" width="450px">
+  </p>
 
 <a name="fourth"></a>
 ## Team use of Git, how our team used continuous integration / continuous deployment.
