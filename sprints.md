@@ -96,13 +96,23 @@ Aside from the data analyist, the primary stakeholder we considered in our proje
 
 This flexible but clearly defined process of developing, evaluating then setting out goals provided the following benefits:
 
-- **Each element of functionality well designed:** Every time a new feature was implemented it was thoroughly reviewed by both the group and end users before it could be finalised. It required us to make small commits, to ensure the code worked and was well tested thoroughly. This meant that every feature of the end product was well thought out and user approved.  
+- **Each element of functionality well designed and had room for improvements:** Every time a new feature was implemented it was thoroughly reviewed by both the group and end users before it could be finalised. It required us to make small commits, to ensure the code worked and was well tested thoroughly. This meant that every feature of the end product was well thought out and user approved. 
 
 - **Encouraged regular more productive meetups:** Given the time constraints from both the project deadline and work from other modules, it was important to keep meetings productive and not get sidetracked. Basing design decisions heavily on user feedback meant every video call had a purpose. Agile development hinders on "Face-Face" communication. Fresh user feedback and having each individually reviewed the relevant features before each meeting meant there was always useful content to be discussed. From the start of the sprints, we set up biweekly meetings. We would have the meetings at the end of the Group Project's lectures. Initially, this enabled us to, implement the advice given by our professors and ask them questions in our meeting room. Also, felt this was a good time to have these meetings because the content was fresh in our minds. We easily come up with suggestions of how to proceed with the rest of the week, while being influenced by the structure the module was taught. These meetings have us a time to look back and reflect upon our progress, identify weaknesses and issues within the project, allow team members to voice their opinion and offer suggestions, and set goals for the remaining week or until the next meeting. We set agenda for the next meeting. If we felt they were no important issues or change in our project, we would decide not to meet until the next scrum.
 
 - **Avoids final product being unfinished / not user friendly:** Constant feature creation and reviewal meant at each stage we added fully functional features. Working on smaller goals as opposed to thinking of the final product and having a lot of features as a work in progress meant we had a better idea of realistic time frames. This allowed us to know what features we would be able to implement in the limited time frame. This meant we didn't become over ambitious and end up getting to the hand in date with an unfinished product. Working on smaller, well refined and fully functional features also meant if we did run out of time we would still have something to show for our work. 
 
+Its also worth mentioning the disadvantages we discovered while using this this method:
+
+- **long development time:** Occasionally some components would take a while to develop. After an interaction, user feedback was not instant, meaning we had to move onto other aspects of the software.
+
+- **No structure to the project:**  There were times where we were unsure when the project will finish. If we used a more rigid method, we could set this time for ourselves. However, iterations were unpredictable. This did cause some anxiety in the project. A large chunk of your project is dependent on an external partner/client. That brings a sense of unpredictability.
+
 <a name="second"></a>
+
+  <p align="center">
+  <img src="supporting_images/download-1.png" width="550px">
+  </p>
 
 ## Discussion of team roles
 
@@ -118,7 +128,7 @@ The other role I fulfilled was project management, both on a coding and teamwork
 
 ### Alfie
 
-Along with contributing to the writeup, my primary focus was on the backend of the website, most notably working with mongoDB. When we initially got our map working we used some example data from a https link provided by mapbox. I downloaded the example data to our project file and served it from there. After having done this I then set up a mongoDB account and imported the example data and then served our data from mongoDB. From here on I worked under Hari on the backend.
+Along with contributing to the sprints section of the write up, my primary focus was on the backend of the website, most notably working with mongoDB. When we initially got our map working we used some example data from a https link provided by mapbox. I downloaded the example data to our project file and served it from there. After having done this I then set up new MongoDb account and help Hari on the backend.
 
 One other feature I implemented was the frontend component of the basic search bar. This allowed non-authenicated users to enter a keyword and all posts featuring something similar to the entered keyword would be logged to the console. This however was scrapped, as we made a complex search feature for authenticated users only. 
 
@@ -152,7 +162,11 @@ The game intention of this game was to be addictive, fun and educational.
 
 **EmoteMap:** A geographical diary where users can post diary entries which include their current location. Users can then look on the map at their archived posts and see how they were feeling in certain locations. This website idea aims to help users track and improve upon their mental wellbeing.
 
-A lot of time was spent discussing which project idea to use. The idea needed to be useful, original and also fit the brief. We decided that although we felt all the ideas were good, EmoteMap addressed the particularly relevant issue of mental health and isolation. COVID-19 has left many people isolated and struggling to cope with ongoing lockdowns. We decided to use the geographical diary element from the EmoteMap idea but make it so posts can be seen by other users online, making users feel less isolated and more connected. All group members agreed this idea had great potential and decided to finalise this as our project idea.
+A lot of time was spent discussing which project idea to use. The idea needed to be useful, original and also fit the brief. We decided that although we felt all the ideas were good, EmoteMap addressed the particularly relevant issue of mental health and isolation. COVID-19 has left many people isolated and struggling to cope with ongoing lockdowns. 
+
+<p align="center">
+<img src="supporting_images/agile-elearning-course-design-a-step-by-step-guide-for-elearning-professionals.jpg" width="450px">
+</p>
 
 ## Sprints
 
@@ -173,13 +187,12 @@ After having got to grips with the brief and decided on an idea, this sprint was
 * Conduct user survey using paper prototype
 * Set up a github repository
 
+
 This sprint mainly involved discussing what features our website should have and roughly how they might be implimented. We all agreed the webpage's focal point would be a world map in which user posts can be seen and would appear as a heatmap in different colours depending on the mood rating of the post. We also discussed other features such as account creation and post filtering. Being unsure how complex it would be to implement the map we chose to leave these features until after we had implemented the map and posts.
 
-There were some different opinions among the group regarding how the website should be laid-out. Some felt that the login bar should slide in from the side and others felt that a whole new page should open. We decided to draw up paper prototype (see our [UX Design](uxDesign.md) document) of both of these cases and conduct a user study to decide. We wanted our product to be as user driven as possible so getting user feedback early on was crucial. One of our professors also mentioned that having the applicatoin being as unique as possible is must. We mention that idea of routing the user to a new page when they were to make post
+There were some different opinions among the group regarding how the website should be laid-out. Some felt that the login bar should slide in from the side and others felt that a whole new page should open. We decided to draw up paper prototype (see our [UX Design](uxDesign.md) document) of both of these cases and conduct a user study to decide. We wanted our product to be as user driven as possible so getting user feedback early on was crucial. One of our professors also mentioned that having the application being as unique as possible is must. We mention that idea of routing the user to a new page when they were to make post
 
 As well as discussing project ideas this period was used to get familiar with the tech stack we were going to be using and github. We each watched the lectures on Angular and github, set up a shared github repository and got familiar with its protocols by making a few pushes and pulls. Although we intended to specialise into certain areas later on, we all got familiar with the frontend and Angular so further down the line it would be possible to be more flexible if required.
-
-
 
 ## Sprint 2: Work on feedback + find suitable API
 
@@ -204,7 +217,8 @@ With group members now familiar with Angular and Github we began adding basic, p
 
 After some research it was apparent that mapbox provided all the functionality we required, with us choosing it over google maps because of its open source nature and large number of styling options, allowing us to more readily make changes as the project developed. Initially, we simply got a basic map to display along with the aforementioned navbar, as at this stage we were still familiarising ourselves with the mapbox api.
 
-At this point in the project we were intending to use this template data from one of the examples from the documentation (the extensive examples being another reason we chose the mapbox api) in our final product as it showcased how our site would look once many posts had been made. With fairly big steps made towards how we would like the finished project to look aesthetically we were now ready to start adding in some of the websites key functionality!
+At this point in the project we were intending to use this template data from one of the examples from the documentation (the extensive examples being another reason we chose the mapbox api) in our final product as it showcased how our site would look once many posts had been made. With fairly big steps made towards how we would like the finished project to look aesthetically we were now ready to start adding in some of the websites key functionality! 
+
 
 ### Key implementation issues found:
 <table>
@@ -216,7 +230,7 @@ At this point in the project we were intending to use this template data from on
 </tr>
 <tr>
   <td>Front End</td>
-  <td>User can interact with a navbar and have clear view of the map interface</td>
+  <td> Sarah said she can now see how I can post my emotions on the App! Hurry up please as I cant use it yet. I need to connect with others and see how others are doing.</td>
   <td>navbar and mapbox component were not interacting nicely, with strange scrolling issues panning around the map</td>
   <td>implement routing using angular so that instead of the toolbar and the map being in the mapbox html, the mapbox is loaded from `app.component.html` using a router outlet </td>
 </tr>
@@ -227,13 +241,13 @@ At this point in the project we were intending to use this template data from on
 
 [11th Mar - 27th Mar]
 
-At this stage of the project is where we began to implement the key features that we would need later for collecting and sending information to and from the backend; we added what would become `geopost.js`. On the backend, we began building the mongo schemas that we would require to store our post data in later stages. At this point is also when we established a test process involving docker to facilitate continuous integration. We also began collecting user feedback on our intial boilerpate website.
+At this stage of the project is where we began to implement the key features that we would need later for collecting and sending information to and from the backend; we built what would become `geopost.js`. On the backend, we began building the mongo schemas that we would require to store our post data in later stages. At this point is also when we established a test process involving docker to facilitate continuous integration. We also began collecting user feedback on our initial boilerplate website.
 
 ### Meeting log:
 
-**[11th Mar]** - At this meeting the whole team was present, and we decided use the time to designate key tasks to achieve the key features for the website. One member was allocated the task of conducting a user survey using the wire frames they had put together in the previous sprint (Zaki). The rest of the team was split into two working pairs, 2 on the front end (Ed and Tarn) and 2 on back end (Hari and Alfie). The two on the front end were tasked with integrating a mapbox example from the documentation.
+**[11th Mar]** - At this meeting the whole team was present, and we decided use the time to designate key tasks to achieve the key features for the website. One member was allocated the task of conducting a user survey using the wire frames they had put together in the previous sprint (Zaki). The rest of the team was split into two working pairs, 2 on the front end (Ed and Tarn) and 2 on back end (Hari and Alfie). The two on the front end were tasked with integrating a mapbox example from the documentation. 
 
-**[22nd Mar] (Back end specifically)** - The two team members working on the backend (Alfie and Hari) decided to have a meeting to discuss which portions of the backend each would work on. It was decided that Alfie would work towards getting the example data to be served from a local file and Hari would put together some mongo schemas and look into mongoDB and how we would store the geoJSON data required.
+**[22nd Mar] (Back end specifically)** -  The two team members working on the backend (Alfie and Hari) decided to have a meeting to discuss which portions of the backend each would work on. It was decided that Alfie would work towards getting the example data to be served from a local file and Hari would put together the Mongo Schemas, look into MongoDB and Mongoose, and how we would store the geoJSON data required. Here we discussed how we needed to connect MongoDb to our API, and define routes relevant to posts, and fetching GeoJson data from the front end.
 
 ### Sprint aims we decided on for this period:
 
@@ -242,10 +256,19 @@ At this stage of the project is where we began to implement the key features tha
 * Build Data Model (user, post) + set up mongo schemas
 * Implementing docker functionality for continuous integration
 * Began to implement mapbox heat map example
+* Build out the EmotePost feature
 
-This api was initially set up to just return static dummy data - a geoJSON file containing earthquake data from an example in the mapbox api documentation. We then implemented a heatmap template from the mapbox documentation, to both test the api was correctly returning data but also as a base to build off when we add in our own data in later stages; we wanted a heatmap like effect for users emotions rather than earthquake magnitudes!
+The Geopost.js route was initially set up to just serve static dummy data - a geoJSON file containing earthquake data from an example in the mapbox api documentation, to the front-end. We then implemented a heatmap template from the mapbox documentation, to both test the api was correctly returning data but also as a base to build off when we add in our own data in later stages; we wanted a heatmap like effect for users emotions rather than earthquake magnitudes! 
 
-We used this template to help define and develop our `geoJSON.js` mongo schema; i.e. a data structure that all user posts would follow, including a mood rating, keyword and an explanation (and eventually the username and date/time). We made sure this integrated with our data model of the application [REFERENCE DATA MODEL]. Over the rest of this sprint we also developed a model for the purpose of eventually adding user profiles to the website if time permits; our `user.js` model.
+Upon having a team conversation with Marceli, it was recommended that we look into Mongoose as an Object Document Manager to make our lives easier and save time.
+After some research, we decided to use Mongoose as the middleman between incoming/outgoing HTTP requests/responses between the API and our database.
+The syntax of Mongoose was a lot simpler than raw MongoDb, and it was the right decision as we were able to build the data models in a shorter time.
+Mongoose models are a lot easier to initialize as they are capable of setting up default values automatically, and makes it easy to validate the data with simple commands.
+MongoDB is inherently schema-less, however, Mongoose allows the developer to define schemas for their data type. This was used fully at the start as we were able quickly, prototype our data models on the backend. Queries are a lot easier to deal with as they allow functions to chain onto the Model and don't require the embedded mnemonics that MongoDb requires so the developer experience was a lot smoother. This is akin to comparing using C to using Python. While C is more efficient and allows more room for flexibility in our code, Python provides a layer of abstraction that makes it a lot easier for scripting and experimenting with abstract ideas.
+
+We used mongoose dummy GeoJson and the to help define and develop our `geoJSON.js` mongo schema; i.e. a data structure that all user posts would follow, including a mood rating, keyword and an explanation (and eventually the username and date/time). We made sure this integrated with our data model of the application. Over the rest of this sprint we also developed a model for the purpose of eventually adding user profiles to the website if time permits; our `user.js` model, and we built the functions in the corresponding route's functionality, to process user authentication. We experimented with the models by building multiple Entity-Relationship-Diagrams. We then decided we need this route to also handle post requests from the front-end and store the data in the database. We used the Mongoose Models to design the routes.
+
+On the front end we also need to build the forms that allows the user to post. We decided that the user would click the on a button and the form component will render, saving the users coordinates, so when they post the pin with be saved at their location on the map.
 
 As the complexity of our project began to grow we decided to implement a test process before each git commit and push, to ensure any local changes made did not break the website, which helped facilitate continuous integration as we were constantly compiling and testing our website after changes, and could be confident that code on the live repository was stable. See [our test plan](test_plan.txt) on our repository for details of this testing process.
 
@@ -260,19 +283,17 @@ As the complexity of our project began to grow we decided to implement a test pr
 </tr>
 <tr>
   <td>Api/Express</td>
-  <td>The user will eventually be able to see up to date data on displayed on the map and can add to that data by making a post </td>
-  <td>Intially the api returned a url to some data - however whilst we were exploring how to implement our backend, we discovered that this would add uneccessary processing time and be difficult to update with live data; we would have to transfer data from the database into another server, essentially having to call http fetch requests twice, and requiring a refresh to update the data </td>
-  <td>We decided to return an array of geoJSON objects from the api (also supported by mapbox), which would allow us to easily update and manipulate the data in memory by using our post-service to send the data to different components, manipulate the array, and eventually send information to the database, and reduce http get and post requests</td>
+  <td> Sarah will eventually be able to see up to date data on displayed on the map and can add to that data by making a post </td>
+  <td>Initially the api returned a url to some data - however whilst we were exploring how to implement our backend, we discovered that serving GeoJson data statically from a external URL source would add uneccessary processing time and be difficult to update with live data; we would have to transfer data from the database into another server, essentially having to call http fetch requests twice, and requiring a refresh to update the data </td>
+  <td>We decided to return an array of geoJSON objects from the api (also supported by mapbox), which would allow us to easily update and manipulate the data in memory by using our post-service to send the data to different components, manipulate the array, and eventually send information to the database, and reduce http get and post requests. We defined GeoJson interface on the front end, and used this to convert the data from the backend into GeoJson objects and store that in an array.</td>
 </tr>
 </table>
 
-
-
-## Sprint 4: Set up mongoDB and import dummy data + user authentification
+## Sprint 4: Set up mongoDB and import dummy data + user authentication
 
 [28th mar - 10th apr]
 
-This sprint was where we finally began to pull together the disperate elements of the website; our aims involved connecting the data fetching service to a function backend using mondoDB, instead of just returning static template data. This is where we also wanted to begin implementing some user feedback based off user questionnaires centred around our initial mockup. We also set a stretch goal of actually adding a user profile, rather than have the posts be completely anonymous.
+This sprint was where we finally began to pull together the disperate elements of the website; our aims involved connecting the data fetching service to a function backend using HTTP client in Angular, instead of just returning static template data. This is where we also wanted to begin implementing some user feedback based off user questionnaires centred around our initial mockup. We also set a stretch goal of actually adding a user profile, rather than have the posts be completely anonymous.
 
 ### Meeting log:
 
@@ -282,23 +303,17 @@ This sprint was where we finally began to pull together the disperate elements o
 
 ### Our agreed goals for this period were;
 
-* Connect mondoDB (mongoose) to front end (so the front end is fetching data from our database)
 * Add the functionality make posts (i.e. sending data to the front end)
 * Begin implementing feedback from user study and from lecturers
 * Finalize key mapbox api functionality (pop ups when hovering over a point on the map)
+* Add heatmap to the map
 * If time permits, add users to the database as well
-
-Upon having a team conversation with Marceli, it was recommended that we look into Mongoose as an Object Document Manager to make our lives easier and save time.
-After some research, we decided to use Mongoose as the middleman between incoming/outgoing HTTP requests/responses between the API and our database.
-The syntax of Mongoose was a lot simpler than raw MongoDb, and it was the right decision as we were able to build the data models in a shorter time.
-Mongoose models are a lot easier to initialize as they are capable of setting up default values automatically, and makes it easy to validate the data with simple commands.
-MongoDB is inherently schema-less, however, Mongoose allows the developer to define schemas for their data type. This was used fully at the start as we were able quickly, prototype our data models on the backend, building on the schemas developed in sprint 3. Queries are a lot easier to deal with as they allow functions to chain onto the Model and don't require the embedded mnemonics that MongoDb requires so the developer experience was a lot smoother. This is akin to comparing using C to using Python. While C is more efficient and allows more room for flexibility in our code, Python provides a layer of abstraction that makes it a lot easier for scripting and experimenting with abstract ideas.
 
 To implement displaying the post data when a user hovers over a data point on the map required the use of a couple of the features of the mapbox api. Foremost was labeling the map marker layer with the interactive tag; `this.map.addLayer({ id: 'markers', interactive: true, .....})`. This allows the layer to be interacted with through mouse events. We first had the popup be triggered by clicking on the point, but decided it would be more intuitive for it to appear on a mouse hover; we made use of mapbox's `this.map.on('mouseenter', 'markers', (e)....` command to trigger mapbox's pop up feature, which then displays the data points geoJSON properties - which we are fetching from mondoDB as discussed above.
 
 From our user feedback it was clear that first time users struggled to grasp the point of the website, and in fact some suggested we add a section to explain the site; so we did exactly that! We added an "about" component and a link in the toolbar that users could click through to, to learn more about the website. We also changed our colour scheme to a white toolbar on a black map, rather than pink on white, from feedback from our lecturers, and to make more clear the colourful data points on the map (the colours constrasted the black map far more than the white )
 
-We also finally implemented a user-post component, which allows new data to be added to website; this component makes use of angular forms to collect inputted data, which we then transform into geoJSON format using our post-service, to be added to our database. As we had time at the end of this sprint, we also began to add in actual user functionality to the website, along with the `userpost.js` api to enable this - the sign up/login buttons on the navbar where changed to actually route through to signup/login pages, which also use angular forms to collect user input and add new users to the database/verify users who are logging in.
+We also finally implemented a user-post component, which allows new data to be added to website; this component makes use of angular forms to collect inputted data, which we then transform into geoJSON format using our post-service, to be added to our database. As we had time at the end of this sprint, we also began to add in actual user functionality to the website, along with the `user.js` route to enable this - the sign up/login buttons on the navbar where changed to actually route through to signup/login pages, which also use angular forms to collect user input and add new users to the database/verify users who are logging in.
 
 ### Key implementation issues found:
 <table>
@@ -309,16 +324,16 @@ We also finally implemented a user-post component, which allows new data to be a
   <th>Solution</th>
 </tr>
 <tr>
-  <td>MongoDB</td>
-  <td>NEEDS FILLING IN</td>
-  <td>NEEDS FILLING IN</td>
-  <td>NEEDS FILLING IN</td>
+  <td>Login Route API</td>
+  <td>Sarah forgot here password when creating an account, so she had two accounts with the same username stored in our database</td>
+  <td>Initially we had it so one the user only had to type their password once when registering. They might have made a typo, and now their password is forgotten. They could also create a user with the same username. However, this is bad as we want each user to have a unique username</td>
+  <td>Set up the API so mongoDb makes sure every username in unque in the database. Added a re-type password on the front end to ensure the user enters the correct password</td>
 </tr>
 <tr>
   <td>Mapbox</td>
-  <td>User can hover over points on the map to see more detail, and can create their own posts to add to the map</td>
-  <td>Issues with correctly loading data from the database as opposed to static file</td>
-  <td>Mapbox had issues with calling the data directly from the database, so we implemented a geoJSON model which transformed the data from mongo into an object in memory that mapbox could correctly access </td>
+  <td>User can hover over points on the map to see more detail, and can create their own posts to add to the map. Christina can now view the heatmap to see the spread of emotions.</td>
+  <td>Initially we had the users click on the marker, however this made the pop-up freeze</td>
+  <td>changed it to mapbox hover feature</td>
 </tr>
 </table>
 
@@ -360,9 +375,9 @@ As the website was nearing completion, we carried out a further round of user qu
 </tr>
 <tr>
   <td>Back-end</td>
-  <td>NEEDS FILLING IN</td>
-  <td>NEEDS FILLING IN</td>
-  <td>NEEDS FILLING IN</td>
+  <td>Sarah's age and birthday were not set, however her posts were appearing in the search</td>
+  <td>The issue was that our search route was sending values that were null from the database for age an gender in the search component</td>
+  <td>We made sure that the api filtered out these result to give a more accurate search result for the end user</td>
 </tr>
 <tr>
   <td>front-end</td>
@@ -391,7 +406,9 @@ Most of our communication at this stage was through our discord chat, where we w
 
 Most of our time for this sprint was spent writing, though again we also spent some time formatting and designing our report, and making UX design changes - for example we changed our login buttons to text instead of icons, as our feedback suggested that users found where to login unclear.
 
-
+  <p align="center">
+  <img src="supporting_images/github.jpg" width="450px">
+  </p>
 
 <a name="fourth"></a>
 ## Team use of Git, how our team used continuous integration / continuous deployment.

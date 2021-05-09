@@ -160,7 +160,7 @@ We just decided to go with the third option.
 
 ## User authentication and features.
 
-We now needed to design the UI for the login and signup processes. <br><br>
+We needed to design the UI for the login and signup processes. <br><br>
 But first, We received feedback from the users changing the icons for 'signup' and 'login' to text, as there was some issue with them navigating the application. So we made the following changes to the navbar.
 
   <p align="center">
@@ -170,7 +170,7 @@ But first, We received feedback from the users changing the icons for 'signup' a
     <img align="center" src="supporting_images/newnavbar.png" width="550px">
   </p>
 
-We decided that when the user clicks the text, the user will be routed to the corresponding path. Marceli recommended a great open source for [SVG images](https://undraw.co/illustrations). We picked the 'signup' SVG because it resembles a new person being welcomed into the family, and the 'login' SVG resembles one who is eager to get back to the application". Purple is a good secondary colour to white, and we want add some extra flair with CSS, so when they user hovers over the form it creates a black shadow.
+We decided that when the user clicks the text, the user will be routed to the corresponding path. Initially, we had idea's of having the login/signup components, slide into the map. However, we thought it was best to route the users to a different page. Marceli recommended a great open source for [SVG images](https://undraw.co/illustrations). We picked the 'signup' SVG because it resembles a new person being welcomed into the family, and the 'login' SVG resembles one who is eager to get back to the application". Purple is a good secondary colour to white, and we want add some extra flair with CSS, so when they user hovers over the form it creates a black shadow.
 
   <p align="center">
   <img align="center" src="supporting_images/singup.png" width="500px">
@@ -232,15 +232,16 @@ We implemented this animation, and then [incoorpated the theme we developed for 
   <img align="center" src="supporting_images/finalui.gif" width="550px">
   </p>
 
-## How wireframe feedback influence our UI...
+## How the wireframe feedback influenced our UI...
 Our paper prototype served well at forming an initial visualisation of the website, and for receiving feedback on core features. In order to gain feedback more related to user experience, we needed to demonstrate the website using a closer representation of a working product. Logically, a wireframe was the next best step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/EmoteMap-prototype-2-ckn7hacvv1nm601590k9h8044/ckn7han2m109p012d8epohsri/play) or [here](https://zaki744910.invisionapp.com/console/share/NJ2D65MNBU/572059598/play) to go to our interactive wireframe. Below is a preview:
 
 <p align="center">
 <img src="supporting_images/wireframe_preview.png" width="700">
 </p>
 <a name="first"></a>
+<br>
 Again, we shared the wireframe with friends and family, and coupled it with a questionnaire. As well as the questionnaire, we provided the ability to leave comments on the wireframe itself. One user reported that it would be useful to have a key on the map, informing the user on what coloured marker means what. As a direct response to this feedback, we implemented a key. The final version of the key can be see below (bottom), alongside the original feedback (top). <br>
-
+<br>
 <p align="center">
 <img src="supporting_images/Wireframe_with_feedback.png" width="500">
 <img src="supporting_images/key.png" width="500">
@@ -320,8 +321,17 @@ A gif of the implemented home-in feature (nicknamed 'fly-in feature' by the team
   <img src="supporting_images/Fly_feature.gif" alt="animated" />
 </p>
 
+## Summary of Design Heuristics used:
 
-### Final Remarks Regarding UX
+- ***Matched the system and the real world:*** <br> We made sure that the UX was easy for the user to comprehend. Ie displaying text, in place of an integer, for the mood. Also, by not using any error codes on the UI, we converted these errors so they are human readable. 
+- ***Error Prevention:*** <br> We sent errors back to the user on the forms to ensure incompatible/null data wasn't submitted. Also, we sent errors when the username and password values in the registration forms were invalid.
+- ***Help users recognize, diagnose, and recover from errors:*** <br> We made sure to not use any error codes on the UI, we converted these errors to desctiptive senteacnes so they are human readable. 
+- ***Recognition rather than recall:*** <br> We ensured the user could just recognize functions in the UI instead of having to recall them from previous use. Like the welcome text on the welcome pop-up, and using text for the top navbar.
+- ***Aesthetic and minimalist design:*** <br> We wanted to keep the user interface clean, to contemplate the design heuristic above. We only added features that the users demanded, and nothing more. Also by taking inspiration from Apple Inc.
+- ***Help and documentation:*** <br> We made sure we provided the user help and guidance while using the UI. We included the 'About' page and the 'welcome' pop-up.
+
+
+## Final Remarks Regarding UX
 Our three characters served as both inspiration and guidance for the initial key features of our application. User feedback proved to highlight useful features that certainly contributed to an improved user experience. It should be noted. however, that not all feedback was acted on. The reason for this was not because we disagreed, but because it was far beyond the scope of our project at this current time (MENTION THAT WE WILL TALK ABOUT THIS MORE IN PROJECT EXTENSION IDEAS PART). Nevertheless, feedback of this nature sometimes inspired us to implement a user's idea slightly differently to what was intended. We will finish this section with an example of this. See below for a user's suggestion:
 
 <p align="center">
