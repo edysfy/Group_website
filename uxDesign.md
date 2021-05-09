@@ -160,7 +160,7 @@ We just decided to go with the third option.
 
 ## User authentication and features.
 
-We now needed to design the UI for the login and signup processes. <br><br>
+We needed to design the UI for the login and signup processes. <br><br>
 But first, We received feedback from the users changing the icons for 'signup' and 'login' to text, as there was some issue with them navigating the application. So we made the following changes to the navbar.
 
   <p align="center">
@@ -170,7 +170,7 @@ But first, We received feedback from the users changing the icons for 'signup' a
     <img align="center" src="supporting_images/newnavbar.png" width="550px">
   </p>
 
-We decided that when the user clicks the text, the user will be routed to the corresponding path. Marceli recommended a great open source for [SVG images](https://undraw.co/illustrations). We picked the 'signup' SVG because it resembles a new person being welcomed into the family, and the 'login' SVG resembles one who is eager to get back to the application". Purple is a good secondary colour to white, and we want add some extra flair with CSS, so when they user hovers over the form it creates a black shadow.
+We decided that when the user clicks the text, the user will be routed to the corresponding path. Initially, we had idea's of having the login/signup components, slide into the map. However, we thought it was best to route the users to a different page. Marceli recommended a great open source for [SVG images](https://undraw.co/illustrations). We picked the 'signup' SVG because it resembles a new person being welcomed into the family, and the 'login' SVG resembles one who is eager to get back to the application". Purple is a good secondary colour to white, and we want add some extra flair with CSS, so when they user hovers over the form it creates a black shadow.
 
   <p align="center">
   <img align="center" src="supporting_images/singup.png" width="500px">
