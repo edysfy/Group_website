@@ -232,15 +232,16 @@ We implemented this animation, and then [incoorpated the theme we developed for 
   <img align="center" src="supporting_images/finalui.gif" width="550px">
   </p>
 
-## How wireframe feedback influence our UI...
+## How the wireframe feedback influenced our UI...
 Our paper prototype served well at forming an initial visualisation of the website, and for receiving feedback on core features. In order to gain feedback more related to user experience, we needed to demonstrate the website using a closer representation of a working product. Logically, a wireframe was the next best step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/EmoteMap-prototype-2-ckn7hacvv1nm601590k9h8044/ckn7han2m109p012d8epohsri/play) or [here](https://zaki744910.invisionapp.com/console/share/NJ2D65MNBU/572059598/play) to go to our interactive wireframe. Below is a preview:
 
 <p align="center">
 <img src="supporting_images/wireframe_preview.png" width="700">
 </p>
 <a name="first"></a>
+<br>
 Again, we shared the wireframe with friends and family, and coupled it with a questionnaire. As well as the questionnaire, we provided the ability to leave comments on the wireframe itself. One user reported that it would be useful to have a key on the map, informing the user on what coloured marker means what. As a direct response to this feedback, we implemented a key. The final version of the key can be see below (bottom), alongside the original feedback (top). <br>
-
+<br>
 <p align="center">
 <img src="supporting_images/Wireframe_with_feedback.png" width="500">
 <img src="supporting_images/key.png" width="500">
