@@ -2,10 +2,11 @@
 <img src="supporting_images/UX.png" width="650px">
 </p>
 
-
 ## Identification of our target users
+
 <a name="us"></a>
-We knew we wanted to make an app that creates a sense of community in the area of mental health. For full details on the justification of the idea, please see [Introduction, background and motivation](introSect.md). From this we belived our initial idea relied on three fundamental features: the ability to create an EmotePost, the ability to read EmotePosts, and the ability to search for EmotePosts by keyword. Changing any of these features would change the idea entirely. We thought it would be a good idea to create a character that represents a potential user. This character's story is intentionally ordinary. We would then keep this character in mind when developing the project, to help ensure the development was geared towards the potential user. 
+
+We knew we wanted to make an app that creates a sense of community in the area of mental health. For full details on the justification of the idea, please see [Introduction, background and motivation](introSect.md). We agreed our initial idea relied on three fundamental features: the ability to create an EmotePost, the ability to read EmotePosts, and the ability to search for EmotePosts by keyword. Changing any of these features would change the idea entirely. We thought it would be a good idea to create a character that represents a potential user. This character's story is intentionally ordinary. We would then keep this character in mind when developing the project, to help ensure the development was geared towards the potential user.
 <br><br> Here's a bit about Sarah, 19:
 <table>
 <tr>
@@ -22,7 +23,7 @@ We knew we wanted to make an app that creates a sense of community in the area o
 
 We all know the feeling of isolation, and we believe Sarah's case is relatable, and likely, particularly in the times of the pandemic.
 
-Admittedly, it was only until after we came up with the idea, that we saw its potential use for another type of user: some form of data analyst. The ability to search for EmotePosts makes it a likely interest for this user. We believe generating statistics from users' EmotePosts would be invaluable to research into mental health issues. Just as before, we created a character to represent this type of user. 
+Admittedly, it was only until after we came up with the idea, that we saw its potential use for another type of user: some form of data analyst. The ability to search for EmotePosts makes it a likely interest for this user. We believe generating statistics from users' EmotePosts would be invaluable to research into mental health issues. Just as before, we created a character to represent this type of user.
 <br><br> Meet Christina, 43:
 <table>
 <tr>
@@ -37,7 +38,7 @@ Admittedly, it was only until after we came up with the idea, that we saw its po
 </tr>
 </table>
 
-The is another use case that is worth mentioning. Someone, who doesn't want to use EmoteMap's journal/blogging/community features, and who doesn't work for a charity. Just normal person who is interested in knowing how people are feeling around the world. Interested to see the thought process that occurs in different countries. Maybe exposing them to this app, will reduce the stigma around mental health, as it becomes less taboo to this person. Maybe, EmoteMap will teach him how people with Psychosis feel, removing any preconceived notion. This person EmoteMap will want to get involved and support people, like the charity above or by donating money.
+The is another use case that is worth mentioning. Someone, who doesn't want to use EmoteMap's journal/blogging/community features, and who doesn't work for a charity. Just normal person who is interested in knowing how people are feeling around the world. Interested to see the thought process that occurs in different countries. Maybe exposing them to this app will reduce the stigma around mental health making it less taboo to this person. Maybe, EmoteMap will teach him how people with Psychosis feel, removing any preconceived notion. This person will want to get involved and support people, like the charity above or by donating money.
 
 The identification of this second type of user highlighted the importance of creating a clear and easy-to-use search interface. Because we identified these users early, our front-end planning was designed with them in mind from the very start.
 
@@ -49,25 +50,25 @@ The identification of this second type of user highlighted the importance of cre
 </tr>
 <tr>
   <td><img src="supporting_images/Christina.png" width="100" align="left"></td>
-  <td>"I'm a regular guitar teacher looking to make a difference in some way. I am not sure what cause I would want to contribute in. There are many options. I wish there was an application that give me a good concrete evidence of how these issues are across the globe. I want know what people are going through at ccertain locations. I dont know how I can contribute. Maybe through donations at local charties, or offering my support through volenteering at locations where the struggle is real."</td>
-  <td>Daniel will use EmoteMap by reading users posts, surfing the map. Similar to the data analyst but less rigourous. He might be more interested to explore the map, so he can create an account and search. He can show this app to his friends too.</td>
+  <td>"I'm a regular guitar teacher looking to make a difference in some way. I am not sure what cause I would want to contribute in. There are many options. I wish there was an application that give me a good concrete evidence of how these issues are across the globe. I want know what people are going through at certain locations. I don't know how I can contribute. Maybe through donations at local charities, or offering my support through volunteering at locations where the struggle is real."</td>
+  <td>Daniel will use EmoteMap by reading users posts, surfing the map. Similar to the data analyst but less rigorous. He might be more interested in exploring the map and may create an account so he can search. He can show this app to his friends too.</td>
 </tr>
 </table>
-
 
 ## Early prototyping - paper prototypes and feedback
 
 <img src="supporting_images/Paper_prototype_start.jpeg" width="350" align="right">
-Our three key users had been identified, and it was now time to start putting our idea into action. The first real visualisation of the website consisted of a paper prototype. This ensured all members of the group were on the same page (no pun intended) regarding the layout, and allowed us to easily and to quickly make adjustments during a group discussion. The creation of this prototype really was the first time the ideas we had shared verbally were coming together in a physical, visual form. Because of this, we focused on making it as simple as possible, including only the core features. At this point in time, we had decided that the core features were: ability to signup (and login), be able to zoom in and out of the map, read EmotePosts of other users, create EmotePosts and search for EmotePosts. Our original, finalised paper prototype is shown to the right.
 
+Our three key users had been identified, and it was now time to start putting our idea into action. The first real visualisation of the website consisted of a paper prototype. This ensured all members of the group were on the same page (no pun intended) regarding the layout, and allowed us to easily and to quickly make adjustments during a group discussion. The creation of this prototype really was the first time the ideas we had shared verbally were coming together in a physical, visual form. Because of this, we focused on making it as simple as possible, including only the core features. At this point in time, we had decided that the core features were: ability to signup (and login), be able to zoom in and out of the map, read EmotePosts of other users, create EmotePosts and search for EmotePosts. Our original, finalised paper prototype is shown to the right.
 <br>
+
 <br>
 At this point, our prototype consisted of only the ideas we had come up with within the team. Despite the fact that our team consisted of five individuals of different academic backgrounds, we were still prone to 'tunnel vision'. We knew that it was crucial to get external feedback, and as early as possible. We shared our paper prototype with friends and family. At this stage, we understood it was difficult to grasp the concept of the project looking at a paper prototype alone, so we informed the individuals on the idea beforehand. We were looking for feedback on our core features, and in the form of written comments (questionnaires with specific questions were used during the wireframe phase, at this stage we did not want to place any restrictions on the feedback).
 <br>
 <br>
 <br>
 
-One individual made an important suggestion: to remove the need to signup before interacting with the globe and other user posts. We originally planned it like so to encourage more people to signup. However the individual's reasoning was a stronger point: they warned that the user would be signing up to something they may not completely understand, and in some cases this may turn the potential user away entirely. Of course, we could have put an 'about' page as the splash screen, but it should be interactive, and allow users to learn by doing (this would immediately integrate the ‘serious play’ aspect). We also decided to include a ‘signup’ option on a navbar. The image below shows the changes we made to our paper prototype as a response:
+One individual made an important suggestion: to remove the need to sign up before interacting with the globe and other user posts. We originally planned it like so to encourage more people to sign up. However the individual's reasoning was a stronger point: they warned that the user would be signing up to something they may not completely understand, and in some cases this may turn the potential user away entirely. Of course, we could have put an 'about' page as the splash screen, but it should be interactive, and allow users to learn by doing (this would immediately integrate the ‘serious play’ aspect). We also decided to include a ‘sign up’ option on a navbar. The image below shows the changes we made to our paper prototype as a response:
 
 <p align="center">
 <img src="supporting_images/Paper_prototype_before_and_after.jpeg" width="700">
@@ -77,11 +78,11 @@ Other important feedback we received was to replace the globe with a 2-dimension
 
 One final piece of feedback on our paper prototype was to remove the button(s) to zoom in and out of the map. The user claimed it was intuitive enough to use zoom with the mouse wheel. Removing these buttons would simplify our UI, so it was an easy to decision to make.
 
-Overall, we were pleased with how useful the paper prototype approach was. Despite forming only a very basic visualisation, we gathered invaluable feedback that had an impact on our project development from an early stage. 
+Overall, we were pleased with how useful the paper prototype approach was. Despite forming only a very basic visualisation, we gathered invaluable feedback that had an impact on our project development from an early stage.
 
 ## On to the Computer...
 
-From this, we went on to build the initial prototype of EmoteMap. We choose a pink and blue theme because members of our team believed it represented the ethos of EmoteMap, as pink can be an emotional color, and we included the icons for 'about', 'login', and the title 'about'. Initially, this has no functionality and was just a way for us to see the initial vision of EmoteMap coming into existence. 
+From this, we went on to build the initial prototype of EmoteMap. We choose a pink and blue theme because members of our team believed it represented the ethos of EmoteMap, as pink can be an emotional color, and we included the icons for 'about', 'login', and the title 'about'. Initially, this has no functionality and was just a way for us to see the initial vision of EmoteMap coming into existence.
 
   <p align="center">
   <img align="center" src="supporting_images/orig.png" width="500px">
@@ -98,9 +99,9 @@ We started experimenting with Mapbox's circle markers. This was a demo provided 
 
 ## Implementation of the initial search bar and post form.
 
-At this stage, we have a basic prototype. We were getting used to Mapbox and its GeoJson requirements. Before dealing with user authentication, we wanted to display GeoJson data on the map, implement a basic search filter, and allow users to post by clicking on a button, and routing users to a post page so they can make a post. Ed, suggested that we get rid of the white map, and use a black map as the contrast between pink was preferred. After some feedback from family and friends, It became obvious that the black map was preferred over this theme. 
+At this stage, we have a basic prototype. We were getting used to Mapbox and its GeoJson requirements. Before dealing with user authentication, we wanted to display GeoJson data on the map, implement a basic search filter, and allow users to post by clicking on a button, and routing users to a post page so they can make a post. Ed suggested that we get rid of the white map and use a black map as the contrast between pink was preferred. After some feedback from family and friends, It became obvious that the black map was preferred over this theme.
 
-We also new that we wanted to search through the posts. At the start we didn't know the criteria. We built a search bar at the bottom of the map where the user can search by keyword and by date. Later on as we developed a more complex search for users [here](#sp), we decided to leave this search bar for non users. However, we eventually remove this component because of the feedback received [here](#nos).
+We also new that we wanted to search through the posts. At the start we didn't know the criteria. We built a search bar at the bottom of the map where the user can search by keyword and by date. Later on as we developed a more complex search for users [here](#sp), we decided to leave this search bar for non users. However, we eventually removed this component because of the feedback received [here](#nos).
 
   <p align="center">
   <img align="center" src="supporting_images/ugly.png" width="550px">
