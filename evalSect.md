@@ -6,7 +6,7 @@
 1. [Evaluation](#eval)
 * [a) Methodology](#method)
 * [b) Timeline of Evaluation Methods](#timeline)
-* [c) How Successful was our Evaluation of User Feedback?](#success)
+* [c) More Limitations: Sample Size](#success)
 
 2. [Conclusion](#conc)
 
@@ -176,7 +176,7 @@ that we recorded the audio to our interviews, we were able to make use out of an
 
 
 ### Stage 3: Quantitative Feedback Involvement 24/3/21
-24/3/21: Although we felt that interviews were a good source of creating qualitative feedback, we made a decision to try and increase our sample size when it came to evaluating our product and attempt to create some quantitative feedback. In order to achieve a quantitative metric for how a user would feel about our product, we decided it was necessary to ask some 'how much' and 'how many' questions at scale to our users. Very shortly after we started showing our first wireframe to users, we created a questionnaire that we could send alongside the link to the wireframe. We tried to push the quantitative aspect of the questionnaires by using 5 point likert scale, as seen in the above figure. For example, in improving our first questionnaire to our second one,  ensured that we reflected the different points on the scale itself, instead of having just numbers. For example as possible choices to the question 'How playful did you find this website?', instead of just having options 1-5, we would have:      
+24/3/21: Although we felt that interviews were a good source of creating qualitative feedback, we made a decision to try and increase our sample size when it came to evaluating our product and attempt to create some quantitative feedback. In order to achieve a quantitative metric for how a user would feel about our product, we decided it was necessary to ask some 'how much' and 'how many' questions at scale to our users. Very shortly after we started showing our first wireframe to users, we created a questionnaire that we could send alongside the link to the wireframe. We tried to push the quantitative aspect of the questionnaires by using 5 point likert scale, as seen in the above figure. For example, in improving our first questionnaire to our second one,  ensured that we reflected the different points on the scale itself, instead of having just numbers. For example as possible choices to the question 'How playful did you find this website?', instead of just having options 1-5, we would have:        
 1 - not playful at all  
 2 - not very playful  
 3 - somewhat playful  
@@ -205,17 +205,10 @@ We continued using wireframes as a method of evaluation for our designs until ou
 For our group, we found this stage particularly significant as our design involved the navigation of a map, and the creation of a post which contained a personal message. Due to this nature of our design, there is quite a personalised element to how a user interacts with it. Thus, for our user feedback to be more accurate and meaningful, having users experience the actual website was significant to evaluating and improving our designs in the development process. In agreement with this, we found that users found it much easier to navigate the website in this way, as opposed to using the wireframe. See the screenshot above which shows the feedback from the last two questionnaires which proves this.
 
 
-<p align="center">
+<p align="left">
 <img src="supporting_images/numberofparticipants.png" width="600">
+Another possible limitation to our evaluation was our inability to show enough users our most up to date version of the product when we moved to doing so on a local host as opposed to a wireframe. In order to do this, we would need to either show someone in person or organise a Microsoft Teams or Zoom meeting which proved time consuming and less successful when it came to quantitative data collection. It was much easier for a user to use the link to a wireframe and then fill out the questionnaire. As seen in the image to the left, this is demonstrated by the fact that we had an average of 8.5 responses for the first two wireframes, as opposed to 5 for the final one. This being said, all the users who carried out a questionnaire had been shown the website personally, and also been interviewed. As a result, this user feedback was of greater richness and therefore the qualitative element of it was more valuable.
 </p>
-
-The way in which we obtained user feedback here was similar to that of the wireframes. However, a limitation here was that we could only collect data from the questionnaire every time we showed a user the local host in person. As proven by the image above, which shows number of users who carried out our final questionnaire in comparison to our first two with the wireframes, this made it more difficult to get a substantial number of users to give their opinion than it was for the wireframes. In an attempt to combat this, we organised some zoom meetings where we could screen share.    
-
-
-
-
-
-
 
 
 
@@ -230,26 +223,14 @@ The way in which we obtained user feedback here was similar to that of the wiref
 
 
 <a name="success"></a>
-# c)How Successful was our Evaluation of User Feedback?
-
-On analysis of our qualitative data, we were able to conclude that throughout the process of feedback and the subsequent development of software, users started to see the purpose of the website as being more in line with what we initially set out for it to be. For us, this somewhat represented the success of the process behind how we evaluated user's perceptions of our product.    
-
-
-However, there were some limiting factors and debatable areas of improvement to this process that we are aware of.
-
-*1. to see/ineract with other users’ posts (e.g – to gain insight...)
--	2. to view trends in experienced emotions globally
--	screenshot of ability to see others’ posts on the website
--	screenshot of comment for this point*
-
-
-### Limitations
-We used Survey Monkey's sample size calculator to calculate our sample size. This forced us to think about the population that may be using our product and therefore question how big our market was. Considering our end users in this way made us contemplate how much feedback data was enough.  As seen in the figure above, our sample size was *X* whilst  our actual sample size was *x*. Although we did not reach the ideal sample size, we realised that we could only ultimately analuse the data that we could gather. This shortfall of responders therefore makes it difficult to be certain of our analysis at this point.
-Although our sample size could have been higher, we followed the notion that when carrying out our evaluation we would balance richness with practicality (*reference lecture*). When creating our feedback data we were constantly considering the analysis phase and how we would go on to analyse that data. In order to thoroughly and accurately analyse our data in a just way, we dedicated time. As a result of this, we at some points opted to collect a smaller amount of qualitative data which we could analyse robustly. For example, carrying out qualitative user feedback such as semi-structured interviews was time-consuming as we needed to spend time re-listening to the audio and extracting the relevant responses to questions before entering this feedback data into the idea matrix. Ultimately, although our feedback data lacked in terms of sample size because of this, we were able to make the analysis of the data much richer.
-Another possible limitation to our evaluation was our inability to show enough users our most up to date version of the product when we moved to doing so on a local host as opposed to a wireframe. In order to do this, we would need to either show someone in person or organise a Microsoft Teams or Zoom meeting which proved time consuming and less successful when it came to quantitative data collection. It was much easier for a user to use the link to a wireframe and then fill out the questionnaire. This is demonstrated by the fact that we had *X questionnaire completions for the final questionnaire as opposed to the first two*.
-
+# More Limitations: Sample Size
 *screenshot of sample size calc*
 *screenshot of figure for actual sample data*
+We used Survey Monkey's sample size calculator to calculate our sample size. This forced us to think about the population that may be using our product and therefore question how big our market was. Considering our end users in this way made us contemplate how much feedback data was enough.  As seen in the figure above, our sample size was *X* whilst  our actual sample size was *x*. Although we did not reach the ideal sample size, we realised that we could only ultimately analuse the data that we could gather. This shortfall of responders therefore makes it difficult to be certain of our analysis at this point.
+Although our sample size could have been higher, we followed the notion that when carrying out our evaluation we would balance richness with practicality (*reference lecture*). When creating our feedback data we were constantly considering the analysis phase and how we would go on to analyse that data. In order to thoroughly and accurately analyse our data in a just way, we dedicated time. As a result of this, we at some points opted to collect a smaller amount of qualitative data which we could analyse robustly. For example, carrying out qualitative user feedback such as semi-structured interviews was time-consuming as we needed to spend time re-listening to the audio and extracting the relevant responses to questions before entering this feedback data into the idea matrix. Ultimately, although our feedback data lacked in terms of sample size because of this, we were able to make the analysis of the data much richer.    
+
+
+
 
 
 
@@ -274,6 +255,12 @@ We did have issues in the first couple of sprints around effectively using githu
 As discussed in our [Project Management & development process](sprints.md) document, the use of discord channels greatly aided discussion as we were able to keep focused the discussion on disperate elements of the project, instead of having one chat where everything was lumped into one place, meaning that we were able to keep track of and refer to implementation issues in specific areas.
 
 ### Reflective discussion of the success of the project. How well did our project fulfil the brief? Were all of our objectives met?
+
+On analysis of our qualitative data, we were able to conclude that throughout the process of feedback and the subsequent development of software, users started to see the purpose of the website as being more in line with what we initially set out for it to be. For us, this somewhat represented the success of the process behind how we evaluated user's perceptions of our product.
+*1. to see/ineract with other users’ posts (e.g – to gain insight...)
+-	2. to view trends in experienced emotions globally
+-	screenshot of ability to see others’ posts on the website
+-	screenshot of comment for this point*  
 
 Broadly, we would argue that our project has been a success, both in meeting the brief and fulfilling our own objectives, although more so in some areas than others. The project brief was to develop a web app around the concept of 'serious play'; in our case we took that to mean bringing attention to a real world problem in a new and engaging - a playful - way, along with the prehaps enabling ways to address the problem.
 
