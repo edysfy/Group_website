@@ -62,7 +62,9 @@ To learn more about how our paper prototyping allowed us, at a very early stage,
 
 ### Evaluation Technique 2: Wireframing
 <p>
-<img src="supporting_images/wireframe_one.png" width="400" align="left">
+
+<img src="supporting_images/wireframe_two.png" width="400" align="left">
+
 
 Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop easily through a link [like this one](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built onto screenshots of the website as it looked at the time.
 
