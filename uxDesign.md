@@ -320,13 +320,14 @@ A gif of the implemented home-in feature (nicknamed 'fly-in feature' by the team
   <img src="supporting_images/Fly_feature.gif" alt="animated" />
 </p>
 
-# Summary of Design Heuristics used:
+## Summary of Design Heuristics used:
 
-- ***Matched the system and the real world:*** We made sure that the UX was easy for the user to comprehend. Ie displaying text, in place of an integer, for the mood.
-- ***Error Prevention:*** We through validation errors on the forms to ensure incompatible data wasn't submitted. Also, we validated username and password values in the registration forms and through errors if there were any errors.
-- ***Recognition rather than recall:*** We ensured the user could just recognize functions in the UI instead of having to recall them from previous use. Like the welcome text on the welcome pop-up, and using text for the top navbar.
-- ***Aesthetic and minimalist design:*** We wanted to keep the user interface clean, to contemplate the design heuristic above. We only added features that the users demanded, and nothing more.
-- ***Help and documentation:*** We made sure we provided the user help and guidance while using the UI. We included the 'About' page and the 'welcome' pop-up.
+- ***Matched the system and the real world:*** <br> We made sure that the UX was easy for the user to comprehend. Ie displaying text, in place of an integer, for the mood. Also, by not using any error codes on the UI, we converted these errors so they are human readable. 
+- ***Error Prevention:*** <br> We sent errors back to the user on the forms to ensure incompatible/null data wasn't submitted. Also, we sent errors when the username and password values in the registration forms were invalid.
+- ***Help users recognize, diagnose, and recover from errors:*** <br> We made sure to not use any error codes on the UI, we converted these errors to desctiptive senteacnes so they are human readable. 
+- ***Recognition rather than recall:*** <br> We ensured the user could just recognize functions in the UI instead of having to recall them from previous use. Like the welcome text on the welcome pop-up, and using text for the top navbar.
+- ***Aesthetic and minimalist design:*** <br> We wanted to keep the user interface clean, to contemplate the design heuristic above. We only added features that the users demanded, and nothing more. Also by taking inspiration from Apple Inc.
+- ***Help and documentation:*** <br> We made sure we provided the user help and guidance while using the UI. We included the 'About' page and the 'welcome' pop-up.
 
 
 ## Final Remarks Regarding UX
