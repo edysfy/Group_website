@@ -28,6 +28,8 @@ A. Test a user can create an account
 1. Click the 'sign up' button
 2. Enter a username and password
 3. Click submit
+    - throw validation if username is taken
+    - throw validation if passwords don't match
 4. The page should refresh to the log in page
 5. Enter username and password and click 'log in'
 6. Ensure the 'Emotemap' title in the nav bar changes to the new username
@@ -35,10 +37,12 @@ A. Test a user can create an account
 B. Test a user can make posts
 
 1. Login (as described in test A)
-2. Click the 'plus' button
+2. Click the 'plus' button or on map when zoom > x 
+    - pop shouldn't appear before this zoom
 3. Ensure a popup appears
 4. Fill in the popup and click 'send' button
-5. Ensure the post appears at your current location
+    - ensure validation occurs if fields are empty
+5. Ensure the post appears at your current location, or location at placed clicked
 6. Hover over the post to see if the correct information pops up
 
 
@@ -52,11 +56,13 @@ C. Test a user can search posts
 6. Search with the keyword of the post you just made
 7. Ensure your post appears
 
+Do the same when gender values are null => so they wont appear in the search
+
 D. Test post timeline and delete works
 
 1. Login
 2. Make a post
 3. Click the 'timeline' button
-4. Ensure the post you just made appears
+4. Ensure the post you just made appears on the user timeline instantly
 5. Click the delete button
 6. Ensure the post disapears from the timeline and the map

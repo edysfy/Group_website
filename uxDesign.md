@@ -77,7 +77,7 @@ Other important feedback we received was to replace the globe with a 2-dimension
 
 One final piece of feedback on our paper prototype was to remove the button(s) to zoom in and out of the map. The user claimed it was intuitive enough to use zoom with the mouse wheel. Removing these buttons would simplify our UI, so it was an easy to decision to make.
 
-Overall, we were pleased with how useful the paper prototype approach was. Despite forming only a very basic visualisation, we gathered invaluable feedback that had an impact on our project development from an early stage.
+Overall, we were pleased with how useful the paper prototype approach was. Despite forming only a very basic visualisation, we gathered invaluable feedback that had an impact on our project development from an early stage. 
 
 ## On to the Computer...
 
@@ -98,7 +98,9 @@ We started experimenting with Mapbox's circle markers. This was a demo provided 
 
 ## Implementation of the initial search bar and post form.
 
-At this stage, we have a basic prototype. We were getting used to Mapbox and its GeoJson requirements. Before dealing with user authentication, we wanted to display GeoJson data on the map, implement a basic search filter, and allow users to post by clicking on a button, and routing users to a post page so they can make a post. Ed, suggested that we get rid of the white map, and use a black map as the contrast between pink was preferred. After some feedback from family and friends, It became obvious that the black map was preferred over this theme. This is what the application looked like after implementing those features. 
+At this stage, we have a basic prototype. We were getting used to Mapbox and its GeoJson requirements. Before dealing with user authentication, we wanted to display GeoJson data on the map, implement a basic search filter, and allow users to post by clicking on a button, and routing users to a post page so they can make a post. Ed, suggested that we get rid of the white map, and use a black map as the contrast between pink was preferred. After some feedback from family and friends, It became obvious that the black map was preferred over this theme. 
+
+We also new that we wanted to search through the posts. At the start we didn't know the criteria. We built a search bar at the bottom of the map where the user can search by keyword and by date. Later on as we developed a more complex search for users [here](#sp), we decided to leave this search bar for non users. However, we eventually remove this component because of the feedback received [here](#nos).
 
   <p align="center">
   <img align="center" src="supporting_images/ugly.png" width="550px">
@@ -246,7 +248,7 @@ Again, we shared the wireframe with friends and family, and coupled it with a qu
 <img src="supporting_images/Wireframe_with_feedback.png" width="500">
 <img src="supporting_images/key.png" width="500">
 </p>
-
+<a name="nos"></a>
 Another user suggested a 'welcome screen' for users not authenticated. We implemented a welcome button on the map which triggered a semi-transparent pop-up to keep the map present for the user's first impression. Below the feedback is our final implementation of this feature. We also had negative feedback from the users regarding the basic search bar that non-authenticated users could use to search. We decided to remove this and felt the new 'welcome' was enough functionality for non-users could have. 
 
 <p align="center">
