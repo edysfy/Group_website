@@ -18,7 +18,7 @@
 <a name="users"></a>
 ## Identification of our Target Users
 
-We knew we wanted to make an app that creates a sense of community in the area of mental health. For full details on the justification of the idea, please see [Introduction, background and motivation](introSect.md). We agreed our initial idea relied on three fundamental features: the ability to create an EmotePost, the ability to read EmotePosts, and the ability to search for EmotePosts by keyword. Changing any of these features would change the idea entirely. We thought it would be a good idea to create a character that represents a potential user. This character's story is intentionally ordinary. We would then keep this character in mind when developing the project, to help ensure the development was geared towards the potential user.
+We knew we wanted to make an app that creates a sense of community in the area of mental health. For full details on the justification of the idea, please see [Introduction, background and motivation](introSect.md). We agreed our initial idea relied on three fundamental features: the ability to create an EmotePost, the ability to read EmotePosts, and the ability to search for EmotePosts by keyword. Changing any of these features would change the idea entirely. We thought it would be a good idea to create characters that represent potential users. The characters' stories are intentionally ordinary. We would then keep these characters in mind when developing the project, to help ensure the development was geared towards the potential users.
 <br><br> Here's a bit about Sarah, 19:
 <table>
 <tr>
