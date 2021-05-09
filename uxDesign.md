@@ -2,7 +2,7 @@
 <img src="supporting_images/UX.png" width="650px">
 </p>
 
-## Table of contents
+## Table of Contents
 * [Identification of our Target Users](#users)
 * [Early Prototyping - Paper Prototypes and Feedback](#prototype)
 * [Implementation of the Initial Search Bar and Post Form](#post)
