@@ -5,6 +5,15 @@
 ## Table of contents
 * [Identification of our target users](#users)
 * [Early prototyping - paper prototypes and feedback](#prototype)
+* [Implementation of the initial search bar and post form](#post)
+* [The heat map](#heatmap)
+* [User authentication and features](#authentication)
+* [User Search Prototype](#userSearch)
+* [Final UI theme, and animation](#finalUI)
+* [How the wireframe feedback influenced our UI...](#influence)
+* [Live User Sessions](#live)
+* [Summary of Design Heuristics](#summary)
+* [Final Remarks Regarding UX](#remarks)
 
 <a name="users"></a>
 ## Identification of our target 
@@ -101,6 +110,7 @@ We started experimenting with Mapbox's circle markers. This was a demo provided 
   <img align="center" src="src/assets/logos/treelogowhite.png" width="250px">
   </p>
 
+<a name="post"></a>
 ## Implementation of the initial search bar and post form.
 
 At this stage, we have a basic prototype. We were getting used to Mapbox and its GeoJson requirements. Before dealing with user authentication, we wanted to display GeoJson data on the map, implement a basic search filter, and allow users to post by clicking on a button, and routing users to a post page so they can make a post. Ed suggested that we get rid of the white map and use a black map as the contrast between pink was preferred. After some feedback from family and friends, It became obvious that the black map was preferred over this theme.
@@ -142,6 +152,7 @@ It was obvious to us from the start that we needed use the GeoJson data created 
 
 For the benefit of our users being able to distinguish their own posts on the map from other user's posts, we made them distinguishable from others by adding an extra SVG on underneath the circle in the shape of a volcano. <br>
 
+<a name="heatmap"></a>
 ## The heat map
 
 We needed to take into consideration the needs of Christine, and to an extent, Dan. We needed a way to display the mood/emotions across the globe in an attractive style, so they could use this data for their interests and spark curiosity into the nature of users' posts at certain locations. This was on our agenda in a team scrum. We were looking through Mapbox's data visualization features. 
@@ -167,6 +178,7 @@ We test out all three methods. We thought that the heat map was the best, accura
 
 We decided to go with the third option as it effectively presented multiple data points but also allowed users to zoom in and see exactly where individual posts were.
 
+<a name="authentication"></a>
 ## User authentication and features
 
 We needed to design the UI for the login and sign up processes. But first, We received feedback from the users and changed the icons for 'sign up' and 'login' to text, as there was some issues highlighted regarding navigating the application. So we made the following changes to the navbar.
@@ -215,7 +227,7 @@ However, we discovered that the sidebar didn't look too good. We took inspiratio
   <img align="center" src="supporting_images/sidebarslide.gif" width="550px">
   </p>
 
-
+<a name="userSearch"></a>
 ## User Search Prototype
 <a name="sp"></a>
 <img src="supporting_images/Filter_feature.png" width="250" align="right">
@@ -228,6 +240,7 @@ The image below shows the prototype plan, and the image to the right shows the f
 
 We wanted to use colours that followed the theme of the site. We added a white border. We were also experimenting with the transparency and liked the look the purple being translucent, showing the map underneath. We settled on this style and applied this to all of the other components.
 
+<a name="finalUI"></a>
 ## Final UI theme, and animation
 
 We showed [this stage](#third) to Marceli, his feedback was this:
@@ -242,6 +255,7 @@ We implemented this animation, and then [incorporated the theme we developed for
   <img align="center" src="supporting_images/finui.gif" width="550px">
   </p>
 
+<a name="influence"></a>
 ## How the wireframe feedback influenced our UI...
 
 Our paper prototype served well at forming an initial visualisation of the website, and for receiving feedback on core features. In order to gain feedback related to user experience, we needed to demonstrate the website using a closer representation of a working product. Logically, a wireframe was the next logical step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/EmoteMap-prototype-2-ckn7hacvv1nm601590k9h8044/ckn7han2m109p012d8epohsri/play) or [here](https://zaki744910.invisionapp.com/console/share/NJ2D65MNBU/572059598/play) to go to our interactive wire frame. Below is a preview:
@@ -278,7 +292,8 @@ Initially, we didn't implement an 'about' page in the application. We were think
 <img src="supporting_images/About_page.png" width="700">
 </p>
 
-## Live user sessions
+<a name="live"></a>
+## Live User Sessions
 
 As our final documented method for UX improvement, we came up with an idea - a live demonstration session. The idea was to first explain the project, before handing the wireframe over to the user. We told the user to imagine that they were using the real, working app. We asked if they could talk aloud their intentions as they were navigating the website. We thought this may be helpful as it would allow us to get a better idea of how users would use our app, and also to allow discussion regarding any ideas, or suggestions they may have. From the recording that was made, we have included a section that was particularly useful for our UX development.
 
@@ -334,6 +349,7 @@ A gif of the implemented home-in feature (nicknamed 'fly-in feature' by the team
   <img src="supporting_images/Fly_feature.gif" alt="animated" />
 </p>
 
+<a name="summary"></a>
 ## Summary of Design Heuristics used:
 
 * ***Matched the system and the real world:***  We made sure that the UX was easy for the user to comprehend. Ie displaying text, in place of an integer, for the mood. Also, by not using any error codes on the UI, we converted these errors so they are human readable. 
@@ -343,6 +359,7 @@ A gif of the implemented home-in feature (nicknamed 'fly-in feature' by the team
 * ***Aesthetic and minimalist design:*** <br> We wanted to keep the user interface clean to contemplate the design heuristic above. We only added features that the users suggested and nothing more. Also taking inspiration from Apple Inc.
 * ***Help and documentation:*** <br> We made sure we provided the user help and guidance while using the UI. We included the 'About' page and the 'welcome' pop-up.
 
+<a name="users"></a>
 ## Final Remarks Regarding UX
 
 Our three characters served as both inspiration and guidance for the initial key features of our application. User feedback proved to highlight useful features that certainly contributed to an improved user experience. It should be noted. however, that not all feedback was acted on. The reason for this was not because we disagreed, but because it was far beyond the scope of our project at this current time (MENTION THAT WE WILL TALK ABOUT THIS MORE IN PROJECT EXTENSION IDEAS PART). Nevertheless, feedback of this nature sometimes inspired us to implement a user's idea slightly differently to what was intended. We will finish this section with an example of this. See below for a user's suggestion:
