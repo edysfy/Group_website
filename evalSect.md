@@ -226,10 +226,24 @@ Another possible limitation to our evaluation was our inability to show enough u
 
 <a name="success"></a>
 # More Limitations: Sample Size
-*screenshot of sample size calc*
-*screenshot of figure for actual sample data*
-We used Survey Monkey's sample size calculator to calculate our sample size. This forced us to think about the population that may be using our product and therefore question how big our market was. Considering our end users in this way made us contemplate how much feedback data was enough.  As seen in the figure above, our sample size was *X* whilst  our actual sample size was *x*. Although we did not reach the ideal sample size, we realised that we could only ultimately analuse the data that we could gather. This shortfall of responders therefore makes it difficult to be certain of our analysis at this point.
-Although our sample size could have been higher, we followed the notion that when carrying out our evaluation we would balance richness with practicality (*reference lecture*). When creating our feedback data we were constantly considering the analysis phase and how we would go on to analyse that data. In order to thoroughly and accurately analyse our data in a just way, we dedicated time. As a result of this, we at some points opted to collect a smaller amount of qualitative data which we could analyse robustly. For example, carrying out qualitative user feedback such as semi-structured interviews was time-consuming as we needed to spend time re-listening to the audio and extracting the relevant responses to questions before entering this feedback data into the idea matrix. Ultimately, although our feedback data lacked in terms of sample size because of this, we were able to make the analysis of the data much richer.    
+
+
+#### How we calculated our target sample size
+<p align="center">
+<img src="supporting_images/sample_size.png" width ="600">
+</p>
+
+Our target market was any person, male or female, who had access to both a computer and the Internet. After trying to find a statistic online, we realised that the answer to this number could only be approximated and also depends on what is defined as a computer. The website InternetWorldStats.com estimates that 2.5 billion people are Internet users and thus have access to it via a mobile device or a computer. We guessed that of those 2.5 billion people, half were accessing via a computer. It can be argued that this guess in itself is a limitation
+
+#### How we calculated our sample size
+Questionnaires completed: 22    
+Semi-structured interviews conducted: 9    
+Totals sample size: 31
+
+
+#### Sample size limitation
+We used Survey Monkey's sample size calculator to calculate our sample size. This forced us to think about the population that may be using our product and therefore question how big our market was. Considering our end users in this way made us contemplate how much feedback data was enough.  As calculated in the sections above, our sample size was 31 whilst our target sample size was 385. Although we did not reach the ideal sample size, we realised that we could only ultimately analyse the data that we could gather. This shortfall of responders therefore makes it difficult to be certain of our analysis at this point. Although our sample size could have been higher, we followed the notion that when carrying out our evaluation we would balance richness with practicality. When creating our feedback data we were constantly considering how we would go on to analyse that data in terms of firstly figuring out what users want so we could reflect this in our development process and secondly how we could analyse that data at the end of our project in order to reflect on how successful we were in terms of achieving our original goals that we set out to achieve. In order to thoroughly and accurately analyse our data in a just way, we dedicated time. As a result of this, we at some points opted to collect a smaller amount of qualitative data which we could analyse robustly. For example, although carrying out qualitative user feedback such as semi-structured interviews was time-consuming as we needed to spend time re-listening to the audio and extracting the relevant responses to questions before entering this feedback data into the idea matrix, we still decided to do this because we would understand on a more personal level what users preferred in terms of the user interface/ we could obtain more suggestions through interviewing and having an in-depth conversation with a potential user as opposed to getting their responses to a questionnaire. We found that, although our questionnaire asked questions such as 'what would you change ' Ultimately, although our feedback data lacked in terms of sample size because of this, we were able to make the analysis of the data much richer.    
+
 
 
 
