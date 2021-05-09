@@ -24,12 +24,12 @@ We knew we wanted to make an app that creates a sense of community in the area o
 <tr>
   <th>Photo</th>
   <th>Description</th>
-  <th>How will user use EmoteMap</th>
+  <th>Use of EmoteMap</th>
 </tr>
 <tr>
   <td><img src="supporting_images/Sarah.png" width="100" align="left"></td>
   <td>"I’m a first year uni student, but I don’t feel like it. The pandemic has meant that we are studying from home, and I haven’t had the opportunity to make friends yet. I’m living with three other students, but I didn’t know them before I moved in, and I’m not so close to them. They all seem to be best friends already. It’s been hard moving to a new city during these times. I often feel alone. I know there must be so many others in my situation, but it’s easy to forget that. I love my course, but this is not what I expected. I wish I could share my feelings with others…"</td>
-  <td>Sarah is feeling down, she would use EmoteMap by venting her emotions, and using it like a journal. Helping her de-stress, and separate her emotions from her mind. Initially she would create an account. Then post, attach a keyword and emotion to it. She can search for other posts with the same keyword. She can see what others are going through. She can get a sense that she is not alone. At the moment, EmoteMap only allows users to post and view other posts to give a sense of community. However the can be built upon in the future: See Evaluation and Conclusion</td>
+  <td>Sarah is feeling down and so she would use EmoteMap to express her emotions. To do this, she would state her current emotion, and then describe the reason as to why she feels as she does. EmoteMap will then pin this to the map. She has the option to search for other posts describing the same feelings. By reading others' posts, she feels less alone, and rather relieved that she has expressed herself. Currently, EmoteMap only allows users to post and view other posts to give a sense of community. However this can be built upon in the future: See Evaluation and Conclusion</td>
 </tr>
 </table>
 
@@ -41,7 +41,7 @@ Admittedly, it was only until after we came up with the idea, that we saw its po
 <tr>
   <th>Photo</th>
   <th>Description</th>
-  <th>How will user use EmoteMap</th>
+  <th>Use of EmoteMap</th>
 </tr>
 <tr>
   <td><img src="supporting_images/Christina.png" width="100" align="left"></td>
@@ -58,7 +58,7 @@ The identification of this second type of user highlighted the importance of cre
 <tr>
   <th>Photo</th>
   <th>Description</th>
-  <th>How will user use EmoteMap</th>
+  <th>Use of EmoteMap</th>
 </tr>
 <tr>
   <td><img src="supporting_images/Christina.png" width="100" align="left"></td>
