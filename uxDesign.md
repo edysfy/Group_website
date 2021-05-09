@@ -2,9 +2,14 @@
 <img src="supporting_images/UX.png" width="650px">
 </p>
 
-## Identification of our target users
+## Table of contents
+* [Identification of our target users](#users)
+* [Early prototyping - paper prototypes and feedback](#prototype)
 
-<a name="us"></a>
+## Identification of our target 
+ers
+
+<a name="users"></a>
 
 We knew we wanted to make an app that creates a sense of community in the area of mental health. For full details on the justification of the idea, please see [Introduction, background and motivation](introSect.md). We agreed our initial idea relied on three fundamental features: the ability to create an EmotePost, the ability to read EmotePosts, and the ability to search for EmotePosts by keyword. Changing any of these features would change the idea entirely. We thought it would be a good idea to create a character that represents a potential user. This character's story is intentionally ordinary. We would then keep this character in mind when developing the project, to help ensure the development was geared towards the potential user.
 <br><br> Here's a bit about Sarah, 19:
@@ -56,6 +61,8 @@ The identification of this second type of user highlighted the importance of cre
 </table>
 
 ## Early prototyping - paper prototypes and feedback
+
+<a name="prototype"></a>
 
 <img src="supporting_images/Paper_prototype_start.jpeg" width="350" align="right">
 
