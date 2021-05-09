@@ -231,7 +231,7 @@ We showed [this stage](#third) to Marceli, his feedback was this:
 We implemented this animation, and then [incoorpated the theme we developed for the search component](#sp) to all other components to end up with the final UI: 
 
   <p align="center">
-  <img align="center" src="supporting_images/finalui.gif" width="550px">
+  <img align="center" src="supporting_images/finui.gif" width="550px">
   </p>
 
 ## How the wireframe feedback influenced our UI...
