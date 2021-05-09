@@ -6,7 +6,7 @@
 
 <div align="center" width="560">
   
-  [![IMAGE ALT TEXT](supporting_images/newintro.gif)](https://www.youtube.com/watch?v=SMLlnLANZNY)
+  [![IMAGE ALT TEXT](supporting_images/flytrailer.gif)](https://www.youtube.com/watch?v=SMLlnLANZNY)
 
 </div>
 
