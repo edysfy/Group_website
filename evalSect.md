@@ -101,17 +101,17 @@ Our grouped used questionnaires as our main form of quantitative feedback as we 
 
 In total we produced three questionnaires. The first two were sent to users alongside the wireframes and the last one was filled out by users after they had used the website on a local host. The last two questionnaires asked the same questions as the first, but we improved it slightly. For example, we added a 'if not, why not' option to answers that currently only included 'yes' and 'no' so that we did not force the user to have to take longer with it but gave them the option to leave more detailed feedback if they wished.
 
-*Here are links to all three of our questionnaires if you are interested:*
- [1st questionnaire (1st wireframe)](https://www.smartsurvey.co.uk/s/S58J8X/)
- [2nd questionnaire (2nd wireframe)](https://www.smartsurvey.co.uk/s/S58J8X/)
+*Here are links to all three of our questionnaires if you are interested:*  
+ [1st questionnaire (1st wireframe)](https://www.smartsurvey.co.uk/s/S58J8X/)  
+ [2nd questionnaire (2nd wireframe)](https://www.smartsurvey.co.uk/s/S58J8X/)  
  [3rd questionnaire (Our most up to date website shown on a local host)](https://www.smartsurvey.co.uk/s/S58J8X/)
 </p>
 
 <p align="left">
-<img src="supporting_images/right.png" width="300">
+<img src="supporting_images/right.png" width="600">
 </p>
 <p align="right">
-<img src="supporting_images/left.png" width="300">
+<img src="supporting_images/left.png" width="600">
 </p>
 
 
@@ -160,22 +160,28 @@ that we recorded the audio to our interviews, we were able to make use out of an
 24/2/21: Paper prototyping naturally led us to start conducting semi-structured interviews. The process of paper prototyping, as explained above, somewhat resembled the process of an interview. As a group, we ensured that we conducted such interviews with people after they had undergone the paper prototyping from this date onwards. This method of qualitative evaluation continued throughout the rest of our development process, being conducted with users after they had seen the wireframe or been shown the most up to date version of the website on a local host.
 
 ### Stage 2: Move to Wireframing 17/3/21
-[First wireframe](/Users/zakigill/Desktop/1st Wireframe.png)
+<p align="center">
+<img src="supporting_images/wireframe_one.png" width="500">
+</p>
+
+
 17/3/21: So far, our evaluation was based on feedback from users who had only seen our ideas written on paper. At the point that we had built the first map interface part we were able to take our prototyping one step further by showing them a wireframe where we were able to make the undeveloped website look as it would do in the future. We decided to use a wireframe because it allowed us to evaluate how users thought of our design before it was actually coded.
 
-[Second Wireframe](/Users/zakigill/Desktop/2nd wireframe.png)
+<p align="center">
+<img src="supporting_images/wireframe_2.png" width="500">
+</p>
+
+
 5/4/21: There reached a point where our first wireframe became out of date in relation to the level of development of the website. At the same time, we felt that the website was too undeveloped to be used by users. Therefore, we built a second wireframe so we could continue to evaluate our website against user preferences which enabled us to gain feedback from users at different stages during the development process as we built our website ahead of time.
 
 
 ### Stage 3: Quantitative Feedback Involvement 24/3/21
-*screenshot of 5 point likert scale*
-
-24/3/21: Although we felt that interviews were a good source of creating qualitative feedback, we made a decision to try and increase our sample size when it came to evaluating our product and attempt to create some quantitative feedback. In order to achieve a quantitative metric for how a user would feel about our product, we decided it was necessary to ask some 'how much' and 'how many' questions at scale to our users. Very shortly after we started showing our first wireframe to users, we created a questionnaire that we could send alongside the link to the wireframe. We tried to push the quantitative aspect of the questionnaires by using 5 point likert scale, as seen in the above figure. For example, in improving our first questionnaire to our second one,  ensured that we reflected the different points on the scale itself, instead of having just numbers. For example as possible choices to the question 'How playful did you find this website?', instead of just having options 1-5, we would have:    
-1 - not playful at all
-2 - not very playful
-3 - somewhat playful
-4 - very playful
-5 - extremely playful
+24/3/21: Although we felt that interviews were a good source of creating qualitative feedback, we made a decision to try and increase our sample size when it came to evaluating our product and attempt to create some quantitative feedback. In order to achieve a quantitative metric for how a user would feel about our product, we decided it was necessary to ask some 'how much' and 'how many' questions at scale to our users. Very shortly after we started showing our first wireframe to users, we created a questionnaire that we could send alongside the link to the wireframe. We tried to push the quantitative aspect of the questionnaires by using 5 point likert scale, as seen in the above figure. For example, in improving our first questionnaire to our second one,  ensured that we reflected the different points on the scale itself, instead of having just numbers. For example as possible choices to the question 'How playful did you find this website?', instead of just having options 1-5, we would have:      
+1 - not playful at all  
+2 - not very playful  
+3 - somewhat playful  
+4 - very playful  
+5 - extremely playful  
 
 
 
