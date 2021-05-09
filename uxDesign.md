@@ -320,8 +320,16 @@ A gif of the implemented home-in feature (nicknamed 'fly-in feature' by the team
   <img src="supporting_images/Fly_feature.gif" alt="animated" />
 </p>
 
+# Summary of Design Heuristics used:
 
-### Final Remarks Regarding UX
+- ***Matched the system and the real world:*** We made sure that the UX was easy for the user to comprehend. Ie displaying text, in place of an integer, for the mood.
+- ***Error Prevention:*** We through validation errors on the forms to ensure incompatible data wasn't submitted. Also, we validated username and password values in the registration forms and through errors if there were any errors.
+- ***Recognition rather than recall:*** We ensured the user could just recognize functions in the UI instead of having to recall them from previous use. Like the welcome text on the welcome pop-up, and using text for the top navbar.
+- ***Aesthetic and minimalist design:*** We wanted to keep the user interface clean, to contemplate the design heuristic above. We only added features that the users demanded, and nothing more.
+- ***Help and documentation:*** We made sure we provided the user help and guidance while using the UI. We included the 'About' page and the 'welcome' pop-up.
+
+
+## Final Remarks Regarding UX
 Our three characters served as both inspiration and guidance for the initial key features of our application. User feedback proved to highlight useful features that certainly contributed to an improved user experience. It should be noted. however, that not all feedback was acted on. The reason for this was not because we disagreed, but because it was far beyond the scope of our project at this current time (MENTION THAT WE WILL TALK ABOUT THIS MORE IN PROJECT EXTENSION IDEAS PART). Nevertheless, feedback of this nature sometimes inspired us to implement a user's idea slightly differently to what was intended. We will finish this section with an example of this. See below for a user's suggestion:
 
 <p align="center">
