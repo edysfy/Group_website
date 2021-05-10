@@ -105,9 +105,9 @@ From this, we went on to build the initial prototype of EmoteMap. We choose a pi
 We started experimenting with Mapbox's circle markers. This was a demo provided by Mapbox and gave us an insight into how we can display different emotions on the map with varying colors (shown in the right picture). We also used [freelogodesign.org/](https://www.freelogodesign.org/), to come up with a variety of different logos to suit our application, and decided to go with the globe (we cant show below as uses black text). We made the logo a button in the toolbar, so users can find their way back to the map when on a different route.
 
   <p align="center">
-  <img align="center" src="src/assets/logos/handslogo.png" width="250px">
-  <img align="center" src="src/assets/logos/messagelogo.png" width="250px">
-  <img align="center" src="src/assets/logos/treelogowhite.png" width="250px">
+  <img align="center" src="../src/assets/logos/handslogo.png" width="250px">
+  <img align="center" src="../src/assets/logos/messagelogo.png" width="250px">
+  <img align="center" src="../src/assets/logos/treelogowhite.png" width="250px">
   </p>
 
 <a name="post"></a>
