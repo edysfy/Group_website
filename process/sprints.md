@@ -371,7 +371,7 @@ To add more functionality when a user logs in, we implemented a sidebar, the sta
 
 As the website was nearing completion, we carried out a further round of user questionnaires to gather feedback on the final website design, with some of the resulting design changes discussed in our [UX Design](uxDesign.md) document. We also began to start working on the project write up, initially focusing on formatting our README producing a rough outline of the content we needed to fill in.
 
-As the complexity of our project began to grow we decided to implement a test process before each git commit and push, to ensure any local changes made did not break the website, which helped facilitate continuous integration as we were constantly compiling and testing our website after changes, and could be confident that code on the live repository was stable. See [our test plan](src/app/test_plan.txt) on our repository for details of this testing process.
+As the complexity of our project began to grow we decided to implement a test process before each git commit and push, to ensure any local changes made did not break the website, which helped facilitate continuous integration as we were constantly compiling and testing our website after changes, and could be confident that code on the live repository was stable. See [our test plan](/src/app/test_plan.txt) on our repository for details of this testing process.
 
 ### Key implementation issues found:
 <table>
