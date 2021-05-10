@@ -190,14 +190,14 @@ We needed to design the UI for the login and sign up processes. But first, We re
     <img align="center" src="supporting_images/newnavbar.png" width="550px">
   </p>
 
-We decided that when the user clicks the text, the user will be routed to the corresponding path. Initially, we had idea of having the login/sign up components slide into the map. However, we thought it was best to route the users to a different page. Marceli recommended a great open source for [SVG images](https://undraw.co/illustrations). We picked the 'sign up' SVG because it resembles a new person being welcomed into the family, and the 'login' SVG resembles one who is eager to get back to the application". Purple is a good secondary colour to white, and we want add some extra flair with CSS, so when they user hovers over the form it creates a black shadow.
+We decided that when the user clicks the text, the user will be routed to the corresponding path. Initially, we had idea of having the login/sign up components slide into the map. However, we thought it was best to route the users to a different page. Marceli recommended [Undraw.co](https://undraw.co/illustrations) a great open source for SVG images. We picked the 'sign up' SVG because it resembles a new person being welcomed into the family, and the 'login' SVG resembles one who is eager to get back to the application". Purple is a good secondary colour to white, and we want add some extra flair with CSS, so when they user hovers over the form it creates a black shadow.
 
   <p align="center">
   <img align="center" src="supporting_images/singup.png" width="500px">
   <img align="center" src="supporting_images/login.png" width="500px">
   </p>
 
-We made an initial paper prototype that we thought would be reasonable and fulfill the needs of the user requirements specified in the [user stories](#us):
+We made an initial paper prototype that we thought would be reasonable and fulfill the needs of the user requirements specified in the [user stories](#users):
 
   <p align="center">
   <img align="center" src="supporting_images/UIPP.png" width="550px">
