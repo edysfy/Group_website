@@ -2,22 +2,34 @@
 <img src="supporting_images/UX.png" width="650px">
 </p>
 
-## Identification of our target users
+## Table of Contents
+* [Identification of our Target Users](#users)
+* [Early Prototyping - Paper Prototypes and Feedback](#prototype)
+* [Implementation of the Initial Search Bar and Post Form](#post)
+* [The Heat Map](#heatmap)
+* [User Authentication and Features](#authentication)
+* [User Search Prototype](#userSearch)
+* [Final UI theme, and Animation](#finalUI)
+* [How the Wireframe Feedback influenced our UI...](#influence)
+* [Live User Sessions](#live)
+* [Summary of Design Heuristics](#summary)
+* [Final Remarks Regarding UX](#remarks)
 
-<a name="us"></a>
+<a name="users"></a>
+## Identification of our Target Users
 
-We knew we wanted to make an app that creates a sense of community in the area of mental health. For full details on the justification of the idea, please see [Introduction, background and motivation](introSect.md). We agreed our initial idea relied on three fundamental features: the ability to create an EmotePost, the ability to read EmotePosts, and the ability to search for EmotePosts by keyword. Changing any of these features would change the idea entirely. We thought it would be a good idea to create a character that represents a potential user. This character's story is intentionally ordinary. We would then keep this character in mind when developing the project, to help ensure the development was geared towards the potential user.
+We knew we wanted to make an app that creates a sense of community in the area of mental health. For full details on the justification of the idea, please see [Introduction, background and motivation](introSect.md). We agreed our initial idea relied on three fundamental features: the ability to create an EmotePost, the ability to read EmotePosts, and the ability to search for EmotePosts by keyword. Changing any of these features would change the idea entirely. We thought it would be a good idea to create characters that represent potential users. The characters' stories are intentionally ordinary. We would then keep these characters in mind when developing the project, to help ensure the development was geared towards the potential users.
 <br><br> Here's a bit about Sarah, 19:
 <table>
 <tr>
   <th>Photo</th>
   <th>Description</th>
-  <th>How will user use EmoteMap</th>
+  <th>Use of EmoteMap</th>
 </tr>
 <tr>
   <td><img src="supporting_images/Sarah.png" width="100" align="left"></td>
   <td>"I’m a first year uni student, but I don’t feel like it. The pandemic has meant that we are studying from home, and I haven’t had the opportunity to make friends yet. I’m living with three other students, but I didn’t know them before I moved in, and I’m not so close to them. They all seem to be best friends already. It’s been hard moving to a new city during these times. I often feel alone. I know there must be so many others in my situation, but it’s easy to forget that. I love my course, but this is not what I expected. I wish I could share my feelings with others…"</td>
-  <td>Sarah is feeling down, she would use EmoteMap by venting her emotions, and using it like a journal. Helping her de-stress, and separate her emotions from her mind. Initially she would create an account. Then post, attach a keyword and emotion to it. She can search for other posts with the same keyword. She can see what others are going through. She can get a sense that she is not alone. At the moment, EmoteMap only allows users to post and view other posts to give a sense of community. However the can be built upon in the future: See Evaluation and Conclusion</td>
+  <td>Sarah is feeling down and so she would use EmoteMap to express her emotions. To do this, she would state her current emotion, and then describe the reason as to why she feels as she does. EmoteMap will then pin this to the map. She has the option to search for other posts describing the same feelings. By reading others' posts, she feels less alone, and rather relieved that she has expressed herself. Currently, EmoteMap only allows users to post and view other posts to give a sense of community. However this can be built upon in the future: See Evaluation and Conclusion</td>
 </tr>
 </table>
 
@@ -29,7 +41,7 @@ Admittedly, it was only until after we came up with the idea, that we saw its po
 <tr>
   <th>Photo</th>
   <th>Description</th>
-  <th>How will user use EmoteMap</th>
+  <th>Use of EmoteMap</th>
 </tr>
 <tr>
   <td><img src="supporting_images/Christina.png" width="100" align="left"></td>
@@ -46,7 +58,7 @@ The identification of this second type of user highlighted the importance of cre
 <tr>
   <th>Photo</th>
   <th>Description</th>
-  <th>How will user use EmoteMap</th>
+  <th>Use of EmoteMap</th>
 </tr>
 <tr>
   <td><img src="supporting_images/Christina.png" width="100" align="left"></td>
@@ -55,7 +67,8 @@ The identification of this second type of user highlighted the importance of cre
 </tr>
 </table>
 
-## Early prototyping - paper prototypes and feedback
+<a name="prototype"></a>
+## Early Prototyping - Paper Prototypes and Feedback
 
 <img src="supporting_images/Paper_prototype_start.jpeg" width="350" align="right">
 
@@ -92,12 +105,13 @@ From this, we went on to build the initial prototype of EmoteMap. We choose a pi
 We started experimenting with Mapbox's circle markers. This was a demo provided by Mapbox and gave us an insight into how we can display different emotions on the map with varying colors (shown in the right picture). We also used [freelogodesign.org/](https://www.freelogodesign.org/), to come up with a variety of different logos to suit our application, and decided to go with the globe (we cant show below as uses black text). We made the logo a button in the toolbar, so users can find their way back to the map when on a different route.
 
   <p align="center">
-  <img align="center" src="src/assets/logos/handslogo.png" width="250px">
-  <img align="center" src="src/assets/logos/messagelogo.png" width="250px">
-  <img align="center" src="src/assets/logos/treelogowhite.png" width="250px">
+  <img align="center" src="../src/assets/logos/handslogo.png" width="250px">
+  <img align="center" src="../src/assets/logos/messagelogo.png" width="250px">
+  <img align="center" src="../src/assets/logos/treelogowhite.png" width="250px">
   </p>
 
-## Implementation of the initial search bar and post form.
+<a name="post"></a>
+## Implementation of the Initial Search Bar and Post Form
 
 At this stage, we have a basic prototype. We were getting used to Mapbox and its GeoJson requirements. Before dealing with user authentication, we wanted to display GeoJson data on the map, implement a basic search filter, and allow users to post by clicking on a button, and routing users to a post page so they can make a post. Ed suggested that we get rid of the white map and use a black map as the contrast between pink was preferred. After some feedback from family and friends, It became obvious that the black map was preferred over this theme.
 
@@ -138,7 +152,8 @@ It was obvious to us from the start that we needed use the GeoJson data created 
 
 For the benefit of our users being able to distinguish their own posts on the map from other user's posts, we made them distinguishable from others by adding an extra SVG on underneath the circle in the shape of a volcano. <br>
 
-## The heat map
+<a name="heatmap"></a>
+## The Heat Map
 
 We needed to take into consideration the needs of Christine, and to an extent, Dan. We needed a way to display the mood/emotions across the globe in an attractive style, so they could use this data for their interests and spark curiosity into the nature of users' posts at certain locations. This was on our agenda in a team scrum. We were looking through Mapbox's data visualization features. 
 
@@ -163,7 +178,8 @@ We test out all three methods. We thought that the heat map was the best, accura
 
 We decided to go with the third option as it effectively presented multiple data points but also allowed users to zoom in and see exactly where individual posts were.
 
-## User authentication and features
+<a name="authentication"></a>
+## User Authentication and Features
 
 We needed to design the UI for the login and sign up processes. But first, We received feedback from the users and changed the icons for 'sign up' and 'login' to text, as there was some issues highlighted regarding navigating the application. So we made the following changes to the navbar.
 
@@ -174,14 +190,14 @@ We needed to design the UI for the login and sign up processes. But first, We re
     <img align="center" src="supporting_images/newnavbar.png" width="550px">
   </p>
 
-We decided that when the user clicks the text, the user will be routed to the corresponding path. Initially, we had idea of having the login/sign up components slide into the map. However, we thought it was best to route the users to a different page. Marceli recommended a great open source for [SVG images](https://undraw.co/illustrations). We picked the 'sign up' SVG because it resembles a new person being welcomed into the family, and the 'login' SVG resembles one who is eager to get back to the application". Purple is a good secondary colour to white, and we want add some extra flair with CSS, so when they user hovers over the form it creates a black shadow.
+We decided that when the user clicks the text, the user will be routed to the corresponding path. Initially, we had idea of having the login/sign up components slide into the map. However, we thought it was best to route the users to a different page. Marceli recommended [Undraw.co](https://undraw.co/illustrations) a great open source for SVG images. We picked the 'sign up' SVG because it resembles a new person being welcomed into the family, and the 'login' SVG resembles one who is eager to get back to the application". Purple is a good secondary colour to white, and we want add some extra flair with CSS, so when they user hovers over the form it creates a black shadow.
 
   <p align="center">
   <img align="center" src="supporting_images/singup.png" width="500px">
   <img align="center" src="supporting_images/login.png" width="500px">
   </p>
 
-We made an initial paper prototype that we thought would be reasonable and fulfill the needs of the user requirements specified in the [user stories](#us):
+We made an initial paper prototype that we thought would be reasonable and fulfill the needs of the user requirements specified in the [user stories](#users):
 
   <p align="center">
   <img align="center" src="supporting_images/UIPP.png" width="550px">
@@ -211,7 +227,7 @@ However, we discovered that the sidebar didn't look too good. We took inspiratio
   <img align="center" src="supporting_images/sidebarslide.gif" width="550px">
   </p>
 
-
+<a name="userSearch"></a>
 ## User Search Prototype
 <a name="sp"></a>
 <img src="supporting_images/Filter_feature.png" width="250" align="right">
@@ -224,7 +240,8 @@ The image below shows the prototype plan, and the image to the right shows the f
 
 We wanted to use colours that followed the theme of the site. We added a white border. We were also experimenting with the transparency and liked the look the purple being translucent, showing the map underneath. We settled on this style and applied this to all of the other components.
 
-## Final UI theme, and animation
+<a name="finalUI"></a>
+## Final UI theme, and Animation
 
 We showed [this stage](#third) to Marceli, his feedback was this:
 
@@ -238,7 +255,8 @@ We implemented this animation, and then [incorporated the theme we developed for
   <img align="center" src="supporting_images/finui.gif" width="550px">
   </p>
 
-## How the wireframe feedback influenced our UI...
+<a name="influence"></a>
+## How the Wireframe Feedback influenced our UI...
 
 Our paper prototype served well at forming an initial visualisation of the website, and for receiving feedback on core features. In order to gain feedback related to user experience, we needed to demonstrate the website using a closer representation of a working product. Logically, a wireframe was the next logical step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/EmoteMap-prototype-2-ckn7hacvv1nm601590k9h8044/ckn7han2m109p012d8epohsri/play) or [here](https://zaki744910.invisionapp.com/console/share/NJ2D65MNBU/572059598/play) to go to our interactive wire frame. Below is a preview:
 
@@ -274,7 +292,8 @@ Initially, we didn't implement an 'about' page in the application. We were think
 <img src="supporting_images/About_page.png" width="700">
 </p>
 
-## Live user sessions
+<a name="live"></a>
+## Live User Sessions
 
 As our final documented method for UX improvement, we came up with an idea - a live demonstration session. The idea was to first explain the project, before handing the wireframe over to the user. We told the user to imagine that they were using the real, working app. We asked if they could talk aloud their intentions as they were navigating the website. We thought this may be helpful as it would allow us to get a better idea of how users would use our app, and also to allow discussion regarding any ideas, or suggestions they may have. From the recording that was made, we have included a section that was particularly useful for our UX development.
 
@@ -330,7 +349,8 @@ A gif of the implemented home-in feature (nicknamed 'fly-in feature' by the team
   <img src="supporting_images/Fly_feature.gif" alt="animated" />
 </p>
 
-## Summary of Design Heuristics used:
+<a name="summary"></a>
+## Summary of Design Heuristics used
 
 * ***Matched the system and the real world:***  We made sure that the UX was easy for the user to comprehend. Ie displaying text, in place of an integer, for the mood. Also, by not using any error codes on the UI, we converted these errors so they are human readable. 
 * ***Error Prevention:*** <br> We sent errors back to the user on the forms to ensure incompatible/null data wasn't submitted. Also, we sent errors when the username and password values in the registration forms were invalid.
@@ -339,6 +359,7 @@ A gif of the implemented home-in feature (nicknamed 'fly-in feature' by the team
 * ***Aesthetic and minimalist design:*** <br> We wanted to keep the user interface clean to contemplate the design heuristic above. We only added features that the users suggested and nothing more. Also taking inspiration from Apple Inc.
 * ***Help and documentation:*** <br> We made sure we provided the user help and guidance while using the UI. We included the 'About' page and the 'welcome' pop-up.
 
+<a name="remarks"></a>
 ## Final Remarks Regarding UX
 
 Our three characters served as both inspiration and guidance for the initial key features of our application. User feedback proved to highlight useful features that certainly contributed to an improved user experience. It should be noted. however, that not all feedback was acted on. The reason for this was not because we disagreed, but because it was far beyond the scope of our project at this current time (MENTION THAT WE WILL TALK ABOUT THIS MORE IN PROJECT EXTENSION IDEAS PART). Nevertheless, feedback of this nature sometimes inspired us to implement a user's idea slightly differently to what was intended. We will finish this section with an example of this. See below for a user's suggestion:

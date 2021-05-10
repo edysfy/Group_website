@@ -227,13 +227,13 @@ At this point in the project we were intending to use this template data from on
 <tr>
   <td>Front End</td>
   <td>
-  Sarah said she can now see how I can post my emotions on the App! Hurry up please as I cant use it yet. I need to connect with others and see how others are doing.
+  Sarah said she can now see how I can post my emotions on the App! "Hurry up please as I cant use it yet. I need to connect with others and see how others are doing. Also, the map is really buggy, it is not scrolling properly, and it is moving around the screen"
    </td>
   <td>
-  Navbar and mapbox component were not interacting nicely, with strange scrolling issues panning around the map
+  Navbar and mapbox component were not interacting nicely, with strange scrolling issues panning around the map. 
   </td>
   <td>
-  implement routing using angular so that instead of the toolbar and the map being in the mapbox html, the mapbox is loaded from `app.component.html` using a router outlet 
+  implement routing using angular so that instead of the toolbar and the map being in the mapbox html, the mapbox is loaded from `app.component.html` using a router outlet. We then fixed the position of the map, and had it under the toolbar. All routing will now be done on the toolbar and replace the map. All components related to the map will now be nested in the mapbox component.
   </td>
 </tr>
 </table>
@@ -258,8 +258,9 @@ This stage of the project is where we began to implement the key features that w
 * Implementing docker functionality for continuous integration
 * Begin to implement mapbox heat map example
 * Build the EmotePost feature
+* Get docker working
 
-The Geopost.js route was initially set up to just serve static dummy data - a geoJSON file containing earthquake data from an example in the mapbox api documentation, to the front-end. We then implemented a heatmap template from the mapbox documentation, to both test the api was correctly returning data but also as a base to build off when we add in our own data in later stages; we wanted a heatmap like effect for users emotions rather than earthquake magnitudes! 
+The Geopost.js route was initially set up to just serve static dummy data from an external URL - a geoJSON file containing earthquake data from an example in the mapbox api documentation, to the front-end. We then implemented a heatmap template from the mapbox documentation, to both test the api was correctly returning data but also as a base to build off when we add in our own data in later stages; we wanted a heatmap like effect for users emotions rather than earthquake magnitudes! We used Angular's HTTP client to link the GET request to the API URL.
 
 Upon having a team conversation with Marceli, it was recommended that we look into Mongoose as an Object Document Manager to make our lives easier and save time.
 After some research, we decided to use Mongoose as the middleman between incoming/outgoing HTTP requests/responses between the API and our database.
@@ -267,11 +268,9 @@ The syntax of Mongoose was a lot simpler than raw MongoDb and because of this we
 Mongoose models are a lot easier to initialize as they are capable of setting up default values automatically, and makes it easy to validate the data with simple commands.
 MongoDB is inherently schema-less, however, Mongoose allows the developer to define schemas for their data type. This was used fully at the start as we were able quickly, prototype our data models on the backend. Queries are a lot easier to deal with as they allow functions to chain onto the Model and don't require the embedded mnemonics that MongoDb requires so the developer experience was a lot smoother. This is akin to comparing using C to using Python. While C is more efficient and allows more room for flexibility in our code, Python provides a layer of abstraction that makes it a lot easier for scripting and experimenting with abstract ideas.
 
-We used mongoose dummy GeoJson and the to help define and develop our `geoJSON.js` mongo schema; i.e. a data structure that all user posts would follow, including a mood rating, keyword and an explanation (and eventually the username and date/time). We made sure this integrated with the data model of the application. Over the rest of this sprint we also developed a model with the purpose of eventually adding user profiles to the website if time permits; our `user.js` model. We built the functions in the corresponding route's functionality to process user authentication. We experimented with the models by building multiple Entity-Relationship-Diagrams. We then decided we need this route to also handle post requests from the front-end and store the data in the database. We used the Mongoose Models to design the routes.
+We used GeoJson from mapbox to help define and develop our `geoJSON.js` mongo schema; i.e. a data structure that all user posts would follow, including a mood rating, keyword and an explanation (and eventually the username and date/time). We made sure this integrated with the data model of the application. Over the rest of this sprint we also developed a model with the purpose of eventually adding user profiles to the website through our `user.js` model. This contained the revelent data needed for user authentication, and their details. We built the functions in the corresponding route's functionality to process user authentication. We experimented with the models by building multiple Entity-Relationship-Diagrams. We then decided we need this route to also handle post requests from the front-end and store the data in the database. We used the Mongoose Models to design the routes. Defining Interfaces on the front end to match.
 
-On the front end we also need to build the forms that allows the user to post. We decided that the user would click the on a button and the form component will render, saving the users coordinates, so when they post the pin with be saved at their location on the map.
-
-As the complexity of our project began to grow we decided to implement a test process before each git commit and push, to ensure any local changes made did not break the website, which helped facilitate continuous integration as we were constantly compiling and testing our website after changes, and could be confident that code on the live repository was stable. See [our test plan](test_plan.txt) on our repository for details of this testing process.
+On the front end we also need to build the forms that allows the user to post. We decided that the user would click the on a button and the form component will render, saving the users coordinates, so when they post the pin with be saved at their location on the map. We used mat-dialog with a form nested into it.
 
 ### Key implementation issues found:
 
@@ -284,7 +283,7 @@ As the complexity of our project began to grow we decided to implement a test pr
 </tr>
 <tr>
   <td>Api/Express</td>
-  <td> Sarah will eventually be able to see up to date data on displayed on the map and can add to that data by making a post </td>
+  <td> Sarah will eventually be able to see up to date data on displayed on the map and can add to that data by making a post. "Wow I can now see the application" </td>
   <td>Initially the api returned a url to some data - however whilst we were exploring how to implement our backend, we discovered that serving GeoJson data statically from a external URL source would add unnecessary processing time and be difficult to update with live data; we would have to transfer data from the database into another server, essentially having to call http fetch requests twice, and requiring a refresh to update the data </td>
   <td>We decided to return an array of geoJSON objects from the api (also supported by mapbox), which would allow us to easily update and manipulate the data in memory by using our post-service to send the data to different components, manipulate the array, and eventually send information to the database, and reduce http get and post requests. We defined GeoJson interface on the front end, and used this to convert the data from the backend into GeoJson objects and store that in an array.</td>
 </tr>
@@ -307,14 +306,16 @@ This sprint was where we finally began to pull together the disparate elements o
 * Add the functionality to make posts (i.e. sending data to the front end)
 * Begin working on feedback from our user study and lecturers
 * Finalize key mapbox api functionality (pop ups when hovering over a point on the map)
-* Add heatmap to the map
 * If time permits, add users to the database as well
 
 To implement displaying the post data when a user hovers over a data point on the map required the use of a couple of the features offered by mapbox api. Foremost was labeling the map marker layer with the interactive tag; `this.map.addLayer({ id: 'markers', interactive: true, .....})`. This allows the layer to be interacted with through mouse events. We first had the popup be triggered by clicking on the point, but decided it would be more intuitive for it to appear on a mouse hover; we made use of mapbox's `this.map.on('mouseenter', 'markers', (e)....` command to trigger mapbox's pop up feature, which then displays the data points geoJSON properties - which we are fetching from mongoDB as discussed above.
 
 From our user feedback it was clear that first time users struggled to grasp the point of the website, and in fact some suggested we add a section to explain the site; so we did exactly that! We added an "about" component and a link in the toolbar that users could click through to, to learn more about the website. We also changed our colour scheme to a white toolbar on a black map, rather than pink on white, from feedback from our lecturers, and to make more clear the colourful data points on the map (the colours contrasted the black map far more than the white).
 
-We also finally implemented a user-post component, which allows new data to be added to website; this component makes use of angular forms to collect inputted data, which we then transform into geoJSON format using our post-service, to be added to our database. As we had time at the end of this sprint, we also began to add in actual user functionality to the website, along with the `user.js` route to enable this - the sign up/login buttons on the navbar where changed to actually route through to signup/login pages, which also use angular forms to collect user input and add new users to the database/verify users who are logging in.
+We also finally implemented a user-post component, which allows new data to be added to website; this component makes use of angular forms to collect inputted data, which we then transform into geoJSON format using our post-service, to be added to our database. As we had time at the end of this sprint, we also began to add in actual user functionality to the website, along with the `user.js` route to enable this - the sign up/login buttons on the navbar where changed to actually route through to signup/login pages, which also use angular forms to collect user input and add new users to the database/verify users who are logging in. At this point we developed the `authentication-service` and the `url-state-service` to deal with user authentication on the frontend, and to make the username appear on the toolbar.
+
+Here we also wanted to our application to be compiled through docker. We made sure our server was returning the index.html file. When we set this up there was an issue with docker and bcrypt library (used to hash user passwords). We could not fix this issue, so we had to remove bcrypt from our application, and we decided to leave user  authentication unhashed.
+
 
 ### Key implementation issues found:
 <table>
@@ -332,9 +333,15 @@ We also finally implemented a user-post component, which allows new data to be a
 </tr>
 <tr>
   <td>Mapbox</td>
-  <td>User can hover over points on the map to see more detail, and can create their own posts to add to the map. Christina can now view the heatmap to see the spread of emotions.</td>
+  <td>Sarah can hover over points on the map to see more detail, and can create their own posts to add to the map. Christina can now view the heatmap to see the spread over user's emotions with all of the new functionality.</td>
   <td>Initially we had the users click on the marker, however this made the pop-up freeze</td>
   <td>Changed it to use the mapbox hover feature</td>
+</tr>
+<tr>
+  <td>Logging out when refreshing</td>
+  <td>Sarah said it was really annoying that every time she refreshed she got logged out.</td>
+  <td>What Sarah said</td>
+  <td>Every time there was a refresh the authentication lost the JWT,username and auth state. We needed to store this in local storage and fetch every time the application reloaded so she remained logged in.</td>
 </tr>
 </table>
 
@@ -360,9 +367,11 @@ In this sprint we aimed to add some of the more complex feature to our website, 
 * Users now have to log in to be able to filter results, encourages posting and engaging with site
 * Began to start formatting write up/readme
 
-To add more functionality when a user logs in, we implemented a sidebar, the state of which was determined by our `sidebar.service`, which we triggered through button presses in our `sidebar.component.html` and `sidebar.component.ts`. Depending on the state of our `sidebar.service` different visual elements would be displayed; for example if the user clicks the postlist icon, the `userpost-display` component is called, which shows a scrollable timeline of the users post history. Another key aspect was the `usersearch-display` which required extensive use of angular services and api calls to our back end in order to return the correct results - the detailed implementation of this is discussed in our [System Implementation](sysImp.md) document.
+To add more functionality when a user logs in, we implemented a sidebar, the state of which was determined by our `sidebar.service`, which we triggered through button presses in our `sidebar.component.html` and `sidebar.component.ts`. Depending on the state of our `sidebar.service` different visual elements would be displayed; for example if the user clicks the postlist icon, the `userpost-display` component is called, which shows a scrollable timeline of the users post history. Another key aspect was the `usersearch-display` which required extensive use of angular services and api calls to our back end in order to return the correct results - the detailed implementation of this is discussed in our [System Implementation](sysImp.md) document. We also implemented the other services, `user-service`, `user-search-service`. This fetchs data to be displayed on the user timeline, and data the user search for respectivly.
 
 As the website was nearing completion, we carried out a further round of user questionnaires to gather feedback on the final website design, with some of the resulting design changes discussed in our [UX Design](uxDesign.md) document. We also began to start working on the project write up, initially focusing on formatting our README producing a rough outline of the content we needed to fill in.
+
+As the complexity of our project began to grow we decided to implement a test process before each git commit and push, to ensure any local changes made did not break the website, which helped facilitate continuous integration as we were constantly compiling and testing our website after changes, and could be confident that code on the live repository was stable. See [our test plan](/src/app/test_plan.txt) on our repository for details of this testing process.
 
 ### Key implementation issues found:
 <table>
@@ -383,6 +392,18 @@ As the website was nearing completion, we carried out a further round of user qu
   <td>Website has clear ui; user can easily navigate the website</td>
   <td>We had two components allowing search, one in the sidebar but also a separate component for non-logged in users. We had a lot of difficulty getting this component to position itself on the page correctly, and to get it to not break after a user clicked a button</td>
   <td>We decided to remove the component and only let logged in users search so we didn't have a duplication of functionality. This also made the display of the map clearer for non-logged in users</td>
+</tr>
+<tr>
+  <td>Front-end</td>
+  <td>Sarah said that she really likes the time line and the fact she can fly to locations/delete posts</td>
+  <td>The posts were in reverse order</td>
+  <td>The posts started from oldest to newest, meaning it was reversed. We sorted the posts via data on the backend to display the posts in the correct order.</td>
+</tr>
+<tr>
+  <td>Search data mixing with the normal data initally fetched from database.</td>
+  <td>Christine and Dan both noticed that when they were searching for data, it just added duplicated data on the map, meaning the heapmap intensity would get bigger every time</td>
+  <td>What Dan and Christine said above, also they keyword search was not in sync with the other search parameters.</td>
+  <td>In order to fix this, we needed to stated the map would use to display the two data streams. We also performed the keyword search on the current search data in memory</td>
 </tr>
 </table>
 
@@ -416,7 +437,7 @@ Our development process for each sprint first began with a group meeting, where 
 
 On our project github, in addition to the main branch, a 'dev' (development) branch was also created. This served as the branch which we continuously pushed to. We used git to enable collaborative work on a large project, making sure to git fetch and pull every time before starting work and every time before pushing any changes to the dev branch. This allowed us to maintain up to date files across our different machines and even when we were working on the same files; by fetching and pulling before pushing, we made sure that any conflicts were fixed before being pushed to the dev branch. Some group members also used their own branches split off of the dev branch to privately work and iterate on a new feature before merging back into dev branch.
 
-At regular intervals, usually at the end of sprints where we had achieved significant progress, we merged into our main branch, this time by submitting a pull request on github. After the pull request we would all pull the latest update and make sure we could all compile and run the website on docker (we would also do this before every push, but this step served as a key point of verification that the website was in fact working), as described in our [System Implementation](sysImp.md) document, and run [our test plan](test_plan.txt) as described in sprint 3. We would then commit the merge to main. In this way, throughout the development process, we continuously compiled and utilised all elements of the MEAN stack from a very early point, helping us achieve continuous integration and deployment. We didn't feel the need to use the staging branch as we weren't going to deploy the site live during the project. We when we pushed to the main branch we would use the latest commit here in our user testing.
+At regular intervals, usually at the end of sprints where we had achieved significant progress, we merged into our main branch, this time by submitting a pull request on github. After the pull request we would all pull the latest update and make sure we could all compile and run the website on docker (we would also do this before every push, but this step served as a key point of verification that the website was in fact working), as described in our [System Implementation](sysImp.md) document, and run  [our test plan](/src/app/test_plan.txt)  as described in sprint 3. We would then commit the merge to main. In this way, throughout the development process, we continuously compiled and utilised all elements of the MEAN stack from a very early point, helping us achieve continuous integration and deployment. We didn't feel the need to use the staging branch as we weren't going to deploy the site live during the project. We when we pushed to the main branch we would use the latest commit here in our user testing.
 
 After new features were added we would then also get user feedback and as a group assess the current project, helping us evaluate the said feature but also to start off the CI (continuous integration) pipeline again for the next sprint. As an example, one feature we developed was a search bar for non-users; we discussed, developed and tested the feature using the CI pipeline as described - based on user feedback, we decided it wasn't needed and removed this from our code (see implementation issues for sprint 5).
 
