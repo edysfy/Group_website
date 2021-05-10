@@ -43,19 +43,19 @@ This process involved drawing our first interpretations of what we envisaged our
 
 
 **1. User:**
-*The user was the person that would be trying the system, saying out loud what they were thinking as they tried to navigate the paper prototype*
+*The user was the person that would be trying the system and saying out loud what they were thinking as they tried to navigate the paper prototype*
 
 **2. Observer:**
-*This person watched from a distance away and did not interact or say anything to other people taking part in the process. However, they maintained an important role here, which was to take notes on any critical incidents. This way, we could gauge any parts of our early ideation that strongly effected the usability of our design.*
+*This person watched from a distance and did not interact or say anything to other people taking part in the process. However, they maintained an important role in taking notes on any critical incidents during the paper prototyping process. Thanks to the observer, we could make decisions with regards to  parts of our early designs that strongly effected the usability of our design.*
 
 **3. Facilitator:**
-*This person acted as the leader of process, guiding the user through the prototype and asking key questions along the way. It was their job to encourage the user to think aloud by asking questions about their thought pattern such as "Do you know what is going on at this point?" or "What would you do next now that you are on the Sign Up page?". Or perhaps if the user was stuck (which happened a lot at the stage of paper prototyping!), "Do you find anything here useful, in terms of figuring out what you would like to do next?"*
+*This person acted as the leader of the process, guiding the user through the prototype and asking key questions along the way. It was their job to encourage the user to think aloud by asking questions about their thought pattern, such as "Do you know what is going on at this point?" or "What would you do next now that you are on the Sign Up page?". Perhaps if the user was stuck (which happened a lot at the stage of paper prototyping, as the hand drawn interface was not the clearest!), "Do you find anything here useful, in terms of figuring out what you would like to do next?"*
 
-A limitation here was that Our teams' paper prototyping was limited by the need to social distance. Members of our team were only able to work with two family members or housemates. Despite emphasising to any one participating to act as impartially as possible, it  can be argued that the fact that people lived with us helped us carry out this process was detrimental because we needed the user to be as truthful as possible, whilst people we live with were more likely to tell us what we wanted to hear about our designs.
+A limitation here was the impact of social distancing. Members of our team were only able to work with two family members or housemates. Despite emphasising to any one participating to act as neutrally as possible, it  can be argued that the people who lived with us would naturally be impartial. Because we needed the user to be as truthful as possible when providing us feedback to do with our design, this could therefore be seen as a limiting factor.
 
 
 
-To learn more about how our paper prototyping allowed us, at a very early stage, obtain our first UX feedback and its essential role in our early ideation see the [UX section](uxDesign.md) , where we give specific examples of user preferences after seeing our paper prototype which then went on to influence our design process.
+To learn more about how our paper prototyping allowed us to, at a very early stage, obtain our first UX feedback and its essential role in our early ideation see the [UX section](uxDesign.md) , where we give specific examples of user preferences after seeing our paper prototype which then went on to influence our design process.
 
 </p>
 
@@ -66,16 +66,16 @@ To learn more about how our paper prototyping allowed us, at a very early stage,
 <img src="supporting_images/wireframe_two.png" width="400" align="left">
 
 
-Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop easily through a link [like this one](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built onto screenshots of the website as it looked at the time.
+Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop easily through a link [like this one](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built on screenshots of the website as it looked at the time.
 
-Please see our [UX section](uxDesign.md) where we discuss how users were able to engage with our website and leave comments on what they thought about their experience with it.
+Please see our [UX section](uxDesign.md) where we discuss how users were able to engage with our wireframe, and could even leave comments as feedback.
 </p>
 
-<p align="center">
+<p align="left">
 <img src="supporting_images/feedback.png" width="600">
+As demonstrated by the screenshot of some feedback a user left, a limitation that we experienced when sending out the link to users can be seen. In this case, the 'x' on the comment that they are referring to was part of the screenshot of the webpage that we had uploaded as part of wireframe. Thus, this user did not understand the concept of a wireframe and thought that it was more interactive and accurate than it was. Due to the fact that some users thought  the wireframe should work in the same way as the website would, we recognise that perhaps we should have either been clearer when sending out the message with the link in or carried out more guided walkthroughs of the wireframe in order to avoid this issue.    
 </p>
 
-As demonstrated by the screenshot of some feedback a user left, a limitation that we experienced when sending out the link to users can be seen. In this case, the 'x' on the comment that they are referring to was part of the screenshot of the webpage that we had uploaded as part of wireframe. Thus, this user did not understand the concept of a wireframe and thought that it was more interactive and accurate than it was. Due to the fact that some users thought  the wireframe should work in the same way as the website would, we recognise that perhaps we should have either been clearer when sending out the message with the link in or carried out more guided walkthroughs of the wireframe in order to avoid this issue.    
 
 Below is a screenshot of a text we sent to people who agreed to look at our wireframe and then fill out a questionnaire.
 
@@ -99,11 +99,12 @@ Another method we used in evaluating our designs was an idea matrix. This was an
 
 <p>
 <img src="supporting_images/questionnaire.png" width="550" align="left">
-Our grouped used questionnaires as our main form of quantitative feedback as we were able to send a link, such as [this one](https://www.smartsurvey.co.uk/s/S58J8X/) to as many users as we could who had revently used one of our wireframes or been shown our most up to date website on a local host. This way, we could gain insights at scale into how users interpreted our website through them answering questions such as "Would you recommend this product to a friend?", "Do you think this website is solving a serious problem?" or "How would you improve this website?".
+Our group used questionnaires as the main form of quantitative feedback as we were able to send a link. such as [this one](https://www.smartsurvey.co.uk/s/S58J8X/), to users who had recently used our wireframe or been shown our most up to date website on a local host. This way, we could gain insights at scale into how users interpreted our website. Users answered questions such as "Would you recommend this product to a friend?", "Do you think this website is solving a serious problem?" or "How would you improve this website?".
 
-In total we produced three questionnaires. The first two were sent to users alongside the wireframes and the last one was filled out by users after they had used the website on a local host. The last two questionnaires asked the same questions as the first, but we improved it slightly. For example, we added a 'if not, why not' option to answers that currently only included 'yes' and 'no' so that we did not force the user to have to take longer with it but gave them the option to leave more detailed feedback if they wished.
+In total we produced three questionnaires. The first two were sent to users alongside the wireframes and the last one was filled out by users after they had used the website on a local host. The last two questionnaires asked the same questions as the first, but we improved it slightly. For example, we added a 'if not, why not' option to answers that currently only included 'yes' and 'no'. This way we were not forcing the user to spend a large amount of their time on it but still gave them the option to leave more detailed feedback if they wished.
 
-*Here are links to all three of our questionnaires if you are interested:*  
+*Here are links to all three of our questionnaires if you are interested:  
+note: the 2nd and 3rd show the mentioned improvement in questions*  
  [1st questionnaire (1st wireframe)](https://www.smartsurvey.co.uk/s/S58J8X/)  
  [2nd questionnaire (2nd wireframe)](https://www.smartsurvey.co.uk/s/S58J8X/)  
  [3rd questionnaire (Our most up to date website shown on a local host)](https://www.smartsurvey.co.uk/s/S58J8X/)
