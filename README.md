@@ -1,19 +1,19 @@
 <p align="center">
-<img src="supporting_images/titmp.png" width="650px">
+<img src="/process/supporting_images/titmp.png" width="650px">
 </p>
 
   ## Click the Giphy to fly to the trailer...
 
 <div align="center" width="560">
   
-  [![IMAGE ALT TEXT](supporting_images/flytrailer.gif)](https://www.youtube.com/watch?v=SMLlnLANZNY)
+  [![IMAGE ALT TEXT](process/supporting_images/flytrailer.gif)](https://www.youtube.com/watch?v=SMLlnLANZNY)
 
 </div>
 
 
 <a name="first"></a>
 ## Introduction, background and motivation
-View our [Introduction, background and motivation](introSect.md) document to see;
+View our [Introduction, background and motivation](process/introSect.md) document to see;
 * Introduction
 * Background & Motivation
 * Industry Review
@@ -22,15 +22,15 @@ View our [Introduction, background and motivation](introSect.md) document to see
 <a name="second"></a>
 ## System implementation,UX design and development process
 Click the following links to see our documents on;
-* [UX Design](uxDesign.md) (stakeholders,users)
-* [System Implementation](sysImp.md) (MongoDb,Backend,Frontend)
-* [Project Management & development process](sprints.md) (continuous integration, use of github)
+* [UX Design](process/uxDesign.md) (stakeholders,users)
+* [System Implementation](process/sysImp.md) (MongoDb,Backend,Frontend)
+* [Project Management & development process](process/sprints.md) (continuous integration, use of github)
 
 
 
 <a name="third"></a>
 ## Evaluation and Conclusion
-View our [Evaluation and Conclusion](evalSect.md) document to see;
+View our [Evaluation and Conclusion](process/evalSect.md) document to see;
 * Evaluation
 * Conclusion
 
