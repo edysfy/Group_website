@@ -13,26 +13,12 @@
 <a name="eval"></a>
 # EVALUATION
 
+
 <a name="method"></a>
 # a) Methodology
 
 
-In order to evaluate how our product would be received by users we used five techniques throughout the process; paper prototyping, wireframing, an idea matrix, questionnaires, semi-structured interviews.
-
-*come back to this at the end
-- intro/abstract
-- why did you use certain methods of evaluation for your particular design - qual and quant
-- summarise the rest of the section
-- how did the different methods link with each other?*
-
-Below is a short summary of our 5 main techniques of evaluating our design through users. Following this, we talk about them in more detail in our timeline of Evaluation where we discuss the kind of feedback we felt was necessary at different stages of the development process.
-
-*perhpaps expand the following by:
-- going into more detail on the explanation front
-- ensuring each headings' links with the other headings are explained
-- give an example for the things you can make examples from
-- -	talk in more detail about each thing e.g – Paper Prottyping wizard of oz
-- ensure you are talking about 'what is this method?'*
+IIn our evaluation we discuss our methods of gathering feedback data from users throughout the development process. In order to evaluate how our product would be received by users we used five techniques throughout the process; paper prototyping, wireframing, an idea matrix, questionnaires, and semi-structured interviews. Firstly, In our methodology, we expand on the five techniques used, explaining how we carried them out and interpreted them as a group. Secondly, we put together a Timeline of Evaluation Methods where we walk through the decision making process for our unique design model, from Early Ideation and Paper Prototyping on 21/2/21 to Presenting our Webpage to users on a local host on 5/4/21. We also touch on the interdependence of the evaluation techniques in this section. We mention various limitations that arose with certain evaluation techniques throughout the first two sections of the Evaluation. However, there is a third and final section to the Evaluation that discusses the potential argument that our sample size when conducting user feedback was a limitation.
 
 ### Evaluation Technique 1: Paper prototyping
 
@@ -43,19 +29,19 @@ This process involved drawing our first interpretations of what we envisaged our
 
 
 **1. User:**
-*The user was the person that would be trying the system, saying out loud what they were thinking as they tried to navigate the paper prototype*
+*The user was the person that would be trying the system and saying out loud what they were thinking as they tried to navigate the paper prototype*
 
 **2. Observer:**
-*This person watched from a distance away and did not interact or say anything to other people taking part in the process. However, they maintained an important role here, which was to take notes on any critical incidents. This way, we could gauge any parts of our early ideation that strongly effected the usability of our design.*
+*This person watched from a distance and did not interact or say anything to other people taking part in the process. However, they maintained an important role in taking notes on any critical incidents during the paper prototyping process. Thanks to the observer, we could make decisions with regards to  parts of our early designs that strongly effected the usability of our design.*
 
 **3. Facilitator:**
-*This person acted as the leader of process, guiding the user through the prototype and asking key questions along the way. It was their job to encourage the user to think aloud by asking questions about their thought pattern such as "Do you know what is going on at this point?" or "What would you do next now that you are on the Sign Up page?". Or perhaps if the user was stuck (which happened a lot at the stage of paper prototyping!), "Do you find anything here useful, in terms of figuring out what you would like to do next?"*
+*This person acted as the leader of the process, guiding the user through the prototype and asking key questions along the way. It was their job to encourage the user to think aloud by asking questions about their thought pattern, such as "Do you know what is going on at this point?" or "What would you do next now that you are on the Sign Up page?". Perhaps if the user was stuck (which happened a lot at the stage of paper prototyping, as the hand drawn interface was not the clearest!), "Do you find anything here useful, in terms of figuring out what you would like to do next?"*
 
-A limitation here was that Our teams' paper prototyping was limited by the need to social distance. Members of our team were only able to work with two family members or housemates. Despite emphasising to any one participating to act as impartially as possible, it  can be argued that the fact that people lived with us helped us carry out this process was detrimental because we needed the user to be as truthful as possible, whilst people we live with were more likely to tell us what we wanted to hear about our designs.
+A limitation here was the impact of social distancing. Members of our team were only able to work with two family members or housemates. Despite emphasising to any one participating to act as neutrally as possible, it  can be argued that the people who lived with us would naturally be impartial. Because we needed the user to be as truthful as possible when providing us feedback to do with our design, this could therefore be seen as a limiting factor.
 
 
 
-To learn more about how our paper prototyping allowed us, at a very early stage, obtain our first UX feedback and its essential role in our early ideation see the [UX section](uxDesign.md) , where we give specific examples of user preferences after seeing our paper prototype which then went on to influence our design process.
+To learn more about how our paper prototyping allowed us to, at a very early stage, obtain our first UX feedback and its essential role in our early ideation see the [UX section](uxDesign.md) , where we give specific examples of user preferences after seeing our paper prototype which then went on to influence our design process.
 
 </p>
 
@@ -66,16 +52,17 @@ To learn more about how our paper prototyping allowed us, at a very early stage,
 <img src="supporting_images/wireframe_two.png" width="400" align="left">
 
 
-Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop easily through a link [like this one](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built onto screenshots of the website as it looked at the time.
+Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop easily through a link [like this one](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built on screenshots of the website as it looked at the time.
 
-Please see our [UX section](uxDesign.md) where we discuss how users were able to engage with our website and leave comments on what they thought about their experience with it.
+Please see our [UX section](uxDesign.md) where we discuss how users were able to engage with our wireframe, and could even leave comments as feedback.
 </p>
 
-<p align="center">
+<p align="left">
 <img src="supporting_images/feedback.png" width="600">
-</p>
 
 As demonstrated by the screenshot of some feedback a user left, a limitation that we experienced when sending out the link to users can be seen. In this case, the 'x' on the comment that they are referring to was part of the screenshot of the webpage that we had uploaded as part of wireframe. Thus, this user did not understand the concept of a wireframe and thought that it was more interactive and accurate than it was. Due to the fact that some users thought  the wireframe should work in the same way as the website would, we recognise that perhaps we should have either been clearer when sending out the message with the link in or carried out more guided walkthroughs of the wireframe in order to avoid this issue.    
+</p>
+
 
 Below is a screenshot of a text we sent to people who agreed to look at our wireframe and then fill out a questionnaire.
 
@@ -97,17 +84,19 @@ Another method we used in evaluating our designs was an idea matrix. This was an
 ### Evaluation Technique 4: Questionnaires
 
 
-<p>
+
 <img src="supporting_images/questionnaire.png" width="550" align="left">
-Our grouped used questionnaires as our main form of quantitative feedback as we were able to send a link, such as [this one](https://www.smartsurvey.co.uk/s/S58J8X/) to as many users as we could who had revently used one of our wireframes or been shown our most up to date website on a local host. This way, we could gain insights at scale into how users interpreted our website through them answering questions such as "Would you recommend this product to a friend?", "Do you think this website is solving a serious problem?" or "How would you improve this website?".
 
-In total we produced three questionnaires. The first two were sent to users alongside the wireframes and the last one was filled out by users after they had used the website on a local host. The last two questionnaires asked the same questions as the first, but we improved it slightly. For example, we added a 'if not, why not' option to answers that currently only included 'yes' and 'no' so that we did not force the user to have to take longer with it but gave them the option to leave more detailed feedback if they wished.
+Our group used questionnaires as the main form of quantitative feedback as we were able to send a link such as [this one](https://www.smartsurvey.co.uk/s/S58J8X/), to users who had recently used our wireframe or been shown our most up to date website on a local host. This way, we could gain insights at scale into how users interpreted our website. Users answered questions such as "Would you recommend this product to a friend?", "Do you think this website is solving a serious problem?" or "How would you improve this website?".
 
-*Here are links to all three of our questionnaires if you are interested:*  
+In total we produced three questionnaires. The first two were sent to users alongside the wireframes and the last one was filled out by users after they had used the website on a local host. The last two questionnaires asked the same questions as the first, but we improved it slightly. For example, we added a 'if not, why not' option to answers that currently only included 'yes' and 'no'. This way we were not forcing the user to spend a large amount of their time on it but still gave them the option to leave more detailed feedback if they wished.
+
+*Here are links to all three of our questionnaires if you are interested:  
+note: the 2nd and 3rd show the mentioned improvement in questions*  
  [1st questionnaire (1st wireframe)](https://www.smartsurvey.co.uk/s/S58J8X/)  
  [2nd questionnaire (2nd wireframe)](https://www.smartsurvey.co.uk/s/S58J8X/)  
  [3rd questionnaire (Our most up to date website shown on a local host)](https://www.smartsurvey.co.uk/s/S58J8X/)
-</p>
+
 
 <p align="left">
 <img src="supporting_images/right.png" width="600">
@@ -123,31 +112,13 @@ The questionnaires themselves did in fact hold a qualitative functionality to th
 
 
 ### Evaluation Technique 5: Semi-structured interviews
-<p>
+
 <img src="supporting_images/postPosition.png" width="400" align="right">
+
 We carried out semi-structured interviews as a method of gathering qualitative feedback data. Our interviews were on average 10 minutes long and were conducted after someone had interacted with our paper prototype, a wireframe, or the most up to date version on a local host. The questions we asked in each interview varied depending on the stage of the development process that we found ourselves at. We were able to ask very specific questions about our UX this way. For example, at a relatively early stage of the development process we were trying to decide whether to have the post landing page appear from the left hand side. As seen by the images to the right , we were able to show the user two potential layouts that we sketched on the website [Invision](https://www.invisionapp.com). Being able hear their reasons behind their decisions about our user interface was extremely useful.
 
 On top of this, we would always ensure that we asked a general and open ended question at the end of the interview about how the user thought we could improve the user experience as it was, or if they had any ideas. That being said, something extremely insightful that we noticed when conducting interviews was that the user would constantly be making comments about how they would want the website to be improved as they were interacting with the wireframe or prototype. Due to the fact
 that we recorded the audio to our interviews, we were able to make use out of any suggestions.
-</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <a name="timeline"></a>
@@ -167,7 +138,7 @@ that we recorded the audio to our interviews, we were able to make use out of an
 </p>
 
 
-17/3/21: So far, our evaluation was based on feedback from users who had only seen our ideas written on paper. At the point that we had built the first map interface part we were able to take our prototyping one step further by showing them a wireframe where we were able to make the undeveloped website look as it would do in the future. We decided to use a wireframe because it allowed us to evaluate how users thought of our design before it was actually coded.
+17/3/21: So far, our evaluation was based on feedback from users who had only seen our ideas written on paper. At the point that we had built the first map interface (see sprint 3 in the [Project Management and Development section](sprints.md) part we were able to take our prototyping one step further by showing them a wireframe where we were able to make the undeveloped website look as it would do in the future. We decided to use a wireframe because it allowed us to evaluate how users thought of our design before it was actually coded.
 
 <p align="center">
 <img src="supporting_images/wireframe_2.png" width="500">
@@ -209,6 +180,7 @@ For our group, we found this stage particularly significant as our design involv
 
 <p align="left">
 <img src="supporting_images/numberofparticipants.png" width="600">
+
 Another possible limitation to our evaluation was our inability to show enough users our most up to date version of the product when we moved to doing so on a local host as opposed to a wireframe. In order to do this, we would need to either show someone in person or organise a Microsoft Teams or Zoom meeting which proved time consuming and less successful when it came to quantitative data collection. It was much easier for a user to use the link to a wireframe and then fill out the questionnaire. As seen in the image to the left, this is demonstrated by the fact that we had an average of 8.5 responses for the first two wireframes, as opposed to 5 for the final one. This being said, all the users who carried out a questionnaire had been shown the website personally, and also been interviewed. As a result, this user feedback was of greater richness and therefore the qualitative element of it was more valuable.
 </p>
 
@@ -233,7 +205,7 @@ Another possible limitation to our evaluation was our inability to show enough u
 <img src="supporting_images/sample_size.png" width ="600">
 </p>
 
-Our target market was any person, male or female, who had access to both a computer and the Internet. After trying to find a statistic online, we realised that the answer to this number could only be approximated and also depends on what is defined as a computer. The website InternetWorldStats.com estimates that 2.5 billion people are Internet users and thus have access to it via a mobile device or a computer. We guessed that of those 2.5 billion people, half were accessing via a computer. It can be argued that this guess in itself is a limitation
+Our target market was any person, male or female, who had access to both a computer and the Internet. After trying to find a statistic online we realised that the number of this population could only be approximated, and also depends on what is defined as a computer. The website InternetWorldStats.com estimates that 2.5 billion people are Internet users and thus have access to it via a mobile device or a computer. We guessed that of those 2.5 billion people, half were accessing via a computer. It can be argued that this guess in itself is a limitation
 
 #### How we calculated our sample size
 Questionnaires completed: 22    
@@ -242,7 +214,7 @@ Totals sample size: 31
 
 
 #### Sample size limitation
-We used Survey Monkey's sample size calculator to calculate our sample size. This forced us to think about the population that may be using our product and therefore question how big our market was. Considering our end users in this way made us contemplate how much feedback data was enough.  As calculated in the sections above, our sample size was 31 whilst our target sample size was 385. Although we did not reach the ideal sample size, we realised that we could only ultimately analyse the data that we could gather. This shortfall of responders therefore makes it difficult to be certain of our analysis at this point. Although our sample size could have been higher, we followed the notion that when carrying out our evaluation we would balance richness with practicality. When creating our feedback data we were constantly considering how we would go on to analyse that data in terms of firstly figuring out what users want so we could reflect this in our development process and secondly how we could analyse that data at the end of our project in order to reflect on how successful we were in terms of achieving our original goals that we set out to achieve. In order to thoroughly and accurately analyse our data in a just way, we dedicated time. As a result of this, we at some points opted to collect a smaller amount of qualitative data which we could analyse robustly. For example, although carrying out qualitative user feedback such as semi-structured interviews was time-consuming as we needed to spend time re-listening to the audio and extracting the relevant responses to questions before entering this feedback data into the idea matrix, we still decided to do this because we would understand on a more personal level what users preferred in terms of the user interface/ we could obtain more suggestions through interviewing and having an in-depth conversation with a potential user as opposed to getting their responses to a questionnaire. We found that, although our questionnaire asked questions such as 'what would you change ' Ultimately, although our feedback data lacked in terms of sample size because of this, we were able to make the analysis of the data much richer.    
+We used Survey Monkey's sample size calculator to estimate our sample size. This forced us to think about the population that may be using our product and therefore question how big our market was. Considering our end users in this way made us contemplate how much feedback data was 'enough'.  As calculated in the sections above, our sample size was 31 whilst our target sample size was 385. Although we did not reach the ideal sample size, we realised that, ultimately, we could only analyse the data that we could gather. This shortfall of responders therefore makes it difficult to be certain of our analysis at this point. Although our sample size could have been higher, we followed the notion that when carrying out our evaluation we would balance richness with practicality. When gathering our feedback data we constantly considered how we would go on to analyse that data for two main purposes; firstly, figuring out what users wanted so we could reflect this in our development process and secondly, how we could analyse that data at the end of our project in order to conclude how successful we were in terms of achieving the original goals that we set out to achieve (see these in our [Introduction](introSect.md)). In order to thoroughly and accurately analyse our data in a just way, we dedicated time. As a result of this, we at some points opted to collect a smaller amount of qualitative data which we could analyse robustly. For example, although carrying out qualitative user feedback such as semi-structured interviews was time-consuming as we needed to spend time re-listening to the audio and extracting the relevant responses to questions before entering this feedback data into the idea matrix. We still decided to do this as we would understand on a more detailed level what users preferred when experiencing our product. Ultimately, although our feedback data lacked in terms of sample size because of this, we were able to make the analysis of the data much richer.    
 
 
 
@@ -299,12 +271,10 @@ Throughout the entirety of this project the UK has been in some degree of nation
 
 ### Discussion of future work (in terms of design, development and evaluation)
 
-One extension idea we have involves further inter-user interaction and communication in a local area. Here is the idea, demonstrated with an example: 'Bristol is notorious for its limited parking. On a particular residential road, there is a bus stop that has been out-of-service for years. Despite paying for a parking permit, residents have been told that they are not allowed to park on the bus stop even if that means parking on another road. Residents are upset as they often find themselves struggling to park after a busy day at work. Naturally, they individually take to EmoteMap to express their feelings. To their surprise, they discover that others feel the same way. This is because EmoteMap has identified multiple people within an area expressing similar feelings over the same issue. EmoteMap then asks the individuals if they would like to initialise a discussion group, in hope of resolving the local issue.' This extension would involve the ability to identify multiple users within a local area reporting the same issue. Furthermore, some form of chat service would need to be implemented. !!!!Perhaps we could briefly mention what tools could be used to achieve this?!!!!!!!
+One extension idea we have involves further inter-user interaction and communication in a local area. Here is the idea, demonstrated with an example: 'Bristol is notorious for its limited parking. On a particular residential road, there is a bus stop that has been out-of-service for years. Despite paying for a parking permit, residents have been told that they are not allowed to park on the bus stop even if that means parking on another road. Residents are upset as they often find themselves struggling to park after a busy day at work. Naturally, they individually take to EmoteMap to express their feelings. To their surprise, they discover that others feel the same way. This is because EmoteMap has identified multiple people within an area expressing similar feelings over the same issue. EmoteMap then asks the individuals if they would like to initialise a discussion group, in hope of resolving the local issue.' This extension would involve the ability to identify multiple users within a local area reporting the same issue. Furthermore, some form of chat service would need to be implemented. One way we thought about achieving this functionality would be to essentially run a similar process to our `search-component` in the background and store any keywords that appear again and again (i.e over a certain threshold) within a set radius. We could then go through the stored timeline of posts for a specific user and notify them/ enable more functionality if their posts contain the keyword; i.e. have a new option on the sidebar that pops up.
 
 At a late stage in our development, one user made an important point on privacy: they were concerned about sharing their location when making an Emote Post. This is a valid concern and we questioned how we may be able to deal with this issue in future development of the project. Submitting Emote Posts without some form of geolocation voids the project's idea entirely. We therefore propose an alternative direction: to give users the ability to pin their posts to an area (such as a district), instead of a precise location. We believe this would be a good balance between privacy, and having the ability to see trends in emotion across different areas of the globe. It would be interesting to survey whether such a feature would encourage those previously concerned over privacy to then use the site.
 
+Another area we would like to improve on on the design side is with regards to gender inclusivity; at the moment our website only accepts the male & female genders, but with more time we could either implement a more inclusive system, including a non-binary option perhaps, or maybe retool the search system to work on different user characteristics; building upon the privacy aspect mentioned above and move away from collecting personal information and focus more on the emotions people write about.
 
-focus on mens mental health
-
-
-mention how we want to do more testing than stated in the test file (see td)
+In the development for this project we established a locked in process for continuous development and integration a bit later than was ideal, so for future work, with the team now much more well versed in github and the development process we would include and build upon the testing process in [our test plan](/src/app/test_plan.txt) from the very first step of building any new features. With regards to this, we would also like to include some functional testing; due to time constraints during the development period for this project we were only able to carry out functional testing; for future features we would use unit testing, utilising angular's built in .spec files, [Karma](https://karma-runner.github.io/latest/index.html) and testing features from `@angular/core/testing` to automatically test new components. This would greatly aid with bug fixing as we would be able to much more quickly find and fix specific problem areas in the code.

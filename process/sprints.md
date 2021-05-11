@@ -24,7 +24,7 @@ The two tools that the group was familiar with and facilitate these needs were [
 </p>
 
 Teams was useful for allowing us to receive feedback from our lectures on the Thursday sessions. We also used teams to host our scrum video meetings.
-  
+
   <p align="center">
   <img src="supporting_images/teamsmetting.png" width="550px">
   </p>
@@ -51,7 +51,7 @@ The disadvantages of Microsoft Teams:
 
 We set up a private server on Discord right at the start of the project. We found the following features particularly useful throughout our project:
 
-**Specific chat rooms:** Initially we had one chat thread but as the project progressed we created more specific channels as previous messages were getting difficult to find.  When using a single chat thread team members would also miss important conversations. This prompted us to better organise our methods of communication. 
+**Specific chat rooms:** Initially we had one chat thread but as the project progressed we created more specific channels as previous messages were getting difficult to find.  When using a single chat thread team members would also miss important conversations. This prompted us to better organise our methods of communication.
 
   <p align="center">
   <img src="supporting_images/discord_chat.PNG" width="350px">
@@ -72,7 +72,7 @@ Having the group chat divided into specific areas kept our workflow and ideas or
   </p>
 
 We did notice some disadvantages to using discord:
-  
+
 * Unable to share videos.
 * Unable to share screens.
 * The video chat is very basic in comparison to teams.
@@ -84,7 +84,7 @@ We used Discord as our primary platform for text communication but used Microsof
 With the ongoing COVID-19 lock downs and other modules requiring attention, we knew our workflow strategy had to be flexible. We wanted our website to be as user driven as possible and given the short time frame it was essential that we had user feedback throughout the design process. For both these reasons we chose to adopt the agile framework.
 
 ### [Agile](https://en.wikipedia.org/wiki/Agile_software_development)
-  
+
   <p align="center">
   <img src="supporting_images/6t8232hs.jpg" width="450px">
   </p>
@@ -147,6 +147,8 @@ During the development of the application, I took on a front-end role. For examp
 
 <a name="third"></a>
 
+## Sprints
+
 ## Pre-sprint idea formulation
 
 This time was used to get to know the other group members and project brief itself. Having all come from different backgrounds a lot of varied and interesting project ideas were put forward. After some discussion we drafted up 4 potential ideas:
@@ -164,8 +166,6 @@ A lot of time was spent discussing which project idea to use. The idea needed to
 <p align="center">
 <img src="supporting_images/agile-elearning-course-design-a-step-by-step-guide-for-elearning-professionals.jpg" width="450px">
 </p>
-
-## Sprints
 
 ## Sprint 1: Project idea finalisation & set up CI infrastructure
 
@@ -230,7 +230,7 @@ At this point in the project we were intending to use this template data from on
   Sarah said she can now see how I can post my emotions on the App! "Hurry up please as I cant use it yet. I need to connect with others and see how others are doing. Also, the map is really buggy, it is not scrolling properly, and it is moving around the screen"
    </td>
   <td>
-  Navbar and mapbox component were not interacting nicely, with strange scrolling issues panning around the map. 
+  Navbar and mapbox component were not interacting nicely, with strange scrolling issues panning around the map.
   </td>
   <td>
   implement routing using angular so that instead of the toolbar and the map being in the mapbox html, the mapbox is loaded from `app.component.html` using a router outlet. We then fixed the position of the map, and had it under the toolbar. All routing will now be done on the toolbar and replace the map. All components related to the map will now be nested in the mapbox component.
@@ -349,7 +349,7 @@ Here we also wanted to our application to be compiled through docker. We made su
 
 [11th Apr - 20th Apr]
 
-In this sprint we aimed to add some of the more complex feature to our website, like searching through posts, and a user being able to view a timeline of the posts they have made, building upon the core foundation of sending and viewing posts we had established by the end of sprint 4. At this stage we also began transitioning from working on the website proper into gathering final user feedback and beginning to write our project report.
+In this sprint we aimed to add some of the more complex features to our website, like searching through posts, and a user being able to view a timeline of the posts they have made, building upon the core foundation of sending and viewing posts we had established by the end of sprint 4. At this stage we also began transitioning from working on the website proper into gathering final user feedback and beginning to write our project report.
 
 ### Meeting log:
 
@@ -400,7 +400,7 @@ As the complexity of our project began to grow we decided to implement a test pr
   <td>The posts started from oldest to newest, meaning it was reversed. We sorted the posts via data on the backend to display the posts in the correct order.</td>
 </tr>
 <tr>
-  <td>Search data mixing with the normal data initally fetched from database.</td>
+  <td>Front-end</td>
   <td>Christine and Dan both noticed that when they were searching for data, it just added duplicated data on the map, meaning the heapmap intensity would get bigger every time</td>
   <td>What Dan and Christine said above, also they keyword search was not in sync with the other search parameters.</td>
   <td>In order to fix this, we needed to stated the map would use to display the two data streams. We also performed the keyword search on the current search data in memory</td>
@@ -411,7 +411,7 @@ As the complexity of our project began to grow we decided to implement a test pr
 
 [21st apr - hand in]
 
-W ith our minimal viable product completed we used this stage to primarily focus on the write up however we were making small changes to design elements as we continued to gather feedback.
+With our minimal viable product completed we used this stage to primarily focus on the write up however we were making small changes to design elements as we continued to gather feedback.
 
 ### Meeting log:
 
