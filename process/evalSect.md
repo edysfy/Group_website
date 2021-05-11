@@ -59,6 +59,7 @@ Please see our [UX section](uxDesign.md) where we discuss how users were able to
 
 <p align="left">
 <img src="supporting_images/feedback.png" width="600">
+
 As demonstrated by the screenshot of some feedback a user left, a limitation that we experienced when sending out the link to users can be seen. In this case, the 'x' on the comment that they are referring to was part of the screenshot of the webpage that we had uploaded as part of wireframe. Thus, this user did not understand the concept of a wireframe and thought that it was more interactive and accurate than it was. Due to the fact that some users thought  the wireframe should work in the same way as the website would, we recognise that perhaps we should have either been clearer when sending out the message with the link in or carried out more guided walkthroughs of the wireframe in order to avoid this issue.    
 </p>
 
@@ -85,7 +86,7 @@ Another method we used in evaluating our designs was an idea matrix. This was an
 
 <p>
 <img src="supporting_images/questionnaire.png" width="550" align="left">
-Our group used questionnaires as the main form of quantitative feedback as we were able to send a link. such as [this one](https://www.smartsurvey.co.uk/s/S58J8X/), to users who had recently used our wireframe or been shown our most up to date website on a local host. This way, we could gain insights at scale into how users interpreted our website. Users answered questions such as "Would you recommend this product to a friend?", "Do you think this website is solving a serious problem?" or "How would you improve this website?".
+Our group used questionnaires as the main form of quantitative feedback as we were able to send a link such as [this one](https://www.smartsurvey.co.uk/s/S58J8X/) , to users who had recently used our wireframe or been shown our most up to date website on a local host. This way, we could gain insights at scale into how users interpreted our website. Users answered questions such as "Would you recommend this product to a friend?", "Do you think this website is solving a serious problem?" or "How would you improve this website?".
 
 In total we produced three questionnaires. The first two were sent to users alongside the wireframes and the last one was filled out by users after they had used the website on a local host. The last two questionnaires asked the same questions as the first, but we improved it slightly. For example, we added a 'if not, why not' option to answers that currently only included 'yes' and 'no'. This way we were not forcing the user to spend a large amount of their time on it but still gave them the option to leave more detailed feedback if they wished.
 
