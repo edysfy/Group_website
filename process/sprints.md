@@ -400,7 +400,7 @@ As the complexity of our project began to grow we decided to implement a test pr
   <td>The posts started from oldest to newest, meaning it was reversed. We sorted the posts via data on the backend to display the posts in the correct order.</td>
 </tr>
 <tr>
-  <td>Search data mixing with the normal data initally fetched from database.</td>
+  <td>Front-end</td>
   <td>Christine and Dan both noticed that when they were searching for data, it just added duplicated data on the map, meaning the heapmap intensity would get bigger every time</td>
   <td>What Dan and Christine said above, also they keyword search was not in sync with the other search parameters.</td>
   <td>In order to fix this, we needed to stated the map would use to display the two data streams. We also performed the keyword search on the current search data in memory</td>
