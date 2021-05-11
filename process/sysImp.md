@@ -608,7 +608,7 @@ pullAndDisplayGJPointsFromDB(): void {
   });
 }
 ```
-Now we can retrieve the 'geoPost' array. When the GET request has been fulfilled, the data has been processed, and state updated. Mapbox will take that data, then call the 'setData' function on the 'data' source we created. This takes a data set. We create a Feature Collection object (a class pre-defined in the model folder), that just takes in the 'geoPost' array from the service. Mapbox uses to coordinates in 'geometry' attribute to position the data on the map.
+Now we can retrieve the 'geoPost' array. When the GET request has been fulfilled, the data has been processed, and state updated. Mapbox will take that data, then call the 'setData' function on the 'data' source we created. This takes a data set. We create a Feature Collection object (a class pre-defined in the model folder), that just takes in the 'geoPost' array from the service. Mapbox uses the coordinates in 'geometry' attribute to position the data on the map.
 ```js
 export class FeatureCollection {
     type = 'FeatureCollection';
@@ -649,7 +649,7 @@ The function initMapLayersForData(layer: string), takes in the name the source t
   <img src="supporting_images/circles.png" width="550px">
   </p>
 
-The API allows us to display circles at each location, defined by the coordinates in the 'geometry' attribute from the geoJson data point. We color these circles based on the so-called mood-rating that a user picks when making a post to our website – this provides the key functionality of the entire site, allowing users to see patterns in people’s emotions across the map, based on the circle colors. Blue => Happy, Yellow => Coping, Red => Sad. As the data is GeoJson, for each point Mapbox looks at the 'properties' attribute. You can use this attribute to display custom data on the map. We tell Mapbox to use the 'mood' attribute inside 'properties'. We assign a color for each value. The addLayer function can also be configured such that its visibility is based on a certain zoom level of the map; we utilize this so that when a user has zoomed in (to zoom > 9.2) the circle layer appears, but when they are zoomed out, the second layer – a 'heatmap' layer – appears:
+The API allows us to display circles at each location, defined by the coordinates in the 'geometry' attribute from the geoJson data point. We colour these circles based on the so-called mood-rating that a user picks when making a post to our website – this provides the key functionality of the entire site, allowing users to see patterns in people’s emotions across the map, based on the circle colours. Blue => Happy, Yellow => Coping, Red => Sad. As the data is in GeoJson format, for each point Mapbox looks at the 'properties' attribute. You can use this attribute to display custom data on the map. We tell Mapbox to use the 'mood' attribute inside 'properties'. We assign a colour for each value. The addLayer function can also be configured such that its visibility is based on a certain zoom level of the map; we utilize this so that when a user has zoomed in (to zoom > 9.2) the circle layer appears, but when they are zoomed out, the second layer – a 'heatmap' layer – appears:
 
   <p align="center">
   <img src="supporting_images/heatmap.png" width="550px">
@@ -747,7 +747,7 @@ This is an asynchronous function. If the user submits the form before the progra
 
 **How to submit?**  
 The Post Service is injected into the Userpost component. When the user presses the submit button. There is a series of steps until the submission is complete.
-1. We decided that the user cannot post will in search mode. So the Userpost component listens to the User-Search service, by subscribing to 'getIsInSearchState' method, to see if search mode is activated. If in search mode then the UI will display an alert to the user saying it is unable make a post.
+1. We decided that the user cannot post when in search mode. So the Userpost component listens to the User-Search service, by subscribing to 'getIsInSearchState' method, to see if search mode is activated. If in search mode then the UI will display an alert to the user saying it is unable make a post.
 
   <p align="center">
   <img src="supporting_images/unablesearchmode.png" width="550px">
