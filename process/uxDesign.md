@@ -49,11 +49,11 @@ Admittedly, it was only until after we came up with the idea, that we saw its po
   <td>Christina can use EmoteMap to show her employers in the areas where a lot of people are going through a particular issue. She can make use of EmoteMap by creating an account and search to filter posts through emotions, age, gender, and keyword. The charity can use this data to directly impact areas. Helping people at a fast rate. For example, They can increase volunteers or put on anti-stigma campaigns in that area</td>
 </tr>
 </table>
+The identification of this second type of user highlighted the importance of creating a clear and easy-to-use search interface. Because we identified these users early, our front-end planning was designed with them in mind from the very start.
 
 The is another use case that is worth mentioning. Someone, who doesn't want to use EmoteMap's journal/blogging/community features, and who doesn't work for a charity. Just normal person who is interested in knowing how people are feeling around the world. Interested to see the thought process that occurs in different countries. Maybe exposing them to this app will reduce the stigma around mental health making it less taboo to this person. Maybe, EmoteMap will teach him how people with Psychosis feel, removing any preconceived notion. This person will want to get involved and support people, like the charity above or by donating money.
 
-The identification of this second type of user highlighted the importance of creating a clear and easy-to-use search interface. Because we identified these users early, our front-end planning was designed with them in mind from the very start.
-
+Meet Dan, 43:
 <table>
 <tr>
   <th>Photo</th>
