@@ -349,7 +349,7 @@ Here we also wanted to our application to be compiled through docker. We made su
 
 [11th Apr - 20th Apr]
 
-In this sprint we aimed to add some of the more complex feature to our website, like searching through posts, and a user being able to view a timeline of the posts they have made, building upon the core foundation of sending and viewing posts we had established by the end of sprint 4. At this stage we also began transitioning from working on the website proper into gathering final user feedback and beginning to write our project report.
+In this sprint we aimed to add some of the more complex features to our website, like searching through posts, and a user being able to view a timeline of the posts they have made, building upon the core foundation of sending and viewing posts we had established by the end of sprint 4. At this stage we also began transitioning from working on the website proper into gathering final user feedback and beginning to write our project report.
 
 ### Meeting log:
 
@@ -411,7 +411,7 @@ As the complexity of our project began to grow we decided to implement a test pr
 
 [21st apr - hand in]
 
-W ith our minimal viable product completed we used this stage to primarily focus on the write up however we were making small changes to design elements as we continued to gather feedback.
+With our minimal viable product completed we used this stage to primarily focus on the write up however we were making small changes to design elements as we continued to gather feedback.
 
 ### Meeting log:
 
