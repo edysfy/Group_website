@@ -180,6 +180,7 @@ For our group, we found this stage particularly significant as our design involv
 
 <p align="left">
 <img src="supporting_images/numberofparticipants.png" width="600">
+
 Another possible limitation to our evaluation was our inability to show enough users our most up to date version of the product when we moved to doing so on a local host as opposed to a wireframe. In order to do this, we would need to either show someone in person or organise a Microsoft Teams or Zoom meeting which proved time consuming and less successful when it came to quantitative data collection. It was much easier for a user to use the link to a wireframe and then fill out the questionnaire. As seen in the image to the left, this is demonstrated by the fact that we had an average of 8.5 responses for the first two wireframes, as opposed to 5 for the final one. This being said, all the users who carried out a questionnaire had been shown the website personally, and also been interviewed. As a result, this user feedback was of greater richness and therefore the qualitative element of it was more valuable.
 </p>
 
