@@ -1,0 +1,17 @@
+Link to our project repo; https://github.com/edysfy/Group_website
+Commit number;
+
+Clone the repo;
+
+Change into the root folder (called Group_website)
+
+In the root folder, copy in the .env file from the zip
+
+Running the website then goes as follows;
+1. run "npm install"
+2. run "ng build"
+3. run "node server.js" OR "docker-compose up"
+
+visit local host 3000 on CHROME or FIREFOX
+
+Note for full functionality, after you have created an account you must fill in the date of birth / gender section so your posts appear in the search section
