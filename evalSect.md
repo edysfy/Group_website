@@ -12,7 +12,6 @@
 
 <a name="eval"></a>
 # EVALUATION
-In our evaluation we discuss our methods of gathering feedback data from users throughout the development process. In order to evaluate how our product would be received by users we used five techniques throughout the process; paper prototyping, wireframing, an idea matrix, questionnaires, and semi-structured interviews. Firstly, In our methodology, we expand on the five techniques used, explaining how we carried them out and interpreted them as a group. Secondly, we put together a Timeline of Evaluation Methods where we walk through the decision making process for our unique design model, from Early Ideation and Paper Prototyping on 21/2/21 to Presenting our Webpage to users on a local host on 5/4/21. We also touch on the interdependence of the evaluation techniques in this section. We mention various limitations that arose with certain evaluation techniques throughout the first two sections of the Evaluation. However, there is a third and final section to the Evaluation that discusses the potential argument that our sample size when conducting user feedback was a limitation.
 
 
 

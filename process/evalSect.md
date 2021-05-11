@@ -13,26 +13,12 @@
 <a name="eval"></a>
 # EVALUATION
 
+
 <a name="method"></a>
 # a) Methodology
 
 
-In order to evaluate how our product would be received by users we used five techniques throughout the process; paper prototyping, wireframing, an idea matrix, questionnaires, semi-structured interviews.
-
-*come back to this at the end
-- intro/abstract
-- why did you use certain methods of evaluation for your particular design - qual and quant
-- summarise the rest of the section
-- how did the different methods link with each other?*
-
-Below is a short summary of our 5 main techniques of evaluating our design through users. Following this, we talk about them in more detail in our timeline of Evaluation where we discuss the kind of feedback we felt was necessary at different stages of the development process.
-
-*perhpaps expand the following by:
-- going into more detail on the explanation front
-- ensuring each headings' links with the other headings are explained
-- give an example for the things you can make examples from
-- -	talk in more detail about each thing e.g – Paper Prottyping wizard of oz
-- ensure you are talking about 'what is this method?'*
+IIn our evaluation we discuss our methods of gathering feedback data from users throughout the development process. In order to evaluate how our product would be received by users we used five techniques throughout the process; paper prototyping, wireframing, an idea matrix, questionnaires, and semi-structured interviews. Firstly, In our methodology, we expand on the five techniques used, explaining how we carried them out and interpreted them as a group. Secondly, we put together a Timeline of Evaluation Methods where we walk through the decision making process for our unique design model, from Early Ideation and Paper Prototyping on 21/2/21 to Presenting our Webpage to users on a local host on 5/4/21. We also touch on the interdependence of the evaluation techniques in this section. We mention various limitations that arose with certain evaluation techniques throughout the first two sections of the Evaluation. However, there is a third and final section to the Evaluation that discusses the potential argument that our sample size when conducting user feedback was a limitation.
 
 ### Evaluation Technique 1: Paper prototyping
 
@@ -168,7 +154,7 @@ that we recorded the audio to our interviews, we were able to make use out of an
 </p>
 
 
-17/3/21: So far, our evaluation was based on feedback from users who had only seen our ideas written on paper. At the point that we had built the first map interface part we were able to take our prototyping one step further by showing them a wireframe where we were able to make the undeveloped website look as it would do in the future. We decided to use a wireframe because it allowed us to evaluate how users thought of our design before it was actually coded.
+17/3/21: So far, our evaluation was based on feedback from users who had only seen our ideas written on paper. At the point that we had built the first map interface (see sprint 3 in the [Project Management and Development section](sprints.md) part we were able to take our prototyping one step further by showing them a wireframe where we were able to make the undeveloped website look as it would do in the future. We decided to use a wireframe because it allowed us to evaluate how users thought of our design before it was actually coded.
 
 <p align="center">
 <img src="supporting_images/wireframe_2.png" width="500">
@@ -234,7 +220,7 @@ Another possible limitation to our evaluation was our inability to show enough u
 <img src="supporting_images/sample_size.png" width ="600">
 </p>
 
-Our target market was any person, male or female, who had access to both a computer and the Internet. After trying to find a statistic online, we realised that the answer to this number could only be approximated and also depends on what is defined as a computer. The website InternetWorldStats.com estimates that 2.5 billion people are Internet users and thus have access to it via a mobile device or a computer. We guessed that of those 2.5 billion people, half were accessing via a computer. It can be argued that this guess in itself is a limitation
+Our target market was any person, male or female, who had access to both a computer and the Internet. After trying to find a statistic online we realised that the number of this population could only be approximated, and also depends on what is defined as a computer. The website InternetWorldStats.com estimates that 2.5 billion people are Internet users and thus have access to it via a mobile device or a computer. We guessed that of those 2.5 billion people, half were accessing via a computer. It can be argued that this guess in itself is a limitation
 
 #### How we calculated our sample size
 Questionnaires completed: 22    
@@ -243,7 +229,7 @@ Totals sample size: 31
 
 
 #### Sample size limitation
-We used Survey Monkey's sample size calculator to calculate our sample size. This forced us to think about the population that may be using our product and therefore question how big our market was. Considering our end users in this way made us contemplate how much feedback data was enough.  As calculated in the sections above, our sample size was 31 whilst our target sample size was 385. Although we did not reach the ideal sample size, we realised that we could only ultimately analyse the data that we could gather. This shortfall of responders therefore makes it difficult to be certain of our analysis at this point. Although our sample size could have been higher, we followed the notion that when carrying out our evaluation we would balance richness with practicality. When creating our feedback data we were constantly considering how we would go on to analyse that data in terms of firstly figuring out what users want so we could reflect this in our development process and secondly how we could analyse that data at the end of our project in order to reflect on how successful we were in terms of achieving our original goals that we set out to achieve. In order to thoroughly and accurately analyse our data in a just way, we dedicated time. As a result of this, we at some points opted to collect a smaller amount of qualitative data which we could analyse robustly. For example, although carrying out qualitative user feedback such as semi-structured interviews was time-consuming as we needed to spend time re-listening to the audio and extracting the relevant responses to questions before entering this feedback data into the idea matrix, we still decided to do this because we would understand on a more personal level what users preferred in terms of the user interface/ we could obtain more suggestions through interviewing and having an in-depth conversation with a potential user as opposed to getting their responses to a questionnaire. We found that, although our questionnaire asked questions such as 'what would you change ' Ultimately, although our feedback data lacked in terms of sample size because of this, we were able to make the analysis of the data much richer.    
+We used Survey Monkey's sample size calculator to estimate our sample size. This forced us to think about the population that may be using our product and therefore question how big our market was. Considering our end users in this way made us contemplate how much feedback data was 'enough'.  As calculated in the sections above, our sample size was 31 whilst our target sample size was 385. Although we did not reach the ideal sample size, we realised that, ultimately, we could only analyse the data that we could gather. This shortfall of responders therefore makes it difficult to be certain of our analysis at this point. Although our sample size could have been higher, we followed the notion that when carrying out our evaluation we would balance richness with practicality. When gathering our feedback data we constantly considered how we would go on to analyse that data for two main purposes; firstly, figuring out what users wanted so we could reflect this in our development process and secondly, how we could analyse that data at the end of our project in order to conclude how successful we were in terms of achieving the original goals that we set out to achieve (see these in our [Introduction](introSect.md)). In order to thoroughly and accurately analyse our data in a just way, we dedicated time. As a result of this, we at some points opted to collect a smaller amount of qualitative data which we could analyse robustly. For example, although carrying out qualitative user feedback such as semi-structured interviews was time-consuming as we needed to spend time re-listening to the audio and extracting the relevant responses to questions before entering this feedback data into the idea matrix. We still decided to do this as we would understand on a more detailed level what users preferred when experiencing our product. Ultimately, although our feedback data lacked in terms of sample size because of this, we were able to make the analysis of the data much richer.    
 
 
 
