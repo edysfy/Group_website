@@ -1239,7 +1239,7 @@ We also implemented a fly-to button, on each accordion. When the user clicks the
     this.flyToCords.emit(lngLat);
   }
 ```
-This component is the child component of Mapbox. Mapbox is bound to this event emitter. When an event is emitted, the Usersearch-Display components pass the coordinated up to Mapbox, and the 'flyTo' function in Mapbox is triggers. Flying the user to the GeoJson EmotePost on the map.
+This component is the child component of Mapbox. Mapbox is bound to this event emitter. When an event is emitted, the Usersearch-Display components pass the coordinates up to Mapbox, and the 'flyTo' function in Mapbox is triggers. Flying the user to the GeoJson EmotePost on the map.
 ```js
   flyTo(lngLat: number[]) {
     if(!isNaN(lngLat[0])&&!isNaN(lngLat[1])){
