@@ -84,8 +84,9 @@ Another method we used in evaluating our designs was an idea matrix. This was an
 ### Evaluation Technique 4: Questionnaires
 
 
-<p>
+
 <img src="supporting_images/questionnaire.png" width="550" align="left">
+
 Our group used questionnaires as the main form of quantitative feedback as we were able to send a link such as [this one](https://www.smartsurvey.co.uk/s/S58J8X/) , to users who had recently used our wireframe or been shown our most up to date website on a local host. This way, we could gain insights at scale into how users interpreted our website. Users answered questions such as "Would you recommend this product to a friend?", "Do you think this website is solving a serious problem?" or "How would you improve this website?".
 
 In total we produced three questionnaires. The first two were sent to users alongside the wireframes and the last one was filled out by users after they had used the website on a local host. The last two questionnaires asked the same questions as the first, but we improved it slightly. For example, we added a 'if not, why not' option to answers that currently only included 'yes' and 'no'. This way we were not forcing the user to spend a large amount of their time on it but still gave them the option to leave more detailed feedback if they wished.
@@ -95,7 +96,7 @@ note: the 2nd and 3rd show the mentioned improvement in questions*
  [1st questionnaire (1st wireframe)](https://www.smartsurvey.co.uk/s/S58J8X/)  
  [2nd questionnaire (2nd wireframe)](https://www.smartsurvey.co.uk/s/S58J8X/)  
  [3rd questionnaire (Our most up to date website shown on a local host)](https://www.smartsurvey.co.uk/s/S58J8X/)
-</p>
+
 
 <p align="left">
 <img src="supporting_images/right.png" width="600">
