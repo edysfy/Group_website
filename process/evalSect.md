@@ -268,9 +268,16 @@ Finally, our second objective was to "create a peer-led support network where us
 Throughout the entirety of this project the UK has been in some degree of national lock down. Due to this, it has not been possible for the team to meet up in person and therefore all interaction within the team has taken place online. This has presented challenges. Without face to face interaction it is more difficult to form personal bonds which can help drive team morale. On top of this being limited to online interaction means jobs can tend to take longer to complete and ideas are more difficult to bounce of each other. To counteract this, we decided early on how we would collaborate and set up the infrastructure we would would require to do so.
 
 ### Discussion of Social and Ethical implications of your work.
-Throughout our development process, we coded the product in a user-centric way. We kept the user at the centre of the project by basing our development decisions on user data. Being data driven in this sense empowered users. (See our evaluation for more information on the techniques used to do this).  This can be exemplified by some feedback from our three questionnaires throughout the development process which shows that users thought that, the three pictures above show the responses to the question ‘To what extent do you feel that this web application is addressing a serious problem?’, in chronological order. Bearing in mind that one of our main goals for this project was to solve a serious problem, our aim was to do this in a user-approved way.    
 
-On top of this, being data driven allowed us to avoid biases to creep in to our development process. Keeping design process user-centric allowed us to prevent any incumbent form taking control and shaping it to their own ends. We seek to keep this attitude constant during any further work.
+<p align="center">
+<img align="center" src="supporting_images/right_feedback.png" width="450px">
+<img align="center" src="supporting_images/middle_feedback.png" width="450px">
+<img align="center" src="supporting_images/left_feedback.png" width="450px">
+</p>
+
+Throughout our development process, we coded the product in a user-centric way. We kept the user at the centre of the project by basing our development decisions on user data. Being data driven in this sense empowered users. (See our [Evaluation](evalSect.md) for more information on the techniques used to do this).  This can be exemplified by some feedback from our three questionnaires throughout the development process. This is demonstrated by the three pictures above which show the responses to the question ‘To what extent do you feel that this web application is addressing a serious problem?’, in chronological order from left to right (three questionnaires were answered by users). Considering that one of our main goals for this project was to solve a serious problem, we aimed was to do this in a user-approved way.    
+
+On top of this, being data driven allowed us to avoid biases to creep in to our development process. Keeping design process user-centric allowed us to prevent any incumbent form taking control and shaping it to their own ends. We seek to maintain this attitude during any further work.
 
 #### How will we continue to consider these implications?
 
