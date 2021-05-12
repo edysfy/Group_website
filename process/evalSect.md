@@ -127,7 +127,7 @@ that we recorded the audio to our interviews, we were able to make use out of an
 
 
 <a name="timeline"></a>
-# b)Timeline of Evaluation Methods
+# b) Timeline of Evaluation Methods
 <p align="center">
 <img src="supporting_images/timeline.png" width="1000">
 </p>
@@ -202,7 +202,7 @@ Another possible limitation to our evaluation was our inability to show enough u
 
 
 <a name="success"></a>
-# c)More Limitations: Sample Size
+# c) More Limitations: Sample Size
 
 
 #### How we calculated our target sample size
@@ -240,7 +240,7 @@ this feedback
 If I clicked on your Edgware Earthquake post, how could I support you? This is where you make the jump from raising awareness, to going further
 
 <a name="working"></a>
-# a)Reflection on Working Practices
+# a) Reflection on Working Practices
 
 - How well did the working practises of our group work...
 - management of issues
@@ -254,7 +254,7 @@ We did have issues in the first couple of sprints around effectively using githu
 As discussed in our [Project Management & development process](sprints.md) document, the use of discord channels greatly aided discussion as we were able to keep focused the discussion on disperate elements of the project, instead of having one chat where everything was lumped into one place, meaning that we were able to keep track of and refer to implementation issues in specific areas.
 
 <a name="success"></a>
-# b)How Successful was our Project?
+# b) How Successful was our Project?
 
 - did we fulfil the brief
 - were all of our objectives met?
@@ -278,16 +278,16 @@ Finally, our second objective was to "create a peer-led support network where us
 
 
 <a name="covid"></a>
-# c)How did COVID-19 effect our Work?
+# c) How did COVID-19 effect our Work?
 
 Throughout the entirety of this project the UK has been in some degree of national lock down. Due to this, it has not been possible for the team to meet up in person and therefore all interaction within the team has taken place online. This has presented challenges. Without face to face interaction it is more difficult to form personal bonds which can help drive team morale. On top of this being limited to online interaction means jobs can tend to take longer to complete and ideas are more difficult to bounce of each other. To counteract this, we decided early on how we would collaborate and set up the infrastructure we would would require to do so.
 
 <a name="ethical"></a>
-# d)Social and Ethical implications
+# d) Social and Ethical implications
 
 <p align="center">
-<img align="center" src="supporting_images/right_feedback.png" width="500px">
-<img align="center" src="supporting_images/middleFeedback.png" width="450px">
+<img align="center" src="supporting_images/right_feedback.png" width="600px">
+<img align="center" src="supporting_images/middleFeedback.png" width="550">
 </p>
 
 Throughout our development process, we coded the product in a user-centric way. We kept the user at the centre of the project by basing our development decisions on user data. Being data driven in this sense empowered users. (See our [Evaluation](evalSect.md) for more information on the techniques used to do this).  This can be exemplified by some feedback from our three questionnaires throughout the development process. This is demonstrated by the three pictures above which show the responses to the question ‘To what extent do you feel that this web application is addressing a serious problem?’, in chronological order from left to right . Considering that one of our main goals for this project was to solve a serious problem, we aimed was to do this in a user-approved way.    
@@ -324,7 +324,7 @@ EmoteMap understands the significance of the disruptor paradigm in terms of the 
 5.
 
 <a name="ethical"></a>
-# e)Discussion of future work (in terms of design, development and evaluation)
+# e) Discussion of future work (in terms of design, development and evaluation)
 
 One extension idea we have involves further inter-user interaction and communication in a local area. Here is the idea, demonstrated with an example: 'Bristol is notorious for its limited parking. On a particular residential road, there is a bus stop that has been out-of-service for years. Despite paying for a parking permit, residents have been told that they are not allowed to park on the bus stop even if that means parking on another road. Residents are upset as they often find themselves struggling to park after a busy day at work. Naturally, they individually take to EmoteMap to express their feelings. To their surprise, they discover that others feel the same way. This is because EmoteMap has identified multiple people within an area expressing similar feelings over the same issue. EmoteMap then asks the individuals if they would like to initialise a discussion group, in hope of resolving the local issue.' This extension would involve the ability to identify multiple users within a local area reporting the same issue. Furthermore, some form of chat service would need to be implemented. One way we thought about achieving this functionality would be to essentially run a similar process to our `search-component` in the background and store any keywords that appear again and again (i.e over a certain threshold) within a set radius. We could then go through the stored timeline of posts for a specific user and notify them/ enable more functionality if their posts contain the keyword; i.e. have a new option on the sidebar that pops up.
 
