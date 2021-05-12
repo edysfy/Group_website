@@ -271,7 +271,7 @@ Throughout the entirety of this project the UK has been in some degree of nation
 
 <p align="center">
 <img align="center" src="supporting_images/right_feedback.png" width="450px">
-<img align="center" src="supporting_images/middle_feedback.png" width="450px">
+<img align="center" src="supporting_images/middleFeedback.png" width="450px">
 <img align="center" src="supporting_images/left_feedback.png" width="450px">
 </p>
 
