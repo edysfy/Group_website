@@ -270,8 +270,8 @@ Throughout the entirety of this project the UK has been in some degree of nation
 ### Discussion of Social and Ethical implications of your work.
 
 <p align="center">
-<img align="center" src="supporting_images/right_feedback.png" width="200px">
-<img align="center" src="supporting_images/middleFeedback.png" width="200px">
+<img align="center" src="supporting_images/right_feedback.png" width="500px">
+<img align="center" src="supporting_images/middleFeedback.png" width="450px">
 </p>
 
 Throughout our development process, we coded the product in a user-centric way. We kept the user at the centre of the project by basing our development decisions on user data. Being data driven in this sense empowered users. (See our [Evaluation](evalSect.md) for more information on the techniques used to do this).  This can be exemplified by some feedback from our three questionnaires throughout the development process. This is demonstrated by the three pictures above which show the responses to the question ‘To what extent do you feel that this web application is addressing a serious problem?’, in chronological order from left to right . Considering that one of our main goals for this project was to solve a serious problem, we aimed was to do this in a user-approved way.    
