@@ -268,6 +268,39 @@ Finally, our second objective was to "create a peer-led support network where us
 Throughout the entirety of this project the UK has been in some degree of national lock down. Due to this, it has not been possible for the team to meet up in person and therefore all interaction within the team has taken place online. This has presented challenges. Without face to face interaction it is more difficult to form personal bonds which can help drive team morale. On top of this being limited to online interaction means jobs can tend to take longer to complete and ideas are more difficult to bounce of each other. To counteract this, we decided early on how we would collaborate and set up the infrastructure we would would require to do so.
 
 ### Discussion of Social and Ethical implications of your work.
+Throughout our development process, we coded the product in a user-centric way. We kept the user at the centre of the project by basing our development decisions on user data. Being data driven in this sense empowered users. (See our evaluation for more information on the techniques used to do this).  This can be exemplified by some feedback from our three questionnaires throughout the development process which shows that users thought that, the three pictures above show the responses to the question ‘To what extent do you feel that this web application is addressing a serious problem?’, in chronological order. Bearing in mind that one of our main goals for this project was to solve a serious problem, our aim was to do this in a user-approved way.    
+
+On top of this, being data driven allowed us to avoid biases to creep in to our development process. Keeping design process user-centric allowed us to prevent any incumbent form taking control and shaping it to their own ends. We seek to keep this attitude constant during any further work.
+
+#### How will we continue to consider these implications?
+
+We have already started thinking about how we can design our product for scale. Although our sample of users was 31, we believe it is important to consider the implications for our users when there are many more. As EmoteMap’s purpose is to create a community of relatable posts, we want to combat any potential issues that can arise as a result of this. For example suicide communities which can arise in order to encourage methods of taking ones own life are not uncommon on other blogs and online social communities, we would need to put in the necessary regulations as a response to this kind of activity. We are currently thinking about adding a feature in order to flag a post. We want to be able to respond to posts flagged as disconcerting in this way, perhaps this could be done by partnering with suicide prevention organisations to support anyone who may be struggling with suicidal thoughts, as well as resources for concerned friends to respond to and report a post that worries them. Also, if our product was to potentially reach popularity in countries outside the UK, we would need to consider these things but for other countries    
+
+
+In addition to this, we realise that EmoteMap will be a location of heightened emotions. Although our aim is to help users deal with and cater to their emotions, we understand that with the potential growth of the product will inevitably see emotions such as anger being expressed. As a result, we seek to take responsibility for any suggestion of violence on posts, especially those which pose a threat to the user themselves or any other other user. We want to be able to escalate such issues accordingly.    
+
+EmoteMap understands the significance of the disruptor paradigm on the ethical and social implications of products. With potential innovation of our product in order to meet changing user demands, which we will strive to push, will come inevitable  modularisation. In this sense, responsibility of the ethical and social impact of our product would be segmented and thus multiple parties would beheld to account. In an attempt to plan for this issue, EmoteMap seeks to take ultimate responsibility. As a result, if our product comes to be in affiliation with or rely on any third parties, we will consider their conduct as well as our own. This would involve communicating our ethics in order to protect our users too. For example, being open with them about any risks instead of burying them in user licenses. Essentially, we will be the point of contact    
+
+#### Handling of Data
+**data within our system:** Throughout the evaluation process we ensured that any user data was protected. All of the data from questionnaires was anonymised and kept in our account of the Smartsurvey website, which was secured with a password. We also ensured that audio from interviews never left the phone of the interviewer who recorded it, once we had analysed the information within the interview we would delete the recording. EmoteMap acknowledges that some of the interviewees were vulnerable as they suffering with depression and anxiety, and therefore that their data was particularly important t protect    
+
+**storing data from user studies:** In order to comply with GDPR, the browser would store the user's JsonWebToken (JWT) and therefore encrypt the user's username and password and store it in the client's browser when authenticated. This ensures and attacks on their browser does not expose their credentials. We used a secret key, which is stored on the server side. This secret key is one of other components that forms the JWT, only people that know the secret key will be able to decode the JWT token, which is why we store it on our server. To find out more about this authentication process please see our authentication service in our System Implementation section. There is one area the we need to improve. When the user registers we were not able to hash their passwords, as bcyrpt was having issues with docker. They means the users passwords were exposed on the database. We understand this must change in future work, or if we want to take the site live. We also used .env variables to not expose MongoDB connection details on Github.
+
+
+#### Ethical Principles
+1. We take responsibility for appropriately escalating suggestions of harm from users to themselves or to others   
+
+2. We will design with the user in mind   
+-	much user testing inspired dev process  
+-	we will not allow biases to creep in as we use user data to make decisions and will continue to do s o with the growth of the product    
+
+3. Be accountable for the potential spread of responsibility    
+
+
+4. We will build and test for safety    
+-	see google
+
+5.
 
 ### Discussion of future work (in terms of design, development and evaluation)
 
