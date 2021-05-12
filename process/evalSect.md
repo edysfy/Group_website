@@ -23,7 +23,7 @@
 # a) Methodology
 
 
-IIn our evaluation we discuss our methods of gathering feedback data from users throughout the development process. In order to evaluate how our product would be received by users we used five techniques throughout the process; paper prototyping, wireframing, an idea matrix, questionnaires, and semi-structured interviews. Firstly, In our methodology, we expand on the five techniques used, explaining how we carried them out and interpreted them as a group. Secondly, we put together a Timeline of Evaluation Methods where we walk through the decision making process for our unique design model, from Early Ideation and Paper Prototyping on 21/2/21 to Presenting our Webpage to users on a local host on 5/4/21. We also touch on the interdependence of the evaluation techniques in this section. We mention various limitations that arose with certain evaluation techniques throughout the first two sections of the Evaluation. However, there is a third and final section to the Evaluation that discusses the potential argument that our sample size when conducting user feedback was a limitation.
+In our evaluation we discuss our methods of gathering feedback data from users throughout the development process. In order to evaluate how our product would be received by users we used five techniques throughout the process; paper prototyping, wireframing, an idea matrix, questionnaires, and semi-structured interviews. Firstly, In our methodology, we expand on the five techniques used, explaining how we carried them out and interpreted them as a group. Secondly, we put together a Timeline of Evaluation Methods where we walk through the decision making process for our unique design model, from Early Ideation and Paper Prototyping on 21/2/21 to Presenting our Webpage to users on a local host on 5/4/21. We also touch on the interdependence of the evaluation techniques in this section. We mention various limitations that arose with certain evaluation techniques throughout the first two sections of the Evaluation. However, there is a third and final section to the Evaluation that discusses the potential argument that our sample size when conducting user feedback was a limitation.
 
 ### Evaluation Technique 1: Paper prototyping
 
@@ -242,16 +242,14 @@ If I clicked on your Edgware Earthquake post, how could I support you? This is w
 <a name="working"></a>
 # a) Reflection on Working Practices
 
-- How well did the working practises of our group work...
-- management of issues
-- communication
-- Agile
-
 Taken as a whole, we worked quite effectively as team, with the clear team roles and constant communication over discord helping greatly in facilitating collaboration and continuous integration, as we were very quickly able to discuss issues and solutions, and delegate who should should be tasked with implementing those solutions.
 
-We did have issues in the first couple of sprints around effectively using github and angular, as most of the team were still getting to grips with both technologies, but once we implemented a rigid process of fetching and pulling from our repository before and after every local change, these issues subsided.
-
 As discussed in our [Project Management & development process](sprints.md) document, the use of discord channels greatly aided discussion as we were able to keep focused the discussion on disperate elements of the project, instead of having one chat where everything was lumped into one place, meaning that we were able to keep track of and refer to implementation issues in specific areas.
+
+The agile design process was especially useful in making sure that our project remained focused and kept to the brief; for example as discussed in our [UX Design](uxDesign.md) document, the feedback from our constant user testing resulted in us adding valuable features like the about page and the welcome pop up for new users. On reflection however we realised that we did not stick as rigidly to this design methodology as we had initially set out to; part of this was due to the impact of covid-19, which we discuss below, but also partly due to a lack of discipline; instead of regular calls/meetings, we instead focused more on chat messages. Although we were discussing and collaborating constantly in this way, the nature of text messages resulted in unnecessary miscommunication - for example during the project write up on multiple occasions we overlapped on which areas a specific person was focusing on writing, leading to a duplication of work in some instances. In future work, we agreed that we would timetable more regular and structured meetings to alleviate these issues. Again see our [Project Management](sprints.md) document for some further problems we encountered with the agile development process.
+
+We did have issues in the first couple of sprints around effectively using github and angular, as most of the team were still getting to grips with both technologies; on multiple occasions we lost progress due to people forgetting to fetch before they pulled, meaning when they pushed, old versions of files overwrote some changes! Once we implemented a rigid process of fetching and pulling from our repository before and after every local change, these issues subsided, although because of the aforementioned issues with relying on text chat over videos calls, it took longer than strictly necessary to communicate this process effectively to the whole team.
+
 
 <a name="success"></a>
 # b) How Successful was our Project?
