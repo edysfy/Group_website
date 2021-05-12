@@ -9,6 +9,11 @@
 * [c) More Limitations: Sample Size](#success)
 
 2. [Conclusion](#conc)
+* [a) Reflection on Working Practices](#working)
+* [b) How Successful was our Project?](#success)
+* [c) How did COVID effect our Work?](#covid)
+* [d) Discussion of Social and Ethical Implications](#ethical)
+* [e) Discussion of Future Work](#future)
 
 <a name="eval"></a>
 # EVALUATION
@@ -197,7 +202,7 @@ Another possible limitation to our evaluation was our inability to show enough u
 
 
 <a name="success"></a>
-# More Limitations: Sample Size
+# c)More Limitations: Sample Size
 
 
 #### How we calculated our target sample size
@@ -234,7 +239,13 @@ this feedback
 
 If I clicked on your Edgware Earthquake post, how could I support you? This is where you make the jump from raising awareness, to going further
 
-### Reflect on the working practices of your group, how well they did or did not work, e.g, management of issues, communication, Agile (etc).
+<a name="working"></a>
+# a)Reflection on Working Practices
+
+- How well did the working practises of our group work...
+- management of issues
+- communication
+- Agile
 
 Taken as a whole, we worked quite effectively as team, with the clear team roles and constant communication over discord helping greatly in facilitating collaboration and continuous integration, as we were very quickly able to discuss issues and solutions, and delegate who should should be tasked with implementing those solutions.
 
@@ -242,7 +253,11 @@ We did have issues in the first couple of sprints around effectively using githu
 
 As discussed in our [Project Management & development process](sprints.md) document, the use of discord channels greatly aided discussion as we were able to keep focused the discussion on disperate elements of the project, instead of having one chat where everything was lumped into one place, meaning that we were able to keep track of and refer to implementation issues in specific areas.
 
-### Reflective discussion of the success of the project. How well did our project fulfil the brief? Were all of our objectives met?
+<a name="success"></a>
+# b)How Successful was our Project?
+
+- did we fulfil the brief
+- were all of our objectives met?
 
 On analysis of our qualitative data, we were able to conclude that throughout the process of feedback and the subsequent development of software, users started to see the purpose of the website as being more in line with what we initially set out for it to be. For us, this somewhat represented the success of the process behind how we evaluated user's perceptions of our product.
 *1. to see/ineract with other users’ posts (e.g – to gain insight...)
@@ -262,12 +277,13 @@ Our first objective was to "create a writing tool that allows self-reflection in
 Finally, our second objective was to "create a peer-led support network where users can interact with each other as a community". For this objective we did achieve some level of success, with some caveats. Our user feedback suggested that people were keen to use the website in a social manner; 60% of users said they were most likely to use the website "To see/interact with other users' posts (e.g - to gain insight about reactions to similar life experiences)". This also further supports us achieveing success in creating a playful application; users wanted to use the website to engage with with peoples emotions and experiences! However we would argue that beyond the comradery provided by seeing other users experiencing similar emotions, in its current state our website does not provide much, if any, interaction between users beyond this. In the future work section below we discuss some ideas for features that would help us better achiveve this objective.
 
 
-
-### This is a chance to reflect on how coronavirus has affected your project (remote working practices etc)
+<a name="covid"></a>
+# c)How did COVID-19 effect our Work?
 
 Throughout the entirety of this project the UK has been in some degree of national lock down. Due to this, it has not been possible for the team to meet up in person and therefore all interaction within the team has taken place online. This has presented challenges. Without face to face interaction it is more difficult to form personal bonds which can help drive team morale. On top of this being limited to online interaction means jobs can tend to take longer to complete and ideas are more difficult to bounce of each other. To counteract this, we decided early on how we would collaborate and set up the infrastructure we would would require to do so.
 
-### Discussion of Social and Ethical implications of your work.
+<a name="ethical"></a>
+# d)Social and Ethical implications
 
 <p align="center">
 <img align="center" src="supporting_images/right_feedback.png" width="500px">
@@ -292,7 +308,7 @@ EmoteMap understands the significance of the disruptor paradigm in terms of the 
 **storing data from user studies:** In order to comply with GDPR, the browser would store the user's JsonWebToken (JWT) and therefore encrypt the user's username and password, storing it in the client's browser when authenticated. This ensures that the browser does not expose their credentials. We used a secret key, which is stored on the server side. The key is one of the components that forms the JWT as it would have to be known in order to decode the JWT token. To find out more about this authentication process please the "Authentication Service" section in our [System Implementation](sysImp.md). On this topic, an area that requires improvement is the user registers. We were not able to hash their passwords, as bcyrpt was having issues with docker meaning that the user's passwords were exposed on the database. We understand this must change in future work, or if we want to take the site live. We also used .env variables to not expose MongoDB connection details on Github.
 
 
-#### Ethical Principles
+#### EmoteMap's Ethical Principles
 1. We take responsibility for appropriately escalating suggestions of harm from users to themselves or to others   
 
 2. We will design with the user in mind   
@@ -307,7 +323,8 @@ EmoteMap understands the significance of the disruptor paradigm in terms of the 
 
 5.
 
-### Discussion of future work (in terms of design, development and evaluation)
+<a name="ethical"></a>
+# e)Discussion of future work (in terms of design, development and evaluation)
 
 One extension idea we have involves further inter-user interaction and communication in a local area. Here is the idea, demonstrated with an example: 'Bristol is notorious for its limited parking. On a particular residential road, there is a bus stop that has been out-of-service for years. Despite paying for a parking permit, residents have been told that they are not allowed to park on the bus stop even if that means parking on another road. Residents are upset as they often find themselves struggling to park after a busy day at work. Naturally, they individually take to EmoteMap to express their feelings. To their surprise, they discover that others feel the same way. This is because EmoteMap has identified multiple people within an area expressing similar feelings over the same issue. EmoteMap then asks the individuals if they would like to initialise a discussion group, in hope of resolving the local issue.' This extension would involve the ability to identify multiple users within a local area reporting the same issue. Furthermore, some form of chat service would need to be implemented. One way we thought about achieving this functionality would be to essentially run a similar process to our `search-component` in the background and store any keywords that appear again and again (i.e over a certain threshold) within a set radius. We could then go through the stored timeline of posts for a specific user and notify them/ enable more functionality if their posts contain the keyword; i.e. have a new option on the sidebar that pops up.
 
