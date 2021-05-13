@@ -18,8 +18,7 @@ TO FINISH DO ABSTRACT....
 ### Objectives
  - Create a writing tool that allows self-reflection in a similar way to blogging and journaling.  
  - Create a peer-led support network where users can interact with each other as a community.      
- - Create a tool that raises awareness and information through a visual heat-map based on an accumulation of users' mental health in different geolocations, or can be relevant to other issues.
- - Reduce the stigma that surrounds mental health.
+ - Create a tool that raises awareness and information through a visual heat-map based on an accumulation of users' mental health in different geolocations
 
 <a name="backgrnd"></a>
 
