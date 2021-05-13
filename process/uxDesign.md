@@ -97,7 +97,7 @@ Overall, we were pleased with how useful the paper prototype approach was. Despi
 <a name="digital"></a>
 ## First Digital Representation
 
-From this, we went on to build the initial prototype of EmoteMap. We chose a pink and blue theme because members of our team believed it represented the ethos of EmoteMap;  pink can be a gentle and emotional color. We also included the icons for 'about', 'login', and the title 'about'. Initially, these had no functionality and were just a way for us to see the initial vision of EmoteMap.
+From this, we went on to build the initial prototype of EmoteMap. We chose a pink and blue theme because members of our team believed it represented the nature of EmoteMap: gentle and welcoming. We also included the icons for 'about', 'login', and the title 'about'. Initially, these had no functionality and were just a way for us to see the initial vision of EmoteMap.
 
   <p align="center">
   <img align="center" src="supporting_images/orig.png" width="500px">
@@ -112,14 +112,14 @@ We started experimenting with Mapbox's circle markers. This was a demo provided 
   <img align="center" src="supporting_images/treelogowhite.png" width="250px">
 </p>
 
-We ultimately decided to go with a globe, as it represents the core feature of EmoteMap:
+We ultimately decided to go with a globe (shown below), as it represents the core feature of EmoteMap. We also made the logo a button in the toolbar, so users can find their way back to the map when on a different page.
 
 <p align="center">
   <img align="center" src="supporting_images/logo.png" width="100px">
 </p>
 
 
-We made the logo a button in the toolbar, so users can find their way back to the map when on a different route.
+
 
   
 <a name="post"></a>
@@ -155,27 +155,27 @@ We took a moment to reflect on our project progression in the context of our thr
   <img align="center" src="supporting_images/postform.png" width="550px">
   </p>
 
-This post form didn't change much, though we did make a small change to this later. We didn't want to display a number (1 being happy to 3 being 'sad') to represent the mood on the form. Instead of showing numbers, we mapped it with the text, 'happy', 'coping', and 'sad'.
+We only made one small change to this form later. We didn't want to display a number (1 being happy to 3 being 'sad') to represent the mood on the form. Instead of showing numbers, we mapped it with the titles: 'happy', 'coping', and 'sad'.
 
 ### Displaying EmotePosts
 
-It was obvious to us from the start that we needed use the GeoJson data created from the form above and display it on the map visually through using a marker. There were two options we thought of: Using a marker pin, like in google maps, or using svg circles. The markers (like the blue one in the pink themed screenshot) just felt to clunky, so we decided to use the circles. Mapbox also comes with a hover event feature, we used this to display a pop-up that contained the EmotePost data when a user hovers of a marker with their mouse. After feedback Zaki received from some users, we decided to map each emotion with a corresponding colour.
+It was obvious to us from the start that we needed use the GeoJson data created from the form above and display it on the map visually through using a marker. There were two options we thought of: Using a marker pin, like in Google Maps, or using SVG circles. The markers (like the blue one in the pink themed screenshot) just felt too clunky, so we decided to use the circles. Mapbox also comes with a hover event feature; we used this to display a pop-up that contained the EmotePost data when a user hovers of a marker with their mouse. After further feedback from users, we decided to map each emotion with a corresponding colour.
 
 * Happy => Blue
 * Coping => Yellow
 * Sad => Red.
 
-For the benefit of our users being able to distinguish their own posts on the map from other user's posts, we made them distinguishable from others by adding an extra SVG on underneath the circle in the shape of a volcano. <br>
+For the benefit of our users being able to distinguish their own posts on the map from other users' posts, we added an extra SVG underneath the circle in the shape of a volcano. <br>
 
 <a name="heatmap"></a>
 ## The Heat Map
 
-We needed to take into consideration the needs of Christine, and to an extent, Dan. We needed a way to display the mood/emotions across the globe in an attractive style, so they could use this data for their interests and spark curiosity into the nature of users' posts at certain locations. This was on our agenda in a team scrum. We were looking through Mapbox's data visualization features.
+We needed to take into consideration the needs of Christina, and to an extent, Daniel. We needed a way to display the mood/emotions across the globe in an attractive style, so they could use this data for their interests and spark curiosity into the nature of users' posts at certain locations. This was on our agenda in a team scrum. We looked through Mapbox's data visualisation features.
 
 There were several ideas we could use:
 
-* To just have the different colored circles for each EmotePost (shown in the pink prototype above) on the map.
-* Use Mapbox's heat map features which displays the density of a specified attribute with customizable colors.
+* To have the different colored circles for each EmotePost (shown in the pink prototype above) on the map.
+* Use Mapbox's heat map feature which displays the density of a specified attribute with customisable colors.
 * To create circle clustering, which clusters the data into bigger circles as you zoom out.
 * To tile the data onto a map.
 
@@ -185,7 +185,7 @@ There were several ideas we could use:
   <img align="center" src="supporting_images/mbt.png" width="250px">
   </p>
 
-We test out all three methods. We thought that the heat map was the best, accurate, and easiest way to represent the mood. We assigned the same colors for the heat map as the circles used to represent the EmotePosts. We tested out these methods on our users, and it was split between the heat map and tiling. Also, there were a couple of ways we could represent the heat map.
+We tested all three methods. We thought that the heat map was the most accurate and easy way to represent the mood. We assigned the same colours for the heat map as the circles used to represent the EmotePosts. We tested out these methods on our users, and it was split between the heat map and tiling. Also, there were a couple of ways we could represent the heat map.
 
 * Have a button to turn it on.
 * Have it on all the time as a layer on top of the circles.
@@ -196,7 +196,7 @@ We decided to go with the third option as it effectively presented multiple data
 <a name="authentication"></a>
 ## User Authentication and Features
 
-We needed to design the UI for the login and sign up processes. But first, We received feedback from the users and changed the icons for 'sign up' and 'login' to text, as there was some issues highlighted regarding navigating the application. So we made the following changes to the navbar.
+We needed to design the UI for the login and sign up processes. But first, We received feedback from the users and changed the icons for 'sign up' and 'login' to text, as there were some issues highlighted regarding navigating the application. So we made the following changes to the navbar.
 
   <p align="center">
   <img align="center" src="supporting_images/icons.png" width="550px">
@@ -271,7 +271,7 @@ We implemented this animation, and then [incorporated the theme we developed for
 <a name="influence"></a>
 ## How the Wireframe Feedback influenced our UI...
 
-Our paper prototype served well at forming an initial visualisation of the website, and for receiving feedback on core features. In order to gain feedback related to user experience, we needed to demonstrate the website using a closer representation of a working product. Logically, a wireframe was the next logical step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/EmoteMap-prototype-2-ckn7hacvv1nm601590k9h8044/ckn7han2m109p012d8epohsri/play) or [here](https://zaki744910.invisionapp.com/console/share/NJ2D65MNBU/572059598/play) to go to our interactive wire frame. Below is a preview:
+Our paper prototype served well at forming an initial visualisation of the website, and for receiving feedback on core features. In order to gain feedback related to user experience, we needed to demonstrate the website using a closer representation of a working product. A wireframe was the next logical step. We used [InVision](https://www.invisionapp.com) to do this. Click [here](https://zaki744910.invisionapp.com/console/EmoteMap-prototype-2-ckn7hacvv1nm601590k9h8044/ckn7han2m109p012d8epohsri/play) or [here](https://zaki744910.invisionapp.com/console/share/NJ2D65MNBU/572059598/play) to go to our interactive wireframe. Below is a preview:
 
 <p align="center">
 <img src="supporting_images/wireframe_preview.png" width="700">
@@ -286,20 +286,20 @@ Again, we shared the wireframe with friends and family, and coupled it with a qu
 </p>
 <a name="nos"></a>
 
-Another user suggested a 'welcome screen' for users not authenticated. We implemented a welcome button on the map which triggered a semi-transparent pop-up to keep the map present for the user's first impression. Below the feedback is our final implementation of this feature. We also had negative feedback from the users regarding the basic search bar that non-authenticated users could use to search. We decided to remove this and felt the new 'welcome' was enough functionality for non-users could have.
+Another user suggested a 'welcome screen' for users not authenticated. We implemented a welcome button on the map that triggered a semi-transparent pop-up to keep the map present for the user's first impression. Below the feedback is our final implementation of this feature. We also had negative feedback from the users regarding the basic search bar that non-authenticated users could use to search. We decided to remove this and felt the new 'welcome' was enough functionality for non-users.
 
 <p align="center">
 <img src="supporting_images/welcome_feedback.png" width="500">
 <img src="supporting_images/removesearch.png" width="500">
 </p>
 
-<br> Leading to the final landing page for non-authenticated users: <br>
+<br> This lead to the final landing page for non-authenticated users: <br>
 <p align="center">
 <img src="supporting_images/landing.png" width="500">
 <img src="supporting_images/landingpopup.png" width="500">
 </p>
 
-Initially, we didn't implement an 'about' page in the application. We were thinking of implementing it so we left the 'about' text on the navbar. Results of the questionnaire also showed that 80% of people thought an 'about' page would be useful for further clarification. As a response to this, we created an 'about' page confirming what the website intends to do, and how:
+Regarding the 'about' page, we had not confirmed in the beginning whether we would completely implement this; we had therefore left an empty 'about' link on the navbar. However, results of the questionnaire showed that 80% of people thought an 'about' page would be useful for further clarification. As a response to this, we created an 'about' page confirming what the website intends to do, and how:
 
 <p align="center">
 <img src="supporting_images/About_page.png" width="700">
@@ -365,17 +365,17 @@ A gif of the implemented home-in feature (nicknamed 'fly-in feature' by the team
 <a name="summary"></a>
 ## Summary of Design Heuristics used
 
-* ***Matched the system and the real world:***  We made sure that the UX was easy for the user to comprehend. Ie displaying text, in place of an integer, for the mood. Also, by not using any error codes on the UI, we converted these errors so they are human readable.
-* ***Error Prevention:*** <br> We sent errors back to the user on the forms to ensure incompatible/null data wasn't submitted. Also, we sent errors when the username and password values in the registration forms were invalid.
-* ***Help users recognize, diagnose, and recover from errors:*** <br> We made sure to not use any error codes on the UI, we converted these errors to readable descriptive sentences.
-* ***Recognition rather than recall:*** <br> We ensured the user could recognize features in the UI instead of having to recall them from previous use. Like the welcome text on the welcome pop-up, and using text for the top navbar.
-* ***Aesthetic and minimalist design:*** <br> We wanted to keep the user interface clean to contemplate the design heuristic above. We only added features that the users suggested and nothing more. Also taking inspiration from Apple Inc.
+* ***Matched the system and the real world:***  We made sure that the UX was easy for the user to comprehend, e,g displaying text, in place of an integer, for the mood. Also, we did not use error codes in the UI; we converted these errors so they are human readable.
+* ***Error Prevention:*** <br> We sent errors back to the user on the forms to ensure incompatible/null data was not submitted. Also, we sent errors when the username and password values in the registration forms were invalid.
+* ***Help users recognise, diagnose, and recover from errors:*** <br> We made sure to not use any error codes on the UI, we converted these errors to readable descriptive sentences.
+* ***Recognition rather than recall:*** <br> We ensured the user could recognise features in the UI instead of having to recall them from previous use. E.g. the welcome text on the welcome pop-up, and using text for the top navbar.
+* ***Aesthetic and minimalist design:*** <br> We wanted to keep the user interface clean to contemplate the design heuristic above. We only added features that the users suggested and nothing more.
 * ***Help and documentation:*** <br> We made sure we provided the user help and guidance while using the UI. We included the 'About' page and the 'welcome' pop-up.
 
 <a name="remarks"></a>
 ## Final Remarks Regarding UX
 
-Our three characters served as both inspiration and guidance for the initial key features of our application. User feedback proved to highlight useful features that certainly contributed to an improved user experience. It should be noted. however, that not all feedback was acted on. The reason for this was not because we disagreed, but because it was far beyond the scope of our project at this current time (MENTION THAT WE WILL TALK ABOUT THIS MORE IN PROJECT EXTENSION IDEAS PART). Nevertheless, feedback of this nature sometimes inspired us to implement a user's idea slightly differently to what was intended. We will finish this section with an example of this. See below for a user's suggestion:
+Our three characters served as both inspiration and guidance for the initial key features of our application. User feedback proved to highlight useful features that certainly contributed to an improved user experience. It should be noted, however, that not all feedback was acted on. The reason for this was not because we disagreed, but because it was far beyond the scope of our project at this current time; this is discussed further in our evaluation. Nevertheless, feedback of this nature sometimes inspired us to implement a user's idea slightly differently to what was intended. We will finish this section with an example of this. See below for a user's suggestion:
 
 <p align="center">
 <img src="supporting_images/therapist_feedback.png" width="700">
