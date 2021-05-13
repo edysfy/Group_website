@@ -265,7 +265,7 @@ As a team, we view the display of emotion via a map a novel and interactive way 
 ##### Objective 1: 'Create a writing tool that allows self-reflection in a similar way to blogging'
 
 <p>
-<img src="supporting_images/interact.png" width="250" align="left">
+<img src="supporting_images/interact.png" width="400" align="left">
 
 Our first objective was to "create a writing tool that allows self-reflection in a similar way to blogging". We would argue that our project was very successful in meeting this goal; even disregarding the map element of our website, the app allows users a clear way to make a 'blog post', and has a dated timeline/history of all previous posts, essentially providing the function of a virtual diary. The mapping and mood elements actually provide additional functionality, with users able to see their emotion and location for each 'blog' post they have made - we argue that this could make our website better than a traditional diary/blogging service for facilitating self-reflection. However, our user feedback suggests that most people would not user our website in this way; only 20% of people were most likely to use the website for blogging purposes, although this does not mean that users wouldn't use it for this purpose, just that they found the other features more engaging.  
 
