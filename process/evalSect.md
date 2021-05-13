@@ -5,8 +5,9 @@
 ## Table of contents
 1. [Evaluation](#eval)
 * [a) Methodology](#method)
-* [b) Timeline of Evaluation Methods](#timeline)
-* [c) More Limitations: Sample Size](#success)
+* [b) Testing](#testing)
+* [c) Timeline of Evaluation Methods](#timeline)
+* [d) More Limitations: Sample Size](#success)
 
 2. [Conclusion](#conc)
 * [a) Reflection on Working Practices](#working)
@@ -126,8 +127,30 @@ On top of this, we would always ensure that we asked a general and open ended qu
 that we recorded the audio to our interviews, we were able to make use out of any suggestions.
 
 
+<a name="testing"></a>
+# b) Testing
+
+### Testing the API
+
+We extensively tested the API whilst developing our application. This was important and played a pivotal role in having a functional application at the end. At times, our routes on our API were developed before the corresponding part of the front end was functional. So we needed a way to test whether the API was returning the correct responses when receiving a request. We used an application call Postman. This is an application the sends requested to the targeted URL path. We used our server routes as the URL path when served through localhost.
+
+We would build each route while having the requirements of the responses sent to the front end in mind. 
+
+- If the route was an http get, we would speficy the GET req, and observe weather the data returned was as expected: 
+<p align="center">
+<img src="supporting_images/exampleofyser.png" width="500">
+</p>
+
+- If it was a POST request, we would send the required payload. Simulating the data sent from the front end and observe the response. 
+<p align="center">
+<img src="supporting_images/saveuser.png" width="500">
+</p>
+<br>
+
+If there was any errors, we would alter the API route's functions until the resonse was adequate, and the request did not result in our server crashing. 
+
 <a name="timeline"></a>
-# b) Timeline of Evaluation Methods
+# c) Timeline of Evaluation Methods
 Below is a timeline of our user testing techniques. The read lines show the interdependence of techniques on one another.
 <p align="center">
 <img src="supporting_images/timeline.png" width="1000">
@@ -195,15 +218,8 @@ Another possible limitation to our evaluation was our inability to show enough u
 
 
 
-
-
-
-
-
-
-
 <a name="success"></a>
-# c) More Limitations: Sample Size
+# d) More Limitations: Sample Size
 
 
 ### How we calculated our target sample size
