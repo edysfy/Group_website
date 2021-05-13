@@ -9,6 +9,11 @@
 * [c) More Limitations: Sample Size](#success)
 
 2. [Conclusion](#conc)
+* [a) Reflection on Working Practices](#working)
+* [b) How Successful was our Project?](#success)
+* [c) How did COVID effect our Work?](#covid)
+* [d) Discussion of Social and Ethical Implications](#ethical)
+* [e) Discussion of Future Work](#future)
 
 <a name="eval"></a>
 # EVALUATION
@@ -18,7 +23,7 @@
 # a) Methodology
 
 
-IIn our evaluation we discuss our methods of gathering feedback data from users throughout the development process. In order to evaluate how our product would be received by users we used five techniques throughout the process; paper prototyping, wireframing, an idea matrix, questionnaires, and semi-structured interviews. Firstly, In our methodology, we expand on the five techniques used, explaining how we carried them out and interpreted them as a group. Secondly, we put together a Timeline of Evaluation Methods where we walk through the decision making process for our unique design model, from Early Ideation and Paper Prototyping on 21/2/21 to Presenting our Webpage to users on a local host on 5/4/21. We also touch on the interdependence of the evaluation techniques in this section. We mention various limitations that arose with certain evaluation techniques throughout the first two sections of the Evaluation. However, there is a third and final section to the Evaluation that discusses the potential argument that our sample size when conducting user feedback was a limitation.
+In our evaluation we discuss our methods of gathering feedback data from users throughout the development process. In order to evaluate how our product would be received by users we used five techniques throughout the process; paper prototyping, wireframing, an idea matrix, questionnaires, and semi-structured interviews. Firstly, In our methodology, we expand on the five techniques used, explaining how we carried them out and interpreted them as a group. Secondly, we put together a Timeline of Evaluation Methods where we walk through the decision making process for our unique design model, from Early Ideation and Paper Prototyping on 21/2/21 to Presenting our Webpage to users on a local host on 5/4/21. We also touch on the interdependence of the evaluation techniques in this section. We mention various limitations that arose with certain evaluation techniques throughout the first two sections of the Evaluation. However, there is a third and final section to the Evaluation that discusses the potential argument that our sample size when conducting user feedback was a limitation.
 
 ### Evaluation Technique 1: Paper prototyping
 
@@ -122,7 +127,7 @@ that we recorded the audio to our interviews, we were able to make use out of an
 
 
 <a name="timeline"></a>
-# b)Timeline of Evaluation Methods
+# b) Timeline of Evaluation Methods
 <p align="center">
 <img src="supporting_images/timeline.png" width="1000">
 </p>
@@ -197,7 +202,7 @@ Another possible limitation to our evaluation was our inability to show enough u
 
 
 <a name="success"></a>
-# More Limitations: Sample Size
+# c) More Limitations: Sample Size
 
 
 #### How we calculated our target sample size
@@ -234,15 +239,23 @@ this feedback
 
 If I clicked on your Edgware Earthquake post, how could I support you? This is where you make the jump from raising awareness, to going further
 
-### Reflect on the working practices of your group, how well they did or did not work, e.g, management of issues, communication, Agile (etc).
+<a name="working"></a>
+# a) Reflection on Working Practices
 
 Taken as a whole, we worked quite effectively as team, with the clear team roles and constant communication over discord helping greatly in facilitating collaboration and continuous integration, as we were very quickly able to discuss issues and solutions, and delegate who should should be tasked with implementing those solutions.
 
-We did have issues in the first couple of sprints around effectively using github and angular, as most of the team were still getting to grips with both technologies, but once we implemented a rigid process of fetching and pulling from our repository before and after every local change, these issues subsided.
-
 As discussed in our [Project Management & development process](sprints.md) document, the use of discord channels greatly aided discussion as we were able to keep focused the discussion on disperate elements of the project, instead of having one chat where everything was lumped into one place, meaning that we were able to keep track of and refer to implementation issues in specific areas.
 
-### Reflective discussion of the success of the project. How well did our project fulfil the brief? Were all of our objectives met?
+The agile design process was especially useful in making sure that our project remained focused and kept to the brief; for example as discussed in our [UX Design](uxDesign.md) document, the feedback from our constant user testing resulted in us adding valuable features like the about page and the welcome pop up for new users. On reflection however we realised that we did not stick as rigidly to this design methodology as we had initially set out to; part of this was due to the impact of covid-19, which we discuss below, but also partly due to a lack of discipline; instead of regular calls/meetings, we instead focused more on chat messages. Although we were discussing and collaborating constantly in this way, the nature of text messages resulted in unnecessary miscommunication - for example during the project write up on multiple occasions we overlapped on which areas a specific person was focusing on writing, leading to a duplication of work in some instances. In future work, we agreed that we would timetable more regular and structured meetings to alleviate these issues. Again see our [Project Management](sprints.md) document for some further problems we encountered with the agile development process.
+
+We did have issues in the first couple of sprints around effectively using github and angular, as most of the team were still getting to grips with both technologies; on multiple occasions we lost progress due to people forgetting to fetch before they pulled, meaning when they pushed, old versions of files overwrote some changes! Once we implemented a rigid process of fetching and pulling from our repository before and after every local change, these issues subsided, although because of the aforementioned issues with relying on text chat over videos calls, it took longer than strictly necessary to communicate this process effectively to the whole team.
+
+
+<a name="success"></a>
+# b) How Successful was our Project?
+
+- did we fulfil the brief
+- were all of our objectives met?
 
 On analysis of our qualitative data, we were able to conclude that throughout the process of feedback and the subsequent development of software, users started to see the purpose of the website as being more in line with what we initially set out for it to be. For us, this somewhat represented the success of the process behind how we evaluated user's perceptions of our product.
 *1. to see/ineract with other users’ posts (e.g – to gain insight...)
@@ -262,49 +275,58 @@ Our first objective was to "create a writing tool that allows self-reflection in
 Finally, our second objective was to "create a peer-led support network where users can interact with each other as a community". For this objective we did achieve some level of success, with some caveats. Our user feedback suggested that people were keen to use the website in a social manner; 60% of users said they were most likely to use the website "To see/interact with other users' posts (e.g - to gain insight about reactions to similar life experiences)". This also further supports us achieveing success in creating a playful application; users wanted to use the website to engage with with peoples emotions and experiences! However we would argue that beyond the comradery provided by seeing other users experiencing similar emotions, in its current state our website does not provide much, if any, interaction between users beyond this. In the future work section below we discuss some ideas for features that would help us better achiveve this objective.
 
 
-
-### This is a chance to reflect on how coronavirus has affected your project (remote working practices etc)
+<a name="covid"></a>
+# c) How did COVID-19 effect our Work?
 
 Throughout the entirety of this project the UK has been in some degree of national lock down. Due to this, it has not been possible for the team to meet up in person and therefore all interaction within the team has taken place online. This has presented challenges. Without face to face interaction it is more difficult to form personal bonds which can help drive team morale. On top of this being limited to online interaction means jobs can tend to take longer to complete and ideas are more difficult to bounce of each other. To counteract this, we decided early on how we would collaborate and set up the infrastructure we would would require to do so.
 
-### Discussion of Social and Ethical implications of your work.
-Throughout our development process, we coded the product in a user-centric way. We kept the user at the centre of the project by basing our development decisions on user data. Being data driven in this sense empowered users. (See our evaluation for more information on the techniques used to do this).  This can be exemplified by some feedback from our three questionnaires throughout the development process which shows that users thought that, the three pictures above show the responses to the question ‘To what extent do you feel that this web application is addressing a serious problem?’, in chronological order. Bearing in mind that one of our main goals for this project was to solve a serious problem, our aim was to do this in a user-approved way.    
+<a name="ethical"></a>
+# d) Social and Ethical implications
 
-On top of this, being data driven allowed us to avoid biases to creep in to our development process. Keeping design process user-centric allowed us to prevent any incumbent form taking control and shaping it to their own ends. We seek to keep this attitude constant during any further work.
+<p align="center">
+<img align="center" src="supporting_images/right_feedback.png" width="600px">
+<img align="center" src="supporting_images/middleFeedback.png" width="550">
+</p>
+
+Throughout our development process, we coded the product in a user-centric way. We kept the user at the centre of the project by basing our development decisions on user data. Being data driven in this sense empowered users. (See our [Evaluation](evalSect.md) for more information on the techniques used to do this).  This can be exemplified by some feedback from our three questionnaires throughout the development process. This is demonstrated by the pictures above which show the responses to the question ‘To what extent do you feel that this web application is addressing a serious problem?’ in the questionnaires for the first wireframe and the finished product. Considering that one of our main goals for this project was to solve a serious problem, we aimed was to do this in a user-approved way.    
+
+On top of this, being data driven allowed us to avoid biases to creep in to our development process. Keeping design process user-centric allowed us to prevent any incumbent form taking control and shaping it to their own ends. We seek to maintain this attitude during any further work.
 
 #### How will we continue to consider these implications?
 
-We have already started thinking about how we can design our product for scale. Although our sample of users was 31, we believe it is important to consider the implications for our users when there are many more. As EmoteMap’s purpose is to create a community of relatable posts, we want to combat any potential issues that can arise as a result of this. For example suicide communities which can arise in order to encourage methods of taking ones own life are not uncommon on other blogs and online social communities, we would need to put in the necessary regulations as a response to this kind of activity. We are currently thinking about adding a feature in order to flag a post. We want to be able to respond to posts flagged as disconcerting in this way, perhaps this could be done by partnering with suicide prevention organisations to support anyone who may be struggling with suicidal thoughts, as well as resources for concerned friends to respond to and report a post that worries them. Also, if our product was to potentially reach popularity in countries outside the UK, we would need to consider these things but for other countries    
+We have already started thinking about how we can design our product ethically at scale. Although our sample of users was 31, we believe it is important to consider the ethical implications for our users when there are many more. As EmoteMap’s purpose is to create a community of relatable posts, we want to combat any potential issues that can arise as a result of this. For example suicide communities which can arise in order to encourage methods of taking ones own life are not uncommon on other blogs and online social communities. We would need to put in the necessary regulations as a response to this kind of activity. We are currently thinking about adding a feature in order to flag a post which suggests a suicidal activity and therefore want to have the ability to respond to them. Perhaps this could be done by partnering with suicide prevention organisations to support anyone who may be struggling with suicidal thoughts, as well as resources for concerned friends to respond to and report a post that worries them. If our product was to potentially reach popularity in countries outside the UK, we would need to consider partnering with suicide prevention organisations in the relevant city or country.    
 
+In addition to this, we realise that EmoteMap will be a location of heightened emotions. Although our aim is to help users deal with and cater to their emotions, we understand that as the number of users increases we will inevitably see emotions, such as anger, being expressed. As a result, we seek to acknowledge suggestions of violence on posts through the same flag system, especially those which pose a threat to the user themselves or any other other user.    
 
-In addition to this, we realise that EmoteMap will be a location of heightened emotions. Although our aim is to help users deal with and cater to their emotions, we understand that with the potential growth of the product will inevitably see emotions such as anger being expressed. As a result, we seek to take responsibility for any suggestion of violence on posts, especially those which pose a threat to the user themselves or any other other user. We want to be able to escalate such issues accordingly.    
-
-EmoteMap understands the significance of the disruptor paradigm on the ethical and social implications of products. With potential innovation of our product in order to meet changing user demands, which we will strive to push, will come inevitable  modularisation. In this sense, responsibility of the ethical and social impact of our product would be segmented and thus multiple parties would beheld to account. In an attempt to plan for this issue, EmoteMap seeks to take ultimate responsibility. As a result, if our product comes to be in affiliation with or rely on any third parties, we will consider their conduct as well as our own. This would involve communicating our ethics in order to protect our users too. For example, being open with them about any risks instead of burying them in user licenses. Essentially, we will be the point of contact    
+EmoteMap understands the significance of the disruptor paradigm in terms of the ethical and social implications of products. As our product evolves in order to meet changing user demands, there will be inevitable  modularisation. In this sense, responsibility of the ethical and social impact of our product would become segmented meaning that multiple parties would be held to account. In an attempt to plan for this issue, EmoteMap seeks to take ultimate responsibility. As a result, if our product comes to be in affiliation with or rely on any third parties, we will consider their conduct as well as our own. This would involve communicating our ethics in order to protect our users too. For example, being open with them about any risks instead of burying them in user licenses. Essentially, our team of 5 will be the point of contact when it comes to such ethical responsibility.  
 
 #### Handling of Data
-**data within our system:** Throughout the evaluation process we ensured that any user data was protected. All of the data from questionnaires was anonymised and kept in our account of the Smartsurvey website, which was secured with a password. We also ensured that audio from interviews never left the phone of the interviewer who recorded it, once we had analysed the information within the interview we would delete the recording. EmoteMap acknowledges that some of the interviewees were vulnerable as they suffering with depression and anxiety, and therefore that their data was particularly important t protect    
+**Data within our system:** Throughout the evaluation process we ensured that any user data was protected. All of the data from questionnaires was anonymised and kept in our account of the Smartsurvey website, which was secured with a password. We also ensured that audio from interviews never left the phone of the interviewer. On top of this, once we analysed the contents of the recorded audio we deleted it. EmoteMap acknowledges that some of the interviewees were particularly vulnerable as they suffering with depression and anxiety. Therefore, their data was particularly important for us to protect.    
 
-**storing data from user studies:** In order to comply with GDPR, the browser would store the user's JsonWebToken (JWT) and therefore encrypt the user's username and password and store it in the client's browser when authenticated. This ensures and attacks on their browser does not expose their credentials. We used a secret key, which is stored on the server side. This secret key is one of other components that forms the JWT, only people that know the secret key will be able to decode the JWT token, which is why we store it on our server. To find out more about this authentication process please see our authentication service in our System Implementation section. There is one area the we need to improve. When the user registers we were not able to hash their passwords, as bcyrpt was having issues with docker. They means the users passwords were exposed on the database. We understand this must change in future work, or if we want to take the site live. We also used .env variables to not expose MongoDB connection details on Github.
-
-
-#### Ethical Principles
-1. We take responsibility for appropriately escalating suggestions of harm from users to themselves or to others   
-
-2. We will design with the user in mind   
--	much user testing inspired dev process  
--	we will not allow biases to creep in as we use user data to make decisions and will continue to do s o with the growth of the product    
-
-3. Be accountable for the potential spread of responsibility    
+**Storing data from user studies:** In order to comply with GDPR, the browser would store the user's JsonWebToken (JWT) and therefore encrypt the user's username and password, storing it in the client's browser when authenticated. This ensures that the browser does not expose their credentials. We used a secret key, which is stored on the server side. The key is one of the components that forms the JWT as it would have to be known in order to decode the JWT token. To find out more about this authentication process please the "Authentication Service" section in our [System Implementation](sysImp.md). On this topic, an area that requires improvement is the user registers. We were not able to hash their passwords, as bcyrpt was having issues with docker meaning that the user's passwords were exposed on the database. We understand this must change in future work, or if we want to take the site live. We also used .env variables to not expose MongoDB connection details on Github.
 
 
-4. We will build and test for safety    
--	see google
+#### EmoteMap's Ethical Principles
+1. Deal with users that are harmful to themselves or others    
 
-5.
+2. Design with the user in mind   
+-	we will continue to develop our software in correlation to user testing  
+-	we will not allow biases or ulterior motives to cloud the driving force of our product    
 
-### Discussion of future work (in terms of design, development and evaluation)
+3. Be accountable for the potential spread of responsibility  
+- we will take on responsibility for any third parties that    
 
-One extension idea we have involves further inter-user interaction and communication in a local area. Here is the idea, demonstrated with an example: 'Bristol is notorious for its limited parking. On a particular residential road, there is a bus stop that has been out-of-service for years. Despite paying for a parking permit, residents have been told that they are not allowed to park on the bus stop even if that means parking on another road. Residents are upset as they often find themselves struggling to park after a busy day at work. Naturally, they individually take to EmoteMap to express their feelings. To their surprise, they discover that others feel the same way. This is because EmoteMap has identified multiple people within an area expressing similar feelings over the same issue. EmoteMap then asks the individuals if they would like to initialise a discussion group, in hope of resolving the local issue.' This extension would involve the ability to identify multiple users within a local area reporting the same issue. Furthermore, some form of chat service would need to be implemented. One way we thought about achieving this functionality would be to essentially run a similar process to our `search-component` in the background and store any keywords that appear again and again (i.e over a certain threshold) within a set radius. We could then go through the stored timeline of posts for a specific user and notify them/ enable more functionality if their posts contain the keyword; i.e. have a new option on the sidebar that pops up.
+4. We will build and test for safety  
+-	We will apply practises to avoid unintended results that may manifest themselves as our product undergoes innovation    
+
+5. We will ensure the privacy of user's data where promised    
+
+
+
+<a name="ethical"></a>
+# e) Discussion of future work (in terms of design, development and evaluation)
+
+One extension idea we have involves further inter-user interaction and communication in a local area. Here is the idea, demonstrated with an example: 'Bristol is notorious for its limited parking. On a particular residential road, there is a bus stop that has been out-of-service for years. Despite paying for a parking permit, residents have been told that they are not allowed to park on the bus stop even if that means parking on another road. Residents are upset as they often find themselves struggling to park after a busy day at work. Naturally, they individually take to EmoteMap to express their feelings. To their surprise, they discover that others feel the same way. This is because EmoteMap has identified multiple people within an area expressing similar feelings over the same issue. EmoteMap then asks the individuals if they would like to initialise a discussion group, in hope of resolving the local issue.' This extension would involve the ability to identify multiple users within a local area reporting the same issue. Furthermore, some form of chat service would need to be implemented. One way we thought about achieving this functionality would be to essentially run a similar process to our 'search-component' in the background and store any keywords that appear again and again (i.e over a certain threshold) within a set radius. We could then go through the stored timeline of posts for a specific user and notify them/ enable more functionality if their posts contain the keyword; i.e. have a new option on the sidebar that pops up.
 
 At a late stage in our development, one user made an important point on privacy: they were concerned about sharing their location when making an Emote Post. This is a valid concern and we questioned how we may be able to deal with this issue in future development of the project. Submitting Emote Posts without some form of geolocation voids the project's idea entirely. We therefore propose an alternative direction: to give users the ability to pin their posts to an area (such as a district), instead of a precise location. We believe this would be a good balance between privacy, and having the ability to see trends in emotion across different areas of the globe. It would be interesting to survey whether such a feature would encourage those previously concerned over privacy to then use the site.
 
