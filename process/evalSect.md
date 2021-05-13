@@ -328,14 +328,14 @@ EmoteMap understands the significance of the disruptor paradigm in terms of the 
 1. Deal with users that are harmful to themselves or others    
 
 2. Design with the user in mind   
--	we will continue to develop our software in correlation to user testing  
--	we will not allow biases or ulterior motives to cloud the driving force of our product    
+we will continue to develop our software in correlation to user testing  
+we will not allow biases or ulterior motives to cloud the driving force of our product    
 
 3. Be accountable for the potential spread of responsibility  
-- we will take on responsibility for any third parties that    
+we will take on responsibility for any third parties that    
 
 4. We will build and test for safety  
--	We will apply practises to avoid unintended results that may manifest themselves as our product undergoes innovation    
+We will apply practises to avoid unintended results that may manifest themselves as our product undergoes innovation    
 
 5. We will ensure the privacy of user's data where promised    
 
