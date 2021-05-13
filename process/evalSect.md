@@ -205,20 +205,20 @@ Another possible limitation to our evaluation was our inability to show enough u
 # c) More Limitations: Sample Size
 
 
-#### How we calculated our target sample size
+### How we calculated our target sample size
 <p align="center">
 <img src="supporting_images/sample_size.png" width ="600">
 </p>
 
 Our target market was any person, male or female, who had access to both a computer and the Internet. After trying to find a statistic online we realised that the number of this population could only be approximated, and also depends on what is defined as a computer. The website InternetWorldStats.com estimates that 2.5 billion people are Internet users and thus have access to it via a mobile device or a computer. We guessed that of those 2.5 billion people, half were accessing via a computer. It can be argued that this guess in itself is a limitation
 
-#### How we calculated our sample size
+### How we calculated our sample size
 Questionnaires completed: 22    
 Semi-structured interviews conducted: 9    
 Totals sample size: 31
 
 
-#### Sample size limitation
+### Sample size limitation
 We used Survey Monkey's sample size calculator to estimate our sample size. This forced us to think about the population that may be using our product and therefore question how big our market was. Considering our end users in this way made us contemplate how much feedback data was 'enough'.  As calculated in the sections above, our sample size was 31 whilst our target sample size was 385. Although we did not reach the ideal sample size, we realised that, ultimately, we could only analyse the data that we could gather. This shortfall of responders therefore makes it difficult to be certain of our analysis at this point. Although our sample size could have been higher, we followed the notion that when carrying out our evaluation we would balance richness with practicality. When gathering our feedback data we constantly considered how we would go on to analyse that data for two main purposes; firstly, figuring out what users wanted so we could reflect this in our development process and secondly, how we could analyse that data at the end of our project in order to conclude how successful we were in terms of achieving the original goals that we set out to achieve (see these in our [Introduction](introSect.md)). In order to thoroughly and accurately analyse our data in a just way, we dedicated time. As a result of this, we at some points opted to collect a smaller amount of qualitative data which we could analyse robustly. For example, although carrying out qualitative user feedback such as semi-structured interviews was time-consuming as we needed to spend time re-listening to the audio and extracting the relevant responses to questions before entering this feedback data into the idea matrix. We still decided to do this as we would understand on a more detailed level what users preferred when experiencing our product. Ultimately, although our feedback data lacked in terms of sample size because of this, we were able to make the analysis of the data much richer.    
 
 
@@ -240,7 +240,7 @@ this feedback
 If I clicked on your Edgware Earthquake post, how could I support you? This is where you make the jump from raising awareness, to going further
 
 <a name="working"></a>
-# a) Reflection on Working Practices
+# a)Reflection on Working Practices
 
 Taken as a whole, we worked quite effectively as team, with the clear team roles and constant communication over discord helping greatly in facilitating collaboration and continuous integration, as we were very quickly able to discuss issues and solutions, and delegate who should should be tasked with implementing those solutions.
 
@@ -252,12 +252,12 @@ We did have issues in the first couple of sprints around effectively using githu
 
 
 <a name="success"></a>
-# b) How Successful was our Project?
+# b)How Successful was our Project?
 
-#### Did we meet the brief?
+### Did we meet the brief?
 Broadly, we would argue that our project has been a success, both in meeting the brief although more so in some areas than others. The project brief was to develop a web app around the concept of 'serious play'; in our case we took that to mean bringing attention to a real world problem in a new and engaging way, along with the perhaps enabling ways to address the problem.
 
-#### Did our product address 'serious play'?
+### Did our product address 'serious play'?
 
 <p>
 <img src="supporting_images/serious.png" width="500">
@@ -294,7 +294,7 @@ There are clearly improvements to be made in achieving this objective. Though th
 
 
 <a name="covid"></a>
-# c) How did COVID-19 effect our Work?
+# c)How did COVID-19 effect our Work?
 
 The COVID-19 pandemic has had a massive impact on the world. The associated deaths, impact on the economy and the isolation caused by national lock downs have shook the planet. Unsurprisingly our project, team and its members have also been impacted by it's effects. Aside from the negative mental effects caused by the general panic and devistation happening around the world 2 main factors have impacted our group and it's dynamics:
 
@@ -305,7 +305,7 @@ The COVID-19 pandemic has had a massive impact on the world. The associated deat
 Obviously COVID-19 has presented many challenges for our team and its members, however we feel we have overcame them as best we could. There is no real way to fully replicate face to face communication, however by keeping all group members in constant contact over Discord, through instant messaging and video chats, we were able to keep everyone involved and engaged. COVID-19 has been difficult for all group members but by using our team as a mental support group we have avoided feelings of complete isolation as all group members were able to talk openly about their feelings without judgment. This non-judgmental discussion really helped all members through this tough time.
 
 <a name="ethical"></a>
-# d) Social and Ethical implications
+# d)Social and Ethical implications
 
 <p align="center">
 <img align="center" src="supporting_images/right_feedback.png" width="600px">
@@ -316,7 +316,7 @@ Throughout our development process, we coded the product in a user-centric way. 
 
 On top of this, being data driven allowed us to avoid biases to creep in to our development process. Keeping design process user-centric allowed us to prevent any incumbent form taking control and shaping it to their own ends. We seek to maintain this attitude during any further work.
 
-#### How will we continue to consider these implications?
+### How will we continue to consider these implications?
 
 We have already started thinking about how we can design our product ethically at scale. Although our sample of users was 31, we believe it is important to consider the ethical implications for our users when there are many more. As EmoteMap’s purpose is to create a community of relatable posts, we want to combat any potential issues that can arise as a result of this. For example suicide communities which can arise in order to encourage methods of taking ones own life are not uncommon on other blogs and online social communities. We would need to put in the necessary regulations as a response to this kind of activity. We are currently thinking about adding a feature in order to flag a post which suggests a suicidal activity and therefore want to have the ability to respond to them. Perhaps this could be done by partnering with suicide prevention organisations to support anyone who may be struggling with suicidal thoughts, as well as resources for concerned friends to respond to and report a post that worries them. If our product was to potentially reach popularity in countries outside the UK, we would need to consider partnering with suicide prevention organisations in the relevant city or country.    
 
@@ -324,13 +324,13 @@ In addition to this, we realise that EmoteMap will be a location of heightened e
 
 EmoteMap understands the significance of the disruptor paradigm in terms of the ethical and social implications of products. As our product evolves in order to meet changing user demands, there will be inevitable  modularisation. In this sense, responsibility of the ethical and social impact of our product would become segmented meaning that multiple parties would be held to account. In an attempt to plan for this issue, EmoteMap seeks to take ultimate responsibility. As a result, if our product comes to be in affiliation with or rely on any third parties, we will consider their conduct as well as our own. This would involve communicating our ethics in order to protect our users too. For example, being open with them about any risks instead of burying them in user licenses. Essentially, our team of 5 will be the point of contact when it comes to such ethical responsibility.  
 
-#### Handling of Data
+### Handling of Data
 **Data within our system:** Throughout the evaluation process we ensured that any user data was protected. All of the data from questionnaires was anonymised and kept in our account of the Smartsurvey website, which was secured with a password. We also ensured that audio from interviews never left the phone of the interviewer. On top of this, once we analysed the contents of the recorded audio we deleted it. EmoteMap acknowledges that some of the interviewees were particularly vulnerable as they suffering with depression and anxiety. Therefore, their data was particularly important for us to protect.    
 
 **Storing data from user studies:** In order to comply with GDPR, the browser would store the user's JsonWebToken (JWT) and therefore encrypt the user's username and password, storing it in the client's browser when authenticated. This ensures that the browser does not expose their credentials. We used a secret key, which is stored on the server side. The key is one of the components that forms the JWT as it would have to be known in order to decode the JWT token. To find out more about this authentication process please the "Authentication Service" section in our [System Implementation](sysImp.md). On this topic, an area that requires improvement is the user registers. We were not able to hash their passwords, as bcyrpt was having issues with docker meaning that the user's passwords were exposed on the database. We understand this must change in future work, or if we want to take the site live. We also used .env variables to not expose MongoDB connection details on Github.
 
 
-#### EmoteMap's Ethical Principles
+### EmoteMap's Ethical Principles
 1. Deal with users that are harmful to themselves or others    
 
 2. Design with the user in mind   
@@ -348,7 +348,7 @@ We will apply practises to avoid unintended results that may manifest themselves
 
 
 <a name="ethical"></a>
-# e) Discussion of future work (in terms of design, development and evaluation)
+# e)Discussion of future work (in terms of design, development and evaluation)
 
 One extension idea we have involves further inter-user interaction and communication in a local area. Here is the idea, demonstrated with an example: 'Bristol is notorious for its limited parking. On a particular residential road, there is a bus stop that has been out-of-service for years. Despite paying for a parking permit, residents have been told that they are not allowed to park on the bus stop even if that means parking on another road. Residents are upset as they often find themselves struggling to park after a busy day at work. Naturally, they individually take to EmoteMap to express their feelings. To their surprise, they discover that others feel the same way. This is because EmoteMap has identified multiple people within an area expressing similar feelings over the same issue. EmoteMap then asks the individuals if they would like to initialise a discussion group, in hope of resolving the local issue.' This extension would involve the ability to identify multiple users within a local area reporting the same issue. Furthermore, some form of chat service would need to be implemented. One way we thought about achieving this functionality would be to essentially run a similar process to our 'search-component' in the background and store any keywords that appear again and again (i.e over a certain threshold) within a set radius. We could then go through the stored timeline of posts for a specific user and notify them/ enable more functionality if their posts contain the keyword; i.e. have a new option on the sidebar that pops up.
 
