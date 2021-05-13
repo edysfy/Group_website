@@ -255,10 +255,18 @@ We did have issues in the first couple of sprints around effectively using githu
 # b) How Successful was our Project?
 
 #### Did we meet the brief?
+Broadly, we would argue that our project has been a success, both in meeting the brief although more so in some areas than others. The project brief was to develop a web app around the concept of 'serious play'; in our case we took that to mean bringing attention to a real world problem in a new and engaging way, along with the perhaps enabling ways to address the problem.
 
-Broadly, we would argue that our project has been a success, both in meeting the brief and fulfilling our own objectives, although more so in some areas than others. The project brief was to develop a web app around the concept of 'serious play'; in our case we took that to mean bringing attention to a real world problem in a new and engaging - a playful - way, along with the prehaps enabling ways to address the problem.
+#### Did our product address 'serious play'?
 
-As a team, we view the display of emotion via a map a novel and interactive way to learn about mental health issues, and think that the application in its current state, once it has more users, has great potential to facilitate the sharing of emotions on a larger scale. Feedback we collected broadly agreed with us, with 100% of responses to our minimal viable product (MVP) website rating our website 3/5 or higher on a scale with 1 representing "mind-numbingly boring" and 5 being "extremely interactive" when asked how playful our website is. Similarly, when asked if our website was addressing a serious problem on a scale of 5, 100% ranked the website 3/5 or higher.
+<p>
+<img src="supporting_images/serious.png" width="500">
+<img src="supporting_images/playfullness.png" width="500">
+</p>
+
+As a team, we view the display of emotion via a map a novel and interactive way to learn about mental health issues, and think that the application in its current state, once it has more users, has great potential to facilitate the sharing of emotions on a larger scale.    
+
+Feedback we collected broadly agreed with us, with 100% of responses to our minimal viable product (MVP) website rating our website 3/5 or higher on a scale with 1 representing "mind-numbingly boring" and 5 being "extremely interactive", when asked how playful our website is. Similarly, when asked if our website was addressing a serious problem on a scale of 5, 100% ranked the website 3/5 or higher.
 
 ### Did we meet our own objectives?
 
