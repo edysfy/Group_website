@@ -132,7 +132,7 @@ that we recorded the audio to our interviews, we were able to make use out of an
 
 ### Testing the API
 
-We extensively tested the API whilst developing our application. This was important and played a pivotal role in having a functional application at the end. At times, our routes on our API were developed before the corresponding part of the front end was functional. So we needed a way to test whether the API was returning the correct responses when receiving a request. We used an application call Postman. This is an application the sends requested to the targeted URL path. We used our server routes as the URL path when served through localhost.
+We extensively tested the API whilst developing our application. This was important and played a pivotal role in having a functional application at the end. At times, our routes on our API were developed before the corresponding part of the front end was functional. So we needed a way to test whether the API was returning the correct responses when receiving a request, to ensure it behaves exactly as intended. We used an application call Postman. This is an application the sends requested to the targeted URL path. We used our server routes as the URL path when served through localhost.
 
 We would build each route while having the requirements of the responses sent to the front end in mind. 
 
@@ -141,7 +141,7 @@ We would build each route while having the requirements of the responses sent to
 <img src="supporting_images/exampleofyser.png" width="500">
 </p>
 
-- If it was a POST request, we would send the required payload. Simulating the data sent from the front end and observe the response. 
+- If it was a POST request, we would send the required payload. Simulating the data sent from the front end and observe the response:
 <p align="center">
 <img src="supporting_images/saveuser.png" width="500">
 </p>
