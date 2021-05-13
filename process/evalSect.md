@@ -273,10 +273,10 @@ We would argue that our project was very successful in meeting this goal; even d
 
 #### Objective 2: 'Create a peer-led support network where users can interact with each other as a community'
 <p>
+<img src="supporting_images/interact.png" width="600" align="left">
 For this objective we did achieve some level of success, with some caveats. Our most recent feedback data, for our most developed version of our MVP suggested that this objective was achieved to some extent; 60% of users said they were most likely to use the website "To see/interact with other users' posts (e.g - to gain insight about reactions to similar life experiences)". Users therefore express that they can see themselves using the product in a social way which also further supports us achieving success in creating a playful application; users wanted to use the website to engage with with peoples emotions and experiences!    
 
 However we would argue that beyond the camaraderie provided by seeing other users experiencing similar emotions, in its current state our website does not provide much, if any, interaction between users beyond this. In the future work section below we discuss some ideas for features that would help us better achieve this objective.
-<img src="supporting_images/interact.png" width="600" align="left">
 </p>
 
 
