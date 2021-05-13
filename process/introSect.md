@@ -3,6 +3,7 @@
 </p>
 
 ## Table of contents
+* [Introduction](#intro)
 * [The Problem: Background and Motivation](#backgrnd)
 * [EmoteMap Will Solve the Problem by...](#solve)
 * [Industry Review: What Differentiates EmoteMap](#differentiate)
@@ -15,9 +16,11 @@
 
 <p align="center">
 <img src="supporting_images/shutterstock_174741554-e1519911636917.jpg" width="550px">
-</p
+</p>
 
-### The Problem
+
+### The Problem 
+
 Our team addresses both the problem of poor  mental health globally and the inadequacy of today's mainstream social media in addressing it. To make the problem more digestible we decided to define it in two parts. In the first, we explain the issue of poor mental health which has become significantly worse as a result of the global lockdown. In the second we address the related issue of online culture's inadequacy to acknowledge the first problem. Current mainstream social platforms found online can be ,in fact, detrimental to it.
 
 ### Summary of the problems
