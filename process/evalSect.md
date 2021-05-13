@@ -59,7 +59,7 @@ To learn more about how our paper prototyping allowed us to, at a very early sta
 
 Wireframing enabled us to create an interactive version of our undeveloped website that users could access on a desktop easily through a link [like this one](https://zaki744910.invisionapp.com/console/share/4Y2FIC1NV7/584973219). For example, we could draw parts of the website that we had not yet built on screenshots of the website as it looked at the time.
 
-Please see our [UX section](uxDesign.md) where we discuss how users were able to engage with our wireframe, and could even leave comments as feedback.
+Please see our [UX section](uxDesign.md) where we discuss how users were able to engage with our wireframe, and could even leave comments as feedback.    
 </p>
 
 <p align="left">
@@ -81,7 +81,7 @@ Below is a screenshot of a text we sent to people who agreed to look at our wire
 
 ### Evaluation Technique 3: Idea Matrix
 <p align="center">
-<img src="supporting_images/idea_matrix.png" width="600">
+<img src="supporting_images/idea_matrix.png" width="700">
 </p>
 
 Another method we used in evaluating our designs was an idea matrix. This was an excel spreadsheet that came to be extremely useful in prioritising user suggestions and thus which changes we were going to make to the website throughout the development process.
@@ -90,7 +90,7 @@ Another method we used in evaluating our designs was an idea matrix. This was an
 
 
 
-<img src="supporting_images/questionnaire.png" width="550" align="left">
+<img src="supporting_images/questionnaire.png" width="650" align="left">
 
 Our group used questionnaires as the main form of quantitative feedback as we were able to send a link such as [this one](https://www.smartsurvey.co.uk/s/S58J8X/), to users who had recently used our wireframe or been shown our most up to date website on a local host. This way, we could gain insights at scale into how users interpreted our website. Users answered questions such as "Would you recommend this product to a friend?", "Do you think this website is solving a serious problem?" or "How would you improve this website?".
 
@@ -128,6 +128,7 @@ that we recorded the audio to our interviews, we were able to make use out of an
 
 <a name="timeline"></a>
 # b) Timeline of Evaluation Methods
+Below is a timeline of our user testing techniques. The read lines show the interdependence of techniques on one another.
 <p align="center">
 <img src="supporting_images/timeline.png" width="1000">
 </p>
@@ -174,10 +175,10 @@ Although the idea matrix complemented both the semi-structured interview feedbac
 We continued using wireframes as a method of evaluation for our designs until our website was functional enough to show users via a local host. We felt that our website was developed enough by 27/3/21 (see sprint 3 in the sprints section for more information on exactly how developed the website was at this point). However there was a period where all team members were busy which meant that we conducted interviews and collected questionnaire responses for the users that were shown the webpage on the local host slightly later than expected.    
 
 <p align="left">
-<img src="supporting_images/navigation_left.png" width="500">
+<img src="supporting_images/navigation_left.png" width="650">
 </p>
 <p align="right">
-<img src="supporting_images/navigation_right.png" width="500">
+<img src="supporting_images/navigation_right.png" width="650">
 </p>
 
 For our group, we found this stage particularly significant as our design involved the navigation of a map, and the creation of a post which contained a personal message. Due to this nature of our design, there is quite a personalised element to how a user interacts with it. Thus, for our user feedback to be more accurate and meaningful, having users experience the actual website was significant to evaluating and improving our designs in the development process. In agreement with this, we found that users found it much easier to navigate the website in this way, as opposed to using the wireframe. See the screenshot above which shows the feedback from the last two questionnaires which proves this.
@@ -251,8 +252,8 @@ Broadly, we would argue that our project has been a success, both in meeting the
 ### Did our product address 'serious play'?
 
 <p>
-<img src="supporting_images/serious.png" width="500">
-<img src="supporting_images/playfullness.png" width="500">
+<img src="supporting_images/serious.png" width="650">
+<img src="supporting_images/playfullness.png" width="600">
 </p>
 
 As a team, we view the display of emotion via a map a novel and interactive way to learn about mental health issues, and think that the application in its current state, once it has more users, has great potential to facilitate the sharing of emotions on a larger scale.    
@@ -264,7 +265,7 @@ Feedback we collected broadly agreed with us, with 100% of responses to our mini
 #### Objective 1: 'Create a writing tool that allows self-reflection in a similar way to blogging'
 
 <p>
-<img src="supporting_images/self-reflection.png" width="650" align="right">
+<img src="supporting_images/self-reflection.png" width="700" align="right">
 We would argue that our project was very successful in meeting this goal; even disregarding the map element of our website, the app allows users a clear way to make a 'blog post', and has a dated timeline/history of all previous posts, essentially providing the function of a virtual diary. User feedback exemplifies this, in the image to the right we see that when asked what they thought the main purpose of the website was, 60% of users mentioned something about documenting, posting, or blogging about their mental health. One user stated explicitly that they thought using this writing tool was for the purpose of self-reflection.  The mapping and mood elements actually provide additional functionality, with users able to see their emotion and location for each 'blog' post they have made - we argue that this could make our website better than a traditional diary/blogging service for facilitating self-reflection. However, our user feedback suggests that most people would not user our website in this way; only 20% of people were most likely to use the website for blogging purposes, although this does not mean that users wouldn't use it for this purpose, just that they found the other features more engaging.
 </p>
 
@@ -272,7 +273,7 @@ We would argue that our project was very successful in meeting this goal; even d
 
 #### Objective 2: 'Create a peer-led support network where users can interact with each other as a community'
 <p>
-<img src="supporting_images/interact.png" width="650" align="left">
+<img src="supporting_images/interact.png" width="700" align="left">
 For this objective we did achieve some level of success, with some caveats. Our most recent feedback data, for our most developed version of our MVP suggested that this objective was achieved to some extent; 60% of users said they were most likely to use the website "To see/interact with other users' posts (e.g - to gain insight about reactions to similar life experiences)". Users therefore express that they can see themselves using the product in a social way which also further supports us achieving success in creating a playful application; users wanted to use the website to engage with with peoples emotions and experiences!    
 
 However we would argue that beyond the camaraderie provided by seeing other users experiencing similar emotions, in its current state our website does not provide much, if any, interaction between users beyond this. In the future work section below we discuss some ideas for features that would help us better achieve this objective.
@@ -300,7 +301,7 @@ Obviously COVID-19 has presented many challenges for our team and its members, h
 
 <p align="center">
 <img align="center" src="supporting_images/right_feedback.png" width="600px">
-<img align="center" src="supporting_images/middleFeedback.png" width="550">
+<img align="center" src="supporting_images/middleFeedback.png" width="650">
 </p>
 
 Throughout our development process, we coded the product in a user-centric way. We kept the user at the centre of the project by basing our development decisions on user data. Being data driven in this sense empowered users. (See our [Evaluation](evalSect.md) for more information on the techniques used to do this).  This can be exemplified by some feedback from our three questionnaires throughout the development process. This is demonstrated by the pictures above which show the responses to the question ‘To what extent do you feel that this web application is addressing a serious problem?’ in the questionnaires for the first wireframe and the finished product. Considering that one of our main goals for this project was to solve a serious problem, we aimed was to do this in a user-approved way.    
