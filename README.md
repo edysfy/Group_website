@@ -10,6 +10,13 @@
 
 </div>
 
+### Abstract
+Research has found that blogging for self-reflection and online peer-led support are beneficial for those dealing with mental health problems. EmoteMap aims to address the serious problem of mental health globally, which is worsened by mainstream online societies. Acting as an alternative to mainstream social websites EmoteMap introduces a more positive way for users to interact online as well as creating an environment whereby users can be self-reflective and feel supported by a community of users. On top of this, EmoteMap seeks to empower non-users such as charitable organisations with relevant data about mental health. In order to address this serious issue in a playful and interactive way EmoteMap displays different emotions as a 'heat map' , where certain emotions correlate with a specific colour. Users are able to navigate the map interface and look for these emotions by colouring in the heat map, or they can search by keyword/location (e.g - 'anxious', 'Manchester', or 'COVID') to find a relatable post. EmoteMap's team of 5 built the SPA by using the MEAN framework. In order to keep the website user-centric, the team conducted extensive [user testing](process/evalSect.md) throughout the development cycle so that the [User Experience](process/uxDesign.md) could be designed in a way that users preferred.
+
+### Objectives
+ - Create a writing tool that allows self-reflection in a similar way to blogging and journaling.  
+ - Create a peer-led support network where users can interact with each other as a community.      
+ - Create a tool that raises awareness and information through a visual heat-map based on an accumulation of users' mental health in different geolocations.
 
 <a name="first"></a>
 ## Introduction, background and motivation
