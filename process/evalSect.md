@@ -260,22 +260,27 @@ Broadly, we would argue that our project has been a success, both in meeting the
 
 As a team, we view the display of emotion via a map a novel and interactive way to learn about mental health issues, and think that the application in its current state, once it has more users, has great potential to facilitate the sharing of emotions on a larger scale. Feedback we collected broadly agreed with us, with 100% of responses to our minimal viable product (MVP) website rating our website 3/5 or higher on a scale with 1 representing "mind-numbingly boring" and 5 being "extremely interactive" when asked how playful our website is. Similarly, when asked if our website was addressing a serious problem on a scale of 5, 100% ranked the website 3/5 or higher.
 
-#### Did we meet our own objectives?
+### Did we meet our own objectives?
 
-##### Objective 1: 'Create a writing tool that allows self-reflection in a similar way to blogging'
+#### Objective 1: 'Create a writing tool that allows self-reflection in a similar way to blogging'
 
 <p>
-<img src="supporting_images/interact.png" width="600" align="left">
+We would argue that our project was very successful in meeting this goal; even disregarding the map element of our website, the app allows users a clear way to make a 'blog post', and has a dated timeline/history of all previous posts, essentially providing the function of a virtual diary. User feedback exemplifies this, in the image to the right we see that when asked what they thought the main purpose of the website was, 60% of users mentioned something about documenting, posting, or blogging about their mental health. One user stated explicitly that they thought using this writing tool was for the purpose of self-reflection.  The mapping and mood elements actually provide additional functionality, with users able to see their emotion and location for each 'blog' post they have made - we argue that this could make our website better than a traditional diary/blogging service for facilitating self-reflection. However, our user feedback suggests that most people would not user our website in this way; only 20% of people were most likely to use the website for blogging purposes, although this does not mean that users wouldn't use it for this purpose, just that they found the other features more engaging.
+<img src="supporting_images/self-reflection.png" width="600" align="right">
+</p>
 
-Our first objective was to "create a writing tool that allows self-reflection in a similar way to blogging". We would argue that our project was very successful in meeting this goal; even disregarding the map element of our website, the app allows users a clear way to make a 'blog post', and has a dated timeline/history of all previous posts, essentially providing the function of a virtual diary. The mapping and mood elements actually provide additional functionality, with users able to see their emotion and location for each 'blog' post they have made - we argue that this could make our website better than a traditional diary/blogging service for facilitating self-reflection. However, our user feedback suggests that most people would not user our website in this way; only 20% of people were most likely to use the website for blogging purposes, although this does not mean that users wouldn't use it for this purpose, just that they found the other features more engaging.  
 
 
 #### Objective 2: 'Create a peer-led support network where users can interact with each other as a community'
-For this objective we did achieve some level of success, with some caveats. Our most recent feedback data, for our most developed version of our MVP suggested that this objective our most successful one; 60% of users said they were most likely to use the website "To see/interact with other users' posts (e.g - to gain insight about reactions to similar life experiences)". Users therefore express that they can see themselves using the product in a social way which also further supports us achieving success in creating a playful application; users wanted to use the website to engage with with peoples emotions and experiences!    
+<p>
+For this objective we did achieve some level of success, with some caveats. Our most recent feedback data, for our most developed version of our MVP suggested that this objective was achieved to some extent; 60% of users said they were most likely to use the website "To see/interact with other users' posts (e.g - to gain insight about reactions to similar life experiences)". Users therefore express that they can see themselves using the product in a social way which also further supports us achieving success in creating a playful application; users wanted to use the website to engage with with peoples emotions and experiences!    
 
-However we would argue that beyond the camaraderie provided by seeing other users experiencing similar emotions, in its current state our website does not provide much, if any, interaction between users beyond this. In the future work section below we discuss some ideas for features that would help us better achieve this objective.    
+However we would argue that beyond the camaraderie provided by seeing other users experiencing similar emotions, in its current state our website does not provide much, if any, interaction between users beyond this. In the future work section below we discuss some ideas for features that would help us better achieve this objective.
+<img src="supporting_images/interact.png" width="600" align="left">
+</p>
 
-##### Objective 3: 'Create a tool that raises awareness and information through a visual heat-map'
+
+#### Objective 3: 'Create a tool that raises awareness and information through a visual heat-map'
 There are clearly improvements to be made in achieving this objective. Though the current map display makes it clear where people are feeling 'happy' or 'sad', it is less successful at presenting the reason FOR these broader trends. Though users can hover over posts to see the reason for a particular rating, our website does not currently coalesce these reasons. Adding this broader trend element would make our website more playful, and greatly improve the extent to which we met our 3rd objective -  "creating a tool that raises awareness and information through a visual heat-map based on an accumulation of users' mental health in different geolocations" - however we would still argue that our user feedback suggests we did achieve some success in meeting this goal. We also were clearly successful in this goal in terms of technical achievement; our website does have a visual heat-map effect displaying trends in user emotions.
 
 
