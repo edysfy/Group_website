@@ -5,6 +5,7 @@
 ## Table of Contents
 * [Identification of our Target Users](#users)
 * [Early Prototyping - Paper Prototypes and Feedback](#prototype)
+* [First Digital Representation](#digital)
 * [Implementation of the Initial Search Bar and Post Form](#post)
 * [The Heat Map](#heatmap)
 * [User Authentication and Features](#authentication)
@@ -93,7 +94,8 @@ One final piece of feedback on our paper prototype was to remove the button(s) t
 
 Overall, we were pleased with how useful the paper prototype approach was. Despite forming only a very basic visualisation, we gathered invaluable feedback that had an impact on our project development from an early stage.
 
-## On to the Computer...
+<a name="digital"></a>
+## First Digital Representation
 
 From this, we went on to build the initial prototype of EmoteMap. We chose a pink and blue theme because members of our team believed it represented the ethos of EmoteMap;  pink can be a gentle and emotional color. We also included the icons for 'about', 'login', and the title 'about'. Initially, these had no functionality and were just a way for us to see the initial vision of EmoteMap.
 
