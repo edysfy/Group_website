@@ -134,9 +134,9 @@ that we recorded the audio to our interviews, we were able to make use out of an
 
 We extensively tested the API whilst developing our application. This was important and played a pivotal role in having a functional application at the end. At times, our routes on our API were developed before the corresponding part of the front end was functional. So we needed a way to test whether the API was returning the correct responses when receiving a request, to ensure it behaves exactly as intended. We used an application call Postman. This is an application the sends requested to the targeted URL path. We used our server routes as the URL path when served through localhost.
 
-We would build each route while having the requirements of the responses sent to the front end in mind. 
+We would build each route while having the requirements of the responses sent to the front end in mind.
 
-- If the route was an http get, we would speficy the GET req, and observe weather the data returned was as expected: 
+- If the route was an http get, we would specify the GET req, and observe weather the data returned was as expected:
 <p align="center">
 <img src="supporting_images/exampleofyser.png" width="500">
 </p>
@@ -147,7 +147,17 @@ We would build each route while having the requirements of the responses sent to
 </p>
 <br>
 
-If there was any errors, we would alter the API route's functions until the resonse was adequate, and the request did not result in our server crashing. 
+If there was any errors, we would alter the API route's functions until the response was adequate, and the request did not result in our server crashing.
+
+### Functional testing
+
+The other area that we utilised testing in our project was around functional testing; as referenced multiple times we made use of a 'test process', described in our [our test plan](/src/app/test_plan.txt). The document describes a repeatable process to set up and verify the functionality of our website.
+
+<p align="center">
+<img src="supporting_images/test_process.png" width="500">
+</p>
+
+In this plan were outlines of a series of functional tests to ensure that the different components of our website were functioning as expected; the above screenshot outlines how we would verify user account creation was working for example. We were unfortunately unable to make use of unit testing due to time constraints; see the future work section below for more information on this.
 
 <a name="timeline"></a>
 # c) Timeline of Evaluation Methods
@@ -371,4 +381,4 @@ At a late stage in our development, one user made an important point on privacy:
 
 Another area we would like to improve on on the design side is with regards to gender inclusivity; at the moment our website only accepts the male & female genders, but with more time we could either implement a more inclusive system, including a non-binary option perhaps, or maybe retool the search system to work on different user characteristics; building upon the privacy aspect mentioned above and move away from collecting personal information and focus more on the emotions people write about.
 
-In the development for this project we established a locked in process for continuous development and integration a bit later than was ideal, so for future work, with the team now much more well versed in github and the development process we would include and build upon the testing process in [our test plan](/src/app/test_plan.txt) from the very first step of building any new features. With regards to this, we would also like to include some functional testing; due to time constraints during the development period for this project we were only able to carry out functional testing; for future features we would use unit testing, utilising angular's built in .spec files, [Karma](https://karma-runner.github.io/latest/index.html) and testing features from `@angular/core/testing` to automatically test new components. This would greatly aid with bug fixing as we would be able to much more quickly find and fix specific problem areas in the code.
+In the development for this project we established a locked in process for continuous development and integration a bit later than was ideal, so for future work, with the team now much more well versed in github and the development process we would include and build upon the testing process in [our test plan](/src/app/test_plan.txt) from the very first step of building any new features. With regards to this, we would also like to include some functional testing; due to time constraints during the development period for this project we were only able to carry out functional testing; for future features we would use unit testing, utilising angular's built in .spec files, [Karma](https://karma-runner.github.io/latest/index.html) and testing features from `@angular/core/testing` to automatically test new components. As an example we could use the spec files to test the type of objects that our database was returning; e.g. we could verify that we were in fact receiving geoJson objects from our apis. This would greatly aid with bug fixing as we would be able to much more quickly find and fix specific problem areas in the code; the spec files help identify the exact line a problem has occured.
