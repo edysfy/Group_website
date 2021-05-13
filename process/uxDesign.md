@@ -375,7 +375,7 @@ A gif of the implemented home-in feature (nicknamed 'fly-in feature' by the team
 <a name="remarks"></a>
 ## Final Remarks Regarding UX
 
-Our three characters served as both inspiration and guidance for the initial key features of our application. User feedback proved to highlight useful features that certainly contributed to an improved user experience. It should be noted, however, that not all feedback was acted on. The reason for this was not because we disagreed, but because it was far beyond the scope of our project at this current time; this is discussed further in our evaluation. Nevertheless, feedback of this nature sometimes inspired us to implement a user's idea slightly differently to what was intended. We will finish this section with an example of this. See below for a user's suggestion:
+Our three characters served as both inspiration and guidance for the initial key features of our application. User feedback proved to highlight useful features that certainly contributed to an improved user experience. It should be noted. however, that not all feedback was acted on. The reason for this was not because we disagreed, but because it was far beyond the scope of our project at this current time, see our [Evaluation and Conclusion](evalSect.md) for more details. Nevertheless, feedback of this nature sometimes inspired us to implement a user's idea slightly differently to what was intended. We will finish this section with an example of this. See below for a user's suggestion:
 
 <p align="center">
 <img src="supporting_images/therapist_feedback.png" width="700">
