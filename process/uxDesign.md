@@ -121,7 +121,7 @@ We ultimately decided to go with a globe (shown below), as it represents the cor
 
 
 
-  
+
 <a name="post"></a>
 
 
@@ -387,4 +387,4 @@ Although this is a perfectly good idea, time restrictions meant that this could 
 <img src="supporting_images/about_support.png" width="700">
 </p>
 
-Next section; [System Implementation](sysImp.md)
+Next section; [Project Management & development process](sprints.md)

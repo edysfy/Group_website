@@ -152,7 +152,7 @@ From this research, we believe that there is a gap within the market place to bu
 Our team wishes to live in a society where people care about mental health. Where they see mental health as a serious issue and support them as much as they would someone with a physical disability. If people start to care about this issue, then the stigma dies. Meaning people with mental health problems will actively seek help. We also want to create an attractive online community that can replace other social media platforms, be a place of solace, and in turn decreases mental health problems.
 
 
-Next section: [UX Design](uxDesign.md)
+Next section: [System Implementation](sysImp.md)
 
 <a name="references"></a>
 ## References

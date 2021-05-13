@@ -5,7 +5,7 @@
   ## Click the Giphy to fly to the trailer...
 
 <div align="center" width="560">
-  
+
   [![IMAGE ALT TEXT](process/supporting_images/flytrailer.gif)](https://www.youtube.com/watch?v=SMLlnLANZNY)
 
 </div>
@@ -29,8 +29,8 @@ View our [Introduction, background and motivation](process/introSect.md) documen
 <a name="second"></a>
 ## System implementation,UX design and development process
 Click the following links to see our documents on;
-* [UX Design](process/uxDesign.md) (stakeholders,users)
 * [System Implementation](process/sysImp.md) (MongoDb,Backend,Frontend)
+* [UX Design](process/uxDesign.md) (stakeholders,users)
 * [Project Management & development process](process/sprints.md) (continuous integration, use of github)
 
 
