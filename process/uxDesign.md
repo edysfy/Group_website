@@ -53,7 +53,7 @@ The identification of this second type of user highlighted the importance of cre
 
 There is another use case that is worth mentioning. Someone who doesn't want to use EmoteMap's journal/blogging/community features, and who doesn't work for a charity; just a normal person who is interested in knowing how people are feeling around the world. Interested to see the thought process that occurs in different countries. Maybe exposing them to this app will reduce the stigma around mental health making it less taboo to this person. Maybe, EmoteMap will teach him how people with Psychosis feel, removing any preconceived notion. This person will want to get involved and support people, like the charity above or by donating money.
 
-Meet Dan, 43:
+Meet Daniel, 43:
 <table>
 <tr>
   <th>Photo</th>
@@ -61,7 +61,7 @@ Meet Dan, 43:
   <th>Use of EmoteMap</th>
 </tr>
 <tr>
-  <td><img src="supporting_images/Christina.png" width="100" align="left"></td>
+  <td><img src="supporting_images/Daniel.png" width="100" align="left"></td>
   <td>"I'm a regular guitar teacher looking to make a difference in some way. I am not sure what cause I would want to contribute in. There are many options. I wish there was an application that give me a good concrete evidence of how these issues are across the globe. I want know what people are going through at certain locations. I don't know how I can contribute. Maybe through donations at local charities, or offering my support through volunteering at locations where the struggle is real."</td>
   <td>Daniel will use EmoteMap by reading users posts, surfing the map. Similar to the data analyst but less rigorous. He might be more interested in exploring the map and may create an account so he can search. He can show this app to his friends too.</td>
 </tr>
