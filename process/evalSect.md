@@ -229,15 +229,6 @@ We used Survey Monkey's sample size calculator to estimate our sample size. This
 
 <a name="conc"></a>
 # CONCLUSION
-scope and future work must go here...
-Perhaps hometown / lived location could be something you grab from the user too
-(1 liked)
-some more things we can add to the documentation
-this is really important guys
-this feedback
-"I mean a user history mode that is mapped could be quite interesting, however, there is one thing I want you to think about (not necessarily to develop anything, but just to think about for your future work section of the report). Simply, how will this data be used and who will use it?
-
-If I clicked on your Edgware Earthquake post, how could I support you? This is where you make the jump from raising awareness, to going further
 
 <a name="working"></a>
 # a)Reflection on Working Practices
@@ -340,10 +331,10 @@ EmoteMap understands the significance of the disruptor paradigm in terms of the 
 3. Be accountable for the potential spread of responsibility  
 *we will take on responsibility for any third parties that*    
 
-4. We will build and test for safety  
+4. Build and test for safety  
 *We will apply practises to avoid unintended results that may manifest themselves as our product undergoes innovation*    
 
-5. We will ensure the privacy of user's data where promised    
+5. Ensure the privacy of user's data where promised    
 
 
 
