@@ -135,15 +135,17 @@ Although my contribution to writing actual source code was less when compared to
 
 ### Hari
 
-I was the leader of the project. I instilled an initial vision for how the application concept be. I was explict to my team on the way we should go about building the application. I assigned team members tasks to do when developing the app, while offering advice when asked at how to get something to work in the code. I also, helped oversee the write up, offering feedback and extra things I thought should have been mentioned in the documentation, as well as writing the system implementation section.
+I was the leader of the project. I instilled an initial vision for how the application concept be. I was explicit to my team on the way we should go about building the application. I assigned team members tasks to do when developing the app, while offering advice when asked at how to get something to work in the code. I also, helped oversee the write up, offering feedback and extra things I thought should have been mentioned in the documentation, as well as writing the system implementation section.
 
 My main task was building the application, and ensuring its quality. I got the initial prototypes working in the browser to give the team an idea of how the app will look on the computer. I then lead the development for the backend, defining the routes and the initialization of the Express app as well as the MongoDB schemas. I also worked on the front end. I was responsible for the styling of the application with css. I also implemented of the services and defined interfaces in the model's folder. I also implemented the user authentication, the user-search functionality, as well as the following components: login, signup, descript-popup, sidebar, toolbar, user, user-search, userpost, userpost-display, usersearch-display, and setting up the routing and allowing the data to flow dynamically between the full stack. I helped develop some functionality in Mapbox, like rendering different data streams on the map (from post and search service), as well as implementing the fly function.
 
 ### Tarn
 
-During the development of the application, I took on a front-end role. For example, I wrote, designed and built the 'about' section of the application. I also designed the icons found in the map's 'key', as well building the feature itself. Another contribution I made to the project was concept development; the original proposed idea was very similiar, but involved writing longer journal-like posts. It was my idea to instead shorten these into quick and easy-to-read updates. I also recorded and produced the trailer/overview video of the application. Finally, I was responsible for writing the 'user experience' part of the write-up.
+During the development of the application, I took on a front-end role. For example, I wrote, designed and built the 'about' section of the application. I also designed the icons found in the map's 'key', as well building the feature itself. Another contribution I made to the project was concept development; the original proposed idea was very similar, but involved writing longer journal-like posts. It was my idea to instead shorten these into quick and easy-to-read updates. I also recorded and produced the trailer/overview video of the application. Finally, I was responsible for writing the 'user experience' part of the write-up.
 
 ### Zaki
+
+I took on various roles during the development cycle. I helped form the UX of the product by determining how we should design the website based on user feedback. This involved gathering user data in the form of questionnaires and semi-structured interviews which I carried out. In order to get users to take part in questionnaires and semi-structured interviews in the earlier stages of the development process I developed a paper prototype and wireframe for prototyping. I also  developed features on the front-end as well as helping style the application with CSS. I was responsible for carrying out the research for and writing the introduction, background and motivation of the write-up, as well as playing a major role in the Evaluation and Conclusion sections too.
 
 <a name="third"></a>
 
@@ -272,6 +274,8 @@ We used GeoJson from mapbox to help define and develop our `geoJSON.js` mongo sc
 
 On the front end we also need to build the forms that allows the user to post. We decided that the user would click the on a button and the form component will render, saving the users coordinates, so when they post the pin with be saved at their location on the map. We used mat-dialog with a form nested into it.
 
+As the complexity of our project began to grow we decided to implement a test process before each git commit and push, to ensure any local changes made did not break the website, which helped facilitate continuous integration as we were constantly compiling and testing our website after changes, and could be confident that code on the live repository was stable. See [our test plan](/src/app/test_plan.txt) on our repository for details of this testing process.
+
 ### Key implementation issues found:
 
 <table>
@@ -371,7 +375,6 @@ To add more functionality when a user logs in, we implemented a sidebar, the sta
 
 As the website was nearing completion, we carried out a further round of user questionnaires to gather feedback on the final website design, with some of the resulting design changes discussed in our [UX Design](uxDesign.md) document. We also began to start working on the project write up, initially focusing on formatting our README producing a rough outline of the content we needed to fill in.
 
-As the complexity of our project began to grow we decided to implement a test process before each git commit and push, to ensure any local changes made did not break the website, which helped facilitate continuous integration as we were constantly compiling and testing our website after changes, and could be confident that code on the live repository was stable. See [our test plan](/src/app/test_plan.txt) on our repository for details of this testing process.
 
 ### Key implementation issues found:
 <table>

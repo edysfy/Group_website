@@ -12,22 +12,15 @@
 <a name="intro"></a>
 # Introduction
 
-### Abstract
-TO FINISH DO ABSTRACT....
-
-### Objectives
- - Create a writing tool that allows self-reflection in a similar way to blogging and journaling.  
- - Create a peer-led support network where users can interact with each other as a community.      
- - Create a tool that raises awareness and information through a visual heat-map based on an accumulation of users' mental health in different geolocations, or can be relevant to other issues.
- - Reduce the stigma that surrounds mental health.
-
 <a name="backgrnd"></a>
 
 <p align="center">
 <img src="supporting_images/shutterstock_174741554-e1519911636917.jpg" width="550px">
-</p
+</p>
 
-### The Problem
+
+### The Problem 
+
 Our team addresses both the problem of poor  mental health globally and the inadequacy of today's mainstream social media in addressing it. To make the problem more digestible we decided to define it in two parts. In the first, we explain the issue of poor mental health which has become significantly worse as a result of the global lockdown. In the second we address the related issue of online culture's inadequacy to acknowledge the first problem. Current mainstream social platforms found online can be ,in fact, detrimental to it.
 
 ### Summary of the problems
@@ -134,7 +127,7 @@ Although YoungMinds is explicitly addressing the negative impact that social med
 YoungMinds has partnered with 02 to gather tips and advice on how to enjoy a more positive time online. They work to tackle issues such as 'What kind of social media feed do I have?', 'How can I deal with online bullying?', or 'How can I block, mute, or report other accounts?'. This is a great website for people who are going through online hate and abuse to seek help, there is not much to fault on. However, this does bode a question? How do can we stop online bullying and hate? How can we stop this on social media?
 
 ##### How EmoteMap solves the problem differently:
-The Mighty are building a positive online community in the same way that we seek to. We see light in this, as EmoteMap makes the user the heart of the website too. They are a great starting point when it comes to solving the problem of global health mentally. However, Emote Map's encapsulating map interface enables the visitors to gain a localized understanding of a very much global problem in a way that The Mighty does not. In Mighty non-users cannot see what these communities are up to, which can turn away people who are not looking to join a community. EmoteMap, allows non-users to still read and gain an understanding of what people are going through in certain areas. This might spark an interest in someone to provide help. EmoteMap will be a place for these people to direct supports its users.
+The Mighty are building a positive online community in the same way that we seek to. We see light in this, as EmoteMap makes the user the heart of the website too. They are a great starting point when it comes to solving the problem of global health mentally. However, Emote Map's encapsulating map interface enables the visitors to gain a localised understanding of a very much global problem in a way that The Mighty does not. In Mighty non-users cannot see what these communities are up to, which can turn away people who are not looking to join a community. EmoteMap, allows non-users to still read and gain an understanding of what people are going through in certain areas. This might spark an interest in someone to provide help. EmoteMap will be a place for these people to direct supports its users.
 
 <p align="center">
 <img src="supporting_images/ourworldindata.png" width="450px">

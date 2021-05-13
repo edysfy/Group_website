@@ -5,6 +5,7 @@
 ## Table of Contents
 * [Identification of our Target Users](#users)
 * [Early Prototyping - Paper Prototypes and Feedback](#prototype)
+* [First Digital Representation](#digital)
 * [Implementation of the Initial Search Bar and Post Form](#post)
 * [The Heat Map](#heatmap)
 * [User Authentication and Features](#authentication)
@@ -46,14 +47,14 @@ Admittedly, it was only until after we came up with the idea, that we saw its po
 <tr>
   <td><img src="supporting_images/Christina.png" width="100" align="left"></td>
   <td>"I’m a data analyst at a mental-health charity. My role is very important, but it is often overlooked when people think about tackling mental health. My job is to find trends in mental health. Right now, this involves analysing the results of questionnaires that we have given out, but this can be quite tedious, and not so many people respond to our requests. It would be great if I could somehow search for particular feelings, and understand what the current triggers are. We live in a changing world, so I expect these to change over time, and of course, over different locations. My charity uses this important data to direct their efforts precisely, certain areas at people with specific attributes."</td>
-  <td>Christina can use EmoteMap to show her employers in the areas where a lot of people are going through a particular issue. She can make use of EmoteMap by creating an account and search to filter posts through emotions, age, gender, and keyword. The charity can use this data to directly impact areas. Helping people at a fast rate. For example, They can increase volunteers or put on anti-stigma campaigns in that area</td>
+  <td>Christina can use EmoteMap to help identify current trends in mental health. She can make use of EmoteMap by creating an account and filtering posts by emotions, age, gender, and keyword. The charity can use this data to directly impact areas. For example, they can increase volunteers or put on anti-stigma campaigns in that area.</td>
 </tr>
 </table>
 The identification of this second type of user highlighted the importance of creating a clear and easy-to-use search interface. Because we identified these users early, our front-end planning was designed with them in mind from the very start. <br><br>
 
-There is another use case that is worth mentioning. Someone who doesn't want to use EmoteMap's journal/blogging/community features, and who doesn't work for a charity; just a normal person who is interested in knowing how people are feeling around the world. Interested to see the thought process that occurs in different countries. Maybe exposing them to this app will reduce the stigma around mental health making it less taboo to this person. Maybe, EmoteMap will teach him how people with Psychosis feel, removing any preconceived notion. This person will want to get involved and support people, like the charity above or by donating money.
+There is another use case that is worth mentioning. Someone who does not want to use EmoteMap's journal/blogging/community features, and who doesn't work for a charity: just a person who is interested in knowing how people are feeling around the world. Just like many people browse social medias. Also, maybe exposing them to this app will reduce the stigma around mental health. Perhaps this user will feel moved, and want to get involved in supporting people, like the through Christina's charity.
 
-Meet Dan, 43:
+Meet Daniel, 43:
 <table>
 <tr>
   <th>Photo</th>
@@ -61,9 +62,9 @@ Meet Dan, 43:
   <th>Use of EmoteMap</th>
 </tr>
 <tr>
-  <td><img src="supporting_images/Christina.png" width="100" align="left"></td>
-  <td>"I'm a regular guitar teacher looking to make a difference in some way. I am not sure what cause I would want to contribute in. There are many options. I wish there was an application that give me a good concrete evidence of how these issues are across the globe. I want know what people are going through at certain locations. I don't know how I can contribute. Maybe through donations at local charities, or offering my support through volunteering at locations where the struggle is real."</td>
-  <td>Daniel will use EmoteMap by reading users posts, surfing the map. Similar to the data analyst but less rigorous. He might be more interested in exploring the map and may create an account so he can search. He can show this app to his friends too.</td>
+  <td><img src="supporting_images/Daniel.png" width="100" align="left"></td>
+  <td>"I'm a guitar teacher looking to make a difference in some way. I am not sure what cause I would want to contribute to. There are many options. I wish there was some neat way of visualising issues across the globe. I don't know how I can contribute, but I know I want to. Maybe through donations at local charities, or offering my support through volunteering at locations where the struggle is real."</td>
+  <td>Daniel will use EmoteMap by reading users' posts, surfing the map. Similar to the data analyst but more casual. He might be more interested in exploring the map and may create an account so he can search. He can show this app to his friends too.</td>
 </tr>
 </table>
 
@@ -93,37 +94,52 @@ One final piece of feedback on our paper prototype was to remove the button(s) t
 
 Overall, we were pleased with how useful the paper prototype approach was. Despite forming only a very basic visualisation, we gathered invaluable feedback that had an impact on our project development from an early stage.
 
-## On to the Computer...
+<a name="digital"></a>
+## First Digital Representation
 
-From this, we went on to build the initial prototype of EmoteMap. We choose a pink and blue theme because members of our team believed it represented the ethos of EmoteMap, as pink can be an emotional color, and we included the icons for 'about', 'login', and the title 'about'. Initially, this has no functionality and was just a way for us to see the initial vision of EmoteMap coming into existence.
+From this, we went on to build the initial prototype of EmoteMap. We chose a pink and blue theme because members of our team believed it represented the ethos of EmoteMap;  pink can be a gentle and emotional color. We also included the icons for 'about', 'login', and the title 'about'. Initially, these had no functionality and were just a way for us to see the initial vision of EmoteMap.
 
   <p align="center">
   <img align="center" src="supporting_images/orig.png" width="500px">
   <img align="center" src="supporting_images/orginal2.png" width="500px">
   </p>
 
-We started experimenting with Mapbox's circle markers. This was a demo provided by Mapbox and gave us an insight into how we can display different emotions on the map with varying colors (shown in the right picture). We also used [freelogodesign.org/](https://www.freelogodesign.org/), to come up with a variety of different logos to suit our application, and decided to go with the globe (we cant show below as uses black text). We made the logo a button in the toolbar, so users can find their way back to the map when on a different route.
+We started experimenting with Mapbox's circle markers. This was a demo provided by Mapbox and gave us an insight into how we can display different emotions on the map with varying colors (shown in the second picture). We also used [freelogodesign.org/](https://www.freelogodesign.org/), to come up with a variety of different logos to suit our application. Here are just some of the logos we designed:
 
-  <p align="center">
-  <img align="center" src="../src/assets/logos/handslogo.png" width="250px">
-  <img align="center" src="../src/assets/logos/messagelogo.png" width="250px">
-  <img align="center" src="../src/assets/logos/treelogowhite.png" width="250px">
-  </p>
+<p align="center">
+  <img align="center" src="supporting_images/handslogo.png" width="250px">
+  <img align="center" src="supporting_images/messagelogo.png" width="250px">
+  <img align="center" src="supporting_images/treelogowhite.png" width="250px">
+</p>
 
+We ultimately decided to go with a globe, as it represents the core feature of EmoteMap:
+
+<p align="center">
+  <img align="center" src="supporting_images/logo.png" width="100px">
+</p>
+
+
+We made the logo a button in the toolbar, so users can find their way back to the map when on a different route.
+
+  
 <a name="post"></a>
+
+
 ## Implementation of the Initial Search Bar and Post Form
 
-At this stage, we have a basic prototype. We were getting used to Mapbox and its GeoJson requirements. Before dealing with user authentication, we wanted to display GeoJson data on the map, implement a basic search filter, and allow users to post by clicking on a button, and routing users to a post page so they can make a post. Ed suggested that we get rid of the white map and use a black map as the contrast between pink was preferred. After some feedback from family and friends, It became obvious that the black map was preferred over this theme.
+At this stage, we had a basic prototype, and we were still becoming familiar with Mapbox and its GeoJson requirements. Before dealing with user authentication, we wanted to display GeoJson data on the map, implement a basic search filter, and allow users to post by clicking on a button, and routing users to a post page so they can make a post. One member suggested that we get rid of the white map and use a black map as the contrast between pink was preferred. After some feedback from family and friends, it became obvious that the black map was preferred over this theme.
 
-We also knew that we wanted to search through the posts but we hadn't decided exactly what criteria we would use for searching. We built a search bar at the bottom of the map where the user can search by keyword and by date. Later on as we developed a more complex search for users [here](#sp), we decided to leave this search bar for non users. However, we eventually removed this component because of the feedback received [here](#nos).
+We also knew that we wanted to search through the posts but we had not decided exactly what criteria we would use for searching. We built a search bar at the bottom of the map where the user could search by keyword and by date. Later on as we developed a more complex search for users [here](#sp), we decided to dedicate this search bar to non users. However, we eventually removed this component because of the feedback received [here](#nos).
 
   <p align="center">
   <img align="center" src="supporting_images/ugly.png" width="550px">
   </p>
 
-It is also worth mentioning here that after showing this version to Marceli, we received some initial criticism on the theme. He said that these colors were not appealing. He suggested that a white navbar will contrast well with the black map. So we tested it out and liked the result. Now we needed to display the form that allowed the user to make a post and display it on the map. At the start, there were several ways of design patterns we could have used. The final version was mentioned in the paper prototype above. However, there were some preliminary ideas we went through:
+It is also worth mentioning here that after showing this version to Marceli, we received some initial criticism on the theme. He said that these colors were not appealing. He suggested that a white navbar will contrast well with the black map. We changed the theme as a trial and liked the result.
 
-1. The user clicks a button/map and have the the user route to a new age.
+Now we needed to display the form that allowed the user to make a post and display it on the map. At the start, there were several ways of design patterns we could have used. The final version was mentioned in the paper prototype above. However, there were some preliminary ideas we went through:
+
+1. The user clicks a button/map and have the the user route to a new page.
 2. The user clicks a button/map and have the form slide out from the screen.
 
   <p align="center">
@@ -131,10 +147,9 @@ It is also worth mentioning here that after showing this version to Marceli, we 
     <img align="center" src="supporting_images/slideout.png" width="350px">
   </p>
 
-We had a team meeting to discuss this, then sought the advice of one of our professors who specializes in HCI. He suggested making it playful by having the post-pop out onto the screen, we all agreed that was the best design of all three methods.
+We had a team meeting to discuss this, then sought the advice of one of our professors who specializes in HCI. He suggested making it playful by having the post pop out onto the screen, we all agreed that was the best design of all three methods.
 <br><br>
-We took a moment to reflect on our project progression in the context of our three fictional users. At this point in time, an EmotePost consisted of an keyword (e.g. lonely) and a description. We had a particular concern regarding Christina, the data analyst, as she was only able to search based on a particular emotion (amongst potentially hundreds if not thousands). Our decided improvement was to include a few more search criteria, to give her more flexibility. One addition to the EmotePosts themselves was a 'mood rating'. We proposed three categories: 'happy', 'coping' and 'sad'. If mood ratings were to be attached to each post, it would be very easy to filter them. This was simply an addition and not a replacement of the pre-existing keyword field. We decided to keep the keyword field for the benefit of Sarah. Emotions are complex, and we thought it would be undermining for example to only give the user the ability to select 'sad', when really they are feeling either depressed, anxious, or lonely. However, to keep within the time frame we only had three emotions. These mood ratings therefore served as search categories. <br> <br> After some time experimenting with CSS on a mat-dialog component. We initially used a picker element to pick the mood, but then started experimenting with Angular's slider and liked that instead. We decided the secondary colour that fitted well with white, and resembled 'emotions' was purple. We used this as the colour of the pop up form <br>
-We came up with a pop-up like this:
+We took a moment to reflect on our project progression in the context of our three fictional users. At this point in time, an EmotePost consisted of a keyword (e.g. lonely) and a description. We had a particular concern regarding Christina, the data analyst, as she was only able to search based on a particular emotion (amongst potentially hundreds if not thousands). Our decided improvement was to include a few more search criteria, to give her more flexibility. One addition to the EmotePosts themselves was a 'mood rating'. We proposed three categories: 'happy', 'coping' and 'sad'. If mood ratings were to be attached to each post, it would be very easy to filter them. This was simply an addition and not a replacement of the pre-existing keyword field. We decided to keep the keyword field for the benefit of Sarah. Emotions are complex, and we thought it would be undermining for example to only give the user the ability to select 'sad', when really they are feeling either depressed, anxious, or lonely. These mood ratings therefore served as search categories. <br> <br> After some time experimenting with CSS on a mat-dialog component. We initially used a picker element to pick the mood, but then started experimenting with Angular's slider and preferred it. We decided the secondary colour that fit well with white, and resembled 'emotions', was purple. We used this as the colour of the pop up form:
 
   <p align="center">
   <img align="center" src="supporting_images/postform.png" width="550px">
@@ -360,7 +375,7 @@ A gif of the implemented home-in feature (nicknamed 'fly-in feature' by the team
 <a name="remarks"></a>
 ## Final Remarks Regarding UX
 
-Our three characters served as both inspiration and guidance for the initial key features of our application. User feedback proved to highlight useful features that certainly contributed to an improved user experience. It should be noted. however, that not all feedback was acted on. The reason for this was not because we disagreed, but because it was far beyond the scope of our project at this current time (MENTION THAT WE WILL TALK ABOUT THIS MORE IN PROJECT EXTENSION IDEAS PART). Nevertheless, feedback of this nature sometimes inspired us to implement a user's idea slightly differently to what was intended. We will finish this section with an example of this. See below for a user's suggestion:
+Our three characters served as both inspiration and guidance for the initial key features of our application. User feedback proved to highlight useful features that certainly contributed to an improved user experience. It should be noted. however, that not all feedback was acted on. The reason for this was not because we disagreed, but because it was far beyond the scope of our project at this current time, see our [Evaluation and Conclusion](evalSect.md) for more details. Nevertheless, feedback of this nature sometimes inspired us to implement a user's idea slightly differently to what was intended. We will finish this section with an example of this. See below for a user's suggestion:
 
 <p align="center">
 <img src="supporting_images/therapist_feedback.png" width="700">
