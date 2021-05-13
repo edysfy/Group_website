@@ -286,13 +286,7 @@ There are clearly improvements to be made in achieving this objective. Though th
 
 
 <a name="covid"></a>
-<<<<<<< HEAD
-
-# c) How did COVID-19 effect our Work?
-=======
 # c)How did COVID-19 effect our Work?
->>>>>>> 82d9c9dafefa8b4c7bb53cc9c5d1c6ea04baf59d
-
 The COVID-19 pandemic has had a massive impact on the world. The associated deaths, impact on the economy and the isolation caused by national lock downs have shook the planet. Unsurprisingly our project, team and its members have also been impacted by it's effects. Aside from the negative mental effects caused by the general panic and devistation happening around the world 2 main factors have impacted our group and it's dynamics:
 
 ## Absence of face to face interaction
