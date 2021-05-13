@@ -19,7 +19,7 @@
 </p>
 
 
-### The Problem 
+### The Problem
 
 Our team addresses both the problem of poor  mental health globally and the inadequacy of today's mainstream social media in addressing it. To make the problem more digestible we decided to define it in two parts. In the first, we explain the issue of poor mental health which has become significantly worse as a result of the global lockdown. In the second we address the related issue of online culture's inadequacy to acknowledge the first problem. Current mainstream social platforms found online can be ,in fact, detrimental to it.
 
@@ -70,7 +70,7 @@ In agreement with this, Bakar and Moore did a study on MySpace and discovered th
 </p>
 
 <a name="solve"></a>
-# Ways in which EmoteMap will solve the issues mentioned above...
+# Ways in which EmoteMap will solve the issues mentioned above... (Project Objectives)
 ### 1) Introducing a more positive way for users to interact online
 We are not trying to reduce the interaction that humans have with online social platforms, it is clear that this will inevitably increase in forthcoming years. Instead, we want to create an aspect to online sociality that is similar in interactivity to current mainstream social media platforms but addresses mental health explicitly.
 
@@ -152,7 +152,7 @@ From this research, we believe that there is a gap within the market place to bu
 Our team wishes to live in a society where people care about mental health. Where they see mental health as a serious issue and support them as much as they would someone with a physical disability. If people start to care about this issue, then the stigma dies. Meaning people with mental health problems will actively seek help. We also want to create an attractive online community that can replace other social media platforms, be a place of solace, and in turn decreases mental health problems.
 
 
-Next section: [UX Design](uxDesign.md)
+Next section: [System Implementation](sysImp.md)
 
 <a name="references"></a>
 ## References
