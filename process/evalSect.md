@@ -330,18 +330,18 @@ EmoteMap understands the significance of the disruptor paradigm in terms of the 
 **Storing data from user studies:** In order to comply with GDPR, the browser would store the user's JsonWebToken (JWT) and therefore encrypt the user's username and password, storing it in the client's browser when authenticated. This ensures that the browser does not expose their credentials. We used a secret key, which is stored on the server side. The key is one of the components that forms the JWT as it would have to be known in order to decode the JWT token. To find out more about this authentication process please the "Authentication Service" section in our [System Implementation](sysImp.md). On this topic, an area that requires improvement is the user registers. We were not able to hash their passwords, as bcyrpt was having issues with docker meaning that the user's passwords were exposed on the database. We understand this must change in future work, or if we want to take the site live. We also used .env variables to not expose MongoDB connection details on Github.
 
 
-### EmoteMap's Ethical Principles
+### EmoteMap's Ethical Principles Ensure That We Will..
 1. Deal with users that are harmful to themselves or others    
 
 2. Design with the user in mind   
-we will continue to develop our software in correlation to user testing  
-we will not allow biases or ulterior motives to cloud the driving force of our product    
+*we will continue to develop our software in correlation to user testing*  
+*we will not allow biases or ulterior motives to cloud the driving force of our product*    
 
 3. Be accountable for the potential spread of responsibility  
-we will take on responsibility for any third parties that    
+*we will take on responsibility for any third parties that*    
 
 4. We will build and test for safety  
-We will apply practises to avoid unintended results that may manifest themselves as our product undergoes innovation    
+*We will apply practises to avoid unintended results that may manifest themselves as our product undergoes innovation*    
 
 5. We will ensure the privacy of user's data where promised    
 
